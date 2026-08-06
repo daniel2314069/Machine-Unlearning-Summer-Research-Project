@@ -2,7 +2,7 @@
 set -euo pipefail
 
 HERE="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-RUNNER="$HERE/run.py"
+PIPELINE="$HERE/pipeline.py"
 OUTPUT_ROOT="$HERE/outputs"
 PID_FILE="$OUTPUT_ROOT/detached.pid"
 EXIT_FILE="$OUTPUT_ROOT/detached.exit_code"
@@ -45,11 +45,16 @@ timestamp="$(date -u +%Y%m%dT%H%M%SZ)"
 LOG_FILE="$OUTPUT_ROOT/detached_${timestamp}.log"
 printf 'running\n' > "$EXIT_FILE"
 
+if [[ "$#" -eq 0 ]]; then
+    pipeline_args=(edit --skip-existing)
+else
+    pipeline_args=("$@")
+fi
+stage="${pipeline_args[0]}"
+
 nohup bash "$0" --worker "$EXIT_FILE" \
-    "$PYTHON_BIN" "$RUNNER" \
-    --mode both \
-    --skip-completed \
-    "$@" \
+    "$PYTHON_BIN" "$PIPELINE" \
+    "${pipeline_args[@]}" \
     > "$LOG_FILE" 2>&1 < /dev/null &
 
 worker_pid=$!
@@ -58,6 +63,7 @@ printf '%s\n' "$worker_pid" > "$PID_FILE"
     printf 'pid=%s\n' "$worker_pid"
     printf 'environment=%s\n' "${CONDA_DEFAULT_ENV:-unknown}"
     printf 'python=%s\n' "$PYTHON_BIN"
+    printf 'stage=%s\n' "$stage"
     printf 'log=%s\n' "$LOG_FILE"
     printf 'started_utc=%s\n' "$timestamp"
 } > "$LATEST_FILE"
@@ -65,6 +71,7 @@ printf '%s\n' "$worker_pid" > "$PID_FILE"
 echo "Detached Confuse5 run started."
 echo "PID: $worker_pid"
 echo "Conda environment: ${CONDA_DEFAULT_ENV:-unknown}"
+echo "Stage: $stage"
 echo "Log: $LOG_FILE"
 echo "Status: $HERE/status.sh"
 echo "It is now safe to close this terminal or disconnect the VPN."

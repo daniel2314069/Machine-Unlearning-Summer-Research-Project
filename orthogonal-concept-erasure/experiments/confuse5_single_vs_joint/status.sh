@@ -16,6 +16,7 @@ source "$LATEST_FILE"
 echo "PID: $pid"
 echo "Environment: $environment"
 echo "Python: $python"
+echo "Stage: ${stage:-edit}"
 echo "Started (UTC): $started_utc"
 echo "Log: $log"
 
@@ -52,4 +53,15 @@ fi
 if [[ -f "$log" ]]; then
     echo "Latest log lines:"
     tail -n 20 "$log"
+fi
+
+PIPELINE="$HERE/pipeline.py"
+if [[ -x "$python" && -f "$PIPELINE" ]]; then
+    if [[ "${stage:-edit}" == "smoke" ]]; then
+        pipeline_output="$OUTPUT_ROOT/smoke"
+    else
+        pipeline_output="$OUTPUT_ROOT/evaluation"
+    fi
+    echo "Pipeline progress:"
+    "$python" "$PIPELINE" status --output-root "$pipeline_output" || true
 fi

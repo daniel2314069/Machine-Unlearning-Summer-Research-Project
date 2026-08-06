@@ -6,7 +6,7 @@
     "paper": "Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models",
     "paper_table": "Table 7",
     "openreview_id": "zt7IPzsXrT",
-    "repository_dataset": "../../../../scapre/eval/datasets/imagenet-15.csv",
+    "repository_dataset": "../../../scapre/eval/datasets/imagenet-15.csv",
     "note": "Table 7 defines five groups with the first two concepts as targets and the remaining three as similar non-targets. The repository CSV contains only the first three concepts from each group, so Table 7 is authoritative for the complete 25-class assignment."
   },
   "shared": {
@@ -28,6 +28,27 @@
       "dtype": "float32",
       "seed": 42,
       "device": "cuda:0"
+    }
+  },
+  "evaluation": {
+    "dataset_csv": "../../../scapre/eval/datasets/imagenet-15.csv",
+    "expected_rows_per_class": 500,
+    "expected_checkpoint_keys": 16,
+    "generation": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "dtype": "bfloat16",
+      "images_per_prompt": 1,
+      "safety_checker": null
+    },
+    "classifier": {
+      "implementation": "torchvision_resnet50_default",
+      "weights": "ResNet50_Weights.DEFAULT",
+      "matching": "exact_normalized_category",
+      "batch_size": 32
     }
   },
   "groups": [
