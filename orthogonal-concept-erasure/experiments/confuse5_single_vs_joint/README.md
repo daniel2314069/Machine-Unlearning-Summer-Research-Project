@@ -84,6 +84,34 @@ Existing checkpoint/metadata collisions stop execution. `--skip-completed`
 resumes by skipping a run only when both its checkpoint and a `status=complete`
 metadata file exist. `--overwrite` is the explicit opt-in for replacement.
 
+## Detached server execution
+
+For a server reached through SSH/VPN, activate `MU` and use the committed
+launcher. It resolves the active environment's Python, starts the runner with
+`nohup`, disconnects stdin, and records its PID, log, and exit status under the
+ignored `outputs/` directory.
+
+```bash
+conda activate MU
+./experiments/confuse5_single_vs_joint/launch_detached.sh
+```
+
+Once the launcher prints its PID, the terminal and client VPN may be closed.
+Later, reconnect and inspect progress with:
+
+```bash
+./experiments/confuse5_single_vs_joint/status.sh
+```
+
+A completed experiment reports exit status `SUCCESS (0)`, 15 checkpoints, and
+15 `complete` metadata records. If a previous launch was interrupted, relaunch
+with explicit replacement of only incomplete outputs; completed runs are still
+skipped first:
+
+```bash
+./experiments/confuse5_single_vs_joint/launch_detached.sh --overwrite
+```
+
 Outputs follow the experiment-local convention:
 
 ```text
