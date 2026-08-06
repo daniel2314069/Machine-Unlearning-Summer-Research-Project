@@ -23,10 +23,19 @@ class in each group. Ten official preservation classes are absent:
 - catamaran, schooner;
 - rugby ball, ping-pong ball.
 
-The pipeline never fabricates these rows. `--coverage partial` explicitly runs
-the available 15 classes. `--coverage complete` is blocked until an official
-CSV with all 25 classes and 500 rows per class is supplied with
-`--dataset-csv`. Adding that CSV requires no code change.
+`--coverage partial` runs only these 15 classes. `--coverage complete` remains
+reserved for a future official CSV and is blocked until all 25 official
+classes are supplied with `--dataset-csv`.
+
+For internal exploratory analysis, the committed
+`datasets/imagenet-confuse5-derived-25.csv` adds the ten missing classes and is
+selected explicitly with `--coverage derived`. This is not represented as an
+official ScaPre dataset. It preserves the original 7,500 rows row-for-row,
+uses the same `an image of a {concept}` prompt pattern, and gives each missing
+class the ordered 500 seeds of the preservation class already available in the
+same group. The exact mapping and source/output hashes are recorded in
+`config.json`; `build_derived_dataset.sh` reproducibly rebuilds and validates
+the file.
 
 Generation is paired by exact CSV row across Original SD1.4, the corresponding
 Single checkpoint, and the group Joint checkpoint. Settings are explicit and
@@ -41,6 +50,12 @@ The partial scale is 30,000 images:
 
 The complete scale is 50,000 images. A generation stage refuses to start
 unless `--confirm-image-count` exactly matches its resolved plan.
+
+After a successful partial run, a derived run in the same output root can
+reuse the 60 matching completed jobs. It plans 50,000 images for safety
+confirmation but normally generates only the 40 newly required jobs (20,000
+images) because `--skip-existing` recognizes the existing per-job
+fingerprints.
 
 ## Low-disk lifecycle
 
@@ -82,6 +97,10 @@ python experiments/confuse5_single_vs_joint/pipeline.py plan \
 python experiments/confuse5_single_vs_joint/pipeline.py plan \
   --coverage partial
 
+# Internal derived-25 plan: labeled derived, total 50,000, peak retained 500.
+python experiments/confuse5_single_vs_joint/pipeline.py plan \
+  --coverage derived
+
 # Existing checkpoint workflow only.
 ./experiments/confuse5_single_vs_joint/launch_detached.sh edit \
   --skip-existing
@@ -100,6 +119,15 @@ python experiments/confuse5_single_vs_joint/pipeline.py plan \
   --start-at generate \
   --coverage partial \
   --confirm-image-count 30000 \
+  --purge-evaluated-images \
+  --skip-existing
+
+# After the partial run finishes, add the ten derived classes. Existing
+# partial jobs are reused; only 20,000 new images normally need generation.
+./experiments/confuse5_single_vs_joint/launch_detached.sh all \
+  --start-at generate \
+  --coverage derived \
+  --confirm-image-count 50000 \
   --purge-evaluated-images \
   --skip-existing
 

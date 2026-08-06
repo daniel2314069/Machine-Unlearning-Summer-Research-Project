@@ -108,7 +108,8 @@ def load_config(path: Path) -> tuple[dict[str, Any], Any]:
     if not isinstance(evaluation, dict):
         raise PipelineError("config.evaluation must be an object")
     required = {
-        "dataset_csv", "expected_rows_per_class", "generation", "classifier",
+        "dataset_csv", "derived_dataset_csv", "derived_dataset",
+        "expected_rows_per_class", "generation", "classifier",
         "expected_checkpoint_keys",
     }
     missing = sorted(required - set(evaluation))
@@ -118,6 +119,16 @@ def load_config(path: Path) -> tuple[dict[str, Any], Any]:
         raise PipelineError("evaluation.expected_rows_per_class must be 500")
     if evaluation["expected_checkpoint_keys"] != 16:
         raise PipelineError("evaluation.expected_checkpoint_keys must be 16")
+    derived = evaluation["derived_dataset"]
+    if not isinstance(derived, dict) or derived.get("kind") != "internal_analysis_not_official_scapre":
+        raise PipelineError(
+            "evaluation.derived_dataset.kind must be internal_analysis_not_official_scapre"
+        )
+    for field in (
+        "source_dataset_normalized_sha256", "derived_dataset_sha256", "seed_sources",
+    ):
+        if field not in derived:
+            raise PipelineError(f"evaluation.derived_dataset is missing {field}")
     generation = evaluation["generation"]
     if not isinstance(generation, dict):
         raise PipelineError("evaluation.generation must be an object")
@@ -374,11 +385,20 @@ def build_pipeline_plan(
     config, runner = load_config(config_path)
     groups = selected_groups(config, raw_groups, runner)
     evaluation = config["evaluation"]
-    dataset_path = (
-        dataset_override.resolve()
-        if dataset_override is not None
-        else resolve_relative(evaluation["dataset_csv"], config_path.parent)
-    )
+    if dataset_override is not None:
+        dataset_path = dataset_override.resolve()
+    elif coverage_mode == "derived":
+        dataset_path = resolve_relative(
+            evaluation["derived_dataset_csv"], config_path.parent
+        )
+    else:
+        dataset_path = resolve_relative(evaluation["dataset_csv"], config_path.parent)
+    dataset_hash = sha256(dataset_path)
+    if coverage_mode == "derived" and dataset_hash != evaluation["derived_dataset"]["derived_dataset_sha256"]:
+        raise PipelineError(
+            "Derived dataset hash does not match config provenance: "
+            f"{dataset_path}"
+        )
     all_rows, by_class = load_dataset(dataset_path)
     expected_rows = int(evaluation["expected_rows_per_class"])
     coverage = dataset_coverage(groups, by_class, expected_rows)
@@ -466,23 +486,45 @@ def build_pipeline_plan(
         raise PipelineError("Resolved evaluation job ids collide")
     image_count = sum(job["prompt_count"] for job in jobs)
     coverage_complete = bool(coverage["complete"])
-    execution_allowed = coverage_complete if coverage_mode == "complete" else bool(coverage["available_classes"])
+    execution_allowed = (
+        bool(coverage["available_classes"])
+        if coverage_mode == "partial"
+        else coverage_complete
+    )
+    if coverage_mode == "derived" and coverage_complete:
+        coverage_status = "derived"
+    elif coverage_mode == "complete" and coverage_complete:
+        coverage_status = "complete"
+    else:
+        coverage_status = "partial"
+    if execution_allowed:
+        block_reason = None
+    elif coverage_mode == "derived":
+        block_reason = "Derived coverage requires all 25 configured classes with exactly 500 rows each"
+    else:
+        block_reason = "Complete coverage requires all 25 official classes with exactly 500 rows each"
     plan = {
         "schema_version": 1,
         "experiment_id": config.get("experiment_id", "confuse5_single_vs_joint"),
         "created_at": utc_now(),
         "coverage_mode": coverage_mode,
-        "coverage_status": "complete" if coverage_complete else "partial",
+        "coverage_status": coverage_status,
         "execution_allowed": execution_allowed,
-        "block_reason": (
-            None if execution_allowed else
-            "Complete coverage requires all 25 official classes with exactly 500 rows each"
-        ),
+        "block_reason": block_reason,
         "config_path": str(config_path.resolve()),
         "config_sha256": sha256(config_path),
         "dataset_path": str(dataset_path),
-        "dataset_sha256": sha256(dataset_path),
+        "dataset_sha256": dataset_hash,
         "dataset_total_rows": len(all_rows),
+        "dataset_provenance": (
+            evaluation["derived_dataset"]
+            if coverage_mode == "derived"
+            else {
+                "kind": "official_rows_available_in_repository"
+                if coverage_mode == "partial"
+                else "externally_supplied_official_complete_rows"
+            }
+        ),
         "coverage": coverage,
         "selected_groups": [group["id"] for group in groups],
         "generation": generation,
@@ -1099,6 +1141,9 @@ def aggregate(plan: Mapping[str, Any], output_root: Path) -> dict[str, Any]:
     summary = {
         "schema_version": 1,
         "coverage_status": plan["coverage_status"],
+        "dataset_path": plan["dataset_path"],
+        "dataset_sha256": plan["dataset_sha256"],
+        "dataset_provenance": plan["dataset_provenance"],
         "missing_classes": plan["coverage"]["missing_classes"],
         "generated_image_count": plan["image_counts"]["total"],
         "comparison_rows": comparisons,
@@ -1221,7 +1266,9 @@ def add_common(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     parser.add_argument("--dataset-csv", type=Path)
     parser.add_argument("--output-root", type=Path, default=DEFAULT_OUTPUT_ROOT)
-    parser.add_argument("--coverage", choices=("partial", "complete"), default="complete")
+    parser.add_argument(
+        "--coverage", choices=("partial", "derived", "complete"), default="complete"
+    )
     parser.add_argument("--groups", nargs="+")
     parser.add_argument("--plan-path", type=Path)
 

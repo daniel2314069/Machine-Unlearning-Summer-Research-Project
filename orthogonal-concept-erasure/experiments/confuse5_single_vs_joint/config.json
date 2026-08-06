@@ -32,6 +32,26 @@
   },
   "evaluation": {
     "dataset_csv": "../../../scapre/eval/datasets/imagenet-15.csv",
+    "derived_dataset_csv": "datasets/imagenet-confuse5-derived-25.csv",
+    "derived_dataset": {
+      "kind": "internal_analysis_not_official_scapre",
+      "source_dataset_normalized_sha256": "f8bbff08a4139376b75d6be4023ce1ff50e87eb15f99242425e1d0ac2d666a64",
+      "derived_dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+      "prompt_template": "an image of a {concept}",
+      "seed_policy": "reuse_ordered_seeds_from_available_preservation_class_in_same_group",
+      "seed_sources": {
+        "Chesapeake Bay retriever": "german shepherd",
+        "pug": "german shepherd",
+        "Siamese cat": "persian cat",
+        "Egyptian cat": "persian cat",
+        "fig": "pomegranate",
+        "Granny Smith": "pomegranate",
+        "catamaran": "speedboat",
+        "schooner": "speedboat",
+        "rugby ball": "tennis ball",
+        "ping-pong ball": "tennis ball"
+      }
+    },
     "expected_rows_per_class": 500,
     "expected_checkpoint_keys": 16,
     "generation": {

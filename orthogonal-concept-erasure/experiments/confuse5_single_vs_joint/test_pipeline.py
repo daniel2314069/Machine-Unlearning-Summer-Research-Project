@@ -90,6 +90,42 @@ def test_synthetic_complete_25_class_plan_has_50000_images(tmp_path: Path) -> No
     assert plan["image_counts"]["peak_retained_images_with_purge"] == 500
 
 
+def test_committed_derived_plan_is_labeled_and_has_50000_images(tmp_path: Path) -> None:
+    plan, config, _ = PIPELINE.build_pipeline_plan(
+        config_path=HERE / "config.json",
+        dataset_override=None,
+        output_root=tmp_path / "evaluation",
+        coverage_mode="derived",
+        raw_groups=None,
+    )
+    assert plan["coverage_status"] == "derived"
+    assert plan["execution_allowed"] is True
+    assert plan["coverage"]["missing_classes"] == []
+    assert len(plan["jobs"]) == 100
+    assert plan["image_counts"]["total"] == 50000
+    assert plan["dataset_provenance"]["kind"] == "internal_analysis_not_official_scapre"
+    assert plan["dataset_sha256"] == config["evaluation"]["derived_dataset"]["derived_dataset_sha256"]
+
+
+def test_derived_rows_preserve_official_prefix_and_declared_seed_policy() -> None:
+    config = json.loads((HERE / "config.json").read_text(encoding="utf-8"))
+    source_path = (HERE / config["evaluation"]["dataset_csv"]).resolve()
+    derived_path = (HERE / config["evaluation"]["derived_dataset_csv"]).resolve()
+    source_rows, source_by_class = PIPELINE.load_dataset(source_path)
+    derived_rows, derived_by_class = PIPELINE.load_dataset(derived_path)
+    assert derived_rows[:len(source_rows)] == source_rows
+    seed_sources = config["evaluation"]["derived_dataset"]["seed_sources"]
+    for derived_class, source_class in seed_sources.items():
+        derived_class_rows = derived_by_class[PIPELINE.normalize(derived_class)]
+        source_class_rows = source_by_class[PIPELINE.normalize(source_class)]
+        assert [row["evaluation_seed"] for row in derived_class_rows] == [
+            row["evaluation_seed"] for row in source_class_rows
+        ]
+        assert {row["prompt"] for row in derived_class_rows} == {
+            f"an image of a {derived_class}"
+        }
+
+
 def test_one_group_partial_count_is_6000(tmp_path: Path) -> None:
     plan, _, _ = PIPELINE.build_pipeline_plan(
         config_path=HERE / "config.json",
