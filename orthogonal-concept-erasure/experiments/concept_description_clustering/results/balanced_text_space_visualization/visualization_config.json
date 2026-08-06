@@ -1,0 +1,173 @@
+{
+  "experiment": "balanced_text_space_visualization",
+  "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "concept_order": [
+    "cat",
+    "dog",
+    "fox",
+    "bear",
+    "wolf",
+    "rabbit",
+    "deer",
+    "horse"
+  ],
+  "animal_colors": {
+    "cat": "#0072B2",
+    "dog": "#E69F00",
+    "fox": "#D55E00",
+    "bear": "#8C564B",
+    "wolf": "#7A7A7A",
+    "rabbit": "#CC79A7",
+    "deer": "#009E73",
+    "horse": "#56B4E9"
+  },
+  "animal_markers": {
+    "cat": "o",
+    "dog": "s",
+    "fox": "^",
+    "bear": "D",
+    "wolf": "v",
+    "rabbit": "P",
+    "deer": "X",
+    "horse": "<"
+  },
+  "representations": {
+    "eot": "Unsuffixed EOT; original description; actual EOT hidden state",
+    "fixed_suffix": "Exact suffix ' This sentence describes the concept'; contextual concept-token hidden state"
+  },
+  "preprocessing": "row L2 normalization; no centering; all 768 input dimensions retained",
+  "pca": {
+    "n_components": 2,
+    "svd_solver": "full",
+    "eot": {
+      "explained_variance_ratio": [
+        0.05665278807282448,
+        0.04545968770980835
+      ],
+      "explained_variance_ratio_total": 0.10211247205734253,
+      "input_shape": [
+        400,
+        768
+      ]
+    },
+    "fixed_suffix": {
+      "explained_variance_ratio": [
+        0.06282733380794525,
+        0.04645746201276779
+      ],
+      "explained_variance_ratio_total": 0.10928479582071304,
+      "input_shape": [
+        400,
+        768
+      ]
+    }
+  },
+  "pca_3d_eot": {
+    "n_components": 3,
+    "svd_solver": "full",
+    "explained_variance_ratio": [
+      0.05665278807282448,
+      0.04545968770980835,
+      0.03992405906319618
+    ],
+    "explained_variance_ratio_total": 0.1420365273952484,
+    "input_shape": [
+      400,
+      768
+    ],
+    "view_elevation_degrees": 22,
+    "view_azimuth_degrees": -55
+  },
+  "tsne": {
+    "n_components": 2,
+    "perplexity": 30,
+    "init": "pca",
+    "learning_rate": "auto",
+    "max_iter": 2000,
+    "metric": "cosine",
+    "main_random_state": 42,
+    "eot_robustness_random_states": [
+      0,
+      1,
+      42
+    ]
+  },
+  "axis_limits": {
+    "pca_eot": {
+      "x": [
+        -0.5112280249595642,
+        0.46345770359039307
+      ],
+      "y": [
+        -0.5137584805488586,
+        0.49884748458862305
+      ]
+    },
+    "pca_fixed_suffix": {
+      "x": [
+        -0.2310992032289505,
+        0.3178834021091461
+      ],
+      "y": [
+        -0.24894841015338898,
+        0.2910919785499573
+      ]
+    },
+    "tsne_eot_seed_42": {
+      "x": [
+        -29.802873611450195,
+        25.46561622619629
+      ],
+      "y": [
+        -27.36253547668457,
+        27.78611946105957
+      ]
+    },
+    "tsne_fixed_suffix_seed_42": {
+      "x": [
+        -28.70819854736328,
+        27.148094177246094
+      ],
+      "y": [
+        -28.62657928466797,
+        29.808624267578125
+      ]
+    },
+    "tsne_eot_seed_robustness": {
+      "x": [
+        -29.991886138916016,
+        29.09123420715332
+      ],
+      "y": [
+        -27.655380249023438,
+        33.40340805053711
+      ]
+    }
+  },
+  "existing_assignments_reused": true,
+  "existing_hungarian_mapping_reused": true,
+  "clustering_refit": false,
+  "w0_projection_applied": false,
+  "oce_run": false,
+  "source_audit": {
+    "source_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/concept_clustering/balanced_text_space_visualization.py",
+    "source_sha256": "27b3b9bd80935d675f52e34f7d26b22b25dcd581cc65a482fc8561e70603f498",
+    "clustering_fit_calls_present": false,
+    "w0_projection_calls_present": false,
+    "oce_calls_present": false,
+    "image_or_description_generation_calls_present": false
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

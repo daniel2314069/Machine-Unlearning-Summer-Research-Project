@@ -1,0 +1,17 @@
+{
+  "knn_purity_by_animal": {
+    "question": "How does local label purity vary by animal and predetermined k?",
+    "chart": "grouped bar with fixed random-baseline reference",
+    "source": "knn_purity_summary.csv"
+  },
+  "knn_purity_by_k": {
+    "question": "How stable is overall purity across k=5,10,20?",
+    "chart": "sample-level boxplot with mean marker and random-baseline reference",
+    "source": "knn_purity_by_sample.csv"
+  },
+  "spectral_metrics_by_neighbors": {
+    "question": "How do seed-42 spectral results change across predetermined graph neighborhoods?",
+    "chart": "grouped bar with cached spherical reference lines",
+    "source": "spectral_metrics_all_runs.csv and cached eot_metrics.json"
+  }
+}

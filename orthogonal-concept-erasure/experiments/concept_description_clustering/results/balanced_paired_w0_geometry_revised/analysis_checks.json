@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "dataset_is_final_balanced_8x50": true,
+  "all_16_w0_spaces_included": true,
+  "text_and_all_selected_w0_spaces_in_metrics": true,
+  "all_selected_w0_unchanged": true,
+  "all_layers_match_existing_inventory": true,
+  "no_edited_checkpoint_loaded": true,
+  "no_image_generation_performed": true,
+  "fit_boundary_has_no_label_or_concept_parameter": true,
+  "all_metrics_record_labels_unavailable_to_fit": true,
+  "spherical_inputs_are_unit_normalized": true,
+  "spherical_centers_are_unit_normalized": true,
+  "raw_euclidean_inputs_are_not_normalized": true,
+  "normalized_euclidean_inputs_are_unit_normalized": true,
+  "normalized_euclidean_centers_not_manually_renormalized": true,
+  "all_eight_animals_individual_in_every_prototype_space_condition": true,
+  "three_readout_conditions_remain_separate": true,
+  "prototype_vectors_and_centroids_are_unit_normalized": true,
+  "all_confusion_matrices_present": true,
+  "all_name_token_indices_preserved": true
+}

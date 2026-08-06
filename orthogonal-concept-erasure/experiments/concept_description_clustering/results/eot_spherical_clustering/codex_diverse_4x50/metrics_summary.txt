@@ -1,0 +1,26 @@
+Representation | ARI | NMI | Matched Accuracy | Cosine Silhouette | Spherical Objective
+--- | ---: | ---: | ---: | ---: | ---:
+Raw EOT | 0.510511 | 0.578911 | 0.710000 | 0.085641 | 133.453676
+Centered EOT | 0.456180 | 0.540425 | 0.680000 | 0.093808 | 69.629500
+
+Raw EOT per-class recall: cat=0.820, dog=0.940, fox=0.540, bear=0.540
+Raw EOT assignment counts (true → matched prediction):
+  cat: cat=41, dog=7, fox=1, bear=1
+  dog: cat=0, dog=47, fox=2, bear=1
+  fox: cat=1, dog=0, fox=27, bear=22
+  bear: cat=0, dog=0, fox=23, bear=27
+Raw EOT largest confusion: bear → fox (23)
+
+Centered EOT per-class recall: cat=0.860, dog=0.820, fox=0.520, bear=0.520
+Centered EOT assignment counts (true → matched prediction):
+  cat: cat=43, dog=4, fox=0, bear=3
+  dog: cat=0, dog=41, fox=0, bear=9
+  fox: cat=0, dog=1, fox=26, bear=23
+  bear: cat=0, dog=1, fox=23, bear=26
+Centered EOT largest confusion: fox → bear (23)
+
+Centered ARI minus raw ARI: -0.054331
+Centered fox recall minus raw fox recall: -0.020000
+Most frequent misclassification direction across the two fits: raw bear → fox (23)
+
+Numerical comparison only: PCA is qualitative and all clustering/evaluation used 768 dimensions.

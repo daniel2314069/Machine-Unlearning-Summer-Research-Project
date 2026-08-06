@@ -1,0 +1,59 @@
+{
+  "status": "complete",
+  "completed_at": "2026-07-27T13:16:57.392624+00:00",
+  "prompt_count": 1000,
+  "reference_id": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+  "reference_fingerprint": "b36ae560e86e41f6ef3693ba1e920648665b25061bc3795015c019a254df8777",
+  "reused_original_reference": true,
+  "original_images_regenerated": false,
+  "models": {
+    "original_sd": {
+      "clip_score": {
+        "mean": 31.19920644760132,
+        "std": 2.8994762188857863,
+        "count": 1000
+      },
+      "fid_to_original_sd": 0.0
+    },
+    "single_anchor": {
+      "clip_score": {
+        "mean": 30.926010047912598,
+        "std": 2.8866197236913966,
+        "count": 1000
+      },
+      "fid_to_original_sd": 41.1571283120208
+    },
+    "unique_anchor": {
+      "clip_score": {
+        "mean": 30.99488165664673,
+        "std": 2.8374121780589467,
+        "count": 1000
+      },
+      "fid_to_original_sd": 39.718502948174546
+    }
+  },
+  "differences": {
+    "single_anchor_minus_original": {
+      "clip_score_mean": -0.27319639968872167,
+      "fid_to_original_sd": 41.1571283120208
+    },
+    "unique_anchor_minus_original": {
+      "clip_score_mean": -0.20432479095459044,
+      "fid_to_original_sd": 39.718502948174546
+    }
+  },
+  "unique_minus_single": {
+    "clip_score_mean": 0.06887160873413123,
+    "fid_to_original_sd": -1.4386253638462563
+  },
+  "image_counts": {
+    "single_anchor": 1000,
+    "unique_anchor": 1000
+  },
+  "reference_artifacts": {
+    "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+    "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+    "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/prompts_first1000.csv",
+    "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/protocol.json"
+  }
+}

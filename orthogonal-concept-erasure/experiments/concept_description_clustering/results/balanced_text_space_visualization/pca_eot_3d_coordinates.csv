@@ -1,0 +1,401 @@
+sample_index,description_id,description,true_concept,raw_cluster_id,hungarian_matched_predicted_concept,prediction_correct,pc1,pc2,pc3
+0,slot_01__cat__r01__c001,A retractable-clawed mouser reveals a warm orange coat with white patches.,cat,7,cat,True,0.24006926,0.11719572,-0.011761884
+1,slot_01__dog__r01__c002,A panting ball retriever reveals a short golden coat with a pale chest.,dog,1,dog,True,0.36515126,-0.13443448,-0.053593025
+2,slot_01__fox__r02__c083,Warm russet fur beneath a pale throat defines a russet snowline hunter.,fox,3,rabbit,False,-0.0241688,0.3532034,0.14884047
+3,slot_01__bear__r04__c242,Shaggy dark fur suited to cold woodland defines a towering honey seeker.,bear,2,bear,True,-0.08515454,0.17254709,0.23186965
+4,slot_01__wolf__r01__c002,A layered gray coat with pale guard hairs defines a sharp-eared snow tracker.,wolf,4,wolf,True,0.20905119,-0.008051556,-0.0010779684
+5,slot_01__rabbit__r12__c881,A softly lit meadow grazer shows a warm chestnut coat blending into meadow soil.,rabbit,3,rabbit,True,-0.13493659,0.027825978,0.09874021
+6,slot_01__deer__r07__c483,An antlered browser shows a spotted chestnut coat blending with leaf litter.,deer,0,deer,True,-0.2243295,-0.07818801,0.2314476
+7,slot_01__horse__r01__c002,A saddle-trained trail companion shows a glossy chestnut coat beneath a dark mane.,horse,5,horse,True,0.15428847,-0.26179633,0.052656956
+8,slot_02__cat__r01__c002,A long-whiskered home companion has a smooth black coat reflecting window light.,cat,7,cat,True,0.3756832,0.20863165,-0.028072046
+9,slot_02__dog__r01__c001,A floppy-eared home guardian shows white spotted hair across a sturdy back.,dog,7,cat,False,0.3225567,-0.024758201,0.015072541
+10,slot_02__fox__r01__c005,Dense copper hair blending into autumn leaves defines a slender twilight forager.,fox,3,rabbit,False,-0.18272924,0.14926796,0.11990088
+11,slot_02__bear__r01__c002,A heavy black coat covering broad shoulders identifies a towering honey seeker.,bear,2,bear,True,0.093553476,0.03539493,0.16857822
+12,slot_02__wolf__r01__c002,A pale-muzzled pack sentinel reveals dense silver-brown fur suited to winter.,wolf,4,wolf,True,0.10144707,-0.018429987,0.03179885
+13,slot_02__rabbit__r12__c882,A finely detailed garden nibbler shows smooth tan hair above a pale belly.,rabbit,3,rabbit,True,0.103665926,0.1467224,-0.056432836
+14,slot_02__deer__r02__c081,A branch-antlered visitor shows a smooth reddish-brown summer coat.,deer,0,deer,True,-0.12890516,-0.034884613,0.2567427
+15,slot_02__horse__r01__c002,Smooth black hair with a white facial blaze defines a bridled stable companion.,horse,5,horse,True,0.27237576,-0.038221207,0.23315178
+16,slot_03__cat__r05__c322,"Within a misty hillside, purring room-explorer demonstrates a smooth black coat reflecting window light.",cat,7,cat,True,0.05084303,0.35118383,-0.10789853
+17,slot_03__dog__r02__c082,"Within a patch of dense brush, wagging household-companion demonstrates a shaggy gray coat around the shoulders.",dog,7,cat,False,0.15692648,0.019667434,-0.03916235
+18,slot_03__fox__r02__c082,Red-coated woodland-hunter displays warm russet fur beneath a pale throat beside a rocky meadow.,fox,2,bear,False,-0.2818805,0.10215306,0.09863006
+19,slot_03__bear__r01__c002,Thick cinnamon-colored hair across the torso distinguishes long-clawed wilderness-resident near a shaded woodland edge.,bear,2,bear,True,-0.20491718,0.041714728,0.0026734273
+20,slot_03__wolf__r04__c242,Broad-pawed northern pack tracker displays a layered gray coat with pale guard hairs beside scattered autumn leaves.,wolf,4,wolf,True,0.030551145,-0.07258006,-0.03157599
+21,slot_03__rabbit__r02__c082,"Beside a sunlit garden path, long-eared meadow grazer reveals velvety gray fur around a bright white tail.",rabbit,3,rabbit,True,0.0084415935,0.11352081,0.1443134
+22,slot_03__deer__r01__c003,Antlered woodland browser displays dark brown hair along a lighter throat patch beside a shaded woodland edge.,deer,0,deer,True,-0.30133253,0.0360994,0.3108351
+23,slot_03__horse__r01__c004,Broad-chested stable resident displays smooth black hair with a white facial blaze beside a patch of dense brush.,horse,5,horse,True,-0.0040965294,-0.17654909,-0.052325647
+24,slot_04__cat__r02__c082,"Beside a calm farmyard, purring room-explorer reveals dense velvet-like fur across the back; the viewpoint remains level.",cat,7,cat,True,0.058932997,0.2717887,-0.0076120053
+25,slot_04__dog__r01__c002,"A clear view shows wet-nosed trail-helper with a shaggy gray coat around the shoulders, as ground contact stays clear.",dog,7,cat,False,0.28035733,-0.040711563,-0.0275315
+26,slot_04__fox__r01__c002,"Narrow-muzzled dusk-prowler becomes recognizable through warm russet fur beneath a pale throat, while the setting supports the behavior.",fox,6,fox,True,-0.02797933,0.24248914,-0.2359591
+27,slot_04__bear__r01__c001,"Round-eared timberland-giant carries a heavy black coat covering broad shoulders across a narrow riverside path; meanwhile, the viewpoint remains level.",bear,2,bear,True,-0.04363504,-0.19908617,-0.10953857
+28,slot_04__wolf__r01__c001,"Against an open grassy clearing, dense silver-brown fur suited to winter defines long-legged forest tracker; ground contact stays clear.",wolf,0,deer,False,-0.2446246,0.03449235,-0.06958929
+29,slot_04__rabbit__r04__c245,"Beside a shaded woodland edge, small hopping burrow forager reveals smooth tan hair above a pale belly; the setting supports the behavior.",rabbit,3,rabbit,True,-0.30982357,0.14461643,-0.1604317
+30,slot_04__deer__r01__c001,"Within a misty hillside, slender-legged forest grazer demonstrates coarse gray winter hair above a pale rump, where its full body stays visible.",deer,0,deer,True,-0.15762796,-0.15913385,-0.029479647
+31,slot_04__horse__r03__c161,"Warm bay coloring above dark lower legs distinguishes single-hoofed riding companion near a patch of dense brush, where soft light preserves surface detail.",horse,5,horse,True,0.021290107,-0.2604754,-0.057345923
+32,slot_05__cat__r01__c001,"Short gray hair patterned by faint bands distinguishes retractable-clawed climber near a patch of dense brush, where the setting supports the behavior.",cat,3,rabbit,False,-0.06747062,-0.030280367,-0.18825646
+33,slot_05__dog__r01__c002,"White spotted hair across a sturdy back distinguishes broad-pawed gate-watcher near a pale winter field, where the background preserves its outline.",dog,6,fox,False,0.078062646,-0.12008917,-0.15709296
+34,slot_05__fox__r02__c083,"A clear view shows bushy-tailed den-visitor with dense copper hair blending into autumn leaves, as the moment appears unstaged.",fox,3,rabbit,False,-0.19507578,0.077089824,-0.16654831
+35,slot_05__bear__r01__c001,"A clear view shows thick-furred cave-sleeper with thick cinnamon-colored hair across the torso, as surrounding plants provide scale.",bear,2,bear,True,-0.1433797,-0.05779731,-0.15301313
+36,slot_05__wolf__r02__c082,"Deep-chested roaming predator carries a layered gray coat with pale guard hairs across a rocky meadow; meanwhile, the head and torso remain visible.",wolf,4,wolf,True,-0.080307014,-0.23698194,-0.16790833
+37,slot_05__rabbit__r04__c243,"Long-eared grassland nibbler becomes recognizable through a warm chestnut coat blending into meadow soil, while ground contact stays clear.",rabbit,3,rabbit,True,-0.22447293,-0.028974425,-0.005917719
+38,slot_05__deer__r04__c244,"Antlered split-hoofed woodland browser becomes recognizable through coarse gray winter hair above a pale rump, while surrounding plants provide scale.",deer,0,deer,True,-0.35856935,-0.11339126,0.11154829
+39,slot_05__horse__r01__c002,"Tall long-faced grazer carries a pale golden coat beside a flowing cream mane across a sunlit garden path; meanwhile, the viewpoint remains level.",horse,5,horse,True,-0.088806905,-0.15594392,-0.030779995
+40,slot_06__cat__r01__c002,A striped household mouser reveals pointed ears above bright slit-shaped eyes.,cat,7,cat,True,0.25547418,0.15166251,0.0007404587
+41,slot_06__dog__r01__c002,A wet dark nose beneath gently folded ears marks a playful backyard digger.,dog,7,cat,False,0.2581344,0.18302564,0.08563361
+42,slot_06__fox__r15__c1123,A sharp-eared orange hunter shows white cheeks and a long narrow snout.,fox,7,cat,False,0.16360933,-0.029418975,0.10372424
+43,slot_06__bear__r04__c242,A round-eared forest giant has a wide pale muzzle beneath round listening ears.,bear,7,cat,False,0.06025227,0.017436432,0.2655818
+44,slot_06__wolf__r01__c002,A social mountain predator has upright triangular ears above an elongated muzzle.,wolf,7,cat,False,0.13727729,0.16562235,0.22411807
+45,slot_06__rabbit__r01__c003,A long-eared ground forager has broad listening ears framing a compact face.,rabbit,3,rabbit,True,0.013095704,0.029838016,0.20647927
+46,slot_06__deer__r01__c005,Branching antlers rising over alert dark eyes defines a white-tailed meadow grazer.,deer,0,deer,True,-0.15690367,0.034235813,0.35032666
+47,slot_06__horse__r01__c002,A long face beneath mobile upright ears identifies a swift-maned field traveler.,horse,7,cat,False,0.22834007,0.07098862,0.28965092
+48,slot_07__cat__r01__c001,A whiskered lap companion shows fine cheek whiskers below independently turning ears.,cat,7,cat,True,0.41516247,0.20706445,0.061403908
+49,slot_07__dog__r01__c001,A long scenting muzzle beneath lifted ears identifies a leash-wearing companion.,dog,1,dog,True,0.40020275,0.010705213,0.15556186
+50,slot_07__fox__r01__c001,A red-coated dusk hunter reveals fine whiskers surrounding a compact black nose.,fox,7,cat,False,0.18005121,0.13043039,0.010314624
+51,slot_07__bear__r05__c325,A sensitive dark nose beyond a heavy face marks a thick-furred woodland giant.,bear,2,bear,True,-0.012932029,0.110562414,0.20287786
+52,slot_07__wolf__r02__c082,A forest pack sentinel has a dark nose beyond a pale tapered muzzle.,wolf,4,wolf,True,0.06763032,0.022450874,0.17706685
+53,slot_07__rabbit__r05__c324,A garden nibbler has soft cheeks below tall independently turning ears.,rabbit,7,cat,False,0.17030773,0.23688115,0.12060517
+54,slot_07__deer__r01__c004,Large rotating ears above a long narrow face marks a large-eared woodland grazer.,deer,0,deer,True,-0.020626077,-0.17997137,0.22758567
+55,slot_07__horse__r01__c004,A saddle-trained trail companion carries a long face beneath mobile upright ears.,horse,1,dog,False,0.33442023,-0.16110012,0.19759156
+56,slot_08__cat__r01__c001,"Against low evening light, pointed ears above bright slit-shaped eyes defines purring room-explorer.",cat,7,cat,True,0.16827604,0.4486733,0.16141362
+57,slot_08__dog__r01__c001,A wet dark nose beneath gently folded ears distinguishes leash-following walking-partner near a calm farmyard.,dog,1,dog,True,0.32234684,0.03161275,0.21241671
+58,slot_08__fox__r11__c802,"A red woodland hunter reveals pointed ears, white cheeks, black whiskers, and a narrow muzzle at close range.",fox,7,cat,False,-0.009607678,0.11272305,0.24858156
+59,slot_08__bear__r04__c244,A massive head narrowing toward a prominent nose distinguishes long-clawed wilderness-resident near a misty hillside.,bear,7,cat,False,-0.0011051894,0.24492298,0.14524277
+60,slot_08__wolf__r04__c245,Amber eyes set in a broad gray face distinguishes large gray howling pack hunter near an open grassy clearing.,wolf,4,wolf,True,0.06573799,0.050274704,0.06797016
+61,slot_08__rabbit__r02__c083,"Beside a sunlit garden path, compact meadow forager reveals very long upright ears above round side-set eyes.",rabbit,3,rabbit,True,-0.09918964,0.23660937,0.16703042
+62,slot_08__deer__r01__c002,Spotted forest youngster becomes recognizable through a black nose at the end of a tapered muzzle near a quiet fence line.,deer,4,wolf,False,-0.10943641,-0.11428981,-0.10093272
+63,slot_08__horse__r01__c003,Tall long-faced grazer becomes recognizable through a forelock falling between attentive eyes near a calm farmyard.,horse,5,horse,True,0.037285555,-0.12509689,0.29437846
+64,slot_09__cat__r01__c002,"A clear view shows striped hearthside-prowler with reflective eyes set in a compact whiskered face, as ground contact stays clear.",cat,6,fox,False,0.15153836,0.20742439,-0.29651824
+65,slot_09__dog__r01__c004,"Tongue-out family-companion displays round attentive eyes above a broad nose beside a sunlit garden path, while the posture remains natural.",dog,1,dog,True,0.085296325,0.01030142,-0.2754053
+66,slot_09__fox__r01__c002,"Beside a broad dirt trail, bushy-tailed den-visitor reveals white cheek markings beneath alert pointed ears; its full body stays visible.",fox,6,fox,True,-0.049747627,0.09102339,-0.12959039
+67,slot_09__bear__r08__c569,"Beneath soft overcast light, round-eared timberland-giant becomes recognizable through a massive head narrowing toward a prominent nose, while ground contact stays clear.",bear,6,fox,False,-0.0896335,0.011311961,-0.08546224
+68,slot_09__wolf__r02__c081,"A clear view shows sharp-eared snow traveler with a dark nose beyond a pale tapered muzzle, as the setting supports the behavior.",wolf,4,wolf,True,0.15843484,-0.10818985,-0.093574055
+69,slot_09__rabbit__r02__c085,"Very long upright ears above round side-set eyes distinguishes soft-coated burrow dweller near low evening light, where its full body stays visible.",rabbit,3,rabbit,True,0.095226265,0.01639493,-0.11231314
+70,slot_09__deer__r01__c001,"Split-hoofed trail visitor displays branching antlers rising over alert dark eyes beside a shaded woodland edge, while soft light preserves surface detail.",deer,0,deer,True,-0.34895813,-0.22614828,0.07976756
+71,slot_09__horse__r01__c001,"A clear view shows saddle-trained trail companion with large dark eyes beside a broad soft muzzle, as surrounding plants provide scale.",horse,1,dog,False,0.09463581,-0.2534726,-0.1861109
+72,slot_10__cat__r01__c002,"Fine cheek whiskers below independently turning ears distinguishes whiskered house-prowler near a patch of dense brush, where the background preserves its outline.",cat,6,fox,False,0.12257304,0.22061343,-0.2611986
+73,slot_10__dog__r01__c002,"Within a rocky meadow, wagging household-companion demonstrates a long scenting muzzle beneath lifted ears, where the pose shows balanced proportions.",dog,1,dog,True,0.05986751,-0.19447502,-0.15783344
+74,slot_10__fox__r01__c002,"Red-coated woodland-hunter displays fine whiskers surrounding a compact black nose beside a shaded woodland edge, while the posture remains natural.",fox,0,deer,False,-0.06067162,-0.08163177,-0.0996658
+75,slot_10__bear__r09__c649,"While facing the open trail, powerful berry-gatherer becomes recognizable through a sensitive dark nose beyond a heavy face, while the background preserves its outline.",bear,2,bear,True,-0.12830536,-0.082742564,-0.10282033
+76,slot_10__wolf__r04__c241,"Broad-pawed northern pack tracker carries upright triangular ears above an elongated muzzle across soft morning light; meanwhile, the pose shows balanced proportions.",wolf,4,wolf,True,0.093679234,-0.16041467,-0.17388844
+77,slot_10__rabbit__r02__c081,"Within a quiet fence line, long-eared meadow grazer demonstrates large dark eyes and a split upper lip, where the posture remains natural.",rabbit,3,rabbit,True,-0.14529833,-0.07201638,0.010565704
+78,slot_10__deer__r01__c002,"Antlered woodland browser carries a pale throat below a fine-boned woodland face across a calm farmyard; meanwhile, the viewpoint remains level.",deer,0,deer,True,-0.37952006,0.020148227,0.20375529
+79,slot_10__horse__r01__c002,"Against soft morning light, a forelock falling between attentive eyes defines long-maned pasture runner; ground contact stays clear.",horse,5,horse,True,-0.11095602,-0.07975254,-0.03562273
+80,slot_11__cat__r01__c007,A striped household mouser has quiet padded paws beneath flexible forelegs.,cat,7,cat,True,0.33682847,0.23189834,0.03918193
+81,slot_11__dog__r01__c002,A panting ball retriever carries broad padded paws beneath sturdy running legs.,dog,1,dog,True,0.4091041,-0.064893484,-0.026344862
+82,slot_11__fox__r01__c001,A narrow-muzzled night prowler has small black feet beneath narrow lower legs.,fox,6,fox,True,0.26850876,0.1381737,-0.10953427
+83,slot_11__bear__r01__c004,A powerful berry gatherer carries thick muscular legs supporting deliberate steps.,bear,2,bear,True,0.036837704,0.039641604,0.14309579
+84,slot_11__wolf__r04__c242,A bushy-tailed pack tracker shows dark padded feet supporting a steady trot.,wolf,4,wolf,True,0.16617574,-0.19559167,0.021048008
+85,slot_11__rabbit__r01__c002,A hind-legged field nibbler shows oversized hind feet behind small front paws.,rabbit,7,cat,False,0.3044142,-0.13678093,0.02085333
+86,slot_11__deer__r01__c001,A split-hoofed forest visitor reveals small cloven feet beneath lean brown limbs.,deer,0,deer,True,-0.14850326,-0.024029726,0.2959779
+87,slot_11__horse__r01__c002,A saddle-trained trail companion reveals long lower legs ending in single hard hooves.,horse,5,horse,True,0.25918174,-0.28802302,0.17407428
+88,slot_12__cat__r01__c005,A long balancing tail behind springing hind legs defines an upright-tailed lap companion.,cat,7,cat,True,0.33959046,0.0066990894,0.07991955
+89,slot_12__dog__r02__c082,A broad-pawed walking partner carries straight forelegs supporting a ready stance.,dog,1,dog,True,0.40826946,-0.28293523,0.017417274
+90,slot_12__fox__r02__c081,A bushy-tailed den visitor has dark lower legs ending in light quick paws.,fox,7,cat,False,0.19948477,0.19770856,-0.002919892
+91,slot_12__bear__r02__c082,A bulky streamside fisher has heavy hind limbs behind a very short tail.,bear,2,bear,True,0.18073928,-0.034433965,0.09521361
+92,slot_12__wolf__r04__c243,A wild gray pack hunter carries a low bushy tail behind powerful hindquarters.,wolf,4,wolf,True,0.1536518,-0.07188904,0.09863484
+93,slot_12__rabbit__r04__c243,Powerful folded rear legs beneath a round body defines a long-eared grazer.,rabbit,7,cat,False,0.1538386,0.06407363,0.2879381
+94,slot_12__deer__r02__c081,A branch-antlered visitor reveals slender legs ending in dark split hooves.,deer,0,deer,True,-0.12529549,-0.028143784,0.35220867
+95,slot_12__horse__r01__c002,A flowing tail behind powerful hindquarters is visible on a bridled stable companion.,horse,5,horse,True,0.28701666,-0.32340434,0.11730582
+96,slot_13__cat__r02__c082,Whiskered house-prowler displays small rounded feet placed in a narrow walking line beside low evening light.,cat,6,fox,False,0.1485501,0.38445687,-0.15676366
+97,slot_13__dog__r01__c002,Straight forelegs supporting a ready stance distinguishes tongue-out family-companion near a calm farmyard.,dog,1,dog,True,0.19389936,-0.03861025,0.013874632
+98,slot_13__fox__r01__c002,"Within soft morning light, amber-eyed meadow-prowler demonstrates slender springing limbs suited to sudden pounces.",fox,3,rabbit,False,-0.080175586,0.32562363,0.012739404
+99,slot_13__bear__r01__c004,Long curved claws extending beyond dark toe pads distinguishes round-eared timberland-giant near a shaded woodland edge.,bear,2,bear,True,-0.20668411,0.02994245,0.027740052
+100,slot_13__wolf__r03__c161,Gray pack hunter displays large snow-spreading feet and straight forelegs beside a narrow riverside path.,wolf,4,wolf,True,0.060941063,-0.15990862,-0.045472898
+101,slot_13__rabbit__r05__c321,"Within an open grassy clearing, twitch-nosed clover nibbler demonstrates long hind limbs prepared for sudden bounds.",rabbit,3,rabbit,True,-0.047473162,0.12403883,0.09670541
+102,slot_13__deer__r01__c002,"Beside a broad dirt trail, branch-antlered woodland traveler reveals long delicate forelegs built for quiet stepping.",deer,0,deer,True,-0.2967744,0.018640779,0.2934849
+103,slot_13__horse__r01__c002,Swift-maned open-field runner carries muscular legs with dark hair above each hoof across a narrow riverside path.,horse,5,horse,True,0.17778678,-0.19227503,0.18119411
+104,slot_14__cat__r01__c001,"Beside a misty hillside, pointed-eared lap-companion reveals curved retractable claws hidden above soft toe pads; nearby tracks indicate scale.",cat,6,fox,False,-0.04598696,0.1132182,-0.17365839
+105,slot_14__dog__r01__c001,"Collar-wearing yard-guardian carries a wagging tail extending from strong hindquarters across a patch of dense brush; meanwhile, the viewpoint remains level.",dog,1,dog,True,0.0026756458,-0.08524025,-0.1884992
+106,slot_14__fox__r01__c002,"Narrow-muzzled dusk-prowler carries small black feet beneath narrow lower legs across a pale winter field; meanwhile, soft light preserves surface detail.",fox,6,fox,True,-0.043290652,0.113617405,-0.25564048
+107,slot_14__bear__r04__c241,"Within a shaded woodland edge, thick-furred cave-sleeper demonstrates thick muscular legs supporting deliberate steps, where the setting supports the behavior.",bear,2,bear,True,-0.10727635,-0.12005473,-0.19020559
+108,slot_14__wolf__r04__c245,"Thick-coated howling sentinel carries large snow-spreading feet and straight forelegs across soft morning light; meanwhile, its full body stays visible.",wolf,4,wolf,True,-0.0612191,0.0610455,-0.18664494
+109,slot_14__rabbit__r01__c001,"Soft-coated burrow dweller displays powerful folded rear legs beneath a round body beside a sunlit garden path, while soft light preserves surface detail.",rabbit,3,rabbit,True,0.0012839929,0.04705641,-0.29070762
+110,slot_14__deer__r01__c001,"A clear view shows slender-legged forest grazer with a raised white tail above springing hind legs, as surrounding plants provide scale.",deer,0,deer,True,-0.13471188,-0.2162362,-0.024638988
+111,slot_14__horse__r01__c003,"Single-hoofed riding companion displays long lower legs ending in single hard hooves beside a patch of dense brush, while the viewpoint remains level.",horse,5,horse,True,0.026315877,-0.38304257,-0.042122874
+112,slot_15__cat__r03__c162,"Against scattered autumn leaves, curved retractable claws hidden above soft toe pads defines striped hearthside-prowler; the pose shows balanced proportions.",cat,6,fox,False,0.020364782,0.09015432,-0.33791453
+113,slot_15__dog__r01__c003,"Within a rocky meadow, floppy-eared home-guardian demonstrates a wagging tail extending from strong hindquarters, where nearby tracks indicate scale.",dog,1,dog,True,0.07143958,-0.19198827,-0.20137328
+114,slot_15__fox__r01__c001,"Sharp-eared field-stalker becomes recognizable through slender springing limbs suited to sudden pounces, while the background preserves its outline.",fox,0,deer,False,-0.121149994,-0.012195429,-0.04923583
+115,slot_15__bear__r02__c081,"Massive front feet planted across rough ground distinguishes powerful berry-gatherer near a shallow stream bank, where the pose shows balanced proportions.",bear,2,bear,True,-0.22567031,-0.12599783,-0.19546543
+116,slot_15__wolf__r04__c246,"Broad-pawed northern pack tracker displays broad paws beneath long endurance-built legs beside a broad dirt trail, while nearby tracks indicate scale.",wolf,4,wolf,True,0.08994682,-0.27864522,-0.20167845
+117,slot_15__rabbit__r04__c243,"Long-eared grassland nibbler carries long hind limbs prepared for sudden bounds across low evening light; meanwhile, its full body stays visible.",rabbit,6,fox,False,-0.15218763,0.05195026,-0.031154294
+118,slot_15__deer__r01__c003,"Split-hoofed trail visitor carries a raised white tail above springing hind legs across a calm farmyard; meanwhile, soft light preserves surface detail.",deer,5,horse,False,-0.034627106,-0.24643432,-0.063572854
+119,slot_15__horse__r01__c002,"A sweeping tail balancing four narrow hooves distinguishes tall long-faced grazer near a weathered wooden gate, where the setting supports the behavior.",horse,5,horse,True,0.04978986,-0.31282958,-0.0040089316
+120,slot_16__cat__r01__c002,A striped household mouser carries a compact low torso with a flexible spine.,cat,7,cat,True,0.26167488,0.13330452,-0.06251317
+121,slot_16__dog__r01__c003,A tail-wagging family companion carries strong shoulders above an athletic household silhouette.,dog,1,dog,True,0.35891926,-0.0013677379,0.11711675
+122,slot_16__fox__r04__c246,A light elongated frame beneath a full tail marks a russet snowline hunter.,fox,3,rabbit,False,0.0831506,0.20769356,0.10707908
+123,slot_16__bear__r01__c003,A broad-pawed wilderness forager has a towering woodland silhouette built for strength.,bear,2,bear,True,-0.14682032,0.095717944,0.19618745
+124,slot_16__wolf__r05__c321,Powerful shoulders narrowing toward the flanks defines a howling snow hunter.,wolf,4,wolf,True,0.118358545,0.1350958,0.22938706
+125,slot_16__rabbit__r02__c082,A burrow resident carries a lightweight frame with prominent folded haunches.,rabbit,3,rabbit,True,0.13766247,0.029366625,0.047001634
+126,slot_16__deer__r01__c004,An antlered woodland browser shows an athletic herd grazer with a deep chest.,deer,0,deer,True,-0.1818801,-0.14352483,0.43349385
+127,slot_16__horse__r01__c001,A muscular farmyard runner carries a powerful hindquarter line beneath the saddle area.,horse,5,horse,True,0.2715729,-0.32278052,0.14808401
+128,slot_17__cat__r01__c002,A lightweight household frame and narrow shoulders identifies a purring house prowler.,cat,7,cat,True,0.35006577,0.3118354,0.017062914
+129,slot_17__dog__r01__c004,A panting ball retriever shows a sturdy medium frame with a broad chest.,dog,1,dog,True,0.39375216,-0.1740219,-0.06600839
+130,slot_17__fox__r15__c1121,A slender red hunter carries a huge bushy tail with a bright white tip.,fox,7,cat,False,0.11349102,0.023535524,0.112192914
+131,slot_17__bear__r02__c081,A round-eared forest giant shows a massive torso rising over powerful shoulders.,bear,2,bear,True,-0.08635272,-0.10564143,0.19813451
+132,slot_17__wolf__r09__c643,A sturdy wild gray pack hunter shows a tall athletic silhouette heavier than a yard companion.,wolf,4,wolf,True,0.16923656,-0.13315412,0.055993773
+133,slot_17__rabbit__r07__c482,A garden nibbler shows a small pear-shaped silhouette and short neck.,rabbit,3,rabbit,True,0.17494904,0.010389377,-0.016647989
+134,slot_17__deer__r04__c241,A lean woodland frame with a short tail identifies a split-hoofed grazer.,deer,5,horse,False,0.019277718,-0.26575625,0.24641472
+135,slot_17__horse__r05__c326,A long-faced grazer shows a powerful hindquarter line beneath the saddle area.,horse,5,horse,True,0.24579528,-0.38379756,0.2158841
+136,slot_18__cat__r03__c163,"Beside low evening light, striped hearthside-prowler reveals a lightweight household frame and narrow shoulders.",cat,6,fox,False,0.11038223,0.38322526,-0.14325629
+137,slot_18__dog__r01__c001,Leash-following walking-partner displays a sturdy medium frame with a broad chest beside a narrow riverside path.,dog,1,dog,True,0.3399496,-0.19459613,0.00600419
+138,slot_18__fox__r04__c243,Orange-chested hedgerow-stalker displays a small woodland silhouette built for quick turns beside soft morning light.,fox,3,rabbit,False,-0.319464,0.21661757,0.05357206
+139,slot_18__bear__r02__c083,"Beside a quiet fence line, towering honey-seeker reveals a massive torso rising over powerful shoulders.",bear,2,bear,True,-0.03546008,0.06953635,0.13560739
+140,slot_18__wolf__r04__c243,Thick-coated howling sentinel becomes recognizable through powerful shoulders narrowing toward the flanks near a shallow stream bank.,wolf,4,wolf,True,-0.10166775,-0.016764674,-0.09826694
+141,slot_18__rabbit__r01__c001,White-tailed garden visitor carries a compact rounded body held close to the ground across a patch of dense brush.,rabbit,3,rabbit,True,-0.07518678,-0.000576384,-0.06875534
+142,slot_18__deer__r01__c001,"Against a rocky meadow, a tall narrow torso on unusually slender legs defines large-eared woodland browser.",deer,0,deer,True,-0.19820446,0.060791623,0.21583435
+143,slot_18__horse__r01__c002,"Against a misty hillside, a high-shouldered silhouette above slender lower legs defines powerful paddock runner.",horse,5,horse,True,0.04664438,-0.048983455,0.11390031
+144,slot_19__cat__r01__c002,"Beside a misty hillside, striped hearthside-prowler reveals a rounded chest tapering toward agile hindquarters; its full body stays visible.",cat,6,fox,False,-0.05054108,0.18899237,-0.25699052
+145,slot_19__dog__r01__c001,"Against scattered autumn leaves, a balanced torso built for running beside people defines floppy-eared home-guardian; ground contact stays clear.",dog,1,dog,True,0.020903144,-0.0070332102,-0.07464739
+146,slot_19__fox__r02__c081,"A clear view shows bushy-tailed den-visitor with a small woodland silhouette built for quick turns, as the setting supports the behavior.",fox,3,rabbit,False,-0.17404088,0.008664184,-0.19564773
+147,slot_19__bear__r03__c162,"Long-clawed wilderness-resident carries a massive torso rising over powerful shoulders across a shaded woodland edge; meanwhile, the background preserves its outline.",bear,2,bear,True,-0.25424552,-0.15209837,-0.12211677
+148,slot_19__wolf__r04__c243,"Within a patch of dense brush, wild gray pack predator demonstrates a rangy body built for sustained travel, where the moment appears unstaged.",wolf,4,wolf,True,-0.16069832,-0.022943905,-0.17378128
+149,slot_19__rabbit__r01__c003,"Within a rocky meadow, short-tailed garden browser demonstrates a compact rounded body held close to the ground, where nearby tracks indicate scale.",rabbit,3,rabbit,True,-0.099918604,-0.15245633,-0.24148832
+150,slot_19__deer__r01__c002,"A clear view shows alert brown forest browser with a long-necked body balanced above fine limbs, as the head and torso remain visible.",deer,0,deer,True,-0.20007315,-0.1653613,0.027434489
+151,slot_19__horse__r01__c003,"A clear view shows upright-eared pasture grazer with a tall deep-chested body with a long neck, as ground contact stays clear.",horse,5,horse,True,-0.026907137,-0.31238312,0.1262414
+152,slot_20__cat__r01__c002,"Whiskered house-prowler displays a neatly proportioned body suited to tight indoor spaces beside a calm farmyard, while the posture remains natural.",cat,6,fox,False,0.13046323,0.20808391,-0.2899649
+153,slot_20__dog__r01__c002,"A clear view shows wagging household-companion with a solid companion-sized body carried on four even legs, as the head and torso remain visible.",dog,1,dog,True,0.25798193,-0.25977278,-0.15092224
+154,slot_20__fox__r07__c484,"Orange-chested hedgerow-stalker becomes recognizable through a graceful ground-hugging body with delicate proportions, while soft light preserves surface detail.",fox,3,rabbit,False,-0.29151723,0.08523647,-0.14715506
+155,slot_20__bear__r02__c082,"A massive torso rising over powerful shoulders distinguishes round-eared timberland-giant near a shallow stream bank, where nearby tracks indicate scale.",bear,2,bear,True,-0.22513118,-0.1907497,-0.066273965
+156,slot_20__wolf__r04__c245,"Bushy-tailed mountain pack tracker becomes recognizable through a rangy body built for sustained travel, while the head and torso remain visible.",wolf,4,wolf,True,0.07107945,-0.21592729,-0.19120777
+157,slot_20__rabbit__r04__c248,"Long-eared grassland nibbler displays a low oval profile ending in a tiny tail beside a shallow stream bank, while the pose shows balanced proportions.",rabbit,3,rabbit,True,-0.035048686,-0.15505725,-0.08277165
+158,slot_20__deer__r01__c001,"Within a misty hillside, branch-antlered woodland traveler demonstrates a lean woodland frame with a short tail, where nearby tracks indicate scale.",deer,0,deer,True,-0.39680943,-0.17281272,-0.0018198047
+159,slot_20__horse__r01__c004,"Against soft morning light, a powerful hindquarter line beneath the saddle area defines flowing-tailed field grazer; the head and torso remain visible.",horse,5,horse,True,0.06024633,-0.20286863,-0.091994844
+160,slot_21__cat__r01__c001,A retractable-clawed mouser has the floor before springing onto furniture.,cat,7,cat,True,0.30922052,0.20546761,-0.053055223
+161,slot_21__dog__r02__c082,A footpath while pulling lightly against a leash identifies a collared gate watcher.,dog,1,dog,True,0.3517568,-0.26444998,-0.05335469
+162,slot_21__fox__r01__c003,A sharp-eared field stalker has woodland cover using a low cautious trot.,fox,2,bear,False,0.02566503,-0.056477815,0.11971557
+163,slot_21__bear__r02__c081,A heavy-pawed mountain roamer carries a fallen trunk through surprising climbing strength.,bear,2,bear,True,0.06721695,-0.029009672,0.08180461
+164,slot_21__wolf__r05__c321,A bushy-tailed pack tracker has silent stepping between closely spaced pines.,wolf,4,wolf,True,0.013891535,-0.006925051,0.11345302
+165,slot_21__rabbit__r04__c244,Small cautious hops followed by complete stillness identifies a velvet-eared browser.,rabbit,7,cat,False,0.14679085,0.23566568,0.23088141
+166,slot_21__deer__r01__c002,High bounding leaps across fallen woodland branches marks a large-eared woodland grazer.,deer,0,deer,True,-0.20741376,-0.025862781,0.28389138
+167,slot_21__horse__r01__c001,A collected trot around the training ring defines a flowing-tailed field grazer.,horse,5,horse,True,0.16913046,-0.1307595,0.17448309
+168,slot_22__cat__r01__c002,A long-whiskered home companion reveals the room with a low stalking posture.,cat,7,cat,True,0.38354874,0.22793415,-0.005114331
+169,slot_22__dog__r01__c002,A footpath while pulling lightly against a leash marks a keen-nosed scent tracker.,dog,1,dog,True,0.2369286,-0.050385617,0.076311916
+170,slot_22__fox__r02__c081,A bushy-tailed den visitor shows snow before diving headfirst toward hidden movement.,fox,3,rabbit,False,0.07541468,0.1774042,-0.009730205
+171,slot_22__bear__r01__c002,A steep slope despite its bulky frame defines a towering honey seeker.,bear,2,bear,True,0.03459398,0.12724759,0.1667054
+172,slot_22__wolf__r04__c244,A rapid pursuit over broken mountain ground defines a howling snow hunter.,wolf,4,wolf,True,0.053994823,0.08753502,0.07136979
+173,slot_22__rabbit__r05__c322,Rapid bounding toward a nearby burrow entrance marks a long-eared grazer.,rabbit,3,rabbit,True,-0.022551237,0.058795143,0.20089751
+174,slot_22__deer__r02__c081,A branch-antlered visitor carries high bounding leaps across fallen woodland branches.,deer,0,deer,True,-0.33213526,-0.049928248,0.3155753
+175,slot_22__horse__r01__c002,An extended gallop across open pasture identifies a bridled stable companion.,horse,5,horse,True,0.07693081,-0.074090466,0.28432703
+176,slot_23__cat__r04__c244,A windowsill while its tail corrects balance distinguishes retractable-clawed climber near low evening light.,cat,3,rabbit,False,0.0024709362,0.31082302,-0.11136802
+177,slot_23__dog__r01__c002,Tongue-out family-companion displays open grass before turning sharply after a ball beside a narrow riverside path.,dog,1,dog,True,0.106390074,-0.045071334,-0.09383625
+178,slot_23__fox__r04__c245,"Within a sunlit garden path, russet snowline-hunter demonstrates a meadow through quick elastic bounds.",fox,3,rabbit,False,-0.19996336,0.23663239,-0.016662749
+179,slot_23__bear__r05__c326,Short-tailed mountain-roamer becomes recognizable through a fallen trunk through surprising climbing strength near a shaded woodland edge.,bear,2,bear,True,-0.31064245,0.035166092,-0.13669267
+180,slot_23__wolf__r06__c402,Long-legged snow pack hunter becomes recognizable through silent stepping between closely spaced pines near a misty hillside.,wolf,4,wolf,True,-0.2945611,0.009228181,-0.07948641
+181,slot_23__rabbit__r01__c002,Twitch-nosed ground dweller carries small cautious hops followed by complete stillness across a patch of dense brush.,rabbit,3,rabbit,True,-0.06953912,0.19036001,0.12339196
+182,slot_23__deer__r01__c002,"Against a rocky meadow, a sudden white-tail retreat into dense cover defines branch-antlered woodland traveler.",deer,0,deer,True,-0.36137125,0.09345072,0.37172997
+183,slot_23__horse__r04__c244,"Against a narrow riverside path, a flowing canter with mane and tail lifted defines long-faced bridled trail companion.",horse,5,horse,True,0.13319632,-0.24015749,0.06908469
+184,slot_24__cat__r01__c005,"A clear view shows padded-paw windowsill-watcher with a windowsill while its tail corrects balance, as ground contact stays clear.",cat,6,fox,False,0.1412396,0.17862801,-0.28570068
+185,slot_24__dog__r01__c003,"Leash-following walking-partner carries the yard in an eager bounding gait across a patch of dense brush; meanwhile, the posture remains natural.",dog,1,dog,True,0.12800659,-0.30935043,-0.15204011
+186,slot_24__fox__r06__c404,"Beside a pale winter field, amber-eyed meadow-prowler reveals woodland cover using a low cautious trot; the viewpoint remains level.",fox,6,fox,True,-0.240911,0.16701417,-0.14160043
+187,slot_24__bear__r01__c001,"Round-eared timberland-giant displays a steep slope despite its bulky frame beside a quiet fence line, while soft light preserves surface detail.",bear,2,bear,True,-0.15167893,-0.14752838,-0.10221393
+188,slot_24__wolf__r04__c244,"Within a patch of dense brush, pale-muzzled forest pack hunter demonstrates an efficient ground-covering trot through snow, where the setting supports the behavior.",wolf,4,wolf,True,-0.11819746,-0.22450954,-0.08542832
+189,slot_24__rabbit__r01__c001,"Soft-coated burrow dweller becomes recognizable through a sudden zigzag escape across short grass, while the background preserves its outline.",rabbit,3,rabbit,True,-0.10305171,-0.0037228963,-0.20573913
+190,slot_24__deer__r01__c004,"Spotted forest youngster displays a sudden white-tail retreat into dense cover beside a shaded woodland edge, while soft light preserves surface detail.",deer,0,deer,True,-0.31826866,-0.091022104,-0.12530479
+191,slot_24__horse__r01__c001,"Broad-chested stable resident carries an extended gallop across open pasture across a narrow riverside path; meanwhile, the posture remains natural.",horse,5,horse,True,0.01550677,-0.4635843,-0.05693268
+192,slot_25__cat__r03__c162,"Within a shallow stream bank, striped hearthside-prowler demonstrates the room with a low stalking posture, where the head and torso remain visible.",cat,6,fox,False,0.0513762,0.018958703,-0.3081565
+193,slot_25__dog__r01__c003,"A clear view shows floppy-eared home-guardian with a footpath while pulling lightly against a leash, as ground contact stays clear.",dog,1,dog,True,0.21479355,-0.16124833,-0.1859446
+194,slot_25__fox__r05__c325,"Narrow-muzzled dusk-prowler carries the field with its full tail held level across a shaded woodland edge; meanwhile, the posture remains natural.",fox,6,fox,True,-0.07679395,0.044997167,-0.28044942
+195,slot_25__bear__r01__c002,"Powerful berry-gatherer carries a fallen trunk through surprising climbing strength across a narrow riverside path; meanwhile, the viewpoint remains level.",bear,2,bear,True,-0.26428592,-0.034706935,-0.13987657
+196,slot_25__wolf__r05__c323,"Large gray howling pack hunter displays an efficient ground-covering trot through snow beside a weathered wooden gate, while soft light preserves surface detail.",wolf,4,wolf,True,-0.040590182,-0.22149688,-0.1719298
+197,slot_25__rabbit__r01__c001,"Within a rocky meadow, round-eyed grassland nibbler demonstrates small cautious hops followed by complete stillness, where nearby tracks indicate scale.",rabbit,6,fox,False,-0.18203256,-0.0015706365,-0.21942708
+198,slot_25__deer__r03__c161,"Swift running across an open clearing distinguishes split-hoofed trail visitor near a shaded woodland edge, where the viewpoint remains level.",deer,0,deer,True,-0.22911458,-0.19894953,-0.08366054
+199,slot_25__horse__r01__c002,"Tall long-faced grazer displays a flowing canter with mane and tail lifted beside a patch of dense brush, while soft light preserves surface detail.",horse,5,horse,True,-0.024938686,-0.4219021,-0.012624124
+200,slot_26__cat__r02__c082,Moving string with focused paw taps identifies an upright-tailed lap companion.,cat,7,cat,True,0.41251212,0.07580749,0.00591655
+201,slot_26__dog__r01__c001,A broad-pawed walking partner shows the floor beside a familiar person's chair.,dog,1,dog,True,0.35641748,-0.22850661,-0.061261993
+202,slot_26__fox__r01__c002,An amber-eyed meadow prowler shows faint ground sounds with tilted ears.,fox,6,fox,True,0.09214311,0.24560879,-0.053753376
+203,slot_26__bear__r01__c001,A bulky streamside fisher reveals river shallows during a patient fishing period.,bear,2,bear,True,-0.06199273,0.02201389,0.042266585
+204,slot_26__wolf__r03__c162,A gray pack hunter shows food sharing among an organized family group.,wolf,4,wolf,True,0.09423224,-0.25439286,0.049393915
+205,slot_26__rabbit__r01__c001,A soft-coated meadow nibbler carries chewing leafy stems while remaining near cover.,rabbit,3,rabbit,True,-0.01590206,-0.062075958,0.024538804
+206,slot_26__deer__r02__c081,A long-legged browser shows quiet feeding before dawn near dense cover.,deer,3,rabbit,False,-0.07183739,0.0945266,0.11439836
+207,slot_26__horse__r01__c001,A muscular farmyard runner has resting upright near familiar herd companions.,horse,5,horse,True,0.14580576,-0.25676674,0.16543025
+208,slot_27__cat__r01__c002,Moving string with focused paw taps marks a purring house prowler.,cat,7,cat,True,0.3786667,0.3293076,-0.030694429
+209,slot_27__dog__r01__c001,New surroundings through persistent sniffing defines a leash-wearing companion.,dog,1,dog,True,0.38694212,0.06442287,0.07294529
+210,slot_27__fox__r05__c322,Faint ground sounds with tilted ears identifies a russet snowline hunter.,fox,3,rabbit,False,0.039722316,0.22176334,0.2005175
+211,slot_27__bear__r02__c082,Loose logs while searching for insects identifies a broad-muzzled river hunter.,bear,2,bear,True,-0.041378826,0.028047625,0.09991299
+212,slot_27__wolf__r04__c244,A bushy-tailed pack tracker has patient tracking across old snow prints.,wolf,4,wolf,True,0.048105303,0.0066784923,0.07046976
+213,slot_27__rabbit__r01__c003,Chewing leafy stems while remaining near cover is visible on a white-tailed garden browser.,rabbit,3,rabbit,True,-0.06846493,-0.010948291,0.035238296
+214,slot_27__deer__r04__c242,A forest herd grazer reveals quiet feeding before dawn near dense cover.,deer,2,bear,False,-0.16440704,0.12147485,0.252
+215,slot_27__horse__r01__c002,A single-hoofed riding companion reveals slow chewing beside a pasture water trough.,horse,5,horse,True,0.159966,-0.20655411,0.19367017
+216,slot_28__cat__r01__c001,A clear view shows purring room-explorer with a warm patch before curling tightly near a rocky meadow.,cat,7,cat,True,0.060584545,0.32322285,-0.07426375
+217,slot_28__dog__r01__c001,Leash-following walking-partner becomes recognizable through a buried object with repeated digging near a shaded woodland edge.,dog,1,dog,True,-0.00025981665,-0.18884921,-0.0969026
+218,slot_28__fox__r04__c247,Faint ground sounds with tilted ears distinguishes narrow-muzzled dusk-prowler near a rocky meadow.,fox,6,fox,True,0.039792247,0.31592718,0.03415489
+219,slot_28__bear__r01__c001,Heavy-pawed backcountry-wanderer carries berry bushes during long seasonal feeding across a sunlit garden path.,bear,2,bear,True,-0.072630316,0.10609206,-0.07027739
+220,slot_28__wolf__r04__c245,Large gray howling pack hunter becomes recognizable through careful scent inspection along a territorial boundary near a shallow stream bank.,wolf,4,wolf,True,-0.14603107,-0.13136108,-0.17104499
+221,slot_28__rabbit__r01__c001,Steady nibbling of clover beside the burrow distinguishes white-tailed garden visitor near a calm farmyard.,rabbit,3,rabbit,True,-0.012233927,0.1810511,0.05737556
+222,slot_28__deer__r04__c243,Stripping soft bark during a sparse winter distinguishes brown woodland browser with branching antlers near a rocky meadow.,deer,0,deer,True,-0.4146152,-0.06941831,0.10857139
+223,slot_28__horse__r01__c001,Single-hoofed riding companion displays steady grazing with lips clipping short grass beside a quiet fence line.,horse,5,horse,True,0.08618183,-0.15953603,0.16639717
+224,slot_29__cat__r02__c083,"Within a shaded woodland edge, curled-tail home-companion demonstrates moving string with focused paw taps, where the posture remains natural.",cat,6,fox,False,-0.046060987,0.030972285,-0.25131088
+225,slot_29__dog__r04__c241,"Tongue-out family-companion displays new surroundings through persistent sniffing beside a shallow stream bank, while its full body stays visible.",dog,1,dog,True,0.022098292,-0.08837009,-0.22682017
+226,slot_29__fox__r01__c002,"Within soft morning light, bushy-tailed den-visitor demonstrates open ground during quiet twilight patrols, where the pose shows balanced proportions.",fox,6,fox,True,-0.07949681,0.0380298,-0.29173294
+227,slot_29__bear__r01__c004,"Loose logs while searching for insects distinguishes long-clawed wilderness-resident near a shaded woodland edge, where the setting supports the behavior.",bear,2,bear,True,-0.2657535,-0.02997223,-0.053651985
+228,slot_29__wolf__r06__c404,"Food sharing among an organized family group distinguishes long-legged snow pack hunter near scattered autumn leaves, where its full body stays visible.",wolf,4,wolf,True,-0.12597364,-0.078642726,-0.077156715
+229,slot_29__rabbit__r01__c003,"A clear view shows short-tailed garden browser with steady nibbling of clover beside the burrow, as ground contact stays clear.",rabbit,3,rabbit,True,-0.10728589,0.08431308,-0.23076762
+230,slot_29__deer__r01__c004,"A clear view shows branch-antlered woodland traveler with stripping soft bark during a sparse winter, as surrounding plants provide scale.",deer,0,deer,True,-0.4203655,-0.05298653,0.087594636
+231,slot_29__horse__r01__c001,"Against a misty hillside, slow chewing beside a pasture water trough defines saddle-trained trail companion; the head and torso remain visible.",horse,5,horse,True,0.029046796,-0.33366904,-0.09902288
+232,slot_30__cat__r01__c002,"Whiskered house-prowler becomes recognizable through its face and forelegs with careful grooming strokes, while the moment appears unstaged.",cat,6,fox,False,0.14625429,0.25042406,-0.32817551
+233,slot_30__dog__r05__c323,"A buried object with repeated digging distinguishes broad-pawed gate-watcher near a weathered wooden gate, where the setting supports the behavior.",dog,1,dog,True,0.16400036,-0.1831503,-0.21924551
+234,slot_30__fox__r01__c002,"Red-coated woodland-hunter carries spare food beneath loose leaves and soil across a pale winter field; meanwhile, the viewpoint remains level.",fox,2,bear,False,-0.32345766,-0.04411767,0.0054744217
+235,slot_30__bear__r02__c081,"A clear view shows massive shaggy-forager with river shallows during a patient fishing period, as the moment appears unstaged.",bear,2,bear,True,-0.18332021,-0.072759986,-0.077186614
+236,slot_30__wolf__r08__c565,"Between brief watchful pauses, large gray howling pack hunter displays food sharing among an organized family group near soft morning light, while nearby tracks indicate scale.",wolf,4,wolf,True,-0.13919029,-0.06919878,-0.23725945
+237,slot_30__rabbit__r03__c161,"A shallow scrape exposing roots and fresh shoots distinguishes soft-coated burrow dweller near a sunlit garden path, where the viewpoint remains level.",rabbit,3,rabbit,True,-0.16675296,0.051632423,-0.25805125
+238,slot_30__deer__r02__c082,"Beside a shaded woodland edge, slender-legged forest grazer reveals browsing tender leaves from low branches; soft light preserves surface detail.",deer,0,deer,True,-0.37152687,0.038416512,0.016748313
+239,slot_30__horse__r01__c001,"Swift-maned open-field runner becomes recognizable through searching hay with a flexible upper lip, while the setting supports the behavior.",horse,5,horse,True,0.1314913,-0.22735068,-0.07973739
+240,slot_31__cat__r01__c001,A retractable-clawed mouser shows a garden wall overlooking moving leaves.,cat,3,rabbit,False,0.103438765,0.11904161,-0.15043992
+241,slot_31__dog__r02__c082,A neighborhood path beside a handled leash marks a collared gate watcher.,dog,1,dog,True,0.27959216,-0.14998391,-0.059636526
+242,slot_31__fox__r04__c243,A woodland margin beside open grass identifies an orange-chested hedge stalker.,fox,3,rabbit,False,-0.25019407,0.1641994,0.06585516
+243,slot_31__bear__r01__c002,A heavy-pawed mountain roamer reveals a mountain forest containing berry thickets.,bear,2,bear,True,-0.07775394,0.07775227,0.08373851
+244,slot_31__wolf__r01__c002,A snowy conifer forest crossed by pack tracks marks a sharp-eared snow tracker.,wolf,4,wolf,True,-0.11245013,0.010856136,0.026581606
+245,slot_31__rabbit__r05__c321,A sandy bank containing several narrow tunnels identifies a clover grazer.,rabbit,3,rabbit,True,-0.044170298,-0.1618772,0.0690519
+246,slot_31__deer__r01__c003,A branch-antlered forest browser carries a forest edge filled with tender browse.,deer,0,deer,True,-0.2775419,0.019919073,0.3723358
+247,slot_31__horse__r01__c003,A quiet barn aisle lined with hay defines a broad-chested paddock runner.,horse,5,horse,True,0.10085361,-0.1583992,0.19973706
+248,slot_32__cat__r02__c081,A long-whiskered home companion shows a sunny windowsill above indoor plants.,cat,7,cat,True,0.25792855,0.30467477,-0.057655953
+249,slot_32__dog__r01__c001,A floppy-eared home guardian has an open field suited to running and retrieval.,dog,1,dog,True,0.32320875,-0.05683105,0.14614196
+250,slot_32__fox__r01__c002,A bushy-tailed den visitor has a snowy field containing faint prey tracks.,fox,4,wolf,False,-0.015873432,0.10814608,-0.023378113
+251,slot_32__bear__r01__c001,A powerful berry gatherer shows a dense woodland trail marked by broad tracks.,bear,2,bear,True,-0.20422155,-0.03188583,0.055086076
+252,slot_32__wolf__r01__c002,A pale-muzzled pack sentinel shows an open tundra ridge beneath cold wind.,wolf,4,wolf,True,0.05525003,-0.10325271,0.027392156
+253,slot_32__rabbit__r01__c002,A garden edge beside low leafy cover identifies a round-eyed clover browser.,rabbit,3,rabbit,True,-0.04421355,0.08975267,-0.035376485
+254,slot_32__deer__r01__c003,An autumn ridge beneath scattered oak trees identifies a long-legged clearing grazer.,deer,0,deer,True,-0.2729113,-0.011711263,0.22238207
+255,slot_32__horse__r04__c244,A saddle companion reveals a training ring surrounded by low rails.,horse,5,horse,True,0.27556866,-0.3399019,0.00957367
+256,slot_33__cat__r04__c242,Slit-eyed indoor-hunter becomes recognizable through a sunny windowsill above indoor plants near a rocky meadow.,cat,7,cat,True,0.024262603,0.27834645,-0.02684008
+257,slot_33__dog__r02__c081,A neighborhood path beside a handled leash distinguishes tongue-out family-companion near low evening light.,dog,1,dog,True,0.22190394,0.0030827879,-0.07442056
+258,slot_33__fox__r01__c001,Orange-chested hedgerow-stalker carries a woodland margin beside open grass across a calm farmyard.,fox,3,rabbit,False,-0.26361465,0.0979711,0.10524746
+259,slot_33__bear__r01__c001,"Against soft morning light, a mountain forest containing berry thickets defines bulky streamside-fisher.",bear,2,bear,True,-0.14065105,0.25457287,0.09191671
+260,slot_33__wolf__r01__c001,A snowy conifer forest crossed by pack tracks distinguishes social mountain hunter near a quiet fence line.,wolf,4,wolf,True,-0.13518177,-0.01966212,0.07412237
+261,slot_33__rabbit__r04__c245,Round-eyed meadow nibbler with tall ears carries a garden edge beside low leafy cover across an open grassy clearing.,rabbit,3,rabbit,True,-0.08808697,0.14964825,0.19090588
+262,slot_33__deer__r01__c002,"Within soft morning light, branch-antlered woodland traveler demonstrates a forest edge filled with tender browse.",deer,0,deer,True,-0.41371366,0.13505588,0.2546232
+263,slot_33__horse__r01__c002,Swift-maned open-field runner displays a quiet barn aisle lined with hay beside a quiet fence line.,horse,5,horse,True,0.08440611,-0.20908715,0.055012822
+264,slot_34__cat__r05__c326,"A sunny windowsill above indoor plants distinguishes whiskered house-prowler near a narrow riverside path, where the background preserves its outline.",cat,6,fox,False,0.096816204,0.32105374,-0.3472144
+265,slot_34__dog__r03__c162,"Against a shallow stream bank, a fenced backyard containing scattered toys defines panting ball-chaser; the pose shows balanced proportions.",dog,1,dog,True,0.037901025,-0.16155301,-0.32244515
+266,slot_34__fox__r04__c246,"Against a pale winter field, a quiet meadow during early dawn defines amber-eyed meadow-prowler; the posture remains natural.",fox,6,fox,True,-0.13956091,0.20661154,-0.2620192
+267,slot_34__bear__r01__c003,"Heavy-pawed backcountry-wanderer displays a mountain forest containing berry thickets beside a quiet fence line, while the viewpoint remains level.",bear,2,bear,True,-0.22770472,-0.1513331,-0.14742084
+268,slot_34__wolf__r01__c003,"A clear view shows amber-eyed pack sentinel with a snowy conifer forest crossed by pack tracks, as ground contact stays clear.",wolf,4,wolf,True,-0.1576478,-0.084041916,-0.11648127
+269,slot_34__rabbit__r01__c001,"Soft-coated burrow dweller carries a garden edge beside low leafy cover across a patch of dense brush; meanwhile, the posture remains natural.",rabbit,3,rabbit,True,-0.16307068,0.0769821,-0.23943298
+270,slot_34__deer__r04__c245,"Brown woodland browser with branching antlers becomes recognizable through a forest edge filled with tender browse, while the head and torso remain visible.",deer,0,deer,True,-0.39183918,-0.17734133,0.10358362
+271,slot_34__horse__r04__c245,"Beside a calm farmyard, tall saddle-trained riding companion reveals a quiet barn aisle lined with hay; the moment appears unstaged.",horse,5,horse,True,0.026082695,-0.08583424,0.045584597
+272,slot_35__cat__r01__c002,"Beside a misty hillside, padded-paw windowsill-watcher reveals a dim hallway containing scattered household shadows; nearby tracks indicate scale.",cat,6,fox,False,-0.04393473,0.26886532,-0.21312653
+273,slot_35__dog__r01__c002,"Broad-pawed gate-watcher carries an open field suited to running and retrieval across a patch of dense brush; meanwhile, the viewpoint remains level.",dog,1,dog,True,0.027449848,-0.15510367,-0.16863482
+274,slot_35__fox__r04__c241,"Within a sunlit garden path, bushy-tailed den-visitor demonstrates a woodland margin beside open grass, where the moment appears unstaged.",fox,3,rabbit,False,-0.27704108,0.07529735,-0.26472968
+275,slot_35__bear__r02__c085,"A cold river crowded by migrating fish distinguishes long-clawed wilderness-resident near a shallow stream bank, where nearby tracks indicate scale.",bear,2,bear,True,-0.1549629,-0.12895884,-0.12030236
+276,slot_35__wolf__r02__c082,"Deep-chested roaming predator becomes recognizable through a snowy conifer forest crossed by pack tracks, while its full body stays visible.",wolf,4,wolf,True,-0.2452078,-0.06728933,-0.11822672
+277,slot_35__rabbit__r02__c082,"Beside a sunlit garden path, compact meadow forager reveals a grassy meadow dotted with hidden burrow openings; soft light preserves surface detail.",rabbit,3,rabbit,True,-0.21012342,0.07817571,-0.21204987
+278,slot_35__deer__r03__c163,"An autumn ridge beneath scattered oak trees distinguishes long-legged herd grazer near a shaded woodland edge, where the posture remains natural.",deer,0,deer,True,-0.3153143,-0.23172486,0.07931412
+279,slot_35__horse__r02__c082,"Against a calm farmyard, a fenced pasture beside a wooden stable defines saddle-trained trail companion; the background preserves its outline.",horse,5,horse,True,0.02286343,-0.27419922,-0.021493051
+280,slot_36__cat__r01__c001,Gentle brushing while remaining loosely curled identifies a soft-pawed indoor hunter.,cat,7,cat,True,0.3148761,0.11139479,0.015030821
+281,slot_36__dog__r01__c001,A broad-pawed walking partner reveals a walking partner by matching their pace.,dog,1,dog,True,0.3891905,-0.28073144,-0.003922762
+282,slot_36__fox__r01__c002,An amber-eyed meadow prowler reveals a distant observer before retreating into brush.,fox,3,rabbit,False,-0.020188943,0.2642022,-0.04084273
+283,slot_36__bear__r01__c002,A distant hiker before turning toward cover marks a thick-furred woodland giant.,bear,2,bear,True,-0.08418658,-0.03307337,0.10773169
+284,slot_36__wolf__r01__c001,Careful sniffing around an abandoned sled track defines a long-legged wilderness hunter.,wolf,4,wolf,True,-0.011926078,0.024284322,0.123673104
+285,slot_36__rabbit__r01__c002,Gentle sniffing of a hand holding leafy greens defines a short-tailed garden visitor.,rabbit,3,rabbit,True,0.074881434,0.20967034,0.07469696
+286,slot_36__deer__r03__c161,Alert watching of a distant roadside vehicle defines a pale-rumped grazer.,deer,5,horse,False,0.02806056,-0.0008173675,0.19535394
+287,slot_36__horse__r01__c003,An upright-eared pasture grazer has steady response to a rider's rein signal.,horse,5,horse,True,0.16278924,-0.35887223,0.24672149
+288,slot_37__cat__r01__c001,A whiskered lap companion has nearby footsteps before following between rooms.,cat,7,cat,True,0.41028702,0.30634594,0.03507345
+289,slot_37__dog__r01__c002,A wagging yard guardian has a handler's gesture before sitting attentively.,dog,1,dog,True,0.30999687,-0.17643592,-0.043600556
+290,slot_37__fox__r05__c322,A distant observer before retreating into brush marks a russet snowline hunter.,fox,3,rabbit,False,-0.102276094,0.24516043,0.1258778
+291,slot_37__bear__r01__c001,An empty trail after detecting approaching voices identifies a massive shaggy forager.,bear,2,bear,True,-0.047776338,0.037886385,0.13322493
+292,slot_37__wolf__r07__c485,A wild gray pack hunter shows careful sniffing around an abandoned sled track.,wolf,4,wolf,True,0.034292612,-0.03873159,0.038374074
+293,slot_37__rabbit__r08__c564,A relaxed long-eared grazer displays curious inspection of a cardboard tunnel.,rabbit,3,rabbit,True,0.019449728,0.081865236,0.16369037
+294,slot_37__deer__r01__c002,Careful approach toward a salt block marks a white-tailed meadow grazer.,deer,3,rabbit,False,0.04538135,-0.013095685,0.0484634
+295,slot_37__horse__r01__c001,Careful stepping into a waiting trailer defines a long-maned pasture runner.,horse,5,horse,True,0.17705105,-0.19772597,0.22613831
+296,slot_38__cat__r01__c001,"Beside soft morning light, purring room-explorer reveals an offered hand before rubbing its cheek.",cat,7,cat,True,0.11644906,0.43704358,0.009880883
+297,slot_38__dog__r02__c082,A walking partner by matching their pace distinguishes broad-pawed gate-watcher near low evening light.,dog,1,dog,True,0.30475953,-0.03907388,0.031365577
+298,slot_38__fox__r01__c002,Sharp-eared field-stalker carries a roadside light with a brief cautious pause across a calm farmyard.,fox,2,bear,False,-0.009676408,0.06774001,0.082625985
+299,slot_38__bear__r04__c244,Long-clawed wilderness-resident carries an empty trail after detecting approaching voices across a rocky meadow.,bear,2,bear,True,-0.08638196,-0.068652846,-0.010224446
+300,slot_38__wolf__r04__c242,"Within a quiet fence line, pale-muzzled forest pack hunter demonstrates cautious inspection of a distant trail camera.",wolf,4,wolf,True,-0.021110114,-0.0032915582,-0.0016712704
+301,slot_38__rabbit__r05__c322,"Beside a shallow stream bank, small hopping burrow forager reveals quick retreat beneath a low garden bench.",rabbit,3,rabbit,True,-0.16350803,0.23814148,0.0062403656
+302,slot_38__deer__r04__c243,Brown woodland browser with branching antlers displays a sudden retreat from boots on the trail beside soft morning light.,deer,0,deer,True,-0.43138057,-0.013829596,0.06741624
+303,slot_38__horse__r01__c002,A clear view shows powerful paddock runner with steady response to a rider's rein signal near a broad dirt trail.,horse,5,horse,True,0.13580151,-0.25667644,0.058638837
+304,slot_39__cat__r01__c002,"Within a broad dirt trail, striped hearthside-prowler demonstrates gentle brushing while remaining loosely curled, where the pose shows balanced proportions.",cat,6,fox,False,0.058181725,-0.007850405,-0.394756
+305,slot_39__dog__r03__c162,"A returning person with vigorous tail sweeps distinguishes tongue-out family-companion near a narrow riverside path, where the posture remains natural.",dog,1,dog,True,0.2078826,-0.21614121,-0.2653305
+306,slot_39__fox__r01__c002,"A clear view shows bushy-tailed den-visitor with discarded food while remaining ready to flee, as the head and torso remain visible.",fox,3,rabbit,False,0.035907224,-0.086437635,-0.21695551
+307,slot_39__bear__r01__c002,"Short-tailed mountain-roamer becomes recognizable through a roadside vehicle while remaining beyond the barrier, while the moment appears unstaged.",bear,2,bear,True,-0.03226684,-0.08671009,-0.20457007
+308,slot_39__wolf__r04__c243,"Beside a narrow riverside path, wild gray pack predator reveals careful sniffing around an abandoned sled track; the setting supports the behavior.",wolf,4,wolf,True,-0.07184941,-0.099337325,-0.24155451
+309,slot_39__rabbit__r02__c082,"Within a patch of dense brush, short-tailed garden browser demonstrates soft pawing at the edge of a woven enclosure, where the viewpoint remains level.",rabbit,3,rabbit,True,-0.03927748,0.062117636,-0.29840687
+310,slot_39__deer__r03__c162,"Beside a rocky meadow, branch-antlered woodland traveler reveals alert watching of a distant roadside vehicle; ground contact stays clear.",deer,0,deer,True,-0.46293277,0.02383855,0.09342322
+311,slot_39__horse__r01__c002,"Patient standing beside a grooming brush distinguishes muscular farmyard traveler near a shaded woodland edge, where the setting supports the behavior.",horse,5,horse,True,-0.07090261,-0.27932084,-0.116351865
+312,slot_40__cat__r07__c483,"Against a misty hillside, a familiar voice with an upright tail defines striped hearthside-prowler; its full body stays visible.",cat,6,fox,False,-0.012958004,0.22754586,-0.2791481
+313,slot_40__dog__r03__c162,"Beside scattered autumn leaves, wet-nosed trail-helper reveals a handler's gesture before sitting attentively; ground contact stays clear.",dog,1,dog,True,-0.08021892,-0.070169404,-0.16991103
+314,slot_40__fox__r01__c001,"Within soft morning light, amber-eyed meadow-prowler demonstrates a roadside light with a brief cautious pause, where nearby tracks indicate scale.",fox,6,fox,True,-0.12679748,0.13666034,-0.32803625
+315,slot_40__bear__r01__c001,"Long-clawed wilderness-resident displays a ranger's observation from across the river beside a quiet fence line, while the viewpoint remains level.",bear,2,bear,True,-0.11770632,-0.16432214,-0.1794749
+316,slot_40__wolf__r04__c245,"Careful sniffing around an abandoned sled track distinguishes bushy-tailed mountain pack tracker near an open grassy clearing, where ground contact stays clear.",wolf,4,wolf,True,-0.07306088,-0.10597349,-0.17213048
+317,slot_40__rabbit__r03__c163,"Quiet resting beside a ceramic food dish distinguishes white-tailed garden visitor near a sunlit garden path, where the posture remains natural.",rabbit,3,rabbit,True,-0.03231619,0.1251663,-0.26118615
+318,slot_40__deer__r01__c001,"Beside a broad dirt trail, branch-antlered woodland traveler reveals a sudden retreat from boots on the trail; its full body stays visible.",deer,0,deer,True,-0.4122992,-0.033348244,0.091518626
+319,slot_40__horse__r02__c082,"Calm acceptance of a saddle and bridle distinguishes broad-chested stable resident near a shallow stream bank, where the pose shows balanced proportions.",horse,5,horse,True,-0.009879437,-0.43782365,-0.122948825
+320,slot_41__cat__r01__c002,Focused watching of birds beyond a closed window identifies a slit-eyed room hunter.,cat,7,cat,True,0.19450943,0.28066796,0.07849771
+321,slot_41__dog__r02__c082,Careful sniffing during a new animal greeting defines a collared gate watcher.,dog,1,dog,True,0.4074737,0.046629436,0.110502034
+322,slot_41__fox__r03__c162,Brief nose contact near a shared den identifies a russet snowline hunter.,fox,3,rabbit,False,-0.030732185,0.21662611,0.096253596
+323,slot_41__bear__r01__c003,Wide avoidance of another massive forest forager marks a long-clawed cave sleeper.,bear,2,bear,True,-0.08194374,0.2650232,0.16330689
+324,slot_41__wolf__r07__c485,A forest pack sentinel carries nose-to-muzzle greeting within the family group.,wolf,4,wolf,True,0.11790691,-0.08993815,0.12876618
+325,slot_41__rabbit__r01__c001,Close huddling with smaller meadow companions is visible on a white-tailed garden browser.,rabbit,3,rabbit,True,0.031942535,-0.032699674,0.08085826
+326,slot_41__deer__r02__c082,A forest herd grazer reveals an antler display toward a competing male.,deer,0,deer,True,-0.12655702,-0.23491111,0.35094324
+327,slot_41__horse__r01__c001,Close following behind the herd leader identifies a flowing-tailed field grazer.,horse,5,horse,True,0.06842576,-0.16104926,0.14110781
+328,slot_42__cat__r06__c402,A cautious nose greeting with a familiar room companion defines a purring house prowler.,cat,7,cat,True,0.37615323,0.34728748,0.06298528
+329,slot_42__dog__r01__c001,A floppy-eared home guardian shows quiet resting against another household companion.,dog,7,cat,False,0.2892913,0.15034306,0.10349965
+330,slot_42__fox__r01__c001,Defensive circling around younger den residents identifies a russet snowline hunter.,fox,3,rabbit,False,-0.05293565,0.18772532,0.100005195
+331,slot_42__bear__r01__c003,A bulky streamside fisher shows careful watching of grazing animals across the slope.,bear,2,bear,True,-0.050920364,-0.016860547,0.038439117
+332,slot_42__wolf__r04__c244,Protective positioning near younger pack members identifies a howling snow hunter.,wolf,4,wolf,True,0.15075424,0.07051641,0.067047484
+333,slot_42__rabbit__r01__c002,A warning foot thump near feeding companions marks a round-eyed clover browser.,rabbit,3,rabbit,True,0.13576333,0.051732786,0.052123014
+334,slot_42__deer__r01__c002,An alert brown woodland browser carries an antler display toward a competing male.,deer,0,deer,True,-0.18824783,-0.16373315,0.22074986
+335,slot_42__horse__r02__c082,A farm runner shows ear-pinned warning toward a newcomer at feed.,horse,5,horse,True,0.2077546,-0.13965103,0.19190405
+336,slot_43__cat__r01__c002,"Beside soft morning light, curled-tail home-companion reveals silent stalking of a tiny moving insect.",cat,7,cat,True,0.10429622,0.34336558,-0.009392668
+337,slot_43__dog__r01__c004,Collar-wearing yard-guardian becomes recognizable through careful sniffing during a new animal greeting near a shaded woodland edge.,dog,1,dog,True,-0.06301619,-0.017509073,-0.1623519
+338,slot_43__fox__r01__c002,"Against a shallow stream bank, brief nose contact near a shared den defines amber-eyed meadow-prowler.",fox,3,rabbit,False,-0.036405575,0.33472037,-0.0024863626
+339,slot_43__bear__r02__c083,Round-eared timberland-giant displays patient waiting near fish moving through shallows beside soft morning light.,bear,2,bear,True,-0.15000166,0.17210469,0.08757705
+340,slot_43__wolf__r07__c485,A tense boundary display toward a rival group distinguishes thick-coated howling sentinel near a shaded woodland edge.,wolf,4,wolf,True,-0.11582345,0.15502359,0.05825282
+341,slot_43__rabbit__r01__c001,A clear view shows short-tailed garden browser with nose touching with another long-eared grazer near a misty hillside.,rabbit,3,rabbit,True,-0.09334791,0.05388817,0.007832688
+342,slot_43__deer__r02__c081,"Against a patch of dense brush, an antler display toward a competing male defines branch-antlered woodland traveler.",deer,0,deer,True,-0.31369597,0.03911373,0.39515373
+343,slot_43__horse__r01__c001,"Beside a rocky meadow, upright-eared pasture grazer reveals parallel grazing beside several herd companions.",horse,5,horse,True,-0.09248412,-0.13001601,0.25071082
+344,slot_44__cat__r03__c162,"Focused watching of birds beyond a closed window distinguishes retractable-clawed climber near a pale winter field, where the posture remains natural.",cat,6,fox,False,-0.10458757,0.18371019,-0.19839214
+345,slot_44__dog__r01__c004,"Within a shallow stream bank, panting ball-chaser demonstrates coordinated running beside a familiar walking partner, where its full body stays visible.",dog,1,dog,True,0.14556713,-0.29074347,-0.21968964
+346,slot_44__fox__r04__c242,"Beside a patch of dense brush, russet snowline-hunter reveals cautious distance from larger woodland predators; the moment appears unstaged.",fox,2,bear,False,-0.35551715,0.20868391,-0.078407235
+347,slot_44__bear__r04__c245,"A clear view shows bulky streamside-fisher with wide avoidance of another massive forest forager, as the posture remains natural.",bear,2,bear,True,-0.22116604,-0.04758648,-0.093871176
+348,slot_44__wolf__r03__c161,"Beside low evening light, amber-eyed pack sentinel reveals protective positioning near younger pack members; the head and torso remain visible.",wolf,4,wolf,True,-0.014380319,-0.08709802,-0.16330335
+349,slot_44__rabbit__r07__c484,"Against an open grassy clearing, close huddling with smaller meadow companions defines small long-eared burrow grazer; the pose shows balanced proportions.",rabbit,3,rabbit,True,-0.12068107,-0.13759682,-0.07848072
+350,slot_44__deer__r01__c001,"Within soft morning light, slender-legged forest grazer demonstrates an antler display toward a competing male, where nearby tracks indicate scale.",deer,0,deer,True,-0.26904783,-0.20497964,0.01155546
+351,slot_44__horse__r01__c001,"Broad-chested stable resident displays mutual neck grooming with a familiar partner beside a quiet fence line, while the viewpoint remains level.",horse,5,horse,True,0.047066983,-0.37450373,-0.1269172
+352,slot_45__cat__r08__c570,"During a clearly visible group moment, whiskered house-prowler becomes recognizable through silent stalking of a tiny moving insect, while ground contact stays clear.",cat,6,fox,False,0.122621715,0.21425895,-0.3001722
+353,slot_45__dog__r01__c002,"Quiet resting against another household companion distinguishes broad-pawed gate-watcher near a calm farmyard, where the setting supports the behavior.",dog,1,dog,True,0.19290614,-0.09159433,-0.17147245
+354,slot_45__fox__r04__c243,"Within a sunlit garden path, amber-eyed meadow-prowler demonstrates defensive circling around younger den residents, where the background preserves its outline.",fox,6,fox,True,-0.10416688,0.15229897,-0.31586528
+355,slot_45__bear__r08__c580,"During a clearly visible group moment, wide avoidance of another massive forest forager distinguishes massive shaggy-forager; meanwhile, the moment appears unstaged.",bear,2,bear,True,-0.22645193,-0.00045383477,-0.06021345
+356,slot_45__wolf__r04__c245,"Within a patch of dense brush, wild gray pack predator demonstrates protective positioning near younger pack members, where the setting supports the behavior.",wolf,4,wolf,True,-0.10649168,-0.15800284,-0.17216912
+357,slot_45__rabbit__r01__c001,"Beside an open grassy clearing, round-eyed grassland nibbler reveals parallel grazing beside several burrow residents; its full body stays visible.",rabbit,3,rabbit,True,-0.102012254,-0.034663677,-0.12495529
+358,slot_45__deer__r01__c006,"Within a misty hillside, branch-antlered woodland traveler demonstrates protective standing near a spotted youngster, where the pose shows balanced proportions.",deer,0,deer,True,-0.37661645,-0.13073768,0.031932198
+359,slot_45__horse__r04__c243,"Long-maned stable grazer with powerful legs carries playful running beside a younger pasture companion across a shallow stream bank; meanwhile, nearby tracks indicate scale.",horse,5,horse,True,-0.080013834,-0.31459764,-0.015887138
+360,slot_46__cat__r01__c001,Soft chirping notes while watching distant birds marks a soft-pawed indoor hunter.,cat,7,cat,True,0.22998367,0.270685,0.08427591
+361,slot_46__dog__r01__c003,A tail-wagging family companion reveals a low rumble when unfamiliar movement approaches.,dog,1,dog,True,0.40363774,0.088086076,0.09207317
+362,slot_46__fox__r01__c002,An amber-eyed meadow prowler carries a brief high call across evening woodland.,fox,6,fox,True,-0.16224192,0.2660318,0.008444667
+363,slot_46__bear__r01__c002,A deep warning rumble in dense woodland defines a thick-furred woodland giant.,bear,2,bear,True,-0.1358254,0.18891956,0.21837083
+364,slot_46__wolf__r04__c242,Upright ears locating distant movement under snow is visible on a howling snow hunter.,wolf,4,wolf,True,0.114249185,-0.057052527,-0.0031413918
+365,slot_46__rabbit__r03__c161,A burrow resident has a sharp hind-foot thump warning the colony.,rabbit,3,rabbit,True,0.17418443,0.11428873,0.13823277
+366,slot_46__deer__r01__c001,Careful scent testing of the moving air identifies a long-legged clearing grazer.,deer,3,rabbit,False,0.13181895,0.10624865,0.22539635
+367,slot_46__horse__r01__c002,A clear neigh carrying beyond the stable identifies a swift-maned field traveler.,horse,5,horse,True,0.108323924,-0.20147894,0.25225922
+368,slot_47__cat__r01__c001,A whiskered lap companion shows a rising trill during a familiar greeting.,cat,7,cat,True,0.3674512,0.1882843,-0.023198862
+369,slot_47__dog__r01__c001,Quick breathy whines beside a closed door identifies a leash-wearing companion.,dog,1,dog,True,0.40434518,0.14300819,0.102391034
+370,slot_47__fox__r05__c324,Short warning barks from dense cover marks an orange-chested hedge stalker.,fox,3,rabbit,False,-0.12948272,0.2035552,0.06790024
+371,slot_47__bear__r02__c081,A round-eared forest giant has a deep warning rumble in dense woodland.,bear,2,bear,True,-0.13545781,0.13797344,0.29818392
+372,slot_47__wolf__r01__c001,A gray pack hunter carries a deep warning growl beneath raised neck fur.,wolf,4,wolf,True,0.19086803,-0.11918611,0.054712147
+373,slot_47__rabbit__r01__c001,Wide ears detecting movement beyond the hedge defines a long-eared meadow grazer.,rabbit,3,rabbit,True,-0.014542016,0.04752167,0.286196
+374,slot_47__deer__r01__c002,Large ears turning toward a broken twig defines a white-tailed meadow grazer.,deer,3,rabbit,False,-0.010060439,0.019187259,0.2692931
+375,slot_47__horse__r04__c241,A stable grazer shows rhythmic hoofbeats approaching across firm ground.,horse,5,horse,True,0.08682147,-0.33488062,0.20293981
+376,slot_48__cat__r01__c001,"Against an open grassy clearing, a steady vibration during relaxed contact defines purring room-explorer.",cat,7,cat,True,0.160136,0.33916336,0.024046268
+377,slot_48__dog__r01__c002,"Against a broad dirt trail, a low rumble when unfamiliar movement approaches defines panting ball-chaser.",dog,1,dog,True,0.22352022,0.086699665,0.0009388073
+378,slot_48__fox__r02__c083,Slender nighttime-forager displays a brief high call across evening woodland beside a shallow stream bank.,fox,2,bear,False,-0.3405019,0.16506608,0.07803435
+379,slot_48__bear__r01__c001,Heavy-pawed backcountry-wanderer displays a deep warning rumble in dense woodland beside a patch of dense brush.,bear,2,bear,True,-0.08795937,0.15078549,0.024601256
+380,slot_48__wolf__r01__c001,A clear view shows amber-eyed pack sentinel with a long resonant howl answered across the valley near a rocky meadow.,wolf,4,wolf,True,-0.0769147,0.13136218,0.115257464
+381,slot_48__rabbit__r01__c003,Quick-footed burrow resident displays wide ears detecting movement beyond the hedge beside a narrow riverside path.,rabbit,3,rabbit,True,-0.042626966,0.15759851,-0.017496847
+382,slot_48__deer__r04__c245,Antlered split-hoofed woodland browser displays large ears turning toward a broken twig beside soft morning light.,deer,0,deer,True,-0.35922784,0.13751708,0.39608446
+383,slot_48__horse__r04__c246,Saddle-wearing flowing-tailed riding companion displays mobile ears following a distant handler's voice beside low evening light.,horse,5,horse,True,0.08204269,-0.11148731,-0.0740067
+384,slot_49__cat__r02__c081,"Against a sunlit garden path, a sharp warning hiss with flattened ears defines striped hearthside-prowler; the background preserves its outline.",cat,6,fox,False,0.04134456,0.27908787,-0.2894147
+385,slot_49__dog__r01__c002,"Keen-nosed scent-follower becomes recognizable through a drawn-out lonely call across the yard, while the moment appears unstaged.",dog,6,fox,False,0.044617422,0.0537531,-0.10049194
+386,slot_49__fox__r04__c241,"Against a calm farmyard, short warning barks from dense cover defines amber-eyed meadow-prowler; the posture remains natural.",fox,6,fox,True,-0.061185356,0.19575134,-0.20225464
+387,slot_49__bear__r02__c082,"Within a sunlit garden path, bulky streamside-fisher demonstrates soft bawling notes from a smaller youngster, where the viewpoint remains level.",bear,2,bear,True,-0.12624559,0.13181822,-0.29008007
+388,slot_49__wolf__r01__c003,"Social mountain hunter carries a long resonant howl answered across the valley across a shaded woodland edge; meanwhile, soft light preserves surface detail.",wolf,2,bear,False,-0.24853396,0.11877265,-0.11403399
+389,slot_49__rabbit__r04__c245,"Soft-coated long-eared burrow resident carries fine whiskers testing the narrow tunnel across an open grassy clearing; meanwhile, nearby tracks indicate scale.",rabbit,3,rabbit,True,-0.082758345,0.040989317,-0.15101466
+390,slot_49__deer__r03__c162,"Against soft morning light, a sharp alarm snort followed by raised tails defines branch-antlered woodland traveler; its full body stays visible.",deer,0,deer,True,-0.33622333,0.052250423,0.023294263
+391,slot_49__horse__r01__c003,"Within low evening light, upright-eared pasture grazer demonstrates a clear neigh carrying beyond the stable, where the pose shows balanced proportions.",horse,5,horse,True,0.0045059216,-0.3711356,-0.015344743
+392,slot_50__cat__r01__c001,"Within a broad dirt trail, curled-tail home-companion demonstrates a sharp warning hiss with flattened ears, where nearby tracks indicate scale.",cat,6,fox,False,0.10210649,-0.033920605,-0.26370195
+393,slot_50__dog__r01__c002,"Within a shallow stream bank, wagging household-companion demonstrates quick breathy whines beside a closed door, where its full body stays visible.",dog,1,dog,True,0.12811847,0.000957151,-0.20402332
+394,slot_50__fox__r04__c245,"Quiet yapping sounds during distant contact distinguishes slender nighttime-forager near a rocky meadow, where ground contact stays clear.",fox,6,fox,True,-0.1712506,0.09521149,-0.10756724
+395,slot_50__bear__r07__c486,"Within a misty hillside, massive shaggy-forager demonstrates a loud roar across an open riverbank, where surrounding plants provide scale.",bear,2,bear,True,-0.31629127,0.054976366,-0.13416407
+396,slot_50__wolf__r04__c243,"Long-legged snow pack hunter becomes recognizable through a deep warning growl beneath raised neck fur, while the head and torso remain visible.",wolf,4,wolf,True,0.04598315,-0.067475066,-0.063623294
+397,slot_50__rabbit__r05__c326,"Beside a rocky meadow, small hopping burrow forager reveals near-silent chewing beneath constantly turning ears; the pose shows balanced proportions.",rabbit,3,rabbit,True,-0.18766293,0.028813196,-0.14608026
+398,slot_50__deer__r01__c003,"Beside a broad dirt trail, slender-legged forest grazer reveals large ears turning toward a broken twig; nearby tracks indicate scale.",deer,0,deer,True,-0.31095973,-0.06991821,0.08414547
+399,slot_50__horse__r04__c244,"Muscular maned farmyard traveler carries soft breath moving through wide nostrils across a shallow stream bank; meanwhile, its full body stays visible.",horse,2,bear,False,-0.09943054,-0.07805506,-0.0051943744

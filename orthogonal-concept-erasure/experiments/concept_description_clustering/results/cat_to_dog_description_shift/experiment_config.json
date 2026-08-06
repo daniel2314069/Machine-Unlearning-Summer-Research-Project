@@ -1,0 +1,236 @@
+{
+  "experiment_name": "cat_to_dog_description_shift",
+  "research_question": "Does the canonical-name cat-to-dog OCE edit move name-free cat descriptions toward the original dog anchor while leaving other animal descriptions relatively unchanged?",
+  "dataset": {
+    "status": "passed",
+    "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+    "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+    "dataset_validation_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/dataset_validation.json",
+    "dataset_validation_sha256": "1b884b37da08b0d9908e4711ddf9c1b4fc28ea62b7017d152c6cf884ff6c32ad",
+    "source_experiment_config_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/experiment_config.json",
+    "source_experiment_config_sha256": "a36acaad59c3c8e5398b78d6dadecd7564f19f93b22056c849ebcf983cd46319",
+    "row_count": 400,
+    "counts_by_concept": {
+      "cat": 50,
+      "dog": 50,
+      "fox": 50,
+      "bear": 50,
+      "wolf": 50,
+      "rabbit": 50,
+      "deer": 50,
+      "horse": 50
+    },
+    "checks": {
+      "exactly_400_rows": true,
+      "exact_concept_set": true,
+      "exactly_50_per_concept": true,
+      "unique_concept_slot_pairs": true,
+      "all_configured_concept_names_and_variants_absent": true,
+      "source_dataset_validation_passed": true,
+      "no_unsuffixed_prompt_truncated": true,
+      "eot_tokenization_audit_has_400_rows": true,
+      "cached_eot_matches_balanced_eot": true,
+      "cached_embedding_dataset_hash_matches": true
+    },
+    "forbidden_hits": []
+  },
+  "embedding": {
+    "embedding_cache": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/results/balanced_paired_w0_geometry",
+    "balanced_eot_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_embeddings.npy",
+    "balanced_eot_sha256": "4c175ad2c4f7b848fa561dd464104eb9f27a29c36591912977873e6b52b77070",
+    "w0_geometry_eot_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/results/balanced_paired_w0_geometry/description_embeddings_eot.npy",
+    "w0_geometry_eot_sha256": "4c175ad2c4f7b848fa561dd464104eb9f27a29c36591912977873e6b52b77070",
+    "canonical_name_cache_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/results/balanced_paired_w0_geometry/name_embeddings_last.npy",
+    "canonical_name_cache_sha256": "6e36db63c797bcac92678beee2c2aac04a4ebdef68f046470c4859902111f287",
+    "eot_shape": [
+      400,
+      768
+    ],
+    "readout": "unsuffixed original description; actual EOT hidden state at attention_mask.sum(dim=1)-1",
+    "prefix": null,
+    "suffix": null
+  },
+  "model": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "checkpoint_revision": "133a221b8aa7292a167afc5127cb63fb5005638b",
+    "pipeline_class": "StableDiffusionPipeline",
+    "tokenizer_class": "CLIPTokenizer",
+    "tokenizer_model_max_length": 77,
+    "text_encoder_class": "CLIPTextModel",
+    "text_hidden_size": 768,
+    "scheduler_class": "PNDMScheduler",
+    "scheduler_config": {
+      "num_train_timesteps": 1000,
+      "beta_start": 0.00085,
+      "beta_end": 0.012,
+      "beta_schedule": "scaled_linear",
+      "trained_betas": null,
+      "skip_prk_steps": true,
+      "set_alpha_to_one": false,
+      "prediction_type": "epsilon",
+      "timestep_spacing": "leading",
+      "steps_offset": 1,
+      "_use_default_values": [
+        "prediction_type",
+        "timestep_spacing"
+      ],
+      "_class_name": "PNDMScheduler",
+      "_diffusers_version": "0.7.0.dev0",
+      "clip_sample": false
+    },
+    "projection": "to_v",
+    "projection_layer_count": 16,
+    "projection_layers": {
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ]
+    },
+    "original_w0_in_memory_fingerprint_sha256": "db8f7c2dd5c4a4a0fad1acfb31ac0fe721b11e6dd53d98caa50aceb0487709bd",
+    "original_w0_in_memory_dtype": "torch.float32",
+    "package_versions": {
+      "torch": "2.12.0",
+      "diffusers": "0.37.1",
+      "transformers": "4.48.3",
+      "numpy": "2.2.5",
+      "pandas": "2.2.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "matplotlib": "3.10.1",
+      "Pillow": "11.2.1",
+      "langdetect": "1.0.9"
+    }
+  },
+  "oce": {
+    "method": "OCE",
+    "edit_concept": "cat",
+    "guide_concept": "dog",
+    "preserve_concept": "dog",
+    "configuration": {
+      "expand_prompts": true,
+      "erase_scale": 2000,
+      "preserve_global_scale": 10,
+      "preserve_concept_scale": 0,
+      "lambda": 10,
+      "cg_token_count": 403727
+    }
+  },
+  "edited_checkpoint": "/home/daniel1012/projects/machine_unlearning/oce_cat_to_dog_comparison/oce_cat_to_dog_W.safetensors",
+  "edited_checkpoint_sha256": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c",
+  "fixed_references": {
+    "cat": "normalize(W0_l @ c_cat)",
+    "dog": "normalize(W0_l @ c_dog)",
+    "edited_name_references_used": false
+  },
+  "description_vectors": {
+    "before": "normalize(W0_l @ h_EOT(p))",
+    "after": "normalize(Wcat_l @ h_EOT(p))"
+  },
+  "metrics": [
+    "cat_before",
+    "cat_after",
+    "dog_before",
+    "dog_after",
+    "delta_cat",
+    "delta_dog",
+    "intended_direction"
+  ],
+  "layer_limit": null,
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  },
+  "strict_scope": {
+    "image_generation": false,
+    "clustering": false,
+    "description_centroids": false,
+    "dimensionality_reduction": false,
+    "description_readout": "unsuffixed_eot_only",
+    "anchor_conditions": [
+      "original_cat",
+      "original_dog"
+    ]
+  },
+  "cli": {
+    "dataset": "balanced_paired/outputs/secondary_8x50",
+    "embedding_cache": "results/balanced_paired_w0_geometry",
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "oce_repo": "../..",
+    "edited_weights": "../../../oce_cat_to_dog_comparison/oce_cat_to_dog_W.safetensors",
+    "edit_metadata": "../../../oce_cat_to_dog_comparison/metadata.json",
+    "layer_inventory": "results/balanced_paired_w0_geometry_revised/layer_inventory.csv",
+    "output": "results/cat_to_dog_description_shift",
+    "device": "cuda:0",
+    "batch_size": 32,
+    "layer_limit": null,
+    "force": true
+  }
+}

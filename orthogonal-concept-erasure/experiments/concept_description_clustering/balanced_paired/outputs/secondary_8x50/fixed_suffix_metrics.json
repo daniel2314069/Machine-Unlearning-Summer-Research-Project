@@ -1,0 +1,166 @@
+{
+  "representation": "Fixed suffix",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "sample_count": 400,
+  "embedding_shape": [
+    400,
+    768
+  ],
+  "preprocessing": "row L2 normalization only; no global centering",
+  "extraction": {
+    "prompt_transform": "original description plus exact suffix ' This sentence describes the concept'",
+    "readout": "final non-special token verified to decode to concept",
+    "hidden_state": "CLIPTextModel final last_hidden_state"
+  },
+  "labels_available_to_fit": false,
+  "spherical_kmeans": {
+    "k": 8,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "assignment": "cosine",
+    "center_update": "normalized_mean",
+    "initialization": "cosine_kmeans_plus_plus"
+  },
+  "metrics": {
+    "adjusted_rand_index": 0.4697183414772855,
+    "normalized_mutual_information": 0.5799643836410285,
+    "hungarian_matched_accuracy": 0.7025,
+    "cosine_silhouette_score": 0.08598554879426956,
+    "spherical_objective": 370.6091009249216,
+    "objective_per_sample": 0.9265227523123041,
+    "iterations": 15,
+    "converged": true,
+    "best_initialization": 12,
+    "cluster_sizes": [
+      41,
+      15,
+      52,
+      63,
+      43,
+      28,
+      94,
+      64
+    ],
+    "cluster_to_concept": {
+      "0": "cat",
+      "7": "dog",
+      "1": "fox",
+      "3": "bear",
+      "5": "wolf",
+      "6": "rabbit",
+      "2": "deer",
+      "4": "horse"
+    },
+    "per_class_recall": {
+      "cat": 0.8,
+      "dog": 0.84,
+      "fox": 0.16,
+      "bear": 0.78,
+      "wolf": 0.5,
+      "rabbit": 0.9,
+      "deer": 0.82,
+      "horse": 0.82
+    },
+    "assignment_counts_by_true_class": {
+      "cat": {
+        "cat": 40,
+        "dog": 3,
+        "fox": 0,
+        "bear": 0,
+        "wolf": 1,
+        "rabbit": 4,
+        "deer": 1,
+        "horse": 1
+      },
+      "dog": {
+        "cat": 0,
+        "dog": 42,
+        "fox": 0,
+        "bear": 0,
+        "wolf": 1,
+        "rabbit": 7,
+        "deer": 0,
+        "horse": 0
+      },
+      "fox": {
+        "cat": 1,
+        "dog": 3,
+        "fox": 8,
+        "bear": 8,
+        "wolf": 0,
+        "rabbit": 24,
+        "deer": 6,
+        "horse": 0
+      },
+      "bear": {
+        "cat": 0,
+        "dog": 5,
+        "fox": 0,
+        "bear": 39,
+        "wolf": 0,
+        "rabbit": 4,
+        "deer": 2,
+        "horse": 0
+      },
+      "wolf": {
+        "cat": 0,
+        "dog": 0,
+        "fox": 7,
+        "bear": 15,
+        "wolf": 25,
+        "rabbit": 2,
+        "deer": 1,
+        "horse": 0
+      },
+      "rabbit": {
+        "cat": 0,
+        "dog": 4,
+        "fox": 0,
+        "bear": 0,
+        "wolf": 0,
+        "rabbit": 45,
+        "deer": 0,
+        "horse": 1
+      },
+      "deer": {
+        "cat": 0,
+        "dog": 3,
+        "fox": 0,
+        "bear": 1,
+        "wolf": 1,
+        "rabbit": 4,
+        "deer": 41,
+        "horse": 0
+      },
+      "horse": {
+        "cat": 0,
+        "dog": 4,
+        "fox": 0,
+        "bear": 0,
+        "wolf": 0,
+        "rabbit": 4,
+        "deer": 1,
+        "horse": 41
+      }
+    },
+    "largest_confusion_pair": {
+      "true_concept": "fox",
+      "predicted_concept": "rabbit",
+      "count": 24
+    }
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

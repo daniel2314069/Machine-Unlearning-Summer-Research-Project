@@ -1,0 +1,72 @@
+{
+  "started_at": "2026-07-26T20:44:23.928331+00:00",
+  "status": "stage_complete",
+  "stage": "gcd_evaluation",
+  "updated_at": "2026-07-27T22:10:16.109622+00:00",
+  "smoke_images": 450,
+  "smoke_grids": 50,
+  "stages": {
+    "preflight": {
+      "status": "complete",
+      "updated_at": "2026-07-27T13:30:04.788496+00:00"
+    },
+    "celebrity_generation": {
+      "status": "complete",
+      "updated_at": "2026-07-27T09:19:43.180027+00:00",
+      "celebrity_images": 3000
+    },
+    "weights": {
+      "status": "complete",
+      "updated_at": "2026-07-27T06:19:28.676636+00:00",
+      "checkpoint_count": 2,
+      "module_count_each": 16
+    },
+    "smoke": {
+      "status": "complete",
+      "updated_at": "2026-07-27T06:19:28.676896+00:00",
+      "smoke_images": 450,
+      "smoke_grids": 50
+    },
+    "coco_1000": {
+      "status": "complete",
+      "updated_at": "2026-07-27T13:17:36.026753+00:00",
+      "coco_prompt_count": 1000,
+      "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/milestones/first1000/metrics.json",
+      "summary_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/milestones/first1000/summary.md"
+    },
+    "coco": {
+      "status": "failed",
+      "updated_at": "2026-07-27T11:15:07.424397+00:00",
+      "error_type": "UnpicklingError",
+      "error": "Weights only load failed. This file can still be loaded, to do so you have two options, \u001b[1mdo those steps only if you trust the source of the checkpoint\u001b[0m. \n\t(1) In PyTorch 2.6, we changed the default value of the `weights_only` argument in `torch.load` from `False` to `True`. Re-running `torch.load` with `weights_only` set to `False` will likely succeed, but it can result in arbitrary code execution. Do it only if you got the file from a trusted source.\n\t(2) Alternatively, to load with `weights_only=True` please check the recommended steps in the following error message.\n\tWeightsUnpickler error: Unsupported global: GLOBAL numpy._core.multiarray._reconstruct was not an allowed global by default. Please use `torch.serialization.add_safe_globals([numpy._core.multiarray._reconstruct])` or the `torch.serialization.safe_globals([numpy._core.multiarray._reconstruct])` context manager to allowlist this global if you trust this class/function.\n\nCheck the documentation of torch.load to learn more about types accepted by default with weights_only https://pytorch.org/docs/stable/generated/torch.load.html.",
+      "cleanup_performed": false,
+      "resume_note": "Rerun the same stage; completed artifacts are reused."
+    },
+    "coco_10000_unique_anchor": {
+      "status": "complete",
+      "updated_at": "2026-07-27T22:04:04.367536+00:00",
+      "coco_prompt_count": 10000,
+      "methods": [
+        "unique_anchor"
+      ],
+      "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/methods/unique_anchor/first10000/metrics.json",
+      "summary_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/methods/unique_anchor/first10000/summary.md"
+    },
+    "gcd_evaluation": {
+      "status": "complete",
+      "updated_at": "2026-07-27T22:10:16.109622+00:00"
+    }
+  },
+  "completed_images": 28,
+  "expected_images": 3000,
+  "resumable": true,
+  "checkpoint_count": 2,
+  "module_count_each": 16,
+  "celebrity_images": 3000,
+  "coco_prompt_count": 10000,
+  "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/methods/unique_anchor/first10000/metrics.json",
+  "summary_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/methods/unique_anchor/first10000/summary.md",
+  "methods": [
+    "unique_anchor"
+  ]
+}

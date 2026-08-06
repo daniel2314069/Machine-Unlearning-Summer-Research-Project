@@ -1,0 +1,86 @@
+{
+  "experiment": "eot_local_geometry_diagnostic",
+  "research_question": "Does normalized 768D unsuffixed-EOT space contain strong local concept neighborhoods that are not well captured by a single-centroid spherical clustering assumption?",
+  "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "embedding_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_embeddings.npy",
+  "embedding_sha256": "4c175ad2c4f7b848fa561dd464104eb9f27a29c36591912977873e6b52b77070",
+  "representation": "row-L2-normalized unsuffixed EOT; shape 400x768",
+  "knn_purity": {
+    "metric": "cosine",
+    "exclude_self": true,
+    "neighborhood_sizes": [
+      5,
+      10,
+      20
+    ],
+    "random_balanced_label_baseline": 0.12280701754385964,
+    "labels_used_after_neighbor_search_only": true
+  },
+  "spectral": {
+    "runs": [
+      {
+        "n_neighbors": 5,
+        "random_state": 42,
+        "primary": false
+      },
+      {
+        "n_neighbors": 10,
+        "random_state": 0,
+        "primary": false
+      },
+      {
+        "n_neighbors": 10,
+        "random_state": 1,
+        "primary": false
+      },
+      {
+        "n_neighbors": 10,
+        "random_state": 42,
+        "primary": true
+      },
+      {
+        "n_neighbors": 15,
+        "random_state": 42,
+        "primary": false
+      }
+    ],
+    "graph_symmetrization": "union of directed selections",
+    "edge_weight": "max(0, cosine_similarity)",
+    "diagonal": 0,
+    "n_clusters": 8,
+    "affinity": "precomputed",
+    "assign_labels": "kmeans",
+    "n_init": 50,
+    "labels_available_to_graph_or_fit": false
+  },
+  "cached_spherical_baseline": {
+    "method": "Spherical k-means baseline",
+    "graph_neighbors": null,
+    "seed": 314159,
+    "ari": 0.6337922594154872,
+    "nmi": 0.704685402053127,
+    "matched_accuracy": 0.775
+  },
+  "strict_scope": {
+    "w0_projection": false,
+    "oce": false,
+    "dimensionality_reduction_inputs": false,
+    "fixed_suffix": false,
+    "spherical_kmeans_refit": false,
+    "image_or_description_generation": false,
+    "other_methods": false
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

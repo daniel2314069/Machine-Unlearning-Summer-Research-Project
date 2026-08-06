@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "official_repository": "https://github.com/Giphy/celeb-detection-oss.git",
+  "official_commit": "1f28b24370f67e47e806cc57b3c38fbe42e302ab",
+  "model_archive_url": "https://s3.amazonaws.com/giphy-public/models/celeb-detection/resources.tar.gz",
+  "model_archive_sha256": "0088e3093b6e0f421cf5a61c674b72721221f422b43be2680e5021123267cf41",
+  "compatibility_patch_sha256": "1fe8b44f9b75e786236f8e28a5625c2c9811cfb9ac130e5831a04c011d906c91",
+  "python_environment": "conda py310 with experiment-local site-packages",
+  "tensorflow_device": "CPU",
+  "recognizer_device": "CUDA",
+  "resources_preserved": true
+}

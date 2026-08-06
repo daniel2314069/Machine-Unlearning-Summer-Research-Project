@@ -1,0 +1,36 @@
+Misclustered fox descriptions — raw EOT
+Descriptions are unchanged. Groups use Hungarian-matched predicted concepts.
+
+Assigned to cat (1)
+-----------------
+- Front and center, a red-coated prowler curls its white-ended tail near distant boots. [true−predicted similarity=0.020823]
+
+Assigned to dog (0)
+-----------------
+(none)
+
+Assigned to bear (22)
+------------------
+- A vigilant nighttime forager waits carefully beside familiar small prey through compact soil amid shadowed riverbank. [true−predicted similarity=-0.009589]
+- A wary bushy-tailed den-visitor warily creates that strong twilight figure around graceful forest amid dim kitchen. [true−predicted similarity=0.027913]
+- A focused woodland hunter swiftly extends a steady tail tip beside striking dense brush along breezy orchard. [true−predicted similarity=0.032255]
+- A measured den visitor waits patiently beside recognizable spare food around clear soil past crisp gate. [true−predicted similarity=0.041883]
+- A close white-chested copper prowler fills the clearing ahead of a miniature backpacker. [true−predicted similarity=0.045562]
+- A watchful amber-eyed meadow-prowler smoothly follows the quiet edge around recognizable flee before rocky trailhead. [true−predicted similarity=0.054984]
+- A curious nighttime forager silently embodies the striking cautious hunter around bright open ground under cool yard. [true−predicted similarity=0.060291]
+- An alert copper woodland animal digs a hidden food cache using small black paws. [true−predicted similarity=0.060700]
+- A swift forest shadow watchfully displays natural rust-colored fur beside balanced lower legs around crisp foothill. [true−predicted similarity=0.065477]
+- Close-up red-furred woodland animal with white-tipped bushy tail watches a tiny distant photographer. [true−predicted similarity=0.065644]
+- A gentle red-coated woodland-hunter warily turns delicate fine whiskers above steady dark nose under quiet outcrop. [true−predicted similarity=0.067617]
+- Triangular ears swivel independently to track tiny rustles around the russet creature's burrow. [true−predicted similarity=0.085094]
+- Balanced by a sweeping bushy tail, the slim rusty animal lands accurately between rocks. [true−predicted similarity=0.091359]
+- A focused field stalker solidly raises a balanced tail tip around defined springing limbs along amber path. [true−predicted similarity=0.093549]
+- Rusty fur flashes among birch trunks as a long-tailed dusk hunter runs downhill. [true−predicted similarity=0.097304]
+- Four dark feet propel a white-chested russet animal over stones as nearby leaves barely tremble. [true−predicted similarity=0.105283]
+- A gentle bushy-tailed den-visitor quietly crosses the distinct meadow using muted hidden movement near dusky garden. [true−predicted similarity=0.107851]
+- A swift field stalker nimbly shows steady rust-colored fur beneath striking white chest past verdant stream. [true−predicted similarity=0.115994]
+- The slender red animal combines pointed facial features, black socks, and a snowy tail tip. [true−predicted similarity=0.119105]
+- A swift nighttime forager steadfastly carries this soft coat broken alongside quiet full tail along russet hedge. [true−predicted similarity=0.122113]
+- A gentle russet snowline-hunter discreetly raises active light paws near focused springing limbs across sunlit fence. [true−predicted similarity=0.126299]
+- The sharp-eared red hunter lands front paws first after vaulting above meadow grass. [true−predicted similarity=0.146086]
+

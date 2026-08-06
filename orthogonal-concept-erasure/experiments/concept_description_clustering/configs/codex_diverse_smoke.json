@@ -1,0 +1,22 @@
+{
+  "extends": "codex_diverse_4x50.json",
+  "experiment_name": "codex_diverse_smoke",
+  "formal": false,
+  "facet_ids": ["visual_appearance"],
+  "candidate_validation": {
+    "candidates_per_concept_facet": 1,
+    "accepted_per_concept_facet": 1,
+    "diversity": {
+      "candidate_source_quotas": {"codex_diverse": 1},
+      "accepted_source_quotas": {"codex_diverse": 1}
+    }
+  },
+  "tfidf_hard_selection": {
+    "cv_folds": 2,
+    "generation_candidates_per_concept_facet": 1
+  },
+  "model": {"generation_seeds": [42]},
+  "classifier": {"min_top1_seeds": 1},
+  "lexical_baselines": {"n_runs": 1, "n_init": 2, "classification_cv_folds": 2},
+  "clustering": {"k": 4, "n_runs": 1, "n_init": 2, "random_seeds": [0]}
+}

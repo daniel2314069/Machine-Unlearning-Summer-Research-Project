@@ -1,0 +1,409 @@
+condition,condition_label,cross_readout,space_type,space_label,layer_id,layer_index,layer_name,animal,own_centroid_cosine_distance,nearest_other_concept,nearest_other_cosine_distance,margin,own_centroid_rank,rank1_own_centroid
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,cat,0.554435133934021,dog,0.6549803018569946,0.10054516792297363,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,dog,0.5234013199806213,wolf,0.6654290556907654,0.14202773571014404,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,fox,0.7171621322631836,wolf,0.6866253614425659,-0.030536770820617676,2,False
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,bear,0.6856205463409424,dog,0.7396693229675293,0.054048776626586914,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,wolf,0.6637372374534607,bear,0.7677093148231506,0.10397207736968994,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,rabbit,0.7039299011230469,cat,0.7461659908294678,0.0422360897064209,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,deer,0.5388392806053162,horse,0.6862165927886963,0.14737731218338013,1,True
+matched_eot,Matched EOT,False,text,Text,text,-1,text_space,horse,0.5564455986022949,dog,0.7280876040458679,0.171642005443573,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,cat,0.19665944576263428,dog,0.2124929428100586,0.015833497047424316,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,dog,0.16934442520141602,horse,0.1992645263671875,0.029920101165771484,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,fox,0.20039331912994385,dog,0.2002224326133728,-0.00017088651657104492,2,False
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,bear,0.19184213876724243,dog,0.1820002794265747,-0.009841859340667725,2,False
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,wolf,0.18732154369354248,dog,0.21383649110794067,0.026514947414398193,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,rabbit,0.19901049137115479,dog,0.2091808319091797,0.010170340538024902,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,deer,0.16550922393798828,fox,0.18279051780700684,0.017281293869018555,1,True
+matched_fixed,Matched fixed suffix,False,text,Text,text,-1,text_space,horse,0.16798436641693115,dog,0.2084791660308838,0.04049479961395264,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,cat,0.7930282354354858,dog,0.9427438974380493,0.14971566200256348,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,dog,0.7477341890335083,horse,0.8891575932502747,0.14142340421676636,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,fox,0.9453214406967163,cat,0.9347221851348877,-0.010599255561828613,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,bear,0.8637456893920898,deer,0.8994305729866028,0.03568488359451294,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,wolf,0.7894486784934998,cat,0.8935635685920715,0.10411489009857178,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,rabbit,0.8829882740974426,cat,0.9375108480453491,0.054522573947906494,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,deer,0.7748638391494751,bear,0.9360318183898926,0.16116797924041748,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,text,Text,text,-1,text_space,horse,0.7937422394752502,deer,0.9567217230796814,0.16297948360443115,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.41387438774108887,dog,0.4669400453567505,0.05306565761566162,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.4263709783554077,horse,0.44688308238983154,0.020512104034423828,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.4789160490036011,dog,0.47329944372177124,-0.005616605281829834,4,False
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.4110451340675354,deer,0.4217272996902466,0.010682165622711182,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.32669126987457275,fox,0.3558107018470764,0.029119431972503662,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.3851737976074219,deer,0.40186333656311035,0.016689538955688477,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.3054875135421753,fox,0.35189998149871826,0.04641246795654297,1,True
+matched_eot,Matched EOT,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.3197823762893677,deer,0.3682825565338135,0.0485001802444458,1,True
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.15308338403701782,dog,0.15955102443695068,0.006467640399932861,1,True
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.14193224906921387,cat,0.15707802772521973,0.01514577865600586,1,True
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.17054426670074463,dog,0.15330886840820312,-0.017235398292541504,4,False
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.1510973572731018,dog,0.13612312078475952,-0.014974236488342285,4,False
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.15189790725708008,dog,0.1439220905303955,-0.00797581672668457,4,False
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.15200352668762207,cat,0.13771218061447144,-0.014291346073150635,5,False
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.1532684564590454,dog,0.14177703857421875,-0.01149141788482666,6,False
+matched_fixed,Matched fixed suffix,False,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.13260769844055176,dog,0.14408379793167114,0.011476099491119385,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.872750461101532,fox,0.8870057463645935,0.014255285263061523,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.7667447328567505,cat,0.7858498096466064,0.019105076789855957,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.9748451113700867,cat,0.9730134606361389,-0.001831650733947754,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8554730415344238,wolf,0.868039608001709,0.012566566467285156,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.8295877575874329,fox,0.8231228590011597,-0.006464898586273193,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.8454490303993225,bear,0.8339595198631287,-0.011489510536193848,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.8333565592765808,fox,0.864197313785553,0.030840754508972168,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L0,layer_00,0,unet.down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.86684250831604,deer,0.8899622559547424,0.023119747638702393,1,True
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.5565223693847656,fox,0.6171648502349854,0.06064248085021973,1,True
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.5632085800170898,cat,0.5410570502281189,-0.022151529788970947,2,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.5769544839859009,cat,0.5758122205734253,-0.001142263412475586,2,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.5635056495666504,cat,0.5144160985946655,-0.04908955097198486,8,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.5590707063674927,cat,0.5449367165565491,-0.014133989810943604,2,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.49475085735321045,cat,0.46511369943618774,-0.029637157917022705,2,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.48366880416870117,cat,0.48338574171066284,-0.0002830624580383301,2,False
+matched_eot,Matched EOT,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.49263161420822144,cat,0.5026555061340332,0.010023891925811768,1,True
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.28585362434387207,dog,0.2778250575065613,-0.008028566837310791,4,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.27948158979415894,horse,0.28609538078308105,0.006613790988922119,1,True
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.28236299753189087,dog,0.2563321590423584,-0.02603083848953247,5,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.3042163848876953,dog,0.3041931390762329,-2.3245811462402344e-05,2,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.28980696201324463,bear,0.27535563707351685,-0.014451324939727783,4,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.23983782529830933,dog,0.20903360843658447,-0.030804216861724854,7,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.2904447317123413,bear,0.25377416610717773,-0.036670565605163574,7,False
+matched_fixed,Matched fixed suffix,False,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.23916995525360107,dog,0.25463229417800903,0.015462338924407959,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,cat,1.0008710622787476,fox,0.9920863509178162,-0.008784711360931396,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.979347288608551,cat,0.9905949234962463,0.011247634887695312,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,fox,1.0006152391433716,bear,1.0111899375915527,0.010574698448181152,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.94935142993927,fox,0.9724351763725281,0.023083746433258057,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.9826656579971313,fox,0.9562899470329285,-0.02637571096420288,5,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,1.0035418272018433,bear,0.956702470779419,-0.046839356422424316,7,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,deer,1.0018227100372314,bear,0.9852211475372314,-0.0166015625,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L1,layer_01,1,unet.down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.9748380184173584,bear,0.9718068242073059,-0.0030311942100524902,2,False
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.310464084148407,dog,0.3629351258277893,0.052471041679382324,1,True
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.29083681106567383,cat,0.3361596465110779,0.04532283544540405,1,True
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.39311015605926514,cat,0.37847429513931274,-0.014635860919952393,3,False
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.41553086042404175,cat,0.36784040927886963,-0.04769045114517212,7,False
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.36200273036956787,cat,0.38793838024139404,0.025935649871826172,1,True
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.38479477167129517,cat,0.3747974634170532,-0.009997308254241943,2,False
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.29743492603302,wolf,0.3430675268173218,0.04563260078430176,1,True
+matched_eot,Matched EOT,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.30350202322006226,deer,0.37076425552368164,0.06726223230361938,1,True
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.1405123472213745,dog,0.1559045910835266,0.0153922438621521,1,True
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.12595129013061523,cat,0.14634621143341064,0.02039492130279541,1,True
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.1370566487312317,dog,0.12730181217193604,-0.009754836559295654,4,False
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.13813865184783936,dog,0.11905455589294434,-0.01908409595489502,5,False
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.1321461796760559,cat,0.13683980703353882,0.00469362735748291,1,True
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.14622992277145386,cat,0.14258843660354614,-0.003641486167907715,2,False
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.12195849418640137,dog,0.1184842586517334,-0.0034742355346679688,4,False
+matched_fixed,Matched fixed suffix,False,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.11537957191467285,dog,0.13242274522781372,0.01704317331314087,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.6282092332839966,dog,0.7441103458404541,0.11590111255645752,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.5234824419021606,cat,0.5565505027770996,0.033068060874938965,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.8104540109634399,cat,0.7655065059661865,-0.04494750499725342,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.6499052047729492,cat,0.6516504287719727,0.0017452239990234375,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.65548175573349,cat,0.6539251804351807,-0.0015565752983093262,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.7128036618232727,cat,0.6994959712028503,-0.013307690620422363,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.6638864278793335,fox,0.7296331524848938,0.0657467246055603,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L2,layer_02,2,unet.down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.635953426361084,cat,0.6874207854270935,0.05146735906600952,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.2643694281578064,dog,0.2997496724128723,0.03538024425506592,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.23968195915222168,cat,0.26595020294189453,0.02626824378967285,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.35635900497436523,cat,0.3443584442138672,-0.012000560760498047,2,False
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.3309262990951538,wolf,0.3464275598526001,0.015501260757446289,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.32330596446990967,bear,0.3522409200668335,0.028934955596923828,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.3580085039138794,cat,0.3317372798919678,-0.02627122402191162,6,False
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.24530673027038574,horse,0.27307552099227905,0.02776879072189331,1,True
+matched_eot,Matched EOT,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.23232972621917725,dog,0.2840080261230469,0.05167829990386963,1,True
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.20060127973556519,dog,0.20398402214050293,0.003382742404937744,1,True
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.1971225142478943,horse,0.21383798122406006,0.01671546697616577,1,True
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.20053750276565552,dog,0.19234830141067505,-0.008189201354980469,4,False
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.21878886222839355,dog,0.2118898630142212,-0.006898999214172363,2,False
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.19173789024353027,dog,0.18957126140594482,-0.0021666288375854492,2,False
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.18351465463638306,dog,0.18280500173568726,-0.0007096529006958008,2,False
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.1973605751991272,dog,0.18629103899002075,-0.011069536209106445,6,False
+matched_fixed,Matched fixed suffix,False,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.155106782913208,dog,0.1699669361114502,0.014860153198242188,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.9087004661560059,fox,0.9513686895370483,0.04266822338104248,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.8964805006980896,cat,0.9172917604446411,0.020811259746551514,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.8518749475479126,cat,0.857715904712677,0.005840957164764404,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.780365526676178,deer,0.8062502145767212,0.025884687900543213,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.7620724439620972,fox,0.7451338768005371,-0.01693856716156006,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.8234286904335022,bear,0.8258363008499146,0.0024076104164123535,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.8236303925514221,bear,0.8542977571487427,0.030667364597320557,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L3,layer_03,3,unet.down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.8509759902954102,bear,0.8960680961608887,0.045092105865478516,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.48894500732421875,dog,0.6256296634674072,0.13668465614318848,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.4808785915374756,wolf,0.6011611223220825,0.12028253078460693,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.633784830570221,wolf,0.6133677959442139,-0.02041703462600708,2,False
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.7158072590827942,wolf,0.6748127937316895,-0.040994465351104736,2,False
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.5786826610565186,deer,0.6843982934951782,0.10571563243865967,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.6375013589859009,cat,0.6667650938034058,0.029263734817504883,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.4743592143058777,wolf,0.596219539642334,0.1218603253364563,1,True
+matched_eot,Matched EOT,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.47500669956207275,deer,0.6449114084243774,0.1699047088623047,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.1652991771697998,dog,0.18189406394958496,0.016594886779785156,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.1547560691833496,horse,0.18552392721176147,0.030767858028411865,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.16358232498168945,dog,0.1652374267578125,0.0016551017761230469,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.16463696956634521,dog,0.15671765804290771,-0.0079193115234375,2,False
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.15606367588043213,fox,0.17928624153137207,0.02322256565093994,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.16704994440078735,dog,0.17567294836044312,0.008623003959655762,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.1430377960205078,fox,0.15532761812210083,0.012289822101593018,1,True
+matched_fixed,Matched fixed suffix,False,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.150424063205719,dog,0.18516016006469727,0.03473609685897827,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.7152688503265381,dog,0.8741465210914612,0.1588776707649231,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.6730552315711975,horse,0.8368756771087646,0.16382044553756714,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.8892139196395874,wolf,0.8739234209060669,-0.015290498733520508,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8868927359580994,wolf,0.8648098111152649,-0.022082924842834473,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.7638828754425049,deer,0.8607836961746216,0.0969008207321167,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.8184283971786499,cat,0.8525627851486206,0.0341343879699707,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.7536889314651489,wolf,0.8782921433448792,0.12460321187973022,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L4,layer_04,4,unet.down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.7175306081771851,deer,0.8848652243614197,0.16733461618423462,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.5112647414207458,dog,0.6322336792945862,0.12096893787384033,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.4500412344932556,cat,0.6097781658172607,0.15973693132400513,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.6804937124252319,wolf,0.6419709920883179,-0.03852272033691406,3,False
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.694553017616272,wolf,0.6711399555206299,-0.02341306209564209,2,False
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.601934552192688,deer,0.7340606451034546,0.1321260929107666,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.652972400188446,cat,0.6860067844390869,0.03303438425064087,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.48163026571273804,wolf,0.6080250144004822,0.12639474868774414,1,True
+matched_eot,Matched EOT,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.4534952640533447,dog,0.6796383261680603,0.22614306211471558,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.16392993927001953,dog,0.18284475803375244,0.01891481876373291,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.13241052627563477,horse,0.16136068105697632,0.028950154781341553,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.16085779666900635,dog,0.1612653136253357,0.0004075169563293457,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.15021681785583496,dog,0.14153212308883667,-0.008684694766998291,3,False
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.16213548183441162,dog,0.18346554040908813,0.021330058574676514,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.16101151704788208,cat,0.17161202430725098,0.010600507259368896,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.1367364525794983,fox,0.14883732795715332,0.01210087537765503,1,True
+matched_fixed,Matched fixed suffix,False,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.13607549667358398,dog,0.1843860149383545,0.04831051826477051,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.6818145513534546,dog,0.8282842636108398,0.14646971225738525,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.5436981916427612,horse,0.7225332856178284,0.17883509397506714,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.912988543510437,wolf,0.875436544418335,-0.03755199909210205,4,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.8443377017974854,wolf,0.8427717089653015,-0.0015659928321838379,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.6833961606025696,fox,0.7978389263153076,0.11444276571273804,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.7541841268539429,horse,0.7329738736152649,-0.02121025323867798,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.6975681781768799,bear,0.8234676718711853,0.12589949369430542,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L5,layer_05,5,unet.down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.5967398881912231,wolf,0.84868323802948,0.25194334983825684,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.4639861583709717,dog,0.6327967643737793,0.16881060600280762,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.435031533241272,cat,0.5508766174316406,0.11584508419036865,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.6490315198898315,wolf,0.6318396329879761,-0.01719188690185547,3,False
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.7086137533187866,wolf,0.6695399284362793,-0.039073824882507324,3,False
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.5769990682601929,fox,0.695758581161499,0.11875951290130615,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.6070449352264404,deer,0.6727519035339355,0.06570696830749512,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.45103442668914795,wolf,0.5859062075614929,0.13487178087234497,1,True
+matched_eot,Matched EOT,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.45151591300964355,dog,0.6556480526924133,0.20413213968276978,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.1816861629486084,dog,0.20966827869415283,0.027982115745544434,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.15566110610961914,horse,0.17985868453979492,0.02419757843017578,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.1881258487701416,dog,0.18468040227890015,-0.003445446491241455,4,False
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.1736818552017212,dog,0.16262441873550415,-0.011057436466217041,3,False
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.17762207984924316,dog,0.19649028778076172,0.018868207931518555,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.1798921823501587,horse,0.19305235147476196,0.013160169124603271,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.15347808599472046,horse,0.16827857494354248,0.014800488948822021,1,True
+matched_fixed,Matched fixed suffix,False,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.15237998962402344,dog,0.19326919317245483,0.040889203548431396,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.6688753962516785,dog,0.8313430547714233,0.16246765851974487,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.4953802824020386,cat,0.7011648416519165,0.20578455924987793,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.8891441226005554,wolf,0.8642610311508179,-0.02488309144973755,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8247723579406738,deer,0.8313834071159363,0.006611049175262451,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.7143888473510742,fox,0.8498978614807129,0.13550901412963867,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.7432856559753418,horse,0.7911109924316406,0.04782533645629883,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.6599087715148926,bear,0.8277631998062134,0.1678544282913208,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L6,layer_06,6,unet.up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.6258324384689331,deer,0.8510117530822754,0.22517931461334229,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.44821006059646606,dog,0.6048435568809509,0.15663349628448486,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.4285755157470703,cat,0.5909790992736816,0.16240358352661133,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.6353226900100708,wolf,0.5948084592819214,-0.040514230728149414,3,False
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.7052508592605591,wolf,0.6715456247329712,-0.03370523452758789,2,False
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.5333598852157593,fox,0.6798255443572998,0.14646565914154053,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.5908012986183167,cat,0.653064489364624,0.06226319074630737,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.4319846034049988,wolf,0.5847195386886597,0.1527349352836609,1,True
+matched_eot,Matched EOT,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.4060704708099365,deer,0.6338266730308533,0.22775620222091675,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.16591930389404297,dog,0.2002052664756775,0.03428596258163452,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.14165306091308594,horse,0.1685255765914917,0.02687251567840576,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.17966961860656738,cat,0.17975938320159912,8.976459503173828e-05,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.16020214557647705,dog,0.1516118049621582,-0.008590340614318848,3,False
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.17177915573120117,dog,0.18883979320526123,0.01706063747406006,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.16903984546661377,cat,0.18186825513839722,0.012828409671783447,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.1412668228149414,fox,0.15815353393554688,0.01688671112060547,1,True
+matched_fixed,Matched fixed suffix,False,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.15147030353546143,dog,0.19960486888885498,0.048134565353393555,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.6003159284591675,dog,0.7980037331581116,0.1976878046989441,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.48902928829193115,cat,0.7063422799110413,0.2173129916191101,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.823178768157959,wolf,0.7967656850814819,-0.02641308307647705,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.8344030380249023,wolf,0.8077780604362488,-0.026624977588653564,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.6665905714035034,fox,0.7954037189483643,0.12881314754486084,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.6955814361572266,horse,0.7625848650932312,0.06700342893600464,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.645246148109436,wolf,0.8224133253097534,0.17716717720031738,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L7,layer_07,7,unet.up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.5755036473274231,deer,0.8156846761703491,0.24018102884292603,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.4940720796585083,dog,0.6511662006378174,0.15709412097930908,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.46565330028533936,cat,0.6039285659790039,0.13827526569366455,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.675796627998352,wolf,0.6343244314193726,-0.04147219657897949,2,False
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.7015786170959473,wolf,0.6931856870651245,-0.008392930030822754,2,False
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.6055153012275696,deer,0.7176501750946045,0.11213487386703491,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.6279438734054565,deer,0.6683642268180847,0.040420353412628174,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.4690929055213928,horse,0.6070234775543213,0.13793057203292847,1,True
+matched_eot,Matched EOT,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.46881556510925293,deer,0.6419132351875305,0.1730976700782776,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.1518458127975464,dog,0.17402076721191406,0.022174954414367676,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.14000600576400757,wolf,0.16983246803283691,0.029826462268829346,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.16841304302215576,dog,0.16502851247787476,-0.003384530544281006,2,False
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.15893280506134033,dog,0.14114296436309814,-0.017789840698242188,6,False
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.1604180932044983,dog,0.1771194338798523,0.016701340675354004,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.17368125915527344,dog,0.18377292156219482,0.010091662406921387,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.14887380599975586,dog,0.15385031700134277,0.004976511001586914,1,True
+matched_fixed,Matched fixed suffix,False,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.1436014175415039,dog,0.17738580703735352,0.03378438949584961,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.6458844542503357,dog,0.854418933391571,0.20853447914123535,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.6024377346038818,cat,0.7807722091674805,0.17833447456359863,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.9173562526702881,wolf,0.887683093547821,-0.02967315912246704,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.8457093238830566,wolf,0.8223603963851929,-0.02334892749786377,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.7056889533996582,horse,0.8279004096984863,0.12221145629882812,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.7682003974914551,horse,0.8122246861457825,0.04402428865432739,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.6739527583122253,wolf,0.8590235114097595,0.18507075309753418,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L8,layer_08,8,unet.up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.6314805150032043,deer,0.8114036321640015,0.17992311716079712,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.3792262077331543,dog,0.47163569927215576,0.09240949153900146,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.3430197238922119,cat,0.40617358684539795,0.06315386295318604,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.5302006602287292,wolf,0.4695843458175659,-0.06061631441116333,5,False
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.5317909121513367,dog,0.5357894897460938,0.00399857759475708,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.4913145899772644,dog,0.5779974460601807,0.08668285608291626,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.5393551588058472,horse,0.5716884136199951,0.03233325481414795,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.36293888092041016,horse,0.4394897222518921,0.07655084133148193,1,True
+matched_eot,Matched EOT,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.3907507658004761,deer,0.5275752544403076,0.13682448863983154,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.13528740406036377,dog,0.15033024549484253,0.01504284143447876,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.11180698871612549,horse,0.14106297492980957,0.029255986213684082,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.13426733016967773,dog,0.13117122650146484,-0.0030961036682128906,3,False
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.14408338069915771,dog,0.12057119607925415,-0.023512184619903564,6,False
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.1394595503807068,dog,0.15844941139221191,0.018989861011505127,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.1304386854171753,cat,0.14308369159698486,0.01264500617980957,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.12469995021820068,rabbit,0.12934768199920654,0.004647731781005859,1,True
+matched_fixed,Matched fixed suffix,False,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.10406875610351562,dog,0.13561731576919556,0.03154855966567993,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.7750186920166016,dog,0.8884007930755615,0.11338210105895996,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.6499060392379761,cat,0.7643911838531494,0.11448514461517334,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.9330952167510986,cat,0.889822244644165,-0.043272972106933594,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8311895132064819,deer,0.8639843463897705,0.032794833183288574,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.7626036405563354,fox,0.8469698429107666,0.08436620235443115,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.8431911468505859,cat,0.861781895160675,0.01859074831008911,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.7329431772232056,fox,0.859478771686554,0.1265355944633484,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L9,layer_09,9,unet.up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.7305516004562378,deer,0.8590399622917175,0.12848836183547974,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.23684030771255493,dog,0.4368400573730469,0.19999974966049194,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.21083056926727295,cat,0.35946786403656006,0.1486372947692871,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.4079786539077759,cat,0.38545870780944824,-0.022519946098327637,3,False
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.5388250350952148,wolf,0.4126685857772827,-0.12615644931793213,8,False
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.3421839475631714,cat,0.44678378105163574,0.10459983348846436,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.4011995792388916,cat,0.4075621962547302,0.006362617015838623,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.3008246421813965,wolf,0.37707358598709106,0.07624894380569458,1,True
+matched_eot,Matched EOT,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.2941778302192688,dog,0.4505438804626465,0.15636605024337769,1,True
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.13651418685913086,dog,0.1777559518814087,0.04124176502227783,1,True
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.11754941940307617,horse,0.14143836498260498,0.02388894557952881,1,True
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.1399451494216919,cat,0.13232827186584473,-0.007616877555847168,2,False
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.14032518863677979,dog,0.13055282831192017,-0.00977236032485962,6,False
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.12858617305755615,cat,0.14005529880523682,0.011469125747680664,1,True
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.13930749893188477,cat,0.13220113515853882,-0.007106363773345947,2,False
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.12310951948165894,fox,0.12134885787963867,-0.0017606616020202637,2,False
+matched_fixed,Matched fixed suffix,False,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.10546505451202393,dog,0.13500046730041504,0.029535412788391113,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.5068674087524414,fox,0.7123085856437683,0.2054411768913269,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.39006197452545166,cat,0.5598937273025513,0.1698317527770996,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.7609935998916626,cat,0.7421318888664246,-0.018861711025238037,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.7028846740722656,wolf,0.6943897008895874,-0.008494973182678223,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.6001902222633362,cat,0.6776461601257324,0.07745593786239624,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.6571931838989258,cat,0.6536588072776794,-0.003534376621246338,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.6764634847640991,wolf,0.750747799873352,0.07428431510925293,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L10,layer_10,10,unet.up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.5971180200576782,wolf,0.7104375958442688,0.11331957578659058,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.3659352660179138,dog,0.44122314453125,0.07528787851333618,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.3568843603134155,cat,0.4366128444671631,0.07972848415374756,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.5457490682601929,cat,0.5386173725128174,-0.007131695747375488,4,False
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.5633678436279297,wolf,0.5227991342544556,-0.04056870937347412,5,False
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.4753333330154419,deer,0.5738972425460815,0.09856390953063965,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.5139018297195435,cat,0.5253148078918457,0.011412978172302246,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.3868623375892639,wolf,0.45819753408432007,0.07133519649505615,1,True
+matched_eot,Matched EOT,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.3696441650390625,dog,0.45621544122695923,0.08657127618789673,1,True
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.1177482008934021,dog,0.12980663776397705,0.012058436870574951,1,True
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.11118429899215698,cat,0.13640499114990234,0.02522069215774536,1,True
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.14439547061920166,dog,0.12938380241394043,-0.01501166820526123,4,False
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.14193308353424072,dog,0.11606472730636597,-0.025868356227874756,7,False
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.13590705394744873,dog,0.13794851303100586,0.002041459083557129,1,True
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.14271795749664307,cat,0.13869035243988037,-0.004027605056762695,2,False
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.129156231880188,dog,0.12470781803131104,-0.004448413848876953,3,False
+matched_fixed,Matched fixed suffix,False,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.11516988277435303,dog,0.12594234943389893,0.010772466659545898,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.6346555352210999,dog,0.7545341849327087,0.11987864971160889,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.6066014170646667,cat,0.6836144924163818,0.07701307535171509,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.8861703872680664,cat,0.820758581161499,-0.06541180610656738,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.7255591750144958,wolf,0.7243645191192627,-0.0011946558952331543,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.6782227754592896,deer,0.758102297782898,0.0798795223236084,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.7692604064941406,cat,0.7983291149139404,0.029068708419799805,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.7612090706825256,wolf,0.8598273396492004,0.0986182689666748,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L11,layer_11,11,unet.up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.647293210029602,cat,0.7065058946609497,0.059212684631347656,1,True
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.4965207576751709,fox,0.5380725860595703,0.041551828384399414,1,True
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.5160658359527588,cat,0.47475671768188477,-0.04130911827087402,3,False
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.49982738494873047,cat,0.5068289637565613,0.0070015788078308105,1,True
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.4781688451766968,rabbit,0.4355555772781372,-0.04261326789855957,7,False
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.495525062084198,rabbit,0.484036386013031,-0.011488676071166992,3,False
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.42482221126556396,cat,0.4413774013519287,0.016555190086364746,1,True
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.4619959592819214,rabbit,0.4606599807739258,-0.0013359785079956055,2,False
+matched_eot,Matched EOT,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.4859998822212219,rabbit,0.4873157739639282,0.0013158917427062988,1,True
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.30960941314697266,dog,0.291420578956604,-0.018188834190368652,5,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.30484867095947266,horse,0.3100142478942871,0.005165576934814453,1,True
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.2949948310852051,dog,0.2754487991333008,-0.019546031951904297,4,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.32739806175231934,dog,0.3250110149383545,-0.0023870468139648438,3,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.2889159917831421,bear,0.27686822414398193,-0.012047767639160156,4,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.24412107467651367,horse,0.22063153982162476,-0.023489534854888916,7,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.27508533000946045,horse,0.235581636428833,-0.03950369358062744,8,False
+matched_fixed,Matched fixed suffix,False,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.24161523580551147,dog,0.25393033027648926,0.012315094470977783,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.9224874377250671,fox,0.8685230016708374,-0.053964436054229736,6,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.8359404802322388,fox,0.8161501884460449,-0.019790291786193848,5,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.744463324546814,rabbit,0.7565606236457825,0.012097299098968506,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8266091346740723,fox,0.8446431756019592,0.018034040927886963,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.8428025245666504,fox,0.7957481145858765,-0.047054409980773926,7,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.8954834938049316,bear,0.8350862860679626,-0.060397207736968994,5,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.8219477534294128,bear,0.7903099656105042,-0.03163778781890869,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L12,layer_12,12,unet.up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.835964024066925,bear,0.8457287549972534,0.00976473093032837,1,True
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.4310019016265869,fox,0.4755796790122986,0.04457777738571167,1,True
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.42969810962677,cat,0.42181408405303955,-0.007884025573730469,2,False
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.44976872205734253,cat,0.44902855157852173,-0.0007401704788208008,2,False
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.475985050201416,fox,0.4332483410835266,-0.042736709117889404,8,False
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.45198869705200195,fox,0.45038485527038574,-0.001603841781616211,2,False
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.4138753414154053,cat,0.41512811183929443,0.0012527704238891602,1,True
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.403171181678772,fox,0.41252750158309937,0.009356319904327393,1,True
+matched_eot,Matched EOT,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.4094337821006775,deer,0.44071727991104126,0.03128349781036377,1,True
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.22202438116073608,dog,0.21000462770462036,-0.012019753456115723,6,False
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.22122442722320557,horse,0.23260056972503662,0.011376142501831055,1,True
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.20875591039657593,dog,0.19566643238067627,-0.013089478015899658,4,False
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.2367234230041504,dog,0.23820316791534424,0.0014797449111938477,1,True
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.18880712985992432,bear,0.18909144401550293,0.0002843141555786133,1,True
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.18154340982437134,dog,0.16308808326721191,-0.018455326557159424,7,False
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.19376206398010254,bear,0.16575127840042114,-0.028010785579681396,7,False
+matched_fixed,Matched fixed suffix,False,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.15516310930252075,dog,0.16233354806900024,0.007170438766479492,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,cat,0.9657022953033447,fox,0.9168857336044312,-0.048816561698913574,6,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,dog,0.8944436311721802,bear,0.884728193283081,-0.009715437889099121,4,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,fox,0.8207767009735107,bear,0.8253532648086548,0.004576563835144043,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,bear,0.8357955813407898,fox,0.847294807434082,0.011499226093292236,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,wolf,0.8681678771972656,fox,0.8017430305480957,-0.06642484664916992,7,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,rabbit,0.9069302082061768,bear,0.8510020971298218,-0.05592811107635498,5,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,deer,0.916232705116272,bear,0.8811437487602234,-0.035088956356048584,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L13,layer_13,13,unet.up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,horse,0.8886119723320007,bear,0.8820163607597351,-0.006595611572265625,2,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.3945951461791992,fox,0.4494900703430176,0.05489492416381836,1,True
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.39802443981170654,cat,0.37258708477020264,-0.025437355041503906,3,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.4106323719024658,cat,0.392419695854187,-0.01821267604827881,2,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.43858325481414795,cat,0.4038298726081848,-0.034753382205963135,6,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.4628884792327881,cat,0.429590106010437,-0.033298373222351074,3,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.42242705821990967,cat,0.40606385469436646,-0.016363203525543213,2,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.3918066620826721,cat,0.3843221068382263,-0.007484555244445801,3,False
+matched_eot,Matched EOT,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.3854198455810547,cat,0.3848367929458618,-0.0005830526351928711,2,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.19912242889404297,dog,0.19884634017944336,-0.0002760887145996094,2,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.2179531455039978,horse,0.2215663194656372,0.0036131739616394043,1,True
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.1930224895477295,dog,0.1773177981376648,-0.015704691410064697,5,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.2218298316001892,dog,0.2211247682571411,-0.0007050633430480957,2,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.18786799907684326,dog,0.18038243055343628,-0.007485568523406982,4,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.1727299690246582,cat,0.16232293844223022,-0.010407030582427979,6,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.20592272281646729,bear,0.1706675887107849,-0.03525513410568237,8,False
+matched_fixed,Matched fixed suffix,False,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.17580574750900269,dog,0.1890709400177002,0.01326519250869751,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,cat,0.8283725380897522,fox,0.8198683857917786,-0.008504152297973633,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,dog,0.8267934918403625,cat,0.8104817867279053,-0.016311705112457275,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,fox,0.798936128616333,cat,0.8070829510688782,0.008146822452545166,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,bear,0.7448620200157166,fox,0.7541680335998535,0.009306013584136963,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,wolf,0.7686401605606079,fox,0.7285226583480835,-0.040117502212524414,4,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,rabbit,0.8230514526367188,bear,0.7502098083496094,-0.07284164428710938,7,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,deer,0.8760626316070557,bear,0.8338309526443481,-0.04223167896270752,3,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L14,layer_14,14,unet.up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,horse,0.802251398563385,bear,0.786379337310791,-0.015872061252593994,3,False
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.5851917862892151,dog,0.7027596235275269,0.11756783723831177,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.5173772573471069,cat,0.6622939109802246,0.14491665363311768,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.7503871321678162,wolf,0.7379112243652344,-0.012475907802581787,2,False
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.7369223833084106,wolf,0.7535433173179626,0.016620934009552002,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.6730660796165466,fox,0.7739027738571167,0.10083669424057007,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.7343520522117615,cat,0.7900002002716064,0.05564814805984497,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.584026575088501,wolf,0.7095543146133423,0.1255277395248413,1,True
+matched_eot,Matched EOT,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.5791716575622559,deer,0.7770481705665588,0.19787651300430298,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.18565279245376587,dog,0.20605409145355225,0.020401298999786377,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.1608220338821411,wolf,0.18857687711715698,0.02775484323501587,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.18219387531280518,dog,0.18316113948822021,0.0009672641754150391,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.1761782169342041,dog,0.1703183650970459,-0.005859851837158203,2,False
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.18006497621536255,dog,0.1984245777130127,0.018359601497650146,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.17950516939163208,cat,0.18843811750411987,0.008932948112487793,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.15467548370361328,wolf,0.1659926176071167,0.011317133903503418,1,True
+matched_fixed,Matched fixed suffix,False,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.15250158309936523,dog,0.18839311599731445,0.03589153289794922,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,cat,0.6938288807868958,dog,0.8501796722412109,0.15635079145431519,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,dog,0.5742896199226379,cat,0.7448359727859497,0.17054635286331177,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,fox,0.9294114708900452,cat,0.9221943616867065,-0.007217109203338623,2,False
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,bear,0.8799049854278564,deer,0.9181231260299683,0.038218140602111816,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,wolf,0.7860974669456482,fox,0.8751128911972046,0.0890154242515564,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,rabbit,0.8129535913467407,deer,0.8814585208892822,0.0685049295425415,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,deer,0.7265321612358093,wolf,0.8613783717155457,0.13484621047973633,1,True
+oce_last_to_eot,OCE-last-token -> EOT-description centroid,True,W0,L15,layer_15,15,unet.mid_block.attentions.0.transformer_blocks.0.attn2.to_v,horse,0.7021075487136841,deer,0.8885290026664734,0.1864214539527893,1,True

@@ -1,0 +1,109 @@
+{
+  "objective": "official OCE subspace",
+  "checkpoints": [
+    {
+      "method": "single_subspace_cat_to_dog",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/single_subspace_cat_to_dog.safetensors",
+      "sha256": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c"
+    },
+    {
+      "method": "single_subspace_dog_to_cat",
+      "pairs": [
+        {
+          "target": "dog",
+          "anchor": "cat"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/single_subspace_dog_to_cat.safetensors",
+      "sha256": "d2573e736fe7bad49a82d46d697ca0d3f96713207eec52afd4887127352b48eb"
+    },
+    {
+      "method": "single_subspace_horse_to_deer",
+      "pairs": [
+        {
+          "target": "horse",
+          "anchor": "deer"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/single_subspace_horse_to_deer.safetensors",
+      "sha256": "81e969185e2f67ef2a387a5e63453a7e99005c7c139ea29d21eba3089f575192"
+    },
+    {
+      "method": "single_subspace_dog_to_wolf",
+      "pairs": [
+        {
+          "target": "dog",
+          "anchor": "wolf"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/single_subspace_dog_to_wolf.safetensors",
+      "sha256": "4eb506b3053eebc114c435055cc838548c581057e58afaffab967498b1b7db52"
+    },
+    {
+      "method": "single_subspace_wolf_to_cat",
+      "pairs": [
+        {
+          "target": "wolf",
+          "anchor": "cat"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/single_subspace_wolf_to_cat.safetensors",
+      "sha256": "8d4c265f594ea796f36d076a6009153d1643a80f9089cde3ac56cc8b511fc448"
+    },
+    {
+      "method": "joint_subspace_cycle2",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        },
+        {
+          "target": "dog",
+          "anchor": "cat"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/joint_subspace_cycle2.safetensors",
+      "sha256": "e62f918bd7fc1259170129f6707b62f29afbaf7a396b96f0e0efc8a64218d681"
+    },
+    {
+      "method": "joint_subspace_cycle3",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        },
+        {
+          "target": "dog",
+          "anchor": "wolf"
+        },
+        {
+          "target": "wolf",
+          "anchor": "cat"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/joint_subspace_cycle3.safetensors",
+      "sha256": "b62149f2b0f6f0029630145702680442aca15b046121a9fcc9d5c136630240cd"
+    },
+    {
+      "method": "joint_subspace_no_overlap",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        },
+        {
+          "target": "horse",
+          "anchor": "deer"
+        }
+      ],
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/checkpoints/joint_subspace_no_overlap.safetensors",
+      "sha256": "57facb3da6f54bd4a79fe6c3d460a377efe7183929ed0b5b3378a5306f805935"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+outputs/
+data/full_candidates.jsonl
+data/full_generation_requests.jsonl
+data/full_generation_responses.jsonl
+results/**/*.npy
+results/**/*.npz

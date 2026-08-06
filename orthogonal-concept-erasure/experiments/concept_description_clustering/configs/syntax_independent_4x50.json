@@ -1,0 +1,60 @@
+{
+  "extends": "full.json",
+  "experiment_name": "syntax_independent_4_concepts_50_each_pilot",
+  "dataset_design": {
+    "description": "Multi-source, syntax-diverse name-free descriptions without concept-specific subject-frame products.",
+    "corpus_type": "syntax_independent_multi_source",
+    "retain_pre_generation_population": true
+  },
+  "concept_names": ["cat", "dog", "fox", "bear"],
+  "candidate_generation": {
+    "sources": [
+      {"id": "human_authored", "candidates_per_group": 5},
+      {"id": "llm_source_a", "candidates_per_group": 5},
+      {"id": "llm_source_b", "candidates_per_group": 5}
+    ]
+  },
+  "candidate_validation": {
+    "candidates_per_concept_facet": 15,
+    "accepted_per_concept_facet": 5,
+    "diversity": {
+      "enabled": true,
+      "ngram_size": 3,
+      "max_ngram_occurrences": 1,
+      "opening_content_words": 3,
+      "max_opening_occurrences": 1,
+      "require_syntax_family": true,
+      "max_syntax_family_per_concept_facet": 1,
+      "candidate_source_quotas": {
+        "human_authored": 5,
+        "llm_source_a": 5,
+        "llm_source_b": 5
+      },
+      "accepted_source_quotas": {
+        "human_authored": 1,
+        "llm_source_a": 2,
+        "llm_source_b": 2
+      }
+    }
+  },
+  "controls": {
+    "word_shuffle": {"enabled": true, "seed": 1729}
+  },
+  "prototype_analysis": {
+    "n_bootstrap": 1000,
+    "reference_fraction": 0.8,
+    "seed": 2027
+  },
+  "lexical_baselines": {
+    "enabled": true,
+    "n_runs": 20,
+    "n_init": 100,
+    "classification_cv_folds": 5,
+    "vectorizers": [
+      {"name": "tfidf_word_unigram", "analyzer": "word", "ngram_range": [1, 1], "min_df": 1},
+      {"name": "tfidf_word_unigram_bigram", "analyzer": "word", "ngram_range": [1, 2], "min_df": 1},
+      {"name": "tfidf_char_3_5", "analyzer": "char_wb", "ngram_range": [3, 5], "min_df": 1}
+    ]
+  },
+  "clustering": {"k": 4}
+}

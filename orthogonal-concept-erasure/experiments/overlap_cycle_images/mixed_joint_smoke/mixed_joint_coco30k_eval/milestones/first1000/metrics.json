@@ -1,0 +1,106 @@
+{
+  "status": "complete",
+  "completed_at": "2026-07-26T06:58:29.885828+00:00",
+  "prompt_count": 1000,
+  "mixed_checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/joint_official_subspace.safetensors",
+  "mixed_checkpoint_sha256": "dcd14522411d00cd2d7c8b70bb39e165b7acc8bc7128802a595201521f912043",
+  "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/prompts_first1000.csv",
+  "reference_id": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+  "reused_original_reference": false,
+  "image_validation": {
+    "original_sd": {
+      "directory": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/generated_images/original_sd",
+      "selected_count": 1000,
+      "directory_png_count": 10000,
+      "missing": []
+    },
+    "mixed_joint_oce": {
+      "directory": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/generated_images/mixed_joint_oce",
+      "selected_count": 1000,
+      "directory_png_count": 1000,
+      "missing": []
+    }
+  },
+  "models": {
+    "original_sd": {
+      "clip_score": {
+        "mean": 31.19920644760132,
+        "std": 2.8994762188857863,
+        "count": 1000
+      },
+      "fid_to_original_sd": 0.0,
+      "fid_role": "reference distribution"
+    },
+    "mixed_joint_oce": {
+      "clip_score": {
+        "mean": 30.59929483604431,
+        "std": 3.126209455992035,
+        "count": 1000
+      },
+      "fid_to_original_sd": 41.58058179973716
+    }
+  },
+  "difference_mixed_minus_original": {
+    "clip_score_mean": -0.5999116115570082,
+    "fid_to_original_sd": 41.58058179973716
+  },
+  "reference_cache": {
+    "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+    "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+    "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/prompts_first1000.csv",
+    "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/protocol.json",
+    "removed_per_image_feature_caches": [
+      "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16-inception-v3-compat-features-2048.pt"
+    ]
+  },
+  "settings": {
+    "protocol": "OCE paper preservation protocol: first 10,000 prompts from the repository MSCOCO-30k source",
+    "prompt_source": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/data/coco_30k.csv",
+    "prompt_source_sha256": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
+    "prompt_subset": "first 10,000 rows in source order",
+    "prompt_count": 10000,
+    "milestone_prompt_count": 1000,
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "mixed_checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/joint_official_subspace.safetensors",
+    "mixed_checkpoint_sha256": "dcd14522411d00cd2d7c8b70bb39e165b7acc8bc7128802a595201521f912043",
+    "methods": [
+      "original_sd",
+      "mixed_joint_oce"
+    ],
+    "generation": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "num_images_per_prompt": 1,
+      "dtype": "bfloat16",
+      "batch_size": 4,
+      "safety_checker": null,
+      "seed_column": "evaluation_seed"
+    },
+    "metrics": {
+      "clip_score": "openai/clip-vit-base-patch32 logits_per_image, matching metrics/eval_clip_score.py",
+      "fid": "torch_fidelity FID, matching metrics/eval_fid.py; Original SD generations are the reference distribution",
+      "original_fid": "0.0 because Original SD is the FID reference"
+    },
+    "shared_references": {
+      "1000": {
+        "reference_id": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+        "registry": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/registry.json",
+        "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+        "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+        "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/prompts_first1000.csv",
+        "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/protocol.json"
+      },
+      "10000": {
+        "reference_id": "sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16",
+        "registry": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/registry.json",
+        "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+        "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+        "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/prompts_first10000.csv",
+        "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/protocol.json"
+      }
+    }
+  }
+}

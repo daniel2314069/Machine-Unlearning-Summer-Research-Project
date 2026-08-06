@@ -1,0 +1,32 @@
+{
+  "date": "2026-07-15",
+  "method": "OCE",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "edit_concept": "cat",
+  "guide_concept": "dog",
+  "preserve_concept": "dog",
+  "prompt": "A small furry household pet with pointed ears, whiskers, and a flexible tail.",
+  "seed": 42,
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "num_images_per_prompt": 1,
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000,
+    "preserve_global_scale": 10,
+    "preserve_concept_scale": 0,
+    "lambda": 10,
+    "cg_token_count": 403727
+  },
+  "clip_evaluation": {
+    "model": "openai/clip-vit-base-patch32",
+    "labels": ["a photo of a cat", "a photo of a dog"],
+    "W_0": {"cat": 0.707055, "dog": 0.292945},
+    "W": {"cat": 0.232089, "dog": 0.767911}
+  },
+  "sha256": {
+    "W_0_png": "9eb37e09496eb1990ee2e2d9de88eb2b3508ecf923c3e913173cc9dd1f6d0256",
+    "W_png": "1fe4ed2dd76a8e559a1aee4e59edca18a605f8d402ba2e57e1b19d326cc9812e",
+    "edited_weights": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "status": "complete",
+  "validated_at": "2026-07-27T13:30:04.776348+00:00",
+  "canonical_source": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/generate_celeb.py",
+  "table13_source": "https://arxiv.org/html/2605.28902#Sx9.T13",
+  "repository_strings_are_canonical": true,
+  "checks": {
+    "e50_equals_e100_prefix": true,
+    "counts": {
+      "targets": 50,
+      "unique_anchors": 50,
+      "retains": 100
+    },
+    "within_group_unique": {
+      "targets": true,
+      "unique_anchors": true,
+      "retains": true
+    },
+    "pairwise_intersections": {
+      "targets_unique_anchors": [],
+      "targets_retains": [],
+      "unique_anchors_retains": []
+    },
+    "union_count": 200,
+    "table13_comparison": {
+      "e100": {
+        "matches_exactly": true,
+        "repo_only": [],
+        "table_only": [],
+        "ordered_mismatches": []
+      },
+      "retains": {
+        "matches_exactly": true,
+        "repo_only": [],
+        "table_only": [],
+        "ordered_mismatches": []
+      }
+    }
+  },
+  "cg": {
+    "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/Cg.pt",
+    "sha256": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae",
+    "readable": true,
+    "keys": [
+      "C",
+      "count"
+    ],
+    "shape": [
+      768,
+      768
+    ],
+    "dtype": "torch.float32",
+    "finite": true,
+    "model_text_hidden_size": 768,
+    "dimension_compatible": true
+  },
+  "failures": []
+}

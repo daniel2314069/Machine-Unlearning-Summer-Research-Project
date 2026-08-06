@@ -1,0 +1,15 @@
+{
+  "extends": "codex_diverse_pool.json",
+  "experiment_name": "codex_diverse_smoke_pool",
+  "concept_names": ["cat", "dog", "fox", "bear"],
+  "facet_ids": ["visual_appearance"],
+  "candidate_validation": {
+    "candidates_per_concept_facet": 2,
+    "accepted_per_concept_facet": 1,
+    "diversity": {
+      "candidate_source_quotas": {"codex_diverse": 2},
+      "accepted_source_quotas": {"codex_diverse": 1}
+    }
+  },
+  "clustering": {"k": 4}
+}

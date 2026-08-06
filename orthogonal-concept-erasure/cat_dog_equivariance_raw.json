@@ -1,0 +1,341 @@
+{
+  "configuration": {
+    "erase_concepts": [
+      "cat",
+      "dog"
+    ],
+    "guide": " ",
+    "explicit_retain": [],
+    "prompt_expansion": false,
+    "erase_scale": 2000.0,
+    "global_scale": 10.0,
+    "lambda": 10.0,
+    "cg_source": {
+      "path": "data/coco_30k.csv",
+      "count": 4096
+    },
+    "layers": 16
+  },
+  "summary": {
+    "none": {
+      "dog_after_cat_conjugation_relerr": {
+        "mean": 0.33385110663721207,
+        "max": 0.8907999992370605
+      },
+      "cat_after_dog_conjugation_relerr": {
+        "mean": 0.33399276687487145,
+        "max": 0.89203280210495
+      },
+      "cat_then_dog_weight_relerr": {
+        "mean": 4.5091324523127696e-05,
+        "max": 6.977505836402997e-05
+      },
+      "dog_then_cat_weight_relerr": {
+        "mean": 4.410507597185642e-05,
+        "max": 6.435445538954809e-05
+      },
+      "commutator_prediction_relerr": {
+        "mean": 0.00044876850915898103,
+        "max": 0.0010461771162226796
+      },
+      "sequential_order_effect_rel": {
+        "mean": 0.2180012515746057,
+        "max": 0.43905752897262573
+      },
+      "commutator_effect_rel": {
+        "mean": 0.21800795709714293,
+        "max": 0.43906423449516296
+      }
+    }
+  },
+  "layers": [
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.0001023100849124603,
+      "cat_after_dog_conjugation_relerr": 0.00010295628453604877,
+      "cat_then_dog_weight_relerr": 2.385246079938952e-05,
+      "dog_then_cat_weight_relerr": 2.066774140985217e-05,
+      "commutator_prediction_relerr": 0.00010595293861115351,
+      "sequential_order_effect_rel": 0.2922574579715729,
+      "commutator_effect_rel": 0.2922635078430176
+    },
+    {
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.0001514453033450991,
+      "cat_after_dog_conjugation_relerr": 0.00014562156866304576,
+      "cat_then_dog_weight_relerr": 3.9217698940774426e-05,
+      "dog_then_cat_weight_relerr": 3.656469561974518e-05,
+      "commutator_prediction_relerr": 0.00011858919606311247,
+      "sequential_order_effect_rel": 0.43905752897262573,
+      "commutator_effect_rel": 0.43906423449516296
+    },
+    {
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 640,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.0002433813933748752,
+      "cat_after_dog_conjugation_relerr": 0.00024072281667031348,
+      "cat_then_dog_weight_relerr": 3.774036667891778e-05,
+      "dog_then_cat_weight_relerr": 3.6741992516908795e-05,
+      "commutator_prediction_relerr": 0.00027599037275649607,
+      "sequential_order_effect_rel": 0.19172082841396332,
+      "commutator_effect_rel": 0.19172734022140503
+    },
+    {
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 640,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00024913952802307904,
+      "cat_after_dog_conjugation_relerr": 0.0002491409541107714,
+      "cat_then_dog_weight_relerr": 4.8892718041315675e-05,
+      "dog_then_cat_weight_relerr": 4.051280120620504e-05,
+      "commutator_prediction_relerr": 0.00024555655545555055,
+      "sequential_order_effect_rel": 0.2495926469564438,
+      "commutator_effect_rel": 0.24960491061210632
+    },
+    {
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": false,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": false
+      },
+      "dog_after_cat_conjugation_relerr": 0.8905752301216125,
+      "cat_after_dog_conjugation_relerr": 0.8918247222900391,
+      "cat_then_dog_weight_relerr": 5.967939432593994e-05,
+      "dog_then_cat_weight_relerr": 6.435445538954809e-05,
+      "commutator_prediction_relerr": 0.0007484155357815325,
+      "sequential_order_effect_rel": 0.11241565644741058,
+      "commutator_effect_rel": 0.1124248057603836
+    },
+    {
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": false,
+        "dog_after_cat": true,
+        "cat_after_dog": false
+      },
+      "dog_after_cat_conjugation_relerr": 0.8905974626541138,
+      "cat_after_dog_conjugation_relerr": 0.89203280210495,
+      "cat_then_dog_weight_relerr": 5.607231651083566e-05,
+      "dog_then_cat_weight_relerr": 5.89726805628743e-05,
+      "commutator_prediction_relerr": 0.0007606419385410845,
+      "sequential_order_effect_rel": 0.10251063108444214,
+      "commutator_effect_rel": 0.10252049565315247
+    },
+    {
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.8887293338775635,
+      "cat_after_dog_conjugation_relerr": 0.8904228210449219,
+      "cat_then_dog_weight_relerr": 5.418082946562208e-05,
+      "dog_then_cat_weight_relerr": 5.958840120001696e-05,
+      "commutator_prediction_relerr": 0.0008296389714814723,
+      "sequential_order_effect_rel": 0.09719332307577133,
+      "commutator_effect_rel": 0.09719991683959961
+    },
+    {
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": false,
+        "dog": true,
+        "dog_after_cat": false,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.8900061845779419,
+      "cat_after_dog_conjugation_relerr": 0.8890334963798523,
+      "cat_then_dog_weight_relerr": 6.155919254524633e-05,
+      "dog_then_cat_weight_relerr": 5.667849472956732e-05,
+      "commutator_prediction_relerr": 0.0009437267435714602,
+      "sequential_order_effect_rel": 0.0930023193359375,
+      "commutator_effect_rel": 0.09300893545150757
+    },
+    {
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": false,
+        "dog": false,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.8907999992370605,
+      "cat_after_dog_conjugation_relerr": 0.8907740116119385,
+      "cat_then_dog_weight_relerr": 6.977505836402997e-05,
+      "dog_then_cat_weight_relerr": 6.018765998305753e-05,
+      "commutator_prediction_relerr": 0.0010461771162226796,
+      "sequential_order_effect_rel": 0.0901574119925499,
+      "commutator_effect_rel": 0.0901603177189827
+    },
+    {
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 640,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00022264142171479762,
+      "cat_after_dog_conjugation_relerr": 0.00021996113355271518,
+      "cat_then_dog_weight_relerr": 3.389204721315764e-05,
+      "dog_then_cat_weight_relerr": 3.224447209504433e-05,
+      "commutator_prediction_relerr": 0.00035831824061460793,
+      "sequential_order_effect_rel": 0.13372370600700378,
+      "commutator_effect_rel": 0.13372886180877686
+    },
+    {
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 640,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00023842672817409039,
+      "cat_after_dog_conjugation_relerr": 0.0002409416192676872,
+      "cat_then_dog_weight_relerr": 3.666006523417309e-05,
+      "dog_then_cat_weight_relerr": 3.792440838878974e-05,
+      "commutator_prediction_relerr": 0.00025758662377484143,
+      "sequential_order_effect_rel": 0.19530175626277924,
+      "commutator_effect_rel": 0.19531524181365967
+    },
+    {
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v",
+      "out_dim": 640,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00022848094522487372,
+      "cat_after_dog_conjugation_relerr": 0.00023584738664794713,
+      "cat_then_dog_weight_relerr": 3.552094131009653e-05,
+      "dog_then_cat_weight_relerr": 3.341576302773319e-05,
+      "commutator_prediction_relerr": 0.0002836626663338393,
+      "sequential_order_effect_rel": 0.17214907705783844,
+      "commutator_effect_rel": 0.17215536534786224
+    },
+    {
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00021196533634793013,
+      "cat_after_dog_conjugation_relerr": 0.00020731014956254512,
+      "cat_then_dog_weight_relerr": 4.4421536586014554e-05,
+      "dog_then_cat_weight_relerr": 4.378473022370599e-05,
+      "commutator_prediction_relerr": 0.00014639736036770046,
+      "sequential_order_effect_rel": 0.3903105556964874,
+      "commutator_effect_rel": 0.39031171798706055
+    },
+    {
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00013397006841842085,
+      "cat_after_dog_conjugation_relerr": 0.00015936301497276872,
+      "cat_then_dog_weight_relerr": 2.911898263846524e-05,
+      "dog_then_cat_weight_relerr": 3.278733856859617e-05,
+      "commutator_prediction_relerr": 0.00010421648039482534,
+      "sequential_order_effect_rel": 0.4178871810436249,
+      "commutator_effect_rel": 0.41789326071739197
+    },
+    {
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00015604855434503406,
+      "cat_after_dog_conjugation_relerr": 0.0001445650850655511,
+      "cat_then_dog_weight_relerr": 3.478435246506706e-05,
+      "dog_then_cat_weight_relerr": 3.34470096277073e-05,
+      "commutator_prediction_relerr": 0.00011330764391459525,
+      "sequential_order_effect_rel": 0.41625216603279114,
+      "commutator_effect_rel": 0.4162551462650299
+    },
+    {
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 1280,
+      "correction": "none",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": false,
+        "cat_after_dog": false
+      },
+      "dog_after_cat_conjugation_relerr": 0.8889716863632202,
+      "cat_after_dog_conjugation_relerr": 0.8878499865531921,
+      "cat_then_dog_weight_relerr": 5.609323125099763e-05,
+      "dog_then_cat_weight_relerr": 5.780857100035064e-05,
+      "commutator_prediction_relerr": 0.000842117762658745,
+      "sequential_order_effect_rel": 0.09448777884244919,
+      "commutator_effect_rel": 0.09449325501918793
+    }
+  ]
+}

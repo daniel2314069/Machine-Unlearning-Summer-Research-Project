@@ -1,0 +1,12 @@
+{
+  "preflight": "complete",
+  "tokenizer": "complete",
+  "original_feasibility": "complete",
+  "single_pair_subspace": "complete",
+  "n2_selection": "complete",
+  "n2_feature_evaluation": "complete_before_image_generation",
+  "n2_image_evaluation": "complete",
+  "n2_permutation_check": "complete",
+  "control_set": "not_run_current_stage",
+  "n5": "not_run_current_stage"
+}

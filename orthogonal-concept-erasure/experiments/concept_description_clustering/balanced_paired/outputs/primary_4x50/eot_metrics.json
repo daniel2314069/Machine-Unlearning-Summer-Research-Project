@@ -1,0 +1,98 @@
+{
+  "representation": "Raw EOT",
+  "dataset_sha256": "af27edee279986b5ff6022718c6d87f3228c768a30a596bb78c22641e4aa4666",
+  "sample_count": 200,
+  "embedding_shape": [
+    200,
+    768
+  ],
+  "preprocessing": "row L2 normalization only; no global centering",
+  "extraction": {
+    "prompt_transform": "none; exact stored description",
+    "readout": "attention_mask.sum(dim=1) - 1 (actual EOT)",
+    "hidden_state": "CLIPTextModel final last_hidden_state"
+  },
+  "labels_available_to_fit": false,
+  "spherical_kmeans": {
+    "k": 4,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "assignment": "cosine",
+    "center_update": "normalized_mean",
+    "initialization": "cosine_kmeans_plus_plus"
+  },
+  "metrics": {
+    "adjusted_rand_index": 0.5489909845383305,
+    "normalized_mutual_information": 0.6215530968561696,
+    "hungarian_matched_accuracy": 0.735,
+    "cosine_silhouette_score": 0.09004228562116623,
+    "spherical_objective": 130.744635858288,
+    "objective_per_sample": 0.6537231792914401,
+    "iterations": 13,
+    "converged": true,
+    "best_initialization": 28,
+    "cluster_sizes": [
+      80,
+      50,
+      33,
+      37
+    ],
+    "cluster_to_concept": {
+      "3": "cat",
+      "1": "dog",
+      "2": "fox",
+      "0": "bear"
+    },
+    "per_class_recall": {
+      "cat": 0.64,
+      "dog": 0.96,
+      "fox": 0.36,
+      "bear": 0.98
+    },
+    "assignment_counts_by_true_class": {
+      "cat": {
+        "cat": 32,
+        "dog": 2,
+        "fox": 15,
+        "bear": 1
+      },
+      "dog": {
+        "cat": 2,
+        "dog": 48,
+        "fox": 0,
+        "bear": 0
+      },
+      "fox": {
+        "cat": 2,
+        "dog": 0,
+        "fox": 18,
+        "bear": 30
+      },
+      "bear": {
+        "cat": 1,
+        "dog": 0,
+        "fox": 0,
+        "bear": 49
+      }
+    },
+    "largest_confusion_pair": {
+      "true_concept": "fox",
+      "predicted_concept": "bear",
+      "count": 30
+    }
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

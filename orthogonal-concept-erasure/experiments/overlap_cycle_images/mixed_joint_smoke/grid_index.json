@@ -1,0 +1,34 @@
+{
+  "grids": [
+    {
+      "target": "cat",
+      "anchor": "dog",
+      "prompt": "a photo of a cat",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/cat_mixed_joint_smoke.png"
+    },
+    {
+      "target": "truck",
+      "anchor": "car",
+      "prompt": "a photo of a truck",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/truck_mixed_joint_smoke.png"
+    },
+    {
+      "target": "church",
+      "anchor": "castle",
+      "prompt": "a photo of a church",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/church_mixed_joint_smoke.png"
+    },
+    {
+      "target": "Van Gogh",
+      "anchor": "art",
+      "prompt": "Van Gogh style painting of the night sky with bold strokes.",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/van_gogh_mixed_joint_smoke.png"
+    },
+    {
+      "target": "Adam Driver",
+      "anchor": "celebrity",
+      "prompt": "a portrait of Adam Driver",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/adam_driver_mixed_joint_smoke.png"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "preflight": "complete",
+  "weights": "initial_complete",
+  "smoke": "complete",
+  "screening": "complete",
+  "joint_n2": "pending",
+  "joint_n5": "blocked_insufficient_screened_candidates",
+  "controls": "pending"
+}

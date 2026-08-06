@@ -1,0 +1,86 @@
+{
+  "experiment_name": "full_10_concepts",
+  "formal": true,
+  "model": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "device": "cuda:0",
+    "generation_dtype": "bfloat16",
+    "embedding_dtype": "float32",
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "generation_seeds": [42, 43, 44],
+    "disable_safety_checker": true
+  },
+  "classifier": {
+    "backend": "clip",
+    "model_id": "openai/clip-vit-base-patch32",
+    "device": "cpu",
+    "templates": [
+      "a photo of a {concept}",
+      "an image of a {concept}",
+      "a clear picture of a {concept}"
+    ],
+    "stage1_min_target_probability": 0.20,
+    "stage1_min_margin": 0.02,
+    "min_target_probability": 0.25,
+    "min_average_margin": 0.05,
+    "min_top1_probability": 0.20,
+    "max_normalized_entropy": 0.88,
+    "high_confidence_wrong_probability": 0.45,
+    "min_top1_seeds": 2
+  },
+  "candidate_validation": {
+    "candidates_per_concept_facet": 15,
+    "accepted_per_concept_facet": 10,
+    "min_words": 8,
+    "max_words": 20,
+    "language_backend": "langdetect",
+    "min_english_probability": 0.70,
+    "near_duplicate_jaccard": 0.82,
+    "vague_terms": ["beautiful", "large", "small", "interesting", "nice", "amazing", "wonderful"],
+    "negation_terms": ["not", "never", "no", "without", "isn't", "aren't", "doesn't", "don't"],
+    "comparison_phrases": ["similar to", "like a", "unlike", "resembles", "compared with", "compared to"],
+    "min_informative_words": 5
+  },
+  "readout": {
+    "primary_suffix_name": "describes_concept",
+    "suffixes": {
+      "describes_concept": " This sentence describes the concept",
+      "refers_to_entity": " This description refers to the entity"
+    },
+    "batch_size": 64
+  },
+  "clustering": {
+    "k": 10,
+    "n_runs": 20,
+    "n_init": 100,
+    "random_seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+    "canonical_seed": 0
+  },
+  "concepts": [
+    {"name": "cat", "banned_terms": ["cat", "cats", "kitten", "kittens", "kitty", "kitties", "feline", "felines", "tomcat", "tomcats"]},
+    {"name": "dog", "banned_terms": ["dog", "dogs", "puppy", "puppies", "canine", "canines", "hound", "hounds", "pooch", "pooches"]},
+    {"name": "rabbit", "banned_terms": ["rabbit", "rabbits", "bunny", "bunnies", "hare", "hares", "lapine"]},
+    {"name": "fox", "banned_terms": ["fox", "foxes", "vixen", "vixens", "vulpine"]},
+    {"name": "bear", "banned_terms": ["bear", "bears", "ursine"]},
+    {"name": "horse", "banned_terms": ["horse", "horses", "pony", "ponies", "equine", "stallion", "stallions", "mare", "mares"]},
+    {"name": "cow", "banned_terms": ["cow", "cows", "cattle", "bovine", "bovines", "calf", "calves", "bull", "bulls"]},
+    {"name": "sheep", "banned_terms": ["sheep", "lamb", "lambs", "ovine", "ewe", "ewes", "ram", "rams"]},
+    {"name": "deer", "banned_terms": ["deer", "cervid", "cervids", "doe", "does", "fawn", "fawns", "stag", "stags"]},
+    {"name": "elephant", "banned_terms": ["elephant", "elephants", "pachyderm", "pachyderms"]}
+  ],
+  "facets": [
+    {"id": "visual_appearance", "name": "visual appearance"},
+    {"id": "body_parts", "name": "body parts"},
+    {"id": "movement", "name": "movement"},
+    {"id": "behavior_habits", "name": "behavior or habits"},
+    {"id": "sounds", "name": "sounds"},
+    {"id": "habitat_scene", "name": "habitat or typical scene"},
+    {"id": "human_interaction", "name": "interaction with humans"},
+    {"id": "function_ability", "name": "function or ability"},
+    {"id": "object_relationship", "name": "relationship with surrounding objects"},
+    {"id": "indirect_holistic", "name": "highly indirect holistic description"}
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-07-28T00:40:56Z",
+  "experiment": "OCE E50 Unique-Anchor Stress Test",
+  "claim_scope": "current official repository implementation stress test",
+  "not_a_paper_number_reproduction": true,
+  "source_files": [
+    {
+      "path": "gcd_metrics/metrics.json",
+      "sha256": "cb85a0b42e35b2dbe184e6d1f14d344897b167344e315a3fe4c1722ca8cce5cc"
+    },
+    {
+      "path": "gcd_metrics/predictions.csv",
+      "sha256": "1478073902bc60d633f1f68f0403dabbcc432d1d8f25878453d3db257500aa8f"
+    },
+    {
+      "path": "coco10k_metrics/methods/unique_anchor/first10000/metrics.json",
+      "sha256": "4cd041f907405bcb8f94f9a35a2357dc28686dd34255f6585a84dcb4c164e1f6"
+    },
+    {
+      "path": "coco10k_metrics/milestones/first1000/metrics.json",
+      "sha256": "8d0499ea8fcacd2cd9d1ddba4564d0b710cdd729fe0ceaaada9a17965a68382c"
+    },
+    {
+      "path": "resolved_protocol.json",
+      "sha256": "d6374c232a56740de361af93e09ba5fa8c038570243cfac34a8ecd31e8716912"
+    },
+    {
+      "path": "anchor_span_stats.json",
+      "sha256": "b507f8884c878f1eff585410e99c99134bfd6dda8cc9104e7f11f799dcd3df04"
+    }
+  ],
+  "metric_definitions": {
+    "Acc_e": "Top-1 GCD celebrity accuracy on the 50 erased targets; lower is better. Images with no detected face are excluded from the denominator.",
+    "Acc_s": "Top-1 GCD celebrity accuracy on the 100 untouched retain celebrities; higher is better. Images with no detected face are excluded from the denominator.",
+    "H_o": "2 / ((1 - Acc_e)^-1 + Acc_s^-1), reported as a percentage; higher is better.",
+    "CS": "Mean CLIP score on the ordered MSCOCO first-10k prompts using the repository registry-matched Original SD reference protocol; higher is better.",
+    "FID": "FID from edited-model images to the identical registry-matched Original SD first-10k reference statistics; lower is better."
+  },
+  "table11_rows": [
+    {
+      "anchor": "Single: celebrity",
+      "anchor_columns": 1,
+      "anchor_rank_all_16_layers": 1,
+      "acc_e_pct": 3.469387755102041,
+      "acc_s_pct": 93.06122448979592,
+      "h_o_pct": 94.76417477647678,
+      "coco_cs_first10k": null,
+      "coco_fid_first10k": null,
+      "coco_scope": "Not run at first-10k"
+    },
+    {
+      "anchor": "Unique: 50 celebrities",
+      "anchor_columns": 50,
+      "anchor_rank_all_16_layers": 50,
+      "acc_e_pct": 5.112474437627812,
+      "acc_s_pct": 94.94949494949495,
+      "h_o_pct": 94.91850014145503,
+      "coco_cs_first10k": 30.8414441570282,
+      "coco_fid_first10k": 5.3859353842494215,
+      "coco_scope": "Complete first-10k"
+    }
+  ],
+  "gcd_higher_is_better": [
+    {
+      "anchor": "Single: celebrity",
+      "metric": "Erasure success",
+      "score_pct": 96.53061224489795,
+      "acc_e_pct": 3.469387755102041,
+      "acc_s_pct": 93.06122448979592,
+      "h_o_pct": 94.76417477647678,
+      "target_detected_denominator": 490,
+      "retain_detected_denominator": 490
+    },
+    {
+      "anchor": "Single: celebrity",
+      "metric": "Retain accuracy",
+      "score_pct": 93.06122448979592,
+      "acc_e_pct": 3.469387755102041,
+      "acc_s_pct": 93.06122448979592,
+      "h_o_pct": 94.76417477647678,
+      "target_detected_denominator": 490,
+      "retain_detected_denominator": 490
+    },
+    {
+      "anchor": "Single: celebrity",
+      "metric": "H_o",
+      "score_pct": 94.76417477647678,
+      "acc_e_pct": 3.469387755102041,
+      "acc_s_pct": 93.06122448979592,
+      "h_o_pct": 94.76417477647678,
+      "target_detected_denominator": 490,
+      "retain_detected_denominator": 490
+    },
+    {
+      "anchor": "Unique: 50 celebrities",
+      "metric": "Erasure success",
+      "score_pct": 94.88752556237219,
+      "acc_e_pct": 5.112474437627812,
+      "acc_s_pct": 94.94949494949495,
+      "h_o_pct": 94.91850014145503,
+      "target_detected_denominator": 489,
+      "retain_detected_denominator": 495
+    },
+    {
+      "anchor": "Unique: 50 celebrities",
+      "metric": "Retain accuracy",
+      "score_pct": 94.94949494949495,
+      "acc_e_pct": 5.112474437627812,
+      "acc_s_pct": 94.94949494949495,
+      "h_o_pct": 94.91850014145503,
+      "target_detected_denominator": 489,
+      "retain_detected_denominator": 495
+    },
+    {
+      "anchor": "Unique: 50 celebrities",
+      "metric": "H_o",
+      "score_pct": 94.91850014145503,
+      "acc_e_pct": 5.112474437627812,
+      "acc_s_pct": 94.94949494949495,
+      "h_o_pct": 94.91850014145503,
+      "target_detected_denominator": 489,
+      "retain_detected_denominator": 495
+    }
+  ],
+  "differences_unique_minus_single_percentage_points": {
+    "Acc_e": 1.643086682525771,
+    "erasure_success": -1.643086682525771,
+    "Acc_s": 1.888270459699031,
+    "H_o": 0.154325364978249
+  },
+  "original_sd_reference": {
+    "gcd_acc_e_pct": 94.15322580645162,
+    "gcd_acc_s_pct": 95.97585513078471,
+    "gcd_h_o_pct": 11.022091193402524,
+    "coco_cs_first10k": 31.108097608947755,
+    "coco_fid_first10k": 0.0
+  },
+  "screening_context_not_used_in_primary_table": {
+    "scope": "first-1k only",
+    "single_anchor_cs": 30.926010047912598,
+    "single_anchor_fid": 41.1571283120208,
+    "unique_anchor_cs": 30.99488165664673,
+    "unique_anchor_fid": 39.718502948174546,
+    "reason_excluded": "The primary table uses first-10k COCO values; first-1k FID is not substituted for missing first-10k results."
+  }
+}

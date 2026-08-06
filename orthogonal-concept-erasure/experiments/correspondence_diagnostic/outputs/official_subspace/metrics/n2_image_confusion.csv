@@ -1,0 +1,17 @@
+method,target,predicted_anchor,count
+original,cat,dog,10
+original,cat,piano,0
+original,guitar,dog,0
+original,guitar,piano,10
+single_subspace,cat,dog,10
+single_subspace,cat,piano,0
+single_subspace,guitar,dog,1
+single_subspace,guitar,piano,9
+joint_subspace_n2,cat,dog,10
+joint_subspace_n2,cat,piano,0
+joint_subspace_n2,guitar,dog,0
+joint_subspace_n2,guitar,piano,10
+joint_vector_eq6_n2,cat,dog,10
+joint_vector_eq6_n2,cat,piano,0
+joint_vector_eq6_n2,guitar,dog,0
+joint_vector_eq6_n2,guitar,piano,10

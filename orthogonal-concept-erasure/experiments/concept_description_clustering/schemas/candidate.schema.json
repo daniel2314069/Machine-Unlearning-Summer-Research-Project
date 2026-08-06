@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Concept description candidate",
+  "type": "object",
+  "required": ["candidate_id", "concept", "facet_id", "candidate_index", "description", "source"],
+  "properties": {
+    "candidate_id": {"type": "string", "minLength": 1},
+    "concept": {"type": "string", "minLength": 1},
+    "facet_id": {"type": "string", "minLength": 1},
+    "candidate_index": {"type": "integer", "minimum": 1},
+    "description": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "minLength": 1},
+    "syntax_family": {
+      "type": "string",
+      "description": "A source-assigned coarse subject/sentence construction label used by diversity-enabled configurations."
+    },
+    "generation_metadata": {"type": "object"}
+  },
+  "additionalProperties": true
+}

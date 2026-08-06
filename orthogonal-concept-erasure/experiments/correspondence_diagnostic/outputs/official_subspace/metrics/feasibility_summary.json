@@ -1,0 +1,84 @@
+{
+  "concepts": [
+    {
+      "concept": "cat",
+      "kind": "target",
+      "mean_clip_prompt_alignment": 0.2821267247200012,
+      "std_clip_prompt_alignment": 0.00732099823653698,
+      "minimum_clip_prompt_alignment": 0.27048641443252563,
+      "mean_rgb_std": 0.2464647263288498
+    },
+    {
+      "concept": "airplane",
+      "kind": "target",
+      "mean_clip_prompt_alignment": 0.2660732865333557,
+      "std_clip_prompt_alignment": 0.010456645861268044,
+      "minimum_clip_prompt_alignment": 0.2538641691207886,
+      "mean_rgb_std": 0.1826372727751732
+    },
+    {
+      "concept": "church",
+      "kind": "target",
+      "mean_clip_prompt_alignment": 0.29034602642059326,
+      "std_clip_prompt_alignment": 0.006040118169039488,
+      "minimum_clip_prompt_alignment": 0.2770044505596161,
+      "mean_rgb_std": 0.24846365600824355
+    },
+    {
+      "concept": "truck",
+      "kind": "target",
+      "mean_clip_prompt_alignment": 0.27054479718208313,
+      "std_clip_prompt_alignment": 0.009691555052995682,
+      "minimum_clip_prompt_alignment": 0.2555241882801056,
+      "mean_rgb_std": 0.3063022017478943
+    },
+    {
+      "concept": "guitar",
+      "kind": "target",
+      "mean_clip_prompt_alignment": 0.30322152376174927,
+      "std_clip_prompt_alignment": 0.008201425895094872,
+      "minimum_clip_prompt_alignment": 0.2878008186817169,
+      "mean_rgb_std": 0.2480986773967743
+    },
+    {
+      "concept": "dog",
+      "kind": "anchor",
+      "mean_clip_prompt_alignment": 0.2744865417480469,
+      "std_clip_prompt_alignment": 0.009259691461920738,
+      "minimum_clip_prompt_alignment": 0.25717827677726746,
+      "mean_rgb_std": 0.22977121770381928
+    },
+    {
+      "concept": "helicopter",
+      "kind": "anchor",
+      "mean_clip_prompt_alignment": 0.293251097202301,
+      "std_clip_prompt_alignment": 0.009304933249950409,
+      "minimum_clip_prompt_alignment": 0.28046348690986633,
+      "mean_rgb_std": 0.22473019361495972
+    },
+    {
+      "concept": "castle",
+      "kind": "anchor",
+      "mean_clip_prompt_alignment": 0.29494282603263855,
+      "std_clip_prompt_alignment": 0.007670505437999964,
+      "minimum_clip_prompt_alignment": 0.28410375118255615,
+      "mean_rgb_std": 0.23297275453805924
+    },
+    {
+      "concept": "car",
+      "kind": "anchor",
+      "mean_clip_prompt_alignment": 0.25253814458847046,
+      "std_clip_prompt_alignment": 0.019808173179626465,
+      "minimum_clip_prompt_alignment": 0.23340345919132233,
+      "mean_rgb_std": 0.2677243322134018
+    },
+    {
+      "concept": "piano",
+      "kind": "anchor",
+      "mean_clip_prompt_alignment": 0.3000524938106537,
+      "std_clip_prompt_alignment": 0.008922022767364979,
+      "minimum_clip_prompt_alignment": 0.28566813468933105,
+      "mean_rgb_std": 0.3117866814136505
+    }
+  ]
+}

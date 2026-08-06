@@ -1,0 +1,26 @@
+{
+  "candidate_pairs": [
+    "cat_to_dog",
+    "airplane_to_sky",
+    "church_to_building",
+    "golf_ball_to_tennis_ball",
+    "french_horn_to_trumpet"
+  ],
+  "screening_rule": {
+    "id": "directional_v1",
+    "target_similarity_delta_must_be_below": 0.0,
+    "anchor_similarity_delta_must_be_above": 0.0,
+    "max_low_variance_fraction": 0.2,
+    "low_variance_rgb_std_threshold": 0.02
+  },
+  "eligible_pairs": [
+    "cat_to_dog",
+    "church_to_building",
+    "french_horn_to_trumpet"
+  ],
+  "eligible_count": 3,
+  "required_count": 5,
+  "can_run_n5": false,
+  "new_pairs_added": [],
+  "action": "report_insufficient_candidates_and_do_not_run"
+}

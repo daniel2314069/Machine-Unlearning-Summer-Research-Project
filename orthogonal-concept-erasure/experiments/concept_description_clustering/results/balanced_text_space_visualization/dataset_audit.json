@@ -1,0 +1,135 @@
+{
+  "status": "passed",
+  "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "dataset_validation_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/dataset_validation.json",
+  "dataset_validation_sha256": "1b884b37da08b0d9908e4711ddf9c1b4fc28ea62b7017d152c6cf884ff6c32ad",
+  "source_experiment_config_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/experiment_config.json",
+  "source_experiment_config_sha256": "a36acaad59c3c8e5398b78d6dadecd7564f19f93b22056c849ebcf983cd46319",
+  "row_count": 400,
+  "counts_by_concept": {
+    "cat": 50,
+    "dog": 50,
+    "fox": 50,
+    "bear": 50,
+    "wolf": 50,
+    "rabbit": 50,
+    "deer": 50,
+    "horse": 50
+  },
+  "checks": {
+    "exactly_400_rows": true,
+    "exact_concept_order": true,
+    "exactly_50_rows_per_concept": true,
+    "exactly_400_unique_concept_slot_pairs": true,
+    "source_validation_passed": true,
+    "source_validation_no_truncation": true,
+    "both_embedding_shapes_are_400_by_768": true,
+    "both_visualization_inputs_row_l2_normalized": true,
+    "both_assignments_match_dataset_row_order": true,
+    "both_assignments_match_saved_hungarian_mappings": true,
+    "reported_metrics_reproduced_without_refitting": true,
+    "frozen_dataset_embedding_and_assignment_hashes_match": true,
+    "only_text_space_embeddings_used": true,
+    "w0_projection_applied": false,
+    "clustering_refit": false
+  },
+  "embeddings": {
+    "eot": {
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_embeddings.npy",
+      "sha256": "4c175ad2c4f7b848fa561dd464104eb9f27a29c36591912977873e6b52b77070",
+      "cached_shape": [
+        400,
+        768
+      ],
+      "visualization_input_shape": [
+        400,
+        768
+      ],
+      "cached_norm_min": 26.802562713623047,
+      "cached_norm_max": 29.382291793823242,
+      "normalized_norm_min": 0.9999999403953552,
+      "normalized_norm_max": 1.0,
+      "all_768_dimensions_used": true
+    },
+    "fixed_suffix": {
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/fixed_suffix_embeddings.npy",
+      "sha256": "033aac5e6158387f40d3fb4fcdb8be68990879bc47ce4b5a48aeec5c882ea03f",
+      "cached_shape": [
+        400,
+        768
+      ],
+      "visualization_input_shape": [
+        400,
+        768
+      ],
+      "cached_norm_min": 0.9999998807907104,
+      "cached_norm_max": 1.0000001192092896,
+      "normalized_norm_min": 0.9999999403953552,
+      "normalized_norm_max": 1.0,
+      "all_768_dimensions_used": true
+    }
+  },
+  "tokenization": {
+    "eot": {
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_tokenization_audit.csv",
+      "sha256": "3cfc4924fda06934a6b6ef33da8e0cb85ef94a7163329a68623e1d7dcb13052b",
+      "row_count": 400,
+      "truncated_count": 0
+    },
+    "fixed_suffix": {
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/fixed_suffix_tokenization_audit.csv",
+      "sha256": "c248190314f872247691a1badc3fbee7cfa3f2085609ac74e2eedcd518f24300",
+      "row_count": 400,
+      "truncated_count": 0
+    }
+  },
+  "metrics_and_assignments": {
+    "eot": {
+      "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_metrics.json",
+      "metrics_sha256": "4e289322141520e49fbf4cacb44e558cc2e9a8a2dee6d52d3426f1fbf8841928",
+      "assignments_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/appendix/assignments_eot.csv",
+      "assignments_sha256": "9e7e39ed5e780ddb0a4be5ab1d33c48e0b9be00ae53d3bbdf145a2d7ed11ff3b",
+      "saved_ari": 0.6337922594154872,
+      "assignment_recomputed_ari": 0.6337922594154872,
+      "required_rounded_ari": 0.6338,
+      "saved_matched_accuracy": 0.775,
+      "assignment_recomputed_matched_accuracy": 0.775,
+      "required_rounded_matched_accuracy": 0.775,
+      "hungarian_mapping": {
+        "7": "cat",
+        "1": "dog",
+        "6": "fox",
+        "2": "bear",
+        "4": "wolf",
+        "3": "rabbit",
+        "0": "deer",
+        "5": "horse"
+      },
+      "clustering_refit": false
+    },
+    "fixed_suffix": {
+      "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/fixed_suffix_metrics.json",
+      "metrics_sha256": "8ce531ec6292edead466a38b958d288bc335b73a2e21dd98b34bd292c2147735",
+      "assignments_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/appendix/assignments_fixed_suffix.csv",
+      "assignments_sha256": "d6da64a9335c6cc685624f182e34812c1345e84dcd8a85dbb61d99f49e23f9b3",
+      "saved_ari": 0.4697183414772855,
+      "assignment_recomputed_ari": 0.4697183414772855,
+      "required_rounded_ari": 0.4697,
+      "saved_matched_accuracy": 0.7025,
+      "assignment_recomputed_matched_accuracy": 0.7025,
+      "required_rounded_matched_accuracy": 0.7025,
+      "hungarian_mapping": {
+        "0": "cat",
+        "7": "dog",
+        "1": "fox",
+        "3": "bear",
+        "5": "wolf",
+        "6": "rabbit",
+        "2": "deer",
+        "4": "horse"
+      },
+      "clustering_refit": false
+    }
+  }
+}

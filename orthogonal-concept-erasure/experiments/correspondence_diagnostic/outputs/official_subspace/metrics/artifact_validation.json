@@ -1,0 +1,267 @@
+{
+  "status": "pass",
+  "csv_checks": [
+    {
+      "path": "metrics/tokenization.csv",
+      "expected_rows": 10,
+      "actual_rows": 10,
+      "pass": true
+    },
+    {
+      "path": "metrics/feasibility_per_image.csv",
+      "expected_rows": 100,
+      "actual_rows": 100,
+      "pass": true
+    },
+    {
+      "path": "metrics/feasibility_summary.csv",
+      "expected_rows": 10,
+      "actual_rows": 10,
+      "pass": true
+    },
+    {
+      "path": "metrics/single_pair_per_image.csv",
+      "expected_rows": 100,
+      "actual_rows": 100,
+      "pass": true
+    },
+    {
+      "path": "metrics/single_pair_summary.csv",
+      "expected_rows": 5,
+      "actual_rows": 5,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_feature_cells.csv",
+      "expected_rows": 256,
+      "actual_rows": 256,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_feature_summary.csv",
+      "expected_rows": 64,
+      "actual_rows": 64,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_per_image.csv",
+      "expected_rows": 80,
+      "actual_rows": 80,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_image_similarity_cells.csv",
+      "expected_rows": 160,
+      "actual_rows": 160,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_image_confusion.csv",
+      "expected_rows": 16,
+      "actual_rows": 16,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_per_concept.csv",
+      "expected_rows": 8,
+      "actual_rows": 8,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_aggregate.csv",
+      "expected_rows": 4,
+      "actual_rows": 4,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_permutation_layer_comparison.csv",
+      "expected_rows": 16,
+      "actual_rows": 16,
+      "pass": true
+    },
+    {
+      "path": "metrics/n2_permutation_objective_comparison.csv",
+      "expected_rows": 16,
+      "actual_rows": 16,
+      "pass": true
+    },
+    {
+      "path": "metrics/weight_audit.csv",
+      "expected_rows": 128,
+      "actual_rows": 128,
+      "pass": true
+    }
+  ],
+  "count_checks": [
+    {
+      "artifact": "feasibility_images",
+      "expected": 100,
+      "actual": 100,
+      "pass": true
+    },
+    {
+      "artifact": "single_pair_images",
+      "expected": 50,
+      "actual": 50,
+      "pass": true
+    },
+    {
+      "artifact": "joint_n2_images",
+      "expected": 40,
+      "actual": 40,
+      "pass": true
+    },
+    {
+      "artifact": "checkpoints",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "artifact": "saved_rotations",
+      "expected": 8,
+      "actual": 8,
+      "pass": true
+    },
+    {
+      "artifact": "grids",
+      "expected": 17,
+      "actual": 17,
+      "pass": true
+    },
+    {
+      "artifact": "heatmaps",
+      "expected": 72,
+      "actual": 72,
+      "pass": true
+    }
+  ],
+  "report_heading_checks": [
+    {
+      "heading": "## 1. Tokenizer check",
+      "pass": true
+    },
+    {
+      "heading": "## 2. Original SD feasibility",
+      "pass": true
+    },
+    {
+      "heading": "## 3. Single-pair subspace screening",
+      "pass": true
+    },
+    {
+      "heading": "## 4. N = 2 joint subspace",
+      "pass": true
+    },
+    {
+      "heading": "## 5. N = 2 joint vector-wise Eq. 6 ablation",
+      "pass": true
+    },
+    {
+      "heading": "## 6. N = 2 permutation check",
+      "pass": true
+    },
+    {
+      "heading": "## 7. Control-set preservation",
+      "pass": true
+    },
+    {
+      "heading": "## 8. Whether to proceed to N = 5",
+      "pass": true
+    }
+  ],
+  "report_link_checks": [
+    {
+      "target": "metrics/tokenization.csv",
+      "pass": true
+    },
+    {
+      "target": "metrics/tokenization.json",
+      "pass": true
+    },
+    {
+      "target": "grids/feasibility/",
+      "pass": true
+    },
+    {
+      "target": "grids/single_pair/",
+      "pass": true
+    },
+    {
+      "target": "metrics/single_pair_per_image.csv",
+      "pass": true
+    },
+    {
+      "target": "inputs/n2_selection.json",
+      "pass": true
+    },
+    {
+      "target": "heatmaps/joint_n2/image_similarity_joint_subspace_n2.png",
+      "pass": true
+    },
+    {
+      "target": "heatmaps/joint_n2/image_confusion_joint_subspace_n2.png",
+      "pass": true
+    },
+    {
+      "target": "heatmaps/joint_n2/image_similarity_joint_vector_eq6_n2.png",
+      "pass": true
+    },
+    {
+      "target": "heatmaps/joint_n2/image_confusion_joint_vector_eq6_n2.png",
+      "pass": true
+    },
+    {
+      "target": "heatmaps/joint_n2/feature/",
+      "pass": true
+    },
+    {
+      "target": "metrics/n2_feature_cells.csv",
+      "pass": true
+    },
+    {
+      "target": "grids/joint_n2/cat_to_dog.png",
+      "pass": true
+    },
+    {
+      "target": "grids/joint_n2/guitar_to_piano.png",
+      "pass": true
+    },
+    {
+      "target": "metrics/n2_permutation_check.json",
+      "pass": true
+    },
+    {
+      "target": "resolved_config.json",
+      "pass": true
+    },
+    {
+      "target": "metrics/artifact_validation.json",
+      "pass": true
+    },
+    {
+      "target": "metrics/archival_compatibility.json",
+      "pass": true
+    }
+  ],
+  "run_state_check": {
+    "pass": true,
+    "state": {
+      "preflight": "complete",
+      "tokenizer": "complete",
+      "original_feasibility": "complete",
+      "single_pair_subspace": "complete",
+      "n2_selection": "complete",
+      "n2_feature_evaluation": "complete_before_image_generation",
+      "n2_image_evaluation": "complete",
+      "n2_permutation_check": "complete",
+      "control_set": "not_run_current_stage",
+      "n5": "not_run_current_stage"
+    }
+  },
+  "manual_visual_review_files": [
+    "metrics/single_pair_visual_review.json",
+    "metrics/n2_visual_review.json"
+  ],
+  "scope_note": "This validation does not claim control or N=5 completion."
+}

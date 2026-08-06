@@ -1,0 +1,64 @@
+{
+  "checkpoints": [
+    {
+      "method": "joint_subspace_reciprocal_cat_dog",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        },
+        {
+          "target": "dog",
+          "anchor": "cat"
+        }
+      ],
+      "checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/checkpoints/joint_subspace_reciprocal_cat_dog.safetensors",
+      "sha256": "e62f918bd7fc1259170129f6707b62f29afbaf7a396b96f0e0efc8a64218d681",
+      "layer_count": 16,
+      "objective": "official OCE subspace"
+    },
+    {
+      "method": "joint_subspace_chain_cat_dog_bird_cat",
+      "pairs": [
+        {
+          "target": "cat",
+          "anchor": "dog"
+        },
+        {
+          "target": "bird",
+          "anchor": "cat"
+        }
+      ],
+      "checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/checkpoints/joint_subspace_chain_cat_dog_bird_cat.safetensors",
+      "sha256": "608037e6ca6c2662ae15fe782a69826b7dc57b55fd076d6fd0f7551789723ae6",
+      "layer_count": 16,
+      "objective": "official OCE subspace"
+    },
+    {
+      "method": "single_subspace_dog_to_cat",
+      "pairs": [
+        {
+          "target": "dog",
+          "anchor": "cat"
+        }
+      ],
+      "checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/checkpoints/single_subspace_dog_to_cat.safetensors",
+      "sha256": "d2573e736fe7bad49a82d46d697ca0d3f96713207eec52afd4887127352b48eb",
+      "layer_count": 16,
+      "objective": "official OCE subspace"
+    },
+    {
+      "method": "single_subspace_bird_to_cat",
+      "pairs": [
+        {
+          "target": "bird",
+          "anchor": "cat"
+        }
+      ],
+      "checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/checkpoints/single_subspace_bird_to_cat.safetensors",
+      "sha256": "95a76fe75d82794f8d11446efda30f896d5633a4c7d525e627e387d72d75bdcc",
+      "layer_count": 16,
+      "objective": "official OCE subspace"
+    }
+  ]
+}

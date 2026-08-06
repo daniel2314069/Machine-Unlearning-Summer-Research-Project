@@ -1,0 +1,11 @@
+concept,token_ids,token_strings,token_count,split_into_multiple_tokens
+cat,[2368],"[""cat</w>""]",1,False
+airplane,[16451],"[""airplane</w>""]",1,False
+church,[2735],"[""church</w>""]",1,False
+truck,[4629],"[""truck</w>""]",1,False
+guitar,[5084],"[""guitar</w>""]",1,False
+dog,[1929],"[""dog</w>""]",1,False
+helicopter,[11956],"[""helicopter</w>""]",1,False
+castle,[3540],"[""castle</w>""]",1,False
+car,[1615],"[""car</w>""]",1,False
+piano,[7894],"[""piano</w>""]",1,False

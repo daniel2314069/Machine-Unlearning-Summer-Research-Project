@@ -1,0 +1,11 @@
+facet_id,raw_cluster_0__matched_cat__n42,raw_cluster_1__matched_fox__n53,raw_cluster_2__matched_dog__n54,raw_cluster_3__matched_bear__n51,centered_cluster_0__matched_cat__n43,centered_cluster_1__matched_bear__n61,centered_cluster_2__matched_dog__n47,centered_cluster_3__matched_fox__n49
+behavior_habits,3,5,6,6,3,6,6,5
+body_parts,5,0,5,10,5,12,3,0
+function_ability,5,3,5,7,5,8,4,3
+habitat_scene,4,10,5,1,5,1,5,9
+human_interaction,3,2,8,7,2,9,8,1
+indirect_holistic,5,6,5,4,5,5,4,6
+movement,3,4,6,7,4,8,5,3
+object_relationship,5,10,3,2,4,4,3,9
+sounds,4,10,6,0,5,0,5,10
+visual_appearance,5,3,5,7,5,8,4,3

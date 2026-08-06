@@ -1,0 +1,16 @@
+kind,concept,prompt
+target,cat,a photo of a cat
+target,airplane,a photo of a airplane
+target,church,a photo of a church
+target,truck,a photo of a truck
+target,guitar,a photo of a guitar
+anchor,dog,a photo of a dog
+anchor,helicopter,a photo of a helicopter
+anchor,castle,a photo of a castle
+anchor,car,a photo of a car
+anchor,piano,a photo of a piano
+control,frog,a photo of a frog
+control,horse,a photo of a horse
+control,ship,a photo of a ship
+control,deer,a photo of a deer
+control,boat,a photo of a boat

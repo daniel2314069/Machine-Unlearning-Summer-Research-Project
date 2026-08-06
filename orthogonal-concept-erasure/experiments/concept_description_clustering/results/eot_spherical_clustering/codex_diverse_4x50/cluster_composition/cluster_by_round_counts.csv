@@ -1,0 +1,9 @@
+round,raw_cluster_0__matched_cat__n42,raw_cluster_1__matched_fox__n53,raw_cluster_2__matched_dog__n54,raw_cluster_3__matched_bear__n51,centered_cluster_0__matched_cat__n43,centered_cluster_1__matched_bear__n61,centered_cluster_2__matched_dog__n47,centered_cluster_3__matched_fox__n49
+bear_body_parts,0,0,0,2,0,2,0,0
+dog_indirect_fox_body,0,0,1,1,0,1,1,0
+fox_function_ability,0,0,0,4,0,4,0,0
+fox_human_retry,1,0,0,2,0,3,0,0
+fox_movement_cat_human,0,0,1,2,0,3,0,0
+round1,20,18,20,33,19,40,15,17
+round2,11,14,20,6,14,7,18,12
+round3,10,21,12,1,10,1,13,20

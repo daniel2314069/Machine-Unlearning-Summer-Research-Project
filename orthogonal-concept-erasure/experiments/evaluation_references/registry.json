@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "references": {
+    "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16": {
+      "reference_id": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+      "status": "complete",
+      "identity": {
+        "model_id": "CompVis/stable-diffusion-v1-4",
+        "prompt_source_sha256": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
+        "prompt_subset": "first 1000 rows in source order",
+        "prompt_count": 1000,
+        "seed_column": "evaluation_seed",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "dtype": "bfloat16",
+        "scheduler": "PNDMScheduler",
+        "clip_model_id": "openai/clip-vit-base-patch32",
+        "clip_implementation": "transformers logits_per_image diagonal",
+        "fid_implementation": "torch_fidelity 0.3.0",
+        "fid_feature_extractor": "inception-v3-compat",
+        "fid_feature_layer": "2048"
+      },
+      "fingerprint": "b36ae560e86e41f6ef3693ba1e920648665b25061bc3795015c019a254df8777",
+      "artifacts": {
+        "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+        "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+        "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/prompts_first1000.csv",
+        "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16/protocol.json"
+      },
+      "producer": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/run_eval.py",
+      "updated_at": "2026-07-26T06:58:29.885265+00:00",
+      "created_at": "2026-07-26T06:35:30.623114+00:00"
+    },
+    "sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16": {
+      "reference_id": "sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16",
+      "status": "complete",
+      "identity": {
+        "model_id": "CompVis/stable-diffusion-v1-4",
+        "prompt_source_sha256": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
+        "prompt_subset": "first 10000 rows in source order",
+        "prompt_count": 10000,
+        "seed_column": "evaluation_seed",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "dtype": "bfloat16",
+        "scheduler": "PNDMScheduler",
+        "clip_model_id": "openai/clip-vit-base-patch32",
+        "clip_implementation": "transformers logits_per_image diagonal",
+        "fid_implementation": "torch_fidelity 0.3.0",
+        "fid_feature_extractor": "inception-v3-compat",
+        "fid_feature_layer": "2048"
+      },
+      "fingerprint": "294424082e9ac03d429602c7aca4a4569b5f452762340d19e5214cc364bda31f",
+      "artifacts": {
+        "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+        "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+        "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/prompts_first10000.csv",
+        "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/protocol.json"
+      },
+      "producer": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/run_eval.py",
+      "updated_at": "2026-07-26T15:40:58.083926+00:00",
+      "created_at": "2026-07-26T06:35:30.633053+00:00"
+    }
+  }
+}

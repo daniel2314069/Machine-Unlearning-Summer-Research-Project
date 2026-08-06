@@ -1,0 +1,10 @@
+{
+  "extends": "codex_diverse_4x50.json",
+  "experiment_name": "codex_diverse_tfidf_hard_4x100",
+  "candidate_validation": {
+    "accepted_per_concept_facet": 10,
+    "diversity": {
+      "accepted_source_quotas": {"codex_diverse": 10}
+    }
+  }
+}

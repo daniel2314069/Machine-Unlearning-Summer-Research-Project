@@ -1,0 +1,220 @@
+{
+  "experiment_name": "balanced_paired_w0_geometry",
+  "dataset": {
+    "status": "passed",
+    "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+    "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+    "dataset_validation_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/dataset_validation.json",
+    "dataset_validation_sha256": "1b884b37da08b0d9908e4711ddf9c1b4fc28ea62b7017d152c6cf884ff6c32ad",
+    "source_experiment_config_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/experiment_config.json",
+    "source_experiment_config_sha256": "a36acaad59c3c8e5398b78d6dadecd7564f19f93b22056c849ebcf983cd46319",
+    "row_count": 400,
+    "counts_by_concept": {
+      "cat": 50,
+      "dog": 50,
+      "fox": 50,
+      "bear": 50,
+      "wolf": 50,
+      "rabbit": 50,
+      "deer": 50,
+      "horse": 50
+    },
+    "checks": {
+      "exactly_400_rows": true,
+      "exact_concept_set": true,
+      "exactly_50_per_concept": true,
+      "unique_concept_slot_pairs": true,
+      "all_configured_concept_names_and_variants_absent": true,
+      "source_dataset_validation_passed": true,
+      "no_unsuffixed_prompt_truncated": true,
+      "no_fixed_suffix_prompt_truncated": true,
+      "fresh_eot_matches_balanced_cache": true,
+      "fresh_fixed_matches_balanced_cache": true
+    },
+    "forbidden_hits": []
+  },
+  "model": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "checkpoint_revision": "133a221b8aa7292a167afc5127cb63fb5005638b",
+    "pipeline_class": "StableDiffusionPipeline",
+    "tokenizer_class": "CLIPTokenizer",
+    "tokenizer_model_max_length": 77,
+    "text_encoder_class": "CLIPTextModel",
+    "text_hidden_size": 768,
+    "scheduler_class": "PNDMScheduler",
+    "scheduler_config": {
+      "num_train_timesteps": 1000,
+      "beta_start": 0.00085,
+      "beta_end": 0.012,
+      "beta_schedule": "scaled_linear",
+      "trained_betas": null,
+      "skip_prk_steps": true,
+      "set_alpha_to_one": false,
+      "prediction_type": "epsilon",
+      "timestep_spacing": "leading",
+      "steps_offset": 1,
+      "_use_default_values": [
+        "timestep_spacing",
+        "prediction_type"
+      ],
+      "_class_name": "PNDMScheduler",
+      "_diffusers_version": "0.7.0.dev0",
+      "clip_sample": false
+    },
+    "projection": "to_v",
+    "projection_layer_count": 16,
+    "projection_layers": {
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ],
+      "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v": [
+        640,
+        768
+      ],
+      "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v": [
+        320,
+        768
+      ],
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_v": [
+        1280,
+        768
+      ]
+    },
+    "original_w0_in_memory_fingerprint_sha256": "db8f7c2dd5c4a4a0fad1acfb31ac0fe721b11e6dd53d98caa50aceb0487709bd",
+    "original_w0_in_memory_dtype": "torch.float32",
+    "package_versions": {
+      "torch": "2.12.0",
+      "diffusers": "0.37.1",
+      "transformers": "4.48.3",
+      "numpy": "2.2.5",
+      "pandas": "2.2.3",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "matplotlib": "3.10.1",
+      "Pillow": "11.2.1",
+      "langdetect": "1.0.9"
+    }
+  },
+  "oce_repository_audit": {
+    "oce_entry_point": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/oce.py",
+    "oce_source_sha256": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+    "edit_function": "Orthogonal_Erase",
+    "verified_matrix_type": "to_v",
+    "verified_target_rule": "module name contains attn2 and ends with to_v",
+    "verified_name_readout_rule": "pipe.encode_prompt(...)[0][:, attention_mask.sum()-2, :]",
+    "edited_checkpoint_loaded": false
+  },
+  "concepts": [
+    "cat",
+    "dog",
+    "fox",
+    "bear",
+    "wolf",
+    "rabbit",
+    "deer",
+    "horse"
+  ],
+  "description_readouts": {
+    "eot": "original unsuffixed prompt; attention_mask.sum(dim=1)-1",
+    "fixed_suffix": "original prompt plus ' This sentence describes the concept'; contextual final concept token"
+  },
+  "name_readouts": {
+    "oce_last": "bare name via pipe.encode_prompt; attention_mask.sum()-2",
+    "eot": "bare name EOT; attention_mask.sum(dim=1)-1",
+    "fixed": "bare name plus ' This sentence describes the concept'; contextual final concept token"
+  },
+  "prototype_conditions": {
+    "matched_eot": "name EOT -> EOT-description centroid",
+    "matched_fixed": "name fixed suffix -> fixed-suffix-description centroid",
+    "oce_last_to_eot": "OCE-last-token -> EOT-description centroid; intentional cross-readout"
+  },
+  "projection": "post-W0 row L2 normalization; no pre-W0 normalization substitute",
+  "spherical_kmeans": {
+    "k": 8,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "assignment": "cosine",
+    "center_update": "normalized_mean",
+    "initialization": "cosine_kmeans_plus_plus"
+  },
+  "labels_available_to_fit": false,
+  "layer_limit": null,
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  },
+  "selected_plot_layers": {
+    "best_eot_layer_id": "layer_08",
+    "best_eot_layer_index": 8,
+    "best_fixed_layer_id": "layer_09",
+    "best_fixed_layer_index": 9
+  },
+  "cli": {
+    "dataset_argument": "balanced_paired/outputs/secondary_8x50",
+    "model_id_or_path": "CompVis/stable-diffusion-v1-4",
+    "oce_repository": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure",
+    "output_directory": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/results/balanced_paired_w0_geometry",
+    "device": "cuda:0",
+    "batch_size": 32,
+    "random_seed": 314159
+  }
+}

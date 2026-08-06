@@ -1,0 +1,14 @@
+{
+  "extends": "codex_diverse_pool_round2.json",
+  "experiment_name": "codex_diverse_visual_anchor_round3_pool",
+  "dataset_design": {
+    "description": "Single-source Codex replenishment pool using a new deterministic composition seed.",
+    "corpus_type": "codex_diverse_single_source_replenishment",
+    "source": "codex_diverse",
+    "minimum_diverse_per_group": 10,
+    "retain_pre_generation_population": true,
+    "round": 3,
+    "generator_seed": 9271,
+    "force_full_body_anchor": false
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "grids": [
+    {
+      "stage": "single_pair",
+      "mapping": "cat -> dog",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/single_pairs/cat_to_dog/cat_to_dog_single.png"
+    },
+    {
+      "stage": "single_pair",
+      "mapping": "dog -> cat",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/single_pairs/dog_to_cat/dog_to_cat_single.png"
+    },
+    {
+      "stage": "single_pair",
+      "mapping": "horse -> deer",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/single_pairs/horse_to_deer/horse_to_deer_single.png"
+    },
+    {
+      "stage": "single_pair",
+      "mapping": "dog -> wolf",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/single_pairs/dog_to_wolf/dog_to_wolf_single.png"
+    },
+    {
+      "stage": "single_pair",
+      "mapping": "wolf -> cat",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/single_pairs/wolf_to_cat/wolf_to_cat_single.png"
+    },
+    {
+      "stage": "cycle2",
+      "mapping": "cat -> dog",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/cycle2/cycle2_cat_prompt.png"
+    },
+    {
+      "stage": "cycle2",
+      "mapping": "dog -> cat",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/cycle2/cycle2_dog_prompt.png"
+    },
+    {
+      "stage": "cycle3",
+      "mapping": "cat -> dog",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/cycle3/cycle3_cat_prompt.png"
+    },
+    {
+      "stage": "cycle3",
+      "mapping": "dog -> wolf",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/cycle3/cycle3_dog_prompt.png"
+    },
+    {
+      "stage": "cycle3",
+      "mapping": "wolf -> cat",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/cycle3/cycle3_wolf_prompt.png"
+    },
+    {
+      "stage": "no_overlap",
+      "mapping": "cat -> dog",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/no_overlap/no_overlap_cat_prompt.png"
+    },
+    {
+      "stage": "no_overlap",
+      "mapping": "horse -> deer",
+      "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/no_overlap/no_overlap_horse_prompt.png"
+    }
+  ]
+}

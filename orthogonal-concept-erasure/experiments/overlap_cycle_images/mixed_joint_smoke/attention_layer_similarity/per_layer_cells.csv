@@ -1,0 +1,401 @@
+layer_id,layer_name,target_index,target,anchor_index,anchor,before,after,difference
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.7853239934937325,0.24025324362116224,-0.5450707498725702
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.5742655367836922,0.19938252839230264,-0.37488300839138955
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.6483104962749311,0.2573139910739126,-0.3909965052010185
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.6282994576407791,0.21751624996103194,-0.4107832076797472
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.49025194127610533,0.23921026331159007,-0.25104167796451526
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.46048296719165516,0.21768129055825447,-0.2428016766334007
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.6536575918419278,0.16708038487385563,-0.4865772069680722
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.554158467983274,0.21502430359067254,-0.3391341643926014
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.49991647836496766,0.19014881757445465,-0.309767660790513
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.40292093702931525,0.18423283795789014,-0.2186880990714251
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.4908884332332545,0.2161940054242204,-0.2746944278090341
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.5580934643703095,0.15668833891866152,-0.40140512545164797
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.6703608451758922,0.21815506672439028,-0.45220577845150195
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.506208032100119,0.1823066986000032,-0.3239013335001158
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.4376202501320495,0.19884449891308004,-0.2387757512189695
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.4555285135798208,0.16781080568188295,-0.2877177078979379
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.4014824161685826,0.15365795571561233,-0.24782446045297027
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.5005381015476088,0.1892790371783014,-0.3112590643693074
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.6592310223474634,0.16908504629204282,-0.49014597605542065
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.3958273337994139,0.1747534174988845,-0.22107391630052942
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.6179467932377976,0.22885634737919525,-0.3890904458586023
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.5800520624732097,0.18672118243022648,-0.3933308800429832
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.5631371071866327,0.23787699536618492,-0.3252601118204478
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.5249244342874783,0.20249086351830964,-0.3224335707691686
+1,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.5599229574029108,0.21348799780344585,-0.3464349595994649
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.8969565274716194,0.49747416095282304,-0.3994823665187963
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.7764773445747819,0.4239441890624937,-0.3525331555122882
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.8592774553817872,0.5203514458038784,-0.33892600957790886
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.8338766606844223,0.5132448105435212,-0.3206318501409011
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.7722058860307195,0.5178970342280569,-0.2543088518026626
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.7174435908568834,0.44386243002853726,-0.2735811608283461
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.798201754040918,0.39947083695088803,-0.39873091709002995
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.7576769913241544,0.47363862919181016,-0.2840383621323443
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.7045838818288161,0.45294158902059356,-0.2516422928082226
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.6208897487285687,0.48241338179234927,-0.13847636693621945
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.7704422774258706,0.4685410753981834,-0.30190120202768717
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.7171127034543974,0.40386957621960695,-0.3132431272347904
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.839931328942537,0.49396026943054216,-0.3459710595119948
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.7798623727846932,0.47475245084222784,-0.30510992194246533
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.6932740237390803,0.49728693773774757,-0.19598708600133274
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.7817995289783498,0.44614555691873536,-0.33565397205961445
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.6994930146196956,0.3861143253921705,-0.3133786892275251
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.7306165228208428,0.4553197560532479,-0.27529676676759485
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.818402882754182,0.45293638127357067,-0.3654665014806114
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.6975657758829914,0.46130333198464907,-0.23626244389834233
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.8172180123034587,0.47031716783232336,-0.34690084447113534
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.7762049947184206,0.41448338741052,-0.36172160730790065
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.795701947134955,0.5018956890771824,-0.2938062580577726
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.7550064065011513,0.48949235895997334,-0.2655140475411779
+2,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.73166019118414,0.4997946032432329,-0.23186558794090717
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.7336510720315075,0.18475243240983208,-0.5488986396216754
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.40600887023167825,0.1433864810201702,-0.26262238921150804
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.4627945810360323,0.20995528914640632,-0.252839291889626
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.3671433758295989,0.15457261194054486,-0.21257076388905402
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.3376500581292151,0.1885663567501654,-0.14908370137904972
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.2959981180475909,0.15441814193319808,-0.14157997611439282
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.6232045078349375,0.13744229544037329,-0.48576221239456424
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.3783966378338567,0.15649074583953868,-0.221905891994318
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.2061905585507008,0.1238699273247231,-0.08232063122597769
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.2199497396172948,0.17132573585736965,-0.04862400375992515
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.3253123382243878,0.1763808676530428,-0.148931470571345
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.38687945058160433,0.14841954139544833,-0.238459909186156
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.6156483308210368,0.19267992750134108,-0.42296840331969565
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.3574259145177154,0.1502163831931302,-0.2072095313245852
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.32979939601026553,0.18901647029295307,-0.14078292571731246
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.35358695199411394,0.13987970443630815,-0.2137072475578058
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.21096000516214863,0.12343963920002313,-0.08752036596212551
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.3565740657360139,0.16187736044550569,-0.19469670529050823
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.4870191729156839,0.1412205554822279,-0.345798617433456
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.3301515474717056,0.17396440225465654,-0.15618714521704907
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.3479500863798194,0.1576545832148611,-0.1902955031649583
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.39757708359197763,0.1271197466857854,-0.2704573369061922
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.4175537751702766,0.1783016641671096,-0.23925211100316698
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.3396247226347211,0.1387352655672482,-0.2008894570674729
+3,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.4317146923280447,0.16318446341721188,-0.26853022891083284
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.7944934871384757,0.274268847828923,-0.5202246393095526
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.5708210440201716,0.2316492015341901,-0.33917184248598153
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.6289728881502767,0.2692044453942524,-0.3597684427560243
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.6243325830486907,0.31191674362619826,-0.3124158394224924
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.5060822247348311,0.3003765614161505,-0.20570566331868062
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.48602921283037626,0.20156222391825301,-0.28446698891212324
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.5927995718744341,0.1889306823631682,-0.40386888951126587
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.4499529972655168,0.20269704845882475,-0.24725594880669205
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.44131416526729184,0.2380599986818328,-0.20325416658545903
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.33519498530474445,0.23500940885769497,-0.10018557644704948
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.5635143448166124,0.2472799634355532,-0.31623438138105925
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.5327039142336082,0.2089024107849155,-0.3238015034486927
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.6632341853141492,0.2456733161519728,-0.41756086916217644
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.5521638099801491,0.2654292942388199,-0.28673451574132924
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.513415337547633,0.2665914901912981,-0.24682384735633495
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.45328151211228707,0.19866698785020864,-0.2546145242620784
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.3886844445935644,0.18366095459358614,-0.20502348999997824
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.5325041618976689,0.20690373109991275,-0.32560043079775614
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.6045637852788761,0.21153994919835073,-0.3930238360805254
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.4776504048973621,0.23053754120361813,-0.24711286369374397
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.522988739773048,0.24059136181026325,-0.2823973779627848
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.5312176654530656,0.21111724148775987,-0.3201004239653057
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.5781328577656917,0.24859149960902904,-0.32954135815666263
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.5459189758334453,0.2589308200030551,-0.28698815583039017
+4,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.6069754499787341,0.26639034784246357,-0.3405851021362705
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.4959473973536338,0.0613548122655933,-0.4345925850880405
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.2882264509449377,0.027214685585470477,-0.26101176535946724
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.2088059486717317,0.030310744357289726,-0.17849520431444196
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.15301578673892835,0.020517600707891083,-0.13249818603103727
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.1708587311624323,0.034502135772778,-0.1363565953896543
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.14572915236072248,0.046689930465287896,-0.09903922189543458
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.3561913677948463,0.0637369870141217,-0.2924543807807246
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.14546116590095604,0.021464071381219498,-0.12399709451973653
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.05676295872796975,0.021449404640291048,-0.0353135540876787
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.05830195861577052,0.03656446907494617,-0.02173748954082435
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.1322837671263647,0.0409501146709273,-0.0913336524554374
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.1470822732477327,0.030725928307711883,-0.11635634494002083
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.2808051712056269,0.025633374306340738,-0.2551717968992862
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.14987138681730786,0.016129730427283596,-0.13374165639002425
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.06591188008134127,0.03286250100107112,-0.033049379080270155
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.08873678115386893,0.018835934216919207,-0.06990084693694973
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.0224391529312622,0.015427574416302743,-0.007011578514959456
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.10932904038105457,0.011725896953799187,-0.09760314342725537
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.2842229082089269,0.015726161744775154,-0.2684967464641518
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.05842133660603931,0.015801291336757613,-0.0426200452692817
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.205323971764949,0.03400434948706572,-0.17131962227788328
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.20732968914279595,0.03000800786822585,-0.1773216812745701
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.19700951647837717,0.02406972244576909,-0.17293979403260806
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.12405006628629756,0.019560819150532014,-0.10448924713576555
+5,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.14624129474542302,0.02132447082422618,-0.12491682392119685
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.4616563658097907,0.06994947325124172,-0.39170689255854896
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.22096561303888854,0.024971295002856372,-0.19599431803603218
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.19510514167676102,0.02465644507062212,-0.1704486966061389
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.13164815227354712,0.025148864858491538,-0.10649928741505559
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.1136022463195557,0.027320356075254758,-0.08628189024430094
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.13750254623573988,0.050548501864452075,-0.0869540443712878
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.34814485298875375,0.06241780584488804,-0.2857270471438657
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.14648606128110958,0.02965428004811624,-0.11683178123299334
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.07433520584156064,0.030475672073513694,-0.04385953376804695
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.04521027605125881,0.03459718127565875,-0.01061309477560006
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.10552986590667107,0.03976947225357283,-0.06576039365309824
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.13043712246311417,0.02875292254675372,-0.10168419991636046
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.2898127627853615,0.018996068793479804,-0.2708166939918817
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.09289468530922232,0.012433139023269564,-0.08046154628595276
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.05544356449086829,0.020312240906032685,-0.0351313235848356
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.04733680155025233,0.02003518168232875,-0.027301619867923576
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,-0.019543595407268414,0.026100649599394427,0.04564424500666284
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.12464046406184247,0.01477491638554791,-0.10986554767629456
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.28495805297644505,0.016014961741705695,-0.26894309123473936
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.057155780153141544,0.017808442263120724,-0.03934733789002082
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.13696002926061263,0.030585592262297068,-0.10637443699831556
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.16894843712225022,0.03008476949644958,-0.13886366762580063
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.17699369086043593,0.019361124016286885,-0.15763256684414903
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.10949180678429979,0.023014096375304362,-0.08647771040899543
+6,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.13943414071176416,0.019112782537202073,-0.12032135817456209
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.4212343960153942,0.046187181812204034,-0.37504721420319015
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.25681146775363173,0.03130781358325223,-0.22550365417037949
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.10007497940416735,0.0006437309149963585,-0.09943124848917098
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.09366993199652277,0.018942352295427765,-0.074727579701095
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.11137833198652133,0.016620242948795074,-0.09475808903772626
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.05135395421369736,0.0273380235244002,-0.02401593068929716
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.22325055692605483,0.054475504275520156,-0.16877505265053466
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.0801176133487046,0.003953480724694022,-0.07616413262401057
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.04493752912673285,0.02035887209625438,-0.02457865703047847
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,-0.044179724678087645,0.0155602166734379,0.05973994135152554
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.07498337783021466,0.024398055884633073,-0.05058532194558159
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.16328443875899423,0.02651407009228274,-0.1367703686667115
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.23119196521372373,0.00355203519125781,-0.2276399300224659
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.11454496326619891,0.012907023905197448,-0.10163793936100146
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.037189290011455683,0.01716764276162233,-0.020021647249833352
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.01586831295790454,-0.0020992867976657925,-0.017967599755570333
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,-0.02599325004377186,0.00697009462400699,0.03296334466777885
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.08013519178425509,0.003590414119512223,-0.07654477766474287
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.19187121856888817,0.005347726737569144,-0.18652349183131903
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.058160446778222005,0.012852022891771177,-0.04530842388645083
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.034704736361034605,-0.0031340039084116027,-0.03783874026944621
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.037721383673521625,0.0009555980465865552,-0.03676578562693507
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.05722414211504401,0.0005444375599955639,-0.05667970455504844
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.03706141030709932,0.0021988183977644394,-0.034862591909334883
+7,mid_block.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.08150614986830046,0.0017919280032666664,-0.0797142218650338
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.4134656541276623,0.06260001092462605,-0.35086564320303626
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.14547071258846295,0.006866912401093855,-0.1386038001873691
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.12739595855291364,0.005016596548117192,-0.12237936200479645
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.04294583337238012,0.006450371460004207,-0.03649546191237592
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.0881454521626795,0.0023718336989418352,-0.08577361846373766
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.015549859704328203,0.012933686859845951,-0.0026161728444822514
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.16955664603104637,0.04334305138550919,-0.12621359464553716
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.022038082124151363,-0.0006629990300097196,-0.022701081154161085
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.009268696317936082,0.011771541013185137,0.002502844695249055
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,-0.02682357563036455,0.002934176138920476,0.029757751769285027
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.07212462945305254,0.021704481620189457,-0.05042014783286308
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.1334604409852029,0.013433588128070658,-0.12002685285713224
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.23100439742105083,0.00141636240968686,-0.22958803501136396
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.08624030227884488,0.005072275808907873,-0.08116802646993701
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.020817268968372733,0.0035713843984195547,-0.017245884569953178
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.010908918023486786,-0.0028632279590122198,-0.013772145982499005
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,-0.13877242593013076,-0.010389277853021316,0.12838314807710943
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.07529589082002933,0.0032548197811997086,-0.07204107103882962
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.27702817989996614,0.004064772118364739,-0.2729634077816014
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.001682490157929692,-0.0033744925901071678,-0.00505698274803686
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.06363939306577125,0.003131312634532018,-0.06050808043123923
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.10835814273086777,0.0060548101427797965,-0.10230333258808798
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.09498507209211268,0.005806868818419233,-0.08917820327369345
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.018197157812153905,0.008645590761655404,-0.009551567050498502
+8,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.12964021313813262,0.0021482629576639305,-0.1274919501804687
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.39050955331040793,0.07101624960359959,-0.31949330370680834
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.15440286589061014,0.007735307054467098,-0.14666755883614305
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.06943658580739487,0.0083841070527003,-0.061052478754694564
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.0222796456516886,0.007401557963258865,-0.014878087688429735
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.04225848656623118,-0.00023778297947391058,-0.04249626954570509
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.008780576345018472,0.018982037865724343,0.010201461520705871
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.0968503090901753,0.03923825480559144,-0.05761205428458385
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.07033526419383775,0.011754358884640695,-0.05858090530919705
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.017029967709516897,0.014573713301166621,-0.002456254408350275
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,-0.04676846916194094,0.010192708755253783,0.056961177917194725
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.043143621522783976,0.017364374050599672,-0.025779247472184304
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.0515365258858901,0.013725897577652229,-0.037810628308237865
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.18108031678288772,0.00990611843038181,-0.1711741983525059
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.11117303179752375,0.01490750364883674,-0.09626552814868701
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,-0.006787515327320456,0.006986644736291604,0.01377416006361206
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,-0.015234393578039861,-0.0075958973901211705,0.007638496187918691
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,-0.14537024104872234,-0.0022760113572482636,0.1430942296914741
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.041767355120410216,0.0026641297142176775,-0.039103225406192536
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.23644505467490512,0.0010236013451762162,-0.2354214533297289
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,-0.04267361365913384,0.0016541898382061455,0.04432780349733998
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.03124720161538095,0.0011145383498167498,-0.0301326632655642
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.07265783731472578,0.010238395288739049,-0.062419442025986725
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.09421141686707646,0.0091558100103034,-0.08505560685677306
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.057723302991376166,0.006045135630266346,-0.05167816736110982
+9,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.07981104883018122,-0.0038534628363654493,-0.08366451166654668
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.38595901743433625,0.055034429739013825,-0.3309245876953224
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.24241604643530984,0.025722693344281893,-0.21669335309102794
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.1883779904922514,0.027279314676709014,-0.16109867581554238
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.08518245623312959,0.02239555752383341,-0.06278689870929618
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.09393398610988801,0.01998949677047586,-0.07394448933941215
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.0815882822825053,0.04089813178770229,-0.040690150494803005
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.18450360918670042,0.0582669273930736,-0.12623668179362682
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.12322990638874962,0.03013391530313228,-0.09309599108561734
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.0750551538983282,0.0315527671512962,-0.043502386747032
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,-0.014747418390235863,0.0296683542604553,0.04441577265069116
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.04995160050926668,0.03217717667959046,-0.01777442382967622
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,2,church,1,car,0.12527908491151196,0.029512763227552356,-0.0957663216839596
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.2627637431492788,0.0188342830510895,-0.2439294600981893
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,2,church,3,art,0.10706639620136305,0.02205415797974575,-0.0850122382216173
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.06744400688199806,0.02504115716063657,-0.04240284972136149
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.07676719438609542,0.008494170168304742,-0.06827302421779068
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,-0.0686701837657685,0.0024601074917438223,0.07113029125751233
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.04844847222054091,-0.0016058355994916299,-0.05005430782003254
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.23372065028583883,-0.003914100149098026,-0.23763475043493684
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.013353982115560367,0.009781723312339386,-0.003572258803220981
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.05403795325134861,0.0025203772705302686,-0.05151757598081834
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.08057347829868144,0.010967472436287626,-0.06960600586239382
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.09644642375619313,0.010925861665431491,-0.08552056209076163
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.061637320804922374,0.0010930681035449374,-0.060544252701377435
+10,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.1338152015644714,0.006463291915492211,-0.1273519096489792
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.48105425913622507,0.11175237158976327,-0.3693018875464618
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.37302736382743706,0.0782023663310632,-0.29482499749637386
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.31701157862332097,0.061555728182674546,-0.25545585044064645
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.18291892049658137,0.09351747893993528,-0.08940144155664609
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.22684091936987688,0.0769478624158686,-0.14989305695400829
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.17927349002138399,0.1197655432820514,-0.05950794673933259
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.3476659452540586,0.13052362172639728,-0.2171423235276613
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.16411489698750478,0.07233473915587318,-0.0917801578316316
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.05571022696685389,0.10283542984269908,0.04712520287584519
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,-0.022403297404984836,0.06313294848204248,0.08553624588702732
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.11646480073931716,0.07471151839195077,-0.04175328234736639
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.23476127884927042,0.06549870269350139,-0.16926257615576903
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.3445885191137832,0.06295993288640889,-0.2816285862273743
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.2480433023253669,0.09360751325401104,-0.15443578907135586
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.21172721689621832,0.06211322099025118,-0.14961399590596713
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.13525651001170705,-0.0018124682869799708,-0.13706897829868703
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.09648074939863435,0.016655423501613066,-0.0798253258970213
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.24436394103889642,0.018330867240510966,-0.22603307379838544
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.25007181308807824,0.019078481480555683,-0.23099333160752256
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.10064838680287042,0.009669013365850332,-0.09097937343702009
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.16921979747492583,0.059883381382863476,-0.10933641609206235
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.27529837562559445,0.07295886134665941,-0.20233951427893504
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.2082737228059865,0.04332222561041754,-0.16495149719556895
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.1022388459243058,0.06960210674280337,-0.03263673918150242
+11,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.17961069016564404,0.041383913718681296,-0.13822677644696274
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.6352372332877021,0.32801379203807246,-0.30722344124962964
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.41526981993169126,0.25918514798574505,-0.15608467194594622
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.46304149902991104,0.3402473350717491,-0.12279416395816195
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.4458347472703012,0.33606404506130794,-0.10977070220899326
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.36266828051143496,0.3026568811317515,-0.06001139937968347
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.1904531357448333,0.20968654883171756,0.019233413086884255
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.534441856494404,0.2597688589821137,-0.2746729975122903
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.38558963362928034,0.279843560057475,-0.10574607357180532
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.31659319851319684,0.2658559886465316,-0.050737209866665245
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.3275181710321283,0.24923406772704,-0.07828410330508834
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.3780223527710579,0.2940121794742525,-0.08401017329680538
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.4155006223574008,0.3002466438281961,-0.11525397852920471
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.6021008420735462,0.396163463344894,-0.2059373787286522
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.5132814378345603,0.37035189661287604,-0.14292954122168422
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.4170489396072421,0.37634089727802567,-0.04070804232921643
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.28203242270847034,0.21662451516211043,-0.06540790754635992
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.27215830934882,0.23611478107502923,-0.03604352827379079
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.5037486762131669,0.3086116580617826,-0.1951370181513843
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.6088564714638349,0.29407940266810784,-0.3147770687957271
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.34009137066658396,0.28827198369301416,-0.0518193869735698
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.34014520769531853,0.23518345264723095,-0.10496175504808758
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.3518916304616303,0.24312246354237915,-0.10876916691925115
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.5128486555613935,0.29910545085988044,-0.21374320470151303
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.40508834936106675,0.28358261266770557,-0.12150573669336118
+12,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.41205501111973986,0.2770480924361588,-0.13500691868358106
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.6281403883045775,0.13765500545143286,-0.4904853828531447
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.25676837263013735,0.06635784366772368,-0.19041052896241367
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.30715301990753274,0.08631606214697535,-0.2208369577605574
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.29372905985187203,0.09189918852222442,-0.2018298713296476
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.23720614666769585,0.11851867290503601,-0.11868747376265984
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.23314358354152276,0.07846066638662542,-0.15468291715489735
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.49105357067708577,0.08217662446829568,-0.4088769462087901
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.23492370985110106,0.05721322813563599,-0.17771048171546505
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.11984136825171716,0.07389347516104695,-0.04594789309067021
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.08400913245575789,0.07081600420478434,-0.013193128250973546
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.2918028253041275,0.1055564271504191,-0.1862463981537084
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,2,church,1,car,0.205756046560367,0.06172560386448418,-0.14403044269588283
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.37682970217674994,0.09336251353686201,-0.28346718863988796
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,2,church,3,art,0.2492087993627608,0.08582115108552515,-0.16338764827723565
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.18821547284696333,0.0847214637940509,-0.10349400905291242
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.16944901339186905,0.04498659936317481,-0.12446241402869423
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.010788608492084115,0.008854305554083751,-0.0019343029380003637
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.23492116948923092,0.04195116207350959,-0.19297000741572135
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.34850692513484827,0.022699073542828803,-0.32580785159201947
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.15174275272808646,0.038649778727760584,-0.11309297400032588
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.33581535649329597,0.09164776556183309,-0.2441675909314629
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.2015590383393911,0.04574816559533692,-0.15581087274405417
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.3333294980290197,0.07266783711932179,-0.2606616609096979
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.21574870326085294,0.061411961768044934,-0.15433674149280802
+13,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.3909041720459511,0.06946478803385826,-0.3214393840120929
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.9069583215722162,0.38215899577164647,-0.5247993258005698
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.7800913230213808,0.36008067491447604,-0.4200106481069048
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.820566511002935,0.37334992541471645,-0.44721658558821853
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.8571164965693426,0.42582842540307786,-0.4312880711662648
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.7296014855442282,0.4140494532770653,-0.3155520322671629
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.7238645211079007,0.34280353895770127,-0.3810609821501994
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.7860102686022025,0.3145720650525937,-0.47143820354960875
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.7482260445018541,0.3407903798452854,-0.4074356646565688
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.6582677863417681,0.3513837465471741,-0.306884039794594
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.6454918419592242,0.3607247032551919,-0.28476713870403225
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.7629780266545826,0.36550818629105486,-0.3974698403635277
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,2,church,1,car,0.737956868190785,0.3317767930418727,-0.4061800751489123
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.8386267535138483,0.35499506468466346,-0.48363168882918484
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,2,church,3,art,0.7873455003880374,0.3958924314935527,-0.3914530688944847
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.7117382879087111,0.37114798180168024,-0.34059030610703084
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.7392069146322324,0.3268821735715549,-0.4123247410606775
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.571635458522181,0.30057800021062425,-0.27105745831155675
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.6996558028995099,0.3244872230653721,-0.3751685798341378
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.7609110652816529,0.34672366804869437,-0.4141873972329585
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.6116480088274411,0.3345625684166638,-0.27708544041077726
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.6881434455953613,0.2905251515782568,-0.3976182940171045
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.580782590029746,0.27502135729664423,-0.30576123273310174
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.6904016012577991,0.32352492665135385,-0.3668766746064453
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.522177261525876,0.3026979811940661,-0.21947928033180986
+14,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.629962640398494,0.2996111480789556,-0.3303514923195384
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.8931794072033832,0.5897621521254404,-0.3034172550779428
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.7730294615131856,0.5064997272524032,-0.2665297342607824
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.8356650093384175,0.5598399711669874,-0.2758250381714301
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.832098952082178,0.5850724143477047,-0.24702653773447325
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.759910449933479,0.567291893571457,-0.19261855636202196
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.6989036604069512,0.4867921156451081,-0.21211154476184307
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.7496026967003927,0.4258142029861275,-0.3237884937142652
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.698260930949768,0.47381874406222757,-0.22444218688754047
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.6295365356579734,0.4631264693160163,-0.1664100663419571
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.5547705365642959,0.479578823516869,-0.07519171304742689
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.806218048867484,0.5601540440010105,-0.2460640048664735
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,2,church,1,car,0.7335584585171149,0.47246928375566494,-0.26108917476144994
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.8189250352068616,0.531939467251736,-0.28698556795512553
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,2,church,3,art,0.7646323112316513,0.5444102692562961,-0.22022204197535522
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.7262058611385229,0.536293055658602,-0.18991280547992095
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.6926864096378558,0.4894187939340362,-0.20326761570381957
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.5238121721698572,0.4072752533472394,-0.1165369188226178
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.6879797506779479,0.4458900602644784,-0.2420896904134695
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.7659908376862448,0.45399243657550403,-0.31199840111074073
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.6148266919463937,0.44481547417736417,-0.17001121776902955
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.7349689116138398,0.49515680327408745,-0.23981210833975236
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.5847850836292314,0.41942200922918316,-0.16536307440004827
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.7126019670142729,0.4913465739541158,-0.22125539306015712
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.6133592615988914,0.47749834447848416,-0.13586091712040727
+15,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.6820474687431661,0.4652549072315963,-0.21679256151156984
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,0,dog,0.9129425016062764,0.612674644935745,-0.30026785667053146
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,1,car,0.8089548257203693,0.5594490482095754,-0.24950577751079384
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,2,castle,0.8360688630196358,0.5952031971075222,-0.24086566591211356
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,3,art,0.8679941829763553,0.6039571551905349,-0.2640370277858204
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,0,cat,4,celebrity,0.7750972660350021,0.5911078683532168,-0.18398939768178524
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,0,dog,0.7286877744423099,0.5307157729037382,-0.19797200153857175
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,1,car,0.7882476447340496,0.4642843760827281,-0.3239632686513215
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,2,castle,0.7314800440883349,0.5197764830503354,-0.21170356103799948
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,3,art,0.6867106272514883,0.505654786611017,-0.1810558406404713
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,1,truck,4,celebrity,0.6508157551482211,0.5034170155422389,-0.14739873960598215
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,2,church,0,dog,0.7968372804411878,0.5783950818455105,-0.21844219859567737
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,2,church,1,car,0.7736083226262516,0.5070547674789468,-0.2665535551473047
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,2,church,2,castle,0.8596211110194903,0.5635692076172463,-0.2960519034022441
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,2,church,3,art,0.7999496875199579,0.557068323309097,-0.24288136421086093
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,2,church,4,celebrity,0.7737353586737545,0.5424944248463087,-0.23124093382744582
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,0,dog,0.7078971971927486,0.48515636293871267,-0.2227408342540359
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,1,car,0.5722770423415444,0.4139175579549754,-0.158359484386569
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,2,castle,0.6421142538772677,0.46659788023189197,-0.17551637364537576
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,3,art,0.761450447312757,0.445233207154459,-0.316217240158298
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,3,Van Gogh,4,celebrity,0.6512445368527691,0.4429173523426749,-0.2083271845100942
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,0,dog,0.7666672433360849,0.5538623577667561,-0.21280488556932886
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,1,car,0.6828061936303567,0.48402766958232246,-0.1987785240480342
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,2,castle,0.7824074072719184,0.5459029504711798,-0.23650445680073862
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,3,art,0.702556893341372,0.5286225565427346,-0.17393433679863735
+16,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v,4,Adam Driver,4,celebrity,0.750452904682084,0.5128118925555872,-0.2376410121264968

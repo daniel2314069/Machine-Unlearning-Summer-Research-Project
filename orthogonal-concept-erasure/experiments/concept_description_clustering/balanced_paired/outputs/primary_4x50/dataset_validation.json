@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "expected_rows": 200,
+  "observed_rows": 200,
+  "checks": {
+    "complete_expected_size": true,
+    "one_row_per_concept_slot": true,
+    "all_expected_pairs_present": true,
+    "no_exact_duplicates": true,
+    "no_forbidden_terms": true,
+    "all_effective_lengths_in_assigned_range": true,
+    "no_truncation": true,
+    "trigram_overlap_within_limit": true,
+    "syntax_family_limit": true,
+    "opening_limit": true,
+    "vocabulary_width_ratio": true,
+    "syntax_width_ratio": true
+  },
+  "forbidden_term_hits": {},
+  "maximum_pairwise_trigram_overlap": 0.5454545454545454,
+  "maximum_syntax_family_count_per_concept": 4,
+  "maximum_opening_count_per_concept": 3,
+  "vocabulary": {
+    "cat": {
+      "descriptions": 50,
+      "tokens": 828,
+      "unique_tokens": 263,
+      "type_token_ratio": 0.3176328502415459
+    },
+    "dog": {
+      "descriptions": 50,
+      "tokens": 855,
+      "unique_tokens": 248,
+      "type_token_ratio": 0.29005847953216374
+    },
+    "fox": {
+      "descriptions": 50,
+      "tokens": 838,
+      "unique_tokens": 232,
+      "type_token_ratio": 0.27684964200477324
+    },
+    "bear": {
+      "descriptions": 50,
+      "tokens": 855,
+      "unique_tokens": 242,
+      "type_token_ratio": 0.2830409356725146
+    }
+  },
+  "minimum_to_maximum_unique_vocabulary_ratio": 0.8821292775665399,
+  "syntax_family_width": {
+    "cat": 22,
+    "dog": 20,
+    "fox": 23,
+    "bear": 21
+  },
+  "minimum_to_maximum_syntax_family_ratio": 0.8695652173913043
+}

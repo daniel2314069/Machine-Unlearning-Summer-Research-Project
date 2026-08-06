@@ -1,0 +1,26 @@
+{
+  "reviewed_at_stage": "after_single_pair_subspace_screening",
+  "summary": "Target erasure is visually evident for all five mappings, but clear own-anchor generation is visually stable only for cat -> dog. The remaining four mappings mostly produce unrelated scenes or textures rather than their named anchors.",
+  "pairs": [
+    {
+      "mapping": "cat -> dog",
+      "observation": "All ten edited seeds show recognizable dogs; no obvious cat-dog hybrids or global image collapse."
+    },
+    {
+      "mapping": "airplane -> helicopter",
+      "observation": "Airplanes disappear, but the edited images mostly show cities, textures, distant ambiguous objects, or other unrelated scenes rather than recognizable helicopters."
+    },
+    {
+      "mapping": "church -> castle",
+      "observation": "Churches disappear, but edited images are mostly generic residential or office buildings; recognizable castles are not stable."
+    },
+    {
+      "mapping": "truck -> car",
+      "observation": "Trucks disappear, but edited images mostly become textures or unrelated objects; recognizable cars are not stable."
+    },
+    {
+      "mapping": "guitar -> piano",
+      "observation": "Guitars disappear, but edited images mostly become architectural textures or unrelated scenes; recognizable pianos are not stable despite comparatively favorable five-anchor CLIP ranking."
+    }
+  ]
+}

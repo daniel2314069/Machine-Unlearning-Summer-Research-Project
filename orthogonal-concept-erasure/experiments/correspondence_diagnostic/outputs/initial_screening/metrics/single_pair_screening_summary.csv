@@ -1,0 +1,6 @@
+pair_index,pair,target,anchor,n_seeds,original_mean_target_similarity,original_mean_anchor_similarity,edited_mean_target_similarity,edited_mean_anchor_similarity,target_similarity_delta,anchor_similarity_delta,own_anchor_top1_rate,low_variance_fraction,screening_rule,screening_pass,screening_pass_is_automatic_elimination
+1,cat_to_dog,cat,dog,20,0.28114280104637146,0.22713136672973633,0.21962077915668488,0.27735573053359985,-0.061522021889686584,0.050224363803863525,1.0,0.0,directional_v1,True,False
+2,airplane_to_sky,airplane,sky,20,0.2675125002861023,0.19831638038158417,0.27098506689071655,0.22530479729175568,0.003472566604614258,0.02698841691017151,0.05,0.0,directional_v1,False,False
+3,church_to_building,church,building,20,0.2903706431388855,0.23073792457580566,0.2584189772605896,0.25937265157699585,-0.0319516658782959,0.028634727001190186,0.45,0.0,directional_v1,True,False
+4,golf_ball_to_tennis_ball,golf ball,tennis ball,20,0.3141573667526245,0.252780944108963,0.3235357403755188,0.2626550495624542,0.009378373622894287,0.009874105453491211,0.0,0.0,directional_v1,False,False
+5,french_horn_to_trumpet,French horn,trumpet,20,0.33375197649002075,0.30869540572166443,0.32418763637542725,0.3123692274093628,-0.009564340114593506,0.0036738216876983643,0.0,0.0,directional_v1,True,False

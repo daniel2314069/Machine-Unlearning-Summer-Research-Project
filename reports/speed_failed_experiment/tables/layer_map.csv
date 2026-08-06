@@ -1,0 +1,17 @@
+layer_index,layer_name,group
+0,down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v.weight,down
+1,down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v.weight,down
+2,down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight,down
+3,down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight,down
+4,down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight,down
+5,down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight,down
+6,up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight,up
+7,up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight,up
+8,up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v.weight,up
+9,up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight,up
+10,up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight,up
+11,up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v.weight,up
+12,up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v.weight,up
+13,up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v.weight,up
+14,up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v.weight,up
+15,mid_block.attentions.0.transformer_blocks.0.attn2.to_v.weight,mid

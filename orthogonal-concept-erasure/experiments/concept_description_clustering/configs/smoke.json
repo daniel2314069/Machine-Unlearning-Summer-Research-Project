@@ -1,0 +1,12 @@
+{
+  "extends": "pilot.json",
+  "experiment_name": "smoke_3_concepts_stage1",
+  "formal": false,
+  "model": {"generation_seeds": [42]},
+  "classifier": {"min_top1_seeds": 1},
+  "candidate_validation": {
+    "candidates_per_concept_facet": 5,
+    "accepted_per_concept_facet": 5
+  }
+}
+

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "dataset_is_final_balanced_8x50": true,
+  "description_embedding_shapes_are_400x768": true,
+  "name_embedding_shapes_are_8x768": true,
+  "all_name_oce_indices_equal_effective_length_minus_2": true,
+  "all_name_eot_indices_equal_effective_length_minus_1": true,
+  "all_names_single_bpe_content_tokens": true,
+  "all_selected_w0_unchanged": true,
+  "no_edited_checkpoint_loaded": true,
+  "no_image_generation_performed": true,
+  "clustering_fit_boundary_accepts_no_labels": true,
+  "all_clustering_rows_record_labels_unavailable_to_fit": true,
+  "three_prototype_conditions_are_separate": true,
+  "cross_readout_distances_not_merged_with_matched_distances": true,
+  "all_layer_confusion_csvs_present": true
+}

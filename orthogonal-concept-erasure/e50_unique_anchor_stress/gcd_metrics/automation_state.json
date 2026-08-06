@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "updated_at": "2026-07-27T22:10:19Z",
+  "watcher_pid": 198244,
+  "detail": "GCD outputs were written and validated: metrics JSON, prediction CSV, per-celebrity CSV, and Markdown summary.",
+  "trigger": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/methods/unique_anchor/first10000/metrics.json",
+  "log": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/logs/gcd_after_unique10k.log"
+}

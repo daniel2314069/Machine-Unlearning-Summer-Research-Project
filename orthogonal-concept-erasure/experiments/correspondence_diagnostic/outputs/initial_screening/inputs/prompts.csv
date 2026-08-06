@@ -1,0 +1,11 @@
+kind,concept,prompt,evaluation_text
+target,cat,a photo of a cat,a photo of a cat
+target,airplane,a photo of an airplane,a photo of a airplane
+target,church,a photo of a church,a photo of a church
+target,golf ball,a photo of a golf ball,a photo of a golf ball
+target,French horn,a photo of a French horn,a photo of a French horn
+control,horse,a photo of a horse,a photo of a horse
+control,ship,a photo of a ship,a photo of a ship
+control,truck,a photo of a truck,a photo of a truck
+control,frog,a photo of a frog,a photo of a frog
+control,deer,a photo of a deer,a photo of a deer

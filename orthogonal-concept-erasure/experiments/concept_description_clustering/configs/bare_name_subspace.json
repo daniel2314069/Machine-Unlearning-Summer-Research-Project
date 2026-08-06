@@ -1,0 +1,13 @@
+{
+  "extends": "codex_diverse_4x50_round2.json",
+  "experiment_name": "bare_name_oce_uce_subspace_analysis",
+  "bare_name_subspace": {
+    "ranks": [1, 2, 4, 8, 16, 32],
+    "include_full_numerical_rank": true,
+    "heldout_splits": 100,
+    "train_per_concept": 40,
+    "heldout_per_concept": 10,
+    "split_seed": 314159,
+    "plot_rank": 8
+  }
+}

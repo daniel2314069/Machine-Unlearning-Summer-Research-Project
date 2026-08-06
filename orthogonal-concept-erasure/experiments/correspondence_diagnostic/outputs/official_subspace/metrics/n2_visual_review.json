@@ -1,0 +1,14 @@
+{
+  "reviewed_at_stage": "after_n2_image_evaluation",
+  "summary": "The cat mapping remains visually clear under both joint methods. For guitar, joint subspace erases the guitar but does not show stable pianos, whereas the Eq. 6 ablation produces recognizable piano keys or pianos in most seeds. Candidate-set CLIP top-1 therefore overstates visual correspondence for joint subspace.",
+  "mappings": [
+    {
+      "mapping": "cat -> dog",
+      "observation": "Joint subspace shows recognizable dogs in all ten seeds. Eq. 6 also mostly shows dogs, with a few more cat-like facial or body traits."
+    },
+    {
+      "mapping": "guitar -> piano",
+      "observation": "Joint subspace mostly shows walls, windows, textures, or unrelated scenes rather than pianos. Eq. 6 shows recognizable keyboards or pianos in most seeds, with a small number of partial or ambiguous cases."
+    }
+  ]
+}

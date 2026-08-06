@@ -1,0 +1,90 @@
+diff --git a/model_training/helpers/resnet_model.py b/model_training/helpers/resnet_model.py
+--- a/model_training/helpers/resnet_model.py
++++ b/model_training/helpers/resnet_model.py
+@@ -25,7 +25,7 @@ class ResNetModel(object):
+         self.model_with_loss = self.build_resnet_50()
+ 
+     def build_resnet_50(self):
+-        model = models.resnet50(num_classes=self.num_classes)
++        model = models.resnet50(weights=None, num_classes=self.num_classes)
+         model_with_bottleneck = AdaptResNetBottleneck(model, self.embedding_size, self.num_classes)
+ 
+         model_with_loss = ResNetCenterLoss(
+@@ -42,9 +42,9 @@ class ResNetModel(object):
+         model_with_loss.train(False)
+ 
+         if self.use_cuda:
+-            checkpoint = torch.load(self.weights_path)
++            checkpoint = torch.load(self.weights_path, weights_only=True)
+         else:
+-            checkpoint = torch.load(self.weights_path, map_location=lambda storage, loc: storage)
++            checkpoint = torch.load(self.weights_path, map_location="cpu", weights_only=True)
+ 
+         model_with_loss.load_state_dict(checkpoint['model_state'])
+ 
+@@ -53,7 +53,7 @@ class ResNetModel(object):
+     def __call__(self, crops_numpy_array, return_tensors=False):
+         crops_variable = self._numpy_crops_as_tensor(crops_numpy_array)
+         fc2_output, embedding = self.model_with_loss.model(crops_variable)
+-        softmax = nn.Softmax()(fc2_output)
++        softmax = nn.Softmax(dim=1)(fc2_output)
+ 
+         if return_tensors:
+             return softmax, embedding
+diff --git a/model_training/preprocessors/face_detection/face_detector.py b/model_training/preprocessors/face_detection/face_detector.py
+--- a/model_training/preprocessors/face_detection/face_detector.py
++++ b/model_training/preprocessors/face_detection/face_detector.py
+@@ -29,6 +29,8 @@
+ import os
+ from collections import defaultdict
+ 
+-import tensorflow as tf
++import tensorflow.compat.v1 as tf
++tf.disable_v2_behavior()
++
+ import numpy as np
+ from . import network
+diff --git a/model_training/preprocessors/face_detection/network.py b/model_training/preprocessors/face_detection/network.py
+--- a/model_training/preprocessors/face_detection/network.py
++++ b/model_training/preprocessors/face_detection/network.py
+@@ -32,6 +32,8 @@
+ from six import string_types, iteritems
+ 
+ import numpy as np
+-import tensorflow as tf
++import tensorflow.compat.v1 as tf
++tf.disable_v2_behavior()
++
+ import cv2
+ import os
+@@ -85,7 +87,7 @@ class Network(object):
+         session: The current TensorFlow session
+         ignore_missing: If true, serialized weights for missing layers are ignored.
+         '''
+-        data_dict = np.load(data_path, encoding='latin1').item()
++        data_dict = np.load(data_path, encoding='latin1', allow_pickle=True).item()
+ 
+         for op_name in data_dict:
+             with tf.variable_scope(op_name, reuse=True):
+diff --git a/model_training/utils.py b/model_training/utils.py
+--- a/model_training/utils.py
++++ b/model_training/utils.py
+@@ -19,6 +19,6 @@ import numpy as np
+ from contextlib import contextmanager
+ from urllib.error import URLError
+ from urllib.request import HTTPError
+ from math import ceil
+-from scipy import misc
++from PIL import Image
+ 
+@@ -182,4 +182,9 @@ def evenly_spaced_sampling(array, n):
+ 
+ 
+ def preprocess_image(img, image_size):
+-    return misc.imresize(img, (image_size, image_size), interp='bilinear')
++    image = Image.fromarray(np.asarray(img).astype(np.uint8))
++    try:
++        bilinear = Image.Resampling.BILINEAR
++    except AttributeError:
++        bilinear = Image.BILINEAR
++    return np.asarray(image.resize((image_size, image_size), resample=bilinear))

@@ -1,0 +1,13 @@
+{
+  "extends": "full.json",
+  "experiment_name": "pilot_3_concepts",
+  "formal": true,
+  "candidate_validation": {
+    "candidates_per_concept_facet": 5,
+    "accepted_per_concept_facet": 5
+  },
+  "clustering": {"k": 3},
+  "concept_names": ["cat", "dog", "rabbit"],
+  "facet_ids": ["visual_appearance", "body_parts", "movement"]
+}
+

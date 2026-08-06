@@ -1,0 +1,4 @@
+n_neighbors,nodes,undirected_edges,connected_components,component_sizes,minimum_degree,mean_degree,maximum_degree,minimum_edge_weight,mean_edge_weight,maximum_edge_weight,too_disconnected_for_eight_cluster_spectral,graph_rule,labels_used
+5,400,1402,1,[400],5,7.01,18,0.4032246856862053,0.6049954061424758,0.8679496846724588,False,"union: connect i-j when either selects the other; weight=max(0, cosine_similarity)",False
+10,400,2746,1,[400],10,13.73,36,0.37419467034166276,0.5690977153088156,0.8679496846724588,False,"union: connect i-j when either selects the other; weight=max(0, cosine_similarity)",False
+15,400,4106,1,[400],15,20.53,56,0.35295379226565005,0.5471859832184539,0.8679496846724588,False,"union: connect i-j when either selects the other; weight=max(0, cosine_similarity)",False

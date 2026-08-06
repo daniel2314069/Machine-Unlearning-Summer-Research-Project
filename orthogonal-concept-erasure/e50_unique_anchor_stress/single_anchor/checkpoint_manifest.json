@@ -1,0 +1,412 @@
+{
+  "status": "complete",
+  "method": "single_anchor",
+  "checkpoint": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/single_anchor/e50_single_celebrity.safetensors",
+  "checkpoint_sha256": "c9630c2dcfa07e122a31eb55b61695c9cf2d46caf5b4b753b75289c878277227",
+  "base_model": "CompVis/stable-diffusion-v1-4",
+  "cg_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/Cg.pt",
+  "cg_sha256": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae",
+  "targets": [
+    "Adam Driver",
+    "Adriana Lima",
+    "Amber Heard",
+    "Amy Adams",
+    "Andrew Garfield",
+    "Angelina Jolie",
+    "Anjelica Huston",
+    "Anna Faris",
+    "Anna Kendrick",
+    "Anne Hathaway",
+    "Arnold Schwarzenegger",
+    "Barack Obama",
+    "Beth Behrs",
+    "Bill Clinton",
+    "Bob Dylan",
+    "Bob Marley",
+    "Bradley Cooper",
+    "Bruce Willis",
+    "Bryan Cranston",
+    "Cameron Diaz",
+    "Channing Tatum",
+    "Charlie Sheen",
+    "Charlize Theron",
+    "Chris Evans",
+    "Chris Hemsworth",
+    "Chris Pine",
+    "Chuck Norris",
+    "Courteney Cox",
+    "Demi Lovato",
+    "Drake",
+    "Drew Barrymore",
+    "Dwayne Johnson",
+    "Ed Sheeran",
+    "Elon Musk",
+    "Elvis Presley",
+    "Emma Stone",
+    "Frida Kahlo",
+    "George Clooney",
+    "Glenn Close",
+    "Gwyneth Paltrow",
+    "Harrison Ford",
+    "Hillary Clinton",
+    "Hugh Jackman",
+    "Idris Elba",
+    "Jake Gyllenhaal",
+    "James Franco",
+    "Jared Leto",
+    "Jason Momoa",
+    "Jennifer Aniston",
+    "Jennifer Lawrence"
+  ],
+  "anchors": [
+    "celebrity"
+  ],
+  "retains": [
+    "Aaron Paul",
+    "Alec Baldwin",
+    "Amanda Seyfried",
+    "Amy Poehler",
+    "Amy Schumer",
+    "Amy Winehouse",
+    "Andy Samberg",
+    "Aretha Franklin",
+    "Avril Lavigne",
+    "Aziz Ansari",
+    "Barry Manilow",
+    "Ben Affleck",
+    "Ben Stiller",
+    "Benicio Del Toro",
+    "Bette Midler",
+    "Betty White",
+    "Bill Murray",
+    "Bill Nye",
+    "Britney Spears",
+    "Brittany Snow",
+    "Bruce Lee",
+    "Burt Reynolds",
+    "Charles Manson",
+    "Christie Brinkley",
+    "Christina Hendricks",
+    "Clint Eastwood",
+    "Countess Vaughn",
+    "Dakota Johnson",
+    "Dane Dehaan",
+    "David Bowie",
+    "David Tennant",
+    "Denise Richards",
+    "Doris Day",
+    "Dr Dre",
+    "Elizabeth Taylor",
+    "Emma Roberts",
+    "Fred Rogers",
+    "Gal Gadot",
+    "George Bush",
+    "George Takei",
+    "Gillian Anderson",
+    "Gordon Ramsey",
+    "Halle Berry",
+    "Harry Dean Stanton",
+    "Harry Styles",
+    "Hayley Atwell",
+    "Heath Ledger",
+    "Henry Cavill",
+    "Jackie Chan",
+    "Jada Pinkett Smith",
+    "James Garner",
+    "Jason Statham",
+    "Jeff Bridges",
+    "Jennifer Connelly",
+    "Jensen Ackles",
+    "Jim Morrison",
+    "Jimmy Carter",
+    "Joan Rivers",
+    "John Lennon",
+    "Johnny Cash",
+    "Jon Hamm",
+    "Judy Garland",
+    "Julianne Moore",
+    "Justin Bieber",
+    "Kaley Cuoco",
+    "Kate Upton",
+    "Keanu Reeves",
+    "Kim Jong Un",
+    "Kirsten Dunst",
+    "Kristen Stewart",
+    "Krysten Ritter",
+    "Lana Del Rey",
+    "Leslie Jones",
+    "Lily Collins",
+    "Lindsay Lohan",
+    "Liv Tyler",
+    "Lizzy Caplan",
+    "Maggie Gyllenhaal",
+    "Matt Damon",
+    "Matt Smith",
+    "Matthew Mcconaughey",
+    "Maya Angelou",
+    "Megan Fox",
+    "Mel Gibson",
+    "Melanie Griffith",
+    "Michael Cera",
+    "Michael Ealy",
+    "Natalie Portman",
+    "Neil Degrasse Tyson",
+    "Niall Horan",
+    "Patrick Stewart",
+    "Paul Rudd",
+    "Paul Wesley",
+    "Pierce Brosnan",
+    "Prince",
+    "Queen Elizabeth",
+    "Rachel Dratch",
+    "Rachel Mcadams",
+    "Reba Mcentire",
+    "Robert De Niro"
+  ],
+  "parameters": {
+    "erase_scale": 1500.0,
+    "preserve_global_scale": 70.0,
+    "preserve_concept_scale": 2.5,
+    "lamb": 10.0,
+    "expand_prompts": false,
+    "dtype": "float32",
+    "reflection_correction": "upstream oce.py behavior"
+  },
+  "module_names": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "mid_block.attentions.0.transformer_blocks.0.attn2.to_v.weight"
+  ],
+  "module_count": 16,
+  "layer_audit": [
+    {
+      "layer_index": 1,
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        320,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.3833995461463928,
+      "objective_singular_max": 23528.001953125,
+      "orthogonality_error": 5.658746886183508e-06,
+      "weight_gram_relative_error": 9.241230873158202e-05
+    },
+    {
+      "layer_index": 2,
+      "layer": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        320,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.052772730588912964,
+      "objective_singular_max": 25120.9375,
+      "orthogonality_error": 5.762738965131575e-06,
+      "weight_gram_relative_error": 8.708105451660231e-05
+    },
+    {
+      "layer_index": 3,
+      "layer": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        640,
+        768
+      ],
+      "reflection_detected": false,
+      "objective_singular_min": 0.04938016086816788,
+      "objective_singular_max": 37826.41015625,
+      "orthogonality_error": 9.80422100838041e-06,
+      "weight_gram_relative_error": 0.0001909870479721576
+    },
+    {
+      "layer_index": 4,
+      "layer": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        640,
+        768
+      ],
+      "reflection_detected": false,
+      "objective_singular_min": 0.04107489064335823,
+      "objective_singular_max": 38631.625,
+      "orthogonality_error": 1.0185422070208006e-05,
+      "weight_gram_relative_error": 0.00017397954070474952
+    },
+    {
+      "layer_index": 5,
+      "layer": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 2.6969988198288775e-07,
+      "objective_singular_max": 48849.5,
+      "orthogonality_error": 1.271126984647708e-05,
+      "weight_gram_relative_error": 0.00031084305373951793
+    },
+    {
+      "layer_index": 6,
+      "layer": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 3.650471214200479e-08,
+      "objective_singular_max": 47972.71484375,
+      "orthogonality_error": 1.3133362699591089e-05,
+      "weight_gram_relative_error": 0.0003485076886136085
+    },
+    {
+      "layer_index": 7,
+      "layer": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 4.4998981252319936e-07,
+      "objective_singular_max": 55304.19140625,
+      "orthogonality_error": 1.325907669524895e-05,
+      "weight_gram_relative_error": 0.00033919248380698264
+    },
+    {
+      "layer_index": 8,
+      "layer": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": false,
+      "objective_singular_min": 1.0205784519712324e-06,
+      "objective_singular_max": 50162.6953125,
+      "orthogonality_error": 1.461500687582884e-05,
+      "weight_gram_relative_error": 0.00036972571979276836
+    },
+    {
+      "layer_index": 9,
+      "layer": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 4.7120803969846747e-07,
+      "objective_singular_max": 58561.24609375,
+      "orthogonality_error": 1.3585234228230547e-05,
+      "weight_gram_relative_error": 0.00036149274092167616
+    },
+    {
+      "layer_index": 10,
+      "layer": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        640,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.18302439153194427,
+      "objective_singular_max": 85717.8828125,
+      "orthogonality_error": 9.080545169126708e-06,
+      "weight_gram_relative_error": 0.00019823978072963655
+    },
+    {
+      "layer_index": 11,
+      "layer": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        640,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.10230302810668945,
+      "objective_singular_max": 124839.4375,
+      "orthogonality_error": 9.600182238500565e-06,
+      "weight_gram_relative_error": 0.000186088916962035
+    },
+    {
+      "layer_index": 12,
+      "layer": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        640,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.05075047165155411,
+      "objective_singular_max": 57641.82421875,
+      "orthogonality_error": 9.112224688578863e-06,
+      "weight_gram_relative_error": 0.0001837511663325131
+    },
+    {
+      "layer_index": 13,
+      "layer": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        320,
+        768
+      ],
+      "reflection_detected": false,
+      "objective_singular_min": 0.014655246399343014,
+      "objective_singular_max": 20704.962890625,
+      "orthogonality_error": 6.0779766499763355e-06,
+      "weight_gram_relative_error": 8.173995593097061e-05
+    },
+    {
+      "layer_index": 14,
+      "layer": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        320,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.20735390484333038,
+      "objective_singular_max": 33745.83203125,
+      "orthogonality_error": 5.7318648032378405e-06,
+      "weight_gram_relative_error": 6.526338984258473e-05
+    },
+    {
+      "layer_index": 15,
+      "layer": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        320,
+        768
+      ],
+      "reflection_detected": true,
+      "objective_singular_min": 0.09626352787017822,
+      "objective_singular_max": 38463.015625,
+      "orthogonality_error": 6.222937372513115e-06,
+      "weight_gram_relative_error": 9.941778262145817e-05
+    },
+    {
+      "layer_index": 16,
+      "layer": "mid_block.attentions.0.transformer_blocks.0.attn2.to_v",
+      "weight_shape": [
+        1280,
+        768
+      ],
+      "reflection_detected": false,
+      "objective_singular_min": 6.915024641784839e-07,
+      "objective_singular_max": 46405.8203125,
+      "orthogonality_error": 1.3352116184250917e-05,
+      "weight_gram_relative_error": 0.0003287910367362201
+    }
+  ],
+  "source_hashes": {
+    "oce.py": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+    "generate_celeb.py": "6a515bdfb8ac87748df420890b2fc2c8b775fb5421252a0b769d1edd11f28318",
+    "Cg.pt": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae",
+    "coco_30k.csv": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
+    "runner": "70d10f951f0d3d73e06d183c7d2dec8703e04777babddfdb9c595eba6a132242"
+  },
+  "created_at": "2026-07-27T05:41:57.889868+00:00"
+}

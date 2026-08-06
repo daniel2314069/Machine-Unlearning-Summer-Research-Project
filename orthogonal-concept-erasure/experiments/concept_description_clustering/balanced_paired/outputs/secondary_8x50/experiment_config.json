@@ -1,0 +1,215 @@
+{
+  "experiment_name": "balanced_paired_secondary_8x50",
+  "concepts": [
+    {
+      "name": "cat",
+      "banned_terms": [
+        "cat",
+        "cats",
+        "feline",
+        "felines",
+        "kitten",
+        "kittens",
+        "kitty",
+        "kitties",
+        "tomcat",
+        "tomcats"
+      ]
+    },
+    {
+      "name": "dog",
+      "banned_terms": [
+        "dog",
+        "dogs",
+        "canine",
+        "canines",
+        "puppy",
+        "puppies",
+        "hound",
+        "hounds",
+        "pooch",
+        "pooches"
+      ]
+    },
+    {
+      "name": "fox",
+      "banned_terms": [
+        "fox",
+        "foxes",
+        "vulpine",
+        "vixen",
+        "vixens"
+      ]
+    },
+    {
+      "name": "bear",
+      "banned_terms": [
+        "bear",
+        "bears",
+        "ursine",
+        "cub",
+        "cubs"
+      ]
+    },
+    {
+      "name": "wolf",
+      "banned_terms": [
+        "wolf",
+        "wolves",
+        "wolfish",
+        "lupine"
+      ]
+    },
+    {
+      "name": "rabbit",
+      "banned_terms": [
+        "rabbit",
+        "rabbits",
+        "bunny",
+        "bunnies",
+        "hare",
+        "hares",
+        "lapine"
+      ]
+    },
+    {
+      "name": "deer",
+      "banned_terms": [
+        "deer",
+        "cervid",
+        "cervids",
+        "doe",
+        "does",
+        "fawn",
+        "fawns",
+        "stag",
+        "stags"
+      ]
+    },
+    {
+      "name": "horse",
+      "banned_terms": [
+        "horse",
+        "horses",
+        "pony",
+        "ponies",
+        "equine",
+        "stallion",
+        "stallions",
+        "mare",
+        "mares",
+        "foal",
+        "foals"
+      ]
+    }
+  ],
+  "facets": [
+    {
+      "id": "coat_color_texture",
+      "name": "coat color and texture"
+    },
+    {
+      "id": "head_face_ears",
+      "name": "head, face, and ears"
+    },
+    {
+      "id": "limbs_paws_tail",
+      "name": "limbs, paws, and tail"
+    },
+    {
+      "id": "body_size_shape",
+      "name": "body size and shape"
+    },
+    {
+      "id": "movement",
+      "name": "movement"
+    },
+    {
+      "id": "behavior_foraging",
+      "name": "behavior and foraging"
+    },
+    {
+      "id": "habitat_scene",
+      "name": "habitat scene"
+    },
+    {
+      "id": "interaction_with_objects_or_people",
+      "name": "interaction with objects or people"
+    },
+    {
+      "id": "interaction_with_other_animals",
+      "name": "interaction with other animals"
+    },
+    {
+      "id": "sound_or_sensory_cues",
+      "name": "sound or sensory cues"
+    }
+  ],
+  "model": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "device": "cuda:0",
+    "generation_dtype": "bfloat16",
+    "embedding_dtype": "float32",
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "generation_seeds": [
+      42,
+      43,
+      44
+    ],
+    "disable_safety_checker": true
+  },
+  "classifier": {
+    "backend": "clip",
+    "model_id": "openai/clip-vit-base-patch32",
+    "device": "cpu",
+    "templates": [
+      "a photo of a {concept}",
+      "an image of a {concept}",
+      "a clear picture of a {concept}"
+    ],
+    "stage1_min_target_probability": 0.2,
+    "stage1_min_margin": 0.02,
+    "min_target_probability": 0.25,
+    "min_average_margin": 0.05,
+    "min_top1_probability": 0.2,
+    "max_normalized_entropy": 0.88,
+    "high_confidence_wrong_probability": 0.45,
+    "min_top1_seeds": 2
+  },
+  "paired_generation": {
+    "source": "balanced_paired_repository_generator",
+    "model": "deterministic_concept_profiles_v1",
+    "candidates_per_pair_per_round": 4,
+    "max_render_attempts": 80,
+    "max_replenishment_rounds": 16,
+    "bootstrap_accepted_from": "balanced_paired/outputs/primary_4x50/accepted_descriptions.jsonl"
+  },
+  "diversity": {
+    "near_duplicate_token_jaccard": 0.72,
+    "max_trigram_overlap_fraction": 0.55,
+    "max_trigram_occurrences": 32,
+    "opening_content_words": 3,
+    "max_opening_per_concept": 3,
+    "max_syntax_family_per_concept": 4,
+    "min_unique_vocabulary_ratio": 0.75,
+    "min_syntax_family_ratio": 0.8
+  },
+  "readout": {
+    "fixed_suffix": " This sentence describes the concept",
+    "selected_token": "concept",
+    "batch_size": 32
+  },
+  "spherical_kmeans": {
+    "k": 8,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "assignment": "cosine",
+    "center_update": "normalized_mean",
+    "initialization": "cosine_kmeans_plus_plus"
+  }
+}

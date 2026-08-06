@@ -1,0 +1,14 @@
+{
+  "extends": "syntax_independent_4x50.json",
+  "experiment_name": "syntax_independent_4_concepts_100_each_formal",
+  "candidate_validation": {
+    "accepted_per_concept_facet": 10,
+    "diversity": {
+      "accepted_source_quotas": {
+        "human_authored": 4,
+        "llm_source_a": 3,
+        "llm_source_b": 3
+      }
+    }
+  }
+}

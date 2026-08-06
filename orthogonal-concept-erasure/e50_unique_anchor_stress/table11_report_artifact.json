@@ -1,0 +1,342 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "OCE E50 Anchor-Set Stress Test",
+    "description": "Table 11-style technical report comparing a single generic anchor with 50 distinct celebrity anchors.",
+    "generatedAt": "2026-07-28T00:40:56Z",
+    "charts": [
+      {
+        "id": "gcd_balance_chart",
+        "title": "Erasure and preservation scores",
+        "subtitle": "All displayed measures are higher-is-better; erasure success equals 100% minus Acc_e.",
+        "type": "bar",
+        "dataset": "gcd_higher_is_better",
+        "sourceId": "gcd_chart_sql",
+        "encodings": {
+          "x": {
+            "field": "anchor",
+            "type": "nominal",
+            "label": "Anchor setting"
+          },
+          "y": {
+            "field": "score_pct",
+            "type": "quantitative",
+            "label": "Score",
+            "unit": "%"
+          },
+          "color": {
+            "field": "metric",
+            "type": "nominal",
+            "label": "Metric"
+          },
+          "tooltip": [
+            {
+              "field": "target_detected_denominator",
+              "type": "quantitative",
+              "label": "Target detected denominator"
+            },
+            {
+              "field": "retain_detected_denominator",
+              "type": "quantitative",
+              "label": "Retain detected denominator"
+            }
+          ]
+        },
+        "yAxisTitle": "Score (%)",
+        "valueFormat": "number",
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "table11_results",
+        "title": "Anchor-set ablation results",
+        "subtitle": "GCD uses 50 erased and 100 retained celebrities; MSCOCO columns require the registry-matched first-10k protocol.",
+        "dataset": "table11_rows",
+        "sourceId": "table11_sql",
+        "defaultSort": {
+          "field": "acc_e_pct",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "anchor",
+            "label": "Anchor",
+            "type": "text"
+          },
+          {
+            "field": "acc_e_pct",
+            "label": "Erase 50 — Acc_e ↓ (%)",
+            "format": "number"
+          },
+          {
+            "field": "acc_s_pct",
+            "label": "Erase 50 — Acc_s ↑ (%)",
+            "format": "number"
+          },
+          {
+            "field": "h_o_pct",
+            "label": "Erase 50 — H_o ↑ (%)",
+            "format": "number"
+          },
+          {
+            "field": "coco_cs_first10k",
+            "label": "MSCOCO first-10k — CS ↑",
+            "format": "number"
+          },
+          {
+            "field": "coco_fid_first10k",
+            "label": "MSCOCO first-10k — FID ↓",
+            "format": "number"
+          },
+          {
+            "field": "coco_scope",
+            "label": "COCO status",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "table11_sql",
+        "label": "Table 11-style result rows",
+        "path": "table11_report_data.json"
+      },
+      {
+        "id": "gcd_chart_sql",
+        "label": "Higher-is-better GCD chart rows",
+        "path": "table11_report_data.json"
+      },
+      {
+        "id": "protocol",
+        "label": "Resolved experiment protocol",
+        "path": "resolved_protocol.json"
+      },
+      {
+        "id": "paper_table11",
+        "label": "OCE paper, Table 11",
+        "href": "https://arxiv.org/html/2605.28902"
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# OCE E50 Anchor-Set Stress Test"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "sourceId": "table11_sql",
+        "body": "## Technical summary\n\nExpanding the anchor input from one generic `celebrity` column to 50 distinct celebrity columns changed the trade-off but did not materially change the combined outcome. Unique anchors improved retain accuracy by **1.89 percentage points**, reduced erasure success by **1.64 points**, and increased H_o by only **0.15 points**. The experiment therefore supports robustness to a rank-1 → rank-50 anchor-span change under this fixed E50 setting; it does **not** establish that unique anchors are generally superior."
+      },
+      {
+        "id": "balance_finding",
+        "type": "markdown",
+        "sourceId": "gcd_chart_sql",
+        "body": "## Anchor expansion moved the trade-off, not the overall balance\n\nThe chart converts Acc_e to erasure success so every displayed measure points in the same direction. Single anchor erases the targets slightly more strongly, while unique anchors preserve the untouched celebrities slightly better. H_o remains nearly identical, which is the clearest indication that neither setting dominates on the combined celebrity metric."
+      },
+      {
+        "id": "balance_chart",
+        "type": "chart",
+        "chartId": "gcd_balance_chart",
+        "layout": "full"
+      },
+      {
+        "id": "table11_structure",
+        "type": "markdown",
+        "sourceId": "paper_table11",
+        "body": "## Table 11-style result table\n\nThe column order follows the paper's Table 11: anchor choice, celebrity erasure metrics, then MSCOCO CS and FID. This report uses E50 rather than the paper's E100 setup. A dash in the Single row means that a matching first-10k COCO evaluation was not run; the available first-1k screening result is intentionally not substituted."
+      },
+      {
+        "id": "table11",
+        "type": "table",
+        "tableId": "table11_results",
+        "layout": "full"
+      },
+      {
+        "id": "definitions",
+        "type": "markdown",
+        "sourceId": "table11_sql",
+        "body": "## What each number measures\n\n- **Acc_e ↓:** GCD top-1 identity accuracy on 500 target images. Lower means the erased identities are less recognizable.\n- **Acc_s ↑:** GCD top-1 identity accuracy on 500 retain images. Higher means untouched identities remain recognizable.\n- **H_o ↑:** harmonic balance between `1 − Acc_e` and `Acc_s`.\n- **CS ↑:** mean CLIP score on the ordered MSCOCO first-10k prompts.\n- **FID ↓:** distance to the identical registry-matched Original SD first-10k reference.\n\nGCD excludes no-face images from its accuracy denominator. The detected denominators were 490/490 for Single targets/retains and 489/495 for Unique targets/retains."
+      },
+      {
+        "id": "methodology",
+        "type": "markdown",
+        "sourceId": "protocol",
+        "body": "## How the experiment was run\n\nBoth edited models start from Stable Diffusion v1.4, use the same `Cg.pt`, the same 50 target celebrities, the same 100 retain celebrities, and the same 16 `attn2.to_v` modules. Editing uses the current repository subspace objective with `erase_scale=1500`, `preserve_global_scale=70`, `preserve_concept_scale=2.5`, `lamb=10`, float32 editing, and no prompt expansion. The only intended model-building difference is the anchor set: `['celebrity']` for Single versus the last 50 names of the official E100 erasure list for Unique.\n\nCelebrity evaluation uses five prompt templates, two images per target/template and one image per retain/template. COCO generation uses PNDM, 50 steps, CFG 7.5, 512×512, bfloat16, ordered first-10k prompts and evaluation seeds. Original SD images and statistics are reused only through the exact protocol-fingerprint registry match."
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## What the result does and does not establish\n\nThis is a **current official repository implementation stress test**, not a reproduction of the paper's Wk editing or its E100 hyperparameters. It evaluates one fixed target set, one fixed 50-anchor set and one generation protocol, so it cannot show that arbitrary unique-anchor selections behave the same way. The primary table also lacks Single-anchor first-10k CS/FID, which prevents a matched conclusion about which anchor choice better preserves general MSCOCO generation."
+      },
+      {
+        "id": "next_step",
+        "type": "markdown",
+        "body": "## Recommended next step\n\nRun the Single-anchor model on the same registry-matched MSCOCO first-10k protocol. That closes the only missing cells in the Table 11-style comparison and determines whether the near-tie in celebrity H_o also holds for general-generation CS and FID."
+      },
+      {
+        "id": "open_questions",
+        "type": "markdown",
+        "body": "## Open questions\n\n- Does the Single-versus-Unique COCO difference remain small at first-10k?\n- Would other disjoint 50-person anchor sets reproduce the same erasure/preservation trade-off?\n- Which few target identities account for most of the observed Acc_e gap?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-28T00:40:56Z",
+    "status": "ready",
+    "datasets": {
+      "table11_rows": [
+        {
+          "anchor": "Single: celebrity",
+          "anchor_columns": 1,
+          "anchor_rank_all_16_layers": 1,
+          "acc_e_pct": 3.469387755102041,
+          "acc_s_pct": 93.06122448979592,
+          "h_o_pct": 94.76417477647678,
+          "coco_cs_first10k": null,
+          "coco_fid_first10k": null,
+          "coco_scope": "Not run at first-10k"
+        },
+        {
+          "anchor": "Unique: 50 celebrities",
+          "anchor_columns": 50,
+          "anchor_rank_all_16_layers": 50,
+          "acc_e_pct": 5.112474437627812,
+          "acc_s_pct": 94.94949494949495,
+          "h_o_pct": 94.91850014145503,
+          "coco_cs_first10k": 30.8414441570282,
+          "coco_fid_first10k": 5.3859353842494215,
+          "coco_scope": "Complete first-10k"
+        }
+      ],
+      "gcd_higher_is_better": [
+        {
+          "anchor": "Single: celebrity",
+          "metric": "Erasure success",
+          "score_pct": 96.53061224489795,
+          "acc_e_pct": 3.469387755102041,
+          "acc_s_pct": 93.06122448979592,
+          "h_o_pct": 94.76417477647678,
+          "target_detected_denominator": 490,
+          "retain_detected_denominator": 490
+        },
+        {
+          "anchor": "Single: celebrity",
+          "metric": "Retain accuracy",
+          "score_pct": 93.06122448979592,
+          "acc_e_pct": 3.469387755102041,
+          "acc_s_pct": 93.06122448979592,
+          "h_o_pct": 94.76417477647678,
+          "target_detected_denominator": 490,
+          "retain_detected_denominator": 490
+        },
+        {
+          "anchor": "Single: celebrity",
+          "metric": "H_o",
+          "score_pct": 94.76417477647678,
+          "acc_e_pct": 3.469387755102041,
+          "acc_s_pct": 93.06122448979592,
+          "h_o_pct": 94.76417477647678,
+          "target_detected_denominator": 490,
+          "retain_detected_denominator": 490
+        },
+        {
+          "anchor": "Unique: 50 celebrities",
+          "metric": "Erasure success",
+          "score_pct": 94.88752556237219,
+          "acc_e_pct": 5.112474437627812,
+          "acc_s_pct": 94.94949494949495,
+          "h_o_pct": 94.91850014145503,
+          "target_detected_denominator": 489,
+          "retain_detected_denominator": 495
+        },
+        {
+          "anchor": "Unique: 50 celebrities",
+          "metric": "Retain accuracy",
+          "score_pct": 94.94949494949495,
+          "acc_e_pct": 5.112474437627812,
+          "acc_s_pct": 94.94949494949495,
+          "h_o_pct": 94.91850014145503,
+          "target_detected_denominator": 489,
+          "retain_detected_denominator": 495
+        },
+        {
+          "anchor": "Unique: 50 celebrities",
+          "metric": "H_o",
+          "score_pct": 94.91850014145503,
+          "acc_e_pct": 5.112474437627812,
+          "acc_s_pct": 94.94949494949495,
+          "h_o_pct": 94.91850014145503,
+          "target_detected_denominator": 489,
+          "retain_detected_denominator": 495
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "table11_sql",
+      "label": "Table 11-style result rows",
+      "path": "table11_report_data.json",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "description": "Materializes the two reviewed anchor-setting rows shown in the Table 11-style result table.",
+        "executed_at": "2026-07-28T00:40:56Z",
+        "sql": "SELECT 'Single: celebrity' AS anchor, 1 AS anchor_columns, 1 AS anchor_rank_all_16_layers, 3.469387755102041 AS acc_e_pct, 93.06122448979592 AS acc_s_pct, 94.76417477647678 AS h_o_pct, NULL AS coco_cs_first10k, NULL AS coco_fid_first10k, 'Not run at first-10k' AS coco_scope UNION ALL SELECT 'Unique: 50 celebrities', 50, 50, 5.112474437627812, 94.94949494949495, 94.91850014145503, 30.8414441570282, 5.3859353842494215, 'Complete first-10k'",
+        "filters": [
+          "targets: official E100 entries 1-50",
+          "unique anchors: official E100 entries 51-100",
+          "retains: complete official retain list of 100 celebrities",
+          "COCO table cells: first-10k only"
+        ],
+        "metric_definitions": [
+          "Acc_e: correct target top-1 GCD predictions divided by target images with a detected face.",
+          "Acc_s: correct retain top-1 GCD predictions divided by retain images with a detected face.",
+          "H_o: 2 / ((1 - Acc_e)^-1 + Acc_s^-1).",
+          "CS: mean CLIP score on ordered first-10k prompts.",
+          "FID: edited images versus the identical registry-matched Original SD first-10k reference."
+        ]
+      }
+    },
+    {
+      "id": "gcd_chart_sql",
+      "label": "Higher-is-better GCD chart rows",
+      "path": "table11_report_data.json",
+      "query": {
+        "engine": "sqlite",
+        "language": "sql",
+        "description": "Reshapes the validated GCD results into three higher-is-better measures per anchor setting.",
+        "executed_at": "2026-07-28T00:40:56Z",
+        "sql": "SELECT 'Single: celebrity' AS anchor, 'Erasure success' AS metric, 96.53061224489795 AS score_pct, 3.469387755102041 AS acc_e_pct, 93.06122448979592 AS acc_s_pct, 94.76417477647678 AS h_o_pct, 490 AS target_detected_denominator, 490 AS retain_detected_denominator UNION ALL SELECT 'Single: celebrity', 'Retain accuracy', 93.06122448979592, 3.469387755102041, 93.06122448979592, 94.76417477647678, 490, 490 UNION ALL SELECT 'Single: celebrity', 'H_o', 94.76417477647678, 3.469387755102041, 93.06122448979592, 94.76417477647678, 490, 490 UNION ALL SELECT 'Unique: 50 celebrities', 'Erasure success', 94.88752556237219, 5.112474437627812, 94.94949494949495, 94.91850014145503, 489, 495 UNION ALL SELECT 'Unique: 50 celebrities', 'Retain accuracy', 94.94949494949495, 5.112474437627812, 94.94949494949495, 94.91850014145503, 489, 495 UNION ALL SELECT 'Unique: 50 celebrities', 'H_o', 94.91850014145503, 5.112474437627812, 94.94949494949495, 94.91850014145503, 489, 495",
+        "filters": [
+          "methods: single_anchor and unique_anchor",
+          "no-face images excluded from GCD accuracy denominators"
+        ],
+        "metric_definitions": [
+          "Erasure success: 100 - Acc_e percentage.",
+          "Retain accuracy: Acc_s percentage.",
+          "H_o: harmonic balance of erasure success and retain accuracy."
+        ]
+      }
+    },
+    {
+      "id": "protocol",
+      "label": "Resolved experiment protocol",
+      "path": "resolved_protocol.json"
+    },
+    {
+      "id": "paper_table11",
+      "label": "OCE paper, Table 11",
+      "href": "https://arxiv.org/html/2605.28902"
+    }
+  ]
+}

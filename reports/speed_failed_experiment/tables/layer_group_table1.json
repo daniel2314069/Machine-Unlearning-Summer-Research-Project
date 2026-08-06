@@ -1,0 +1,49 @@
+[
+  {
+    "mode": "original",
+    "Snoopy_CS": 28.540276512503628,
+    "Mickey_FID": -3.938708897521792e-05,
+    "SpongeBob_FID": -4.4103390280270105e-05,
+    "Pikachu_FID": -4.4719157187955716e-05,
+    "HelloKitty_FID": -3.8598576907133975e-05,
+    "avg_non_target_FID": -4.170205333764443e-05,
+    "MSCOCO_CS": 26.502125039696693,
+    "MSCOCO_FID": -2.927423582832489e-05
+  },
+  {
+    "mode": "down_only",
+    "Snoopy_CS": 28.08527173474431,
+    "Mickey_FID": 21.760231917079977,
+    "SpongeBob_FID": 22.75670459860646,
+    "Pikachu_FID": 15.254353738453574,
+    "HelloKitty_FID": 20.178587412867046,
+    "avg_non_target_FID": 19.987469416751765,
+    "MSCOCO_CS": 26.514637276530266,
+    "MSCOCO_FID": 16.365944251021176,
+    "sweep_type": "group"
+  },
+  {
+    "mode": "mid_only",
+    "Snoopy_CS": 28.744696378707886,
+    "Mickey_FID": 15.454994858262125,
+    "SpongeBob_FID": 15.801465802712471,
+    "Pikachu_FID": 11.405974239535453,
+    "HelloKitty_FID": 14.77696889083029,
+    "avg_non_target_FID": 14.359850947835085,
+    "MSCOCO_CS": 26.468141332268715,
+    "MSCOCO_FID": 13.38546368948397,
+    "sweep_type": "group"
+  },
+  {
+    "mode": "up_only",
+    "Snoopy_CS": 26.3437082991004,
+    "Mickey_FID": 15.45276132762217,
+    "SpongeBob_FID": 17.584867208650394,
+    "Pikachu_FID": 10.800277344462131,
+    "HelloKitty_FID": 14.789087566494345,
+    "avg_non_target_FID": 14.65674836180726,
+    "MSCOCO_CS": 26.517391249537468,
+    "MSCOCO_FID": 11.456847690440611,
+    "sweep_type": "group"
+  }
+]

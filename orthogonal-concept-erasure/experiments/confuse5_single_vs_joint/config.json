@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "experiment_id": "confuse5_single_vs_joint",
+  "scientific_source": {
+    "benchmark": "ImageNet-Confuse5",
+    "paper": "Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models",
+    "paper_table": "Table 7",
+    "openreview_id": "zt7IPzsXrT",
+    "repository_dataset": "../../../../scapre/eval/datasets/imagenet-15.csv",
+    "note": "Table 7 defines five groups with the first two concepts as targets and the remaining three as similar non-targets. The repository CSV contains only the first three concepts from each group, so Table 7 is authoritative for the complete 25-class assignment."
+  },
+  "shared": {
+    "base_model": "CompVis/stable-diffusion-v1-4",
+    "concept_type": "object",
+    "editable_modules": "unet.attn2.to_v",
+    "anchor_policy": {
+      "kind": "oce_default"
+    },
+    "retain_policy": {
+      "kind": "group_similar_non_targets"
+    },
+    "oce": {
+      "erase_scale": 1.0,
+      "preserve_global_scale": 0.5,
+      "preserve_concept_scale": 0.3,
+      "lamb": 1.5,
+      "expand_prompts": false,
+      "dtype": "float32",
+      "seed": 42,
+      "device": "cuda:0"
+    }
+  },
+  "groups": [
+    {
+      "id": "dogs",
+      "concepts": [
+        "golden retriever",
+        "labrador retriever",
+        "german shepherd",
+        "Chesapeake Bay retriever",
+        "pug"
+      ],
+      "targets": [
+        "golden retriever",
+        "labrador retriever"
+      ],
+      "similar_non_targets": [
+        "german shepherd",
+        "Chesapeake Bay retriever",
+        "pug"
+      ]
+    },
+    {
+      "id": "cats",
+      "concepts": [
+        "tabby",
+        "tiger cat",
+        "persian cat",
+        "Siamese cat",
+        "Egyptian cat"
+      ],
+      "targets": [
+        "tabby",
+        "tiger cat"
+      ],
+      "similar_non_targets": [
+        "persian cat",
+        "Siamese cat",
+        "Egyptian cat"
+      ]
+    },
+    {
+      "id": "fruits",
+      "concepts": [
+        "orange",
+        "lemon",
+        "pomegranate",
+        "fig",
+        "Granny Smith"
+      ],
+      "targets": [
+        "orange",
+        "lemon"
+      ],
+      "similar_non_targets": [
+        "pomegranate",
+        "fig",
+        "Granny Smith"
+      ]
+    },
+    {
+      "id": "boats",
+      "concepts": [
+        "yawl",
+        "lifeboat",
+        "speedboat",
+        "catamaran",
+        "schooner"
+      ],
+      "targets": [
+        "yawl",
+        "lifeboat"
+      ],
+      "similar_non_targets": [
+        "speedboat",
+        "catamaran",
+        "schooner"
+      ]
+    },
+    {
+      "id": "balls",
+      "concepts": [
+        "soccer ball",
+        "volleyball",
+        "tennis ball",
+        "rugby ball",
+        "ping-pong ball"
+      ],
+      "targets": [
+        "soccer ball",
+        "volleyball"
+      ],
+      "similar_non_targets": [
+        "tennis ball",
+        "rugby ball",
+        "ping-pong ball"
+      ]
+    }
+  ]
+}

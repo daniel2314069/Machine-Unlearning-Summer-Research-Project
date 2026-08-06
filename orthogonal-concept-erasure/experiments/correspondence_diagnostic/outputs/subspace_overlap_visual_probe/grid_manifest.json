@@ -1,0 +1,28 @@
+{
+  "grids": [
+    {
+      "case": "reciprocal_cat_dog",
+      "target": "cat",
+      "anchor": "dog",
+      "grid": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/grids/reciprocal_cat_dog_cat_to_dog.png"
+    },
+    {
+      "case": "reciprocal_cat_dog",
+      "target": "dog",
+      "anchor": "cat",
+      "grid": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/grids/reciprocal_cat_dog_dog_to_cat.png"
+    },
+    {
+      "case": "chain_cat_dog_bird_cat",
+      "target": "cat",
+      "anchor": "dog",
+      "grid": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/grids/chain_cat_dog_bird_cat_cat_to_dog.png"
+    },
+    {
+      "case": "chain_cat_dog_bird_cat",
+      "target": "bird",
+      "anchor": "cat",
+      "grid": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/subspace_overlap_visual_probe/grids/chain_cat_dog_bird_cat_bird_to_cat.png"
+    }
+  ]
+}

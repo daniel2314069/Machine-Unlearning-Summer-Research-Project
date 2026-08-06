@@ -1,0 +1,27 @@
+{
+  "extends": "codex_diverse_4x50_round2.json",
+  "experiment_name": "codex_diverse_targeted_fox_human_objects",
+  "facet_ids": ["human_interaction", "object_relationship"],
+  "dataset_design": {
+    "description": "Targeted single-source replenishment for fox human-interaction and object-relationship shortages.",
+    "corpus_type": "codex_diverse_single_source_replenishment",
+    "source": "codex_diverse",
+    "minimum_diverse_per_group": 25,
+    "retain_pre_generation_population": true,
+    "round": 4
+  },
+  "candidate_validation": {
+    "candidates_per_concept_facet": 25,
+    "accepted_per_concept_facet": 5,
+    "diversity": {
+      "candidate_source_quotas": {"codex_diverse": 25},
+      "accepted_source_quotas": {"codex_diverse": 5},
+      "max_syntax_family_per_concept_facet": 1
+    }
+  },
+  "tfidf_hard_selection": {
+    "cv_folds": 5,
+    "cv_seed": 9127,
+    "generation_candidates_per_concept_facet": 25
+  }
+}

@@ -1,0 +1,5 @@
+true_concept,cat,dog,fox,bear
+cat,48,0,1,1
+dog,1,49,0,0
+fox,26,1,14,9
+bear,0,0,2,48

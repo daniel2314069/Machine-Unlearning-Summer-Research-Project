@@ -1,0 +1,27 @@
+{
+  "extends": "codex_diverse_4x50_round2.json",
+  "experiment_name": "codex_diverse_visual_anchor_round3_4x50",
+  "dataset_design": {
+    "description": "Single-source Codex replenishment condition using a new deterministic composition seed.",
+    "corpus_type": "codex_diverse_single_source_replenishment",
+    "source": "codex_diverse",
+    "minimum_diverse_per_group": 10,
+    "retain_pre_generation_population": true,
+    "round": 3,
+    "generator_seed": 9271,
+    "force_full_body_anchor": false
+  },
+  "candidate_validation": {
+    "candidates_per_concept_facet": 10,
+    "accepted_per_concept_facet": 5,
+    "diversity": {
+      "candidate_source_quotas": {"codex_diverse": 10},
+      "accepted_source_quotas": {"codex_diverse": 5}
+    }
+  },
+  "tfidf_hard_selection": {
+    "cv_folds": 5,
+    "cv_seed": 9127,
+    "generation_candidates_per_concept_facet": 10
+  }
+}

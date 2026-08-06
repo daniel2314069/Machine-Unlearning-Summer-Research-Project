@@ -1,0 +1,6 @@
+experiment,representation,ari,matched_accuracy,notes
+Template-heavy dataset,fixed suffix,0.9933741724533196,0.997,repeated templates
+Diverse unbalanced 4x50,fixed suffix,0.4551606762348884,0.63,freer descriptions but unbalanced facets
+Diverse unbalanced 4x50,Raw EOT,0.5105113780861215,0.71,unsuffixed EOT
+New balanced paired 4x50,Fixed suffix,0.6275900137775046,0.795,paired balanced controls
+New balanced paired 4x50,Raw EOT,0.5489909845383305,0.735,paired balanced controls

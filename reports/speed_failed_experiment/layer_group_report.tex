@@ -1,0 +1,190 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\graphicspath{{reports/}}
+
+\title[Layer-wise SPEED Ablation]{Where Does SPEED Erasure Live?}
+\subtitle{Cross-attention value layer-group ablation for Snoopy instance erasure}
+\author{SPEED layer-group experiment}
+\date{\today}
+
+\newcommand{\good}[1]{\textcolor{teal!70!black}{#1}}
+\newcommand{\bad}[1]{\textcolor{red!70!black}{#1}}
+\newcommand{\neutral}[1]{\textcolor{gray!70!black}{#1}}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Question}
+  \begin{block}{Goal}
+    Test whether erasing Snoopy with SPEED can be localized to coarse U-Net cross-attention value groups.
+  \end{block}
+
+  \vspace{0.5em}
+  We edit only the original SPEED editable modules:
+  \[
+    \texttt{attn2.to\_v.weight}
+  \]
+  and compare three group-only variants against original SD and full SPEED.
+
+  \vspace{0.5em}
+  This is a group-level sufficiency test, not an exhaustive layer subset search.
+\end{frame}
+
+\begin{frame}{Experimental Setup}
+  \begin{itemize}
+    \item Target concept: Snoopy.
+    \item Non-target concepts: Mickey, SpongeBob, Pikachu, Hello Kitty.
+    \item General prior: first 1000 MS-COCO captions.
+    \item Instance prompts: 80 templates, 10 images per template per concept.
+    \item Each mode: 800 images per instance concept + 1000 COCO images.
+    \item Metrics follow the SPEED Table 1-style evaluation:
+      Snoopy CS, non-target FID, MSCOCO CS, MSCOCO FID.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Editable Layer Groups}
+  \begin{table}
+    \centering
+    \begin{tabular}{lcc}
+      \toprule
+      Group & Layer indices & Count \\
+      \midrule
+      down & 0--5 & 6 \\
+      up & 6--14 & 9 \\
+      mid & 15 & 1 \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.8em}
+  Important: these are implementation indices from the editable parameter list.
+  They should not be interpreted as forward-time first/last layers.
+\end{frame}
+
+\begin{frame}{Main Quantitative Result}
+  \small
+  \begin{table}
+    \centering
+    \begin{tabular}{lrrrr}
+      \toprule
+      Mode & Snoopy CS $\downarrow$ & Avg non-target FID $\downarrow$ & MSCOCO CS $\uparrow$ & MSCOCO FID $\downarrow$ \\
+      \midrule
+      Original SD & 28.54 & 0.00 & 26.50 & 0.00 \\
+      Full SPEED & \good{23.46} & 21.79 & 26.48 & 19.70 \\
+      down only & 28.09 & 19.99 & \good{26.51} & 16.37 \\
+      mid only & 28.74 & \good{14.36} & 26.47 & 13.39 \\
+      up only & 26.34 & 14.66 & \good{26.52} & \good{11.46} \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+
+  \vspace{0.5em}
+  Lower Snoopy CS means stronger erasure.
+  Lower FID and higher MSCOCO CS indicate better preservation.
+\end{frame}
+
+\begin{frame}{What The Numbers Say}
+  \begin{itemize}
+    \item Full SPEED gives the strongest Snoopy erasure:
+      Snoopy CS drops from 28.54 to 23.46.
+    \item No single coarse group reproduces full SPEED erasure.
+    \item Up-only has partial erasure:
+      Snoopy CS = 26.34, better than original but far from full SPEED.
+    \item Mid-only and down-only are not sufficient for Snoopy erasure:
+      their Snoopy CS remains close to original SD.
+    \item Mid-only and up-only preserve non-target/general images better than full SPEED.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Interpretation}
+  \begin{block}{Primary takeaway}
+    Snoopy erasure in SPEED is not localized to one coarse U-Net region.
+    Full erasure appears to require coordinated updates across multiple cross-attention value groups.
+  \end{block}
+
+  \vspace{0.5em}
+  \begin{block}{Secondary takeaway}
+    Up-block value layers carry some erasure ability while preserving COCO better than full SPEED,
+    suggesting a useful erasure--preservation tradeoff.
+  \end{block}
+\end{frame}
+
+\begin{frame}{What This Is Not Claiming}
+  \begin{itemize}
+    \item This does not prove that every individual layer is necessary.
+    \item This does not rank individual layers inside down/up/mid.
+    \item This does not perform a $2^{16}$ layer subset search.
+    \item This does not claim target CS alone is the objective; preservation metrics are part of the conclusion.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Optional Qualitative Figure}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      If qualitative images are regenerated, use a compact fixed-seed grid:
+      \begin{itemize}
+        \item Rows: Original SD, Full SPEED, down-only, mid-only, up-only.
+        \item Columns: Snoopy, Mickey, SpongeBob, Pikachu, Hello Kitty, COCO caption.
+        \item Use the same seed and prompt per column.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \centering
+      \IfFileExists{figures/layer_group_grid.png}{
+        \includegraphics[width=\linewidth]{figures/layer_group_grid.png}
+      }{
+        \fbox{\parbox[c][0.48\textheight][c]{0.9\linewidth}{
+          \centering
+          Qualitative grid placeholder\\[0.5em]
+          \texttt{figures/layer\_group\_grid.png}
+        }}
+      }
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Abandoned Branch}
+  \begin{itemize}
+    \item The earlier $C' = C_{0,\mathrm{refined}} \cup C_2$ experiment is not used as the main story here.
+    \item Its behavior was harder to interpret and did not provide a clean layer-localization message.
+    \item The layer-group result is cleaner: it directly answers where SPEED edits are sufficient or insufficient.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Conclusion}
+  \begin{block}{Reportable conclusion}
+    Coarse group-only SPEED edits reveal a tradeoff:
+    up-only and mid-only preserve better, but only full SPEED achieves strong Snoopy erasure.
+  \end{block}
+
+  \vspace{0.7em}
+  This supports the view that SPEED's erasure effect is distributed across cross-attention value groups,
+  not concentrated in a single U-Net block family.
+\end{frame}
+
+\begin{frame}{Result Files}
+  \small
+  \begin{itemize}
+    \item Metrics table:
+      \texttt{logs/formal\_layer\_groups/tables/layer\_group\_table1.csv}
+    \item Layer index map:
+      \texttt{logs/formal\_layer\_groups/layer\_map.csv}
+    \item Per-mode diagnostics:
+      \texttt{logs/formal\_layer\_groups/\{down,mid,up\}\_only/Snoopy/diagnostics.json}
+  \end{itemize}
+\end{frame}
+
+\end{document}

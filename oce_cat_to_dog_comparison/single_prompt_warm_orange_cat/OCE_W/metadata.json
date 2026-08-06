@@ -1,0 +1,46 @@
+{
+  "created_at_utc": "2026-07-21T02:40:11.714089+00:00",
+  "method": "OCE",
+  "variant": "W",
+  "edit_concept": "cat",
+  "guide_concept": "dog",
+  "prompt": "A retractable-clawed mouser reveals a warm orange coat with white patches.",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "checkpoint": "/home/daniel1012/projects/machine_unlearning/oce_cat_to_dog_comparison/oce_cat_to_dog_W.safetensors",
+  "checkpoint_sha256": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c",
+  "device": "cuda:0",
+  "torch_dtype": "bfloat16",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "height": 512,
+  "width": 512,
+  "outputs": [
+    {
+      "seed": 42,
+      "image_path": "/home/daniel1012/projects/machine_unlearning/oce_cat_to_dog_comparison/single_prompt_warm_orange_cat/OCE_W/seed_42.png",
+      "sha256": "2d50893c20ac4a4ef07794fba93fb1e0821e6eee4f4be41dfe511810cb8fb251",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "seed": 43,
+      "image_path": "/home/daniel1012/projects/machine_unlearning/oce_cat_to_dog_comparison/single_prompt_warm_orange_cat/OCE_W/seed_43.png",
+      "sha256": "d982af6a21e262609a3895def1819c3e95c64bc850f640117c3c666249612fdc",
+      "size": [
+        512,
+        512
+      ]
+    },
+    {
+      "seed": 44,
+      "image_path": "/home/daniel1012/projects/machine_unlearning/oce_cat_to_dog_comparison/single_prompt_warm_orange_cat/OCE_W/seed_44.png",
+      "sha256": "95234fe0ba307e263b46ab2ef86bd5245bf2c4592688d766836875f8dc1995a6",
+      "size": [
+        512,
+        512
+      ]
+    }
+  ]
+}

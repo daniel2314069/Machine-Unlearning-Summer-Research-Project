@@ -1,0 +1,63 @@
+{
+  "cases": {
+    "reciprocal_cat_dog": [
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "prompt": "a photo of a cat"
+      },
+      {
+        "target": "dog",
+        "anchor": "cat",
+        "prompt": "a photo of a dog"
+      }
+    ],
+    "chain_cat_dog_bird_cat": [
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "prompt": "a photo of a cat"
+      },
+      {
+        "target": "bird",
+        "anchor": "cat",
+        "prompt": "a photo of a bird"
+      }
+    ]
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0,
+    "preserve_anchors": true,
+    "reflection_correction": "upstream",
+    "layer_selector": "module name contains attn2 and ends with to_v"
+  },
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1
+  },
+  "overlap_validation_override": {
+    "intentional": true,
+    "reason": "Visual probe of reciprocal and chained target-anchor overlap; the official subspace objective itself is unchanged."
+  },
+  "scope": "images and seed-aligned grids only; no evaluation metrics"
+}

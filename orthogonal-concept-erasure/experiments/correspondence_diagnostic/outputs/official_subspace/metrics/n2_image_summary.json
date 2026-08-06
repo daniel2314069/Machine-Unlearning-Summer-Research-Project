@@ -1,0 +1,130 @@
+{
+  "aggregate": [
+    {
+      "method": "original",
+      "own_anchor_top1_rate": 1.0,
+      "mean_margin": 0.03504936695098877,
+      "minimum_margin": 0.001670926809310913,
+      "positive_margin_fraction": 1.0
+    },
+    {
+      "method": "single_subspace",
+      "own_anchor_top1_rate": 0.95,
+      "mean_margin": 0.061246023327112195,
+      "minimum_margin": -0.009548753499984741,
+      "positive_margin_fraction": 0.95
+    },
+    {
+      "method": "joint_subspace_n2",
+      "own_anchor_top1_rate": 1.0,
+      "mean_margin": 0.060018939524888994,
+      "minimum_margin": 0.003253072500228882,
+      "positive_margin_fraction": 1.0
+    },
+    {
+      "method": "joint_vector_eq6_n2",
+      "own_anchor_top1_rate": 1.0,
+      "mean_margin": 0.1017114095389843,
+      "minimum_margin": 0.0641779899597168,
+      "positive_margin_fraction": 1.0
+    }
+  ],
+  "per_concept": [
+    {
+      "method": "original",
+      "target": "cat",
+      "anchor": "dog",
+      "mean_target_similarity": 0.2821267247200012,
+      "mean_own_anchor_similarity": 0.22774437069892883,
+      "mean_best_other_anchor_similarity": 0.17680254578590393,
+      "mean_margin": 0.0509418249130249,
+      "minimum_margin": 0.02302427589893341,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "original",
+      "target": "guitar",
+      "anchor": "piano",
+      "mean_target_similarity": 0.30322152376174927,
+      "mean_own_anchor_similarity": 0.20966601371765137,
+      "mean_best_other_anchor_similarity": 0.19050908088684082,
+      "mean_margin": 0.019156910479068756,
+      "minimum_margin": 0.001670926809310913,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "single_subspace",
+      "target": "cat",
+      "anchor": "dog",
+      "mean_target_similarity": 0.20649456977844238,
+      "mean_own_anchor_similarity": 0.27187681198120117,
+      "mean_best_other_anchor_similarity": 0.1773630529642105,
+      "mean_margin": 0.09451375901699066,
+      "minimum_margin": 0.07869435846805573,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "single_subspace",
+      "target": "guitar",
+      "anchor": "piano",
+      "mean_target_similarity": 0.21786126494407654,
+      "mean_own_anchor_similarity": 0.23390404880046844,
+      "mean_best_other_anchor_similarity": 0.20592574775218964,
+      "mean_margin": 0.027978289872407913,
+      "minimum_margin": -0.009548753499984741,
+      "positive_margin_fraction": 0.9,
+      "own_anchor_top1_rate": 0.9
+    },
+    {
+      "method": "joint_subspace_n2",
+      "target": "cat",
+      "anchor": "dog",
+      "mean_target_similarity": 0.2067173421382904,
+      "mean_own_anchor_similarity": 0.273129403591156,
+      "mean_best_other_anchor_similarity": 0.17591418325901031,
+      "mean_margin": 0.09721522778272629,
+      "minimum_margin": 0.09281998872756958,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "joint_subspace_n2",
+      "target": "guitar",
+      "anchor": "piano",
+      "mean_target_similarity": 0.22291283309459686,
+      "mean_own_anchor_similarity": 0.23507575690746307,
+      "mean_best_other_anchor_similarity": 0.2122531235218048,
+      "mean_margin": 0.02282264456152916,
+      "minimum_margin": 0.003253072500228882,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "joint_vector_eq6_n2",
+      "target": "cat",
+      "anchor": "dog",
+      "mean_target_similarity": 0.21567079424858093,
+      "mean_own_anchor_similarity": 0.2749638557434082,
+      "mean_best_other_anchor_similarity": 0.17834220826625824,
+      "mean_margin": 0.09662166237831116,
+      "minimum_margin": 0.07741056382656097,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    },
+    {
+      "method": "joint_vector_eq6_n2",
+      "target": "guitar",
+      "anchor": "piano",
+      "mean_target_similarity": 0.23858408629894257,
+      "mean_own_anchor_similarity": 0.3016807436943054,
+      "mean_best_other_anchor_similarity": 0.19487956166267395,
+      "mean_margin": 0.10680115222930908,
+      "minimum_margin": 0.0641779899597168,
+      "positive_margin_fraction": 1.0,
+      "own_anchor_top1_rate": 1.0
+    }
+  ]
+}

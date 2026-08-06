@@ -1,0 +1,37 @@
+{
+  "assessment": "ready_for_screening_review",
+  "completed_scope": [
+    "preflight",
+    "cat_to_dog_smoke",
+    "five_single_pair_vector_screenings",
+    "cat_to_dog_single_subspace_smoke",
+    "manual_grid_review",
+    "joint_n5_candidate_gate"
+  ],
+  "not_executed": [
+    "joint_n2",
+    "joint_n5",
+    "control_set"
+  ],
+  "checks": {
+    "unit_tests": {"passed": 5, "failed": 0},
+    "generated_image_count": 220,
+    "generated_image_dimensions": [512, 512],
+    "per_image_metric_rows": 220,
+    "screening_summary_rows": 5,
+    "weight_audit_rows": 96,
+    "edited_checkpoints": 6,
+    "report_links_checked": 14,
+    "missing_report_links": 0,
+    "target_anchor_sets_disjoint": true,
+    "control_set_disjoint": true,
+    "smoke_seed_count": 20,
+    "screening_seed_count": 20
+  },
+  "important_caveats": [
+    "The directional screening rule is not an automatic pair-elimination rule.",
+    "French horn to trumpet has negative target delta and positive anchor delta but 0% two-label anchor top-1.",
+    "Low RGB variance only detects a narrow class of generation collapse.",
+    "N=5 is blocked because only three of five candidates pass the recorded directional rule."
+  ]
+}

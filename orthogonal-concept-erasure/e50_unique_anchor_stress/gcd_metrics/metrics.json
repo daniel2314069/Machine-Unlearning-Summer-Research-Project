@@ -1,0 +1,75 @@
+{
+  "status": "complete",
+  "completed_at": "2026-07-27T22:10:16.109023+00:00",
+  "denominator_policy": "repo GCD behavior: exclude images with no detected face",
+  "H_o_formula": "2 / ((1 - Acc_e)^-1 + Acc_s^-1)",
+  "models": {
+    "original_sd": {
+      "Acc_e": 0.9415322580645161,
+      "Acc_s": 0.959758551307847,
+      "H_o": 0.11022091193402524,
+      "sets": {
+        "targets": {
+          "image_count": 500,
+          "no_face_count": 4,
+          "denominator_face_detected": 496,
+          "correct_count": 467,
+          "accuracy": 0.9415322580645161
+        },
+        "retains": {
+          "image_count": 500,
+          "no_face_count": 3,
+          "denominator_face_detected": 497,
+          "correct_count": 477,
+          "accuracy": 0.959758551307847
+        }
+      }
+    },
+    "single_anchor": {
+      "Acc_e": 0.03469387755102041,
+      "Acc_s": 0.9306122448979591,
+      "H_o": 0.9476417477647678,
+      "sets": {
+        "targets": {
+          "image_count": 500,
+          "no_face_count": 10,
+          "denominator_face_detected": 490,
+          "correct_count": 17,
+          "accuracy": 0.03469387755102041
+        },
+        "retains": {
+          "image_count": 500,
+          "no_face_count": 10,
+          "denominator_face_detected": 490,
+          "correct_count": 456,
+          "accuracy": 0.9306122448979591
+        }
+      }
+    },
+    "unique_anchor": {
+      "Acc_e": 0.05112474437627812,
+      "Acc_s": 0.9494949494949495,
+      "H_o": 0.9491850014145503,
+      "sets": {
+        "targets": {
+          "image_count": 500,
+          "no_face_count": 11,
+          "denominator_face_detected": 489,
+          "correct_count": 25,
+          "accuracy": 0.05112474437627812
+        },
+        "retains": {
+          "image_count": 500,
+          "no_face_count": 5,
+          "denominator_face_detected": 495,
+          "correct_count": 470,
+          "accuracy": 0.9494949494949495
+        }
+      }
+    }
+  },
+  "predictions_csv": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/gcd_metrics/predictions.csv",
+  "per_celebrity_csv": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/gcd_metrics/per_celebrity_accuracy.csv",
+  "gcd_project_root": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/external/celeb-detection-oss",
+  "protocol_hash": "d6374c232a56740de361af93e09ba5fa8c038570243cfac34a8ecd31e8716912"
+}

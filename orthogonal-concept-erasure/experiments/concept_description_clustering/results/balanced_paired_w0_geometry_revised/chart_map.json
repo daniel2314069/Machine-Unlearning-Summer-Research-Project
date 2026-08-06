@@ -1,0 +1,147 @@
+[
+  {
+    "report_section": "Description Clustering Across Text Space and W0 Layers",
+    "question": "How does eot clustering vary by method and space?",
+    "family": "ordered comparison",
+    "chart_type": "multi-series line",
+    "fields": [
+      "space_label",
+      "clustering_method",
+      "ari"
+    ],
+    "path": "plots/clustering_ari_eot_all_methods.png"
+  },
+  {
+    "report_section": "Description Clustering Across Text Space and W0 Layers",
+    "question": "How does eot clustering vary by method and space?",
+    "family": "ordered comparison",
+    "chart_type": "multi-series line",
+    "fields": [
+      "space_label",
+      "clustering_method",
+      "matched_accuracy"
+    ],
+    "path": "plots/clustering_accuracy_eot_all_methods.png"
+  },
+  {
+    "report_section": "Description Clustering Across Text Space and W0 Layers",
+    "question": "How does fixed_suffix clustering vary by method and space?",
+    "family": "ordered comparison",
+    "chart_type": "multi-series line",
+    "fields": [
+      "space_label",
+      "clustering_method",
+      "ari"
+    ],
+    "path": "plots/clustering_ari_fixed_all_methods.png"
+  },
+  {
+    "report_section": "Description Clustering Across Text Space and W0 Layers",
+    "question": "How does fixed_suffix clustering vary by method and space?",
+    "family": "ordered comparison",
+    "chart_type": "multi-series line",
+    "fields": [
+      "space_label",
+      "clustering_method",
+      "matched_accuracy"
+    ],
+    "path": "plots/clustering_accuracy_fixed_all_methods.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under Matched EOT?",
+    "family": "matrix",
+    "chart_type": "margin_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "margin"
+    ],
+    "path": "plots/margin_heatmap_matched_eot.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under Matched EOT?",
+    "family": "matrix",
+    "chart_type": "rank_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "own_centroid_rank"
+    ],
+    "path": "plots/rank_heatmap_matched_eot.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under Matched fixed suffix?",
+    "family": "matrix",
+    "chart_type": "margin_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "margin"
+    ],
+    "path": "plots/margin_heatmap_matched_fixed.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under Matched fixed suffix?",
+    "family": "matrix",
+    "chart_type": "rank_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "own_centroid_rank"
+    ],
+    "path": "plots/rank_heatmap_matched_fixed.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under OCE-last-token -> EOT-description centroid?",
+    "family": "matrix",
+    "chart_type": "margin_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "margin"
+    ],
+    "path": "plots/margin_heatmap_oce_to_eot.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How stable are individual animals under OCE-last-token -> EOT-description centroid?",
+    "family": "matrix",
+    "chart_type": "rank_heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "own_centroid_rank"
+    ],
+    "path": "plots/rank_heatmap_oce_to_eot.png"
+  },
+  {
+    "report_section": "Per-Animal Distances Across All W0 Layers",
+    "question": "How do rank-1 counts and mean margins vary over all spaces?",
+    "family": "small multiples",
+    "chart_type": "line panels",
+    "fields": [
+      "space_label",
+      "condition",
+      "rank1_count_out_of_8",
+      "mean_margin"
+    ],
+    "path": "plots/prototype_layer_summary.png"
+  },
+  {
+    "report_section": "Readout Comparison",
+    "question": "Where does OCE last-token change margin relative to matched EOT?",
+    "family": "matrix",
+    "chart_type": "diverging heatmap",
+    "fields": [
+      "animal",
+      "space_label",
+      "oce_minus_matched_eot_margin"
+    ],
+    "path": "plots/readout_margin_difference.png"
+  }
+]

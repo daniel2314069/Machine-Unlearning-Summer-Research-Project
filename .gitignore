@@ -1,0 +1,33 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Local Codex/agent instructions; keep machine-specific safeguards off GitHub.
+AGENTS.md
+speed/logs/
+speed/reports/
+speed/data/pretrain/coco/
+speed/data/pretrain/instance/
+reports/**/checkpoints/*.pt
+
+# Large, reproducible experiment artifacts retained locally or on the compute server.
+orthogonal-concept-erasure/e50_unique_anchor_stress/*/*.safetensors
+orthogonal-concept-erasure/e50_unique_anchor_stress/smoke_grids/
+orthogonal-concept-erasure/e50_unique_anchor_stress/smoke_images/
+orthogonal-concept-erasure/e50_unique_anchor_stress/celebrity_images/
+orthogonal-concept-erasure/e50_unique_anchor_stress/gcd_runtime/
+orthogonal-concept-erasure/e50_unique_anchor_stress/external/
+orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/generated_images/
+reports/scapre_ased_religious_buildings/kept_samples/
+
+# OCE weights and raw renderings stay local; compact metrics and curated grids
+# are committed instead.
+orthogonal-concept-erasure/Cg.pt
+oce_cat_to_dog_comparison/*.safetensors
+oce_cat_to_dog_comparison/**/*.png
+orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/**/images/
+orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/**/checkpoints/
+orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/**/transformations/
+orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/**/weights/
+orthogonal-concept-erasure/experiments/correspondence_diagnostic/outputs/**/grids/
+orthogonal-concept-erasure/experiments/overlap_cycle_images/**/*.safetensors
+orthogonal-concept-erasure/experiments/overlap_cycle_images/**/*.png

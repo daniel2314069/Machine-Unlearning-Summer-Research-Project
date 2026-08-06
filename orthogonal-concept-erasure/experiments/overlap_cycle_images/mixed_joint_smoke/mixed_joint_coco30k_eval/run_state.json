@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "stage": "complete",
+  "started_at": "2026-07-26T06:35:59.977480+00:00",
+  "completed_at": "2026-07-26T15:41:00.089729+00:00",
+  "milestone_metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/milestones/first1000/metrics.json",
+  "metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/metrics.json",
+  "summary_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/summary.md",
+  "cleanup_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/overlap_cycle_images/mixed_joint_smoke/mixed_joint_coco30k_eval/cleanup_manifest.json",
+  "generated_images_retained": false
+}

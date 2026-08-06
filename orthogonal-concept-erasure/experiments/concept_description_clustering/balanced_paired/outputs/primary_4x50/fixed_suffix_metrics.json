@@ -1,0 +1,98 @@
+{
+  "representation": "Fixed suffix",
+  "dataset_sha256": "af27edee279986b5ff6022718c6d87f3228c768a30a596bb78c22641e4aa4666",
+  "sample_count": 200,
+  "embedding_shape": [
+    200,
+    768
+  ],
+  "preprocessing": "row L2 normalization only; no global centering",
+  "extraction": {
+    "prompt_transform": "original description plus exact suffix ' This sentence describes the concept'",
+    "readout": "final non-special token verified to decode to concept",
+    "hidden_state": "CLIPTextModel final last_hidden_state"
+  },
+  "labels_available_to_fit": false,
+  "spherical_kmeans": {
+    "k": 4,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "assignment": "cosine",
+    "center_update": "normalized_mean",
+    "initialization": "cosine_kmeans_plus_plus"
+  },
+  "metrics": {
+    "adjusted_rand_index": 0.6275900137775046,
+    "normalized_mutual_information": 0.6718460909593028,
+    "hungarian_matched_accuracy": 0.795,
+    "cosine_silhouette_score": 0.09599737077951431,
+    "spherical_objective": 184.6523814257217,
+    "objective_per_sample": 0.9232619071286085,
+    "iterations": 12,
+    "converged": true,
+    "best_initialization": 13,
+    "cluster_sizes": [
+      75,
+      17,
+      58,
+      50
+    ],
+    "cluster_to_concept": {
+      "0": "cat",
+      "3": "dog",
+      "1": "fox",
+      "2": "bear"
+    },
+    "per_class_recall": {
+      "cat": 0.96,
+      "dog": 0.98,
+      "fox": 0.28,
+      "bear": 0.96
+    },
+    "assignment_counts_by_true_class": {
+      "cat": {
+        "cat": 48,
+        "dog": 0,
+        "fox": 1,
+        "bear": 1
+      },
+      "dog": {
+        "cat": 1,
+        "dog": 49,
+        "fox": 0,
+        "bear": 0
+      },
+      "fox": {
+        "cat": 26,
+        "dog": 1,
+        "fox": 14,
+        "bear": 9
+      },
+      "bear": {
+        "cat": 0,
+        "dog": 0,
+        "fox": 2,
+        "bear": 48
+      }
+    },
+    "largest_confusion_pair": {
+      "true_concept": "fox",
+      "predicted_concept": "cat",
+      "count": 26
+    }
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

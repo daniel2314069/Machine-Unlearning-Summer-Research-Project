@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "embedding_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_embeddings.npy",
+  "embedding_sha256": "4c175ad2c4f7b848fa561dd464104eb9f27a29c36591912977873e6b52b77070",
+  "assignments_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/appendix/assignments_eot.csv",
+  "assignments_sha256": "9e7e39ed5e780ddb0a4be5ab1d33c48e0b9be00ae53d3bbdf145a2d7ed11ff3b",
+  "baseline_metrics_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/eot_metrics.json",
+  "baseline_metrics_sha256": "4e289322141520e49fbf4cacb44e558cc2e9a8a2dee6d52d3426f1fbf8841928",
+  "row_count": 400,
+  "counts_by_concept": {
+    "cat": 50,
+    "dog": 50,
+    "fox": 50,
+    "bear": 50,
+    "wolf": 50,
+    "rabbit": 50,
+    "deer": 50,
+    "horse": 50
+  },
+  "cached_embedding_shape": [
+    400,
+    768
+  ],
+  "analysis_embedding_shape": [
+    400,
+    768
+  ],
+  "raw_norm_min": 26.802562713623047,
+  "raw_norm_max": 29.382291793823242,
+  "analysis_norm_min": 0.9999999999999999,
+  "analysis_norm_max": 1.0000000000000002,
+  "checks": {
+    "exactly_400_rows": true,
+    "exact_concept_order": true,
+    "exactly_50_per_concept": true,
+    "exactly_400_unique_concept_slot_pairs": true,
+    "source_validation_passed": true,
+    "tokenization_rows_400": true,
+    "no_prompt_truncation": true,
+    "embedding_shape_400_by_768": true,
+    "all_vectors_finite": true,
+    "all_vectors_unit_l2_norm": true,
+    "cached_baseline_reproduced_without_refit": true,
+    "only_unsuffixed_eot_loaded": true,
+    "w0_projection_applied": false,
+    "dimensionality_reduction_used": false
+  },
+  "cached_spherical_baseline": {
+    "method": "Spherical k-means baseline",
+    "graph_neighbors": null,
+    "seed": 314159,
+    "ari": 0.6337922594154872,
+    "nmi": 0.704685402053127,
+    "matched_accuracy": 0.775
+  },
+  "source_scope_audit": {
+    "source_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/concept_clustering/eot_local_geometry_diagnostic.py",
+    "source_sha256": "09de9ced050176fe9563e87367fa88db4292bf87f276d795e8198e65870e6d44",
+    "graph_and_fit_function_parameters": {
+      "find_cosine_neighbors_without_labels": [
+        "features",
+        "n_neighbors"
+      ],
+      "build_cosine_knn_graph_without_labels": [
+        "features",
+        "n_neighbors"
+      ],
+      "fit_spectral_without_labels": [
+        "affinity",
+        "n_clusters",
+        "random_state",
+        "n_init"
+      ]
+    },
+    "labels_available_to_neighbor_search_or_graph_or_spectral_fit": false,
+    "dimensionality_reduction_imports_or_calls": false,
+    "spherical_kmeans_fit_calls": false,
+    "w0_or_oce_calls": false,
+    "image_or_description_generation_calls": false
+  }
+}

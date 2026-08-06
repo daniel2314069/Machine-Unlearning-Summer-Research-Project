@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "checkpoint_layer_count": 16,
+  "analyzed_layer_count": 16,
+  "only_checkpoint_layers_analyzed": true,
+  "all_matrix_shapes": [
+    5,
+    5
+  ],
+  "all_values_finite": true,
+  "difference_identity_atol": 1e-12,
+  "difference_identity_passed": true,
+  "row_order": [
+    "cat",
+    "truck",
+    "church",
+    "Van Gogh",
+    "Adam Driver"
+  ],
+  "column_order": [
+    "dog",
+    "car",
+    "castle",
+    "art",
+    "celebrity"
+  ]
+}

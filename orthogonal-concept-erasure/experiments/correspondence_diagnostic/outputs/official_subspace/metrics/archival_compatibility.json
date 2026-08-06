@@ -1,0 +1,14 @@
+{
+  "old_result_label": "preliminary vector-wise screening (old concept set)",
+  "old_n5_gate_status": "not applicable to the new official-subspace experiment",
+  "vector_result_role": "Eq. 6 ablation; not the official OCE baseline",
+  "cat_to_dog_subspace": {
+    "settings_compatible": true,
+    "new_checkpoint_sha256": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c",
+    "archival_checkpoint_sha256": "d67095a06a402414046421c0b25a7f42cce24b8a11bc61276604421e1daa417c",
+    "checkpoint_exact_match": true,
+    "seeds_compared": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "all_regenerated_images_exact_png_match": true,
+    "note": "The new isolated run regenerated the first ten seeds. Its checkpoint and all ten PNGs exactly match the compatible archival smoke result."
+  }
+}

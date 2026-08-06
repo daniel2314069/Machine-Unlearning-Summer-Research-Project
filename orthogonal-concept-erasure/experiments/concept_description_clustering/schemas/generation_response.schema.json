@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent concept-description generation response",
+  "type": "object",
+  "required": ["request_id", "source", "concept", "facet_id", "source_metadata", "descriptions"],
+  "properties": {
+    "request_id": {"type": "string", "minLength": 1},
+    "source": {"type": "string", "enum": ["human_authored", "llm_source_a", "llm_source_b"]},
+    "concept": {"type": "string", "enum": ["cat", "dog", "fox", "bear"]},
+    "facet_id": {"type": "string", "minLength": 1},
+    "source_metadata": {
+      "type": "object",
+      "required": ["author_or_model", "collection_date"],
+      "properties": {
+        "author_or_model": {"type": "string", "minLength": 1},
+        "model_version": {"type": "string"},
+        "collection_date": {"type": "string", "format": "date"}
+      }
+    },
+    "descriptions": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["description", "syntax_family"],
+        "properties": {
+          "description": {"type": "string", "minLength": 1},
+          "syntax_family": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

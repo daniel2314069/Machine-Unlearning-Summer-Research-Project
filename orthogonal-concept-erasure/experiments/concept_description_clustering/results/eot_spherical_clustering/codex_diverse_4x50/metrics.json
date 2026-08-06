@@ -1,0 +1,207 @@
+{
+  "experiment": "unsuffixed_sd14_eot_true_spherical_kmeans",
+  "dataset": {
+    "path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/outputs/codex_diverse_final/accepted_descriptions.jsonl",
+    "sha256": "3d6dd8aeadf825781b237d1294183a522fc0dfc00b3f86fc6591de5c8c7faba0",
+    "schema_fields": [
+      "automatic_decision",
+      "automatic_reason",
+      "candidate_id",
+      "candidate_index",
+      "concept",
+      "description",
+      "facet_id",
+      "generation_metadata",
+      "mean_target_margin",
+      "mean_target_score",
+      "round",
+      "round_candidate_id",
+      "source",
+      "tfidf_hardness"
+    ],
+    "sample_count": 200,
+    "concept_order": [
+      "cat",
+      "dog",
+      "fox",
+      "bear"
+    ],
+    "class_counts": {
+      "cat": 50,
+      "dog": 50,
+      "fox": 50,
+      "bear": 50
+    }
+  },
+  "model": {
+    "model_id_or_path": "CompVis/stable-diffusion-v1-4",
+    "pipeline_class": "StableDiffusionPipeline",
+    "tokenizer_class": "CLIPTokenizer",
+    "tokenizer_model_max_length": 77,
+    "text_encoder_class": "CLIPTextModel",
+    "text_hidden_size": 768,
+    "text_encoder_dtype": "torch.float32",
+    "device": "cuda:0"
+  },
+  "extraction": {
+    "prompt_transform": "none; each original description is encoded exactly as stored",
+    "eot_rule": "attention_mask.sum(dim=1) - 1",
+    "embedding_shape": [
+      200,
+      768
+    ],
+    "embedding_dtype_saved": "float32",
+    "truncated_prompt_count": 0,
+    "effective_token_length_min": 17,
+    "effective_token_length_max": 34
+  },
+  "preprocessing": {
+    "raw": "one L2 normalization per unmodified EOT vector",
+    "centered": "one label-free global mean over all EOT vectors, subtract, then row L2 normalize",
+    "global_mean_norm": 17.134344445480295,
+    "labels_used": false
+  },
+  "spherical_kmeans": {
+    "implementation": "cosine assignment, normalized mean update, cosine k-means++ initialization",
+    "k": 4,
+    "n_init": 50,
+    "max_iter": 300,
+    "tolerance": 1e-06,
+    "random_seed": 314159,
+    "labels_available_to_fit": false
+  },
+  "representations": {
+    "raw": {
+      "adjusted_rand_index": 0.5105113780861215,
+      "normalized_mutual_information": 0.5789107173511648,
+      "hungarian_matched_accuracy": 0.71,
+      "cosine_silhouette_score": 0.08564075874926118,
+      "spherical_objective": 133.45367628727394,
+      "objective_per_sample": 0.6672683814363697,
+      "iterations": 13,
+      "converged": true,
+      "best_initialization": 14,
+      "cluster_sizes": [
+        42,
+        53,
+        54,
+        51
+      ],
+      "cluster_to_concept": {
+        "0": "cat",
+        "2": "dog",
+        "1": "fox",
+        "3": "bear"
+      },
+      "per_class_recall": {
+        "cat": 0.82,
+        "dog": 0.94,
+        "fox": 0.54,
+        "bear": 0.54
+      },
+      "assignment_counts_by_true_class": {
+        "cat": {
+          "cat": 41,
+          "dog": 7,
+          "fox": 1,
+          "bear": 1
+        },
+        "dog": {
+          "cat": 0,
+          "dog": 47,
+          "fox": 2,
+          "bear": 1
+        },
+        "fox": {
+          "cat": 1,
+          "dog": 0,
+          "fox": 27,
+          "bear": 22
+        },
+        "bear": {
+          "cat": 0,
+          "dog": 0,
+          "fox": 23,
+          "bear": 27
+        }
+      },
+      "largest_confusion_pair": {
+        "true_concept": "bear",
+        "predicted_concept": "fox",
+        "count": 23
+      }
+    },
+    "centered": {
+      "adjusted_rand_index": 0.4561804893549412,
+      "normalized_mutual_information": 0.5404248663923107,
+      "hungarian_matched_accuracy": 0.68,
+      "cosine_silhouette_score": 0.09380773937690337,
+      "spherical_objective": 69.62949977747098,
+      "objective_per_sample": 0.3481474988873549,
+      "iterations": 10,
+      "converged": true,
+      "best_initialization": 15,
+      "cluster_sizes": [
+        43,
+        61,
+        47,
+        49
+      ],
+      "cluster_to_concept": {
+        "0": "cat",
+        "2": "dog",
+        "3": "fox",
+        "1": "bear"
+      },
+      "per_class_recall": {
+        "cat": 0.86,
+        "dog": 0.82,
+        "fox": 0.52,
+        "bear": 0.52
+      },
+      "assignment_counts_by_true_class": {
+        "cat": {
+          "cat": 43,
+          "dog": 4,
+          "fox": 0,
+          "bear": 3
+        },
+        "dog": {
+          "cat": 0,
+          "dog": 41,
+          "fox": 0,
+          "bear": 9
+        },
+        "fox": {
+          "cat": 0,
+          "dog": 1,
+          "fox": 26,
+          "bear": 23
+        },
+        "bear": {
+          "cat": 0,
+          "dog": 1,
+          "fox": 23,
+          "bear": 26
+        }
+      },
+      "largest_confusion_pair": {
+        "true_concept": "fox",
+        "predicted_concept": "bear",
+        "count": 23
+      }
+    }
+  },
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  }
+}

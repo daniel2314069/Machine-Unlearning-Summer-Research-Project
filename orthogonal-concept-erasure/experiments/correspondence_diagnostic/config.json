@@ -1,0 +1,50 @@
+{
+  "experiment_name": "oce_correspondence_diagnostic",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "device": "cuda:0",
+  "edit_dtype": "float32",
+  "generation_dtype": "bfloat16",
+  "cg_path": "../../Cg.pt",
+  "pairs": [
+    {"target": "cat", "anchor": "dog", "prompt": "a photo of a cat"},
+    {"target": "airplane", "anchor": "sky", "prompt": "a photo of an airplane"},
+    {"target": "church", "anchor": "building", "prompt": "a photo of a church"},
+    {"target": "golf ball", "anchor": "tennis ball", "prompt": "a photo of a golf ball"},
+    {"target": "French horn", "anchor": "trumpet", "prompt": "a photo of a French horn"}
+  ],
+  "control_concepts": ["horse", "ship", "truck", "frog", "deer"],
+  "seeds": {
+    "smoke": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61],
+    "screening": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61],
+    "joint": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61],
+    "control": [42, 43, 44, 45, 46, 47, 48, 49]
+  },
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0,
+    "preserve_anchors": true,
+    "reflection_correction": "upstream",
+    "layer_selector": "module name contains attn2 and ends with to_v"
+  },
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1
+  },
+  "evaluation": {
+    "text_template": "a photo of a {concept}",
+    "screening_rule": {
+      "id": "directional_v1",
+      "target_similarity_delta_must_be_below": 0.0,
+      "anchor_similarity_delta_must_be_above": 0.0,
+      "max_low_variance_fraction": 0.2,
+      "low_variance_rgb_std_threshold": 0.02
+    }
+  }
+}

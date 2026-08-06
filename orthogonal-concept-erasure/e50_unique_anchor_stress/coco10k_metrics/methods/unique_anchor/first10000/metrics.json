@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "completed_at": "2026-07-27T22:04:04.364384+00:00",
+  "prompt_count": 10000,
+  "reference_id": "sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16",
+  "reference_fingerprint": "294424082e9ac03d429602c7aca4a4569b5f452762340d19e5214cc364bda31f",
+  "reused_original_reference": true,
+  "original_images_regenerated": false,
+  "models": {
+    "original_sd": {
+      "clip_score": {
+        "mean": 31.108097608947755,
+        "std": 2.8720587348565063,
+        "count": 10000
+      },
+      "fid_to_original_sd": 0.0
+    },
+    "unique_anchor": {
+      "clip_score": {
+        "mean": 30.8414441570282,
+        "std": 2.8578016022033155,
+        "count": 10000
+      },
+      "fid_to_original_sd": 5.3859353842494215
+    }
+  },
+  "evaluated_methods": [
+    "unique_anchor"
+  ],
+  "differences": {
+    "unique_anchor_minus_original": {
+      "clip_score_mean": -0.2666534519195558,
+      "fid_to_original_sd": 5.3859353842494215
+    }
+  },
+  "image_counts": {
+    "unique_anchor": 10000
+  },
+  "reference_artifacts": {
+    "clip_baseline": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/clip_baseline.json",
+    "fid_statistics_glob": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/torch_fidelity_cache/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16-*-stat-fid-2048.pt",
+    "prompt_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/prompts_first10000.csv",
+    "protocol_manifest": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/evaluation_references/references/sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16/protocol.json"
+  }
+}

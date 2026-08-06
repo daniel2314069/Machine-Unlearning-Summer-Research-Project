@@ -1,0 +1,43 @@
+{
+  "extends": "codex_diverse_pool.json",
+  "experiment_name": "codex_diverse_tfidf_hard_4x50",
+  "candidate_validation": {
+    "candidates_per_concept_facet": 12,
+    "accepted_per_concept_facet": 5,
+    "diversity": {
+      "candidate_source_quotas": {"codex_diverse": 12},
+      "accepted_source_quotas": {"codex_diverse": 5}
+    }
+  },
+  "tfidf_hard_selection": {
+    "cv_folds": 5,
+    "cv_seed": 9127,
+    "generation_candidates_per_concept_facet": 12
+  },
+  "controls": {
+    "word_shuffle": {"enabled": true, "seed": 1729}
+  },
+  "prototype_analysis": {
+    "n_bootstrap": 1000,
+    "reference_fraction": 0.8,
+    "seed": 2027
+  },
+  "lexical_baselines": {
+    "enabled": true,
+    "n_runs": 20,
+    "n_init": 100,
+    "classification_cv_folds": 5,
+    "vectorizers": [
+      {"name": "tfidf_word_unigram", "analyzer": "word", "ngram_range": [1, 1], "min_df": 1},
+      {"name": "tfidf_word_unigram_bigram", "analyzer": "word", "ngram_range": [1, 2], "min_df": 1},
+      {"name": "tfidf_char_3_5", "analyzer": "char_wb", "ngram_range": [3, 5], "min_df": 1}
+    ]
+  },
+  "runner": {
+    "max_hours": 20,
+    "deadline_grace_seconds": 300,
+    "heartbeat_seconds": 30,
+    "max_retries": 2,
+    "retry_delay_seconds": 20
+  }
+}

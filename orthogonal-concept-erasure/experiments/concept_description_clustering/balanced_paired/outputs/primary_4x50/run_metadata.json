@@ -1,0 +1,142 @@
+{
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "checkpoint_revision": "133a221b8aa7292a167afc5127cb63fb5005638b",
+  "pipeline_class": "StableDiffusionPipeline",
+  "tokenizer_class": "CLIPTokenizer",
+  "tokenizer_model_max_length": 77,
+  "text_encoder_class": "CLIPTextModel",
+  "text_hidden_size": 768,
+  "scheduler_class": "PNDMScheduler",
+  "scheduler_config": {
+    "num_train_timesteps": 1000,
+    "beta_start": 0.00085,
+    "beta_end": 0.012,
+    "beta_schedule": "scaled_linear",
+    "trained_betas": null,
+    "skip_prk_steps": true,
+    "set_alpha_to_one": false,
+    "prediction_type": "epsilon",
+    "timestep_spacing": "leading",
+    "steps_offset": 1,
+    "_use_default_values": [
+      "prediction_type",
+      "timestep_spacing"
+    ],
+    "_class_name": "PNDMScheduler",
+    "_diffusers_version": "0.7.0.dev0",
+    "clip_sample": false
+  },
+  "projection": "to_v",
+  "projection_layer_count": 16,
+  "projection_layers": {
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v": [
+      320,
+      768
+    ],
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v": [
+      320,
+      768
+    ],
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+      640,
+      768
+    ],
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+      640,
+      768
+    ],
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ],
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ],
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ],
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ],
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ],
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v": [
+      640,
+      768
+    ],
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v": [
+      640,
+      768
+    ],
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v": [
+      640,
+      768
+    ],
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v": [
+      320,
+      768
+    ],
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v": [
+      320,
+      768
+    ],
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v": [
+      320,
+      768
+    ],
+    "mid_block.attentions.0.transformer_blocks.0.attn2.to_v": [
+      1280,
+      768
+    ]
+  },
+  "original_w0_in_memory_fingerprint_sha256": "93355eea8c9b3abb03c8dcdfc16a80dbd319beffab8c403717ab6831267e4a14",
+  "original_w0_in_memory_dtype": "torch.bfloat16",
+  "package_versions": {
+    "torch": "2.12.0",
+    "diffusers": "0.37.1",
+    "transformers": "4.48.3",
+    "numpy": "2.2.5",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.7.2",
+    "matplotlib": "3.10.1",
+    "Pillow": "11.2.1",
+    "langdetect": "1.0.9"
+  },
+  "global_seed": 0,
+  "generation_dtype": "bfloat16",
+  "device": "cuda:0",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "height": 512,
+  "width": 512,
+  "generation_seeds": [
+    42,
+    43,
+    44
+  ],
+  "classifier": {
+    "backend": "clip",
+    "model_id": "openai/clip-vit-base-patch32",
+    "device": "cpu",
+    "templates": [
+      "a photo of a {concept}",
+      "an image of a {concept}",
+      "a clear picture of a {concept}"
+    ],
+    "stage1_min_target_probability": 0.2,
+    "stage1_min_margin": 0.02,
+    "min_target_probability": 0.25,
+    "min_average_margin": 0.05,
+    "min_top1_probability": 0.2,
+    "max_normalized_entropy": 0.88,
+    "high_confidence_wrong_probability": 0.45,
+    "min_top1_seeds": 2
+  },
+  "classifier_limitation": "CLIP probabilities are closed-set and not calibrated open-set probabilities; confidence, entropy, and margin gates are therefore required."
+}

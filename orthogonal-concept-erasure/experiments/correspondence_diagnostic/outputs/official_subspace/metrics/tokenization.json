@@ -1,0 +1,74 @@
+{
+  "concepts": [
+    {
+      "concept": "cat",
+      "token_ids": "[2368]",
+      "token_strings": "[\"cat</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "airplane",
+      "token_ids": "[16451]",
+      "token_strings": "[\"airplane</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "church",
+      "token_ids": "[2735]",
+      "token_strings": "[\"church</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "truck",
+      "token_ids": "[4629]",
+      "token_strings": "[\"truck</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "guitar",
+      "token_ids": "[5084]",
+      "token_strings": "[\"guitar</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "dog",
+      "token_ids": "[1929]",
+      "token_strings": "[\"dog</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "helicopter",
+      "token_ids": "[11956]",
+      "token_strings": "[\"helicopter</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "castle",
+      "token_ids": "[3540]",
+      "token_strings": "[\"castle</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "car",
+      "token_ids": "[1615]",
+      "token_strings": "[\"car</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    },
+    {
+      "concept": "piano",
+      "token_ids": "[7894]",
+      "token_strings": "[\"piano</w>\"]",
+      "token_count": 1,
+      "split_into_multiple_tokens": false
+    }
+  ]
+}

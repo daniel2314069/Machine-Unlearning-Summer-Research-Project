@@ -1,0 +1,191 @@
+{
+  "pairs": [
+    {
+      "target": "cat",
+      "anchor": "dog",
+      "generation_prompt": "a photo of a cat"
+    },
+    {
+      "target": "truck",
+      "anchor": "car",
+      "generation_prompt": "a photo of a truck"
+    },
+    {
+      "target": "church",
+      "anchor": "castle",
+      "generation_prompt": "a photo of a church"
+    },
+    {
+      "target": "Van Gogh",
+      "anchor": "art",
+      "generation_prompt": "Van Gogh style painting of the night sky with bold strokes."
+    },
+    {
+      "target": "Adam Driver",
+      "anchor": "celebrity",
+      "generation_prompt": "a portrait of Adam Driver"
+    }
+  ],
+  "set_validation": {
+    "targets": [
+      "cat",
+      "truck",
+      "church",
+      "Van Gogh",
+      "Adam Driver"
+    ],
+    "anchors": [
+      "dog",
+      "car",
+      "castle",
+      "art",
+      "celebrity"
+    ],
+    "intersection": [],
+    "disjoint": true
+  },
+  "celebrity_source": {
+    "target": "Adam Driver",
+    "reason": "First target in repository E10/E50/E100 celebrity benchmark lists.",
+    "prompt_template_source": "generate_celeb.py: a portrait of {}"
+  },
+  "artist_source": {
+    "target": "Van Gogh",
+    "standard_string_source": "trainscripts/style.sh",
+    "generation_prompt_source": "first template in generate_style.py"
+  },
+  "edit_prompt_rows": [
+    {
+      "target": "cat",
+      "anchor": "dog"
+    },
+    {
+      "target": "image of cat",
+      "anchor": "image of dog"
+    },
+    {
+      "target": "photo of cat",
+      "anchor": "photo of dog"
+    },
+    {
+      "target": "portrait of cat",
+      "anchor": "portrait of dog"
+    },
+    {
+      "target": "picture of cat",
+      "anchor": "picture of dog"
+    },
+    {
+      "target": "painting of cat",
+      "anchor": "painting of dog"
+    },
+    {
+      "target": "truck",
+      "anchor": "car"
+    },
+    {
+      "target": "image of truck",
+      "anchor": "image of car"
+    },
+    {
+      "target": "photo of truck",
+      "anchor": "photo of car"
+    },
+    {
+      "target": "portrait of truck",
+      "anchor": "portrait of car"
+    },
+    {
+      "target": "picture of truck",
+      "anchor": "picture of car"
+    },
+    {
+      "target": "painting of truck",
+      "anchor": "painting of car"
+    },
+    {
+      "target": "church",
+      "anchor": "castle"
+    },
+    {
+      "target": "image of church",
+      "anchor": "image of castle"
+    },
+    {
+      "target": "photo of church",
+      "anchor": "photo of castle"
+    },
+    {
+      "target": "portrait of church",
+      "anchor": "portrait of castle"
+    },
+    {
+      "target": "picture of church",
+      "anchor": "picture of castle"
+    },
+    {
+      "target": "painting of church",
+      "anchor": "painting of castle"
+    },
+    {
+      "target": "Van Gogh",
+      "anchor": "art"
+    },
+    {
+      "target": "painting by Van Gogh",
+      "anchor": "painting by art"
+    },
+    {
+      "target": "art by Van Gogh",
+      "anchor": "art by art"
+    },
+    {
+      "target": "artwork by Van Gogh",
+      "anchor": "artwork by art"
+    },
+    {
+      "target": "picture by Van Gogh",
+      "anchor": "picture by art"
+    },
+    {
+      "target": "style of Van Gogh",
+      "anchor": "style of art"
+    },
+    {
+      "target": "Adam Driver",
+      "anchor": "celebrity"
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1
+  },
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0,
+    "preserve_anchors": true,
+    "reflection_correction": "upstream",
+    "layer_selector": "module name contains attn2 and ends with to_v"
+  },
+  "edited_layers": "all 16 module names containing attn2 and ending in to_v",
+  "scope": "Original SD vs joint official OCE subspace images only; no numerical evaluation"
+}

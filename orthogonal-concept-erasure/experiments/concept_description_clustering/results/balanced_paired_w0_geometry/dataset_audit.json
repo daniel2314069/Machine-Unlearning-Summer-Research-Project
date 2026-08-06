@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "dataset_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/accepted_descriptions.jsonl",
+  "dataset_sha256": "6f459fa9e73f80163145813ecd8cd32c4216e1c4f77f6795925bf06676794a0c",
+  "dataset_validation_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/dataset_validation.json",
+  "dataset_validation_sha256": "1b884b37da08b0d9908e4711ddf9c1b4fc28ea62b7017d152c6cf884ff6c32ad",
+  "source_experiment_config_path": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/experiments/concept_description_clustering/balanced_paired/outputs/secondary_8x50/experiment_config.json",
+  "source_experiment_config_sha256": "a36acaad59c3c8e5398b78d6dadecd7564f19f93b22056c849ebcf983cd46319",
+  "row_count": 400,
+  "counts_by_concept": {
+    "cat": 50,
+    "dog": 50,
+    "fox": 50,
+    "bear": 50,
+    "wolf": 50,
+    "rabbit": 50,
+    "deer": 50,
+    "horse": 50
+  },
+  "checks": {
+    "exactly_400_rows": true,
+    "exact_concept_set": true,
+    "exactly_50_per_concept": true,
+    "unique_concept_slot_pairs": true,
+    "all_configured_concept_names_and_variants_absent": true,
+    "source_dataset_validation_passed": true,
+    "no_unsuffixed_prompt_truncated": true,
+    "no_fixed_suffix_prompt_truncated": true,
+    "fresh_eot_matches_balanced_cache": true,
+    "fresh_fixed_matches_balanced_cache": true
+  },
+  "forbidden_hits": []
+}

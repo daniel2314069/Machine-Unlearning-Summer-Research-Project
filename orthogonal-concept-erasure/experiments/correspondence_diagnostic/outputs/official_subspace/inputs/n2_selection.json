@@ -1,0 +1,81 @@
+{
+  "pairs": [
+    {
+      "target": "cat",
+      "anchor": "dog",
+      "slug": "cat_to_dog"
+    },
+    {
+      "target": "guitar",
+      "anchor": "piano",
+      "slug": "guitar_to_piano"
+    }
+  ],
+  "selection_basis": "manual selection after numeric and grid review",
+  "visual_review": {
+    "reviewed_at_stage": "after_single_pair_subspace_screening",
+    "summary": "Target erasure is visually evident for all five mappings, but clear own-anchor generation is visually stable only for cat -> dog. The remaining four mappings mostly produce unrelated scenes or textures rather than their named anchors.",
+    "pairs": [
+      {
+        "mapping": "cat -> dog",
+        "observation": "All ten edited seeds show recognizable dogs; no obvious cat-dog hybrids or global image collapse."
+      },
+      {
+        "mapping": "airplane -> helicopter",
+        "observation": "Airplanes disappear, but the edited images mostly show cities, textures, distant ambiguous objects, or other unrelated scenes rather than recognizable helicopters."
+      },
+      {
+        "mapping": "church -> castle",
+        "observation": "Churches disappear, but edited images are mostly generic residential or office buildings; recognizable castles are not stable."
+      },
+      {
+        "mapping": "truck -> car",
+        "observation": "Trucks disappear, but edited images mostly become textures or unrelated objects; recognizable cars are not stable."
+      },
+      {
+        "mapping": "guitar -> piano",
+        "observation": "Guitars disappear, but edited images mostly become architectural textures or unrelated scenes; recognizable pianos are not stable despite comparatively favorable five-anchor CLIP ranking."
+      }
+    ]
+  },
+  "screening_evidence": [
+    {
+      "pair_index": "0",
+      "pair": "cat_to_dog",
+      "target": "cat",
+      "anchor": "dog",
+      "original_mean_target_similarity": "0.2821267247200012",
+      "edited_mean_target_similarity": "0.20649456977844238",
+      "target_similarity_delta": "-0.07563215494155884",
+      "original_mean_own_anchor_similarity": "0.22774434089660645",
+      "edited_mean_own_anchor_similarity": "0.27187681198120117",
+      "own_anchor_similarity_delta": "0.04413247108459473",
+      "edited_mean_best_other_similarity": "0.19220954179763794",
+      "edited_mean_margin": "0.07966726273298264",
+      "edited_minimum_margin": "0.042142823338508606",
+      "edited_positive_margin_fraction": "1.0",
+      "edited_own_anchor_top1_rate": "1.0",
+      "low_variance_fraction": "0.0",
+      "directional_screening_pass": "True"
+    },
+    {
+      "pair_index": "4",
+      "pair": "guitar_to_piano",
+      "target": "guitar",
+      "anchor": "piano",
+      "original_mean_target_similarity": "0.30322152376174927",
+      "edited_mean_target_similarity": "0.21786126494407654",
+      "target_similarity_delta": "-0.08536025881767273",
+      "original_mean_own_anchor_similarity": "0.20966598391532898",
+      "edited_mean_own_anchor_similarity": "0.23390397429466248",
+      "own_anchor_similarity_delta": "0.024237990379333496",
+      "edited_mean_best_other_similarity": "0.22339192032814026",
+      "edited_mean_margin": "0.01051207073032856",
+      "edited_minimum_margin": "-0.04948154091835022",
+      "edited_positive_margin_fraction": "0.8",
+      "edited_own_anchor_top1_rate": "0.8",
+      "low_variance_fraction": "0.0",
+      "directional_screening_pass": "True"
+    }
+  ]
+}

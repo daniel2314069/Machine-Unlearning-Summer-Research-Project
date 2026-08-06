@@ -1,0 +1,54 @@
+{
+  "experiment_name": "oce_official_subspace_correspondence_diagnostic",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "device": "cuda:0",
+  "edit_dtype": "float32",
+  "generation_dtype": "bfloat16",
+  "cg_path": "../../Cg.pt",
+  "pairs": [
+    {"target": "cat", "anchor": "dog", "prompt": "a photo of a cat"},
+    {"target": "airplane", "anchor": "helicopter", "prompt": "a photo of a airplane"},
+    {"target": "church", "anchor": "castle", "prompt": "a photo of a church"},
+    {"target": "truck", "anchor": "car", "prompt": "a photo of a truck"},
+    {"target": "guitar", "anchor": "piano", "prompt": "a photo of a guitar"}
+  ],
+  "control_concepts": ["frog", "horse", "ship", "deer", "boat"],
+  "seeds": {
+    "feasibility": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "screening": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "joint": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+    "control": [42, 43, 44, 45, 46, 47, 48, 49]
+  },
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0,
+    "preserve_anchors": true,
+    "reflection_correction": "upstream",
+    "layer_selector": "module name contains attn2 and ends with to_v"
+  },
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1
+  },
+  "evaluation": {
+    "text_template": "a photo of a {concept}",
+    "screening_rule": {
+      "target_similarity_delta_must_be_below": 0.0,
+      "anchor_similarity_delta_must_be_above": 0.0,
+      "max_low_variance_fraction": 0.2,
+      "low_variance_rgb_std_threshold": 0.02
+    }
+  },
+  "execution_gate": {
+    "stop_after": "n2_permutation_check",
+    "control": "not_run_in_current_stage",
+    "n5": "not_run_in_current_stage"
+  }
+}

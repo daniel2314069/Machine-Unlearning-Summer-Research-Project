@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-07-26T06:58:02.437652+00:00",
+  "reference_id": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+  "reference_identity": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "prompt_source_sha256": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
+    "prompt_subset": "first 1000 rows in source order",
+    "prompt_count": 1000,
+    "seed_column": "evaluation_seed",
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "scheduler": "PNDMScheduler",
+    "clip_model_id": "openai/clip-vit-base-patch32",
+    "clip_implementation": "transformers logits_per_image diagonal",
+    "fid_implementation": "torch_fidelity 0.3.0",
+    "fid_feature_extractor": "inception-v3-compat",
+    "fid_feature_layer": "2048"
+  },
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "clip_score": {
+    "mean": 31.19920644760132,
+    "std": 2.8994762188857863,
+    "count": 1000
+  }
+}

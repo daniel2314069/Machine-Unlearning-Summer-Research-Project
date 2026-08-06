@@ -1,0 +1,32 @@
+{
+  "reviewed_grid_files": [
+    "grids/smoke_cat_to_dog.png",
+    "grids/screening_airplane_to_sky.png",
+    "grids/screening_church_to_building.png",
+    "grids/screening_golf_ball_to_tennis_ball.png",
+    "grids/screening_french_horn_to_trumpet.png"
+  ],
+  "review_scope": "All 20 seed-aligned rows in each grid",
+  "pairs": [
+    {
+      "pair": "cat_to_dog",
+      "observation": "Original images consistently depict cats. Both edited methods consistently produce dog-dominant animals. Single-vector images occasionally retain pointed-ear or large-eye features that could be read as mildly feline; single-subspace has a few unusual ear/head artifacts, most visibly around seeds 49 and 57. Neither method shows systematic background collapse, blank output, or broad image-quality failure."
+    },
+    {
+      "pair": "airplane_to_sky",
+      "observation": "Edited images remain airplane-dominant across the grid. Sky or cloud backgrounds are sometimes more prominent, but the target object is not removed; several outputs are grayscale or have silhouette/geometry artifacts. The visual result agrees with the failed directional target-erasure check."
+    },
+    {
+      "pair": "church_to_building",
+      "observation": "Several edited outputs move from church interiors/exteriors toward generic office, apartment, or plain building facades, while many rows remain visibly church-like or retain church architecture. This is a partial and seed-dependent shift without systematic generation collapse."
+    },
+    {
+      "pair": "golf_ball_to_tennis_ball",
+      "observation": "Most edited outputs remain dimpled golf balls. A few become green spheres, but they generally lack the seam and felt texture of a tennis ball. The grid does not support reliable golf-ball erasure or tennis-ball replacement."
+    },
+    {
+      "pair": "french_horn_to_trumpet",
+      "observation": "Many edited outputs lengthen the instrument or add trumpet-like bells and tubing, but a substantial fraction retain circular French-horn geometry or become brass-instrument hybrids. This is visually a partial shift; it does not establish clean trumpet replacement, consistent with the 0% two-label trumpet top-1 rate."
+    }
+  ]
+}

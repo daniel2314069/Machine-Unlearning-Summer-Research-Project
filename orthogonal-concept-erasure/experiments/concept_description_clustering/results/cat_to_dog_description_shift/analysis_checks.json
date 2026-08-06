@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "exact_final_balanced_8x50_dataset": true,
+  "exactly_400_descriptions": true,
+  "exactly_50_per_concept": true,
+  "only_unsuffixed_eot_descriptions": true,
+  "oce_edit_exactly_cat_to_dog": true,
+  "all_16_checkpoint_layers_aligned": true,
+  "all_selected_layer_pairs_analyzed": true,
+  "original_references_use_w0_cat_and_w0_dog": true,
+  "edited_descriptions_use_wcat_h": true,
+  "edited_dog_reference_never_used": true,
+  "all_cosine_inputs_l2_normalized": true,
+  "no_diffusion_images_generated": true,
+  "no_clustering_run": true,
+  "no_description_centroids_constructed": true,
+  "no_additional_anchor_conditions": true,
+  "description_shift_row_count": true,
+  "summary_has_one_row_per_layer_and_class": true,
+  "canonical_sanity_has_one_row_per_layer": true,
+  "all_w0_and_checkpoint_files_unchanged": true,
+  "exactly_five_requested_plots": true
+}

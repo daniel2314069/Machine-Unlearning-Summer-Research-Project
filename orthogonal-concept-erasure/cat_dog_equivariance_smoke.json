@@ -1,0 +1,119 @@
+{
+  "configuration": {
+    "erase_concepts": [
+      "cat",
+      "dog"
+    ],
+    "guide": " ",
+    "explicit_retain": [],
+    "prompt_expansion": false,
+    "erase_scale": 2000.0,
+    "global_scale": 10.0,
+    "lambda": 10.0,
+    "cg_source": {
+      "path": "data/coco_30k.csv",
+      "count": 4096
+    },
+    "layers": 1
+  },
+  "summary": {
+    "upstream": {
+      "dog_after_cat_conjugation_relerr": {
+        "mean": 0.007863476872444153,
+        "max": 0.007863476872444153
+      },
+      "cat_after_dog_conjugation_relerr": {
+        "mean": 0.01197514496743679,
+        "max": 0.01197514496743679
+      },
+      "cat_then_dog_weight_relerr": {
+        "mean": 0.008813280612230301,
+        "max": 0.008813280612230301
+      },
+      "dog_then_cat_weight_relerr": {
+        "mean": 0.01662553660571575,
+        "max": 0.01662553660571575
+      },
+      "commutator_prediction_relerr": {
+        "mean": 0.07994430512189865,
+        "max": 0.07994430512189865
+      },
+      "sequential_order_effect_rel": {
+        "mean": 0.2919039726257324,
+        "max": 0.2919039726257324
+      },
+      "commutator_effect_rel": {
+        "mean": 0.29229262471199036,
+        "max": 0.29229262471199036
+      }
+    },
+    "proper": {
+      "dog_after_cat_conjugation_relerr": {
+        "mean": 0.00010932883742498234,
+        "max": 0.00010932883742498234
+      },
+      "cat_after_dog_conjugation_relerr": {
+        "mean": 0.00010727647168096155,
+        "max": 0.00010727647168096155
+      },
+      "cat_then_dog_weight_relerr": {
+        "mean": 2.6509707822697237e-05,
+        "max": 2.6509707822697237e-05
+      },
+      "dog_then_cat_weight_relerr": {
+        "mean": 2.2263995560933836e-05,
+        "max": 2.2263995560933836e-05
+      },
+      "commutator_prediction_relerr": {
+        "mean": 0.00011577385885175318,
+        "max": 0.00011577385885175318
+      },
+      "sequential_order_effect_rel": {
+        "mean": 0.29226505756378174,
+        "max": 0.29226505756378174
+      },
+      "commutator_effect_rel": {
+        "mean": 0.2922704517841339,
+        "max": 0.2922704517841339
+      }
+    }
+  },
+  "layers": [
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "upstream",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.007863476872444153,
+      "cat_after_dog_conjugation_relerr": 0.01197514496743679,
+      "cat_then_dog_weight_relerr": 0.008813280612230301,
+      "dog_then_cat_weight_relerr": 0.01662553660571575,
+      "commutator_prediction_relerr": 0.07994430512189865,
+      "sequential_order_effect_rel": 0.2919039726257324,
+      "commutator_effect_rel": 0.29229262471199036
+    },
+    {
+      "layer": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "out_dim": 320,
+      "correction": "proper",
+      "reflection_flags": {
+        "cat": true,
+        "dog": true,
+        "dog_after_cat": true,
+        "cat_after_dog": true
+      },
+      "dog_after_cat_conjugation_relerr": 0.00010932883742498234,
+      "cat_after_dog_conjugation_relerr": 0.00010727647168096155,
+      "cat_then_dog_weight_relerr": 2.6509707822697237e-05,
+      "dog_then_cat_weight_relerr": 2.2263995560933836e-05,
+      "commutator_prediction_relerr": 0.00011577385885175318,
+      "sequential_order_effect_rel": 0.29226505756378174,
+      "commutator_effect_rel": 0.2922704517841339
+    }
+  ]
+}

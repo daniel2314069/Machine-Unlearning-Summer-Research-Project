@@ -1,0 +1,116 @@
+{
+  "original_sd15": {
+    "target_religious_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.96,
+      "concept_top1_rate": 0.7,
+      "mean_prompt_alignment": 0.30478195011615755,
+      "mean_expected_group_score": 0.2685162582993507,
+      "mean_expected_concept_score": 0.2894995230436325,
+      "mean_drift_clip_cosine_to_original": null
+    },
+    "near_religious_people_objects": {
+      "n": 50,
+      "group_top1_rate": 0.88,
+      "concept_top1_rate": 0.88,
+      "mean_prompt_alignment": 0.2950088718533516,
+      "mean_expected_group_score": 0.2436898657679558,
+      "mean_expected_concept_score": 0.2863492941856384,
+      "mean_drift_clip_cosine_to_original": null
+    },
+    "near_generic_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.5,
+      "concept_top1_rate": 0.94,
+      "mean_prompt_alignment": 0.28773598194122313,
+      "mean_expected_group_score": 0.21818134546279908,
+      "mean_expected_concept_score": 0.2755572095513344,
+      "mean_drift_clip_cosine_to_original": null
+    },
+    "far_unrelated_objects": {
+      "n": 50,
+      "group_top1_rate": 0.74,
+      "concept_top1_rate": 1.0,
+      "mean_prompt_alignment": 0.28938637137413026,
+      "mean_expected_group_score": 0.22589155822992324,
+      "mean_expected_concept_score": 0.2847209045290947,
+      "mean_drift_clip_cosine_to_original": null
+    }
+  },
+  "scapre_no_R": {
+    "target_religious_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.5,
+      "concept_top1_rate": 0.2,
+      "mean_prompt_alignment": 0.25567170083522794,
+      "mean_expected_group_score": 0.23272668808698654,
+      "mean_expected_concept_score": 0.23163593977689742,
+      "mean_drift_clip_cosine_to_original": 0.6193649584054947
+    },
+    "near_religious_people_objects": {
+      "n": 50,
+      "group_top1_rate": 0.8,
+      "concept_top1_rate": 0.66,
+      "mean_prompt_alignment": 0.2654563677310944,
+      "mean_expected_group_score": 0.22812002927064895,
+      "mean_expected_concept_score": 0.2501402127742767,
+      "mean_drift_clip_cosine_to_original": 0.67656778216362
+    },
+    "near_generic_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.38,
+      "concept_top1_rate": 0.88,
+      "mean_prompt_alignment": 0.28032611280679703,
+      "mean_expected_group_score": 0.20875775039196015,
+      "mean_expected_concept_score": 0.25986460596323013,
+      "mean_drift_clip_cosine_to_original": 0.7520252281427383
+    },
+    "far_unrelated_objects": {
+      "n": 50,
+      "group_top1_rate": 0.9,
+      "concept_top1_rate": 0.96,
+      "mean_prompt_alignment": 0.2931427863240242,
+      "mean_expected_group_score": 0.22890852391719818,
+      "mean_expected_concept_score": 0.2808486008644104,
+      "mean_drift_clip_cosine_to_original": 0.8249858033657074
+    }
+  },
+  "scapre_with_R": {
+    "target_religious_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.46,
+      "concept_top1_rate": 0.16,
+      "mean_prompt_alignment": 0.25750672340393066,
+      "mean_expected_group_score": 0.23251983910799026,
+      "mean_expected_concept_score": 0.23216062366962434,
+      "mean_drift_clip_cosine_to_original": 0.619620463848114
+    },
+    "near_religious_people_objects": {
+      "n": 50,
+      "group_top1_rate": 0.82,
+      "concept_top1_rate": 0.68,
+      "mean_prompt_alignment": 0.2661031809449196,
+      "mean_expected_group_score": 0.2289186805486679,
+      "mean_expected_concept_score": 0.25115743428468706,
+      "mean_drift_clip_cosine_to_original": 0.6773368138074874
+    },
+    "near_generic_buildings": {
+      "n": 50,
+      "group_top1_rate": 0.38,
+      "concept_top1_rate": 0.78,
+      "mean_prompt_alignment": 0.27962066829204557,
+      "mean_expected_group_score": 0.20920031756162644,
+      "mean_expected_concept_score": 0.259441522359848,
+      "mean_drift_clip_cosine_to_original": 0.7511047250032425
+    },
+    "far_unrelated_objects": {
+      "n": 50,
+      "group_top1_rate": 0.86,
+      "concept_top1_rate": 0.98,
+      "mean_prompt_alignment": 0.29424106001853945,
+      "mean_expected_group_score": 0.23030994862318038,
+      "mean_expected_concept_score": 0.282079843878746,
+      "mean_drift_clip_cosine_to_original": 0.8186466515064239
+    }
+  }
+}

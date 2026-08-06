@@ -1,0 +1,6 @@
+{
+  "status": "awaiting_user_confirmation",
+  "first1000_metrics": "/home/daniel1012/projects/machine_unlearning/orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/milestones/first1000/metrics.json",
+  "note": "No automatic worth threshold was specified.",
+  "continue_flag": "--continue-to-10k"
+}

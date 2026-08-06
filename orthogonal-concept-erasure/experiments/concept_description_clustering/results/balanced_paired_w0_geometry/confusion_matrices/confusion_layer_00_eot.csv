@@ -1,0 +1,9 @@
+true_concept,cat,dog,fox,bear,wolf,rabbit,deer,horse
+cat,28,6,6,2,0,2,0,6
+dog,3,35,0,5,0,1,0,6
+fox,0,1,19,4,7,3,9,7
+bear,0,1,1,20,12,2,11,3
+wolf,0,4,9,2,22,0,2,11
+rabbit,1,0,8,0,3,31,0,7
+deer,0,1,2,2,9,4,28,4
+horse,0,15,1,17,12,1,0,4

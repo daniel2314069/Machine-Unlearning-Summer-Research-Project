@@ -1,0 +1,29 @@
+{
+  "extends": "full.json",
+  "experiment_name": "codex_diverse_single_source_pool",
+  "dataset_design": {
+    "description": "Single-source Codex-generated syntax-diverse candidate pool for TF-IDF-hard selection.",
+    "corpus_type": "codex_diverse_single_source",
+    "source": "codex_diverse",
+    "minimum_diverse_per_group": 11,
+    "retain_pre_generation_population": true
+  },
+  "concept_names": ["cat", "dog", "fox", "bear"],
+  "candidate_validation": {
+    "candidates_per_concept_facet": 25,
+    "accepted_per_concept_facet": 5,
+    "near_duplicate_jaccard": 0.72,
+    "diversity": {
+      "enabled": true,
+      "ngram_size": 3,
+      "max_ngram_occurrences": 1,
+      "opening_content_words": 3,
+      "max_opening_occurrences": 1,
+      "require_syntax_family": true,
+      "max_syntax_family_per_concept_facet": 3,
+      "candidate_source_quotas": {"codex_diverse": 25},
+      "accepted_source_quotas": {"codex_diverse": 5}
+    }
+  },
+  "clustering": {"k": 4}
+}

@@ -1,0 +1,123 @@
+{
+  "scope": "images and seed-aligned grids only",
+  "all_gates_overridden_by_user": true,
+  "single_pairs": [
+    {
+      "target": "cat",
+      "anchor": "dog",
+      "prompt": "a photo of a cat"
+    },
+    {
+      "target": "dog",
+      "anchor": "cat",
+      "prompt": "a photo of a dog"
+    },
+    {
+      "target": "horse",
+      "anchor": "deer",
+      "prompt": "a photo of a horse"
+    },
+    {
+      "target": "dog",
+      "anchor": "wolf",
+      "prompt": "a photo of a dog"
+    },
+    {
+      "target": "wolf",
+      "anchor": "cat",
+      "prompt": "a photo of a wolf"
+    }
+  ],
+  "joint_cases": {
+    "cycle2": [
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "prompt": "a photo of a cat"
+      },
+      {
+        "target": "dog",
+        "anchor": "cat",
+        "prompt": "a photo of a dog"
+      }
+    ],
+    "cycle3": [
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "prompt": "a photo of a cat"
+      },
+      {
+        "target": "dog",
+        "anchor": "wolf",
+        "prompt": "a photo of a dog"
+      },
+      {
+        "target": "wolf",
+        "anchor": "cat",
+        "prompt": "a photo of a wolf"
+      }
+    ],
+    "no_overlap": [
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "prompt": "a photo of a cat"
+      },
+      {
+        "target": "horse",
+        "anchor": "deer",
+        "prompt": "a photo of a horse"
+      }
+    ]
+  },
+  "wolf_tokenization": {
+    "token_ids": [
+      5916
+    ],
+    "token_strings": [
+      "wolf</w>"
+    ],
+    "token_count": 1,
+    "problem_detected": false
+  },
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "num_images_per_prompt": 1
+  },
+  "oce": {
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0,
+    "preserve_anchors": true,
+    "reflection_correction": "upstream",
+    "layer_selector": "module name contains attn2 and ends with to_v"
+  },
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "executed": {
+    "clip_metrics": false,
+    "lpips": false,
+    "feature_matrices": false,
+    "permutation": false,
+    "confusion": false,
+    "heatmaps": false,
+    "vector_ablation": false
+  }
+}
