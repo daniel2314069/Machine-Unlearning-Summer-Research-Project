@@ -1,58 +1,115 @@
 {
-  "schema_version": 1,
-  "experiment_id": "confuse5_single_vs_joint",
-  "scientific_source": {
-    "benchmark": "ImageNet-Confuse5",
-    "paper": "Forget Many, Forget Right: Scalable and Precise Concept Unlearning in Diffusion Models",
-    "paper_table": "Table 7",
-    "openreview_id": "zt7IPzsXrT",
-    "repository_dataset": "../../../scapre/eval/datasets/imagenet-15.csv",
-    "note": "Table 7 defines five groups with the first two concepts as targets and the remaining three as similar non-targets. The repository CSV contains only the first three concepts from each group, so Table 7 is authoritative for the complete 25-class assignment."
+  "schema_version": 2,
+  "experiment_id": "confuse5_single_vs_joint__official_repo_primary_v1",
+  "claim_scope": "Official released OCE implementation behavior on the benchmark-specific Confuse5 Single-vs-Joint protocol",
+  "source_precedence": [
+    "official_task_experiment_script_or_execution_path",
+    "final_paper_appendix_or_main_text",
+    "readme_or_generic_config",
+    "parser_defaults_forbidden"
+  ],
+  "paths": {
+    "output_namespace": "outputs/official_repo_primary_v1",
+    "anchors": "anchors.json",
+    "k0_dataset": "../../data/coco_30k.csv",
+    "evaluation_dataset": "datasets/imagenet-confuse5-derived-25.csv",
+    "legacy_original_reference": "archives/invalid_for_primary__pilot_default_config/conditional_reusable_original_reference.json"
   },
-  "shared": {
+  "model": {
     "base_model": "CompVis/stable-diffusion-v1-4",
     "concept_type": "object",
-    "editable_modules": "unet.attn2.to_v",
-    "anchor_policy": {
-      "kind": "oce_default"
+    "device": "cuda:0",
+    "editing_dtype": "float32",
+    "generation_dtype": "bfloat16",
+    "safety_checker": null
+  },
+  "oce": {
+    "lambda_e": 1000.0,
+    "lambda_0": 50.0,
+    "lambda_r": 1.0,
+    "lamb_repo_regularizer": 10.0,
+    "expand_prompts": true,
+    "expansion_order": "all_bare_then_per_concept_extras",
+    "expansion_templates": [
+      "{concept}",
+      "image of {concept}",
+      "photo of {concept}",
+      "portrait of {concept}",
+      "picture of {concept}",
+      "painting of {concept}"
+    ],
+    "embedding_token": "last_non_special_token_attention_mask_sum_minus_2",
+    "subspace_input_normalization": "l2",
+    "normalization_eps": 1e-8,
+    "qr_mode": "reduced",
+    "erasure_matrix_order": "-R(I-R_star)",
+    "svd": "torch.linalg.svd_full_matrices_false",
+    "determinant_correction": "official_repo_column_flip_after_UVt_when_det_negative",
+    "local_retain_policy": "three_designated_similar_non_targets",
+    "anchor_in_local_retain": false,
+    "guide_alignment_seed": 42
+  },
+  "k0": {
+    "definition": "mean_outer_product_of_all_nonpadding_last_hidden_state_tokens",
+    "dataset_column": "prompt",
+    "batch_size": 64,
+    "accumulation_dtype": "float32",
+    "output_dtype": "float32",
+    "process_all_rows": true,
+    "flush_final_partial_batch": true,
+    "resume_allowed": false,
+    "output_filename": "K0.pt",
+    "metadata_filename": "K0.metadata.json"
+  },
+  "anchor_sanity": {
+    "ordered_seed_source": "corresponding_target_first_rows",
+    "seeds_per_anchor": 8,
+    "prompt_template": "an image of a {anchor}",
+    "target_collision_failure_count": 4,
+    "keep_images": true
+  },
+  "checkpointing": {
+    "single_count": 10,
+    "joint_count": 5,
+    "filename": "weights.safetensors",
+    "metadata_filename": "metadata.json",
+    "overwrite_allowed": false,
+    "required_metadata": [
+      "resolved_config",
+      "targets",
+      "anchors",
+      "retain_concepts",
+      "git_hash",
+      "git_dirty",
+      "source_hashes",
+      "k0_hash",
+      "checkpoint_hash",
+      "layer_diagnostics"
+    ]
+  },
+  "paper_repo_diagnostic": {
+    "primary": {
+      "lamb_repo_regularizer": 10.0,
+      "determinant_correction": true
     },
-    "retain_policy": {
-      "kind": "group_similar_non_targets"
+    "paper_literal": {
+      "lamb_repo_regularizer": 0.0,
+      "determinant_correction": false
     },
-    "oce": {
-      "erase_scale": 1.0,
-      "preserve_global_scale": 0.5,
-      "preserve_concept_scale": 0.3,
-      "lamb": 1.5,
-      "expand_prompts": false,
-      "dtype": "float32",
-      "seed": 42,
-      "device": "cuda:0"
-    }
+    "checkpoint_level_only": true,
+    "second_full_generation_forbidden": true,
+    "record_per_layer": [
+      "frobenius_P_minus_I",
+      "determinant_before_correction",
+      "determinant_after_correction",
+      "correction_triggered",
+      "objective_trace_quantities",
+      "repo_vs_paper_literal_P_frobenius"
+    ]
   },
   "evaluation": {
-    "dataset_csv": "../../../scapre/eval/datasets/imagenet-15.csv",
-    "derived_dataset_csv": "datasets/imagenet-confuse5-derived-25.csv",
-    "derived_dataset": {
-      "kind": "internal_analysis_not_official_scapre",
-      "source_dataset_normalized_sha256": "f8bbff08a4139376b75d6be4023ce1ff50e87eb15f99242425e1d0ac2d666a64",
-      "derived_dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
-      "prompt_template": "an image of a {concept}",
-      "seed_policy": "reuse_ordered_seeds_from_available_preservation_class_in_same_group",
-      "seed_sources": {
-        "Chesapeake Bay retriever": "german shepherd",
-        "pug": "german shepherd",
-        "Siamese cat": "persian cat",
-        "Egyptian cat": "persian cat",
-        "fig": "pomegranate",
-        "Granny Smith": "pomegranate",
-        "catamaran": "speedboat",
-        "schooner": "speedboat",
-        "rugby ball": "tennis ball",
-        "ping-pong ball": "tennis ball"
-      }
-    },
     "expected_rows_per_class": 500,
+    "expected_total_rows": 12500,
     "expected_checkpoint_keys": 16,
     "generation": {
       "scheduler": "PNDMScheduler",
@@ -60,112 +117,96 @@
       "guidance_scale": 7.5,
       "height": 512,
       "width": 512,
-      "dtype": "bfloat16",
       "images_per_prompt": 1,
-      "safety_checker": null
+      "generator_device": "cpu"
     },
     "classifier": {
-      "implementation": "torchvision_resnet50_default",
-      "weights": "ResNet50_Weights.DEFAULT",
+      "implementation": "torchvision_resnet50",
+      "weights_enum": "IMAGENET1K_V2",
+      "expected_weight_filename": "resnet50-11ad3fa6.pth",
       "matching": "exact_normalized_category",
-      "batch_size": 32
+      "batch_size": 32,
+      "top_k": 5,
+      "save_target_probability": true,
+      "save_raw_target_logit": true
+    },
+    "formal": {
+      "reuse_legacy_original_top1": true,
+      "legacy_original_auxiliary_metrics": "unavailable",
+      "single_images": 25000,
+      "joint_images": 12500,
+      "total_new_edited_images": 37500,
+      "evaluate_sibling_target_secondary": true,
+      "primary_preservation_roles": "three_designated_similar_non_targets",
+      "purge_edited_images_after_durable_evaluation": true
     }
+  },
+  "smoke_gate": {
+    "targets": [
+      "labrador retriever",
+      "tabby",
+      "yawl",
+      "volleyball"
+    ],
+    "ordered_rows_per_target": 32,
+    "required_accuracy_drop_count": 4,
+    "required_accuracy_drop": 0.125,
+    "all_targets_must_pass": true,
+    "joint_is_gate": false,
+    "keep_images": true,
+    "original_png_sha256_must_match_legacy_manifest": true
   },
   "groups": [
     {
       "id": "dogs",
-      "concepts": [
-        "golden retriever",
-        "labrador retriever",
-        "german shepherd",
-        "Chesapeake Bay retriever",
-        "pug"
-      ],
-      "targets": [
-        "golden retriever",
-        "labrador retriever"
-      ],
-      "similar_non_targets": [
-        "german shepherd",
-        "Chesapeake Bay retriever",
-        "pug"
-      ]
+      "targets": ["golden retriever", "labrador retriever"],
+      "similar_non_targets": ["german shepherd", "Chesapeake Bay retriever", "pug"]
     },
     {
       "id": "cats",
-      "concepts": [
-        "tabby",
-        "tiger cat",
-        "persian cat",
-        "Siamese cat",
-        "Egyptian cat"
-      ],
-      "targets": [
-        "tabby",
-        "tiger cat"
-      ],
-      "similar_non_targets": [
-        "persian cat",
-        "Siamese cat",
-        "Egyptian cat"
-      ]
+      "targets": ["tabby", "tiger cat"],
+      "similar_non_targets": ["persian cat", "Siamese cat", "Egyptian cat"]
     },
     {
       "id": "fruits",
-      "concepts": [
-        "orange",
-        "lemon",
-        "pomegranate",
-        "fig",
-        "Granny Smith"
-      ],
-      "targets": [
-        "orange",
-        "lemon"
-      ],
-      "similar_non_targets": [
-        "pomegranate",
-        "fig",
-        "Granny Smith"
-      ]
+      "targets": ["orange", "lemon"],
+      "similar_non_targets": ["pomegranate", "fig", "Granny Smith"]
     },
     {
       "id": "boats",
-      "concepts": [
-        "yawl",
-        "lifeboat",
-        "speedboat",
-        "catamaran",
-        "schooner"
-      ],
-      "targets": [
-        "yawl",
-        "lifeboat"
-      ],
-      "similar_non_targets": [
-        "speedboat",
-        "catamaran",
-        "schooner"
-      ]
+      "targets": ["yawl", "lifeboat"],
+      "similar_non_targets": ["speedboat", "catamaran", "schooner"]
     },
     {
       "id": "balls",
-      "concepts": [
-        "soccer ball",
-        "volleyball",
-        "tennis ball",
-        "rugby ball",
-        "ping-pong ball"
-      ],
-      "targets": [
-        "soccer ball",
-        "volleyball"
-      ],
-      "similar_non_targets": [
-        "tennis ball",
-        "rugby ball",
-        "ping-pong ball"
-      ]
+      "targets": ["soccer ball", "volleyball"],
+      "similar_non_targets": ["tennis ball", "rugby ball", "ping-pong ball"]
     }
-  ]
+  ],
+  "provenance_notes": {
+    "official_repo_behavior": [
+      "lamb=10 identity regularizer from trainscripts/object.sh and oce.py",
+      "determinant correction from released oce.py",
+      "object prompt expansion enabled by trainscripts/object.sh",
+      "official expansion order: all bare concepts, then per-concept extra templates"
+    ],
+    "final_paper_specification": [
+      "lambda_e=1000, lambda_0=50, lambda_r=1 from Appendix C object erasure",
+      "K0 is the COCO token second moment",
+      "heuristic semantic anchors",
+      "subspace erasure term -R(I-R_star)"
+    ],
+    "benchmark_specific_confuse5_choices": [
+      "three similar non-targets are C_n",
+      "fixed per-target anchors in anchors.json",
+      "matched 12500-row dataset and ResNet-50 exact top-1 evaluation",
+      "four-target 32-row hard smoke gate",
+      "legacy Original exact top-1 is conditionally reusable"
+    ],
+    "known_discrepancies": [
+      "repo implementation term lamb*W0W0T is absent from final-paper Appendix C Eq.35",
+      "official-repo determinant correction is not explicitly specified in the paper closed-form equation",
+      "official object.sh hyperparameters 2000/10/0 differ from Appendix C object hyperparameters 1000/50/1; Appendix C values are adopted"
+    ]
+  }
 }

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 HERE="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
-OUTPUT_ROOT="$HERE/outputs"
+OUTPUT_ROOT="$HERE/outputs/official_repo_primary_v1"
 PID_FILE="$OUTPUT_ROOT/detached.pid"
 EXIT_FILE="$OUTPUT_ROOT/detached.exit_code"
 LATEST_FILE="$OUTPUT_ROOT/detached.latest"
@@ -16,7 +16,7 @@ source "$LATEST_FILE"
 echo "PID: $pid"
 echo "Environment: $environment"
 echo "Python: $python"
-echo "Stage: ${stage:-edit}"
+echo "Stage: ${stage:-all}"
 echo "Started (UTC): $started_utc"
 echo "Log: $log"
 
@@ -57,11 +57,6 @@ fi
 
 PIPELINE="$HERE/pipeline.py"
 if [[ -x "$python" && -f "$PIPELINE" ]]; then
-    if [[ "${stage:-edit}" == "smoke" ]]; then
-        pipeline_output="$OUTPUT_ROOT/smoke"
-    else
-        pipeline_output="$OUTPUT_ROOT/evaluation"
-    fi
     echo "Pipeline progress:"
-    "$python" "$PIPELINE" status --output-root "$pipeline_output" || true
+    "$python" "$PIPELINE" status || true
 fi

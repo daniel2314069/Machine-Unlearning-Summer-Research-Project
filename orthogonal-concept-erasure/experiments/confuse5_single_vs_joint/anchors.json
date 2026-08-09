@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "policy": "final-paper heuristic semantic anchors",
+  "constraints": {
+    "same_high_level_semantic_category": true,
+    "related_but_noticeably_different": true,
+    "disjoint_from_group_targets_and_preservation_concepts": true,
+    "fixed_across_single_and_joint": true,
+    "effect_based_retuning_forbidden": true
+  },
+  "anchors": {
+    "golden retriever": "cocker spaniel",
+    "labrador retriever": "beagle",
+    "tabby": "lynx",
+    "tiger cat": "lion",
+    "orange": "banana",
+    "lemon": "pineapple",
+    "yawl": "canoe",
+    "lifeboat": "ferry",
+    "soccer ball": "basketball",
+    "volleyball": "baseball"
+  }
+}

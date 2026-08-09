@@ -1,89 +1,78 @@
 from __future__ import annotations
 
-import importlib.util
 import json
+import sys
 from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
-SPEC = importlib.util.spec_from_file_location("confuse5_runner", HERE / "run.py")
-assert SPEC and SPEC.loader
-RUNNER = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(RUNNER)
+sys.path.insert(0, str(HERE))
+
+import protocol  # noqa: E402
+import run  # noqa: E402
 
 
-def config() -> dict:
-    return {
-        "schema_version": 1,
-        "experiment_id": "test",
-        "shared": {
-            "base_model": "test/model",
-            "concept_type": "object",
-            "editable_modules": "unet.attn2.to_v",
-            "anchor_policy": {"kind": "per_target", "anchors": {"Alpha": "anchor a", "Beta": "anchor b"}},
-            "retain_policy": {"kind": "explicit_global", "concepts": ["global retain"]},
-            "oce": {
-                "erase_scale": 1.0, "preserve_global_scale": 0.5,
-                "preserve_concept_scale": 0.3, "lamb": 1.5,
-                "expand_prompts": False, "dtype": "float32", "seed": 42,
-                "device": "cuda:0",
-            },
-        },
-        "groups": [{
-            "id": "Group One", "concepts": ["Alpha", "Beta", "Gamma"],
-            "targets": ["Alpha", "Beta"], "similar_non_targets": ["Gamma"],
-        }],
+def test_primary_protocol_resolves_ten_single_and_five_joint() -> None:
+    config, anchors = protocol.load_protocol(HERE / "config.json")
+    specs = protocol.checkpoint_specs(config, anchors)
+    assert sum(item["mode"] == "single" for item in specs) == 10
+    assert sum(item["mode"] == "joint" for item in specs) == 5
+    assert all(item["retain_concepts"] for item in specs)
+    assert all(len(item["retain_concepts"]) == 3 for item in specs)
+
+
+def test_single_and_joint_reuse_identical_target_anchors() -> None:
+    config, anchors = protocol.load_protocol(HERE / "config.json")
+    specs = protocol.checkpoint_specs(config, anchors)
+    for group in config["groups"]:
+        joint = next(item for item in specs if item["group_id"] == group["id"] and item["mode"] == "joint")
+        singles = [item for item in specs if item["group_id"] == group["id"] and item["mode"] == "single"]
+        assert joint["anchors"] == [anchors[target] for target in group["targets"]]
+        assert [item["anchors"][0] for item in singles] == joint["anchors"]
+        assert all(item["retain_concepts"] == joint["retain_concepts"] for item in singles)
+
+
+def test_official_expansion_order_is_all_bare_then_extras() -> None:
+    config, _ = protocol.load_protocol(HERE / "config.json")
+    prompts = protocol.expanded_prompts(["alpha", "beta"], config)
+    assert prompts[:2] == ["alpha", "beta"]
+    assert prompts[2:7] == [
+        "image of alpha", "photo of alpha", "portrait of alpha",
+        "picture of alpha", "painting of alpha",
+    ]
+    assert prompts[7:] == [
+        "image of beta", "photo of beta", "portrait of beta",
+        "picture of beta", "painting of beta",
+    ]
+
+
+def test_locked_hyperparameters_are_not_legacy_parser_defaults() -> None:
+    config, _ = protocol.load_protocol(HERE / "config.json")
+    oce = config["oce"]
+    assert (oce["lambda_e"], oce["lambda_0"], oce["lambda_r"], oce["lamb_repo_regularizer"]) == (1000.0, 50.0, 1.0, 10.0)
+    assert (oce["lambda_e"], oce["lambda_0"], oce["lambda_r"], oce["lamb_repo_regularizer"]) != (1.0, 0.5, 0.3, 1.5)
+
+
+def test_checkpoint_plan_contains_full_provenance() -> None:
+    plan, config, anchors = run.build_plan(HERE / "config.json")
+    assert plan["resolved_config"] == config
+    assert plan["full_anchor_mapping"] == anchors
+    assert plan["single_count"] == 10
+    assert plan["joint_count"] == 5
+    assert plan["k0_path"].endswith("official_repo_primary_v1/artifacts/K0.pt")
+
+
+def test_anchor_file_is_exactly_the_approved_mapping() -> None:
+    payload = json.loads((HERE / "anchors.json").read_text(encoding="utf-8"))
+    assert payload["anchors"] == {
+        "golden retriever": "cocker spaniel",
+        "labrador retriever": "beagle",
+        "tabby": "lynx",
+        "tiger cat": "lion",
+        "orange": "banana",
+        "lemon": "pineapple",
+        "yawl": "canoe",
+        "lifeboat": "ferry",
+        "soccer ball": "basketball",
+        "volleyball": "baseball",
     }
-
-
-def write_config(tmp_path: Path, payload: dict) -> Path:
-    path = tmp_path / "config.json"
-    path.write_text(json.dumps(payload), encoding="utf-8")
-    return path
-
-
-def test_plan_has_two_single_and_one_joint_runs(tmp_path: Path) -> None:
-    path = write_config(tmp_path, config())
-    validated = RUNNER.load_and_validate(path)
-    plan = RUNNER.build_plan(validated, path, tmp_path / "outputs", None, "both")
-    assert [run["mode"] for run in plan["runs"]] == ["single", "single", "joint"]
-    assert plan["runs"][0]["resolved_anchors"] == ["anchor a"]
-    assert plan["runs"][2]["resolved_anchors"] == ["anchor a", "anchor b"]
-    assert plan["runs"][0]["evaluation_non_target_concepts"] == ["Beta", "Gamma"]
-    assert plan["runs"][2]["evaluation_non_target_concepts"] == ["Gamma"]
-    assert {tuple(run["retain_concepts"]) for run in plan["runs"]} == {("global retain",)}
-
-
-def test_conflicting_roles_are_rejected(tmp_path: Path) -> None:
-    payload = config()
-    payload["groups"][0]["similar_non_targets"] = ["Alpha", "Gamma"]
-    path = write_config(tmp_path, payload)
-    try:
-        RUNNER.load_and_validate(path)
-    except RUNNER.ConfigError as exc:
-        assert "conflicting" in str(exc)
-    else:
-        raise AssertionError("Expected conflicting roles to fail")
-
-
-def test_duplicate_normalized_concepts_are_rejected(tmp_path: Path) -> None:
-    payload = config()
-    payload["groups"][0]["concepts"] = ["Alpha", " alpha ", "Beta", "Gamma"]
-    path = write_config(tmp_path, payload)
-    try:
-        RUNNER.load_and_validate(path)
-    except RUNNER.ConfigError as exc:
-        assert "duplicate normalized" in str(exc)
-    else:
-        raise AssertionError("Expected duplicate concepts to fail")
-
-
-def test_oce_default_anchor_is_not_passed_as_a_blank_cli_value(tmp_path: Path) -> None:
-    payload = config()
-    payload["shared"]["anchor_policy"] = {"kind": "oce_default"}
-    path = write_config(tmp_path, payload)
-    validated = RUNNER.load_and_validate(path)
-    plan = RUNNER.build_plan(validated, path, tmp_path / "outputs", None, "joint")
-    command = RUNNER.oce_command(plan["runs"][0], validated["shared"])
-    assert "--guide_concepts" not in command
-    assert plan["runs"][0]["resolved_anchors"] == [" ", " "]

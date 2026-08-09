@@ -3,7 +3,7 @@ set -euo pipefail
 
 HERE="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PIPELINE="$HERE/pipeline.py"
-OUTPUT_ROOT="$HERE/outputs"
+OUTPUT_ROOT="$HERE/outputs/official_repo_primary_v1"
 PID_FILE="$OUTPUT_ROOT/detached.pid"
 EXIT_FILE="$OUTPUT_ROOT/detached.exit_code"
 LATEST_FILE="$OUTPUT_ROOT/detached.latest"
@@ -46,7 +46,7 @@ LOG_FILE="$OUTPUT_ROOT/detached_${timestamp}.log"
 printf 'running\n' > "$EXIT_FILE"
 
 if [[ "$#" -eq 0 ]]; then
-    pipeline_args=(edit --skip-existing)
+    pipeline_args=(all --skip-existing)
 else
     pipeline_args=("$@")
 fi

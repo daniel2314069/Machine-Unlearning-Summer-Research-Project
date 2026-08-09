@@ -1,2 +1,8 @@
 outputs/
 plan.json
+__pycache__/
+*.pyc
+.DS_Store
+archives/invalid_for_primary__pilot_default_config/*
+!archives/invalid_for_primary__pilot_default_config/invalidation_manifest.json
+!archives/invalid_for_primary__pilot_default_config/conditional_reusable_original_reference.json

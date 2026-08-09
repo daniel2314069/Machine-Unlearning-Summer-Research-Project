@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "status": "conditional_reusable_original_reference",
+  "reference_scope": "legacy Original SD exact top-1 only",
+  "source_resolved_plan": "evaluation/resolved_plan.json",
+  "source_resolved_plan_sha256": "d475c946546fd33faf9361577c20bdaa4c836c7a2e60500246c2149629094cf6",
+  "source_summary": "evaluation/aggregates/summary.json",
+  "source_summary_sha256": "5d143b4e60177924562ffe8bb757c98df6864e802a824db6ba78e1a757467086",
+  "source_shards_glob": "evaluation/evaluations/shards/original__*.json",
+  "source_manifests_glob": "evaluation/manifests/original__*.json",
+  "dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+  "row_count": 12500,
+  "class_count": 25,
+  "rows_per_class": 500,
+  "ordered_rows_verified_against_dataset": true,
+  "generation": {
+    "base_model": "CompVis/stable-diffusion-v1-4",
+    "scheduler": "PNDMScheduler",
+    "steps": 50,
+    "cfg": 7.5,
+    "resolution": [512, 512],
+    "dtype": "bfloat16",
+    "images_per_prompt": 1,
+    "generator_device": "cpu"
+  },
+  "classifier": {
+    "implementation": "torchvision_resnet50",
+    "resolved_weights": "IMAGENET1K_V2",
+    "weight_filename": "resnet50-11ad3fa6.pth",
+    "matching": "exact_normalized_category"
+  },
+  "available_metrics": ["exact_top1", "predicted_label", "predicted_index"],
+  "unavailable_metrics": ["target_probability", "raw_target_logit", "top5_labels", "top5_probabilities"],
+  "images_purged": true,
+  "reuse_conditions": [
+    "new config dataset hash and every ordered prompt/seed row match this reference",
+    "base model and complete generation settings match",
+    "pinned evaluator weights match",
+    "all four 32-row Original smoke PNG SHA-256 values match the archived manifests"
+  ],
+  "reuse_forbidden_until_canary_passes": true,
+  "invalid_edited_checkpoints_are_not_part_of_this_reference": true
+}

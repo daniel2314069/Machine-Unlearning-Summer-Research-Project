@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "status": "invalid_for_primary__pilot_default_config",
+  "scope": "all archived Single and Joint edited checkpoints, generations, evaluations, and aggregates",
+  "reason": "The edited checkpoints used parser-default OCE hyperparameters, a null-text anchor, and no object prompt expansion. Single erasure was not established, so the edited results are pilot diagnostics only.",
+  "archived_from": "experiments/confuse5_single_vs_joint/outputs",
+  "archived_to": "experiments/confuse5_single_vs_joint/archives/invalid_for_primary__pilot_default_config",
+  "original_paths": {
+    "edited_checkpoint_root": "experiments/confuse5_single_vs_joint/outputs/{group}/{single|joint}/",
+    "generation_evaluation_root": "experiments/confuse5_single_vs_joint/outputs/evaluation/",
+    "smoke_root": "experiments/confuse5_single_vs_joint/outputs/smoke/",
+    "diagnostic_report": "experiments/confuse5_single_vs_joint/analysis/REPORT_2026-08-09.md"
+  },
+  "archived_diagnostic_report": "analysis/REPORT_2026-08-09.md",
+  "legacy_config": {
+    "erase_scale": 1.0,
+    "preserve_global_scale": 0.5,
+    "preserve_concept_scale": 0.3,
+    "lamb": 1.5,
+    "anchor": "null text",
+    "expand_prompts": false
+  },
+  "dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+  "generation_counts": {
+    "original": 12500,
+    "single": 25000,
+    "joint": 12500,
+    "total": 50000
+  },
+  "checkpoint_hashes": {
+    "dogs/single/golden-retriever/weights.safetensors": "661cd1a217f514434659be687679b7f5e1a608f2e5431998ff646725659c317c",
+    "dogs/single/labrador-retriever/weights.safetensors": "ad210145f0724d5de480159c72a21ce18534e2b5d7e0f3f2fd188e498a41768c",
+    "dogs/joint/weights.safetensors": "4d1fdea730f394f02f135fcb762598ddfdfe0e0fcf46508a2a2b735c4527994e",
+    "cats/single/tabby/weights.safetensors": "8f0a0e28a11429d3a013e175f5d49492312199572c99d7faf04ea0183c962044",
+    "cats/single/tiger-cat/weights.safetensors": "d02776a8e3d2dbb03ba369801bc03bf0f058f004b3721ea7ecce1c6469c1a107",
+    "cats/joint/weights.safetensors": "6e0e51dc6d9266bbef50c0e4a3bed6b914871a5c2c6ac93e0c16eb3864eb6c7d",
+    "fruits/single/orange/weights.safetensors": "f8ee63a3691f3404e596ffbf82b208ec0f84ee87926d51d832cfc61f1e25c237",
+    "fruits/single/lemon/weights.safetensors": "648934d6e9a6d0d912eea7d9a7e24a675d7f73e67b0e614741d573f188826057",
+    "fruits/joint/weights.safetensors": "c71e8f84160489b0f337c55da674929266aeb77cd59b9e63c9cb23abd54761c3",
+    "boats/single/yawl/weights.safetensors": "265a85eb91b919b239d9c1ace7a888617831df4942fc277c9d9dca75c4c40a40",
+    "boats/single/lifeboat/weights.safetensors": "d3e83ad9fc9d127c1f85bbda7f75f2463c5a341852d34f46cd057c98f4b4402d",
+    "boats/joint/weights.safetensors": "0b6dded692db95e0ec669d68b5015da9a93a909ecd4856fc116fca4717430983",
+    "balls/single/soccer-ball/weights.safetensors": "fb94f361fd732eca323970c0e8ac31bfaffebacfa1ab008c402a77587638c1dd",
+    "balls/single/volleyball/weights.safetensors": "a2cc554516035750c28d8f57f3f19d7abeaa53ab8e1a365f0802250342911e98",
+    "balls/joint/weights.safetensors": "838a442f2334fc7b5db7cee23069c7992a62d598c5bf7478f386aeac7ccc8ea3"
+  },
+  "primary_aggregate_eligible": false,
+  "original_reference_exception": "See conditional_reusable_original_reference.json. Original SD generation is independent of the invalid edited checkpoint settings."
+}

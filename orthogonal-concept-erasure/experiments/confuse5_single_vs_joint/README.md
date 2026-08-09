@@ -1,218 +1,146 @@
-# Confuse5 single-vs-joint OCE baseline
+# Confuse5 Single-vs-Joint OCE — official-repo primary rerun
 
-This experiment compares independent Single OCE edits with group-wise Joint
-OCE edits. The existing `run.py` remains the checkpoint-building backend and
-calls `../../oce.py` without changing the OCE objective. `pipeline.py` adds
-planning, image generation, ImageNet ResNet-50 evaluation, aggregation, and a
-low-disk server workflow.
+This directory implements the gated rerun that asks one question: after a
+Single OCE edit demonstrably erases its target, does putting both similar
+targets from the same Confuse5 group into one Joint subspace cause additional
+target residual or collateral damage to the three designated similar
+non-targets?
 
-## Scientific protocol and current coverage
+The archived default-config run is not primary evidence. Its complete outputs
+are preserved under
+`archives/invalid_for_primary__pilot_default_config/`; the machine-readable
+invalidation and the separately conditional Original reference are the only
+archive files intended for version control.
 
-`config.json` records the five ImageNet-Confuse5 groups from Table 7 of
-*Forget Many, Forget Right*. Each group has two targets and three visually
-similar non-targets. Editing uses SD1.4, the 16 `attn2.to_v` modules, OCE's
-default null-text object anchor, and the existing group retain policy.
+## Provenance categories
 
-The repository dataset `../../../scapre/eval/datasets/imagenet-15.csv`
-contains 500 exact prompt/seed rows for the two targets and one preservation
-class in each group. Ten official preservation classes are absent:
+The resolved config keeps three sources separate:
 
-- Chesapeake Bay retriever, pug;
-- Siamese cat, Egyptian cat;
-- fig, Granny Smith;
-- catamaran, schooner;
-- rugby ball, ping-pong ball.
+- **Official released repository behavior:** `lamb=10`, the released
+  post-`UV^T` last-column determinant correction, object prompt expansion, and
+  the official expansion ordering (all bare concepts, then per-concept extra
+  templates).
+- **Final-paper specification:** Appendix C object values
+  `lambda_e=1000`, `lambda_0=50`, `lambda_r=1`, COCO token second moment, and
+  heuristic semantic anchors.
+- **Benchmark-specific Confuse5 choices:** the fixed `anchors.json`, the three
+  similar non-targets as local `C_n`, matched 12,500 rows, four-target gate,
+  and conditional reuse of legacy Original exact top-1.
 
-`--coverage partial` runs only these 15 classes. `--coverage complete` remains
-reserved for a future official CSV and is blocked until all 25 official
-classes are supplied with `--dataset-csv`.
+Parser defaults are forbidden. The known paper/repo discrepancies are retained
+in `config.json` and every checkpoint records a checkpoint-level primary
+versus paper-literal diagnostic. The primary is `lamb=10` with correction on;
+the diagnostic is `lamb=0` with correction off. There is no second 37,500-image
+paper-literal run.
 
-For internal exploratory analysis, the committed
-`datasets/imagenet-confuse5-derived-25.csv` adds the ten missing classes and is
-selected explicitly with `--coverage derived`. This is not represented as an
-official ScaPre dataset. It preserves the original 7,500 rows row-for-row,
-uses the same `an image of a {concept}` prompt pattern, and gives each missing
-class the ordered 500 seeds of the preservation class already available in the
-same group. The exact mapping and source/output hashes are recorded in
-`config.json`; `build_derived_dataset.sh` reproducibly rebuilds and validates
-the file.
+## Fixed anchors
 
-Generation is paired by exact CSV row across Original SD1.4, the corresponding
-Single checkpoint, and the group Joint checkpoint. Settings are explicit and
-shared: PNDM, 50 steps, CFG 7.5, 512x512, bfloat16, one image per prompt, and a
-fresh CPU generator seeded with the row's `evaluation_seed`.
+| Target | Anchor |
+|---|---|
+| golden retriever | cocker spaniel |
+| labrador retriever | beagle |
+| tabby | lynx |
+| tiger cat | lion |
+| orange | banana |
+| lemon | pineapple |
+| yawl | canoe |
+| lifeboat | ferry |
+| soccer ball | basketball |
+| volleyball | baseball |
 
-The partial scale is 30,000 images:
+Single and Joint checkpoints consume the same per-target mapping. Anchors are
+not included in local retain concepts and cannot be tuned from edit outcomes.
 
-- Original: 15 classes x 500 = 7,500;
-- 10 Single checkpoints x 3 available group classes x 500 = 15,000;
-- 5 Joint checkpoints x 3 available group classes x 500 = 7,500.
+## Strict stage order and stops
 
-The complete scale is 50,000 images. A generation stage refuses to start
-unless `--confirm-image-count` exactly matches its resolved plan.
-
-After a successful partial run, a derived run in the same output root can
-reuse the 60 matching completed jobs. It plans 50,000 images for safety
-confirmation but normally generates only the 40 newly required jobs (20,000
-images) because `--skip-existing` recognizes the existing per-job
-fingerprints.
-
-## Low-disk lifecycle
-
-The recommended `all` stage processes one model/concept job at a time. A
-formal job has 500 images. It generates those images, writes a complete
-per-image ResNet-50 result shard atomically, and only then deletes the 500 PNGs.
-Peak normal retention is therefore 500 images rather than 30,000 or 50,000.
-
-Manifest states are:
+`pipeline.py all --skip-existing` performs:
 
 ```text
-planned -> generating -> generated -> evaluated -> purged
+clean K0 -> anchor sanity -> 10 Single + 5 Joint checkpoints
+         -> Original reproduction canary -> four-target smoke
+         -> hard gate -> 37,500 edited images -> aggregate
 ```
 
-Purged manifests retain prompt, seed, path, image hash, classifier prediction,
-and timestamps. Failed or interrupted jobs keep their images. Purging only
-unlinks explicit manifest paths contained by this experiment's image root. A
-purge failure stops the run instead of allowing disk use to grow silently.
+The pipeline stops, writes a machine-readable gate, and never enters the full
+stage in exactly these cases:
 
-`--skip-existing` treats a matching evaluated/purged result as terminal, even
-though its PNGs are gone. `--overwrite` is the explicit replacement option and
-is mutually exclusive with `--skip-existing`. Use `--keep-images` to opt out of
-purging. A standalone `generate` command must include `--retain-images`, since
-images cannot be deleted before a later evaluation.
+1. an anchor produces at least 4/8 exact target labels;
+2. any newly rendered Original smoke PNG differs from its archived SHA-256;
+3. any of labrador retriever, tabby, yawl, or volleyball has
+   `Original correct - Single correct < 4` among its ordered first 32 rows.
 
-## Server commands
+Joint is measured but is not a smoke gate. Anchor, canary, and smoke PNGs are
+retained. Formal edited PNGs are removed only after their complete per-image
+metrics and hashes are durably saved.
 
-Run from the OCE repository root after activating the machine's environment:
+The formal stage generates no Original images. Once the 128-image canary
+passes, it loads the archived 25 × 500 exact top-1 shards. Legacy Original
+target probability, raw logit, and top-5 remain explicitly unavailable.
 
-```bash
-conda activate MU                  # GPU server
-# conda activate py310            # WSL alternative
+## GPU-server execution
 
-# Complete validation currently reports the ten missing classes and exits 2.
-python experiments/confuse5_single_vs_joint/pipeline.py plan \
-  --coverage complete
-
-# Available partial plan: total 30,000, peak retained 500.
-python experiments/confuse5_single_vs_joint/pipeline.py plan \
-  --coverage partial
-
-# Internal derived-25 plan: labeled derived, total 50,000, peak retained 500.
-python experiments/confuse5_single_vs_joint/pipeline.py plan \
-  --coverage derived
-
-# Existing checkpoint workflow only.
-./experiments/confuse5_single_vs_joint/launch_detached.sh edit \
-  --skip-existing
-
-# Real 12-image smoke test. It evaluates and purges successful PNGs, then
-# verifies that resume skips the completed work without regeneration.
-./experiments/confuse5_single_vs_joint/launch_detached.sh smoke \
-  --group dogs \
-  --single-target "golden retriever" \
-  --rows-per-concept 2 \
-  --purge-evaluated-images \
-  --skip-existing
-
-# Recommended partial run using the 15 completed checkpoints.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --start-at generate \
-  --coverage partial \
-  --confirm-image-count 30000 \
-  --purge-evaluated-images \
-  --skip-existing
-
-# After the partial run finishes, add the ten derived classes. Existing
-# partial jobs are reused; only 20,000 new images normally need generation.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --start-at generate \
-  --coverage derived \
-  --confirm-image-count 50000 \
-  --purge-evaluated-images \
-  --skip-existing
-
-# Complete run after obtaining the missing official rows.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --coverage complete \
-  --dataset-csv /path/to/official-confuse5-25.csv \
-  --confirm-image-count 50000 \
-  --purge-evaluated-images \
-  --skip-existing
-
-# Generation only deliberately retains images.
-./experiments/confuse5_single_vs_joint/launch_detached.sh generate \
-  --coverage partial \
-  --confirm-image-count 30000 \
-  --retain-images \
-  --skip-existing
-
-# Evaluate retained images and purge them after durable results are written.
-./experiments/confuse5_single_vs_joint/launch_detached.sh evaluate \
-  --coverage partial \
-  --purge-evaluated-images \
-  --skip-existing
-
-# Aggregate existing result shards only.
-./experiments/confuse5_single_vs_joint/launch_detached.sh aggregate \
-  --coverage partial
-
-# Resume generation/evaluation with bounded disk use.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --start-at generate \
-  --coverage partial \
-  --confirm-image-count 30000 \
-  --purge-evaluated-images \
-  --skip-existing
-
-# Resume from evaluation without generating.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --start-at evaluate \
-  --coverage partial \
-  --purge-evaluated-images \
-  --skip-existing
-
-# One partial group: 6,000 total images, peak retained 500.
-./experiments/confuse5_single_vs_joint/launch_detached.sh all \
-  --start-at generate \
-  --coverage partial \
-  --groups dogs \
-  --confirm-image-count 6000 \
-  --purge-evaluated-images \
-  --skip-existing
-```
-
-`launch_detached.sh` uses the active Conda environment's Python. With no
-arguments it preserves the old behavior and runs `edit --skip-existing`.
-After it prints its PID, the terminal/VPN may be disconnected. Inspect it with:
+Do not run model stages on the local Mac. On the GPU server:
 
 ```bash
+conda activate MU
+cd orthogonal-concept-erasure
+
+# Standard-library-only resolved plan (safe before launching the GPU job).
+python experiments/confuse5_single_vs_joint/pipeline.py plan
+
+# Recommended detached, strictly ordered run.
+./experiments/confuse5_single_vs_joint/launch_detached.sh all --skip-existing
+
+# Inspect the detached worker and gate/stage state.
 ./experiments/confuse5_single_vs_joint/status.sh
 ```
 
-## Outputs and metrics
+The launcher uses the active environment's `python`; it does not hard-code a
+Conda environment. Subprocess stages inherit that same `sys.executable`.
 
-```text
-outputs/evaluation/
-  resolved_plan.json
-  run_state.json
-  logs/events.jsonl
-  images/{original,single,joint}/...       # normally empty after success
-  manifests/<job-id>.json
-  evaluations/shards/<job-id>.json
-  evaluations/per_image.csv
-  evaluations/per_class.csv
-  aggregates/summary.json
-  aggregates/all_groups.csv
-  aggregates/groups/<group>.csv
+Individual recovery/inspection stages are also available:
+
+```bash
+python experiments/confuse5_single_vs_joint/pipeline.py k0 --skip-existing
+python experiments/confuse5_single_vs_joint/pipeline.py anchor-sanity --skip-existing
+python experiments/confuse5_single_vs_joint/pipeline.py checkpoints --skip-existing
+python experiments/confuse5_single_vs_joint/pipeline.py smoke --skip-existing
+python experiments/confuse5_single_vs_joint/pipeline.py formal --skip-existing
+python experiments/confuse5_single_vs_joint/pipeline.py aggregate
+python experiments/confuse5_single_vs_joint/pipeline.py status
 ```
 
-For every target, aggregation records Original, corresponding Single, and
-Joint target accuracy plus measured differences. Similar-non-target averages
-use only the three official preservation roles (one available in partial
-mode). The other designated target in a Single run is reported separately as
-`sibling_target_preservation`; it is not mixed into the official preservation
-average. The tables do not automatically claim success or failure.
+Failed K0/checkpoint artifacts are never resumed or overwritten; use a fresh
+namespace after investigating a failure. Completed formal job shards can be
+skipped by matching fingerprints.
 
-MSCOCO CLIP/FID is intentionally not part of this `all` stage. Any later
-general-generation evaluation must continue to use the repository-level
-evaluation reference registry and its first-1k screening gate.
+## Output contract
+
+All new artifacts live below `outputs/official_repo_primary_v1/`:
+
+```text
+resolved_pipeline_plan.json
+artifacts/K0.pt
+artifacts/K0.metadata.json
+anchor_sanity/{gate.json,per_image.json,images/...}
+checkpoints/<group>/{single/<target>,joint}/{weights.safetensors,metadata.json}
+checkpoint_summary.json
+original_canary/gate.json
+smoke/{gate.json,per_image.json,images/...}
+formal/resolved_plan.json
+formal/manifests/*.json
+formal/evaluations/{shards/*.json,per_class.csv,per_image.csv}
+formal/aggregates/{summary.json,target_residual.csv,
+                   similar_non_target_preservation.csv,
+                   sibling_target_secondary.csv}
+```
+
+Each edited image shard retains exact top-1, target probability, raw target
+logit, and top-5 labels/probabilities/logits. Primary reporting uses ResNet
+exact top-1. `Joint - Single` target residual above zero means worse Joint
+erasure; `Joint - Single` preservation below zero means additional Joint
+collateral damage. The sibling target is secondary only.
+
+Any later MSCOCO general-preservation run remains outside this pipeline and
+must use the repository-level evaluation-reference registry before reusing an
+Original CLIP/FID baseline.

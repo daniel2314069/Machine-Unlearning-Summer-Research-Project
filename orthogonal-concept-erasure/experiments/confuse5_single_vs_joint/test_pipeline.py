@@ -1,284 +1,77 @@
 from __future__ import annotations
 
-import importlib.util
-import csv
-import json
+import builtins
 import sys
 from pathlib import Path
 
 
 HERE = Path(__file__).resolve().parent
-SPEC = importlib.util.spec_from_file_location("confuse5_pipeline", HERE / "pipeline.py")
-assert SPEC and SPEC.loader
-PIPELINE = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(PIPELINE)
+sys.path.insert(0, str(HERE))
+
+import pipeline  # noqa: E402
+import protocol  # noqa: E402
 
 
-def test_repository_partial_plan_has_expected_coverage_and_counts(tmp_path: Path) -> None:
-    plan, _, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="partial",
-        raw_groups=None,
-    )
-    assert plan["coverage_status"] == "partial"
-    assert plan["execution_allowed"] is True
-    assert len(plan["coverage"]["available_classes"]) == 15
-    assert plan["coverage"]["missing_classes"] == [
-        "Chesapeake Bay retriever", "pug", "Siamese cat", "Egyptian cat",
-        "fig", "Granny Smith", "catamaran", "schooner", "rugby ball",
-        "ping-pong ball",
-    ]
-    assert len(plan["jobs"]) == 60
+def test_plan_has_exact_image_budget_and_hard_stops() -> None:
+    plan, _, _ = pipeline.build_plan(HERE / "config.json")
+    assert plan["dataset_row_count"] == 12500
+    assert plan["checkpoint_count"] == 15
     assert plan["image_counts"] == {
-        "total": 30000,
-        "original": 7500,
-        "single": 15000,
-        "joint": 7500,
-        "peak_retained_images_with_purge": 500,
+        "anchor_sanity_original": 80,
+        "smoke_original": 128,
+        "smoke_single": 128,
+        "smoke_joint": 128,
+        "formal_original_regenerated": 0,
+        "formal_single": 25000,
+        "formal_joint": 12500,
+        "formal_total_new_edited": 37500,
     }
-
-
-def test_complete_plan_is_blocked_while_official_rows_are_missing(tmp_path: Path) -> None:
-    plan, _, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="complete",
-        raw_groups=None,
-    )
-    assert plan["execution_allowed"] is False
-    try:
-        PIPELINE.require_execution_allowed(plan)
-    except PIPELINE.PipelineError as exc:
-        assert "missing=" in str(exc)
-    else:
-        raise AssertionError("Complete execution should be blocked")
-
-
-def test_synthetic_complete_25_class_plan_has_50000_images(tmp_path: Path) -> None:
-    config = json.loads((HERE / "config.json").read_text(encoding="utf-8"))
-    dataset = tmp_path / "complete.csv"
-    case_number = 0
-    with dataset.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(
-            handle, fieldnames=("case_number", "prompt", "class", "evaluation_seed")
-        )
-        writer.writeheader()
-        for group in config["groups"]:
-            for concept in group["concepts"]:
-                for index in range(500):
-                    writer.writerow({
-                        "case_number": case_number,
-                        "prompt": f"synthetic prompt for {concept}",
-                        "class": concept,
-                        "evaluation_seed": index,
-                    })
-                    case_number += 1
-    plan, _, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=dataset,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="complete",
-        raw_groups=None,
-    )
-    assert plan["coverage_status"] == "complete"
-    assert plan["execution_allowed"] is True
-    assert len(plan["jobs"]) == 100
-    assert plan["image_counts"]["total"] == 50000
-    assert plan["image_counts"]["peak_retained_images_with_purge"] == 500
-
-
-def test_committed_derived_plan_is_labeled_and_has_50000_images(tmp_path: Path) -> None:
-    plan, config, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="derived",
-        raw_groups=None,
-    )
-    assert plan["coverage_status"] == "derived"
-    assert plan["execution_allowed"] is True
-    assert plan["coverage"]["missing_classes"] == []
-    assert len(plan["jobs"]) == 100
-    assert plan["image_counts"]["total"] == 50000
-    assert plan["dataset_provenance"]["kind"] == "internal_analysis_not_official_scapre"
-    assert plan["dataset_sha256"] == config["evaluation"]["derived_dataset"]["derived_dataset_sha256"]
-
-
-def test_derived_rows_preserve_official_prefix_and_declared_seed_policy() -> None:
-    config = json.loads((HERE / "config.json").read_text(encoding="utf-8"))
-    source_path = (HERE / config["evaluation"]["dataset_csv"]).resolve()
-    derived_path = (HERE / config["evaluation"]["derived_dataset_csv"]).resolve()
-    source_rows, source_by_class = PIPELINE.load_dataset(source_path)
-    derived_rows, derived_by_class = PIPELINE.load_dataset(derived_path)
-    assert derived_rows[:len(source_rows)] == source_rows
-    seed_sources = config["evaluation"]["derived_dataset"]["seed_sources"]
-    for derived_class, source_class in seed_sources.items():
-        derived_class_rows = derived_by_class[PIPELINE.normalize(derived_class)]
-        source_class_rows = source_by_class[PIPELINE.normalize(source_class)]
-        assert [row["evaluation_seed"] for row in derived_class_rows] == [
-            row["evaluation_seed"] for row in source_class_rows
-        ]
-        assert {row["prompt"] for row in derived_class_rows} == {
-            f"an image of a {derived_class}"
-        }
-
-
-def test_one_group_partial_count_is_6000(tmp_path: Path) -> None:
-    plan, _, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="partial",
-        raw_groups=["dogs"],
-    )
-    assert len(plan["jobs"]) == 12
-    assert plan["image_counts"]["total"] == 6000
-
-
-def test_smoke_plan_is_12_images_and_three_models(tmp_path: Path) -> None:
-    plan, _, _ = PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "smoke",
-        coverage_mode="partial",
-        raw_groups=["dogs"],
-        rows_per_concept=2,
-        smoke=True,
-        smoke_single_target="golden retriever",
-    )
-    assert plan["image_counts"]["total"] == 12
-    assert {job["model_type"] for job in plan["jobs"]} == {"original", "single", "joint"}
-    assert {job["evaluated_concept"] for job in plan["jobs"]} == {
-        "golden retriever", "german shepherd",
-    }
-
-
-def test_image_confirmation_must_match_exact_count() -> None:
-    plan = {"image_counts": {"total": 30000}}
-    PIPELINE.require_image_confirmation(plan, 30000)
-    try:
-        PIPELINE.require_image_confirmation(plan, 29999)
-    except PIPELINE.PipelineError as exc:
-        assert "--confirm-image-count 30000" in str(exc)
-    else:
-        raise AssertionError("Mismatched confirmation should fail")
-
-
-class FakeImage:
-    def save(self, path: Path, format: str) -> None:
-        assert format == "PNG"
-        Path(path).write_bytes(b"synthetic-png")
-
-
-class FakeGenerator:
-    def activate(self, job: dict) -> None:
-        assert job["model_type"] == "original"
-
-    def generate_one(self, prompt: str, seed: int) -> FakeImage:
-        assert prompt
-        assert seed >= 0
-        return FakeImage()
-
-
-class FakeEvaluator:
-    def classify(self, paths: list[Path], concept: str) -> list[dict]:
-        return [
-            {
-                "image_path": str(path),
-                "expected_index": 1,
-                "expected_category": concept,
-                "predicted_index": 1,
-                "predicted_category": concept,
-                "correct": True,
-            }
-            for path in paths
-        ]
-
-
-def test_successful_evaluation_persists_results_then_purges_images(tmp_path: Path) -> None:
-    output_root = tmp_path / "evaluation"
-    rows = [
-        {
-            "case_number": index,
-            "prompt": "an image of alpha",
-            "class": "alpha",
-            "evaluation_seed": 100 + index,
-            "source_line": index + 2,
-        }
-        for index in range(2)
+    assert plan["hard_stops"] == [
+        "anchor_sanity_failure",
+        "original_reproduction_hash_mismatch",
+        "any_single_smoke_drop_below_4_of_32",
     ]
-    image_dir = output_root / "images" / "original" / "group" / "alpha"
-    job = {
-        "job_id": "original__group__alpha",
-        "job_fingerprint": "job-fingerprint",
-        "model_type": "original",
-        "group_id": "group",
-        "group_targets": ["alpha", "beta"],
-        "group_similar_non_targets": ["gamma"],
-        "single_target": None,
-        "target_concepts": [],
-        "evaluated_concept": "alpha",
-        "prompt_count": 2,
-        "rows": rows,
-        "checkpoint_path": None,
-        "checkpoint_metadata_path": None,
-        "image_dir": str(image_dir),
-        "manifest_path": str(output_root / "manifests" / "job.json"),
-        "result_path": str(output_root / "evaluations" / "shards" / "job.json"),
-    }
-    plan = {
-        "plan_fingerprint": "plan-fingerprint",
-        "generation": {"width": 512, "height": 512},
-        "classifier": {"implementation": "synthetic"},
-    }
-    PIPELINE.generate_job(
-        job, plan, FakeGenerator(), output_root=output_root,
-        skip_existing=False, overwrite=False,
-    )
-    assert len(list(image_dir.glob("*.png"))) == 2
-    result = PIPELINE.evaluate_job(
-        job, plan, FakeEvaluator(), output_root=output_root,
-        skip_existing=False, overwrite=False, purge=True,
-    )
-    assert result["accuracy"] == 1.0
-    assert result["images_purged"] is True
-    assert list(image_dir.glob("*.png")) == []
-    manifest = json.loads(Path(job["manifest_path"]).read_text(encoding="utf-8"))
-    assert manifest["status"] == "purged"
-    assert {item["image_status"] for item in manifest["items"]} == {"purged"}
 
 
-def test_plan_builder_does_not_import_model_libraries(tmp_path: Path, monkeypatch) -> None:
-    forbidden = {"torch", "diffusers", "torchvision", "safetensors"}
+def test_dataset_has_25_ordered_classes_of_500_rows() -> None:
+    config, _ = protocol.load_protocol(HERE / "config.json")
+    rows, by_class = pipeline.load_dataset(config)
+    assert len(rows) == 12500
+    assert len(by_class) == 25
+    assert {len(values) for values in by_class.values()} == {500}
+    assert rows == sorted(rows, key=lambda row: row["case_number"])
+    assert all(values == sorted(values, key=lambda row: row["case_number"]) for values in by_class.values())
+
+
+def test_plan_builder_never_imports_model_libraries(monkeypatch) -> None:
+    forbidden = {"torch", "torchvision", "diffusers", "safetensors", "PIL"}
     imported: list[str] = []
-    original_import = __import__
+    original_import = builtins.__import__
 
-    def guarded_import(name, *args, **kwargs):
-        if name.split(".")[0] in forbidden:
+    def guarded(name, *args, **kwargs):
+        root = name.split(".")[0]
+        if root in forbidden:
             imported.append(name)
-            raise AssertionError(f"Planning imported model library {name}")
+            raise AssertionError(f"model import during planning: {name}")
         return original_import(name, *args, **kwargs)
 
-    monkeypatch.setattr("builtins.__import__", guarded_import)
-    PIPELINE.build_pipeline_plan(
-        config_path=HERE / "config.json",
-        dataset_override=None,
-        output_root=tmp_path / "evaluation",
-        coverage_mode="partial",
-        raw_groups=["dogs"],
-    )
+    monkeypatch.setattr(builtins, "__import__", guarded)
+    plan, _, _ = pipeline.build_plan(HERE / "config.json")
+    assert plan["image_counts"]["formal_total_new_edited"] == 37500
     assert imported == []
 
 
-def test_managed_path_rejects_external_target(tmp_path: Path) -> None:
-    root = tmp_path / "images"
-    outside = tmp_path / "outside.png"
-    try:
-        PIPELINE.ensure_within(outside, root)
-    except PIPELINE.PipelineError as exc:
-        assert "outside managed image root" in str(exc)
-    else:
-        raise AssertionError("External deletion target should be rejected")
+def test_legacy_reference_is_separate_and_conditionally_reusable() -> None:
+    config, _ = protocol.load_protocol(HERE / "config.json")
+    reference, archive_root = pipeline._legacy_reference(config)
+    assert reference["status"] == "conditional_reusable_original_reference"
+    assert reference["invalid_edited_checkpoints_are_not_part_of_this_reference"] is True
+    assert archive_root.name == "invalid_for_primary__pilot_default_config"
+    assert reference["unavailable_metrics"] == [
+        "target_probability", "raw_target_logit", "top5_labels", "top5_probabilities"
+    ]
+
+
+def test_cli_exposes_only_protocol_stages() -> None:
+    for stage in ("plan", "k0", "anchor-sanity", "checkpoints", "smoke", "formal", "aggregate", "all", "status"):
+        assert pipeline.parse_args([stage]).stage == stage
