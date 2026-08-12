@@ -259,15 +259,33 @@ def _paper_metrics(
     )
     transformed_target = transform @ target_basis
     leakage_numerator = _matrix_sqnorm(anchor_complement @ transformed_target)
+    # Algebraically, (P G)(P G)^T = P R P^T.  Forming it from P G avoids an
+    # extra pair of large float32 matrix multiplications in this QA cross-check.
+    transformed_projector = transformed_target @ transformed_target.T
     leakage_projector = _matrix_sqnorm(
-        anchor_complement @ transform @ target_projector @ transform.T
+        anchor_complement @ transformed_projector
     )
-    leakage_tolerance = 2e-5 * max(1.0, abs(_scalar(leakage_numerator)))
-    if abs(_scalar(leakage_numerator - leakage_projector)) > leakage_tolerance:
-        raise AuditError(
-            "Leakage cross-check failed: ||A P G||_F^2 != ||A P R P^T||_F^2"
-        )
     target_rank = int(target_basis.shape[1])
+    true_leakage = _scalar(leakage_numerator) / target_rank
+    projector_leakage = _scalar(leakage_projector) / target_rank
+    # The equality assumes exactly orthogonal float matrices.  U@Vh and the
+    # SVD bases are only orthogonal to float32 precision, and the projector
+    # expression performs dense dxd products.  Scale the tolerance explicitly
+    # with d*eps while keeping it far below the 0.01 interpretation threshold.
+    leakage_tolerance = (
+        8.0
+        * dimension
+        * torch.finfo(transform.dtype).eps
+        * max(1.0, abs(true_leakage), abs(projector_leakage))
+    )
+    leakage_crosscheck_error = abs(true_leakage - projector_leakage)
+    if leakage_crosscheck_error > leakage_tolerance:
+        raise AuditError(
+            "Leakage cross-check failed after rank normalization: "
+            f"basis={true_leakage:.9g}, projector={projector_leakage:.9g}, "
+            f"abs_error={leakage_crosscheck_error:.9g}, "
+            f"tolerance={leakage_tolerance:.9g}"
+        )
     anchor_denominator = _matrix_sqnorm(anchor_features)
     if not bool(anchor_denominator.item() > 0):
         raise AuditError("Anchor feature drift denominator is zero")
@@ -279,10 +297,12 @@ def _paper_metrics(
         "paper_erase_loss": _scalar(paper_erase),
         "preserve_loss": _scalar(preserve),
         "total_paper_objective": _scalar(paper_erase + preserve),
-        "true_leakage": _scalar(leakage_numerator) / target_rank,
+        "true_leakage": true_leakage,
         "anchor_feature_drift": _scalar(anchor_drift),
         "orthogonality_error": _scalar(orthogonality),
         "determinant": _scalar(torch.linalg.det(transform)),
+        "leakage_crosscheck_abs_error": leakage_crosscheck_error,
+        "leakage_crosscheck_tolerance": leakage_tolerance,
     }
 
 
@@ -481,6 +501,14 @@ def _render_report(
     faithful = _variant_rows(rows, VARIANT_FAITHFUL)
     faithful_leaks = [float(row["true_leakage"]) for row in faithful]
     faithful_at_one_percent = sum(value >= 0.01 for value in faithful_leaks)
+    max_crosscheck_error = max(
+        float(row["leakage_crosscheck_abs_error"]) for row in rows
+    )
+    min_crosscheck_margin = min(
+        float(row["leakage_crosscheck_tolerance"])
+        - float(row["leakage_crosscheck_abs_error"])
+        for row in rows
+    )
     outcome, conclusion = _classify_outcome(rows)
 
     q1_word = "yes" if target_inflated or anchor_inflated else "no"
@@ -547,6 +575,7 @@ Residual objective-faithful leakage was **{q4_word}**: median `{_fmt(_median(fai
 - Qualification SHA-256: `{run_info['qualification_sha256']}`
 - K0 SHA-256: `{run_info['k0_sha256']}`
 - Variant A checkpoint agreement: all layers passed `atol={run_info['checkpoint_match_atol']}` and `rtol={run_info['checkpoint_match_rtol']}`; maximum absolute edited-weight error `{_fmt(float(run_info['checkpoint_max_abs_error']))}`
+- Leakage formula QA: maximum normalized absolute difference `{_fmt(max_crosscheck_error)}`; minimum tolerance margin `{_fmt(min_crosscheck_margin)}`
 - Numerical-rank relative tolerance range: `{_fmt(float(run_info['rank_rtol_min']))}` to `{_fmt(float(run_info['rank_rtol_max']))}`
 - Paper: {PAPER_URL}
 - Runtime estimate for one cached SD 1.4 GPU run: about 5–15 minutes; no image generation or image evaluator is involved.

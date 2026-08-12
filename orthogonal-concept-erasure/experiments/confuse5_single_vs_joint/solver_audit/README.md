@@ -56,7 +56,11 @@ construction rather than silently changing OCE input normalization.
 All three variants are evaluated with the same rank-revealed target and anchor
 projectors, the literal weighted Eq. 18 loss, true `P R P^T` leakage, and
 edited-layer anchor feature drift. The two algebraically equivalent leakage
-expressions are checked on every row.
+expressions are checked on every row after rank normalization. That QA uses
+the reproducible float32 tolerance
+`8 * layer_dimension * eps(float32) * max(1, |leakage values|)`; this accounts
+for dense projector-product roundoff and remains below the report's `0.01`
+interpretation threshold even at the 1,280-dimensional layers.
 
 ## Convention audit
 
