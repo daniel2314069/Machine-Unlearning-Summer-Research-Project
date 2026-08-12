@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import importlib.util
 import json
 import math
 import platform
@@ -21,9 +22,45 @@ from typing import Any, Iterable, Mapping, Sequence
 
 HERE = Path(__file__).resolve().parent
 EXACT_CONTROL_ROOT = HERE.parent
-sys.path.insert(0, str(EXACT_CONTROL_ROOT))
+EXACT_CONTROL_RUNNER = EXACT_CONTROL_ROOT / "run.py"
+EXACT_CONTROL_MODULE_NAME = "_confuse5_exact_orthogonal_control_runner"
 
-import run as exact_control  # noqa: E402
+
+def _load_exact_control_runner() -> Any:
+    """Load the parent runner without claiming the ambiguous module name `run`.
+
+    The parent temporarily needs its own bare ``import run`` to resolve to the
+    experiment-level checkpoint builder.  Preserve any pre-existing module of
+    that name while the uniquely named parent module initializes.
+    """
+    existing = sys.modules.get(EXACT_CONTROL_MODULE_NAME)
+    if existing is not None:
+        return existing
+    spec = importlib.util.spec_from_file_location(
+        EXACT_CONTROL_MODULE_NAME, EXACT_CONTROL_RUNNER
+    )
+    if spec is None or spec.loader is None:
+        raise ImportError(
+            f"Cannot create an import spec for {EXACT_CONTROL_RUNNER}"
+        )
+    module = importlib.util.module_from_spec(spec)
+    previous_run = sys.modules.pop("run", None)
+    sys.modules[EXACT_CONTROL_MODULE_NAME] = module
+    try:
+        spec.loader.exec_module(module)
+    except BaseException:
+        sys.modules.pop(EXACT_CONTROL_MODULE_NAME, None)
+        raise
+    finally:
+        # Do not leave the parent's experiment-level `run` alias in global
+        # module state, and do not overwrite a caller's pre-existing alias.
+        sys.modules.pop("run", None)
+        if previous_run is not None:
+            sys.modules["run"] = previous_run
+    return module
+
+
+exact_control = _load_exact_control_runner()
 
 
 protocol = exact_control.protocol
