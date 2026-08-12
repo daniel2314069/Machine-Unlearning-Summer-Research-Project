@@ -129,3 +129,9 @@ objective-faithful group-layer matrices, counts as a multi-layer residual gap;
 `1e-4` is the near-zero threshold. A one-percentage-point median leakage change
 is the threshold used for the words “material” in Q2/Q3. The CSV always retains
 the unrounded values so these labels can be audited.
+
+The follow-up float64 oracle-like feasibility control lives in
+[`exact_orthogonal_control/`](exact_orthogonal_control/). It asks for the
+preservation-optimal orthogonal transform under an exact target-subspace to
+anchor-subspace mapping constraint; it is not an AFR implementation or a new
+OCE variant.
