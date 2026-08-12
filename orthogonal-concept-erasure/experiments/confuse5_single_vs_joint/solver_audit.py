@@ -501,6 +501,8 @@ def _render_report(
     faithful = _variant_rows(rows, VARIANT_FAITHFUL)
     faithful_leaks = [float(row["true_leakage"]) for row in faithful]
     faithful_at_one_percent = sum(value >= 0.01 for value in faithful_leaks)
+    orthogonality_values = [float(row["orthogonality_error"]) for row in rows]
+    determinant_magnitudes = [abs(float(row["determinant"])) for row in rows]
     max_crosscheck_error = max(
         float(row["leakage_crosscheck_abs_error"]) for row in rows
     )
@@ -548,6 +550,10 @@ All checks passed. `tr(P^T M)` at `P=U V^T` was `{_fmt(float(synthetic['procrust
 {chr(10).join(summary_lines)}
 
 Leakage is `||(I-R*) P G||F^2 / r_t`. The cross-check `||(I-R*) P R P^T||F^2 / r_t` agrees within the configured numerical tolerance. Anchor drift means only **anchor feature drift at the edited layer**.
+
+### Numerical QA caveat
+
+The float32 SVD transforms have `||P^T P-I||F` from `{_fmt(min(orthogonality_values))}` to `{_fmt(max(orthogonality_values))}`. Their determinant magnitudes range from `{_fmt(min(determinant_magnitudes))}` to `{_fmt(max(determinant_magnitudes))}` rather than exactly one; determinants multiply small singular-value errors across 320–1,280 dimensions and are especially sensitive here. The direct orthogonality residual is therefore the more interpretable numerical check. This finite-precision caveat does not approach the scale of Variant C leakage (minimum `{_fmt(min(faithful_leaks))}`), so it does not change the Outcome B classification.
 
 ## Answers
 
