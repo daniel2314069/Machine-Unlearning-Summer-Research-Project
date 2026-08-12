@@ -103,3 +103,8 @@ experiments/confuse5_single_vs_joint/solver_audit/exact_orthogonal_control/REPOR
 Expected runtime with cached SD 1.4, K0, qualification, and primary artifacts
 is approximately 15–45 minutes on one GPU. Float64 SVD of the large complement
 block dominates runtime; there is no diffusion inference.
+
+The anchor-minimum caveat-closing control lives in
+[`anchor_min_control/`](anchor_min_control/). It uses the same exact feasible
+family but directly minimizes anchor feature drift, while evaluating frozen-S
+preservation separately.
