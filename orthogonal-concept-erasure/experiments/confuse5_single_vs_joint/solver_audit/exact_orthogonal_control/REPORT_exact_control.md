@@ -75,6 +75,8 @@ Statement A is confirmed: equal 12-dimensional ranks make exact orthogonal targe
 
 Statement B is the actual decision test: whether that exact mapping has a consistent, substantial preservation or anchor-feature cost. The preregistered rule assigns D2 only if a material penalty occurs in at least 36/48 layers and all three group medians; D1 requires clearly small effects, while heterogeneous intermediate evidence is D3. Under that rule, the result is **Outcome D2 — Exact orthogonal mapping has a clear preservation cost**.
 
+The D2 trigger in these data is specifically **anchor-feature drift**, not the frozen `S` preservation loss: 45/48 layers have a material anchor-drift increase, whereas 0/48 have a material `S`-loss increase and the normalized `S` distortion decreases in all 48 layers. These findings are not contradictory because the frozen protocol sets `anchor_in_local_retain=false`, so the anchor feature matrix `Y=WC*` is not itself included in `S`. The control therefore shows that the `S`-optimal exact mapper moves the measured anchor features substantially. It does not solve a separate optimization that minimizes anchor drift over the exact-feasible family, so the D2 conclusion is scoped to the preregistered preservation/anchor-feature decision rule used here.
+
 ## Reproducibility and QA
 
 - CSV: `results_exact_control.csv` (96 rows = 48 cases x 2 controls)
