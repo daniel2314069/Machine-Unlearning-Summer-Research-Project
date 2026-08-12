@@ -144,3 +144,11 @@ collateral damage. The sibling target is secondary only.
 Any later MSCOCO general-preservation run remains outside this pipeline and
 must use the repository-level evaluation-reference registry before reusing an
 Original CLIP/FID baseline.
+
+## AFR follow-up
+
+The Outcome-E1 follow-up is isolated under [`afr/`](afr/). It implements the
+float64 C/F/G matrix QA, mandatory pure residual-projection ablation, and the
+conditional 1,800-image balls-only smoke. The runner does not alter this
+official OCE pipeline and cannot enter image generation unless its matrix gate
+returns `AFR-GO`.
