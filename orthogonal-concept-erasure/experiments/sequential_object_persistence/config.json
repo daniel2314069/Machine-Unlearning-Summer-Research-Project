@@ -1,0 +1,54 @@
+{
+  "experiment_name": "sequential_oce_object_persistence_v1",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "device": "cuda:0",
+  "cg_path": "../../Cg.pt",
+  "targets": [
+    {"target": "airplane", "anchor": "sky"},
+    {"target": "automobile", "anchor": "truck"},
+    {"target": "bird", "anchor": "cat"},
+    {"target": "cat", "anchor": "dog"},
+    {"target": "deer", "anchor": "horse"},
+    {"target": "dog", "anchor": "cat"},
+    {"target": "frog", "anchor": "bird"},
+    {"target": "horse", "anchor": "deer"},
+    {"target": "ship", "anchor": "airplane"},
+    {"target": "truck", "anchor": "ship"}
+  ],
+  "qualification": {
+    "candidates": ["elephant", "bicycle", "bus", "lion", "bear", "qualification"],
+    "images_per_candidate": 20,
+    "minimum_top1_accuracy": 0.5
+  },
+  "oce": {
+    "erase_scale": 1000.0,
+    "preserve_global_scale": 50.0,
+    "preserve_concept_scale": 1.0,
+    "lamb": 10.0,
+    "expand_prompts": true,
+    "always_preserve_current_anchor": true,
+    "edit_dtype": "float32"
+  },
+  "generation": {
+    "images_per_concept": 100,
+    "seed_start": 42,
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "batch_size": 4,
+    "prompt_template": "a photo of the {concept}",
+    "scheduler": "PNDMScheduler"
+  },
+  "evaluation": {
+    "cifar_class_text_template": "photo of a {concept}",
+    "retain_class_text_template": "photo of a {concept}",
+    "batch_size": 16,
+    "material_change_threshold": 0.1
+  },
+  "storage": {
+    "image_retention": "delete-after-eval"
+  }
+}
