@@ -1,0 +1,736 @@
+{
+  "schema_version": 1,
+  "status": "resolved",
+  "matrix_gate_sha256": "c8c3d7af86f35be2c7f03a98adc2361225287674f3f0efed946c2504b08fe901",
+  "variants": [
+    "C_objective_faithful",
+    "F_pure_residual_projection",
+    "G_full_afr"
+  ],
+  "alpha": 1.0,
+  "targets": [
+    "soccer ball",
+    "volleyball"
+  ],
+  "matched_anchors": {
+    "soccer ball": "basketball",
+    "volleyball": "baseball"
+  },
+  "similar_non_targets": [
+    "tennis ball",
+    "rugby ball",
+    "ping-pong ball"
+  ],
+  "jobs": [
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "target",
+      "concept": "soccer ball",
+      "extra_labels": [
+        "basketball"
+      ],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "ac46d7a4ffce2f44dffb3c22f74dd90432c5a3db34315d6a3e1512046e6d6fba",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__target__soccer-ball",
+      "job_fingerprint": "e794840bf5be0f6396e9ec7a9487aaf2f1e4a29c2cc9a413c37a0e14f2c0cccf",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/target/soccer-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__target__soccer-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__target__soccer-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "target",
+      "concept": "volleyball",
+      "extra_labels": [
+        "baseball"
+      ],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "3ef71cda98b490fd1c121cb7a4814f935a06ae00e110553eae276259bd5dd61a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__target__volleyball",
+      "job_fingerprint": "4dcf9801bbb3dedcbbe66178be5bb2c7280527c3e34f8df938bd03fa81806258",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/target/volleyball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__target__volleyball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__target__volleyball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "similar_non_target",
+      "concept": "tennis ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "250369fda1f3e07e9b61dbb2ad10762928bef23fb6c0cbfc507d611407a7c7ed",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__similar_non_target__tennis-ball",
+      "job_fingerprint": "d11713a7be225dd64aac225d6e389f85e43583d46c5893852870b4a9cae2724e",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/tennis-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__similar_non_target__tennis-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__similar_non_target__tennis-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "similar_non_target",
+      "concept": "rugby ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "621f070f1d46fc83ae4c78b5a8fe12ed659aceb33cbca023f7e249093d74d80a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__similar_non_target__rugby-ball",
+      "job_fingerprint": "61065a73fe124bebd4216fbb573b4bcd92df18f9595c1ba142276415a1a688ad",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__similar_non_target__rugby-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__similar_non_target__rugby-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "similar_non_target",
+      "concept": "ping-pong ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "cb5e6ce3935d4ffce7e8763ce16420493fd041a704f86e118f44610f5c26f2fa",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__similar_non_target__ping-pong-ball",
+      "job_fingerprint": "5d064a9e4e69bad9aeb8695a41a0ce09d597360c951c30108553a2441f3c01b0",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/ping-pong-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__similar_non_target__ping-pong-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__similar_non_target__ping-pong-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "anchor",
+      "concept": "basketball",
+      "extra_labels": [],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "1511332cca3f98b44dd467c4950162216ddb758ca8a2a2f7aaecc9c388b4a01b",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__anchor__basketball",
+      "job_fingerprint": "6e0859e05f7d62e0137a497b4c2c243536b18ad277f85c4683488197e48de604",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__anchor__basketball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__anchor__basketball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "C_objective_faithful",
+      "role": "anchor",
+      "concept": "baseball",
+      "extra_labels": [],
+      "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "ordered_rows_sha256": "60431686c2f6043f77cabd1e15c063290a2c17c815955e8d86e68dbf01ed9fd6",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "C_objective_faithful__anchor__baseball",
+      "job_fingerprint": "1bb3403c4490c068c9564ac042b78f85c5d02220369a056b143aef63746142f0",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/C_objective_faithful__anchor__baseball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/C_objective_faithful__anchor__baseball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "target",
+      "concept": "soccer ball",
+      "extra_labels": [
+        "basketball"
+      ],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "ac46d7a4ffce2f44dffb3c22f74dd90432c5a3db34315d6a3e1512046e6d6fba",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__target__soccer-ball",
+      "job_fingerprint": "e1e4ea47073dd84dc4b266c5fd192aea262e85eb5c94ef884184cf2553c035cd",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/target/soccer-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__target__soccer-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__target__soccer-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "target",
+      "concept": "volleyball",
+      "extra_labels": [
+        "baseball"
+      ],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "3ef71cda98b490fd1c121cb7a4814f935a06ae00e110553eae276259bd5dd61a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__target__volleyball",
+      "job_fingerprint": "88a429dc2848faefd2ac99819bfc6ec22f4e9718deec24ed99c55eee012009a8",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/target/volleyball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__target__volleyball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__target__volleyball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "similar_non_target",
+      "concept": "tennis ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "250369fda1f3e07e9b61dbb2ad10762928bef23fb6c0cbfc507d611407a7c7ed",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__similar_non_target__tennis-ball",
+      "job_fingerprint": "c1fb066ac05820ad4af31bcb89f004cb94f9462257055fe57856a9da8d8be554",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/similar_non_target/tennis-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__similar_non_target__tennis-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__similar_non_target__tennis-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "similar_non_target",
+      "concept": "rugby ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "621f070f1d46fc83ae4c78b5a8fe12ed659aceb33cbca023f7e249093d74d80a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__similar_non_target__rugby-ball",
+      "job_fingerprint": "643b8040018f99e5f6d4a95fbbde761a27c2063a1bd2a700cf0fc0765dad5f00",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/similar_non_target/rugby-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__similar_non_target__rugby-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__similar_non_target__rugby-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "similar_non_target",
+      "concept": "ping-pong ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "cb5e6ce3935d4ffce7e8763ce16420493fd041a704f86e118f44610f5c26f2fa",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__similar_non_target__ping-pong-ball",
+      "job_fingerprint": "47fd70325940fcc270be6256c7fac0032a11f4f583c662c4bd496f2534577b16",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/similar_non_target/ping-pong-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__similar_non_target__ping-pong-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__similar_non_target__ping-pong-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "anchor",
+      "concept": "basketball",
+      "extra_labels": [],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "1511332cca3f98b44dd467c4950162216ddb758ca8a2a2f7aaecc9c388b4a01b",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__anchor__basketball",
+      "job_fingerprint": "17303fb6a98ed39799b88a5e759f6b67471afc67c4cc387fe217315118419927",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__anchor__basketball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__anchor__basketball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "F_pure_residual_projection",
+      "role": "anchor",
+      "concept": "baseball",
+      "extra_labels": [],
+      "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "ordered_rows_sha256": "60431686c2f6043f77cabd1e15c063290a2c17c815955e8d86e68dbf01ed9fd6",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "F_pure_residual_projection__anchor__baseball",
+      "job_fingerprint": "4d294bce12cf5eb76ee17f275e9fcd0347f58d84bfc7e9ff0fba9f45ca58a8be",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/F_pure_residual_projection__anchor__baseball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/F_pure_residual_projection__anchor__baseball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "target",
+      "concept": "soccer ball",
+      "extra_labels": [
+        "basketball"
+      ],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "ac46d7a4ffce2f44dffb3c22f74dd90432c5a3db34315d6a3e1512046e6d6fba",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__target__soccer-ball",
+      "job_fingerprint": "03eb53a91bc99c94d7deac3822670706213ed28abde63548c3e4cfcdbfc5f78f",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/target/soccer-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__target__soccer-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__target__soccer-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "target",
+      "concept": "volleyball",
+      "extra_labels": [
+        "baseball"
+      ],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "3ef71cda98b490fd1c121cb7a4814f935a06ae00e110553eae276259bd5dd61a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__target__volleyball",
+      "job_fingerprint": "38dea718a12cb00d33312b785f735388146c9d1e730d929b85b2b698b249998c",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/target/volleyball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__target__volleyball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__target__volleyball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "similar_non_target",
+      "concept": "tennis ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "250369fda1f3e07e9b61dbb2ad10762928bef23fb6c0cbfc507d611407a7c7ed",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__similar_non_target__tennis-ball",
+      "job_fingerprint": "66d81151eb4526d03496cc015a0d37ebce6da793bc7606a48ca2ae82d1ac3f50",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__similar_non_target__tennis-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__similar_non_target__tennis-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "similar_non_target",
+      "concept": "rugby ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "621f070f1d46fc83ae4c78b5a8fe12ed659aceb33cbca023f7e249093d74d80a",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__similar_non_target__rugby-ball",
+      "job_fingerprint": "b000df863890907032d8914515439d96828f7b8c9c69e3f53c4312398c9e3304",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/rugby-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__similar_non_target__rugby-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__similar_non_target__rugby-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "similar_non_target",
+      "concept": "ping-pong ball",
+      "extra_labels": [],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "cb5e6ce3935d4ffce7e8763ce16420493fd041a704f86e118f44610f5c26f2fa",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__similar_non_target__ping-pong-ball",
+      "job_fingerprint": "af1cfce1c05c15cee6c75be55364b57e0f835b1d91ad1f9d7ded757f76bccb46",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__similar_non_target__ping-pong-ball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__similar_non_target__ping-pong-ball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "anchor",
+      "concept": "basketball",
+      "extra_labels": [],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "1511332cca3f98b44dd467c4950162216ddb758ca8a2a2f7aaecc9c388b4a01b",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__anchor__basketball",
+      "job_fingerprint": "ffa0252250a6f59c5c9f5776b7a860c4304d443d9fe09c362582b3ee5a7ddb1f",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__anchor__basketball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__anchor__basketball.json"
+    },
+    {
+      "experiment": "afr_balls_smoke_v1",
+      "variant": "G_full_afr",
+      "role": "anchor",
+      "concept": "baseball",
+      "extra_labels": [],
+      "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "ordered_rows_sha256": "60431686c2f6043f77cabd1e15c063290a2c17c815955e8d86e68dbf01ed9fd6",
+      "generation": {
+        "scheduler": "PNDMScheduler",
+        "num_inference_steps": 50,
+        "guidance_scale": 7.5,
+        "height": 512,
+        "width": 512,
+        "images_per_prompt": 1,
+        "generator_device": "cpu"
+      },
+      "classifier": {
+        "implementation": "torchvision_resnet50",
+        "weights_enum": "IMAGENET1K_V2",
+        "expected_weight_filename": "resnet50-11ad3fa6.pth",
+        "matching": "exact_normalized_category",
+        "batch_size": 32,
+        "top_k": 5,
+        "save_target_probability": true,
+        "save_raw_target_logit": true
+      },
+      "job_id": "G_full_afr__anchor__baseball",
+      "job_fingerprint": "cdfc97ce2ea46c7074c987e85ad97a8d666f6d209410a0d8edba957410a72958",
+      "image_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball",
+      "manifest_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/manifests/G_full_afr__anchor__baseball.json",
+      "result_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations/G_full_afr__anchor__baseball.json"
+    }
+  ],
+  "new_images_per_variant": 600,
+  "total_new_images": 1800,
+  "new_original_images": 0,
+  "lpips_fixed_original_pairs_per_anchor_per_variant": 8,
+  "created_at": "2026-08-13T02:04:28.173203+00:00"
+}

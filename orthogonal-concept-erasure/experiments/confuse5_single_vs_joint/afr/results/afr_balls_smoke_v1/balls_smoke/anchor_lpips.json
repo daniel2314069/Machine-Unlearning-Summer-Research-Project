@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "implementation": "lpips==0.1.4 LPIPS(net='alex')",
+  "new_original_images": 0,
+  "pair_count": 48,
+  "items": [
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 6819,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006003_seed-6819.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006003_seed-6819.png",
+      "lpips": 0.301972895860672
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 36342,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006002_seed-36342.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006002_seed-36342.png",
+      "lpips": 0.1244647204875946
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 59595,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006006_seed-59595.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006006_seed-59595.png",
+      "lpips": 0.13192620873451233
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 66248,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006004_seed-66248.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006004_seed-66248.png",
+      "lpips": 0.09966684877872467
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 71892,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006001_seed-71892.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006001_seed-71892.png",
+      "lpips": 0.25029394030570984
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 73004,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006005_seed-73004.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006005_seed-73004.png",
+      "lpips": 0.12972980737686157
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 75288,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006000_seed-75288.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006000_seed-75288.png",
+      "lpips": 0.08072005212306976
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "basketball",
+      "evaluation_seed": 90207,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006007_seed-90207.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/basketball/case-006007_seed-90207.png",
+      "lpips": 0.7677229642868042
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 5733,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006501_seed-5733.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006501_seed-5733.png",
+      "lpips": 0.43906065821647644
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 8488,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006506_seed-8488.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006506_seed-8488.png",
+      "lpips": 0.10684624314308167
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 19744,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006505_seed-19744.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006505_seed-19744.png",
+      "lpips": 0.08277362585067749
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 36128,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006507_seed-36128.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006507_seed-36128.png",
+      "lpips": 0.5356484651565552
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 43455,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006500_seed-43455.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006500_seed-43455.png",
+      "lpips": 0.37078505754470825
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 53389,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006502_seed-53389.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006502_seed-53389.png",
+      "lpips": 0.30093371868133545
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 55777,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006503_seed-55777.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006503_seed-55777.png",
+      "lpips": 0.2473406195640564
+    },
+    {
+      "variant": "C_objective_faithful",
+      "anchor": "baseball",
+      "evaluation_seed": 81938,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006504_seed-81938.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/anchor/baseball/case-006504_seed-81938.png",
+      "lpips": 0.23902204632759094
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 6819,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006003_seed-6819.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006003_seed-6819.png",
+      "lpips": 0.14956793189048767
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 36342,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006002_seed-36342.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006002_seed-36342.png",
+      "lpips": 0.07433275133371353
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 59595,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006006_seed-59595.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006006_seed-59595.png",
+      "lpips": 0.06631600856781006
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 66248,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006004_seed-66248.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006004_seed-66248.png",
+      "lpips": 0.0466475635766983
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 71892,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006001_seed-71892.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006001_seed-71892.png",
+      "lpips": 0.029982810840010643
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 73004,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006005_seed-73004.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006005_seed-73004.png",
+      "lpips": 0.2346131056547165
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 75288,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006000_seed-75288.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006000_seed-75288.png",
+      "lpips": 0.028287123888731003
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "basketball",
+      "evaluation_seed": 90207,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006007_seed-90207.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/basketball/case-006007_seed-90207.png",
+      "lpips": 0.45989349484443665
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 5733,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006501_seed-5733.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006501_seed-5733.png",
+      "lpips": 0.03863565996289253
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 8488,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006506_seed-8488.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006506_seed-8488.png",
+      "lpips": 0.08421999961137772
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 19744,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006505_seed-19744.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006505_seed-19744.png",
+      "lpips": 0.024861864745616913
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 36128,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006507_seed-36128.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006507_seed-36128.png",
+      "lpips": 0.32481977343559265
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 43455,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006500_seed-43455.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006500_seed-43455.png",
+      "lpips": 0.2935327887535095
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 53389,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006502_seed-53389.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006502_seed-53389.png",
+      "lpips": 0.1460028737783432
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 55777,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006503_seed-55777.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006503_seed-55777.png",
+      "lpips": 0.12932200729846954
+    },
+    {
+      "variant": "F_pure_residual_projection",
+      "anchor": "baseball",
+      "evaluation_seed": 81938,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006504_seed-81938.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/F_pure_residual_projection/anchor/baseball/case-006504_seed-81938.png",
+      "lpips": 0.1688852608203888
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 6819,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006003_seed-6819.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006003_seed-6819.png",
+      "lpips": 0.20790310204029083
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 36342,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006002_seed-36342.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006002_seed-36342.png",
+      "lpips": 0.032392535358667374
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 59595,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006006_seed-59595.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006006_seed-59595.png",
+      "lpips": 0.007605467922985554
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 66248,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006004_seed-66248.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006004_seed-66248.png",
+      "lpips": 0.038874998688697815
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 71892,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006001_seed-71892.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006001_seed-71892.png",
+      "lpips": 0.10253296792507172
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 73004,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006005_seed-73004.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006005_seed-73004.png",
+      "lpips": 0.10963870584964752
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 75288,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006000_seed-75288.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006000_seed-75288.png",
+      "lpips": 0.019792526960372925
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "basketball",
+      "evaluation_seed": 90207,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/soccer-ball/case-006007_seed-90207.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/basketball/case-006007_seed-90207.png",
+      "lpips": 0.30329328775405884
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 5733,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006501_seed-5733.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006501_seed-5733.png",
+      "lpips": 0.01734943315386772
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 8488,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006506_seed-8488.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006506_seed-8488.png",
+      "lpips": 0.02777719497680664
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 19744,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006505_seed-19744.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006505_seed-19744.png",
+      "lpips": 0.012418876402080059
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 36128,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006507_seed-36128.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006507_seed-36128.png",
+      "lpips": 0.24275460839271545
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 43455,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006500_seed-43455.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006500_seed-43455.png",
+      "lpips": 0.26968786120414734
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 53389,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006502_seed-53389.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006502_seed-53389.png",
+      "lpips": 0.12161758542060852
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 55777,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006503_seed-55777.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006503_seed-55777.png",
+      "lpips": 0.04742557927966118
+    },
+    {
+      "variant": "G_full_afr",
+      "anchor": "baseball",
+      "evaluation_seed": 81938,
+      "original_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/outputs/official_repo_primary_v1/anchor_sanity/images/volleyball/case-006504_seed-81938.png",
+      "edited_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006504_seed-81938.png",
+      "lpips": 0.18916507065296173
+    }
+  ],
+  "completed_at": "2026-08-13T03:51:15.714622+00:00"
+}

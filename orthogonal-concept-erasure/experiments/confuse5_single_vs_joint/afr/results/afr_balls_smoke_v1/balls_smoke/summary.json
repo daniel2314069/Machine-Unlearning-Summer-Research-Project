@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "classification": "AFR-I0",
+  "variants": {
+    "C_objective_faithful": {
+      "targets": [
+        {
+          "target": "soccer ball",
+          "matched_anchor": "basketball",
+          "accuracy": 0.15,
+          "correct": 15,
+          "mean_target_probability": 0.05584705734538147,
+          "anchor_top1_rate": 0.31,
+          "mean_anchor_probability": 0.10423773410497233
+        },
+        {
+          "target": "volleyball",
+          "matched_anchor": "baseball",
+          "accuracy": 0.0,
+          "correct": 0,
+          "mean_target_probability": 0.005846417406719411,
+          "anchor_top1_rate": 0.02,
+          "mean_anchor_probability": 0.01202568538574269
+        }
+      ],
+      "target_macro_accuracy": 0.075,
+      "similar_non_targets": [
+        {
+          "concept": "tennis ball",
+          "accuracy": 0.99,
+          "correct": 99
+        },
+        {
+          "concept": "rugby ball",
+          "accuracy": 0.72,
+          "correct": 72
+        },
+        {
+          "concept": "ping-pong ball",
+          "accuracy": 0.79,
+          "correct": 79
+        }
+      ],
+      "similar_macro_accuracy": 0.8333333333333334,
+      "anchors": [
+        {
+          "anchor": "basketball",
+          "accuracy": 0.96,
+          "correct": 48,
+          "mean_anchor_probability": 0.4271630013547838,
+          "original_lpips_mean_8": 0.23581217974424362
+        },
+        {
+          "anchor": "baseball",
+          "accuracy": 0.92,
+          "correct": 46,
+          "mean_anchor_probability": 0.46241405375534667,
+          "original_lpips_mean_8": 0.2903013043105602
+        }
+      ],
+      "anchor_macro_accuracy": 0.94,
+      "anchor_original_lpips_mean": 0.2630567420274019
+    },
+    "F_pure_residual_projection": {
+      "targets": [
+        {
+          "target": "soccer ball",
+          "matched_anchor": "basketball",
+          "accuracy": 0.92,
+          "correct": 92,
+          "mean_target_probability": 0.41367923311103366,
+          "anchor_top1_rate": 0.02,
+          "mean_anchor_probability": 0.011064423663774504
+        },
+        {
+          "target": "volleyball",
+          "matched_anchor": "baseball",
+          "accuracy": 0.09,
+          "correct": 9,
+          "mean_target_probability": 0.036250175569148266,
+          "anchor_top1_rate": 0.0,
+          "mean_anchor_probability": 0.003115585778723471
+        }
+      ],
+      "target_macro_accuracy": 0.505,
+      "similar_non_targets": [
+        {
+          "concept": "tennis ball",
+          "accuracy": 0.96,
+          "correct": 96
+        },
+        {
+          "concept": "rugby ball",
+          "accuracy": 0.54,
+          "correct": 54
+        },
+        {
+          "concept": "ping-pong ball",
+          "accuracy": 0.75,
+          "correct": 75
+        }
+      ],
+      "similar_macro_accuracy": 0.75,
+      "anchors": [
+        {
+          "anchor": "basketball",
+          "accuracy": 0.94,
+          "correct": 47,
+          "mean_anchor_probability": 0.4120617362204939,
+          "original_lpips_mean_8": 0.13620509882457554
+        },
+        {
+          "anchor": "baseball",
+          "accuracy": 0.94,
+          "correct": 47,
+          "mean_anchor_probability": 0.46778448251076044,
+          "original_lpips_mean_8": 0.15128502855077386
+        }
+      ],
+      "anchor_macro_accuracy": 0.94,
+      "anchor_original_lpips_mean": 0.1437450636876747
+    },
+    "G_full_afr": {
+      "targets": [
+        {
+          "target": "soccer ball",
+          "matched_anchor": "basketball",
+          "accuracy": 0.87,
+          "correct": 87,
+          "mean_target_probability": 0.4149857924983371,
+          "anchor_top1_rate": 0.06,
+          "mean_anchor_probability": 0.01687541301107558
+        },
+        {
+          "target": "volleyball",
+          "matched_anchor": "baseball",
+          "accuracy": 0.09,
+          "correct": 9,
+          "mean_target_probability": 0.0411159773311374,
+          "anchor_top1_rate": 0.0,
+          "mean_anchor_probability": 0.003304423257795861
+        }
+      ],
+      "target_macro_accuracy": 0.48,
+      "similar_non_targets": [
+        {
+          "concept": "tennis ball",
+          "accuracy": 0.98,
+          "correct": 98
+        },
+        {
+          "concept": "rugby ball",
+          "accuracy": 0.6,
+          "correct": 60
+        },
+        {
+          "concept": "ping-pong ball",
+          "accuracy": 0.86,
+          "correct": 86
+        }
+      ],
+      "similar_macro_accuracy": 0.8133333333333334,
+      "anchors": [
+        {
+          "anchor": "basketball",
+          "accuracy": 0.96,
+          "correct": 48,
+          "mean_anchor_probability": 0.4066864023823291,
+          "original_lpips_mean_8": 0.10275419906247407
+        },
+        {
+          "anchor": "baseball",
+          "accuracy": 0.92,
+          "correct": 46,
+          "mean_anchor_probability": 0.4694254177383846,
+          "original_lpips_mean_8": 0.11602452618535608
+        }
+      ],
+      "anchor_macro_accuracy": 0.94,
+      "anchor_original_lpips_mean": 0.10938936262391508
+    }
+  },
+  "checks": {
+    "g_target_success": false,
+    "f_target_success": false,
+    "g_both_targets_improve": false,
+    "target_to_anchor_probability_moves_for_both": false,
+    "f_target_to_anchor_probability_moves_for_both": false,
+    "g_similar_non_target_acceptable": true,
+    "g_anchor_generation_acceptable": true,
+    "compensation_image_benefit": true,
+    "similar_accuracy_g_minus_f": 0.06333333333333335,
+    "anchor_accuracy_g_minus_f": 0.0,
+    "anchor_lpips_f_minus_g": 0.034355701063759625
+  },
+  "thresholds": {
+    "target_macro_improvement": 0.05,
+    "preservation_collapse_tolerance": 0.1,
+    "ablation_accuracy_benefit": 0.05,
+    "ablation_lpips_benefit": 0.02
+  },
+  "new_image_count": 1800,
+  "lpips_pair_count": 48,
+  "existing_context": {
+    "matched_first_100": {
+      "soccer ball": {
+        "original": {
+          "correct": 95,
+          "total": 100,
+          "accuracy": 0.95
+        },
+        "released_joint": {
+          "correct": 13,
+          "total": 100,
+          "accuracy": 0.13
+        },
+        "matched_single": {
+          "correct": 10,
+          "total": 100,
+          "accuracy": 0.1
+        }
+      },
+      "volleyball": {
+        "original": {
+          "correct": 59,
+          "total": 100,
+          "accuracy": 0.59
+        },
+        "released_joint": {
+          "correct": 2,
+          "total": 100,
+          "accuracy": 0.02
+        },
+        "matched_single": {
+          "correct": 0,
+          "total": 100,
+          "accuracy": 0.0
+        }
+      },
+      "tennis ball": {
+        "original": {
+          "correct": 99,
+          "total": 100,
+          "accuracy": 0.99
+        },
+        "released_joint": {
+          "correct": 99,
+          "total": 100,
+          "accuracy": 0.99
+        },
+        "single_context": {
+          "soccer ball": {
+            "correct": 98,
+            "total": 100,
+            "accuracy": 0.98
+          },
+          "volleyball": {
+            "correct": 99,
+            "total": 100,
+            "accuracy": 0.99
+          }
+        }
+      },
+      "rugby ball": {
+        "original": {
+          "correct": 74,
+          "total": 100,
+          "accuracy": 0.74
+        },
+        "released_joint": {
+          "correct": 81,
+          "total": 100,
+          "accuracy": 0.81
+        },
+        "single_context": {
+          "soccer ball": {
+            "correct": 81,
+            "total": 100,
+            "accuracy": 0.81
+          },
+          "volleyball": {
+            "correct": 81,
+            "total": 100,
+            "accuracy": 0.81
+          }
+        }
+      },
+      "ping-pong ball": {
+        "original": {
+          "correct": 80,
+          "total": 100,
+          "accuracy": 0.8
+        },
+        "released_joint": {
+          "correct": 77,
+          "total": 100,
+          "accuracy": 0.77
+        },
+        "single_context": {
+          "soccer ball": {
+            "correct": 83,
+            "total": 100,
+            "accuracy": 0.83
+          },
+          "volleyball": {
+            "correct": 80,
+            "total": 100,
+            "accuracy": 0.8
+          }
+        }
+      }
+    },
+    "source": "existing completed artifacts; no Original/Single/Joint images rerun"
+  },
+  "runtime_seconds": 6412.798732619733,
+  "completed_at": "2026-08-13T03:51:15.715416+00:00",
+  "checkpoints": {
+    "C_objective_faithful": {
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/C_objective_faithful/weights.safetensors",
+      "sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+      "metadata_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/C_objective_faithful/metadata.json"
+    },
+    "F_pure_residual_projection": {
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/F_pure_residual_projection/weights.safetensors",
+      "sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+      "metadata_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/F_pure_residual_projection/metadata.json"
+    },
+    "G_full_afr": {
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/G_full_afr/weights.safetensors",
+      "sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+      "metadata_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/G_full_afr/metadata.json"
+    }
+  },
+  "generation_output_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images",
+  "evaluator_output_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/evaluations",
+  "lpips_output": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/anchor_lpips.json",
+  "command": "python experiments/confuse5_single_vs_joint/afr/runner.py all --skip-existing",
+  "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+  "git_dirty": true
+}

@@ -1,0 +1,5579 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "job_id": "C_objective_faithful__similar_non_target__rugby-ball",
+  "job_fingerprint": "61065a73fe124bebd4216fbb573b4bcd92df18f9595c1ba142276415a1a688ad",
+  "variant": "C_objective_faithful",
+  "role": "similar_non_target",
+  "concept": "rugby ball",
+  "checkpoint_sha256": "3d103bd2a33c5ee928d142810b7a7c52dca5f374fb2ca51fcc1ba0e2102edd37",
+  "generation_runtime": {
+    "requested_base_model": "CompVis/stable-diffusion-v1-4",
+    "requested_dtype": "bfloat16",
+    "pipeline": {
+      "class": "diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline",
+      "name_or_path": "CompVis/stable-diffusion-v1-4",
+      "commit_hash": null
+    },
+    "unet": {
+      "class": "diffusers.models.unets.unet_2d_condition.UNet2DConditionModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/unet",
+      "commit_hash": null
+    },
+    "text_encoder": {
+      "class": "transformers.models.clip.modeling_clip.CLIPTextModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/text_encoder",
+      "commit_hash": "133a221b8aa7292a167afc5127cb63fb5005638b"
+    },
+    "tokenizer": {
+      "class": "transformers.models.clip.tokenization_clip.CLIPTokenizer",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/tokenizer",
+      "commit_hash": null
+    },
+    "scheduler": {
+      "class": "diffusers.schedulers.scheduling_pndm.PNDMScheduler",
+      "name_or_path": null,
+      "commit_hash": null
+    },
+    "scheduler_config_sha256": "3cf318d6daa65d30ee297048c7d7e51400e6a2465d7d4ff142784b8ab1e4bf22",
+    "settings": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "images_per_prompt": 1,
+      "generator_device": "cpu"
+    },
+    "runtime": {
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+      "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+      "packages": {
+        "torch": "2.6.0+cu118",
+        "torchvision": "0.21.0+cu118",
+        "diffusers": "0.33.1",
+        "transformers": "4.48.3",
+        "safetensors": "0.5.3",
+        "pandas": "2.2.3",
+        "Pillow": "11.2.1"
+      },
+      "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+      "git_dirty": true
+    }
+  },
+  "evaluator": {
+    "implementation": "torchvision_resnet50",
+    "weights_enum": "IMAGENET1K_V2",
+    "weight_filename": "resnet50-11ad3fa6.pth",
+    "weight_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "categories_sha256": "47eed8c870ca7ed0258cb04301612ed3bcb3eddf78ecd24f37eb58d799eddea7"
+  },
+  "correct": 72,
+  "total": 100,
+  "accuracy": 0.72,
+  "mean_expected_probability": 0.30200362970354033,
+  "items": [
+    {
+      "case_number": 11500,
+      "source_line": 11502,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 15742,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011500_seed-15742.png",
+      "image_sha256": "742d00f09f6b2bc12ef627a0fac0ffb40d08b94afbe1ad54a239fe78e550f3fc",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.6422226428985596,
+      "class_probabilities": {
+        "rugby ball": 0.6422226428985596
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.6422226428985596,
+          "raw_logit": 7.634296417236328
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.03076872229576111,
+          "raw_logit": 4.595860004425049
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.00253362231887877,
+          "raw_logit": 2.0990116596221924
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.001959920162335038,
+          "raw_logit": 1.842265248298645
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0013096006587147713,
+          "raw_logit": 1.4390836954116821
+        }
+      ]
+    },
+    {
+      "case_number": 11501,
+      "source_line": 11503,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 91732,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011501_seed-91732.png",
+      "image_sha256": "ca8c9c7b75cad36b0f6f182d0efa4e571a76d9b449e9562261e29033dbdb6a23",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.1561824530363083,
+      "class_probabilities": {
+        "rugby ball": 0.1561824530363083
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.1561824530363083,
+          "raw_logit": 5.4194416999816895
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.08829287439584732,
+          "raw_logit": 4.849076271057129
+        },
+        {
+          "rank": 3,
+          "index": 606,
+          "label": "iron",
+          "probability": 0.0034036317374557257,
+          "raw_logit": 1.5932598114013672
+        },
+        {
+          "rank": 4,
+          "index": 80,
+          "label": "black grouse",
+          "probability": 0.002576153026893735,
+          "raw_logit": 1.3147141933441162
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002523724688217044,
+          "raw_logit": 1.294152855873108
+        }
+      ]
+    },
+    {
+      "case_number": 11502,
+      "source_line": 11504,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 64704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011502_seed-64704.png",
+      "image_sha256": "b55c58a28f81fe9ab7845e1bde86ec50294045ccd728a68b920753a555c29d6d",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.20192262530326843,
+      "class_probabilities": {
+        "rugby ball": 0.20192262530326843
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.2638073265552521,
+          "raw_logit": 6.327605724334717
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.20192262530326843,
+          "raw_logit": 6.060271263122559
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.018439559265971184,
+          "raw_logit": 3.6668848991394043
+        },
+        {
+          "rank": 4,
+          "index": 478,
+          "label": "carton",
+          "probability": 0.005422132555395365,
+          "raw_logit": 2.442875862121582
+        },
+        {
+          "rank": 5,
+          "index": 619,
+          "label": "lampshade",
+          "probability": 0.00497488584369421,
+          "raw_logit": 2.3567891120910645
+        }
+      ]
+    },
+    {
+      "case_number": 11503,
+      "source_line": 11505,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 53889,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011503_seed-53889.png",
+      "image_sha256": "f279645452edc65859e1e7f12a4b988e410d7014d92eff51d59ef808eddb097d",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.30584388971328735,
+      "class_probabilities": {
+        "rugby ball": 0.30584388971328735
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.30584388971328735,
+          "raw_logit": 6.395665168762207
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.14313098788261414,
+          "raw_logit": 5.636350631713867
+        },
+        {
+          "rank": 3,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.005031685344874859,
+          "raw_logit": 2.2883450984954834
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.004228106699883938,
+          "raw_logit": 2.114344835281372
+        },
+        {
+          "rank": 5,
+          "index": 433,
+          "label": "bathing cap",
+          "probability": 0.0040677981451153755,
+          "raw_logit": 2.0756921768188477
+        }
+      ]
+    },
+    {
+      "case_number": 11504,
+      "source_line": 11506,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49258,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011504_seed-49258.png",
+      "image_sha256": "b8a321c168474bd012b052f618167ae0bfff8d2da65bc4df8fd1d887155fa67e",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3256206810474396,
+      "class_probabilities": {
+        "rugby ball": 0.3256206810474396
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3256206810474396,
+          "raw_logit": 6.548199653625488
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.09385699033737183,
+          "raw_logit": 5.304238796234131
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.06818795949220657,
+          "raw_logit": 4.984734535217285
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.012300368398427963,
+          "raw_logit": 3.2720956802368164
+        },
+        {
+          "rank": 5,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.006096177268773317,
+          "raw_logit": 2.5701284408569336
+        }
+      ]
+    },
+    {
+      "case_number": 11505,
+      "source_line": 11507,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 60699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011505_seed-60699.png",
+      "image_sha256": "e64348bd94abbd7f614129b998a33052574f583db6a9111767addc59f38d8c84",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.44950544834136963,
+      "class_probabilities": {
+        "rugby ball": 0.44950544834136963
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.44950544834136963,
+          "raw_logit": 7.003328323364258
+        },
+        {
+          "rank": 2,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.1195286437869072,
+          "raw_logit": 5.678736209869385
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.003102424554526806,
+          "raw_logit": 2.0273642539978027
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0025318777188658714,
+          "raw_logit": 1.8241416215896606
+        },
+        {
+          "rank": 5,
+          "index": 473,
+          "label": "can opener",
+          "probability": 0.0023252391256392,
+          "raw_logit": 1.7390034198760986
+        }
+      ]
+    },
+    {
+      "case_number": 11506,
+      "source_line": 11508,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 70183,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011506_seed-70183.png",
+      "image_sha256": "3052fad5d574fd3b1d53946cd2930eb8093acac7fb394af61612960eb7354b19",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5618458390235901,
+      "class_probabilities": {
+        "rugby ball": 0.5618458390235901
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5618458390235901,
+          "raw_logit": 7.274542331695557
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.02701675146818161,
+          "raw_logit": 4.239771842956543
+        },
+        {
+          "rank": 3,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.0028812491800636053,
+          "raw_logit": 2.0015387535095215
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.002605217043310404,
+          "raw_logit": 1.9008309841156006
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.0024159641470760107,
+          "raw_logit": 1.8254133462905884
+        }
+      ]
+    },
+    {
+      "case_number": 11507,
+      "source_line": 11509,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 17868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011507_seed-17868.png",
+      "image_sha256": "6d147561550a05121d1e81a42e3ee8d20e28b1380bf1906948493d60f8adf27e",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.16396307945251465,
+      "class_probabilities": {
+        "rugby ball": 0.16396307945251465
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.16396307945251465,
+          "raw_logit": 5.428095817565918
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0876200944185257,
+          "raw_logit": 4.801465034484863
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002276279032230377,
+          "raw_logit": 1.1509968042373657
+        },
+        {
+          "rank": 4,
+          "index": 966,
+          "label": "red wine",
+          "probability": 0.0022715593222528696,
+          "raw_logit": 1.148921012878418
+        },
+        {
+          "rank": 5,
+          "index": 476,
+          "label": "carousel",
+          "probability": 0.002271142089739442,
+          "raw_logit": 1.1487373113632202
+        }
+      ]
+    },
+    {
+      "case_number": 11508,
+      "source_line": 11510,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 66181,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011508_seed-66181.png",
+      "image_sha256": "9e50c2212b825bbf00be61a1f02dde5ff68b0b6e73458edd8768e6662efdfb74",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.2726328372955322,
+      "class_probabilities": {
+        "rugby ball": 0.2726328372955322
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.2726328372955322,
+          "raw_logit": 6.269213676452637
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0925779715180397,
+          "raw_logit": 5.189138889312744
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.035337693989276886,
+          "raw_logit": 4.226037979125977
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.03258073329925537,
+          "raw_logit": 4.144808769226074
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.016073152422904968,
+          "raw_logit": 3.4382379055023193
+        }
+      ]
+    },
+    {
+      "case_number": 11509,
+      "source_line": 11511,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 27357,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011509_seed-27357.png",
+      "image_sha256": "fb7bafebfa94aea3e2efdb03e6c6e7b59f4fec366dbc804db4bca1a28a93e3ff",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5296469926834106,
+      "class_probabilities": {
+        "rugby ball": 0.5296469926834106
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5296469926834106,
+          "raw_logit": 7.078438758850098
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0042689647525548935,
+          "raw_logit": 2.257599353790283
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0027122434694319963,
+          "raw_logit": 1.804004192352295
+        },
+        {
+          "rank": 4,
+          "index": 743,
+          "label": "prison",
+          "probability": 0.002099220873787999,
+          "raw_logit": 1.547794222831726
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0019877441227436066,
+          "raw_logit": 1.493228554725647
+        }
+      ]
+    },
+    {
+      "case_number": 11510,
+      "source_line": 11512,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 60961,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011510_seed-60961.png",
+      "image_sha256": "532b327f8caf89d6d882a3a0464f3a8531780c13687a66c8921aa150d76da53a",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.10642090439796448,
+      "class_probabilities": {
+        "rugby ball": 0.10642090439796448
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.10642090439796448,
+          "raw_logit": 4.947203159332275
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.07043947279453278,
+          "raw_logit": 4.534554958343506
+        },
+        {
+          "rank": 3,
+          "index": 753,
+          "label": "radiator",
+          "probability": 0.012741071172058582,
+          "raw_logit": 2.824631929397583
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.007433108985424042,
+          "raw_logit": 2.28574538230896
+        },
+        {
+          "rank": 5,
+          "index": 126,
+          "label": "isopod",
+          "probability": 0.004921361804008484,
+          "raw_logit": 1.8733865022659302
+        }
+      ]
+    },
+    {
+      "case_number": 11511,
+      "source_line": 11513,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 47199,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011511_seed-47199.png",
+      "image_sha256": "981fa14650c2c4d5c234dc66efa7962f136155c1d6fb39bb92d8c939038412c8",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.28539568185806274,
+      "class_probabilities": {
+        "rugby ball": 0.28539568185806274
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.28539568185806274,
+          "raw_logit": 6.095903396606445
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.050822485238313675,
+          "raw_logit": 4.370365619659424
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004587174393236637,
+          "raw_logit": 1.9652907848358154
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.003184209344908595,
+          "raw_logit": 1.6002306938171387
+        },
+        {
+          "rank": 5,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.002266671508550644,
+          "raw_logit": 1.2603391408920288
+        }
+      ]
+    },
+    {
+      "case_number": 11512,
+      "source_line": 11514,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 55810,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011512_seed-55810.png",
+      "image_sha256": "5b4ac5089ecdf7a5c29d6f7cec9a1c7b3c572304029c56e690911656672d3265",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 518,
+      "predicted_category": "crash helmet",
+      "correct": false,
+      "expected_probability": 0.011836551129817963,
+      "class_probabilities": {
+        "rugby ball": 0.011836551129817963
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.16503095626831055,
+          "raw_logit": 5.633767604827881
+        },
+        {
+          "rank": 2,
+          "index": 581,
+          "label": "grille",
+          "probability": 0.0883646160364151,
+          "raw_logit": 5.009106159210205
+        },
+        {
+          "rank": 3,
+          "index": 490,
+          "label": "chain mail",
+          "probability": 0.024020852521061897,
+          "raw_logit": 3.706556797027588
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.022483624517917633,
+          "raw_logit": 3.6404218673706055
+        },
+        {
+          "rank": 5,
+          "index": 770,
+          "label": "running shoe",
+          "probability": 0.018945546820759773,
+          "raw_logit": 3.469203472137451
+        }
+      ]
+    },
+    {
+      "case_number": 11513,
+      "source_line": 11515,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 62134,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011513_seed-62134.png",
+      "image_sha256": "221557365188d4bf097cfff8c04100d55814d76246ecd4ca09553f4570141c3d",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.07215628027915955,
+      "class_probabilities": {
+        "rugby ball": 0.07215628027915955
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.5528637766838074,
+          "raw_logit": 7.457193851470947
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.07215628027915955,
+          "raw_logit": 5.420916557312012
+        },
+        {
+          "rank": 3,
+          "index": 515,
+          "label": "cowboy hat",
+          "probability": 0.009169491939246655,
+          "raw_logit": 3.357964277267456
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.008134119212627411,
+          "raw_logit": 3.238149642944336
+        },
+        {
+          "rank": 5,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.005463503301143646,
+          "raw_logit": 2.840172052383423
+        }
+      ]
+    },
+    {
+      "case_number": 11514,
+      "source_line": 11516,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 92938,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011514_seed-92938.png",
+      "image_sha256": "e0f478e4536935d43d50f9be152a19cd9b246508cad42e80732b7b582e474ebe",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.008493127301335335,
+      "class_probabilities": {
+        "rugby ball": 0.008493127301335335
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.14783671498298645,
+          "raw_logit": 5.269412994384766
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.03873332962393761,
+          "raw_logit": 3.9300050735473633
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.012989618815481663,
+          "raw_logit": 2.8374550342559814
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.008493127301335335,
+          "raw_logit": 2.4125618934631348
+        },
+        {
+          "rank": 5,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.007340512238442898,
+          "raw_logit": 2.2667131423950195
+        }
+      ]
+    },
+    {
+      "case_number": 11515,
+      "source_line": 11517,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 18503,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011515_seed-18503.png",
+      "image_sha256": "ee7ca66e068f889bc199057bd2d0f473a8abbe17d591e83c2576f01ed0c0efbc",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.0527869276702404,
+      "class_probabilities": {
+        "rugby ball": 0.0527869276702404
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0527869276702404,
+          "raw_logit": 4.2165913581848145
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.04355087876319885,
+          "raw_logit": 4.024257659912109
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.040786560624837875,
+          "raw_logit": 3.9586803913116455
+        },
+        {
+          "rank": 4,
+          "index": 308,
+          "label": "fly",
+          "probability": 0.025269541889429092,
+          "raw_logit": 3.4799275398254395
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.017053036019206047,
+          "raw_logit": 3.086656093597412
+        }
+      ]
+    },
+    {
+      "case_number": 11516,
+      "source_line": 11518,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 51178,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011516_seed-51178.png",
+      "image_sha256": "ea4bdd73645fbf782fc0ede121a544c54df9bda844feb513e9da9643809cd919",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 805,
+      "predicted_category": "soccer ball",
+      "correct": false,
+      "expected_probability": 0.0655396580696106,
+      "class_probabilities": {
+        "rugby ball": 0.0655396580696106
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.20966899394989014,
+          "raw_logit": 5.760674953460693
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0655396580696106,
+          "raw_logit": 4.597800254821777
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.023143043741583824,
+          "raw_logit": 3.5568392276763916
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0176493339240551,
+          "raw_logit": 3.2858428955078125
+        },
+        {
+          "rank": 5,
+          "index": 485,
+          "label": "CD player",
+          "probability": 0.007345634046941996,
+          "raw_logit": 2.4092509746551514
+        }
+      ]
+    },
+    {
+      "case_number": 11517,
+      "source_line": 11519,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 353,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011517_seed-353.png",
+      "image_sha256": "f9698d5de21b39cfb6dc8ad6aafffd11bbcc1aa3b207f633a86378d94d8a6264",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.039608512073755264,
+      "class_probabilities": {
+        "rugby ball": 0.039608512073755264
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.418173611164093,
+          "raw_logit": 6.690550804138184
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.039608512073755264,
+          "raw_logit": 4.333698272705078
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.004199704620987177,
+          "raw_logit": 2.089668035507202
+        },
+        {
+          "rank": 4,
+          "index": 711,
+          "label": "perfume",
+          "probability": 0.0035300750751048326,
+          "raw_logit": 1.9159733057022095
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002490566810593009,
+          "raw_logit": 1.5671645402908325
+        }
+      ]
+    },
+    {
+      "case_number": 11518,
+      "source_line": 11520,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 21846,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011518_seed-21846.png",
+      "image_sha256": "07f3edfb15cd036dcf5b0f5f113844ec61fe9e6cba8de34cefa3df17c6051e71",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.4601500928401947,
+      "class_probabilities": {
+        "rugby ball": 0.4601500928401947
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.4601500928401947,
+          "raw_logit": 6.935667514801025
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0381789356470108,
+          "raw_logit": 4.446398735046387
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.02208101563155651,
+          "raw_logit": 3.8988330364227295
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.01291289459913969,
+          "raw_logit": 3.3623411655426025
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.006650179158896208,
+          "raw_logit": 2.698758602142334
+        }
+      ]
+    },
+    {
+      "case_number": 11519,
+      "source_line": 11521,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49957,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011519_seed-49957.png",
+      "image_sha256": "b424e5378b251473fdc2b0678a496a5ef0eeb07e011b0c5efd6fe507697ecfb1",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.0808342918753624,
+      "class_probabilities": {
+        "rugby ball": 0.0808342918753624
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0808342918753624,
+          "raw_logit": 4.92640495300293
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.04670283943414688,
+          "raw_logit": 4.377808570861816
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.043021105229854584,
+          "raw_logit": 4.295694351196289
+        },
+        {
+          "rank": 4,
+          "index": 711,
+          "label": "perfume",
+          "probability": 0.0257243812084198,
+          "raw_logit": 3.781442880630493
+        },
+        {
+          "rank": 5,
+          "index": 544,
+          "label": "Dutch oven",
+          "probability": 0.02031904086470604,
+          "raw_logit": 3.5455620288848877
+        }
+      ]
+    },
+    {
+      "case_number": 11520,
+      "source_line": 11522,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 51868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011520_seed-51868.png",
+      "image_sha256": "19af0bc90592b176cb57a2d65d78a87b4ed4e4fca01f71aa6e05a98ad76bb088",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.26373738050460815,
+      "class_probabilities": {
+        "rugby ball": 0.26373738050460815
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.26373738050460815,
+          "raw_logit": 6.090277194976807
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.04245518893003464,
+          "raw_logit": 4.263772487640381
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.03920065239071846,
+          "raw_logit": 4.184016704559326
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.016510944813489914,
+          "raw_logit": 3.3193469047546387
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.011526554822921753,
+          "raw_logit": 2.9599769115448
+        }
+      ]
+    },
+    {
+      "case_number": 11521,
+      "source_line": 11523,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 33369,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011521_seed-33369.png",
+      "image_sha256": "b03fc53d8520fe5e66cfc8549d8471b85b4236424c1384329fa4c1fb57391f45",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.43322739005088806,
+      "class_probabilities": {
+        "rugby ball": 0.43322739005088806
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.43322739005088806,
+          "raw_logit": 6.724391460418701
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.021693728864192963,
+          "raw_logit": 3.730151891708374
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0028359959833323956,
+          "raw_logit": 1.6955218315124512
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.002404517726972699,
+          "raw_logit": 1.5304778814315796
+        },
+        {
+          "rank": 5,
+          "index": 632,
+          "label": "loudspeaker",
+          "probability": 0.0022978128399699926,
+          "raw_logit": 1.4850863218307495
+        }
+      ]
+    },
+    {
+      "case_number": 11522,
+      "source_line": 11524,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49768,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011522_seed-49768.png",
+      "image_sha256": "4da4c0a131e5180b615fc69eb9df3affec527bcfb22f130d949f5ab0f83d1785",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.43752768635749817,
+      "class_probabilities": {
+        "rugby ball": 0.43752768635749817
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.43752768635749817,
+          "raw_logit": 7.173219680786133
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.08817729353904724,
+          "raw_logit": 5.571429252624512
+        },
+        {
+          "rank": 3,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.03931250050663948,
+          "raw_logit": 4.763622283935547
+        },
+        {
+          "rank": 4,
+          "index": 812,
+          "label": "space shuttle",
+          "probability": 0.015668394044041634,
+          "raw_logit": 3.8437252044677734
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.010691755451261997,
+          "raw_logit": 3.461552619934082
+        }
+      ]
+    },
+    {
+      "case_number": 11523,
+      "source_line": 11525,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 85544,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011523_seed-85544.png",
+      "image_sha256": "bc95f4d08c75e4229848414b846511838339fe7832b74e0d7292ed7f2b74d366",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.35320231318473816,
+      "class_probabilities": {
+        "rugby ball": 0.35320231318473816
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.35320231318473816,
+          "raw_logit": 6.696188926696777
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.12202662229537964,
+          "raw_logit": 5.633387088775635
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.023018309846520424,
+          "raw_logit": 3.965437889099121
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.011822187341749668,
+          "raw_logit": 3.299125909805298
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.009662667289376259,
+          "raw_logit": 3.0974175930023193
+        }
+      ]
+    },
+    {
+      "case_number": 11524,
+      "source_line": 11526,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 76917,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011524_seed-76917.png",
+      "image_sha256": "ed40767781a887f2d0e09b83c529d825b78e385183c6ce51b07f8cc22ccce0a8",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.09402725100517273,
+      "class_probabilities": {
+        "rugby ball": 0.09402725100517273
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.1669461578130722,
+          "raw_logit": 5.620143890380859
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.09402725100517273,
+          "raw_logit": 5.046057224273682
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.05991128832101822,
+          "raw_logit": 4.595337390899658
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.05460942164063454,
+          "raw_logit": 4.502678871154785
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004017978440970182,
+          "raw_logit": 1.8932512998580933
+        }
+      ]
+    },
+    {
+      "case_number": 11525,
+      "source_line": 11527,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 13694,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011525_seed-13694.png",
+      "image_sha256": "9fca073559eb9d4b8145a274efea5467454b6695fd9f319b6c370ae1c60fbef7",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.2383684664964676,
+      "class_probabilities": {
+        "rugby ball": 0.2383684664964676
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.25938841700553894,
+          "raw_logit": 6.468843936920166
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.2383684664964676,
+          "raw_logit": 6.384335041046143
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.05735406652092934,
+          "raw_logit": 4.959761142730713
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.01637914963066578,
+          "raw_logit": 3.706526517868042
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.004268611315637827,
+          "raw_logit": 2.3618059158325195
+        }
+      ]
+    },
+    {
+      "case_number": 11526,
+      "source_line": 11528,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 11297,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011526_seed-11297.png",
+      "image_sha256": "5683555537e298733e478572b4bb5dd891cc9f9fee572fbc4238461d43f4e38d",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 485,
+      "predicted_category": "CD player",
+      "correct": false,
+      "expected_probability": 0.002180987037718296,
+      "class_probabilities": {
+        "rugby ball": 0.002180987037718296
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 485,
+          "label": "CD player",
+          "probability": 0.11528957635164261,
+          "raw_logit": 5.302830696105957
+        },
+        {
+          "rank": 2,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.06437908113002777,
+          "raw_logit": 4.72017240524292
+        },
+        {
+          "rank": 3,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.031849417835474014,
+          "raw_logit": 4.016402721405029
+        },
+        {
+          "rank": 4,
+          "index": 482,
+          "label": "cassette player",
+          "probability": 0.02300502359867096,
+          "raw_logit": 3.691096305847168
+        },
+        {
+          "rank": 5,
+          "index": 897,
+          "label": "washer",
+          "probability": 0.021372029557824135,
+          "raw_logit": 3.617466688156128
+        }
+      ]
+    },
+    {
+      "case_number": 11527,
+      "source_line": 11529,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 70148,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011527_seed-70148.png",
+      "image_sha256": "04624ab5595adca17093b03dfd4d98e02fc9bc9aa242aa679f70fdb4e661735c",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.025980880483984947,
+      "class_probabilities": {
+        "rugby ball": 0.025980880483984947
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.11904469132423401,
+          "raw_logit": 5.297534942626953
+        },
+        {
+          "rank": 2,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.057930175215005875,
+          "raw_logit": 4.577274322509766
+        },
+        {
+          "rank": 3,
+          "index": 551,
+          "label": "face powder",
+          "probability": 0.030725622549653053,
+          "raw_logit": 3.9431328773498535
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.025980880483984947,
+          "raw_logit": 3.7753968238830566
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.010168523527681828,
+          "raw_logit": 2.8373329639434814
+        }
+      ]
+    },
+    {
+      "case_number": 11528,
+      "source_line": 11530,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 50704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011528_seed-50704.png",
+      "image_sha256": "09b249e0fe519ee53355f3af75b85582c5c11ed512683bc3df68706c67585076",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.16998712718486786,
+      "class_probabilities": {
+        "rugby ball": 0.16998712718486786
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.16998712718486786,
+          "raw_logit": 5.693389892578125
+        },
+        {
+          "rank": 2,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.10981565713882446,
+          "raw_logit": 5.256470203399658
+        },
+        {
+          "rank": 3,
+          "index": 632,
+          "label": "loudspeaker",
+          "probability": 0.02645263634622097,
+          "raw_logit": 3.8330230712890625
+        },
+        {
+          "rank": 4,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.02159302495419979,
+          "raw_logit": 3.630037546157837
+        },
+        {
+          "rank": 5,
+          "index": 485,
+          "label": "CD player",
+          "probability": 0.017794597893953323,
+          "raw_logit": 3.4365620613098145
+        }
+      ]
+    },
+    {
+      "case_number": 11529,
+      "source_line": 11531,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 18535,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011529_seed-18535.png",
+      "image_sha256": "44cfbe1528a9c1e77b96313530c51f479268f49c097c9f29f4ee6d2e2e12e76b",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 893,
+      "predicted_category": "wallet",
+      "correct": false,
+      "expected_probability": 0.05021804943680763,
+      "class_probabilities": {
+        "rugby ball": 0.05021804943680763
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 893,
+          "label": "wallet",
+          "probability": 0.12598943710327148,
+          "raw_logit": 5.626294136047363
+        },
+        {
+          "rank": 2,
+          "index": 553,
+          "label": "file",
+          "probability": 0.12294631451368332,
+          "raw_logit": 5.60184383392334
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.08229497820138931,
+          "raw_logit": 5.200406074523926
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.05021804943680763,
+          "raw_logit": 4.706470489501953
+        },
+        {
+          "rank": 5,
+          "index": 636,
+          "label": "mailbag",
+          "probability": 0.025931404903531075,
+          "raw_logit": 4.04555082321167
+        }
+      ]
+    },
+    {
+      "case_number": 11530,
+      "source_line": 11532,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 68835,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011530_seed-68835.png",
+      "image_sha256": "7012e17e0bc60e8c0bf93b46b412d8cc974e06a4a868f5501ee72571ecebedcb",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.18863670527935028,
+      "class_probabilities": {
+        "rugby ball": 0.18863670527935028
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.18863670527935028,
+          "raw_logit": 5.60739803314209
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.07131890952587128,
+          "raw_logit": 4.63473653793335
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.00967533141374588,
+          "raw_logit": 2.6371545791625977
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.00920434482395649,
+          "raw_logit": 2.5872507095336914
+        },
+        {
+          "rank": 5,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.004809880163520575,
+          "raw_logit": 1.9382470846176147
+        }
+      ]
+    },
+    {
+      "case_number": 11531,
+      "source_line": 11533,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 3533,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011531_seed-3533.png",
+      "image_sha256": "66cebb6f3269ae9ab08890e9f859c071c2482d1ee5a54250814cd4c09918abd2",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.43122199177742004,
+      "class_probabilities": {
+        "rugby ball": 0.43122199177742004
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.43122199177742004,
+          "raw_logit": 6.791175842285156
+        },
+        {
+          "rank": 2,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.016478702425956726,
+          "raw_logit": 3.5266215801239014
+        },
+        {
+          "rank": 3,
+          "index": 904,
+          "label": "window screen",
+          "probability": 0.011125676333904266,
+          "raw_logit": 3.1338083744049072
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.010618238709867,
+          "raw_logit": 3.0871260166168213
+        },
+        {
+          "rank": 5,
+          "index": 789,
+          "label": "shoji",
+          "probability": 0.0063852607272565365,
+          "raw_logit": 2.578545093536377
+        }
+      ]
+    },
+    {
+      "case_number": 11532,
+      "source_line": 11534,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 81915,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011532_seed-81915.png",
+      "image_sha256": "60f87f1edf5d77ee5612409f8a10acecb0a6a4104038a478a8b834e117112bd6",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.1318935751914978,
+      "class_probabilities": {
+        "rugby ball": 0.1318935751914978
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.16871947050094604,
+          "raw_logit": 5.521612644195557
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.1318935751914978,
+          "raw_logit": 5.2753705978393555
+        },
+        {
+          "rank": 3,
+          "index": 749,
+          "label": "quill",
+          "probability": 0.002788449404761195,
+          "raw_logit": 1.418860673904419
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002076538046821952,
+          "raw_logit": 1.124077558517456
+        },
+        {
+          "rank": 5,
+          "index": 234,
+          "label": "Rottweiler",
+          "probability": 0.0019584803376346827,
+          "raw_logit": 1.0655440092086792
+        }
+      ]
+    },
+    {
+      "case_number": 11533,
+      "source_line": 11535,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49145,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011533_seed-49145.png",
+      "image_sha256": "a1f0aa73ba1972bb0311c83bcf1bba4e76daa821610925b2bd7df96285630bbb",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": false,
+      "expected_probability": 0.03429150581359863,
+      "class_probabilities": {
+        "rugby ball": 0.03429150581359863
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.11239704489707947,
+          "raw_logit": 5.397637367248535
+        },
+        {
+          "rank": 2,
+          "index": 921,
+          "label": "book jacket",
+          "probability": 0.07148326933383942,
+          "raw_logit": 4.94506311416626
+        },
+        {
+          "rank": 3,
+          "index": 721,
+          "label": "pillow",
+          "probability": 0.04556867107748985,
+          "raw_logit": 4.4948201179504395
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.03429150581359863,
+          "raw_logit": 4.2104973793029785
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.027795040979981422,
+          "raw_logit": 4.000457286834717
+        }
+      ]
+    },
+    {
+      "case_number": 11534,
+      "source_line": 11536,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 86532,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011534_seed-86532.png",
+      "image_sha256": "166b236cc987906ed97fe6bc0069cbb17e39743d17fc66c57ad470340fc81257",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.13541224598884583,
+      "class_probabilities": {
+        "rugby ball": 0.13541224598884583
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.13541224598884583,
+          "raw_logit": 5.143435001373291
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.03757097199559212,
+          "raw_logit": 3.8613429069519043
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.015880785882472992,
+          "raw_logit": 3.000221014022827
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.005730153992772102,
+          "raw_logit": 1.9808536767959595
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.004916508682072163,
+          "raw_logit": 1.8277099132537842
+        }
+      ]
+    },
+    {
+      "case_number": 11535,
+      "source_line": 11537,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 26679,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011535_seed-26679.png",
+      "image_sha256": "73ffd530c05c594b037b8b7680cedfadb9a3f47eef1574dbd1b34326cd391f0c",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3423442244529724,
+      "class_probabilities": {
+        "rugby ball": 0.3423442244529724
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3423442244529724,
+          "raw_logit": 6.377892971038818
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.02878512069582939,
+          "raw_logit": 3.901934862136841
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.019150907173752785,
+          "raw_logit": 3.4944262504577637
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005221477709710598,
+          "raw_logit": 2.194856643676758
+        },
+        {
+          "rank": 5,
+          "index": 615,
+          "label": "knee pad",
+          "probability": 0.003933933563530445,
+          "raw_logit": 1.911716103553772
+        }
+      ]
+    },
+    {
+      "case_number": 11536,
+      "source_line": 11538,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 48703,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011536_seed-48703.png",
+      "image_sha256": "c8bb4a09e41c9623bf4f13c7aae2a54ff73fbca2140c33ea0a02ab38b913c225",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.48188483715057373,
+      "class_probabilities": {
+        "rugby ball": 0.48188483715057373
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.48188483715057373,
+          "raw_logit": 7.050607681274414
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.040758244693279266,
+          "raw_logit": 4.580560684204102
+        },
+        {
+          "rank": 3,
+          "index": 770,
+          "label": "running shoe",
+          "probability": 0.01075970008969307,
+          "raw_logit": 3.2487101554870605
+        },
+        {
+          "rank": 4,
+          "index": 632,
+          "label": "loudspeaker",
+          "probability": 0.006585479248315096,
+          "raw_logit": 2.757769823074341
+        },
+        {
+          "rank": 5,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.0062827905640006065,
+          "raw_logit": 2.710716724395752
+        }
+      ]
+    },
+    {
+      "case_number": 11537,
+      "source_line": 11539,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 97075,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011537_seed-97075.png",
+      "image_sha256": "00052c9607f939fe11ed4d409f7e1b750f0ddcb8cb26f26a3f97c90e0c0dd650",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.7897976040840149,
+      "class_probabilities": {
+        "rugby ball": 0.7897976040840149
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.7897976040840149,
+          "raw_logit": 8.519543647766113
+        },
+        {
+          "rank": 2,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.016459695994853973,
+          "raw_logit": 4.648681640625
+        },
+        {
+          "rank": 3,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.011188856326043606,
+          "raw_logit": 4.262685298919678
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.004433059599250555,
+          "raw_logit": 3.3368570804595947
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0033692787401378155,
+          "raw_logit": 3.0624654293060303
+        }
+      ]
+    },
+    {
+      "case_number": 11538,
+      "source_line": 11540,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 99320,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011538_seed-99320.png",
+      "image_sha256": "dc6fdd018f7c62400724e41eb820f15e9eef58eb2183d2c27c74b392fd8a57c5",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.11061768978834152,
+      "class_probabilities": {
+        "rugby ball": 0.11061768978834152
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.1864674836397171,
+          "raw_logit": 5.636544227600098
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.11061768978834152,
+          "raw_logit": 5.114367485046387
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.008761214092373848,
+          "raw_logit": 2.5786218643188477
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.004584256559610367,
+          "raw_logit": 1.9309154748916626
+        },
+        {
+          "rank": 5,
+          "index": 893,
+          "label": "wallet",
+          "probability": 0.004261513706296682,
+          "raw_logit": 1.8579118251800537
+        }
+      ]
+    },
+    {
+      "case_number": 11539,
+      "source_line": 11541,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 48953,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011539_seed-48953.png",
+      "image_sha256": "8a5eddbfaf6368562be36fcd09430a8883ed64c1c825dd83c5ff8cfb7f8eb158",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.46901872754096985,
+      "class_probabilities": {
+        "rugby ball": 0.46901872754096985
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.46901872754096985,
+          "raw_logit": 6.855106353759766
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.009786187671124935,
+          "raw_logit": 2.985435724258423
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.002760964445769787,
+          "raw_logit": 1.720043659210205
+        },
+        {
+          "rank": 4,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.0020377777982503176,
+          "raw_logit": 1.4163239002227783
+        },
+        {
+          "rank": 5,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.0019897217862308025,
+          "raw_logit": 1.3924583196640015
+        }
+      ]
+    },
+    {
+      "case_number": 11540,
+      "source_line": 11542,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 91322,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011540_seed-91322.png",
+      "image_sha256": "a7e423bc06e995c90c5a9b7f483d18b7a61ee85686eb815d08742352a7d1fe68",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3799072206020355,
+      "class_probabilities": {
+        "rugby ball": 0.3799072206020355
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3799072206020355,
+          "raw_logit": 6.515310287475586
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.035585641860961914,
+          "raw_logit": 4.14732551574707
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.002037885133177042,
+          "raw_logit": 1.2872956991195679
+        },
+        {
+          "rank": 4,
+          "index": 709,
+          "label": "pencil box",
+          "probability": 0.0016723244916647673,
+          "raw_logit": 1.0895977020263672
+        },
+        {
+          "rank": 5,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.001635956228710711,
+          "raw_logit": 1.0676106214523315
+        }
+      ]
+    },
+    {
+      "case_number": 11541,
+      "source_line": 11543,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 30386,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011541_seed-30386.png",
+      "image_sha256": "6574e8976890c4bf982927f2450f8da6bd30f4c9cabaeb44c07b9b38a428de53",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.4583025276660919,
+      "class_probabilities": {
+        "rugby ball": 0.4583025276660919
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.4583025276660919,
+          "raw_logit": 6.942957878112793
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.06039047613739967,
+          "raw_logit": 4.916259765625
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0069473120383918285,
+          "raw_logit": 2.7537834644317627
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.005683080293238163,
+          "raw_logit": 2.552921772003174
+        },
+        {
+          "rank": 5,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.0031610976438969374,
+          "raw_logit": 1.9663476943969727
+        }
+      ]
+    },
+    {
+      "case_number": 11542,
+      "source_line": 11544,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 69321,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011542_seed-69321.png",
+      "image_sha256": "58c1ac482f10e375602c31c3a7bc8a4bcaf1fececc5073f31a192592e269d109",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.2693879008293152,
+      "class_probabilities": {
+        "rugby ball": 0.2693879008293152
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.2693879008293152,
+          "raw_logit": 5.990080833435059
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.039259228855371475,
+          "raw_logit": 4.064115047454834
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.006217160262167454,
+          "raw_logit": 2.2212417125701904
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.002868196228519082,
+          "raw_logit": 1.447611927986145
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002338545862585306,
+          "raw_logit": 1.2434577941894531
+        }
+      ]
+    },
+    {
+      "case_number": 11543,
+      "source_line": 11545,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 41775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011543_seed-41775.png",
+      "image_sha256": "1ddef0b963ba23b1d5709344afbdfa675abb3bc7175d9fdb2580b95415a8872e",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.018197065219283104,
+      "class_probabilities": {
+        "rugby ball": 0.018197065219283104
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.48710140585899353,
+          "raw_logit": 7.052258491516113
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.018197065219283104,
+          "raw_logit": 3.7650465965270996
+        },
+        {
+          "rank": 3,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.01705617643892765,
+          "raw_logit": 3.700298547744751
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.014985252171754837,
+          "raw_logit": 3.570852756500244
+        },
+        {
+          "rank": 5,
+          "index": 906,
+          "label": "Windsor tie",
+          "probability": 0.00675232196226716,
+          "raw_logit": 2.773672580718994
+        }
+      ]
+    },
+    {
+      "case_number": 11544,
+      "source_line": 11546,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 4250,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011544_seed-4250.png",
+      "image_sha256": "65abda61b599652d6db3830b8b3451834b471a546636daa94be58dbdc16e4419",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.4667414128780365,
+      "class_probabilities": {
+        "rugby ball": 0.4667414128780365
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.4667414128780365,
+          "raw_logit": 6.810168266296387
+        },
+        {
+          "rank": 2,
+          "index": 419,
+          "label": "Band Aid",
+          "probability": 0.002080988371744752,
+          "raw_logit": 1.3972358703613281
+        },
+        {
+          "rank": 3,
+          "index": 615,
+          "label": "knee pad",
+          "probability": 0.0015042404411360621,
+          "raw_logit": 1.072680950164795
+        },
+        {
+          "rank": 4,
+          "index": 842,
+          "label": "swimming trunks",
+          "probability": 0.001417929888702929,
+          "raw_logit": 1.013590693473816
+        },
+        {
+          "rank": 5,
+          "index": 806,
+          "label": "sock",
+          "probability": 0.0014015428023412824,
+          "raw_logit": 1.0019664764404297
+        }
+      ]
+    },
+    {
+      "case_number": 11545,
+      "source_line": 11547,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 22629,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011545_seed-22629.png",
+      "image_sha256": "202d90cc2d1050d1ae47adb776c070680c820a4b2b3e13c477f672eff0387ff7",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.12389735132455826,
+      "class_probabilities": {
+        "rugby ball": 0.12389735132455826
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.12389735132455826,
+          "raw_logit": 5.029347896575928
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.041262827813625336,
+          "raw_logit": 3.929856538772583
+        },
+        {
+          "rank": 3,
+          "index": 504,
+          "label": "coffee mug",
+          "probability": 0.0028282245621085167,
+          "raw_logit": 1.24954354763031
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.0026249235961586237,
+          "raw_logit": 1.1749461889266968
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0024331219028681517,
+          "raw_logit": 1.099069595336914
+        }
+      ]
+    },
+    {
+      "case_number": 11546,
+      "source_line": 11548,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 21462,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011546_seed-21462.png",
+      "image_sha256": "c88b4b0e9f3366599cf8f1ae34ff5c0ce62d568ca178c1ac457f14a0d7570d60",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.08105781674385071,
+      "class_probabilities": {
+        "rugby ball": 0.08105781674385071
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.08418496698141098,
+          "raw_logit": 4.758893966674805
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.08105781674385071,
+          "raw_logit": 4.72104024887085
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.024851400405168533,
+          "raw_logit": 3.5387916564941406
+        },
+        {
+          "rank": 4,
+          "index": 737,
+          "label": "pop bottle",
+          "probability": 0.010053494945168495,
+          "raw_logit": 2.6337978839874268
+        },
+        {
+          "rank": 5,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.008134374395012856,
+          "raw_logit": 2.421976327896118
+        }
+      ]
+    },
+    {
+      "case_number": 11547,
+      "source_line": 11549,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 82595,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011547_seed-82595.png",
+      "image_sha256": "eb1bd35ae2da6b2558c577fddbef043f63a575be6fb2724bc4622cfcd60d5a20",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5035173892974854,
+      "class_probabilities": {
+        "rugby ball": 0.5035173892974854
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5035173892974854,
+          "raw_logit": 7.0817461013793945
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.021372387185692787,
+          "raw_logit": 3.922227621078491
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.016693124547600746,
+          "raw_logit": 3.6751246452331543
+        },
+        {
+          "rank": 4,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.016559764742851257,
+          "raw_logit": 3.6671037673950195
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.004899461288005114,
+          "raw_logit": 2.4492528438568115
+        }
+      ]
+    },
+    {
+      "case_number": 11548,
+      "source_line": 11550,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 24956,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011548_seed-24956.png",
+      "image_sha256": "0db671497e85246ea491bbe4de2042e3a905f24debbde519f73a9db360f33e08",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": false,
+      "expected_probability": 0.0474955178797245,
+      "class_probabilities": {
+        "rugby ball": 0.0474955178797245
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.14411011338233948,
+          "raw_logit": 5.5786051750183105
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.07818642258644104,
+          "raw_logit": 4.967123508453369
+        },
+        {
+          "rank": 3,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0474955178797245,
+          "raw_logit": 4.468662738800049
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.04242868721485138,
+          "raw_logit": 4.355852127075195
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.032861366868019104,
+          "raw_logit": 4.100325107574463
+        }
+      ]
+    },
+    {
+      "case_number": 11549,
+      "source_line": 11551,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 42188,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011549_seed-42188.png",
+      "image_sha256": "57673aacb319e0b856eb6719635614e48be1925cb7834e84a03048d37a8a24a5",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.6404603123664856,
+      "class_probabilities": {
+        "rugby ball": 0.6404603123664856
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.6404603123664856,
+          "raw_logit": 7.85390567779541
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.031777337193489075,
+          "raw_logit": 4.8504719734191895
+        },
+        {
+          "rank": 3,
+          "index": 708,
+          "label": "pedestal",
+          "probability": 0.014857358299195766,
+          "raw_logit": 4.090213775634766
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.007637687027454376,
+          "raw_logit": 3.4248132705688477
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0065014255233109,
+          "raw_logit": 3.263740062713623
+        }
+      ]
+    },
+    {
+      "case_number": 11550,
+      "source_line": 11552,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 84765,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011550_seed-84765.png",
+      "image_sha256": "0caad284c952762650df77ac20b6b432389541bbaafa04b9540ea6c02e197e5e",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.4919392466545105,
+      "class_probabilities": {
+        "rugby ball": 0.4919392466545105
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.4919392466545105,
+          "raw_logit": 6.950355529785156
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.018418356776237488,
+          "raw_logit": 3.6653480529785156
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0018389209872111678,
+          "raw_logit": 1.3611795902252197
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0018068855861201882,
+          "raw_logit": 1.3436048030853271
+        },
+        {
+          "rank": 5,
+          "index": 826,
+          "label": "stopwatch",
+          "probability": 0.0016877842135727406,
+          "raw_logit": 1.2754169702529907
+        }
+      ]
+    },
+    {
+      "case_number": 11551,
+      "source_line": 11553,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 11582,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011551_seed-11582.png",
+      "image_sha256": "71def010077ea4a28b02f28fa852270d6650a7f344a24dca028139ad3e8685e9",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 890,
+      "predicted_category": "volleyball",
+      "correct": false,
+      "expected_probability": 0.027079608291387558,
+      "class_probabilities": {
+        "rugby ball": 0.027079608291387558
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.04771678149700165,
+          "raw_logit": 4.269302845001221
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.044669684022665024,
+          "raw_logit": 4.203314781188965
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.028256816789507866,
+          "raw_logit": 3.745354413986206
+        },
+        {
+          "rank": 4,
+          "index": 835,
+          "label": "sundial",
+          "probability": 0.02729625627398491,
+          "raw_logit": 3.7107691764831543
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.027079608291387558,
+          "raw_logit": 3.702800750732422
+        }
+      ]
+    },
+    {
+      "case_number": 11552,
+      "source_line": 11554,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 98674,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011552_seed-98674.png",
+      "image_sha256": "7daf281245810ee3cbbff819d6bfc2e5819f416cd46a1b1b31c3c9c4fbef8bec",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.45046961307525635,
+      "class_probabilities": {
+        "rugby ball": 0.45046961307525635
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.45046961307525635,
+          "raw_logit": 7.107690334320068
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.1457967609167099,
+          "raw_logit": 5.979613304138184
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.009476132690906525,
+          "raw_logit": 3.24617600440979
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.006044966168701649,
+          "raw_logit": 2.7966256141662598
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0040097166784107685,
+          "raw_logit": 2.386120319366455
+        }
+      ]
+    },
+    {
+      "case_number": 11553,
+      "source_line": 11555,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49913,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011553_seed-49913.png",
+      "image_sha256": "ed258a0138a3165a9b04764943175adc0de8487d8990381a1c5936ceef5dba7b",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.09614782780408859,
+      "class_probabilities": {
+        "rugby ball": 0.09614782780408859
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.09614782780408859,
+          "raw_logit": 5.185640335083008
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.05728667229413986,
+          "raw_logit": 4.667821407318115
+        },
+        {
+          "rank": 3,
+          "index": 789,
+          "label": "shoji",
+          "probability": 0.04290857911109924,
+          "raw_logit": 4.3788251876831055
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.030940450727939606,
+          "raw_logit": 4.051817893981934
+        },
+        {
+          "rank": 5,
+          "index": 799,
+          "label": "sliding door",
+          "probability": 0.0293289627879858,
+          "raw_logit": 3.998328924179077
+        }
+      ]
+    },
+    {
+      "case_number": 11554,
+      "source_line": 11556,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 91502,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011554_seed-91502.png",
+      "image_sha256": "2445571be939d9d927d436d75ea022965692c1c01866ba87ca8a2ae9371bd9c9",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.42729777097702026,
+      "class_probabilities": {
+        "rugby ball": 0.42729777097702026
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.42729777097702026,
+          "raw_logit": 6.738494873046875
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.013354328460991383,
+          "raw_logit": 3.2728543281555176
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.007905176840722561,
+          "raw_logit": 2.7485315799713135
+        },
+        {
+          "rank": 4,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.00523126358166337,
+          "raw_logit": 2.3356666564941406
+        },
+        {
+          "rank": 5,
+          "index": 838,
+          "label": "sunscreen",
+          "probability": 0.00512629235163331,
+          "raw_logit": 2.3153960704803467
+        }
+      ]
+    },
+    {
+      "case_number": 11555,
+      "source_line": 11557,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 89159,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011555_seed-89159.png",
+      "image_sha256": "f781bd099c729e04eb322136aa4ad493c6a47287596f34f5d532a219e803b429",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.44661858677864075,
+      "class_probabilities": {
+        "rugby ball": 0.44661858677864075
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.44661858677864075,
+          "raw_logit": 6.763036251068115
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.005464525893330574,
+          "raw_logit": 2.3596086502075195
+        },
+        {
+          "rank": 3,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.0019329622155055404,
+          "raw_logit": 1.3203850984573364
+        },
+        {
+          "rank": 4,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.0019205141579732299,
+          "raw_logit": 1.3139240741729736
+        },
+        {
+          "rank": 5,
+          "index": 940,
+          "label": "spaghetti squash",
+          "probability": 0.0018080781446769834,
+          "raw_logit": 1.2535960674285889
+        }
+      ]
+    },
+    {
+      "case_number": 11556,
+      "source_line": 11558,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 22082,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011556_seed-22082.png",
+      "image_sha256": "bc7d05b35c5ded4389a99e3136515aedf0244c1beac66e3fa8e945c3e48cb943",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.11627928167581558,
+      "class_probabilities": {
+        "rugby ball": 0.11627928167581558
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.2581353485584259,
+          "raw_logit": 6.1622467041015625
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.11627928167581558,
+          "raw_logit": 5.364757537841797
+        },
+        {
+          "rank": 3,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.007544476073235273,
+          "raw_logit": 2.6295783519744873
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.007201195694506168,
+          "raw_logit": 2.583009719848633
+        },
+        {
+          "rank": 5,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.005736381746828556,
+          "raw_logit": 2.355591297149658
+        }
+      ]
+    },
+    {
+      "case_number": 11557,
+      "source_line": 11559,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 32894,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011557_seed-32894.png",
+      "image_sha256": "07dfcca481ee3c66070e6a563741b48265131aa2b1c9b82e07b2ec131a27b69f",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5865204930305481,
+      "class_probabilities": {
+        "rugby ball": 0.5865204930305481
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5865204930305481,
+          "raw_logit": 7.312653064727783
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0028378579299896955,
+          "raw_logit": 1.9814949035644531
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002598696621134877,
+          "raw_logit": 1.8934553861618042
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0020979091059416533,
+          "raw_logit": 1.6793863773345947
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0017669509397819638,
+          "raw_logit": 1.5077009201049805
+        }
+      ]
+    },
+    {
+      "case_number": 11558,
+      "source_line": 11560,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 14118,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011558_seed-14118.png",
+      "image_sha256": "13dc5941e085bbfe19df35c767256c608711677e667bd395df513cbd17617645",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.06474816054105759,
+      "class_probabilities": {
+        "rugby ball": 0.06474816054105759
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.3839056193828583,
+          "raw_logit": 6.5772600173950195
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.06474816054105759,
+          "raw_logit": 4.79736852645874
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0027806314174085855,
+          "raw_logit": 1.6495412588119507
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.0018656342290341854,
+          "raw_logit": 1.2504644393920898
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0017631956143304706,
+          "raw_logit": 1.1939911842346191
+        }
+      ]
+    },
+    {
+      "case_number": 11559,
+      "source_line": 11561,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 4578,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011559_seed-4578.png",
+      "image_sha256": "043e38675290a25f3c4d932cf67e09d34517e6e12f903d4736433f682ed5f5e6",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5033185482025146,
+      "class_probabilities": {
+        "rugby ball": 0.5033185482025146
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5033185482025146,
+          "raw_logit": 7.065219402313232
+        },
+        {
+          "rank": 2,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.016951126977801323,
+          "raw_logit": 3.674330472946167
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.016113823279738426,
+          "raw_logit": 3.623673677444458
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.008047818206250668,
+          "raw_logit": 2.9293973445892334
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005819995887577534,
+          "raw_logit": 2.6052958965301514
+        }
+      ]
+    },
+    {
+      "case_number": 11560,
+      "source_line": 11562,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 41580,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011560_seed-41580.png",
+      "image_sha256": "670720924b406e7d2509776483460eec9b01024312a5a6be8b3b909aa7f9e066",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.29202887415885925,
+      "class_probabilities": {
+        "rugby ball": 0.29202887415885925
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.29202887415885925,
+          "raw_logit": 6.180081367492676
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.05742667615413666,
+          "raw_logit": 4.553737640380859
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0023437323980033398,
+          "raw_logit": 1.3549734354019165
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002170364372432232,
+          "raw_logit": 1.2781236171722412
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.002057623816654086,
+          "raw_logit": 1.224780559539795
+        }
+      ]
+    },
+    {
+      "case_number": 11561,
+      "source_line": 11563,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 398,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011561_seed-398.png",
+      "image_sha256": "e4d2df50b64e33e23682b0f2e1608caebdcad5162252ecbb88ffff71967078b9",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3854440748691559,
+      "class_probabilities": {
+        "rugby ball": 0.3854440748691559
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3854440748691559,
+          "raw_logit": 6.647574424743652
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.023450756445527077,
+          "raw_logit": 3.848081111907959
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.008590364828705788,
+          "raw_logit": 2.8438196182250977
+        },
+        {
+          "rank": 4,
+          "index": 572,
+          "label": "goblet",
+          "probability": 0.007692357059568167,
+          "raw_logit": 2.733405590057373
+        },
+        {
+          "rank": 5,
+          "index": 441,
+          "label": "beer glass",
+          "probability": 0.007157628890126944,
+          "raw_logit": 2.6613571643829346
+        }
+      ]
+    },
+    {
+      "case_number": 11562,
+      "source_line": 11564,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 55280,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011562_seed-55280.png",
+      "image_sha256": "178ee829cfb928e1cc0eac3f6010edfc67c28bed79c6003132e493f2a18319d2",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.6332497000694275,
+      "class_probabilities": {
+        "rugby ball": 0.6332497000694275
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.6332497000694275,
+          "raw_logit": 7.548053741455078
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.011006554588675499,
+          "raw_logit": 3.4956796169281006
+        },
+        {
+          "rank": 3,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.001900970470160246,
+          "raw_logit": 1.7395532131195068
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0016863135388121009,
+          "raw_logit": 1.6197336912155151
+        },
+        {
+          "rank": 5,
+          "index": 105,
+          "label": "koala",
+          "probability": 0.001403049798682332,
+          "raw_logit": 1.4358373880386353
+        }
+      ]
+    },
+    {
+      "case_number": 11563,
+      "source_line": 11565,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 83274,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011563_seed-83274.png",
+      "image_sha256": "e6e2a8ccdd8eb1d2e17ce7cf654fbcadbac1f92f4e221c9edfcb2cb6d4a9089f",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5192879438400269,
+      "class_probabilities": {
+        "rugby ball": 0.5192879438400269
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5192879438400269,
+          "raw_logit": 7.063473701477051
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.018983427435159683,
+          "raw_logit": 3.7545814514160156
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.006711538415402174,
+          "raw_logit": 2.714843273162842
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004118221811950207,
+          "raw_logit": 2.2264363765716553
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0038708962965756655,
+          "raw_logit": 2.164501190185547
+        }
+      ]
+    },
+    {
+      "case_number": 11564,
+      "source_line": 11566,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 39565,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011564_seed-39565.png",
+      "image_sha256": "d8a5a8fe39ae683404126dd4e5d0fd27f261a41257b1de98d33ac8048edb1edc",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5282109975814819,
+      "class_probabilities": {
+        "rugby ball": 0.5282109975814819
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5282109975814819,
+          "raw_logit": 7.138332366943359
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.027501309290528297,
+          "raw_logit": 4.183070182800293
+        },
+        {
+          "rank": 3,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.005656536668539047,
+          "raw_logit": 2.6016485691070557
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.005347891245037317,
+          "raw_logit": 2.545539140701294
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.004498186521232128,
+          "raw_logit": 2.372511148452759
+        }
+      ]
+    },
+    {
+      "case_number": 11565,
+      "source_line": 11567,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 34019,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011565_seed-34019.png",
+      "image_sha256": "f8f7ab0cf6b594af167fcc0eeccdfd866ad4a78d7c7821d61c6dc3b2f6ef60ac",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.1501597911119461,
+      "class_probabilities": {
+        "rugby ball": 0.1501597911119461
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.1737360656261444,
+          "raw_logit": 5.655954360961914
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.1501597911119461,
+          "raw_logit": 5.510117053985596
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.025231029838323593,
+          "raw_logit": 3.726491689682007
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.006621744949370623,
+          "raw_logit": 2.3887760639190674
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.003080110065639019,
+          "raw_logit": 1.6233824491500854
+        }
+      ]
+    },
+    {
+      "case_number": 11566,
+      "source_line": 11568,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 90642,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011566_seed-90642.png",
+      "image_sha256": "ec9b4855994f45c3dc1838e50284aea4a615b21425ab47362d7778182dca87b1",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.14676015079021454,
+      "class_probabilities": {
+        "rugby ball": 0.14676015079021454
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.14676015079021454,
+          "raw_logit": 5.463229179382324
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.12684601545333862,
+          "raw_logit": 5.317403316497803
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0784122422337532,
+          "raw_logit": 4.836409568786621
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.006358415819704533,
+          "raw_logit": 2.3242087364196777
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.004877682309597731,
+          "raw_logit": 2.0590996742248535
+        }
+      ]
+    },
+    {
+      "case_number": 11567,
+      "source_line": 11569,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 84979,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011567_seed-84979.png",
+      "image_sha256": "5acae7349512be117b48bd7e3d4b8ff7fa42e9bea08d1e7fa9ae92eb81e627b0",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.39576321840286255,
+      "class_probabilities": {
+        "rugby ball": 0.39576321840286255
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.39576321840286255,
+          "raw_logit": 6.808903694152832
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.05323423072695732,
+          "raw_logit": 4.802789211273193
+        },
+        {
+          "rank": 3,
+          "index": 960,
+          "label": "chocolate sauce",
+          "probability": 0.04757923632860184,
+          "raw_logit": 4.690484046936035
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.01470250729471445,
+          "raw_logit": 3.5161056518554688
+        },
+        {
+          "rank": 5,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.004099356941878796,
+          "raw_logit": 2.238917827606201
+        }
+      ]
+    },
+    {
+      "case_number": 11568,
+      "source_line": 11570,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 61775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011568_seed-61775.png",
+      "image_sha256": "23a0feb2d2cdae2cc48234b05e942f9acca2fc7a95904abfd3f53b5f0d9b2c33",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.13772758841514587,
+      "class_probabilities": {
+        "rugby ball": 0.13772758841514587
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.14400212466716766,
+          "raw_logit": 5.487401008605957
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.13772758841514587,
+          "raw_logit": 5.442850589752197
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.08182965964078903,
+          "raw_logit": 4.922212600708008
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.014867872931063175,
+          "raw_logit": 3.21677565574646
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00400458974763751,
+          "raw_logit": 1.9050140380859375
+        }
+      ]
+    },
+    {
+      "case_number": 11569,
+      "source_line": 11571,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 48486,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011569_seed-48486.png",
+      "image_sha256": "b199490ac4271d541b39687a2c7955e150107e8699650f53043ac9836a28d5b7",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.05341937020421028,
+      "class_probabilities": {
+        "rugby ball": 0.05341937020421028
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.41428685188293457,
+          "raw_logit": 6.696908950805664
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.05341937020421028,
+          "raw_logit": 4.648523807525635
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002614523284137249,
+          "raw_logit": 1.6314321756362915
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.002018008381128311,
+          "raw_logit": 1.372461199760437
+        },
+        {
+          "rank": 5,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.0018378528766334057,
+          "raw_logit": 1.278948187828064
+        }
+      ]
+    },
+    {
+      "case_number": 11570,
+      "source_line": 11572,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 49263,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011570_seed-49263.png",
+      "image_sha256": "64022a06d65b0974485fdcfed37aa075b333988f85984fdac0b6b9a9e2be4c30",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.31127622723579407,
+      "class_probabilities": {
+        "rugby ball": 0.31127622723579407
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.31127622723579407,
+          "raw_logit": 6.481404781341553
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.18840532004833221,
+          "raw_logit": 5.9793195724487305
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.005788313690572977,
+          "raw_logit": 2.496565103530884
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.004728049039840698,
+          "raw_logit": 2.294236660003662
+        },
+        {
+          "rank": 5,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.0046302746050059795,
+          "raw_logit": 2.2733402252197266
+        }
+      ]
+    },
+    {
+      "case_number": 11571,
+      "source_line": 11573,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 55348,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011571_seed-55348.png",
+      "image_sha256": "e64309eca7e6910e8e80901d04afdb43b8697e24a100623bbcc52df4e35c0be5",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.2865331172943115,
+      "class_probabilities": {
+        "rugby ball": 0.2865331172943115
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.2865331172943115,
+          "raw_logit": 6.587906837463379
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.14224542677402496,
+          "raw_logit": 5.887606620788574
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0880756601691246,
+          "raw_logit": 5.4082489013671875
+        },
+        {
+          "rank": 4,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.028214318677783012,
+          "raw_logit": 4.2698822021484375
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.013402131386101246,
+          "raw_logit": 3.5254664421081543
+        }
+      ]
+    },
+    {
+      "case_number": 11572,
+      "source_line": 11574,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 96209,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011572_seed-96209.png",
+      "image_sha256": "e71263440b1860f703011d3a5e8611d44456f153f756d943bf9fe4d8d996122f",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.48405325412750244,
+      "class_probabilities": {
+        "rugby ball": 0.48405325412750244
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.48405325412750244,
+          "raw_logit": 6.945024490356445
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.026370679959654808,
+          "raw_logit": 4.0350823402404785
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.006403475068509579,
+          "raw_logit": 2.6196703910827637
+        },
+        {
+          "rank": 4,
+          "index": 770,
+          "label": "running shoe",
+          "probability": 0.004901805426925421,
+          "raw_logit": 2.3524329662323
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003731733188033104,
+          "raw_logit": 2.079702615737915
+        }
+      ]
+    },
+    {
+      "case_number": 11573,
+      "source_line": 11575,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 86510,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011573_seed-86510.png",
+      "image_sha256": "6b338f0095b5772809e93be507517f65bd1d5d6c9a2f31d193fb104e2d61c932",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.5151188969612122,
+      "class_probabilities": {
+        "rugby ball": 0.5151188969612122
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.5151188969612122,
+          "raw_logit": 7.406589508056641
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.15961460769176483,
+          "raw_logit": 6.234953880310059
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.002304886933416128,
+          "raw_logit": 1.9972232580184937
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0017135727684944868,
+          "raw_logit": 1.7007725238800049
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0015917869750410318,
+          "raw_logit": 1.6270490884780884
+        }
+      ]
+    },
+    {
+      "case_number": 11574,
+      "source_line": 11576,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 36066,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011574_seed-36066.png",
+      "image_sha256": "d5aaa3e2838987727540dab6e62a65136af39ef333910d9ba5fe2475cbd25df7",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3384633958339691,
+      "class_probabilities": {
+        "rugby ball": 0.3384633958339691
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3384633958339691,
+          "raw_logit": 6.2972092628479
+        },
+        {
+          "rank": 2,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0034195424523204565,
+          "raw_logit": 1.7023000717163086
+        },
+        {
+          "rank": 3,
+          "index": 225,
+          "label": "malinois",
+          "probability": 0.0032662597950547934,
+          "raw_logit": 1.656438946723938
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.003143089357763529,
+          "raw_logit": 1.617999792098999
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.002857963088899851,
+          "raw_logit": 1.5229023694992065
+        }
+      ]
+    },
+    {
+      "case_number": 11575,
+      "source_line": 11577,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 94587,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011575_seed-94587.png",
+      "image_sha256": "2cc0a0a1a6bfe49e7c8f490b1dff329aa1e25c7cbe180020a3fd7804bd6dc18c",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3664259910583496,
+      "class_probabilities": {
+        "rugby ball": 0.3664259910583496
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3664259910583496,
+          "raw_logit": 6.650602340698242
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.12411467730998993,
+          "raw_logit": 5.56801176071167
+        },
+        {
+          "rank": 3,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.011487092822790146,
+          "raw_logit": 3.1880297660827637
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.00545440474525094,
+          "raw_logit": 2.4432291984558105
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.004309946671128273,
+          "raw_logit": 2.2077314853668213
+        }
+      ]
+    },
+    {
+      "case_number": 11576,
+      "source_line": 11578,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 35639,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011576_seed-35639.png",
+      "image_sha256": "a05bb7186a3b298404272bd197b0289a4ab2a8058482beb52f8f41836c4c5e07",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.26171907782554626,
+      "class_probabilities": {
+        "rugby ball": 0.26171907782554626
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.26171907782554626,
+          "raw_logit": 5.9193010330200195
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.012845072895288467,
+          "raw_logit": 2.904989719390869
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0034257089719176292,
+          "raw_logit": 1.5833377838134766
+        },
+        {
+          "rank": 4,
+          "index": 419,
+          "label": "Band Aid",
+          "probability": 0.0030073735397309065,
+          "raw_logit": 1.4530962705612183
+        },
+        {
+          "rank": 5,
+          "index": 948,
+          "label": "Granny Smith",
+          "probability": 0.0027753813192248344,
+          "raw_logit": 1.3728175163269043
+        }
+      ]
+    },
+    {
+      "case_number": 11577,
+      "source_line": 11579,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 71115,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011577_seed-71115.png",
+      "image_sha256": "d9469f4f79160dd7a231e7db8a2de21c884a289ea2dc778606eade8cf3b57c44",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.6569057703018188,
+      "class_probabilities": {
+        "rugby ball": 0.6569057703018188
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.6569057703018188,
+          "raw_logit": 7.616722106933594
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.003849857486784458,
+          "raw_logit": 2.477217435836792
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.001876357477158308,
+          "raw_logit": 1.7585138082504272
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0018447913462296128,
+          "raw_logit": 1.741547703742981
+        },
+        {
+          "rank": 5,
+          "index": 615,
+          "label": "knee pad",
+          "probability": 0.0014183907769620419,
+          "raw_logit": 1.4787044525146484
+        }
+      ]
+    },
+    {
+      "case_number": 11578,
+      "source_line": 11580,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 86147,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011578_seed-86147.png",
+      "image_sha256": "b1f1e5fa3ebdfc02907e8d73923d1e7cc15c94a1d1c9092f7ce913fcbaf9c8c8",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3093348443508148,
+      "class_probabilities": {
+        "rugby ball": 0.3093348443508148
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3093348443508148,
+          "raw_logit": 6.146728515625
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.006538298446685076,
+          "raw_logit": 2.2899811267852783
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.004942506551742554,
+          "raw_logit": 2.010176420211792
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.003785046748816967,
+          "raw_logit": 1.7433626651763916
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.002661660546436906,
+          "raw_logit": 1.3912543058395386
+        }
+      ]
+    },
+    {
+      "case_number": 11579,
+      "source_line": 11581,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 65701,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011579_seed-65701.png",
+      "image_sha256": "334ab322007231f525e61d1cf022eb9b709064e75ffe75aa50dbb9f6b1898dba",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 882,
+      "predicted_category": "vacuum",
+      "correct": false,
+      "expected_probability": 0.0021550925448536873,
+      "class_probabilities": {
+        "rugby ball": 0.0021550925448536873
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 882,
+          "label": "vacuum",
+          "probability": 0.05653908848762512,
+          "raw_logit": 4.726301193237305
+        },
+        {
+          "rank": 2,
+          "index": 844,
+          "label": "switch",
+          "probability": 0.04944325610995293,
+          "raw_logit": 4.592194557189941
+        },
+        {
+          "rank": 3,
+          "index": 414,
+          "label": "backpack",
+          "probability": 0.04706980660557747,
+          "raw_logit": 4.5430006980896
+        },
+        {
+          "rank": 4,
+          "index": 787,
+          "label": "shield",
+          "probability": 0.04425399750471115,
+          "raw_logit": 4.481314659118652
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.025235069915652275,
+          "raw_logit": 3.9196035861968994
+        }
+      ]
+    },
+    {
+      "case_number": 11580,
+      "source_line": 11582,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 60042,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011580_seed-60042.png",
+      "image_sha256": "997cd149a2baad1ef00f0249e9d80dad5a2701fe9160b257d43a9d3eb01316ba",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.41418784856796265,
+      "class_probabilities": {
+        "rugby ball": 0.41418784856796265
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.41418784856796265,
+          "raw_logit": 6.96358060836792
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.07884678989648819,
+          "raw_logit": 5.304767608642578
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.07265400886535645,
+          "raw_logit": 5.2229695320129395
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.00839941669255495,
+          "raw_logit": 3.0654232501983643
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.007159090600907803,
+          "raw_logit": 2.9056437015533447
+        }
+      ]
+    },
+    {
+      "case_number": 11581,
+      "source_line": 11583,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 7027,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011581_seed-7027.png",
+      "image_sha256": "f8c1e626b8218a4d4c3928e8c27428aa548c3785d38d83e929726abef6195674",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.49966832995414734,
+      "class_probabilities": {
+        "rugby ball": 0.49966832995414734
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.49966832995414734,
+          "raw_logit": 7.259221076965332
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.12623243033885956,
+          "raw_logit": 5.883401393890381
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0079258494079113,
+          "raw_logit": 3.115405797958374
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.004079543054103851,
+          "raw_logit": 2.4512617588043213
+        },
+        {
+          "rank": 5,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.0032514689955860376,
+          "raw_logit": 2.2243831157684326
+        }
+      ]
+    },
+    {
+      "case_number": 11582,
+      "source_line": 11584,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 90381,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011582_seed-90381.png",
+      "image_sha256": "19652d331adba3c90b31012a7c292e5b869958673ef0b3331396d74abc66ec56",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.44775980710983276,
+      "class_probabilities": {
+        "rugby ball": 0.44775980710983276
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.44775980710983276,
+          "raw_logit": 6.74156379699707
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.008232909254729748,
+          "raw_logit": 2.74544620513916
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002948971465229988,
+          "raw_logit": 1.7187631130218506
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0029319862369447947,
+          "raw_logit": 1.712986946105957
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.002178729046136141,
+          "raw_logit": 1.416048526763916
+        }
+      ]
+    },
+    {
+      "case_number": 11583,
+      "source_line": 11585,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 16508,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011583_seed-16508.png",
+      "image_sha256": "bdd8af6a632454dd7638d3fbc4fa6ffdf46f0ea17f7f30df4654197ca2eba50b",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.0036145925987511873,
+      "class_probabilities": {
+        "rugby ball": 0.0036145925987511873
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.38657346367836,
+          "raw_logit": 6.519758224487305
+        },
+        {
+          "rank": 2,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.0038531615864485502,
+          "raw_logit": 1.911329984664917
+        },
+        {
+          "rank": 3,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0036145925987511873,
+          "raw_logit": 1.8474154472351074
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003418724052608013,
+          "raw_logit": 1.791703701019287
+        },
+        {
+          "rank": 5,
+          "index": 305,
+          "label": "dung beetle",
+          "probability": 0.002939474070444703,
+          "raw_logit": 1.640667200088501
+        }
+      ]
+    },
+    {
+      "case_number": 11584,
+      "source_line": 11586,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 65154,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011584_seed-65154.png",
+      "image_sha256": "99577c3d49f27d357689e0229286e432c5c0397366e2a1c695243af6acbe315d",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.48101091384887695,
+      "class_probabilities": {
+        "rugby ball": 0.48101091384887695
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.48101091384887695,
+          "raw_logit": 6.957584857940674
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.010488996282219887,
+          "raw_logit": 3.13202166557312
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.008930623531341553,
+          "raw_logit": 2.9711811542510986
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.008586926385760307,
+          "raw_logit": 2.9319355487823486
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.007230937480926514,
+          "raw_logit": 2.760063886642456
+        }
+      ]
+    },
+    {
+      "case_number": 11585,
+      "source_line": 11587,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 23543,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011585_seed-23543.png",
+      "image_sha256": "cc2584f5502b46b0f46a8600c3e902b9da8cd16c71202ae9ef5ec376839293ac",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.24580906331539154,
+      "class_probabilities": {
+        "rugby ball": 0.24580906331539154
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.24580906331539154,
+          "raw_logit": 5.863495349884033
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.013676322065293789,
+          "raw_logit": 2.9746062755584717
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.009583604522049427,
+          "raw_logit": 2.6189939975738525
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0030335974879562855,
+          "raw_logit": 1.4686894416809082
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0017870593583211303,
+          "raw_logit": 0.9395115971565247
+        }
+      ]
+    },
+    {
+      "case_number": 11586,
+      "source_line": 11588,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 25394,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011586_seed-25394.png",
+      "image_sha256": "19caf9f5572b56f48edafffd32220611b2336913f38b4aafcef2103f39e51f7a",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.39140018820762634,
+      "class_probabilities": {
+        "rugby ball": 0.39140018820762634
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.39140018820762634,
+          "raw_logit": 6.796469688415527
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0456492155790329,
+          "raw_logit": 4.647725582122803
+        },
+        {
+          "rank": 3,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.030596211552619934,
+          "raw_logit": 4.247615337371826
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.013490759767591953,
+          "raw_logit": 3.428744077682495
+        },
+        {
+          "rank": 5,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.007859556004405022,
+          "raw_logit": 2.8884692192077637
+        }
+      ]
+    },
+    {
+      "case_number": 11587,
+      "source_line": 11589,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 56497,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011587_seed-56497.png",
+      "image_sha256": "f9914ef358947a3b020fdadfeb96b7ab2eb3d601868b553923ed2a5cc8ea8c94",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.26753294467926025,
+      "class_probabilities": {
+        "rugby ball": 0.26753294467926025
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.26753294467926025,
+          "raw_logit": 6.218279838562012
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0724555030465126,
+          "raw_logit": 4.9120097160339355
+        },
+        {
+          "rank": 3,
+          "index": 109,
+          "label": "brain coral",
+          "probability": 0.06526821851730347,
+          "raw_logit": 4.807542324066162
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.019046425819396973,
+          "raw_logit": 3.5759165287017822
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.009031000547111034,
+          "raw_logit": 2.829700231552124
+        }
+      ]
+    },
+    {
+      "case_number": 11588,
+      "source_line": 11590,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 16737,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011588_seed-16737.png",
+      "image_sha256": "46c21711a9f91d4ed20f68edf79fcad25d8a02b20b9a18fcafbe97614e19d19f",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.7972637414932251,
+      "class_probabilities": {
+        "rugby ball": 0.7972637414932251
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.7972637414932251,
+          "raw_logit": 8.42773151397705
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0054566930048167706,
+          "raw_logit": 3.4433889389038086
+        },
+        {
+          "rank": 3,
+          "index": 606,
+          "label": "iron",
+          "probability": 0.0035046280827373266,
+          "raw_logit": 3.0006301403045654
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.00196636444889009,
+          "raw_logit": 2.42273211479187
+        },
+        {
+          "rank": 5,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0008624986512586474,
+          "raw_logit": 1.5986241102218628
+        }
+      ]
+    },
+    {
+      "case_number": 11589,
+      "source_line": 11591,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 10741,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011589_seed-10741.png",
+      "image_sha256": "03af176427dd037d35b39c6b993e52d6b56304e79440d81a2d473647dfc88eee",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.023727750405669212,
+      "class_probabilities": {
+        "rugby ball": 0.023727750405669212
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.5058226585388184,
+          "raw_logit": 7.088112831115723
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.023727750405669212,
+          "raw_logit": 4.028572082519531
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.010118763893842697,
+          "raw_logit": 3.1763181686401367
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.008046558126807213,
+          "raw_logit": 2.947171449661255
+        },
+        {
+          "rank": 5,
+          "index": 960,
+          "label": "chocolate sauce",
+          "probability": 0.0037031732499599457,
+          "raw_logit": 2.171117067337036
+        }
+      ]
+    },
+    {
+      "case_number": 11590,
+      "source_line": 11592,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 96436,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011590_seed-96436.png",
+      "image_sha256": "68ee0a4bb48a8648d80b0d66bc941b8f1ea6cf79701a0715c5433dca3eb9e973",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.509752094745636,
+      "class_probabilities": {
+        "rugby ball": 0.509752094745636
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.509752094745636,
+          "raw_logit": 7.067595958709717
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0233609639108181,
+          "raw_logit": 3.9847378730773926
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.014731633476912975,
+          "raw_logit": 3.5236685276031494
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004034772515296936,
+          "raw_logit": 2.228621482849121
+        },
+        {
+          "rank": 5,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.0033874360378831625,
+          "raw_logit": 2.0537445545196533
+        }
+      ]
+    },
+    {
+      "case_number": 11591,
+      "source_line": 11593,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 24317,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011591_seed-24317.png",
+      "image_sha256": "08136aa0176049458160dce3d2ca51de830ed9889f20c6c5f14498af733a934f",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.7032918930053711,
+      "class_probabilities": {
+        "rugby ball": 0.7032918930053711
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.7032918930053711,
+          "raw_logit": 7.824609756469727
+        },
+        {
+          "rank": 2,
+          "index": 80,
+          "label": "black grouse",
+          "probability": 0.0019050196278840303,
+          "raw_logit": 1.9133301973342896
+        },
+        {
+          "rank": 3,
+          "index": 476,
+          "label": "carousel",
+          "probability": 0.0015239916974678636,
+          "raw_logit": 1.6901706457138062
+        },
+        {
+          "rank": 4,
+          "index": 723,
+          "label": "pinwheel",
+          "probability": 0.0010283427545800805,
+          "raw_logit": 1.2967865467071533
+        },
+        {
+          "rank": 5,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.0008519003167748451,
+          "raw_logit": 1.1085519790649414
+        }
+      ]
+    },
+    {
+      "case_number": 11592,
+      "source_line": 11594,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 2610,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011592_seed-2610.png",
+      "image_sha256": "0574d1539b10ea181b4df0a717234eeaf2926f82f691decad2c55e5878dc4cfd",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.40075650811195374,
+      "class_probabilities": {
+        "rugby ball": 0.40075650811195374
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.40075650811195374,
+          "raw_logit": 6.580010414123535
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.01384769007563591,
+          "raw_logit": 3.2147748470306396
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.012527086772024632,
+          "raw_logit": 3.1145496368408203
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.003453967859968543,
+          "raw_logit": 1.826180100440979
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002435474656522274,
+          "raw_logit": 1.4767980575561523
+        }
+      ]
+    },
+    {
+      "case_number": 11593,
+      "source_line": 11595,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 67720,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011593_seed-67720.png",
+      "image_sha256": "737b05ba0ccf58153406b6140b7847193ac7ae45ec7f53c3fb2290f7258bcc89",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.3686319887638092,
+      "class_probabilities": {
+        "rugby ball": 0.3686319887638092
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.3686319887638092,
+          "raw_logit": 6.754201889038086
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.09072701632976532,
+          "raw_logit": 5.352258205413818
+        },
+        {
+          "rank": 3,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.02366562746465206,
+          "raw_logit": 4.008426666259766
+        },
+        {
+          "rank": 4,
+          "index": 518,
+          "label": "crash helmet",
+          "probability": 0.016165846958756447,
+          "raw_logit": 3.6273038387298584
+        },
+        {
+          "rank": 5,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.00812454428523779,
+          "raw_logit": 2.9392926692962646
+        }
+      ]
+    },
+    {
+      "case_number": 11594,
+      "source_line": 11596,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 37215,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011594_seed-37215.png",
+      "image_sha256": "a33ece54da484f069db24350edf655d85b37482ad1cdae528d531a6c5f5cecf2",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.04918384179472923,
+      "class_probabilities": {
+        "rugby ball": 0.04918384179472923
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0882219448685646,
+          "raw_logit": 4.685328483581543
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.04918384179472923,
+          "raw_logit": 4.101037979125977
+        },
+        {
+          "rank": 3,
+          "index": 811,
+          "label": "space heater",
+          "probability": 0.002946620574221015,
+          "raw_logit": 1.2861318588256836
+        },
+        {
+          "rank": 4,
+          "index": 234,
+          "label": "Rottweiler",
+          "probability": 0.002908384660258889,
+          "raw_logit": 1.2730705738067627
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0025813872925937176,
+          "raw_logit": 1.1537997722625732
+        }
+      ]
+    },
+    {
+      "case_number": 11595,
+      "source_line": 11597,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 30368,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011595_seed-30368.png",
+      "image_sha256": "cc2443fe154ba5eec8e5f6f02387fcee4e3774250e3e9dbc2c30871da8bb47ef",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.23663504421710968,
+      "class_probabilities": {
+        "rugby ball": 0.23663504421710968
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.23663504421710968,
+          "raw_logit": 6.057466983795166
+        },
+        {
+          "rank": 2,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.06453334540128708,
+          "raw_logit": 4.758130073547363
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.060510460287332535,
+          "raw_logit": 4.6937642097473145
+        },
+        {
+          "rank": 4,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.029636453837156296,
+          "raw_logit": 3.9799530506134033
+        },
+        {
+          "rank": 5,
+          "index": 615,
+          "label": "knee pad",
+          "probability": 0.013846369460225105,
+          "raw_logit": 3.218971014022827
+        }
+      ]
+    },
+    {
+      "case_number": 11596,
+      "source_line": 11598,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 27006,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011596_seed-27006.png",
+      "image_sha256": "c838bd6ad020f37d4996e75deaf2c174d3cfb654e60bb825dc13ba4494bed8cc",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.4469778835773468,
+      "class_probabilities": {
+        "rugby ball": 0.4469778835773468
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.4469778835773468,
+          "raw_logit": 6.898184776306152
+        },
+        {
+          "rank": 2,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.03535137325525284,
+          "raw_logit": 4.361012935638428
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.035082824528217316,
+          "raw_logit": 4.353387355804443
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.020836327224969864,
+          "raw_logit": 3.83237361907959
+        },
+        {
+          "rank": 5,
+          "index": 770,
+          "label": "running shoe",
+          "probability": 0.0033766310662031174,
+          "raw_logit": 2.012554168701172
+        }
+      ]
+    },
+    {
+      "case_number": 11597,
+      "source_line": 11599,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 61715,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011597_seed-61715.png",
+      "image_sha256": "a3c2fe2b598b3fa55d3b26d004e0e073d35b4f6c6aa2a818369934f38c515361",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.6225321292877197,
+      "class_probabilities": {
+        "rugby ball": 0.6225321292877197
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.6225321292877197,
+          "raw_logit": 7.446016311645508
+        },
+        {
+          "rank": 2,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.004760390147566795,
+          "raw_logit": 2.5725510120391846
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0032276909332722425,
+          "raw_logit": 2.183988094329834
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002143444726243615,
+          "raw_logit": 1.7746354341506958
+        },
+        {
+          "rank": 5,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.002027180977165699,
+          "raw_logit": 1.718867540359497
+        }
+      ]
+    },
+    {
+      "case_number": 11598,
+      "source_line": 11600,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 62699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011598_seed-62699.png",
+      "image_sha256": "6227cb5bdaa0152cf41783b288973cfde730eb5ba06d4fb490c13214cf312802",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 688,
+      "predicted_category": "oscilloscope",
+      "correct": false,
+      "expected_probability": 0.06179263815283775,
+      "class_probabilities": {
+        "rugby ball": 0.06179263815283775
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 688,
+          "label": "oscilloscope",
+          "probability": 0.1273571103811264,
+          "raw_logit": 5.43349027633667
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.08100450038909912,
+          "raw_logit": 4.980999946594238
+        },
+        {
+          "rank": 3,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.06179263815283775,
+          "raw_logit": 4.71027946472168
+        },
+        {
+          "rank": 4,
+          "index": 464,
+          "label": "buckle",
+          "probability": 0.036588359624147415,
+          "raw_logit": 4.186225414276123
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.020734090358018875,
+          "raw_logit": 3.618274450302124
+        }
+      ]
+    },
+    {
+      "case_number": 11599,
+      "source_line": 11601,
+      "prompt": "an image of a rugby ball",
+      "class": "rugby ball",
+      "evaluation_seed": 20343,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/C_objective_faithful/similar_non_target/rugby-ball/case-011599_seed-20343.png",
+      "image_sha256": "36450c32dc94064e84ab536b4fd93209dbb1dc3941d5d6b31fd30cccd40f6f24",
+      "expected_index": 768,
+      "expected_category": "rugby ball",
+      "predicted_index": 768,
+      "predicted_category": "rugby ball",
+      "correct": true,
+      "expected_probability": 0.2792275846004486,
+      "class_probabilities": {
+        "rugby ball": 0.2792275846004486
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.2792275846004486,
+          "raw_logit": 6.560856819152832
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.09875215590000153,
+          "raw_logit": 5.521442890167236
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.08040277659893036,
+          "raw_logit": 5.315878391265869
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.022625651210546494,
+          "raw_logit": 4.047914028167725
+        },
+        {
+          "rank": 5,
+          "index": 630,
+          "label": "Loafer",
+          "probability": 0.015967030078172684,
+          "raw_logit": 3.6993556022644043
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-08-13T02:28:08.735269+00:00"
+}

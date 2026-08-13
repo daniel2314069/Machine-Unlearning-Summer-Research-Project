@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "classification": "AFR-GO",
+  "alpha": 1.0,
+  "synthetic_passed": true,
+  "max_exact_guarantee_residual": 1.63791791363556e-27,
+  "max_structural_residual": 2.6176404950253813e-11,
+  "optimality_failure_count": 0,
+  "measurable_improvement_layers": 48,
+  "nonzero_compensation_layers": 48,
+  "material_improvement_layers": 48,
+  "median_f_minus_g": 0.05860192814284243,
+  "median_compensation_magnitude": 0.36395739806100463,
+  "thresholds": {
+    "zero_tolerance": 1e-10,
+    "preservation_optimality_tolerance": 1e-10,
+    "compensation_nonzero_tolerance": 1e-08,
+    "measurable_improvement_tolerance": 1e-10,
+    "measurable_layer_count": 12,
+    "material_preservation_improvement": 0.01
+  },
+  "variant_c_max_reproduction_difference": 8.781864124784988e-14,
+  "gate_fingerprint": "12e6deb1e180c35bd22941f4155629d3d55040ea5dad56933b2bfa4aeaa5dbab",
+  "completed_at": "2026-08-13T02:04:22.883654+00:00"
+}

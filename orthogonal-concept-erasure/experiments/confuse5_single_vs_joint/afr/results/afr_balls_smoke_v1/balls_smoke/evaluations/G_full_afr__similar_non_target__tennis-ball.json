@@ -1,0 +1,5579 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "job_id": "G_full_afr__similar_non_target__tennis-ball",
+  "job_fingerprint": "66d81151eb4526d03496cc015a0d37ebce6da793bc7606a48ca2ae82d1ac3f50",
+  "variant": "G_full_afr",
+  "role": "similar_non_target",
+  "concept": "tennis ball",
+  "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+  "generation_runtime": {
+    "requested_base_model": "CompVis/stable-diffusion-v1-4",
+    "requested_dtype": "bfloat16",
+    "pipeline": {
+      "class": "diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline",
+      "name_or_path": "CompVis/stable-diffusion-v1-4",
+      "commit_hash": null
+    },
+    "unet": {
+      "class": "diffusers.models.unets.unet_2d_condition.UNet2DConditionModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/unet",
+      "commit_hash": null
+    },
+    "text_encoder": {
+      "class": "transformers.models.clip.modeling_clip.CLIPTextModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/text_encoder",
+      "commit_hash": "133a221b8aa7292a167afc5127cb63fb5005638b"
+    },
+    "tokenizer": {
+      "class": "transformers.models.clip.tokenization_clip.CLIPTokenizer",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/tokenizer",
+      "commit_hash": null
+    },
+    "scheduler": {
+      "class": "diffusers.schedulers.scheduling_pndm.PNDMScheduler",
+      "name_or_path": null,
+      "commit_hash": null
+    },
+    "scheduler_config_sha256": "3cf318d6daa65d30ee297048c7d7e51400e6a2465d7d4ff142784b8ab1e4bf22",
+    "settings": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "images_per_prompt": 1,
+      "generator_device": "cpu"
+    },
+    "runtime": {
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+      "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+      "packages": {
+        "torch": "2.6.0+cu118",
+        "torchvision": "0.21.0+cu118",
+        "diffusers": "0.33.1",
+        "transformers": "4.48.3",
+        "safetensors": "0.5.3",
+        "pandas": "2.2.3",
+        "Pillow": "11.2.1"
+      },
+      "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+      "git_dirty": true
+    }
+  },
+  "evaluator": {
+    "implementation": "torchvision_resnet50",
+    "weights_enum": "IMAGENET1K_V2",
+    "weight_filename": "resnet50-11ad3fa6.pth",
+    "weight_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "categories_sha256": "47eed8c870ca7ed0258cb04301612ed3bcb3eddf78ecd24f37eb58d799eddea7"
+  },
+  "correct": 98,
+  "total": 100,
+  "accuracy": 0.98,
+  "mean_expected_probability": 0.48552138106606435,
+  "items": [
+    {
+      "case_number": 7000,
+      "source_line": 7002,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 15742,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007000_seed-15742.png",
+      "image_sha256": "fa80baf403f4e706bcd4a287f0e54e7bbebf9f7fae3a72f6f28ee1b26517aa4e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.22482752799987793,
+      "class_probabilities": {
+        "tennis ball": 0.22482752799987793
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.22482752799987793,
+          "raw_logit": 5.699686527252197
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.01293605100363493,
+          "raw_logit": 2.8443710803985596
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0018334012711420655,
+          "raw_logit": 0.890525758266449
+        },
+        {
+          "rank": 4,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0016307642217725515,
+          "raw_logit": 0.7734015583992004
+        },
+        {
+          "rank": 5,
+          "index": 111,
+          "label": "nematode",
+          "probability": 0.0015768494922667742,
+          "raw_logit": 0.7397816777229309
+        }
+      ]
+    },
+    {
+      "case_number": 7001,
+      "source_line": 7003,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 91732,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007001_seed-91732.png",
+      "image_sha256": "d9fca998dcceb068a22c6e3d519268250cc992c58bd9dee6981747764d8c19e3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.8676519393920898,
+      "class_probabilities": {
+        "tennis ball": 0.8676519393920898
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.8676519393920898,
+          "raw_logit": 8.829358100891113
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0032342940103262663,
+          "raw_logit": 3.2373783588409424
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0007119702058844268,
+          "raw_logit": 1.723848581314087
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0005975033272989094,
+          "raw_logit": 1.548572063446045
+        },
+        {
+          "rank": 5,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.00034665799466893077,
+          "raw_logit": 1.0041509866714478
+        }
+      ]
+    },
+    {
+      "case_number": 7002,
+      "source_line": 7004,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 64704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007002_seed-64704.png",
+      "image_sha256": "ae1c32566ce6fc18ce5059b73dc878f612a081e4f65f9c06c9bf1ba51ad70d6b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5031104683876038,
+      "class_probabilities": {
+        "tennis ball": 0.5031104683876038
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5031104683876038,
+          "raw_logit": 6.934674263000488
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0017515303334221244,
+          "raw_logit": 1.2743544578552246
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.001474064658395946,
+          "raw_logit": 1.1018882989883423
+        },
+        {
+          "rank": 4,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0014228119980543852,
+          "raw_logit": 1.0664997100830078
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0011775867315009236,
+          "raw_logit": 0.8773314952850342
+        }
+      ]
+    },
+    {
+      "case_number": 7003,
+      "source_line": 7005,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 53889,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007003_seed-53889.png",
+      "image_sha256": "34fc57e8a33d604870ae03cb2e4e3f0658fb825c1e68f0d30f3702633312d940",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.16664686799049377,
+      "class_probabilities": {
+        "tennis ball": 0.16664686799049377
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.16664686799049377,
+          "raw_logit": 5.539922714233398
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.05396704375743866,
+          "raw_logit": 4.412419319152832
+        },
+        {
+          "rank": 3,
+          "index": 632,
+          "label": "loudspeaker",
+          "probability": 0.017199194058775902,
+          "raw_logit": 3.2689082622528076
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.011530768126249313,
+          "raw_logit": 2.8690645694732666
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.007528956979513168,
+          "raw_logit": 2.4428021907806396
+        }
+      ]
+    },
+    {
+      "case_number": 7004,
+      "source_line": 7006,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49258,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007004_seed-49258.png",
+      "image_sha256": "3c5123766d50b90068401a93045583a1bf82f2df3cf618cae1fc3c8512d37f2a",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5982394814491272,
+      "class_probabilities": {
+        "tennis ball": 0.5982394814491272
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5982394814491272,
+          "raw_logit": 7.3215436935424805
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.001529067289084196,
+          "raw_logit": 1.3522104024887085
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0012657128972932696,
+          "raw_logit": 1.163188099861145
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.001079755020327866,
+          "raw_logit": 1.004286527633667
+        },
+        {
+          "rank": 5,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0009223963133990765,
+          "raw_logit": 0.8467722535133362
+        }
+      ]
+    },
+    {
+      "case_number": 7005,
+      "source_line": 7007,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 60699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007005_seed-60699.png",
+      "image_sha256": "d520e18b82310dbfcd3ddedc2a3dcfa5a4be8c5fcf89a691bdc17607d25b4edc",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3237764835357666,
+      "class_probabilities": {
+        "tennis ball": 0.3237764835357666
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3237764835357666,
+          "raw_logit": 6.195251941680908
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.008083799853920937,
+          "raw_logit": 2.5050606727600098
+        },
+        {
+          "rank": 3,
+          "index": 737,
+          "label": "pop bottle",
+          "probability": 0.0024238417390733957,
+          "raw_logit": 1.300552248954773
+        },
+        {
+          "rank": 4,
+          "index": 943,
+          "label": "cucumber",
+          "probability": 0.002274504629895091,
+          "raw_logit": 1.2369608879089355
+        },
+        {
+          "rank": 5,
+          "index": 939,
+          "label": "zucchini",
+          "probability": 0.0019117491319775581,
+          "raw_logit": 1.063217043876648
+        }
+      ]
+    },
+    {
+      "case_number": 7006,
+      "source_line": 7008,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 70183,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007006_seed-70183.png",
+      "image_sha256": "ee9dbcea3f4672d94071cd59add79589b0fa19689896eadb487cad8313f2cb37",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4442903697490692,
+      "class_probabilities": {
+        "tennis ball": 0.4442903697490692
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4442903697490692,
+          "raw_logit": 6.709638595581055
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0039452360942959785,
+          "raw_logit": 1.9856688976287842
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.003041234565898776,
+          "raw_logit": 1.7254235744476318
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0017394113820046186,
+          "raw_logit": 1.166706919670105
+        },
+        {
+          "rank": 5,
+          "index": 186,
+          "label": "Norwich terrier",
+          "probability": 0.001345338299870491,
+          "raw_logit": 0.9098057150840759
+        }
+      ]
+    },
+    {
+      "case_number": 7007,
+      "source_line": 7009,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 17868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007007_seed-17868.png",
+      "image_sha256": "61ca71a65280d99200b37aca7265bcb58f4d6e11622def03fb879d6765ab83c4",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4254985749721527,
+      "class_probabilities": {
+        "tennis ball": 0.4254985749721527
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4254985749721527,
+          "raw_logit": 6.637187480926514
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.005088603589683771,
+          "raw_logit": 2.2109293937683105
+        },
+        {
+          "rank": 3,
+          "index": 475,
+          "label": "car mirror",
+          "probability": 0.0020602792501449585,
+          "raw_logit": 1.306767463684082
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.001614182605408132,
+          "raw_logit": 1.062754511833191
+        },
+        {
+          "rank": 5,
+          "index": 650,
+          "label": "microphone",
+          "probability": 0.0014304984360933304,
+          "raw_logit": 0.9419488906860352
+        }
+      ]
+    },
+    {
+      "case_number": 7008,
+      "source_line": 7010,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 66181,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007008_seed-66181.png",
+      "image_sha256": "b4f5c4359a13d538b403785b4099cd227f8492393574842023e06285be77a14b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.905478298664093,
+      "class_probabilities": {
+        "tennis ball": 0.905478298664093
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.905478298664093,
+          "raw_logit": 9.229778289794922
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0031973696313798428,
+          "raw_logit": 3.5836434364318848
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.00038511972525157034,
+          "raw_logit": 1.467113971710205
+        },
+        {
+          "rank": 4,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.00037920521572232246,
+          "raw_logit": 1.4516372680664062
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0003744361747521907,
+          "raw_logit": 1.4389809370040894
+        }
+      ]
+    },
+    {
+      "case_number": 7009,
+      "source_line": 7011,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 27357,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007009_seed-27357.png",
+      "image_sha256": "edcb746791e8a871fa1890cdb91c0ad422bd4c5e71b92bfb24d03f2a644fba9d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.35151606798171997,
+      "class_probabilities": {
+        "tennis ball": 0.35151606798171997
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.35151606798171997,
+          "raw_logit": 6.444688320159912
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0847797840833664,
+          "raw_logit": 5.02249002456665
+        },
+        {
+          "rank": 3,
+          "index": 640,
+          "label": "manhole cover",
+          "probability": 0.0012477790005505085,
+          "raw_logit": 0.8037980794906616
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0011234194971621037,
+          "raw_logit": 0.6988102793693542
+        },
+        {
+          "rank": 5,
+          "index": 983,
+          "label": "scuba diver",
+          "probability": 0.0011093628127127886,
+          "raw_logit": 0.6862185597419739
+        }
+      ]
+    },
+    {
+      "case_number": 7010,
+      "source_line": 7012,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 60961,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007010_seed-60961.png",
+      "image_sha256": "bb0a3ce9654a7a3d58e62bcd66ded58b7fbc542b50ecee6a400c00f6fed4cdab",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.40029892325401306,
+      "class_probabilities": {
+        "tennis ball": 0.40029892325401306
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.40029892325401306,
+          "raw_logit": 6.520780086517334
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0029738382436335087,
+          "raw_logit": 1.6184221506118774
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0012994197895750403,
+          "raw_logit": 0.7904863357543945
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0012294226326048374,
+          "raw_logit": 0.7351131439208984
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0011680726893246174,
+          "raw_logit": 0.6839235424995422
+        }
+      ]
+    },
+    {
+      "case_number": 7011,
+      "source_line": 7013,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 47199,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007011_seed-47199.png",
+      "image_sha256": "09f43e5d5710926ab618781df76dfaec45e0b6ce2c7a500edeadcd084ef07faf",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3216375708580017,
+      "class_probabilities": {
+        "tennis ball": 0.3216375708580017
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3216375708580017,
+          "raw_logit": 6.266401290893555
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.013503617607057095,
+          "raw_logit": 3.095933437347412
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.012521370314061642,
+          "raw_logit": 3.0204126834869385
+        },
+        {
+          "rank": 4,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.007166238967329264,
+          "raw_logit": 2.4623568058013916
+        },
+        {
+          "rank": 5,
+          "index": 737,
+          "label": "pop bottle",
+          "probability": 0.006461345124989748,
+          "raw_logit": 2.358813524246216
+        }
+      ]
+    },
+    {
+      "case_number": 7012,
+      "source_line": 7014,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 55810,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007012_seed-55810.png",
+      "image_sha256": "66ee644138ce329cc165adbb0428c75b881f4a614eec7be43b48756ea192dce2",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5887646675109863,
+      "class_probabilities": {
+        "tennis ball": 0.5887646675109863
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5887646675109863,
+          "raw_logit": 7.500245094299316
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.05860599875450134,
+          "raw_logit": 5.193055629730225
+        },
+        {
+          "rank": 3,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.008255735039710999,
+          "raw_logit": 3.233126401901245
+        },
+        {
+          "rank": 4,
+          "index": 616,
+          "label": "knot",
+          "probability": 0.0050507416017353535,
+          "raw_logit": 2.7417538166046143
+        },
+        {
+          "rank": 5,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.0029258152935653925,
+          "raw_logit": 2.195791721343994
+        }
+      ]
+    },
+    {
+      "case_number": 7013,
+      "source_line": 7015,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 62134,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007013_seed-62134.png",
+      "image_sha256": "a244548d2d8485b2197961b2b06f96a5c8625b37cdb57742ef6913a82e24f995",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 430,
+      "predicted_category": "basketball",
+      "correct": false,
+      "expected_probability": 0.0009389023180119693,
+      "class_probabilities": {
+        "tennis ball": 0.0009389023180119693
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.46484893560409546,
+          "raw_logit": 6.9221367835998535
+        },
+        {
+          "rank": 2,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.017869852483272552,
+          "raw_logit": 3.663539409637451
+        },
+        {
+          "rank": 3,
+          "index": 619,
+          "label": "lampshade",
+          "probability": 0.00797253381460905,
+          "raw_logit": 2.85642671585083
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0052886344492435455,
+          "raw_logit": 2.445984125137329
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.00462960684671998,
+          "raw_logit": 2.312896490097046
+        }
+      ]
+    },
+    {
+      "case_number": 7014,
+      "source_line": 7016,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 92938,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007014_seed-92938.png",
+      "image_sha256": "2434b60ee40360b865716d857064fd0161b9700197f4c6b7f1c50916f7ea0ae4",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.8722554445266724,
+      "class_probabilities": {
+        "tennis ball": 0.8722554445266724
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.8722554445266724,
+          "raw_logit": 9.001628875732422
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.01785311847925186,
+          "raw_logit": 5.112724781036377
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.000424963072873652,
+          "raw_logit": 1.374793529510498
+        },
+        {
+          "rank": 4,
+          "index": 948,
+          "label": "Granny Smith",
+          "probability": 0.00031521686469204724,
+          "raw_logit": 1.0760523080825806
+        },
+        {
+          "rank": 5,
+          "index": 158,
+          "label": "toy terrier",
+          "probability": 0.0003136678715236485,
+          "raw_logit": 1.0711262226104736
+        }
+      ]
+    },
+    {
+      "case_number": 7015,
+      "source_line": 7017,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 18503,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007015_seed-18503.png",
+      "image_sha256": "e9264c4ac713ffaeb100a8a1ba80090f87d4114dfadaddfc485d2c5e8eac193c",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.43440935015678406,
+      "class_probabilities": {
+        "tennis ball": 0.43440935015678406
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.43440935015678406,
+          "raw_logit": 6.658787250518799
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0035310019738972187,
+          "raw_logit": 1.846381425857544
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0015869004419073462,
+          "raw_logit": 1.0465824604034424
+        },
+        {
+          "rank": 4,
+          "index": 539,
+          "label": "doormat",
+          "probability": 0.0011414334876462817,
+          "raw_logit": 0.7170847058296204
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0011182012967765331,
+          "raw_logit": 0.6965214014053345
+        }
+      ]
+    },
+    {
+      "case_number": 7016,
+      "source_line": 7018,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 51178,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007016_seed-51178.png",
+      "image_sha256": "b2dd6723d89e35919bd265eb046b628df6009d814a643389bccff6938a9bf63e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.45851343870162964,
+      "class_probabilities": {
+        "tennis ball": 0.45851343870162964
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.45851343870162964,
+          "raw_logit": 6.761968612670898
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002044553169980645,
+          "raw_logit": 1.349158525466919
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0017349408008158207,
+          "raw_logit": 1.1849522590637207
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0015996565343812108,
+          "raw_logit": 1.103767991065979
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0012308170553296804,
+          "raw_logit": 0.8416571617126465
+        }
+      ]
+    },
+    {
+      "case_number": 7017,
+      "source_line": 7019,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 353,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007017_seed-353.png",
+      "image_sha256": "ec358e3d1310b01d36c5aa7913cf68db0a96e0790cae12083288069d1fd6de72",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5122438669204712,
+      "class_probabilities": {
+        "tennis ball": 0.5122438669204712
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5122438669204712,
+          "raw_logit": 6.9828386306762695
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004265707451850176,
+          "raw_logit": 2.194645881652832
+        },
+        {
+          "rank": 3,
+          "index": 666,
+          "label": "mortar",
+          "probability": 0.0016491652932018042,
+          "raw_logit": 1.244307041168213
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.001343160169199109,
+          "raw_logit": 1.0390628576278687
+        },
+        {
+          "rank": 5,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0013148115249350667,
+          "raw_logit": 1.0177311897277832
+        }
+      ]
+    },
+    {
+      "case_number": 7018,
+      "source_line": 7020,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 21846,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007018_seed-21846.png",
+      "image_sha256": "8655dd720b3cc00b52ba41fe27ec857a0fde82535822d7c0b872b9554fabb07b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3237014412879944,
+      "class_probabilities": {
+        "tennis ball": 0.3237014412879944
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3237014412879944,
+          "raw_logit": 6.341819763183594
+        },
+        {
+          "rank": 2,
+          "index": 789,
+          "label": "shoji",
+          "probability": 0.010642770677804947,
+          "raw_logit": 2.9268789291381836
+        },
+        {
+          "rank": 3,
+          "index": 844,
+          "label": "switch",
+          "probability": 0.007777963764965534,
+          "raw_logit": 2.613292694091797
+        },
+        {
+          "rank": 4,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.007361612282693386,
+          "raw_logit": 2.558277130126953
+        },
+        {
+          "rank": 5,
+          "index": 804,
+          "label": "soap dispenser",
+          "probability": 0.006422115955501795,
+          "raw_logit": 2.421745777130127
+        }
+      ]
+    },
+    {
+      "case_number": 7019,
+      "source_line": 7021,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49957,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007019_seed-49957.png",
+      "image_sha256": "9c8cd7af6987f3293a9228c0cd8a3b0b6aa0553848b5c9b55a6b4d9eaac04190",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5356269478797913,
+      "class_probabilities": {
+        "tennis ball": 0.5356269478797913
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5356269478797913,
+          "raw_logit": 7.075510025024414
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00239468808285892,
+          "raw_logit": 1.665325403213501
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0021530017256736755,
+          "raw_logit": 1.5589350461959839
+        },
+        {
+          "rank": 4,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0012580236652866006,
+          "raw_logit": 1.0216140747070312
+        },
+        {
+          "rank": 5,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.0012359274551272392,
+          "raw_logit": 1.0038937330245972
+        }
+      ]
+    },
+    {
+      "case_number": 7020,
+      "source_line": 7022,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 51868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007020_seed-51868.png",
+      "image_sha256": "f7a500d5bdd6bf3beb15229eccff2f79bb5784a363bc7b985f374f8b4564da26",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.32435691356658936,
+      "class_probabilities": {
+        "tennis ball": 0.32435691356658936
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.32435691356658936,
+          "raw_logit": 6.187596797943115
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.004232663195580244,
+          "raw_logit": 1.8485839366912842
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0038137442898005247,
+          "raw_logit": 1.744363784790039
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0014441420789808035,
+          "raw_logit": 0.7732677459716797
+        },
+        {
+          "rank": 5,
+          "index": 950,
+          "label": "orange",
+          "probability": 0.0014142292784526944,
+          "raw_logit": 0.7523372173309326
+        }
+      ]
+    },
+    {
+      "case_number": 7021,
+      "source_line": 7023,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 33369,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007021_seed-33369.png",
+      "image_sha256": "0d8e59f7a33ec1d2f906d2049bda31ebb8f6f3b8a593d99b454b4a615ab7a722",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4978753328323364,
+      "class_probabilities": {
+        "tennis ball": 0.4978753328323364
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4978753328323364,
+          "raw_logit": 6.919166564941406
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0025381860323250294,
+          "raw_logit": 1.6402664184570312
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0019208857556805015,
+          "raw_logit": 1.3616032600402832
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0013159944210201502,
+          "raw_logit": 0.9834093451499939
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0010413381969556212,
+          "raw_logit": 0.7493232488632202
+        }
+      ]
+    },
+    {
+      "case_number": 7022,
+      "source_line": 7024,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49768,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007022_seed-49768.png",
+      "image_sha256": "ca0b09f3b114fe52527a9e900ddd10f38abd878cf09d929997103c460a6fd2c3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.42639973759651184,
+      "class_probabilities": {
+        "tennis ball": 0.42639973759651184
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.42639973759651184,
+          "raw_logit": 6.679695129394531
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.00870747771114111,
+          "raw_logit": 2.7885000705718994
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.006291036494076252,
+          "raw_logit": 2.4634435176849365
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.005622135475277901,
+          "raw_logit": 2.35102915763855
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.004599935375154018,
+          "raw_logit": 2.150360345840454
+        }
+      ]
+    },
+    {
+      "case_number": 7023,
+      "source_line": 7025,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 85544,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007023_seed-85544.png",
+      "image_sha256": "f9a85104e5aa509b5a672332bdea9b24a149ea59071177f9ec92e4c3d5d24535",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.28452321887016296,
+      "class_probabilities": {
+        "tennis ball": 0.28452321887016296
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.28452321887016296,
+          "raw_logit": 6.176888942718506
+        },
+        {
+          "rank": 2,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.019155368208885193,
+          "raw_logit": 3.4786572456359863
+        },
+        {
+          "rank": 3,
+          "index": 615,
+          "label": "knee pad",
+          "probability": 0.01241548452526331,
+          "raw_logit": 3.0450186729431152
+        },
+        {
+          "rank": 4,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.01006359327584505,
+          "raw_logit": 2.834998369216919
+        },
+        {
+          "rank": 5,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.008196225389838219,
+          "raw_logit": 2.6297478675842285
+        }
+      ]
+    },
+    {
+      "case_number": 7024,
+      "source_line": 7026,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 76917,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007024_seed-76917.png",
+      "image_sha256": "0409af1959b6abfc7f02d4af3259526fc5f6bdf36592f8cc64101557b6b1053d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.6737766861915588,
+      "class_probabilities": {
+        "tennis ball": 0.6737766861915588
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.6737766861915588,
+          "raw_logit": 7.684207439422607
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.01011432521045208,
+          "raw_logit": 3.4852612018585205
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0009310934692621231,
+          "raw_logit": 1.0999128818511963
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0009146480588242412,
+          "raw_logit": 1.0820926427841187
+        },
+        {
+          "rank": 5,
+          "index": 107,
+          "label": "jellyfish",
+          "probability": 0.0007839460158720613,
+          "raw_logit": 0.9278935194015503
+        }
+      ]
+    },
+    {
+      "case_number": 7025,
+      "source_line": 7027,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 13694,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007025_seed-13694.png",
+      "image_sha256": "682a334579809d9a3407104eb62007e3380e7231df3b188871b29dbc917ebaf6",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4949103593826294,
+      "class_probabilities": {
+        "tennis ball": 0.4949103593826294
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4949103593826294,
+          "raw_logit": 6.9076008796691895
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0033283759839832783,
+          "raw_logit": 1.9057085514068604
+        },
+        {
+          "rank": 3,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.00148272595833987,
+          "raw_logit": 1.0971064567565918
+        },
+        {
+          "rank": 4,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0014240992022678256,
+          "raw_logit": 1.056763768196106
+        },
+        {
+          "rank": 5,
+          "index": 260,
+          "label": "chow",
+          "probability": 0.0014045705320313573,
+          "raw_logit": 1.0429561138153076
+        }
+      ]
+    },
+    {
+      "case_number": 7026,
+      "source_line": 7028,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 11297,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007026_seed-11297.png",
+      "image_sha256": "7656e8515db15a0b0913bc9d865cc7de5d57fe328b846e81a8031170e971ec4a",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4167742133140564,
+      "class_probabilities": {
+        "tennis ball": 0.4167742133140564
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4167742133140564,
+          "raw_logit": 6.622063636779785
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0034063286148011684,
+          "raw_logit": 1.8151540756225586
+        },
+        {
+          "rank": 3,
+          "index": 356,
+          "label": "weasel",
+          "probability": 0.003096582368016243,
+          "raw_logit": 1.719818353652954
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.00283263367600739,
+          "raw_logit": 1.6307258605957031
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002410962013527751,
+          "raw_logit": 1.4695450067520142
+        }
+      ]
+    },
+    {
+      "case_number": 7027,
+      "source_line": 7029,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 70148,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007027_seed-70148.png",
+      "image_sha256": "262a5189897dfa74e74048a4d0f70752e305cbc9db43e3e094942f904d9059da",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.49140191078186035,
+      "class_probabilities": {
+        "tennis ball": 0.49140191078186035
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.49140191078186035,
+          "raw_logit": 6.903355121612549
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004228621255606413,
+          "raw_logit": 2.1479687690734863
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0027267264667898417,
+          "raw_logit": 1.709194540977478
+        },
+        {
+          "rank": 4,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0020386786200106144,
+          "raw_logit": 1.418394684791565
+        },
+        {
+          "rank": 5,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0017117579700425267,
+          "raw_logit": 1.2436137199401855
+        }
+      ]
+    },
+    {
+      "case_number": 7028,
+      "source_line": 7030,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 50704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007028_seed-50704.png",
+      "image_sha256": "26e53022e8c2bcbafc83409f70fafaa41c4a276617a5d2db2a7d280fe55dfb84",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.44486841559410095,
+      "class_probabilities": {
+        "tennis ball": 0.44486841559410095
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.44486841559410095,
+          "raw_logit": 6.714486598968506
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.005703552160412073,
+          "raw_logit": 2.3577969074249268
+        },
+        {
+          "rank": 3,
+          "index": 489,
+          "label": "chainlink fence",
+          "probability": 0.0019757349509745836,
+          "raw_logit": 1.2976484298706055
+        },
+        {
+          "rank": 4,
+          "index": 733,
+          "label": "pole",
+          "probability": 0.0011787416879087687,
+          "raw_logit": 0.7811557650566101
+        },
+        {
+          "rank": 5,
+          "index": 554,
+          "label": "fireboat",
+          "probability": 0.0011378484778106213,
+          "raw_logit": 0.7458471655845642
+        }
+      ]
+    },
+    {
+      "case_number": 7029,
+      "source_line": 7031,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 18535,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007029_seed-18535.png",
+      "image_sha256": "39b041fc6d83c98a9a44c0113e4a2917473c63a30c404d53aec451a1def06eea",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.6758008003234863,
+      "class_probabilities": {
+        "tennis ball": 0.6758008003234863
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.6758008003234863,
+          "raw_logit": 7.858852386474609
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.057454269379377365,
+          "raw_logit": 5.3939433097839355
+        },
+        {
+          "rank": 3,
+          "index": 789,
+          "label": "shoji",
+          "probability": 0.0008050763281062245,
+          "raw_logit": 1.1261355876922607
+        },
+        {
+          "rank": 4,
+          "index": 640,
+          "label": "manhole cover",
+          "probability": 0.000761457544285804,
+          "raw_logit": 1.0704330205917358
+        },
+        {
+          "rank": 5,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.0006850323989056051,
+          "raw_logit": 0.9646647572517395
+        }
+      ]
+    },
+    {
+      "case_number": 7030,
+      "source_line": 7032,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 68835,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007030_seed-68835.png",
+      "image_sha256": "33c865c806c458fe2afdc92eb86d54b3c644afda26361ed5befef6934e18239c",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5986038446426392,
+      "class_probabilities": {
+        "tennis ball": 0.5986038446426392
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5986038446426392,
+          "raw_logit": 7.368657112121582
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.006310733500868082,
+          "raw_logit": 2.8163092136383057
+        },
+        {
+          "rank": 3,
+          "index": 489,
+          "label": "chainlink fence",
+          "probability": 0.0025874075945466757,
+          "raw_logit": 1.9247137308120728
+        },
+        {
+          "rank": 4,
+          "index": 460,
+          "label": "breakwater",
+          "probability": 0.0018119721207767725,
+          "raw_logit": 1.5684726238250732
+        },
+        {
+          "rank": 5,
+          "index": 2,
+          "label": "great white shark",
+          "probability": 0.0015707968268543482,
+          "raw_logit": 1.4256399869918823
+        }
+      ]
+    },
+    {
+      "case_number": 7031,
+      "source_line": 7033,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 3533,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007031_seed-3533.png",
+      "image_sha256": "dc095565673cc746e2c899049887c2c5d7be4bd5530a6b52063aa03a35b8deb2",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.8887526988983154,
+      "class_probabilities": {
+        "tennis ball": 0.8887526988983154
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.8887526988983154,
+          "raw_logit": 9.007429122924805
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0008866015123203397,
+          "raw_logit": 2.097250461578369
+        },
+        {
+          "rank": 3,
+          "index": 688,
+          "label": "oscilloscope",
+          "probability": 0.0003989693650510162,
+          "raw_logit": 1.2987395524978638
+        },
+        {
+          "rank": 4,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.000387836538720876,
+          "raw_logit": 1.270438551902771
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00034204605617560446,
+          "raw_logit": 1.144800066947937
+        }
+      ]
+    },
+    {
+      "case_number": 7032,
+      "source_line": 7034,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 81915,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007032_seed-81915.png",
+      "image_sha256": "90e853865390b10d213b8e2dc3a642a60491f5078775bc0fafe9ab75a2f093d6",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.39970073103904724,
+      "class_probabilities": {
+        "tennis ball": 0.39970073103904724
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.39970073103904724,
+          "raw_logit": 6.530702590942383
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0036653000861406326,
+          "raw_logit": 1.838896632194519
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0015213994774967432,
+          "raw_logit": 0.9596173167228699
+        },
+        {
+          "rank": 4,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0015013032825663686,
+          "raw_logit": 0.9463198781013489
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00128196703735739,
+          "raw_logit": 0.7883821725845337
+        }
+      ]
+    },
+    {
+      "case_number": 7033,
+      "source_line": 7035,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49145,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007033_seed-49145.png",
+      "image_sha256": "ac639d98e69b3b99ae4e5f618b5937f62ccae3b84a4c6bb99f0022bbbd6d72c3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5653464198112488,
+      "class_probabilities": {
+        "tennis ball": 0.5653464198112488
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5653464198112488,
+          "raw_logit": 7.212518692016602
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.00769903464242816,
+          "raw_logit": 2.916175127029419
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0013368991203606129,
+          "raw_logit": 1.1654328107833862
+        },
+        {
+          "rank": 4,
+          "index": 646,
+          "label": "maze",
+          "probability": 0.001104616210795939,
+          "raw_logit": 0.974577784538269
+        },
+        {
+          "rank": 5,
+          "index": 733,
+          "label": "pole",
+          "probability": 0.0010349167278036475,
+          "raw_logit": 0.9094007611274719
+        }
+      ]
+    },
+    {
+      "case_number": 7034,
+      "source_line": 7036,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 86532,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007034_seed-86532.png",
+      "image_sha256": "9f8b4685b5c037dd849b1343a5b394a53cae337471dc864101182027947697ec",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3933165371417999,
+      "class_probabilities": {
+        "tennis ball": 0.3933165371417999
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3933165371417999,
+          "raw_logit": 6.491405010223389
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004270587116479874,
+          "raw_logit": 1.9685416221618652
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0018097450956702232,
+          "raw_logit": 1.1099761724472046
+        },
+        {
+          "rank": 4,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0013163733528926969,
+          "raw_logit": 0.7916709184646606
+        },
+        {
+          "rank": 5,
+          "index": 111,
+          "label": "nematode",
+          "probability": 0.0011302113998681307,
+          "raw_logit": 0.6391948461532593
+        }
+      ]
+    },
+    {
+      "case_number": 7035,
+      "source_line": 7037,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 26679,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007035_seed-26679.png",
+      "image_sha256": "c2a675b4660a92d31ed6b14d437648791ac5d572538f80d9a072bc11e1d294dd",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.14173004031181335,
+      "class_probabilities": {
+        "tennis ball": 0.14173004031181335
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.14173004031181335,
+          "raw_logit": 5.126796722412109
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.005111193284392357,
+          "raw_logit": 1.8043054342269897
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0034619225189089775,
+          "raw_logit": 1.4146966934204102
+        },
+        {
+          "rank": 4,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.0026154015213251114,
+          "raw_logit": 1.134290337562561
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0024742423556745052,
+          "raw_logit": 1.0788066387176514
+        }
+      ]
+    },
+    {
+      "case_number": 7036,
+      "source_line": 7038,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 48703,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007036_seed-48703.png",
+      "image_sha256": "43e4d3be6cf1321562650ab09a32d1091d77d21417a8ab90c168e4fd79d8e5b9",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.389605849981308,
+      "class_probabilities": {
+        "tennis ball": 0.389605849981308
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.389605849981308,
+          "raw_logit": 6.489670753479004
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.00976479984819889,
+          "raw_logit": 2.803319215774536
+        },
+        {
+          "rank": 3,
+          "index": 905,
+          "label": "window shade",
+          "probability": 0.0016873874701559544,
+          "raw_logit": 1.047716736793518
+        },
+        {
+          "rank": 4,
+          "index": 794,
+          "label": "shower curtain",
+          "probability": 0.0014334396691992879,
+          "raw_logit": 0.8846122026443481
+        },
+        {
+          "rank": 5,
+          "index": 646,
+          "label": "maze",
+          "probability": 0.0013808596413582563,
+          "raw_logit": 0.8472411632537842
+        }
+      ]
+    },
+    {
+      "case_number": 7037,
+      "source_line": 7039,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 97075,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007037_seed-97075.png",
+      "image_sha256": "0736cbb8d9370bc0f77079e537a89c1a0c1cb93d394b6332023a1be9ce354f3b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4627545475959778,
+      "class_probabilities": {
+        "tennis ball": 0.4627545475959778
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4627545475959778,
+          "raw_logit": 6.780480861663818
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002006406895816326,
+          "raw_logit": 1.3396296501159668
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0019126581028103828,
+          "raw_logit": 1.2917779684066772
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.001492773648351431,
+          "raw_logit": 1.0439198017120361
+        },
+        {
+          "rank": 5,
+          "index": 418,
+          "label": "ballpoint",
+          "probability": 0.0012335720239207149,
+          "raw_logit": 0.8531979918479919
+        }
+      ]
+    },
+    {
+      "case_number": 7038,
+      "source_line": 7040,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 99320,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007038_seed-99320.png",
+      "image_sha256": "5ec9fa56b4b09f4715bc40ec61d53fbbe90c70be57f24ea480326a3daf512f68",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4697614908218384,
+      "class_probabilities": {
+        "tennis ball": 0.4697614908218384
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4697614908218384,
+          "raw_logit": 6.8234663009643555
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0027633553836494684,
+          "raw_logit": 1.6876871585845947
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0018544666236266494,
+          "raw_logit": 1.288838267326355
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0014595750253647566,
+          "raw_logit": 1.0493866205215454
+        },
+        {
+          "rank": 5,
+          "index": 939,
+          "label": "zucchini",
+          "probability": 0.001355482847429812,
+          "raw_logit": 0.9753987789154053
+        }
+      ]
+    },
+    {
+      "case_number": 7039,
+      "source_line": 7041,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 48953,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007039_seed-48953.png",
+      "image_sha256": "75ba5badf7799c9363af2234e28324886838f26a39c1576441176a6d06cfe223",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.46647122502326965,
+      "class_probabilities": {
+        "tennis ball": 0.46647122502326965
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.46647122502326965,
+          "raw_logit": 6.79296350479126
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004523389041423798,
+          "raw_logit": 2.1570286750793457
+        },
+        {
+          "rank": 3,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0017177119152620435,
+          "raw_logit": 1.18876051902771
+        },
+        {
+          "rank": 4,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0013570640003308654,
+          "raw_logit": 0.953090488910675
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0013523431262001395,
+          "raw_logit": 0.9496058225631714
+        }
+      ]
+    },
+    {
+      "case_number": 7040,
+      "source_line": 7042,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 91322,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007040_seed-91322.png",
+      "image_sha256": "2bbb24107fc4011e510998e5be994467090ba63a36d350af48a62fddc88fb7b7",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3317812383174896,
+      "class_probabilities": {
+        "tennis ball": 0.3317812383174896
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3317812383174896,
+          "raw_logit": 6.27764368057251
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.018599512055516243,
+          "raw_logit": 3.396303176879883
+        },
+        {
+          "rank": 3,
+          "index": 519,
+          "label": "crate",
+          "probability": 0.006064916029572487,
+          "raw_logit": 2.275688409805298
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003324368502944708,
+          "raw_logit": 1.6744476556777954
+        },
+        {
+          "rank": 5,
+          "index": 310,
+          "label": "ant",
+          "probability": 0.0028090118430554867,
+          "raw_logit": 1.5060005187988281
+        }
+      ]
+    },
+    {
+      "case_number": 7041,
+      "source_line": 7043,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 30386,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007041_seed-30386.png",
+      "image_sha256": "4241be404016c8929331af7cfc6a244044a7a2e89bf5b89b35625effea142b7a",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.30022355914115906,
+      "class_probabilities": {
+        "tennis ball": 0.30022355914115906
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.30022355914115906,
+          "raw_logit": 6.129034042358398
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.010572592727839947,
+          "raw_logit": 2.782771587371826
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.004360077902674675,
+          "raw_logit": 1.8969963788986206
+        },
+        {
+          "rank": 4,
+          "index": 474,
+          "label": "cardigan",
+          "probability": 0.003634588560089469,
+          "raw_logit": 1.7150026559829712
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0031906887888908386,
+          "raw_logit": 1.5847433805465698
+        }
+      ]
+    },
+    {
+      "case_number": 7042,
+      "source_line": 7044,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 69321,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007042_seed-69321.png",
+      "image_sha256": "aa1105ff364c0342b3b54aeddb101a9058077a0584c0181a45e6ec9082dedc5d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.48935067653656006,
+      "class_probabilities": {
+        "tennis ball": 0.48935067653656006
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.48935067653656006,
+          "raw_logit": 6.90551233291626
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.009182839654386044,
+          "raw_logit": 2.929769515991211
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0013798617292195559,
+          "raw_logit": 1.0344160795211792
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.001358788344077766,
+          "raw_logit": 1.0190261602401733
+        },
+        {
+          "rank": 5,
+          "index": 733,
+          "label": "pole",
+          "probability": 0.0010582234244793653,
+          "raw_logit": 0.7690241932868958
+        }
+      ]
+    },
+    {
+      "case_number": 7043,
+      "source_line": 7045,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 41775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007043_seed-41775.png",
+      "image_sha256": "7f31b887a6387de2bf5047acbab06e95d0d7542aae8232428c8b3bf56b0d075e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5127928853034973,
+      "class_probabilities": {
+        "tennis ball": 0.5127928853034973
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5127928853034973,
+          "raw_logit": 7.174612998962402
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.06567665934562683,
+          "raw_logit": 5.1194844245910645
+        },
+        {
+          "rank": 3,
+          "index": 646,
+          "label": "maze",
+          "probability": 0.004058872815221548,
+          "raw_logit": 2.335646152496338
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.002396352356299758,
+          "raw_logit": 1.8086885213851929
+        },
+        {
+          "rank": 5,
+          "index": 264,
+          "label": "Cardigan",
+          "probability": 0.0016754941316321492,
+          "raw_logit": 1.4508490562438965
+        }
+      ]
+    },
+    {
+      "case_number": 7044,
+      "source_line": 7046,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 4250,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007044_seed-4250.png",
+      "image_sha256": "1043649ea37e5262d9a88bfa44c1fa19a23c93922483863533986283a475ca3f",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5010168552398682,
+      "class_probabilities": {
+        "tennis ball": 0.5010168552398682
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5010168552398682,
+          "raw_logit": 6.9270548820495605
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004889787640422583,
+          "raw_logit": 2.2975642681121826
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0012896285625174642,
+          "raw_logit": 0.9647695422172546
+        },
+        {
+          "rank": 4,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.001288627041503787,
+          "raw_logit": 0.9639926552772522
+        },
+        {
+          "rank": 5,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0011970638297498226,
+          "raw_logit": 0.890286922454834
+        }
+      ]
+    },
+    {
+      "case_number": 7045,
+      "source_line": 7047,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 22629,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007045_seed-22629.png",
+      "image_sha256": "dc948ae4499528b741203f94022ea4b7208b1e734bf2a62f1b7cbf91ea7cb4ef",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5346042513847351,
+      "class_probabilities": {
+        "tennis ball": 0.5346042513847351
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5346042513847351,
+          "raw_logit": 7.065459251403809
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0025893421843647957,
+          "raw_logit": 1.7353365421295166
+        },
+        {
+          "rank": 3,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.001952806138433516,
+          "raw_logit": 1.4531997442245483
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00122828409075737,
+          "raw_logit": 0.9895505905151367
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0011890220921486616,
+          "raw_logit": 0.9570637941360474
+        }
+      ]
+    },
+    {
+      "case_number": 7046,
+      "source_line": 7048,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 21462,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007046_seed-21462.png",
+      "image_sha256": "6b561b802fe349f14201b56d2f4eef27cb7033d38bc32132e9a55387caa334b1",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4403439164161682,
+      "class_probabilities": {
+        "tennis ball": 0.4403439164161682
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4403439164161682,
+          "raw_logit": 6.76767635345459
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.010821515694260597,
+          "raw_logit": 3.0616567134857178
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003350430866703391,
+          "raw_logit": 1.8892093896865845
+        },
+        {
+          "rank": 4,
+          "index": 536,
+          "label": "dock",
+          "probability": 0.003000116441398859,
+          "raw_logit": 1.7787712812423706
+        },
+        {
+          "rank": 5,
+          "index": 718,
+          "label": "pier",
+          "probability": 0.002542288275435567,
+          "raw_logit": 1.613184928894043
+        }
+      ]
+    },
+    {
+      "case_number": 7047,
+      "source_line": 7049,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 82595,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007047_seed-82595.png",
+      "image_sha256": "2d0947c736a7cd3237d7c122e693b053e552100219831176ccb966d27b30efd0",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.42908018827438354,
+      "class_probabilities": {
+        "tennis ball": 0.42908018827438354
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.42908018827438354,
+          "raw_logit": 6.647162914276123
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0023903099354356527,
+          "raw_logit": 1.4569419622421265
+        },
+        {
+          "rank": 3,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0021896103862673044,
+          "raw_logit": 1.369242787361145
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0015583827625960112,
+          "raw_logit": 1.0291675329208374
+        },
+        {
+          "rank": 5,
+          "index": 446,
+          "label": "binder",
+          "probability": 0.0014768632827326655,
+          "raw_logit": 0.9754393100738525
+        }
+      ]
+    },
+    {
+      "case_number": 7048,
+      "source_line": 7050,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 24956,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007048_seed-24956.png",
+      "image_sha256": "251088a5a2a75619ab8a7831e5931d8eb6bb90d4ddfb7082ca7d6a0d9dbc285f",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4985157251358032,
+      "class_probabilities": {
+        "tennis ball": 0.4985157251358032
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4985157251358032,
+          "raw_logit": 6.933171272277832
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0033474538940936327,
+          "raw_logit": 1.9297362565994263
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002045489614829421,
+          "raw_logit": 1.4371732473373413
+        },
+        {
+          "rank": 4,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.0014282659394666553,
+          "raw_logit": 1.0779974460601807
+        },
+        {
+          "rank": 5,
+          "index": 125,
+          "label": "hermit crab",
+          "probability": 0.0013373357942327857,
+          "raw_logit": 1.012215495109558
+        }
+      ]
+    },
+    {
+      "case_number": 7049,
+      "source_line": 7051,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 42188,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007049_seed-42188.png",
+      "image_sha256": "08fcf454abd5528a9be6af29440ab21b81b033ec92b1ba7644d80a4e3ae00f5f",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.45300137996673584,
+      "class_probabilities": {
+        "tennis ball": 0.45300137996673584
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.45300137996673584,
+          "raw_logit": 6.749882221221924
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.005055014975368977,
+          "raw_logit": 2.2543678283691406
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0021732256282120943,
+          "raw_logit": 1.410199761390686
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0020429131109267473,
+          "raw_logit": 1.3483637571334839
+        },
+        {
+          "rank": 5,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0015612485585734248,
+          "raw_logit": 1.0794730186462402
+        }
+      ]
+    },
+    {
+      "case_number": 7050,
+      "source_line": 7052,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 84765,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007050_seed-84765.png",
+      "image_sha256": "9705025a4e1a255097e1490d57a32157f990520bf013ac8613d7de50cc6b4b55",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4645567834377289,
+      "class_probabilities": {
+        "tennis ball": 0.4645567834377289
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4645567834377289,
+          "raw_logit": 6.783905982971191
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0022343448363244534,
+          "raw_logit": 1.4467703104019165
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0015441580908372998,
+          "raw_logit": 1.077301263809204
+        },
+        {
+          "rank": 4,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0012656927574425936,
+          "raw_logit": 0.8784416913986206
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0012253987370058894,
+          "raw_logit": 0.8460885882377625
+        }
+      ]
+    },
+    {
+      "case_number": 7051,
+      "source_line": 7053,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 11582,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007051_seed-11582.png",
+      "image_sha256": "cfd68c90cad8e8f6be0a2e82f42dbe27ecd53995c7d76c36cc09d61efeedf1d3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.47415071725845337,
+      "class_probabilities": {
+        "tennis ball": 0.47415071725845337
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.47415071725845337,
+          "raw_logit": 6.843906879425049
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.007344853598624468,
+          "raw_logit": 2.676381826400757
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0017118101241067052,
+          "raw_logit": 1.2199329137802124
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0016792764654383063,
+          "raw_logit": 1.2007445096969604
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0013623223640024662,
+          "raw_logit": 0.9915724396705627
+        }
+      ]
+    },
+    {
+      "case_number": 7052,
+      "source_line": 7054,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 98674,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007052_seed-98674.png",
+      "image_sha256": "a26f4cbd1d1c1c7f5fc771d922821fa9659fc7f608d7f14e1a0c440e1d71b02b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.6586703062057495,
+      "class_probabilities": {
+        "tennis ball": 0.6586703062057495
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.6586703062057495,
+          "raw_logit": 7.5972981452941895
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0036125609185546637,
+          "raw_logit": 2.3914918899536133
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002580866450443864,
+          "raw_logit": 2.0552000999450684
+        },
+        {
+          "rank": 4,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.001010906882584095,
+          "raw_logit": 1.1179226636886597
+        },
+        {
+          "rank": 5,
+          "index": 186,
+          "label": "Norwich terrier",
+          "probability": 0.0008766964892856777,
+          "raw_logit": 0.9754804968833923
+        }
+      ]
+    },
+    {
+      "case_number": 7053,
+      "source_line": 7055,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49913,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007053_seed-49913.png",
+      "image_sha256": "6ca451daa593bcd531b6ff612583b876b493a7d58139068d40372b16f34db45a",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3896870017051697,
+      "class_probabilities": {
+        "tennis ball": 0.3896870017051697
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3896870017051697,
+          "raw_logit": 6.481305122375488
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0041901469230651855,
+          "raw_logit": 1.9486970901489258
+        },
+        {
+          "rank": 3,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.0016429998213425279,
+          "raw_logit": 1.012485146522522
+        },
+        {
+          "rank": 4,
+          "index": 602,
+          "label": "horizontal bar",
+          "probability": 0.001565868966281414,
+          "raw_logit": 0.9644019603729248
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.001363051705993712,
+          "raw_logit": 0.8256872296333313
+        }
+      ]
+    },
+    {
+      "case_number": 7054,
+      "source_line": 7056,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 91502,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007054_seed-91502.png",
+      "image_sha256": "fcbc03fc5113ea0e98bb25ce87d30e3c720fa85e95591564d4d9c0396baadf8e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.47385770082473755,
+      "class_probabilities": {
+        "tennis ball": 0.47385770082473755
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.47385770082473755,
+          "raw_logit": 6.821784973144531
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0017840454820543528,
+          "raw_logit": 1.2397613525390625
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0017188071506097913,
+          "raw_logit": 1.2025084495544434
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0013241012347862124,
+          "raw_logit": 0.9416119456291199
+        },
+        {
+          "rank": 5,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0012624567607417703,
+          "raw_logit": 0.8939374685287476
+        }
+      ]
+    },
+    {
+      "case_number": 7055,
+      "source_line": 7057,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 89159,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007055_seed-89159.png",
+      "image_sha256": "57d134a67ab0958696ccae7c056810a8e80174eae3259e86521bc0baa9522145",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.43636593222618103,
+      "class_probabilities": {
+        "tennis ball": 0.43636593222618103
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.43636593222618103,
+          "raw_logit": 6.678831577301025
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0030478606931865215,
+          "raw_logit": 1.7147903442382812
+        },
+        {
+          "rank": 3,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.001459472463466227,
+          "raw_logit": 0.9784257411956787
+        },
+        {
+          "rank": 4,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.0014400363434106112,
+          "raw_logit": 0.9650188684463501
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0013059877092018723,
+          "raw_logit": 0.8673102855682373
+        }
+      ]
+    },
+    {
+      "case_number": 7056,
+      "source_line": 7058,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 22082,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007056_seed-22082.png",
+      "image_sha256": "9343796000d3df982b2602683037ce02a9d4f39c82ddf5100537acc4ad60be88",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4028052091598511,
+      "class_probabilities": {
+        "tennis ball": 0.4028052091598511
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4028052091598511,
+          "raw_logit": 6.544339656829834
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.008242114447057247,
+          "raw_logit": 2.6551434993743896
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0015491330996155739,
+          "raw_logit": 0.9835821390151978
+        },
+        {
+          "rank": 4,
+          "index": 948,
+          "label": "Granny Smith",
+          "probability": 0.0015119671588763595,
+          "raw_logit": 0.959298312664032
+        },
+        {
+          "rank": 5,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.0014003461692482233,
+          "raw_logit": 0.8826060891151428
+        }
+      ]
+    },
+    {
+      "case_number": 7057,
+      "source_line": 7059,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 32894,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007057_seed-32894.png",
+      "image_sha256": "fa86e5879bdb510d7708521bfa952659316781e1f31b42c61a7ef0041259de88",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.8049626350402832,
+      "class_probabilities": {
+        "tennis ball": 0.8049626350402832
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.8049626350402832,
+          "raw_logit": 8.343345642089844
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0013011685805395246,
+          "raw_logit": 1.9158122539520264
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0005897305672988296,
+          "raw_logit": 1.124459981918335
+        },
+        {
+          "rank": 4,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.0005090793711133301,
+          "raw_logit": 0.9773985147476196
+        },
+        {
+          "rank": 5,
+          "index": 783,
+          "label": "screw",
+          "probability": 0.0004597207880578935,
+          "raw_logit": 0.8754141330718994
+        }
+      ]
+    },
+    {
+      "case_number": 7058,
+      "source_line": 7060,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 14118,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007058_seed-14118.png",
+      "image_sha256": "f1c08efeff125a573c913446541a9ad386bf5ebacfd71177f100428de562cb08",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5228871703147888,
+      "class_probabilities": {
+        "tennis ball": 0.5228871703147888
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5228871703147888,
+          "raw_logit": 7.022626876831055
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004495046567171812,
+          "raw_logit": 2.2662370204925537
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.003511962713673711,
+          "raw_logit": 2.0194363594055176
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00146203744225204,
+          "raw_logit": 1.1430920362472534
+        },
+        {
+          "rank": 5,
+          "index": 721,
+          "label": "pillow",
+          "probability": 0.0013086161343380809,
+          "raw_logit": 1.032231330871582
+        }
+      ]
+    },
+    {
+      "case_number": 7059,
+      "source_line": 7061,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 4578,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007059_seed-4578.png",
+      "image_sha256": "9f291a71049e28509847eec4a8d355c6ef9b570f756ffb4d1ad89e325753441c",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3996887803077698,
+      "class_probabilities": {
+        "tennis ball": 0.3996887803077698
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3996887803077698,
+          "raw_logit": 6.545990943908691
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0026662207674235106,
+          "raw_logit": 1.5359669923782349
+        },
+        {
+          "rank": 3,
+          "index": 356,
+          "label": "weasel",
+          "probability": 0.002560531487688422,
+          "raw_logit": 1.4955195188522339
+        },
+        {
+          "rank": 4,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0021746454294770956,
+          "raw_logit": 1.3321707248687744
+        },
+        {
+          "rank": 5,
+          "index": 359,
+          "label": "black-footed ferret",
+          "probability": 0.0021141546312719584,
+          "raw_logit": 1.3039599657058716
+        }
+      ]
+    },
+    {
+      "case_number": 7060,
+      "source_line": 7062,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 41580,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007060_seed-41580.png",
+      "image_sha256": "637a9e64d13cca2a3f2650b88196cd37e35afb97af4fb17cafe5cbc69054744c",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4711551368236542,
+      "class_probabilities": {
+        "tennis ball": 0.4711551368236542
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4711551368236542,
+          "raw_logit": 6.856002330780029
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.005060597322881222,
+          "raw_logit": 2.3222997188568115
+        },
+        {
+          "rank": 3,
+          "index": 735,
+          "label": "poncho",
+          "probability": 0.0019797373097389936,
+          "raw_logit": 1.3837789297103882
+        },
+        {
+          "rank": 4,
+          "index": 68,
+          "label": "sidewinder",
+          "probability": 0.0017413496971130371,
+          "raw_logit": 1.255475401878357
+        },
+        {
+          "rank": 5,
+          "index": 474,
+          "label": "cardigan",
+          "probability": 0.0016285921446979046,
+          "raw_logit": 1.1885309219360352
+        }
+      ]
+    },
+    {
+      "case_number": 7061,
+      "source_line": 7063,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 398,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007061_seed-398.png",
+      "image_sha256": "23d442e00105fadea0639f1673942100ecdfb0d16647ab7b203ef0745e49af43",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5847364068031311,
+      "class_probabilities": {
+        "tennis ball": 0.5847364068031311
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5847364068031311,
+          "raw_logit": 7.275605201721191
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0015863312873989344,
+          "raw_logit": 1.3658682107925415
+        },
+        {
+          "rank": 3,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0013718483969569206,
+          "raw_logit": 1.2206029891967773
+        },
+        {
+          "rank": 4,
+          "index": 106,
+          "label": "wombat",
+          "probability": 0.0012263444950804114,
+          "raw_logit": 1.108482003211975
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0012162239290773869,
+          "raw_logit": 1.1001951694488525
+        }
+      ]
+    },
+    {
+      "case_number": 7062,
+      "source_line": 7064,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 55280,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007062_seed-55280.png",
+      "image_sha256": "b4cdfab5828dc8e2ad2f541090f9038378bf6e7a5219c02788d893a381ca138e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3782389760017395,
+      "class_probabilities": {
+        "tennis ball": 0.3782389760017395
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3782389760017395,
+          "raw_logit": 6.427553653717041
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002469608560204506,
+          "raw_logit": 1.3960869312286377
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.002189085353165865,
+          "raw_logit": 1.275511384010315
+        },
+        {
+          "rank": 4,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0018792729824781418,
+          "raw_logit": 1.1229122877120972
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0014461431419476867,
+          "raw_logit": 0.860927402973175
+        }
+      ]
+    },
+    {
+      "case_number": 7063,
+      "source_line": 7065,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 83274,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007063_seed-83274.png",
+      "image_sha256": "eabad88133e801864a2721c51306afafeee2407514374f25e57a8d1e1c9eb00b",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4525734484195709,
+      "class_probabilities": {
+        "tennis ball": 0.4525734484195709
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4525734484195709,
+          "raw_logit": 6.841554164886475
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.03661952167749405,
+          "raw_logit": 4.32718563079834
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.010120667517185211,
+          "raw_logit": 3.0411837100982666
+        },
+        {
+          "rank": 4,
+          "index": 560,
+          "label": "football helmet",
+          "probability": 0.0040787761099636555,
+          "raw_logit": 2.13240122795105
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0031572787556797266,
+          "raw_logit": 1.876314640045166
+        }
+      ]
+    },
+    {
+      "case_number": 7064,
+      "source_line": 7066,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 39565,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007064_seed-39565.png",
+      "image_sha256": "9df364a520cce72cef7660a27ce2e1082bddfd2c329cc1306e2cf5c271b07fde",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5195326805114746,
+      "class_probabilities": {
+        "tennis ball": 0.5195326805114746
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5195326805114746,
+          "raw_logit": 7.021567344665527
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.008106186985969543,
+          "raw_logit": 2.8612654209136963
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0017828746931627393,
+          "raw_logit": 1.346864938735962
+        },
+        {
+          "rank": 4,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0014525388833135366,
+          "raw_logit": 1.1419504880905151
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0011500827968120575,
+          "raw_logit": 0.9084714651107788
+        }
+      ]
+    },
+    {
+      "case_number": 7065,
+      "source_line": 7067,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 34019,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007065_seed-34019.png",
+      "image_sha256": "371ca390b99f1ca15c93a8c73f40e3edcd3f859bcca0d2e1bc379cb460037e30",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.588113009929657,
+      "class_probabilities": {
+        "tennis ball": 0.588113009929657
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.588113009929657,
+          "raw_logit": 7.287959098815918
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002872052136808634,
+          "raw_logit": 1.966066837310791
+        },
+        {
+          "rank": 3,
+          "index": 735,
+          "label": "poncho",
+          "probability": 0.0011023054830729961,
+          "raw_logit": 1.008443832397461
+        },
+        {
+          "rank": 4,
+          "index": 446,
+          "label": "binder",
+          "probability": 0.001004513236694038,
+          "raw_logit": 0.915543258190155
+        },
+        {
+          "rank": 5,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.000945215520914644,
+          "raw_logit": 0.854697585105896
+        }
+      ]
+    },
+    {
+      "case_number": 7066,
+      "source_line": 7068,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 90642,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007066_seed-90642.png",
+      "image_sha256": "752149b993245cccb9622b1445190f3cfc7150441d3f41b260148e398a02b385",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5372335314750671,
+      "class_probabilities": {
+        "tennis ball": 0.5372335314750671
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5372335314750671,
+          "raw_logit": 7.081028938293457
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.00131848210003227,
+          "raw_logit": 1.0710774660110474
+        },
+        {
+          "rank": 3,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0011920335236936808,
+          "raw_logit": 0.970257043838501
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0011527396272867918,
+          "raw_logit": 0.936737596988678
+        },
+        {
+          "rank": 5,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.001140747219324112,
+          "raw_logit": 0.9262797236442566
+        }
+      ]
+    },
+    {
+      "case_number": 7067,
+      "source_line": 7069,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 84979,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007067_seed-84979.png",
+      "image_sha256": "795fe3d159d251bba8f15a0450e213bb2ce689ab72b8e64bca2f46b98b7f3ff7",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.7104513049125671,
+      "class_probabilities": {
+        "tennis ball": 0.7104513049125671
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.7104513049125671,
+          "raw_logit": 7.883732795715332
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.017941810190677643,
+          "raw_logit": 4.204966068267822
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0015022828010842204,
+          "raw_logit": 1.7248181104660034
+        },
+        {
+          "rank": 4,
+          "index": 260,
+          "label": "chow",
+          "probability": 0.0010010272962972522,
+          "raw_logit": 1.3188592195510864
+        },
+        {
+          "rank": 5,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0007250767084769905,
+          "raw_logit": 0.9963546395301819
+        }
+      ]
+    },
+    {
+      "case_number": 7068,
+      "source_line": 7070,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 61775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007068_seed-61775.png",
+      "image_sha256": "b59522e4d21f67a28bc524434761389d89d740d95c2b53a16516c0085fa83c71",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5845786929130554,
+      "class_probabilities": {
+        "tennis ball": 0.5845786929130554
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5845786929130554,
+          "raw_logit": 7.27494478225708
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004433534108102322,
+          "raw_logit": 2.3932504653930664
+        },
+        {
+          "rank": 3,
+          "index": 789,
+          "label": "shoji",
+          "probability": 0.0012297187931835651,
+          "raw_logit": 1.1108388900756836
+        },
+        {
+          "rank": 4,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0010527896229177713,
+          "raw_logit": 0.9554968476295471
+        },
+        {
+          "rank": 5,
+          "index": 999,
+          "label": "toilet tissue",
+          "probability": 0.0009319104137830436,
+          "raw_logit": 0.8335347175598145
+        }
+      ]
+    },
+    {
+      "case_number": 7069,
+      "source_line": 7071,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 48486,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007069_seed-48486.png",
+      "image_sha256": "74f0c89b3ffc1d97b29e914a4a188a7adf01966691b311e4f78e60c75ef852b5",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4014134407043457,
+      "class_probabilities": {
+        "tennis ball": 0.4014134407043457
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4014134407043457,
+          "raw_logit": 6.606536388397217
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.010538092814385891,
+          "raw_logit": 2.966541051864624
+        },
+        {
+          "rank": 3,
+          "index": 186,
+          "label": "Norwich terrier",
+          "probability": 0.00447064870968461,
+          "raw_logit": 2.1090776920318604
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0036447173915803432,
+          "raw_logit": 1.9048231840133667
+        },
+        {
+          "rank": 5,
+          "index": 343,
+          "label": "warthog",
+          "probability": 0.002504634903743863,
+          "raw_logit": 1.5296876430511475
+        }
+      ]
+    },
+    {
+      "case_number": 7070,
+      "source_line": 7072,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 49263,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007070_seed-49263.png",
+      "image_sha256": "eee16aa7488de4d77c4a1bbe311cfbd39f509dcc874f33f657ce8ce09748cc60",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4917305111885071,
+      "class_probabilities": {
+        "tennis ball": 0.4917305111885071
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4917305111885071,
+          "raw_logit": 6.903164863586426
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0037402459420263767,
+          "raw_logit": 2.024385690689087
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0017260202439501882,
+          "raw_logit": 1.2510524988174438
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.001305440440773964,
+          "raw_logit": 0.9717745780944824
+        },
+        {
+          "rank": 5,
+          "index": 814,
+          "label": "speedboat",
+          "probability": 0.0011703233467414975,
+          "raw_logit": 0.8625140190124512
+        }
+      ]
+    },
+    {
+      "case_number": 7071,
+      "source_line": 7073,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 55348,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007071_seed-55348.png",
+      "image_sha256": "dc2ed46f8bfa85ffcf74cf1c8aa0dcb42909421827899be865d5ef7a5010a57a",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 805,
+      "predicted_category": "soccer ball",
+      "correct": false,
+      "expected_probability": 0.008806831203401089,
+      "class_probabilities": {
+        "tennis ball": 0.008806831203401089
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.12213524430990219,
+          "raw_logit": 5.292201519012451
+        },
+        {
+          "rank": 2,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.05851621553301811,
+          "raw_logit": 4.5563764572143555
+        },
+        {
+          "rank": 3,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.045649204403162,
+          "raw_logit": 4.308058738708496
+        },
+        {
+          "rank": 4,
+          "index": 787,
+          "label": "shield",
+          "probability": 0.025209391489624977,
+          "raw_logit": 3.7142891883850098
+        },
+        {
+          "rank": 5,
+          "index": 826,
+          "label": "stopwatch",
+          "probability": 0.014573457650840282,
+          "raw_logit": 3.1662745475769043
+        }
+      ]
+    },
+    {
+      "case_number": 7072,
+      "source_line": 7074,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 96209,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007072_seed-96209.png",
+      "image_sha256": "c06ebc9e4674cb3f6e84e6a9688a6e4fe5e5eadbb5f0ba8eca50510295b103a2",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.649316132068634,
+      "class_probabilities": {
+        "tennis ball": 0.649316132068634
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.649316132068634,
+          "raw_logit": 7.550337791442871
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0027003067079931498,
+          "raw_logit": 2.0677835941314697
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.002262517809867859,
+          "raw_logit": 1.8908964395523071
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0009400551789440215,
+          "raw_logit": 1.0126012563705444
+        },
+        {
+          "rank": 5,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.0008757712203077972,
+          "raw_logit": 0.941767692565918
+        }
+      ]
+    },
+    {
+      "case_number": 7073,
+      "source_line": 7075,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 86510,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007073_seed-86510.png",
+      "image_sha256": "9283719d6f183390ff6683bca461326072ff32b9727c85691f7db50eb6795c9f",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.520624577999115,
+      "class_probabilities": {
+        "tennis ball": 0.520624577999115
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.520624577999115,
+          "raw_logit": 7.006066799163818
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0046838088892400265,
+          "raw_logit": 2.295149087905884
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0011695377761498094,
+          "raw_logit": 0.9076461791992188
+        },
+        {
+          "rank": 4,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0010094803292304277,
+          "raw_logit": 0.7604730725288391
+        },
+        {
+          "rank": 5,
+          "index": 209,
+          "label": "Chesapeake Bay retriever",
+          "probability": 0.0009854715317487717,
+          "raw_logit": 0.7364023327827454
+        }
+      ]
+    },
+    {
+      "case_number": 7074,
+      "source_line": 7076,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 36066,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007074_seed-36066.png",
+      "image_sha256": "54357770c6f304a9bc6213ffe112686b60baa829c61555a8ebe90b1ba81befc3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5499293208122253,
+      "class_probabilities": {
+        "tennis ball": 0.5499293208122253
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5499293208122253,
+          "raw_logit": 7.1662397384643555
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.016876138746738434,
+          "raw_logit": 3.6823506355285645
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.001269806525669992,
+          "raw_logit": 1.095314383506775
+        },
+        {
+          "rank": 4,
+          "index": 783,
+          "label": "screw",
+          "probability": 0.0012247194536030293,
+          "raw_logit": 1.05916166305542
+        },
+        {
+          "rank": 5,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.001146184396930039,
+          "raw_logit": 0.9928882122039795
+        }
+      ]
+    },
+    {
+      "case_number": 7075,
+      "source_line": 7077,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 94587,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007075_seed-94587.png",
+      "image_sha256": "c50cc7544e93972a71c2d7cb0eaeae5c5d9b983937cbf468d13919e64d8703f3",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.507049024105072,
+      "class_probabilities": {
+        "tennis ball": 0.507049024105072
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.507049024105072,
+          "raw_logit": 7.065794944763184
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0517609603703022,
+          "raw_logit": 4.783823490142822
+        },
+        {
+          "rank": 3,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.001813757000491023,
+          "raw_logit": 1.432587742805481
+        },
+        {
+          "rank": 4,
+          "index": 821,
+          "label": "steel arch bridge",
+          "probability": 0.001311540137976408,
+          "raw_logit": 1.1083892583847046
+        },
+        {
+          "rank": 5,
+          "index": 712,
+          "label": "Petri dish",
+          "probability": 0.0010863456409424543,
+          "raw_logit": 0.9200068116188049
+        }
+      ]
+    },
+    {
+      "case_number": 7076,
+      "source_line": 7078,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 35639,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007076_seed-35639.png",
+      "image_sha256": "513a21dcdc3ccba62209142e78aa64597bb700c847c5a5cba6f25f598e19553e",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.45969218015670776,
+      "class_probabilities": {
+        "tennis ball": 0.45969218015670776
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.45969218015670776,
+          "raw_logit": 6.783463954925537
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0036341273225843906,
+          "raw_logit": 1.943276047706604
+        },
+        {
+          "rank": 3,
+          "index": 539,
+          "label": "doormat",
+          "probability": 0.003399456851184368,
+          "raw_logit": 1.8765223026275635
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0031893914565443993,
+          "raw_logit": 1.8127368688583374
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.002111992798745632,
+          "raw_logit": 1.4005388021469116
+        }
+      ]
+    },
+    {
+      "case_number": 7077,
+      "source_line": 7079,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 71115,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007077_seed-71115.png",
+      "image_sha256": "10490d9992896fd91047400fba7b10d4e346ebceeb925bea0493d95ac718a750",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.6029345989227295,
+      "class_probabilities": {
+        "tennis ball": 0.6029345989227295
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.6029345989227295,
+          "raw_logit": 7.369853973388672
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.011322642676532269,
+          "raw_logit": 3.3948497772216797
+        },
+        {
+          "rank": 3,
+          "index": 823,
+          "label": "stethoscope",
+          "probability": 0.0021734510082751513,
+          "raw_logit": 1.744361400604248
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0010502031072974205,
+          "raw_logit": 1.0170286893844604
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0008972114301286638,
+          "raw_logit": 0.8595816493034363
+        }
+      ]
+    },
+    {
+      "case_number": 7078,
+      "source_line": 7080,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 86147,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007078_seed-86147.png",
+      "image_sha256": "d87ee2c0231a0ce356d62ced189274d5d805be1c866322442d768a29f2d56fc9",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4301910996437073,
+      "class_probabilities": {
+        "tennis ball": 0.4301910996437073
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4301910996437073,
+          "raw_logit": 6.644402980804443
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004106403794139624,
+          "raw_logit": 1.9927210807800293
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0012177894823253155,
+          "raw_logit": 0.7772107720375061
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0011568646878004074,
+          "raw_logit": 0.7258870005607605
+        },
+        {
+          "rank": 5,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0011533059878274798,
+          "raw_logit": 0.7228059768676758
+        }
+      ]
+    },
+    {
+      "case_number": 7079,
+      "source_line": 7081,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 65701,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007079_seed-65701.png",
+      "image_sha256": "ecf9975ea23e3e00fb559855992c283d33e016c3156ba7413a73cc09edd359be",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.6429738998413086,
+      "class_probabilities": {
+        "tennis ball": 0.6429738998413086
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.6429738998413086,
+          "raw_logit": 7.5248260498046875
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.00329057895578444,
+          "raw_logit": 2.2497854232788086
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0010985482949763536,
+          "raw_logit": 1.1527115106582642
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.000824923743493855,
+          "raw_logit": 0.8662575483322144
+        },
+        {
+          "rank": 5,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.0008096256060525775,
+          "raw_logit": 0.8475384712219238
+        }
+      ]
+    },
+    {
+      "case_number": 7080,
+      "source_line": 7082,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 60042,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007080_seed-60042.png",
+      "image_sha256": "167b3efa1d061fd0ae28c6c4e55c7bccdae44571d350edc5020dbc56d704a4d6",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4652174115180969,
+      "class_probabilities": {
+        "tennis ball": 0.4652174115180969
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4652174115180969,
+          "raw_logit": 6.821449279785156
+        },
+        {
+          "rank": 2,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.006158164702355862,
+          "raw_logit": 2.4967234134674072
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.004255973268300295,
+          "raw_logit": 2.127267599105835
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0019962559454143047,
+          "raw_logit": 1.3702176809310913
+        },
+        {
+          "rank": 5,
+          "index": 950,
+          "label": "orange",
+          "probability": 0.0018928509671241045,
+          "raw_logit": 1.317028522491455
+        }
+      ]
+    },
+    {
+      "case_number": 7081,
+      "source_line": 7083,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 7027,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007081_seed-7027.png",
+      "image_sha256": "744ff453f56e384b2a29bc3a4510269f917a5249f243f7263d2f82cd8a7294af",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4297405779361725,
+      "class_probabilities": {
+        "tennis ball": 0.4297405779361725
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4297405779361725,
+          "raw_logit": 6.6642632484436035
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.014171191491186619,
+          "raw_logit": 3.2522926330566406
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0017215574625879526,
+          "raw_logit": 1.1443109512329102
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0017130543710663915,
+          "raw_logit": 1.139359474182129
+        },
+        {
+          "rank": 5,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0014176582917571068,
+          "raw_logit": 0.9500880241394043
+        }
+      ]
+    },
+    {
+      "case_number": 7082,
+      "source_line": 7084,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 90381,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007082_seed-90381.png",
+      "image_sha256": "03265196e47afef7701eefda7e312312911b06d1f8a2b8c9dc8761922d4d084d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5407071113586426,
+      "class_probabilities": {
+        "tennis ball": 0.5407071113586426
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5407071113586426,
+          "raw_logit": 7.1881422996521
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.04130752012133598,
+          "raw_logit": 4.61630916595459
+        },
+        {
+          "rank": 3,
+          "index": 2,
+          "label": "great white shark",
+          "probability": 0.0013283403823152184,
+          "raw_logit": 1.1791951656341553
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0011906672734767199,
+          "raw_logit": 1.069778561592102
+        },
+        {
+          "rank": 5,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0011471231700852513,
+          "raw_logit": 1.0325219631195068
+        }
+      ]
+    },
+    {
+      "case_number": 7083,
+      "source_line": 7085,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 16508,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007083_seed-16508.png",
+      "image_sha256": "38b07f160d44e0369b6daf4847921eda57b324d6a37fc5f9d15dde5fea9702ba",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.564165472984314,
+      "class_probabilities": {
+        "tennis ball": 0.564165472984314
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.564165472984314,
+          "raw_logit": 7.191439151763916
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0027238570619374514,
+          "raw_logit": 1.8581403493881226
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.001490322407335043,
+          "raw_logit": 1.2550841569900513
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0011618253774940968,
+          "raw_logit": 1.0060840845108032
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0011454892810434103,
+          "raw_logit": 0.991923451423645
+        }
+      ]
+    },
+    {
+      "case_number": 7084,
+      "source_line": 7086,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 65154,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007084_seed-65154.png",
+      "image_sha256": "4ee5e350061bc1a5998bbbbb258191a3af85f5975bfdf5f656dd253a6a140dea",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5819097757339478,
+      "class_probabilities": {
+        "tennis ball": 0.5819097757339478
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5819097757339478,
+          "raw_logit": 7.258133888244629
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0033554299734532833,
+          "raw_logit": 2.10239839553833
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0010073049925267696,
+          "raw_logit": 0.8990969657897949
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0009933054680004716,
+          "raw_logit": 0.8851014971733093
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0009277397766709328,
+          "raw_logit": 0.8168144226074219
+        }
+      ]
+    },
+    {
+      "case_number": 7085,
+      "source_line": 7087,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 23543,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007085_seed-23543.png",
+      "image_sha256": "57238115f0210276672f8b5300a2718d59bcfca1e8d35d3b01f2e56777a0ace5",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5610074996948242,
+      "class_probabilities": {
+        "tennis ball": 0.5610074996948242
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5610074996948242,
+          "raw_logit": 7.187907695770264
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0035195162054151297,
+          "raw_logit": 2.116497039794922
+        },
+        {
+          "rank": 3,
+          "index": 489,
+          "label": "chainlink fence",
+          "probability": 0.0018565632635727525,
+          "raw_logit": 1.4769008159637451
+        },
+        {
+          "rank": 4,
+          "index": 460,
+          "label": "breakwater",
+          "probability": 0.001722897868603468,
+          "raw_logit": 1.4021812677383423
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0012776557123288512,
+          "raw_logit": 1.1032001972198486
+        }
+      ]
+    },
+    {
+      "case_number": 7086,
+      "source_line": 7088,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 25394,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007086_seed-25394.png",
+      "image_sha256": "c21eca1c48af273a1c760edba660368d25271aea4b78a002dbb0664d68267bed",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4515264928340912,
+      "class_probabilities": {
+        "tennis ball": 0.4515264928340912
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4515264928340912,
+          "raw_logit": 6.759975433349609
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0043041096068918705,
+          "raw_logit": 2.1069114208221436
+        },
+        {
+          "rank": 3,
+          "index": 911,
+          "label": "wool",
+          "probability": 0.0024435946252197027,
+          "raw_logit": 1.54081130027771
+        },
+        {
+          "rank": 4,
+          "index": 474,
+          "label": "cardigan",
+          "probability": 0.002413614187389612,
+          "raw_logit": 1.5284667015075684
+        },
+        {
+          "rank": 5,
+          "index": 81,
+          "label": "ptarmigan",
+          "probability": 0.0016096470644697547,
+          "raw_logit": 1.1233563423156738
+        }
+      ]
+    },
+    {
+      "case_number": 7087,
+      "source_line": 7089,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 56497,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007087_seed-56497.png",
+      "image_sha256": "ba18a78a2bf25e6ae9e73475bbfffb8935aceff0befb66e9969d3cdcc30d8b56",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5768296718597412,
+      "class_probabilities": {
+        "tennis ball": 0.5768296718597412
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5768296718597412,
+          "raw_logit": 7.293518543243408
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.020371178165078163,
+          "raw_logit": 3.9500925540924072
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0018262997036799788,
+          "raw_logit": 1.5382633209228516
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0014291383558884263,
+          "raw_logit": 1.2930432558059692
+        },
+        {
+          "rank": 5,
+          "index": 799,
+          "label": "sliding door",
+          "probability": 0.0011932188645005226,
+          "raw_logit": 1.112626075744629
+        }
+      ]
+    },
+    {
+      "case_number": 7088,
+      "source_line": 7090,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 16737,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007088_seed-16737.png",
+      "image_sha256": "fbf3e8596aba25bc96ac230b101d02d7c6ed0a58e1942052a4f7e0dac6e38752",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.7650547027587891,
+      "class_probabilities": {
+        "tennis ball": 0.7650547027587891
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.7650547027587891,
+          "raw_logit": 8.112845420837402
+        },
+        {
+          "rank": 2,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0013910606503486633,
+          "raw_logit": 1.802964687347412
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0009802051354199648,
+          "raw_logit": 1.452904462814331
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0009099672315642238,
+          "raw_logit": 1.3785516023635864
+        },
+        {
+          "rank": 5,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.0007116018095985055,
+          "raw_logit": 1.1326613426208496
+        }
+      ]
+    },
+    {
+      "case_number": 7089,
+      "source_line": 7091,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 10741,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007089_seed-10741.png",
+      "image_sha256": "fb64ad57b79829d325b18567c95ed73d19ed6c78bc0b0cf816c2cc4ff6df4cef",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.38179898262023926,
+      "class_probabilities": {
+        "tennis ball": 0.38179898262023926
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.38179898262023926,
+          "raw_logit": 6.464362621307373
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.006454829126596451,
+          "raw_logit": 2.3842968940734863
+        },
+        {
+          "rank": 3,
+          "index": 581,
+          "label": "grille",
+          "probability": 0.0042219823226332664,
+          "raw_logit": 1.959773063659668
+        },
+        {
+          "rank": 4,
+          "index": 811,
+          "label": "space heater",
+          "probability": 0.0031631712336093187,
+          "raw_logit": 1.6710435152053833
+        },
+        {
+          "rank": 5,
+          "index": 904,
+          "label": "window screen",
+          "probability": 0.0026652973610907793,
+          "raw_logit": 1.4997837543487549
+        }
+      ]
+    },
+    {
+      "case_number": 7090,
+      "source_line": 7092,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 96436,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007090_seed-96436.png",
+      "image_sha256": "0e707e6c8662b4fd5931a86873668f2983096ad14bb0926e5b02cd6dc89f62b4",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3908604085445404,
+      "class_probabilities": {
+        "tennis ball": 0.3908604085445404
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3908604085445404,
+          "raw_logit": 6.680741310119629
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.11299442499876022,
+          "raw_logit": 5.4397292137146
+        },
+        {
+          "rank": 3,
+          "index": 640,
+          "label": "manhole cover",
+          "probability": 0.0013208583695814013,
+          "raw_logit": 0.9906724691390991
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0013172461185604334,
+          "raw_logit": 0.9879339337348938
+        },
+        {
+          "rank": 5,
+          "index": 783,
+          "label": "screw",
+          "probability": 0.0011141628492623568,
+          "raw_logit": 0.8204942941665649
+        }
+      ]
+    },
+    {
+      "case_number": 7091,
+      "source_line": 7093,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 24317,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007091_seed-24317.png",
+      "image_sha256": "ffe26740bc1b6812c628f0be4219cb323baa693773c4267f57f60a50bec6ebac",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5144461989402771,
+      "class_probabilities": {
+        "tennis ball": 0.5144461989402771
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5144461989402771,
+          "raw_logit": 6.998082637786865
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.009384297765791416,
+          "raw_logit": 2.9940297603607178
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0014682591427117586,
+          "raw_logit": 1.1390690803527832
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0014089945470914245,
+          "raw_logit": 1.0978680849075317
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.001209957874380052,
+          "raw_logit": 0.9455772042274475
+        }
+      ]
+    },
+    {
+      "case_number": 7092,
+      "source_line": 7094,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 2610,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007092_seed-2610.png",
+      "image_sha256": "48686623a7231b4a238369de2cfdede9ef79390f92fc7993948942d36c805b58",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3449970781803131,
+      "class_probabilities": {
+        "tennis ball": 0.3449970781803131
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3449970781803131,
+          "raw_logit": 6.296274662017822
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.008128879591822624,
+          "raw_logit": 2.548161745071411
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.003336340421810746,
+          "raw_logit": 1.6576133966445923
+        },
+        {
+          "rank": 4,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.0015822933055460453,
+          "raw_logit": 0.9116141200065613
+        },
+        {
+          "rank": 5,
+          "index": 186,
+          "label": "Norwich terrier",
+          "probability": 0.0015574540011584759,
+          "raw_logit": 0.8957909941673279
+        }
+      ]
+    },
+    {
+      "case_number": 7093,
+      "source_line": 7095,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 67720,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007093_seed-67720.png",
+      "image_sha256": "6d6d3261c506aa6e9de5dfada2cad8aa4888cae9a2d7efaa08714398b2b196d4",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.4200296103954315,
+      "class_probabilities": {
+        "tennis ball": 0.4200296103954315
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.4200296103954315,
+          "raw_logit": 6.6364264488220215
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.013645959086716175,
+          "raw_logit": 3.2095446586608887
+        },
+        {
+          "rank": 3,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.004380811471492052,
+          "raw_logit": 2.0733351707458496
+        },
+        {
+          "rank": 4,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.0024086765479296446,
+          "raw_logit": 1.4751787185668945
+        },
+        {
+          "rank": 5,
+          "index": 640,
+          "label": "manhole cover",
+          "probability": 0.0021793756168335676,
+          "raw_logit": 1.3751399517059326
+        }
+      ]
+    },
+    {
+      "case_number": 7094,
+      "source_line": 7096,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 37215,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007094_seed-37215.png",
+      "image_sha256": "a1f759ae908567e23f46f981ac1d83ee737f0a05b1958756dd8f375a583223d5",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5679371356964111,
+      "class_probabilities": {
+        "tennis ball": 0.5679371356964111
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5679371356964111,
+          "raw_logit": 7.200127124786377
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0019307640613988042,
+          "raw_logit": 1.516032099723816
+        },
+        {
+          "rank": 3,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.001738092047162354,
+          "raw_logit": 1.4109044075012207
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.001057769637554884,
+          "raw_logit": 0.9142788052558899
+        },
+        {
+          "rank": 5,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.00092673534527421,
+          "raw_logit": 0.7820292115211487
+        }
+      ]
+    },
+    {
+      "case_number": 7095,
+      "source_line": 7097,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 30368,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007095_seed-30368.png",
+      "image_sha256": "3480c02c8c3f1817d4d9bb0b8f8d75046221ca6c5a0fb56027d1d2e223c174eb",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.427641898393631,
+      "class_probabilities": {
+        "tennis ball": 0.427641898393631
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.427641898393631,
+          "raw_logit": 6.645845890045166
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002845795126631856,
+          "raw_logit": 1.6334025859832764
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0025638428051024675,
+          "raw_logit": 1.5290671586990356
+        },
+        {
+          "rank": 4,
+          "index": 207,
+          "label": "golden retriever",
+          "probability": 0.0013486873358488083,
+          "raw_logit": 0.8866918087005615
+        },
+        {
+          "rank": 5,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.001317495945841074,
+          "raw_logit": 0.8632926344871521
+        }
+      ]
+    },
+    {
+      "case_number": 7096,
+      "source_line": 7098,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 27006,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007096_seed-27006.png",
+      "image_sha256": "09b6004980808a5933a72ddc67c385235d2853ec6a86b58f7c001c79b1bae094",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.8020689487457275,
+      "class_probabilities": {
+        "tennis ball": 0.8020689487457275
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.8020689487457275,
+          "raw_logit": 8.32865047454834
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0010338533902540803,
+          "raw_logit": 1.6747487783432007
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0007754237158223987,
+          "raw_logit": 1.3871103525161743
+        },
+        {
+          "rank": 4,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.000530931749381125,
+          "raw_logit": 1.0083341598510742
+        },
+        {
+          "rank": 5,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0005234110285528004,
+          "raw_logit": 0.9940676093101501
+        }
+      ]
+    },
+    {
+      "case_number": 7097,
+      "source_line": 7099,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 61715,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007097_seed-61715.png",
+      "image_sha256": "cca5f9ae4162c01991584e58ea2cb82b84f46d5aa54d1047c2eaf343cf4a9e9d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.5043576955795288,
+      "class_probabilities": {
+        "tennis ball": 0.5043576955795288
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.5043576955795288,
+          "raw_logit": 6.95515775680542
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.0036675867158919573,
+          "raw_logit": 2.0314061641693115
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0015015614917501807,
+          "raw_logit": 1.1383774280548096
+        },
+        {
+          "rank": 4,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.0012611369602382183,
+          "raw_logit": 0.9638859033584595
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0012401683488860726,
+          "raw_logit": 0.9471191167831421
+        }
+      ]
+    },
+    {
+      "case_number": 7098,
+      "source_line": 7100,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 62699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007098_seed-62699.png",
+      "image_sha256": "124fc4b2370ee7262e3682bf08f945da613a72aa6e72c69142fa495670a174a2",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.500217080116272,
+      "class_probabilities": {
+        "tennis ball": 0.500217080116272
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.500217080116272,
+          "raw_logit": 6.922297954559326
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.002146119484677911,
+          "raw_logit": 1.470916986465454
+        },
+        {
+          "rank": 3,
+          "index": 266,
+          "label": "miniature poodle",
+          "probability": 0.001348509918898344,
+          "raw_logit": 1.0062559843063354
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0013081466313451529,
+          "raw_logit": 0.9758671522140503
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.001059768721461296,
+          "raw_logit": 0.765306293964386
+        }
+      ]
+    },
+    {
+      "case_number": 7099,
+      "source_line": 7101,
+      "prompt": "an image of a tennis ball",
+      "class": "tennis ball",
+      "evaluation_seed": 20343,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/tennis-ball/case-007099_seed-20343.png",
+      "image_sha256": "1e7837a613f01756b19f89a9bfebba24b2329603f4cc58361c299bbfe4bbfd0d",
+      "expected_index": 852,
+      "expected_category": "tennis ball",
+      "predicted_index": 852,
+      "predicted_category": "tennis ball",
+      "correct": true,
+      "expected_probability": 0.3858490288257599,
+      "class_probabilities": {
+        "tennis ball": 0.3858490288257599
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.3858490288257599,
+          "raw_logit": 6.557476997375488
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.013621426187455654,
+          "raw_logit": 3.213674783706665
+        },
+        {
+          "rank": 3,
+          "index": 602,
+          "label": "horizontal bar",
+          "probability": 0.007523604203015566,
+          "raw_logit": 2.6200761795043945
+        },
+        {
+          "rank": 4,
+          "index": 553,
+          "label": "file",
+          "probability": 0.004312208388000727,
+          "raw_logit": 2.063480854034424
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.004177939146757126,
+          "raw_logit": 2.0318491458892822
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-08-13T03:33:25.551167+00:00"
+}

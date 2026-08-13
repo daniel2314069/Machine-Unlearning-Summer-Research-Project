@@ -1,0 +1,5579 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "job_id": "G_full_afr__similar_non_target__ping-pong-ball",
+  "job_fingerprint": "af1cfce1c05c15cee6c75be55364b57e0f835b1d91ad1f9d7ded757f76bccb46",
+  "variant": "G_full_afr",
+  "role": "similar_non_target",
+  "concept": "ping-pong ball",
+  "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+  "generation_runtime": {
+    "requested_base_model": "CompVis/stable-diffusion-v1-4",
+    "requested_dtype": "bfloat16",
+    "pipeline": {
+      "class": "diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline",
+      "name_or_path": "CompVis/stable-diffusion-v1-4",
+      "commit_hash": null
+    },
+    "unet": {
+      "class": "diffusers.models.unets.unet_2d_condition.UNet2DConditionModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/unet",
+      "commit_hash": null
+    },
+    "text_encoder": {
+      "class": "transformers.models.clip.modeling_clip.CLIPTextModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/text_encoder",
+      "commit_hash": "133a221b8aa7292a167afc5127cb63fb5005638b"
+    },
+    "tokenizer": {
+      "class": "transformers.models.clip.tokenization_clip.CLIPTokenizer",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/tokenizer",
+      "commit_hash": null
+    },
+    "scheduler": {
+      "class": "diffusers.schedulers.scheduling_pndm.PNDMScheduler",
+      "name_or_path": null,
+      "commit_hash": null
+    },
+    "scheduler_config_sha256": "3cf318d6daa65d30ee297048c7d7e51400e6a2465d7d4ff142784b8ab1e4bf22",
+    "settings": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "images_per_prompt": 1,
+      "generator_device": "cpu"
+    },
+    "runtime": {
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+      "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+      "packages": {
+        "torch": "2.6.0+cu118",
+        "torchvision": "0.21.0+cu118",
+        "diffusers": "0.33.1",
+        "transformers": "4.48.3",
+        "safetensors": "0.5.3",
+        "pandas": "2.2.3",
+        "Pillow": "11.2.1"
+      },
+      "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+      "git_dirty": true
+    }
+  },
+  "evaluator": {
+    "implementation": "torchvision_resnet50",
+    "weights_enum": "IMAGENET1K_V2",
+    "weight_filename": "resnet50-11ad3fa6.pth",
+    "weight_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "categories_sha256": "47eed8c870ca7ed0258cb04301612ed3bcb3eddf78ecd24f37eb58d799eddea7"
+  },
+  "correct": 86,
+  "total": 100,
+  "accuracy": 0.86,
+  "mean_expected_probability": 0.32743666651658715,
+  "items": [
+    {
+      "case_number": 12000,
+      "source_line": 12002,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 15742,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012000_seed-15742.png",
+      "image_sha256": "403f8061a78526adb10b1940efaa69f9090ea835be7734e91ba9d1a92b29d510",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.32889941334724426,
+      "class_probabilities": {
+        "ping-pong ball": 0.32889941334724426
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.32889941334724426,
+          "raw_logit": 6.4923930168151855
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.053384166210889816,
+          "raw_logit": 4.674155235290527
+        },
+        {
+          "rank": 3,
+          "index": 950,
+          "label": "orange",
+          "probability": 0.018355000764131546,
+          "raw_logit": 3.6065430641174316
+        },
+        {
+          "rank": 4,
+          "index": 700,
+          "label": "paper towel",
+          "probability": 0.010049551725387573,
+          "raw_logit": 3.00416898727417
+        },
+        {
+          "rank": 5,
+          "index": 951,
+          "label": "lemon",
+          "probability": 0.009971330873668194,
+          "raw_logit": 2.9963550567626953
+        }
+      ]
+    },
+    {
+      "case_number": 12001,
+      "source_line": 12003,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 91732,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012001_seed-91732.png",
+      "image_sha256": "91709293f293d88f0d20bebdf26543106a54a893f4fb0ceccaf10ba2b1f4beed",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.4230651259422302,
+      "class_probabilities": {
+        "ping-pong ball": 0.4230651259422302
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.4230651259422302,
+          "raw_logit": 6.713722229003906
+        },
+        {
+          "rank": 2,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.005514389835298061,
+          "raw_logit": 2.3735573291778564
+        },
+        {
+          "rank": 3,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.00450502522289753,
+          "raw_logit": 2.17138934135437
+        },
+        {
+          "rank": 4,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.004203684628009796,
+          "raw_logit": 2.1021578311920166
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0038423670921474695,
+          "raw_logit": 2.012284755706787
+        }
+      ]
+    },
+    {
+      "case_number": 12002,
+      "source_line": 12004,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 64704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012002_seed-64704.png",
+      "image_sha256": "05bbdcbce056aeb2685c05680383fc978c347f6f3d7b76c97665e89765eec1a3",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 574,
+      "predicted_category": "golf ball",
+      "correct": false,
+      "expected_probability": 0.11746625602245331,
+      "class_probabilities": {
+        "ping-pong ball": 0.11746625602245331
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.13864336907863617,
+          "raw_logit": 5.390335559844971
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.11746625602245331,
+          "raw_logit": 5.224581718444824
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.036587510257959366,
+          "raw_logit": 4.0581374168396
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.01846328005194664,
+          "raw_logit": 3.3742144107818604
+        },
+        {
+          "rank": 5,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.006225317716598511,
+          "raw_logit": 2.287055015563965
+        }
+      ]
+    },
+    {
+      "case_number": 12003,
+      "source_line": 12005,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 53889,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012003_seed-53889.png",
+      "image_sha256": "2cfdbfa3c5fa95c9c76282b89a332b6c1c5beb1a2d1b54498984e5ed4b705fd2",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.319169282913208,
+      "class_probabilities": {
+        "ping-pong ball": 0.319169282913208
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.319169282913208,
+          "raw_logit": 6.306710243225098
+        },
+        {
+          "rank": 2,
+          "index": 543,
+          "label": "dumbbell",
+          "probability": 0.02007749117910862,
+          "raw_logit": 3.540587902069092
+        },
+        {
+          "rank": 3,
+          "index": 723,
+          "label": "pinwheel",
+          "probability": 0.014488461427390575,
+          "raw_logit": 3.214341163635254
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.006757744587957859,
+          "raw_logit": 2.4516777992248535
+        },
+        {
+          "rank": 5,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.006036750972270966,
+          "raw_logit": 2.3388545513153076
+        }
+      ]
+    },
+    {
+      "case_number": 12004,
+      "source_line": 12006,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49258,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012004_seed-49258.png",
+      "image_sha256": "6c2ef3af5e28069cbfe4bb9911f9dec44628dea55aa80b46a03c62ca47fb8178",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.31948360800743103,
+      "class_probabilities": {
+        "ping-pong ball": 0.31948360800743103
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.31948360800743103,
+          "raw_logit": 6.217815399169922
+        },
+        {
+          "rank": 2,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.004953324329108,
+          "raw_logit": 2.051168441772461
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003595738671720028,
+          "raw_logit": 1.7308590412139893
+        },
+        {
+          "rank": 4,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0031689864117652178,
+          "raw_logit": 1.60452139377594
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0028710488695651293,
+          "raw_logit": 1.5057870149612427
+        }
+      ]
+    },
+    {
+      "case_number": 12005,
+      "source_line": 12007,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 60699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012005_seed-60699.png",
+      "image_sha256": "47f16dfa0aec79a931eebd5d0dd2d36f4dcf4e8f5f9f1d26a0a488fd3b178ef0",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.6230922937393188,
+      "class_probabilities": {
+        "ping-pong ball": 0.6230922937393188
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.6230922937393188,
+          "raw_logit": 7.934214115142822
+        },
+        {
+          "rank": 2,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.057196758687496185,
+          "raw_logit": 5.546016693115234
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.012262793257832527,
+          "raw_logit": 4.006089210510254
+        },
+        {
+          "rank": 4,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.011641073040664196,
+          "raw_logit": 3.95405912399292
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.00537900859490037,
+          "raw_logit": 3.182023763656616
+        }
+      ]
+    },
+    {
+      "case_number": 12006,
+      "source_line": 12008,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 70183,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012006_seed-70183.png",
+      "image_sha256": "5539b0542b452192890fe9dd4321be308ee4ba04684abde43be0fe6588c40175",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.17160965502262115,
+      "class_probabilities": {
+        "ping-pong ball": 0.17160965502262115
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.17160965502262115,
+          "raw_logit": 5.990996837615967
+        },
+        {
+          "rank": 2,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.09033022075891495,
+          "raw_logit": 5.349246501922607
+        },
+        {
+          "rank": 3,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.04607689008116722,
+          "raw_logit": 4.676085948944092
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.04297047108411789,
+          "raw_logit": 4.606287479400635
+        },
+        {
+          "rank": 5,
+          "index": 478,
+          "label": "carton",
+          "probability": 0.025874314829707146,
+          "raw_logit": 4.099025249481201
+        }
+      ]
+    },
+    {
+      "case_number": 12007,
+      "source_line": 12009,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 17868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012007_seed-17868.png",
+      "image_sha256": "54116ba60a37f31bebe4c95f4d2f57b06434425d2ec00eb32c0f39123b8ab562",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.409773588180542,
+      "class_probabilities": {
+        "ping-pong ball": 0.409773588180542
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.409773588180542,
+          "raw_logit": 6.576711177825928
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.008885319344699383,
+          "raw_logit": 2.745506763458252
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.003267414402216673,
+          "raw_logit": 1.7451051473617554
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0019400676246732473,
+          "raw_logit": 1.2238293886184692
+        },
+        {
+          "rank": 5,
+          "index": 535,
+          "label": "disk brake",
+          "probability": 0.0018427110044285655,
+          "raw_logit": 1.1723443269729614
+        }
+      ]
+    },
+    {
+      "case_number": 12008,
+      "source_line": 12010,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 66181,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012008_seed-66181.png",
+      "image_sha256": "27382b43a7d0b99112209874b21a510f894b01de281d8bffad1c39b3f58fb64b",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.9304672479629517,
+      "class_probabilities": {
+        "ping-pong ball": 0.9304672479629517
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.9304672479629517,
+          "raw_logit": 9.613546371459961
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0014183634193614125,
+          "raw_logit": 3.127363443374634
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.001393972197547555,
+          "raw_logit": 3.1100170612335205
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0008584549650549889,
+          "raw_logit": 2.6252384185791016
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.000326530949678272,
+          "raw_logit": 1.658629059791565
+        }
+      ]
+    },
+    {
+      "case_number": 12009,
+      "source_line": 12011,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 27357,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012009_seed-27357.png",
+      "image_sha256": "8463ff26be6f67e1d7a83a7c3d9ffd08d9cdedbedee742344d46553fa4c0581e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 736,
+      "predicted_category": "pool table",
+      "correct": false,
+      "expected_probability": 0.08805409073829651,
+      "class_probabilities": {
+        "ping-pong ball": 0.08805409073829651
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.10132576525211334,
+          "raw_logit": 5.087197780609131
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.08805409073829651,
+          "raw_logit": 4.946808338165283
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.07563332468271255,
+          "raw_logit": 4.7947540283203125
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.026458516716957092,
+          "raw_logit": 3.7444350719451904
+        },
+        {
+          "rank": 5,
+          "index": 613,
+          "label": "joystick",
+          "probability": 0.01883309707045555,
+          "raw_logit": 3.404472827911377
+        }
+      ]
+    },
+    {
+      "case_number": 12010,
+      "source_line": 12012,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 60961,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012010_seed-60961.png",
+      "image_sha256": "e58691beb92486ffb19a202a988d040d7fcfb712acfa62f303c6ec96d8331442",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.31509363651275635,
+      "class_probabilities": {
+        "ping-pong ball": 0.31509363651275635
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.31509363651275635,
+          "raw_logit": 6.635415077209473
+        },
+        {
+          "rank": 2,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.05731428042054176,
+          "raw_logit": 4.931095123291016
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.049429021775722504,
+          "raw_logit": 4.783082962036133
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.03835001960396767,
+          "raw_logit": 4.529300212860107
+        },
+        {
+          "rank": 5,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.008875054307281971,
+          "raw_logit": 3.0657896995544434
+        }
+      ]
+    },
+    {
+      "case_number": 12011,
+      "source_line": 12013,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 47199,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012011_seed-47199.png",
+      "image_sha256": "59bcefbb87c69a24cf896603fd61044f9fc93bd87a8b837b8293a6a8c5255459",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.45138469338417053,
+      "class_probabilities": {
+        "ping-pong ball": 0.45138469338417053
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.45138469338417053,
+          "raw_logit": 6.778850555419922
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.009494266472756863,
+          "raw_logit": 2.9172186851501465
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0025567510165274143,
+          "raw_logit": 1.605268120765686
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0023127251770347357,
+          "raw_logit": 1.5049571990966797
+        },
+        {
+          "rank": 5,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0021556352730840445,
+          "raw_logit": 1.4346163272857666
+        }
+      ]
+    },
+    {
+      "case_number": 12012,
+      "source_line": 12014,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 55810,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012012_seed-55810.png",
+      "image_sha256": "ec5214784143747b15c6c7e436f31b1d4a619625a3841a4e886266fe0a2bf001",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.43364638090133667,
+      "class_probabilities": {
+        "ping-pong ball": 0.43364638090133667
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.43364638090133667,
+          "raw_logit": 7.006002902984619
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.06342523545026779,
+          "raw_logit": 5.083635330200195
+        },
+        {
+          "rank": 3,
+          "index": 987,
+          "label": "corn",
+          "probability": 0.04469017684459686,
+          "raw_logit": 4.733527183532715
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.01214543730020523,
+          "raw_logit": 3.430727005004883
+        },
+        {
+          "rank": 5,
+          "index": 951,
+          "label": "lemon",
+          "probability": 0.00621016277000308,
+          "raw_logit": 2.759960651397705
+        }
+      ]
+    },
+    {
+      "case_number": 12013,
+      "source_line": 12015,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 62134,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012013_seed-62134.png",
+      "image_sha256": "018ef31bd8f7e9176f62eb17992e37654d8dd1ff1b922e29862b194e66411b83",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.6507694125175476,
+      "class_probabilities": {
+        "ping-pong ball": 0.6507694125175476
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.6507694125175476,
+          "raw_logit": 7.914203643798828
+        },
+        {
+          "rank": 2,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.0286681167781353,
+          "raw_logit": 4.791833877563477
+        },
+        {
+          "rank": 3,
+          "index": 398,
+          "label": "abacus",
+          "probability": 0.02554776519536972,
+          "raw_logit": 4.676598072052002
+        },
+        {
+          "rank": 4,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.01981286145746708,
+          "raw_logit": 4.422379493713379
+        },
+        {
+          "rank": 5,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.005524883978068829,
+          "raw_logit": 3.145310401916504
+        }
+      ]
+    },
+    {
+      "case_number": 12014,
+      "source_line": 12016,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 92938,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012014_seed-92938.png",
+      "image_sha256": "ddd02e7a7d431dee4d6486f705dcf8f9381a3d80e5e445d62d6e6cd01ee7a2f5",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.367167592048645,
+      "class_probabilities": {
+        "ping-pong ball": 0.367167592048645
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.367167592048645,
+          "raw_logit": 7.233269214630127
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.18162044882774353,
+          "raw_logit": 6.529369831085205
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.11396557837724686,
+          "raw_logit": 6.063347339630127
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.015010194852948189,
+          "raw_logit": 4.03618049621582
+        },
+        {
+          "rank": 5,
+          "index": 641,
+          "label": "maraca",
+          "probability": 0.014332297258079052,
+          "raw_logit": 3.98996639251709
+        }
+      ]
+    },
+    {
+      "case_number": 12015,
+      "source_line": 12017,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 18503,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012015_seed-18503.png",
+      "image_sha256": "3dfaa0a0bb87bb2a684992c46008edcf75e2845da785708197166bc85ffe0e05",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.26538118720054626,
+      "class_probabilities": {
+        "ping-pong ball": 0.26538118720054626
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.26538118720054626,
+          "raw_logit": 6.104787349700928
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.028638653457164764,
+          "raw_logit": 3.8783774375915527
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.014785443432629108,
+          "raw_logit": 3.2172632217407227
+        },
+        {
+          "rank": 4,
+          "index": 910,
+          "label": "wooden spoon",
+          "probability": 0.009557127952575684,
+          "raw_logit": 2.780907392501831
+        },
+        {
+          "rank": 5,
+          "index": 967,
+          "label": "espresso",
+          "probability": 0.005247906781733036,
+          "raw_logit": 2.1814494132995605
+        }
+      ]
+    },
+    {
+      "case_number": 12016,
+      "source_line": 12018,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 51178,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012016_seed-51178.png",
+      "image_sha256": "1f2c5bed27e1d1f623ab471549b59dc3f26464825fc5eced0be3afbc5411b369",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.40984687209129333,
+      "class_probabilities": {
+        "ping-pong ball": 0.40984687209129333
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.40984687209129333,
+          "raw_logit": 6.603265285491943
+        },
+        {
+          "rank": 2,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0034013469703495502,
+          "raw_logit": 1.8116532564163208
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0025634393095970154,
+          "raw_logit": 1.5288316011428833
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002402440644800663,
+          "raw_logit": 1.4639668464660645
+        },
+        {
+          "rank": 5,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.0021859414409846067,
+          "raw_logit": 1.3695284128189087
+        }
+      ]
+    },
+    {
+      "case_number": 12017,
+      "source_line": 12019,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 353,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012017_seed-353.png",
+      "image_sha256": "98f21e7d8eda1ea93fe8c78c80ed06571f01ff4b69f5fee0e0015cdad39551a2",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.39819973707199097,
+      "class_probabilities": {
+        "ping-pong ball": 0.39819973707199097
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.39819973707199097,
+          "raw_logit": 6.592052459716797
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.026399808004498482,
+          "raw_logit": 3.878455400466919
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004026147536933422,
+          "raw_logit": 1.9979088306427002
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.0029204501770436764,
+          "raw_logit": 1.6768364906311035
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002555759157985449,
+          "raw_logit": 1.5434480905532837
+        }
+      ]
+    },
+    {
+      "case_number": 12018,
+      "source_line": 12020,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 21846,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012018_seed-21846.png",
+      "image_sha256": "340e29f52a55eb3fa18e2eb8991949a3d531b2c3da582b0b2f124e49fc33da5d",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.222573921084404,
+      "class_probabilities": {
+        "ping-pong ball": 0.222573921084404
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.222573921084404,
+          "raw_logit": 5.869302749633789
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.052694596350193024,
+          "raw_logit": 4.428556442260742
+        },
+        {
+          "rank": 3,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.01806488446891308,
+          "raw_logit": 3.358013391494751
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.018025603145360947,
+          "raw_logit": 3.3558366298675537
+        },
+        {
+          "rank": 5,
+          "index": 543,
+          "label": "dumbbell",
+          "probability": 0.012826977297663689,
+          "raw_logit": 3.015594005584717
+        }
+      ]
+    },
+    {
+      "case_number": 12019,
+      "source_line": 12021,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49957,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012019_seed-49957.png",
+      "image_sha256": "54b4721ad67c17d97d521abbb4f2bd0897632a63eb3c418f896f6607065c44b2",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3028394877910614,
+      "class_probabilities": {
+        "ping-pong ball": 0.3028394877910614
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3028394877910614,
+          "raw_logit": 6.501490592956543
+        },
+        {
+          "rank": 2,
+          "index": 490,
+          "label": "chain mail",
+          "probability": 0.0739319771528244,
+          "raw_logit": 5.091433048248291
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.07036801427602768,
+          "raw_logit": 5.042026519775391
+        },
+        {
+          "rank": 4,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.03393666818737984,
+          "raw_logit": 4.312783718109131
+        },
+        {
+          "rank": 5,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.016219519078731537,
+          "raw_logit": 3.574502944946289
+        }
+      ]
+    },
+    {
+      "case_number": 12020,
+      "source_line": 12022,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 51868,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012020_seed-51868.png",
+      "image_sha256": "ab3806239ad6cc7e2f41672873b1c6fb36a15842b110936e3c4d96ff1f481a99",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 584,
+      "predicted_category": "hair slide",
+      "correct": false,
+      "expected_probability": 0.033445850014686584,
+      "class_probabilities": {
+        "ping-pong ball": 0.033445850014686584
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.05766936019062996,
+          "raw_logit": 4.564756393432617
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.033445850014686584,
+          "raw_logit": 4.019958019256592
+        },
+        {
+          "rank": 3,
+          "index": 772,
+          "label": "safety pin",
+          "probability": 0.028233731165528297,
+          "raw_logit": 3.8505477905273438
+        },
+        {
+          "rank": 4,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.024897396564483643,
+          "raw_logit": 3.7247936725616455
+        },
+        {
+          "rank": 5,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.023136697709560394,
+          "raw_logit": 3.6514503955841064
+        }
+      ]
+    },
+    {
+      "case_number": 12021,
+      "source_line": 12023,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 33369,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012021_seed-33369.png",
+      "image_sha256": "aa70effb19e86554203ff0fa5dfc95d326b6dbcecd27ce6b517a061c29b8738b",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2183222770690918,
+      "class_probabilities": {
+        "ping-pong ball": 0.2183222770690918
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2183222770690918,
+          "raw_logit": 5.750191688537598
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.02833682671189308,
+          "raw_logit": 3.7083816528320312
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.01407583523541689,
+          "raw_logit": 3.008678913116455
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.009249701164662838,
+          "raw_logit": 2.588810682296753
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.006986881606280804,
+          "raw_logit": 2.308253765106201
+        }
+      ]
+    },
+    {
+      "case_number": 12022,
+      "source_line": 12024,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49768,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012022_seed-49768.png",
+      "image_sha256": "6aa98625ace952f9d8d9b63e766584703dbafb0bcca8ec3e37c5460c0d09aa84",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.19539318978786469,
+      "class_probabilities": {
+        "ping-pong ball": 0.19539318978786469
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.19539318978786469,
+          "raw_logit": 5.6886091232299805
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.06916961818933487,
+          "raw_logit": 4.6501569747924805
+        },
+        {
+          "rank": 3,
+          "index": 920,
+          "label": "traffic light",
+          "probability": 0.012879738584160805,
+          "raw_logit": 2.9692506790161133
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.007099303416907787,
+          "raw_logit": 2.373591899871826
+        },
+        {
+          "rank": 5,
+          "index": 969,
+          "label": "eggnog",
+          "probability": 0.005841095466166735,
+          "raw_logit": 2.178513526916504
+        }
+      ]
+    },
+    {
+      "case_number": 12023,
+      "source_line": 12025,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 85544,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012023_seed-85544.png",
+      "image_sha256": "7840fad9d94890b502deb600ed1ec1fa4bcb2cec4cdce0a19663d9cdb81b1f50",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.469020277261734,
+      "class_probabilities": {
+        "ping-pong ball": 0.469020277261734
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.469020277261734,
+          "raw_logit": 7.111164569854736
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.019640063866972923,
+          "raw_logit": 3.9380900859832764
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.016909565776586533,
+          "raw_logit": 3.788398027420044
+        },
+        {
+          "rank": 4,
+          "index": 535,
+          "label": "disk brake",
+          "probability": 0.014425093308091164,
+          "raw_logit": 3.6294877529144287
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.01136116124689579,
+          "raw_logit": 3.390719175338745
+        }
+      ]
+    },
+    {
+      "case_number": 12024,
+      "source_line": 12026,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 76917,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012024_seed-76917.png",
+      "image_sha256": "c4685f67ebd1ab59a979b37868a35fbcb330121f68ae90d10008627656a1d7e6",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.23673729598522186,
+      "class_probabilities": {
+        "ping-pong ball": 0.23673729598522186
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.23673729598522186,
+          "raw_logit": 5.770201206207275
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002292582066729665,
+          "raw_logit": 1.1329289674758911
+        },
+        {
+          "rank": 3,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.002234078710898757,
+          "raw_logit": 1.107079029083252
+        },
+        {
+          "rank": 4,
+          "index": 734,
+          "label": "police van",
+          "probability": 0.001949179801158607,
+          "raw_logit": 0.9706588983535767
+        },
+        {
+          "rank": 5,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.001926230383105576,
+          "raw_logit": 0.9588149785995483
+        }
+      ]
+    },
+    {
+      "case_number": 12025,
+      "source_line": 12027,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 13694,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012025_seed-13694.png",
+      "image_sha256": "4450422059283dde34df5f945488c272f0aeb96c7a7bf9cefc5fd757dbb43bf0",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.34242957830429077,
+      "class_probabilities": {
+        "ping-pong ball": 0.34242957830429077
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.34242957830429077,
+          "raw_logit": 6.353989124298096
+        },
+        {
+          "rank": 2,
+          "index": 492,
+          "label": "chest",
+          "probability": 0.008851714432239532,
+          "raw_logit": 2.6985342502593994
+        },
+        {
+          "rank": 3,
+          "index": 519,
+          "label": "crate",
+          "probability": 0.0057250093668699265,
+          "raw_logit": 2.2627675533294678
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.005603213328868151,
+          "raw_logit": 2.2412633895874023
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0037314111832529306,
+          "raw_logit": 1.8347094058990479
+        }
+      ]
+    },
+    {
+      "case_number": 12026,
+      "source_line": 12028,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 11297,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012026_seed-11297.png",
+      "image_sha256": "b43a00007c595bd61cb4db56954b1d4b3dcba204885ab058ad154a9260688357",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.41038888692855835,
+      "class_probabilities": {
+        "ping-pong ball": 0.41038888692855835
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.41038888692855835,
+          "raw_logit": 6.641540050506592
+        },
+        {
+          "rank": 2,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.005545437801629305,
+          "raw_logit": 2.3374106884002686
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0039391471073031425,
+          "raw_logit": 1.9953992366790771
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.003883620025590062,
+          "raw_logit": 1.9812028408050537
+        },
+        {
+          "rank": 5,
+          "index": 744,
+          "label": "projectile",
+          "probability": 0.0038628741167485714,
+          "raw_logit": 1.975846290588379
+        }
+      ]
+    },
+    {
+      "case_number": 12027,
+      "source_line": 12029,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 70148,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012027_seed-70148.png",
+      "image_sha256": "44956913d466414680582bd75aba77fdf1da1f0889a65634ef578deff5f88a52",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.42052868008613586,
+      "class_probabilities": {
+        "ping-pong ball": 0.42052868008613586
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.42052868008613586,
+          "raw_logit": 6.8363447189331055
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.038667649030685425,
+          "raw_logit": 4.449835300445557
+        },
+        {
+          "rank": 3,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.022259628400206566,
+          "raw_logit": 3.897606611251831
+        },
+        {
+          "rank": 4,
+          "index": 950,
+          "label": "orange",
+          "probability": 0.011245308443903923,
+          "raw_logit": 3.214782953262329
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.007108726073056459,
+          "raw_logit": 2.756155252456665
+        }
+      ]
+    },
+    {
+      "case_number": 12028,
+      "source_line": 12030,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 50704,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012028_seed-50704.png",
+      "image_sha256": "3afa92d5777f4375ead9683a71cbf9a2b5af9b501a8ddf8c3022d3952c32933e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 673,
+      "predicted_category": "mouse",
+      "correct": false,
+      "expected_probability": 0.028927002102136612,
+      "class_probabilities": {
+        "ping-pong ball": 0.028927002102136612
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.11717653274536133,
+          "raw_logit": 5.343548774719238
+        },
+        {
+          "rank": 2,
+          "index": 584,
+          "label": "hair slide",
+          "probability": 0.04023522511124611,
+          "raw_logit": 4.2746100425720215
+        },
+        {
+          "rank": 3,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.03720033913850784,
+          "raw_logit": 4.196185111999512
+        },
+        {
+          "rank": 4,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.028927002102136612,
+          "raw_logit": 3.9446425437927246
+        },
+        {
+          "rank": 5,
+          "index": 600,
+          "label": "hook",
+          "probability": 0.027348721399903297,
+          "raw_logit": 3.8885369300842285
+        }
+      ]
+    },
+    {
+      "case_number": 12029,
+      "source_line": 12031,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 18535,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012029_seed-18535.png",
+      "image_sha256": "1010962c0cf4667be0b84f28f667859eb6372bde46bff3f3da1ea4ced04262f7",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.18256404995918274,
+      "class_probabilities": {
+        "ping-pong ball": 0.18256404995918274
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.18256404995918274,
+          "raw_logit": 5.990596294403076
+        },
+        {
+          "rank": 2,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.07536400109529495,
+          "raw_logit": 5.105824947357178
+        },
+        {
+          "rank": 3,
+          "index": 828,
+          "label": "strainer",
+          "probability": 0.03385542333126068,
+          "raw_logit": 4.305594444274902
+        },
+        {
+          "rank": 4,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.030780300498008728,
+          "raw_logit": 4.210370063781738
+        },
+        {
+          "rank": 5,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.029356220737099648,
+          "raw_logit": 4.162999629974365
+        }
+      ]
+    },
+    {
+      "case_number": 12030,
+      "source_line": 12032,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 68835,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012030_seed-68835.png",
+      "image_sha256": "05b9296bcd59dc29127e2e8042df785970966118e13050b6af89bcab8b702c85",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.34703680872917175,
+      "class_probabilities": {
+        "ping-pong ball": 0.34703680872917175
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.34703680872917175,
+          "raw_logit": 6.575220108032227
+        },
+        {
+          "rank": 2,
+          "index": 666,
+          "label": "mortar",
+          "probability": 0.028072690591216087,
+          "raw_logit": 4.060586452484131
+        },
+        {
+          "rank": 3,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.026923438534140587,
+          "raw_logit": 4.018786430358887
+        },
+        {
+          "rank": 4,
+          "index": 401,
+          "label": "accordion",
+          "probability": 0.01660327985882759,
+          "raw_logit": 3.5353894233703613
+        },
+        {
+          "rank": 5,
+          "index": 773,
+          "label": "saltshaker",
+          "probability": 0.010119304060935974,
+          "raw_logit": 3.040234088897705
+        }
+      ]
+    },
+    {
+      "case_number": 12031,
+      "source_line": 12033,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 3533,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012031_seed-3533.png",
+      "image_sha256": "04fc54b61c9e42eb96931a8da131aecc6eab71bf863a624fe1e85efbc12f0ca9",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 398,
+      "predicted_category": "abacus",
+      "correct": false,
+      "expected_probability": 0.018384447321295738,
+      "class_probabilities": {
+        "ping-pong ball": 0.018384447321295738
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 398,
+          "label": "abacus",
+          "probability": 0.158112034201622,
+          "raw_logit": 5.333615779876709
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.018384447321295738,
+          "raw_logit": 3.181817054748535
+        },
+        {
+          "rank": 3,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.01114537101238966,
+          "raw_logit": 2.6813361644744873
+        },
+        {
+          "rank": 4,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.005434795748442411,
+          "raw_logit": 1.9631338119506836
+        },
+        {
+          "rank": 5,
+          "index": 894,
+          "label": "wardrobe",
+          "probability": 0.0050477213226258755,
+          "raw_logit": 1.8892488479614258
+        }
+      ]
+    },
+    {
+      "case_number": 12032,
+      "source_line": 12034,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 81915,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012032_seed-81915.png",
+      "image_sha256": "c49adf17743b74d196436c8e5809f6b200ae5b46459e7e50365ae4f15337fa29",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.36991238594055176,
+      "class_probabilities": {
+        "ping-pong ball": 0.36991238594055176
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.36991238594055176,
+          "raw_logit": 6.453061580657959
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.017756085842847824,
+          "raw_logit": 3.4165236949920654
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.006088320165872574,
+          "raw_logit": 2.34616756439209
+        },
+        {
+          "rank": 4,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0045447805896401405,
+          "raw_logit": 2.053774833679199
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.0024971263483166695,
+          "raw_logit": 1.454936146736145
+        }
+      ]
+    },
+    {
+      "case_number": 12033,
+      "source_line": 12035,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49145,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012033_seed-49145.png",
+      "image_sha256": "89949bd174fe04882f9cf7e727edb4cde349ee5126f9beeb70414c69d2cd43ce",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3590185344219208,
+      "class_probabilities": {
+        "ping-pong ball": 0.3590185344219208
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3590185344219208,
+          "raw_logit": 6.402292251586914
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0037483565974980593,
+          "raw_logit": 1.840235710144043
+        },
+        {
+          "rank": 3,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.003447652328759432,
+          "raw_logit": 1.7566120624542236
+        },
+        {
+          "rank": 4,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.0034122958313673735,
+          "raw_logit": 1.7463034391403198
+        },
+        {
+          "rank": 5,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0032918222714215517,
+          "raw_logit": 1.7103596925735474
+        }
+      ]
+    },
+    {
+      "case_number": 12034,
+      "source_line": 12036,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 86532,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012034_seed-86532.png",
+      "image_sha256": "961c7660352cba9ee9ed474f846fe2a00952b456e9d0912c6acd334412448048",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2843831479549408,
+      "class_probabilities": {
+        "ping-pong ball": 0.2843831479549408
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2843831479549408,
+          "raw_logit": 6.366348743438721
+        },
+        {
+          "rank": 2,
+          "index": 773,
+          "label": "saltshaker",
+          "probability": 0.04835190996527672,
+          "raw_logit": 4.594532012939453
+        },
+        {
+          "rank": 3,
+          "index": 849,
+          "label": "teapot",
+          "probability": 0.02066153846681118,
+          "raw_logit": 3.744300365447998
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.01615426503121853,
+          "raw_logit": 3.4982104301452637
+        },
+        {
+          "rank": 5,
+          "index": 530,
+          "label": "digital clock",
+          "probability": 0.00989843811839819,
+          "raw_logit": 3.0084033012390137
+        }
+      ]
+    },
+    {
+      "case_number": 12035,
+      "source_line": 12037,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 26679,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012035_seed-26679.png",
+      "image_sha256": "3b605a7e031de11a215eed37ce968bbce1b6150a5a782ab879fd3e9b52adc433",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.42209601402282715,
+      "class_probabilities": {
+        "ping-pong ball": 0.42209601402282715
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.42209601402282715,
+          "raw_logit": 6.678513050079346
+        },
+        {
+          "rank": 2,
+          "index": 478,
+          "label": "carton",
+          "probability": 0.0036395241040736437,
+          "raw_logit": 1.925133466720581
+        },
+        {
+          "rank": 3,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.003248173976317048,
+          "raw_logit": 1.811373233795166
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002970323199406266,
+          "raw_logit": 1.721950888633728
+        },
+        {
+          "rank": 5,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.0023828144185245037,
+          "raw_logit": 1.501562476158142
+        }
+      ]
+    },
+    {
+      "case_number": 12036,
+      "source_line": 12038,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 48703,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012036_seed-48703.png",
+      "image_sha256": "3c9745e4e2d5037355426307803ba1c1ccbf8890c7be37e34f7a860ff7f46d57",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.4393102824687958,
+      "class_probabilities": {
+        "ping-pong ball": 0.4393102824687958
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.4393102824687958,
+          "raw_logit": 6.744636535644531
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.008074821904301643,
+          "raw_logit": 2.7481813430786133
+        },
+        {
+          "rank": 3,
+          "index": 535,
+          "label": "disk brake",
+          "probability": 0.007536107208579779,
+          "raw_logit": 2.679136037826538
+        },
+        {
+          "rank": 4,
+          "index": 492,
+          "label": "chest",
+          "probability": 0.005044755060225725,
+          "raw_logit": 2.2777793407440186
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00501316599547863,
+          "raw_logit": 2.271498203277588
+        }
+      ]
+    },
+    {
+      "case_number": 12037,
+      "source_line": 12039,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 97075,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012037_seed-97075.png",
+      "image_sha256": "3fc2a0f9b004afacbf1640cb197540f1da7651c3d73b1afb3b70a599a17b3760",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5324772596359253,
+      "class_probabilities": {
+        "ping-pong ball": 0.5324772596359253
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5324772596359253,
+          "raw_logit": 7.1022114753723145
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.008749851956963539,
+          "raw_logit": 2.9937078952789307
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0033901326823979616,
+          "raw_logit": 2.0455400943756104
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0018917253473773599,
+          "raw_logit": 1.462160587310791
+        },
+        {
+          "rank": 5,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0018572320695966482,
+          "raw_logit": 1.443758249282837
+        }
+      ]
+    },
+    {
+      "case_number": 12038,
+      "source_line": 12040,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 99320,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012038_seed-99320.png",
+      "image_sha256": "e8f0205550499f774fd8370a62138a979da3fee04b96906d5444a8a6f849f2a0",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 574,
+      "predicted_category": "golf ball",
+      "correct": false,
+      "expected_probability": 0.0195289496332407,
+      "class_probabilities": {
+        "ping-pong ball": 0.0195289496332407
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.2730424106121063,
+          "raw_logit": 6.015879154205322
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0195289496332407,
+          "raw_logit": 3.37814998626709
+        },
+        {
+          "rank": 3,
+          "index": 855,
+          "label": "thimble",
+          "probability": 0.003191971220076084,
+          "raw_logit": 1.5668905973434448
+        },
+        {
+          "rank": 4,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.0025426319334656,
+          "raw_logit": 1.339451789855957
+        },
+        {
+          "rank": 5,
+          "index": 769,
+          "label": "rule",
+          "probability": 0.002427916042506695,
+          "raw_logit": 1.2932854890823364
+        }
+      ]
+    },
+    {
+      "case_number": 12039,
+      "source_line": 12041,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 48953,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012039_seed-48953.png",
+      "image_sha256": "3104b86b3b65afb3cc08f39ffe16210359947d67cb998bb9c02c83ba0236a4dd",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.35860559344291687,
+      "class_probabilities": {
+        "ping-pong ball": 0.35860559344291687
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.35860559344291687,
+          "raw_logit": 6.606142520904541
+        },
+        {
+          "rank": 2,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.046459950506687164,
+          "raw_logit": 4.562510013580322
+        },
+        {
+          "rank": 3,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.015701208263635635,
+          "raw_logit": 3.4776570796966553
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.010197602212429047,
+          "raw_logit": 3.046072006225586
+        },
+        {
+          "rank": 5,
+          "index": 845,
+          "label": "syringe",
+          "probability": 0.007240562234073877,
+          "raw_logit": 2.703618288040161
+        }
+      ]
+    },
+    {
+      "case_number": 12040,
+      "source_line": 12042,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 91322,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012040_seed-91322.png",
+      "image_sha256": "abf83a7a27a084f3698fca4b638ac7d92c257637cb2b5869ba1bf80e7bc8e64b",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 736,
+      "predicted_category": "pool table",
+      "correct": false,
+      "expected_probability": 0.04577412083745003,
+      "class_probabilities": {
+        "ping-pong ball": 0.04577412083745003
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.13259166479110718,
+          "raw_logit": 5.1749587059021
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.04577412083745003,
+          "raw_logit": 4.111403465270996
+        },
+        {
+          "rank": 3,
+          "index": 868,
+          "label": "tray",
+          "probability": 0.015042760409414768,
+          "raw_logit": 2.9985814094543457
+        },
+        {
+          "rank": 4,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.00816984474658966,
+          "raw_logit": 2.388134479522705
+        },
+        {
+          "rank": 5,
+          "index": 613,
+          "label": "joystick",
+          "probability": 0.007774824276566505,
+          "raw_logit": 2.3385753631591797
+        }
+      ]
+    },
+    {
+      "case_number": 12041,
+      "source_line": 12043,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 30386,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012041_seed-30386.png",
+      "image_sha256": "0b55f5f69f06ffbb3bf144dcf6f89d2dce32ba350263cb741d7ffc6b155c5850",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5594951510429382,
+      "class_probabilities": {
+        "ping-pong ball": 0.5594951510429382
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5594951510429382,
+          "raw_logit": 7.239243030548096
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.008301924914121628,
+          "raw_logit": 3.0286953449249268
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005633425433188677,
+          "raw_logit": 2.6409261226654053
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0053253332152962685,
+          "raw_logit": 2.584683418273926
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.004072898533195257,
+          "raw_logit": 2.316563129425049
+        }
+      ]
+    },
+    {
+      "case_number": 12042,
+      "source_line": 12044,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 69321,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012042_seed-69321.png",
+      "image_sha256": "f48fc8e4b6373708649bcc960488cf502236ab362ee425c03ca1eb8081353e4b",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.41758668422698975,
+      "class_probabilities": {
+        "ping-pong ball": 0.41758668422698975
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.41758668422698975,
+          "raw_logit": 6.917811393737793
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.07520908862352371,
+          "raw_logit": 5.203591346740723
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.014926973730325699,
+          "raw_logit": 3.586489200592041
+        },
+        {
+          "rank": 4,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.01113112922757864,
+          "raw_logit": 3.293064832687378
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.007095303852111101,
+          "raw_logit": 2.84275221824646
+        }
+      ]
+    },
+    {
+      "case_number": 12043,
+      "source_line": 12045,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 41775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012043_seed-41775.png",
+      "image_sha256": "5bf6cbfcb1f3856258f5677de6fde04ca0729c376c509c168593b93748eaba1f",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5232433080673218,
+      "class_probabilities": {
+        "ping-pong ball": 0.5232433080673218
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5232433080673218,
+          "raw_logit": 7.5686163902282715
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.051775526255369186,
+          "raw_logit": 5.255487442016602
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.01897098496556282,
+          "raw_logit": 4.251480579376221
+        },
+        {
+          "rank": 4,
+          "index": 892,
+          "label": "wall clock",
+          "probability": 0.012668037787079811,
+          "raw_logit": 3.847651958465576
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.011264193803071976,
+          "raw_logit": 3.730198860168457
+        }
+      ]
+    },
+    {
+      "case_number": 12044,
+      "source_line": 12046,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 4250,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012044_seed-4250.png",
+      "image_sha256": "edfe458fdf0be04e5d0a24a396774c7bcae338a0fc775dd6ee4fae49eb306b55",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.30442970991134644,
+      "class_probabilities": {
+        "ping-pong ball": 0.30442970991134644
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.30442970991134644,
+          "raw_logit": 6.194472312927246
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.029506823047995567,
+          "raw_logit": 3.8606536388397217
+        },
+        {
+          "rank": 3,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.0054750642739236355,
+          "raw_logit": 2.176236391067505
+        },
+        {
+          "rank": 4,
+          "index": 910,
+          "label": "wooden spoon",
+          "probability": 0.005264630075544119,
+          "raw_logit": 2.137042760848999
+        },
+        {
+          "rank": 5,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.00477919727563858,
+          "raw_logit": 2.040304660797119
+        }
+      ]
+    },
+    {
+      "case_number": 12045,
+      "source_line": 12047,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 22629,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012045_seed-22629.png",
+      "image_sha256": "093d2ef2c44ea3569ee110d1a4d6fad5444737e8243594a3bf02aa518290cc80",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5386714935302734,
+      "class_probabilities": {
+        "ping-pong ball": 0.5386714935302734
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5386714935302734,
+          "raw_logit": 7.12954044342041
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004095728043466806,
+          "raw_logit": 2.2503790855407715
+        },
+        {
+          "rank": 3,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.003241055179387331,
+          "raw_logit": 2.016333818435669
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0030495747923851013,
+          "raw_logit": 1.9554365873336792
+        },
+        {
+          "rank": 5,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.0024010713677853346,
+          "raw_logit": 1.716349720954895
+        }
+      ]
+    },
+    {
+      "case_number": 12046,
+      "source_line": 12048,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 21462,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012046_seed-21462.png",
+      "image_sha256": "dd3f7bd76218ecd169cd8d7bea12ece679f56eb86f95bde59609b0de9e00188c",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.24574166536331177,
+      "class_probabilities": {
+        "ping-pong ball": 0.24574166536331177
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.24574166536331177,
+          "raw_logit": 6.000333786010742
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.035447631031274796,
+          "raw_logit": 4.0641093254089355
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.012976390309631824,
+          "raw_logit": 3.0591845512390137
+        },
+        {
+          "rank": 4,
+          "index": 563,
+          "label": "fountain pen",
+          "probability": 0.012051586993038654,
+          "raw_logit": 2.9852492809295654
+        },
+        {
+          "rank": 5,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.00710166385397315,
+          "raw_logit": 2.4563820362091064
+        }
+      ]
+    },
+    {
+      "case_number": 12047,
+      "source_line": 12049,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 82595,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012047_seed-82595.png",
+      "image_sha256": "37c0b648ca1ec31e11b22ac32d4ae478243b6cab24eff1b52a65cbfffe6a6df9",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3295093774795532,
+      "class_probabilities": {
+        "ping-pong ball": 0.3295093774795532
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3295093774795532,
+          "raw_logit": 6.2414984703063965
+        },
+        {
+          "rank": 2,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.005089066922664642,
+          "raw_logit": 2.070988178253174
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0029538620728999376,
+          "raw_logit": 1.527006983757019
+        },
+        {
+          "rank": 4,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.002788791200146079,
+          "raw_logit": 1.4695022106170654
+        },
+        {
+          "rank": 5,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0027584454510360956,
+          "raw_logit": 1.458560824394226
+        }
+      ]
+    },
+    {
+      "case_number": 12048,
+      "source_line": 12050,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 24956,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012048_seed-24956.png",
+      "image_sha256": "d21fc72c2ee633ba5269ad7e21887e5a47458d492918587fb56081f7d24ce308",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.38548406958580017,
+      "class_probabilities": {
+        "ping-pong ball": 0.38548406958580017
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.38548406958580017,
+          "raw_logit": 6.693354606628418
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.05290088802576065,
+          "raw_logit": 4.707274913787842
+        },
+        {
+          "rank": 3,
+          "index": 948,
+          "label": "Granny Smith",
+          "probability": 0.006912092678248882,
+          "raw_logit": 2.6721272468566895
+        },
+        {
+          "rank": 4,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.0052765049040317535,
+          "raw_logit": 2.4021189212799072
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0049093724228441715,
+          "raw_logit": 2.330000877380371
+        }
+      ]
+    },
+    {
+      "case_number": 12049,
+      "source_line": 12051,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 42188,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012049_seed-42188.png",
+      "image_sha256": "5f6352a68c9b43b1ac2bf244bbe779cd4d712536e210cb4c0da6066cc0cfb7bc",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.12528066337108612,
+      "class_probabilities": {
+        "ping-pong ball": 0.12528066337108612
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.12528066337108612,
+          "raw_logit": 5.0342278480529785
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.013940352015197277,
+          "raw_logit": 2.838459014892578
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.007157974410802126,
+          "raw_logit": 2.171898365020752
+        },
+        {
+          "rank": 4,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.005070168990641832,
+          "raw_logit": 1.8270453214645386
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0038410071283578873,
+          "raw_logit": 1.5494061708450317
+        }
+      ]
+    },
+    {
+      "case_number": 12050,
+      "source_line": 12052,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 84765,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012050_seed-84765.png",
+      "image_sha256": "f456a561d536395ce05aff6db06bbe27631f01961ea627b9100bd8c8b9606bd5",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3880758285522461,
+      "class_probabilities": {
+        "ping-pong ball": 0.3880758285522461
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3880758285522461,
+          "raw_logit": 6.50492525100708
+        },
+        {
+          "rank": 2,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0038150018081068993,
+          "raw_logit": 1.8826656341552734
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003766731359064579,
+          "raw_logit": 1.8699321746826172
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.0032447914127260447,
+          "raw_logit": 1.7207754850387573
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00269277673214674,
+          "raw_logit": 1.5342973470687866
+        }
+      ]
+    },
+    {
+      "case_number": 12051,
+      "source_line": 12053,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 11582,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012051_seed-11582.png",
+      "image_sha256": "3d0b289b372bcafc8b50117a3b70d763918b4f35b47afca7177cbd0685261b44",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.14324423670768738,
+      "class_probabilities": {
+        "ping-pong ball": 0.14324423670768738
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.14324423670768738,
+          "raw_logit": 5.494313716888428
+        },
+        {
+          "rank": 2,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.11049829423427582,
+          "raw_logit": 5.234762668609619
+        },
+        {
+          "rank": 3,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.026490602642297745,
+          "raw_logit": 3.8065526485443115
+        },
+        {
+          "rank": 4,
+          "index": 910,
+          "label": "wooden spoon",
+          "probability": 0.026465680450201035,
+          "raw_logit": 3.8056113719940186
+        },
+        {
+          "rank": 5,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.02214835025370121,
+          "raw_logit": 3.627525568008423
+        }
+      ]
+    },
+    {
+      "case_number": 12052,
+      "source_line": 12054,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 98674,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012052_seed-98674.png",
+      "image_sha256": "1356c0102afecb0e00cc70a2ea23025b44bac805b2c07b22e2138880e6676045",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.30301541090011597,
+      "class_probabilities": {
+        "ping-pong ball": 0.30301541090011597
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.30301541090011597,
+          "raw_logit": 6.165699481964111
+        },
+        {
+          "rank": 2,
+          "index": 535,
+          "label": "disk brake",
+          "probability": 0.01123572327196598,
+          "raw_logit": 2.87101411819458
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.01075208093971014,
+          "raw_logit": 2.8270151615142822
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0058396924287080765,
+          "raw_logit": 2.2165939807891846
+        },
+        {
+          "rank": 5,
+          "index": 890,
+          "label": "volleyball",
+          "probability": 0.0044507551938295364,
+          "raw_logit": 1.944989800453186
+        }
+      ]
+    },
+    {
+      "case_number": 12053,
+      "source_line": 12055,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49913,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012053_seed-49913.png",
+      "image_sha256": "7fe443031d5c7a73a524d7e890afdb0ef3e471b968909abd49d5a939e9630a0d",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5773459076881409,
+      "class_probabilities": {
+        "ping-pong ball": 0.5773459076881409
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5773459076881409,
+          "raw_logit": 7.284083366394043
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0066108619794249535,
+          "raw_logit": 2.8143558502197266
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.0036221148911863565,
+          "raw_logit": 2.2126998901367188
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002420431235805154,
+          "raw_logit": 1.8095875978469849
+        },
+        {
+          "rank": 5,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.001543021178804338,
+          "raw_logit": 1.3593841791152954
+        }
+      ]
+    },
+    {
+      "case_number": 12054,
+      "source_line": 12056,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 91502,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012054_seed-91502.png",
+      "image_sha256": "ea80c815fec6d7bdc81b4149965c7b759ab38e8f24170af5810488c0e103a011",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.37029844522476196,
+      "class_probabilities": {
+        "ping-pong ball": 0.37029844522476196
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.37029844522476196,
+          "raw_logit": 6.547579288482666
+        },
+        {
+          "rank": 2,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.02216145768761635,
+          "raw_logit": 3.7316246032714844
+        },
+        {
+          "rank": 3,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.02080870419740677,
+          "raw_logit": 3.6686413288116455
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0066836015321314335,
+          "raw_logit": 2.5329272747039795
+        },
+        {
+          "rank": 5,
+          "index": 401,
+          "label": "accordion",
+          "probability": 0.0064720469526946545,
+          "raw_logit": 2.500762462615967
+        }
+      ]
+    },
+    {
+      "case_number": 12055,
+      "source_line": 12057,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 89159,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012055_seed-89159.png",
+      "image_sha256": "22269ef0ad914d3e8c9944f312a6c1f5eba278524e79fbb6b4db5eeecc2e1c12",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2806191146373749,
+      "class_probabilities": {
+        "ping-pong ball": 0.2806191146373749
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2806191146373749,
+          "raw_logit": 6.133018970489502
+        },
+        {
+          "rank": 2,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.008248839527368546,
+          "raw_logit": 2.606093168258667
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.007270317059010267,
+          "raw_logit": 2.479820489883423
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.007146783173084259,
+          "raw_logit": 2.4626829624176025
+        },
+        {
+          "rank": 5,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.006472811568528414,
+          "raw_logit": 2.363631248474121
+        }
+      ]
+    },
+    {
+      "case_number": 12056,
+      "source_line": 12058,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 22082,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012056_seed-22082.png",
+      "image_sha256": "8463497d95229fddb47bd67c12f0451e91a62fa7d058c18c85d3502fbae81a05",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.406504362821579,
+      "class_probabilities": {
+        "ping-pong ball": 0.406504362821579
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.406504362821579,
+          "raw_logit": 6.570208549499512
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003059816313907504,
+          "raw_logit": 1.6809687614440918
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.0021963410545140505,
+          "raw_logit": 1.3494068384170532
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0020551278721541166,
+          "raw_logit": 1.2829519510269165
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.002041865838691592,
+          "raw_logit": 1.2764780521392822
+        }
+      ]
+    },
+    {
+      "case_number": 12057,
+      "source_line": 12059,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 32894,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012057_seed-32894.png",
+      "image_sha256": "97d432ba6f614d91196b83f80bd55022ebb3f71ba0824503ac5a431306350c47",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2347821593284607,
+      "class_probabilities": {
+        "ping-pong ball": 0.2347821593284607
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2347821593284607,
+          "raw_logit": 5.931629657745361
+        },
+        {
+          "rank": 2,
+          "index": 752,
+          "label": "racket",
+          "probability": 0.03613850101828575,
+          "raw_logit": 4.060330390930176
+        },
+        {
+          "rank": 3,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.035233817994594574,
+          "raw_logit": 4.034977912902832
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.007292424328625202,
+          "raw_logit": 2.4598076343536377
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.005693673621863127,
+          "raw_logit": 2.212327241897583
+        }
+      ]
+    },
+    {
+      "case_number": 12058,
+      "source_line": 12060,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 14118,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012058_seed-14118.png",
+      "image_sha256": "6f667786ed114379866b515b5a1544fc4f524cb44dfd57623025d272a3ec05c7",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.35317057371139526,
+      "class_probabilities": {
+        "ping-pong ball": 0.35317057371139526
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.35317057371139526,
+          "raw_logit": 6.422457695007324
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.006941420026123524,
+          "raw_logit": 2.4930129051208496
+        },
+        {
+          "rank": 3,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.004345215857028961,
+          "raw_logit": 2.0245819091796875
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.0042291563004255295,
+          "raw_logit": 1.997509241104126
+        },
+        {
+          "rank": 5,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.003967858385294676,
+          "raw_logit": 1.9337327480316162
+        }
+      ]
+    },
+    {
+      "case_number": 12059,
+      "source_line": 12061,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 4578,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012059_seed-4578.png",
+      "image_sha256": "715a45a22aa801b1c76c60a5a30cf9b9ed28ac10081eaf169a257e8ce945c435",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2667517066001892,
+      "class_probabilities": {
+        "ping-pong ball": 0.2667517066001892
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2667517066001892,
+          "raw_logit": 6.233987808227539
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.14792069792747498,
+          "raw_logit": 5.644345760345459
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.023524710908532143,
+          "raw_logit": 3.805720806121826
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.012591497041285038,
+          "raw_logit": 3.1806912422180176
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.007007279898971319,
+          "raw_logit": 2.594619035720825
+        }
+      ]
+    },
+    {
+      "case_number": 12060,
+      "source_line": 12062,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 41580,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012060_seed-41580.png",
+      "image_sha256": "c0a29db8a9e448340482d004060cbff60d49ad6b06858027ae92d670eb285e32",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.37786954641342163,
+      "class_probabilities": {
+        "ping-pong ball": 0.37786954641342163
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.37786954641342163,
+          "raw_logit": 6.5296101570129395
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.008099748753011227,
+          "raw_logit": 2.686894178390503
+        },
+        {
+          "rank": 3,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.007623118814080954,
+          "raw_logit": 2.626246690750122
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.006761257071048021,
+          "raw_logit": 2.506269693374634
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.004284343216568232,
+          "raw_logit": 2.0500283241271973
+        }
+      ]
+    },
+    {
+      "case_number": 12061,
+      "source_line": 12063,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 398,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012061_seed-398.png",
+      "image_sha256": "a41602dc8b0bf444c3a13b73bf76c450da350924d64d40375c03968bb463beb5",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5648026466369629,
+      "class_probabilities": {
+        "ping-pong ball": 0.5648026466369629
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5648026466369629,
+          "raw_logit": 7.3418869972229
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.012902293354272842,
+          "raw_logit": 3.5628156661987305
+        },
+        {
+          "rank": 3,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.008626896888017654,
+          "raw_logit": 3.1602954864501953
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.003872284898534417,
+          "raw_logit": 2.359255075454712
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.003529647830873728,
+          "raw_logit": 2.266608476638794
+        }
+      ]
+    },
+    {
+      "case_number": 12062,
+      "source_line": 12064,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 55280,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012062_seed-55280.png",
+      "image_sha256": "224da9e394bc7a7ea140e730002246c6e30046789e43d91be80462f50fbb0a80",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.6125630140304565,
+      "class_probabilities": {
+        "ping-pong ball": 0.6125630140304565
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.6125630140304565,
+          "raw_logit": 7.429638385772705
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.008921769447624683,
+          "raw_logit": 3.2004811763763428
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.002183319302275777,
+          "raw_logit": 1.7928329706192017
+        },
+        {
+          "rank": 4,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.001956639578565955,
+          "raw_logit": 1.6832152605056763
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0016311132349073887,
+          "raw_logit": 1.5012493133544922
+        }
+      ]
+    },
+    {
+      "case_number": 12063,
+      "source_line": 12065,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 83274,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012063_seed-83274.png",
+      "image_sha256": "2fd527d7351a082e725d38cef43fb026d26e23cb6f31fb8a4adf6f2fca29d0eb",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3495381474494934,
+      "class_probabilities": {
+        "ping-pong ball": 0.3495381474494934
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3495381474494934,
+          "raw_logit": 6.459429740905762
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.013424436561763287,
+          "raw_logit": 3.1998937129974365
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.010165918618440628,
+          "raw_logit": 2.9218578338623047
+        },
+        {
+          "rank": 4,
+          "index": 987,
+          "label": "corn",
+          "probability": 0.005979130510240793,
+          "raw_logit": 2.39109206199646
+        },
+        {
+          "rank": 5,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.005192062351852655,
+          "raw_logit": 2.249948024749756
+        }
+      ]
+    },
+    {
+      "case_number": 12064,
+      "source_line": 12066,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 39565,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012064_seed-39565.png",
+      "image_sha256": "992f84621ae4d41e49b4d0e142cc53809b8ea09b47153f4f9cb31cf053eec03e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.18625403940677643,
+      "class_probabilities": {
+        "ping-pong ball": 0.18625403940677643
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.18625403940677643,
+          "raw_logit": 5.870598316192627
+        },
+        {
+          "rank": 2,
+          "index": 787,
+          "label": "shield",
+          "probability": 0.15681305527687073,
+          "raw_logit": 5.698541164398193
+        },
+        {
+          "rank": 3,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.03157274052500725,
+          "raw_logit": 4.095780849456787
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.014598645269870758,
+          "raw_logit": 3.324415445327759
+        },
+        {
+          "rank": 5,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.00951836071908474,
+          "raw_logit": 2.896709442138672
+        }
+      ]
+    },
+    {
+      "case_number": 12065,
+      "source_line": 12067,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 34019,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012065_seed-34019.png",
+      "image_sha256": "33bc423688a67b1051f2db63d4709beaa4fa47bfbe6c2003813590375bbb9885",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3384167551994324,
+      "class_probabilities": {
+        "ping-pong ball": 0.3384167551994324
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3384167551994324,
+          "raw_logit": 6.416754722595215
+        },
+        {
+          "rank": 2,
+          "index": 539,
+          "label": "doormat",
+          "probability": 0.012083854526281357,
+          "raw_logit": 3.0843467712402344
+        },
+        {
+          "rank": 3,
+          "index": 885,
+          "label": "velvet",
+          "probability": 0.009573332965373993,
+          "raw_logit": 2.8514580726623535
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.007932469248771667,
+          "raw_logit": 2.6634409427642822
+        },
+        {
+          "rank": 5,
+          "index": 844,
+          "label": "switch",
+          "probability": 0.007041616830974817,
+          "raw_logit": 2.544314384460449
+        }
+      ]
+    },
+    {
+      "case_number": 12066,
+      "source_line": 12068,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 90642,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012066_seed-90642.png",
+      "image_sha256": "e65a1f78cdd902207a24f8707ee0be9311ed178df8bf2c208e7a97126fcdf12f",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.20316082239151,
+      "class_probabilities": {
+        "ping-pong ball": 0.20316082239151
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.20316082239151,
+          "raw_logit": 6.0521016120910645
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.17560487985610962,
+          "raw_logit": 5.9063401222229
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.05112496390938759,
+          "raw_logit": 4.67237663269043
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.009630155749619007,
+          "raw_logit": 3.0030031204223633
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.008036679588258266,
+          "raw_logit": 2.82211971282959
+        }
+      ]
+    },
+    {
+      "case_number": 12067,
+      "source_line": 12069,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 84979,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012067_seed-84979.png",
+      "image_sha256": "e853d2da48610d54701c8f4052f4446e27b936f8927692d1d6a7f48318e09f71",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5083662867546082,
+      "class_probabilities": {
+        "ping-pong ball": 0.5083662867546082
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5083662867546082,
+          "raw_logit": 7.158846855163574
+        },
+        {
+          "rank": 2,
+          "index": 910,
+          "label": "wooden spoon",
+          "probability": 0.00997776910662651,
+          "raw_logit": 3.228004217147827
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.008134321309626102,
+          "raw_logit": 3.0237371921539307
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005868399050086737,
+          "raw_logit": 2.6972262859344482
+        },
+        {
+          "rank": 5,
+          "index": 398,
+          "label": "abacus",
+          "probability": 0.005722961854189634,
+          "raw_logit": 2.672131061553955
+        }
+      ]
+    },
+    {
+      "case_number": 12068,
+      "source_line": 12070,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 61775,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012068_seed-61775.png",
+      "image_sha256": "5c6de4e242b2f0db19841788a80dc14b7039acafaf616a7cf513e54b82426a00",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2236904799938202,
+      "class_probabilities": {
+        "ping-pong ball": 0.2236904799938202
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2236904799938202,
+          "raw_logit": 6.001651287078857
+        },
+        {
+          "rank": 2,
+          "index": 618,
+          "label": "ladle",
+          "probability": 0.029706865549087524,
+          "raw_logit": 3.9827661514282227
+        },
+        {
+          "rank": 3,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.024516453966498375,
+          "raw_logit": 3.7907323837280273
+        },
+        {
+          "rank": 4,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.02389640547335148,
+          "raw_logit": 3.765115976333618
+        },
+        {
+          "rank": 5,
+          "index": 809,
+          "label": "soup bowl",
+          "probability": 0.014868094585835934,
+          "raw_logit": 3.2906055450439453
+        }
+      ]
+    },
+    {
+      "case_number": 12069,
+      "source_line": 12071,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 48486,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012069_seed-48486.png",
+      "image_sha256": "1411f698a369c68aade1e5ee8c1ad61930344d98820c9e76cdb802a42f4a1355",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.37138113379478455,
+      "class_probabilities": {
+        "ping-pong ball": 0.37138113379478455
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.37138113379478455,
+          "raw_logit": 6.81160306930542
+        },
+        {
+          "rank": 2,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.01356795895844698,
+          "raw_logit": 3.5020852088928223
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.010728244669735432,
+          "raw_logit": 3.267254114151001
+        },
+        {
+          "rank": 4,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.009718403220176697,
+          "raw_logit": 3.168395519256592
+        },
+        {
+          "rank": 5,
+          "index": 967,
+          "label": "espresso",
+          "probability": 0.00829176977276802,
+          "raw_logit": 3.0096375942230225
+        }
+      ]
+    },
+    {
+      "case_number": 12070,
+      "source_line": 12072,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 49263,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012070_seed-49263.png",
+      "image_sha256": "c0e0b289e3ab4dc6b35cde4accc7e615da456ffa529d19c1073d51127d92059d",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5354840755462646,
+      "class_probabilities": {
+        "ping-pong ball": 0.5354840755462646
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5354840755462646,
+          "raw_logit": 7.169864177703857
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.01788661628961563,
+          "raw_logit": 3.7707457542419434
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.008179107680916786,
+          "raw_logit": 2.9882757663726807
+        },
+        {
+          "rank": 4,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0036834212951362133,
+          "raw_logit": 2.190535306930542
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0024185513611882925,
+          "raw_logit": 1.7698618173599243
+        }
+      ]
+    },
+    {
+      "case_number": 12071,
+      "source_line": 12073,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 55348,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012071_seed-55348.png",
+      "image_sha256": "4abf5092472f58c0720495f1d72dbea507a0848216f4d25dbb21f997f5575d29",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.15280911326408386,
+      "class_probabilities": {
+        "ping-pong ball": 0.15280911326408386
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.15280911326408386,
+          "raw_logit": 5.481894016265869
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.0937107652425766,
+          "raw_logit": 4.992917537689209
+        },
+        {
+          "rank": 3,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.017521997913718224,
+          "raw_logit": 3.316161632537842
+        },
+        {
+          "rank": 4,
+          "index": 747,
+          "label": "punching bag",
+          "probability": 0.01046155858784914,
+          "raw_logit": 2.8004119396209717
+        },
+        {
+          "rank": 5,
+          "index": 109,
+          "label": "brain coral",
+          "probability": 0.008159981109201908,
+          "raw_logit": 2.5519464015960693
+        }
+      ]
+    },
+    {
+      "case_number": 12072,
+      "source_line": 12074,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 96209,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012072_seed-96209.png",
+      "image_sha256": "6aa3b8d3dc454d7698046f2aa52362dbb5eac62b865c6f7ff4f2550f23bd5673",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 574,
+      "predicted_category": "golf ball",
+      "correct": false,
+      "expected_probability": 0.1060992106795311,
+      "class_probabilities": {
+        "ping-pong ball": 0.1060992106795311
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.11667624861001968,
+          "raw_logit": 5.108191013336182
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.1060992106795311,
+          "raw_logit": 5.013162612915039
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.028653215616941452,
+          "raw_logit": 3.7040536403656006
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.007317447569221258,
+          "raw_logit": 2.3390495777130127
+        },
+        {
+          "rank": 5,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.006013969890773296,
+          "raw_logit": 2.1428730487823486
+        }
+      ]
+    },
+    {
+      "case_number": 12073,
+      "source_line": 12075,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 86510,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012073_seed-86510.png",
+      "image_sha256": "35ec1667e26d154308a07a4a2b8fb798c00d0fee9151f904725e8dacf891bbbf",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 736,
+      "predicted_category": "pool table",
+      "correct": false,
+      "expected_probability": 0.10335350781679153,
+      "class_probabilities": {
+        "ping-pong ball": 0.10335350781679153
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.14179348945617676,
+          "raw_logit": 5.298415184020996
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.10335350781679153,
+          "raw_logit": 4.982198715209961
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005558317992836237,
+          "raw_logit": 2.0593390464782715
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.0046689147129654884,
+          "raw_logit": 1.8849701881408691
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.004324228037148714,
+          "raw_logit": 1.8082772493362427
+        }
+      ]
+    },
+    {
+      "case_number": 12074,
+      "source_line": 12076,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 36066,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012074_seed-36066.png",
+      "image_sha256": "9f7b956a1ce010950679c7f13e943f0f2bd72f36446fe7fcde67f55047452f9f",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5178080797195435,
+      "class_probabilities": {
+        "ping-pong ball": 0.5178080797195435
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5178080797195435,
+          "raw_logit": 7.297471523284912
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.01744004338979721,
+          "raw_logit": 3.9066357612609863
+        },
+        {
+          "rank": 3,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.01442225556820631,
+          "raw_logit": 3.716639280319214
+        },
+        {
+          "rank": 4,
+          "index": 696,
+          "label": "paintbrush",
+          "probability": 0.01037946529686451,
+          "raw_logit": 3.3876962661743164
+        },
+        {
+          "rank": 5,
+          "index": 641,
+          "label": "maraca",
+          "probability": 0.009859687648713589,
+          "raw_logit": 3.3363213539123535
+        }
+      ]
+    },
+    {
+      "case_number": 12075,
+      "source_line": 12077,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 94587,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012075_seed-94587.png",
+      "image_sha256": "90144da7e6cac7c37cdc04dfa7b51dce83c6b2120c226c30c943bbdb509769a6",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.7134178876876831,
+      "class_probabilities": {
+        "ping-pong ball": 0.7134178876876831
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.7134178876876831,
+          "raw_logit": 8.21958065032959
+        },
+        {
+          "rank": 2,
+          "index": 613,
+          "label": "joystick",
+          "probability": 0.013012087903916836,
+          "raw_logit": 4.215392112731934
+        },
+        {
+          "rank": 3,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.008436579257249832,
+          "raw_logit": 3.782090425491333
+        },
+        {
+          "rank": 4,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.008041059598326683,
+          "raw_logit": 3.734074115753174
+        },
+        {
+          "rank": 5,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.006667012814432383,
+          "raw_logit": 3.546684980392456
+        }
+      ]
+    },
+    {
+      "case_number": 12076,
+      "source_line": 12078,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 35639,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012076_seed-35639.png",
+      "image_sha256": "38d56e72991492b9bd2af4c363e40ae6e0a40a34d24846e498cf0e80ed30494e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.16746975481510162,
+      "class_probabilities": {
+        "ping-pong ball": 0.16746975481510162
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.16746975481510162,
+          "raw_logit": 5.4336700439453125
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.036667127162218094,
+          "raw_logit": 3.914747953414917
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.029614390805363655,
+          "raw_logit": 3.701127767562866
+        },
+        {
+          "rank": 4,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.004344466142356396,
+          "raw_logit": 1.7817702293395996
+        },
+        {
+          "rank": 5,
+          "index": 641,
+          "label": "maraca",
+          "probability": 0.0038788721431046724,
+          "raw_logit": 1.6684117317199707
+        }
+      ]
+    },
+    {
+      "case_number": 12077,
+      "source_line": 12079,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 71115,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012077_seed-71115.png",
+      "image_sha256": "dc6f46296a6d07c1cd6e5d1c26dcf274c93f4dcf7b2a6f9dd99c850eacb19c6f",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3492770791053772,
+      "class_probabilities": {
+        "ping-pong ball": 0.3492770791053772
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3492770791053772,
+          "raw_logit": 6.355305194854736
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.00610368000343442,
+          "raw_logit": 2.3083314895629883
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005118884611874819,
+          "raw_logit": 2.132375955581665
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.004597417078912258,
+          "raw_logit": 2.0249340534210205
+        },
+        {
+          "rank": 5,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.004124190658330917,
+          "raw_logit": 1.9163094758987427
+        }
+      ]
+    },
+    {
+      "case_number": 12078,
+      "source_line": 12080,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 86147,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012078_seed-86147.png",
+      "image_sha256": "68904088ac57417ac90f0b70ee33bbac1d0d5c2e93518a9d5a4c8359c8139f76",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5374541282653809,
+      "class_probabilities": {
+        "ping-pong ball": 0.5374541282653809
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5374541282653809,
+          "raw_logit": 7.147356986999512
+        },
+        {
+          "rank": 2,
+          "index": 543,
+          "label": "dumbbell",
+          "probability": 0.0030348701402544975,
+          "raw_logit": 1.9706822633743286
+        },
+        {
+          "rank": 3,
+          "index": 767,
+          "label": "rubber eraser",
+          "probability": 0.0030254970770329237,
+          "raw_logit": 1.967589020729065
+        },
+        {
+          "rank": 4,
+          "index": 418,
+          "label": "ballpoint",
+          "probability": 0.0029874283354729414,
+          "raw_logit": 1.9549267292022705
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.0024923481978476048,
+          "raw_logit": 1.773738980293274
+        }
+      ]
+    },
+    {
+      "case_number": 12079,
+      "source_line": 12081,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 65701,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012079_seed-65701.png",
+      "image_sha256": "c2fef21f0378211105a65f22656d0c1f8da89e3bd3eac51cbefa6421225d1963",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2276257574558258,
+      "class_probabilities": {
+        "ping-pong ball": 0.2276257574558258
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2276257574558258,
+          "raw_logit": 6.388343811035156
+        },
+        {
+          "rank": 2,
+          "index": 398,
+          "label": "abacus",
+          "probability": 0.13187618553638458,
+          "raw_logit": 5.842504501342773
+        },
+        {
+          "rank": 3,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.05238525941967964,
+          "raw_logit": 4.919266223907471
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.04457739368081093,
+          "raw_logit": 4.757867813110352
+        },
+        {
+          "rank": 5,
+          "index": 401,
+          "label": "accordion",
+          "probability": 0.04264121875166893,
+          "raw_logit": 4.7134623527526855
+        }
+      ]
+    },
+    {
+      "case_number": 12080,
+      "source_line": 12082,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 60042,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012080_seed-60042.png",
+      "image_sha256": "2b19417c5cce3829cdb3afdac4d8b9df29c9ed821045650fd24afdad7822e883",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 574,
+      "predicted_category": "golf ball",
+      "correct": false,
+      "expected_probability": 0.17243154346942902,
+      "class_probabilities": {
+        "ping-pong ball": 0.17243154346942902
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.19567471742630005,
+          "raw_logit": 5.97714376449585
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.17243154346942902,
+          "raw_logit": 5.8506903648376465
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.05039094015955925,
+          "raw_logit": 4.620501518249512
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.011254829354584217,
+          "raw_logit": 3.1214873790740967
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.010729236528277397,
+          "raw_logit": 3.073662519454956
+        }
+      ]
+    },
+    {
+      "case_number": 12081,
+      "source_line": 12083,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 7027,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012081_seed-7027.png",
+      "image_sha256": "5cd1198b853e164ba3c38b88aea7fe24f55112d81ef917e159bc2f7003108f62",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.18170790374279022,
+      "class_probabilities": {
+        "ping-pong ball": 0.18170790374279022
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.18170790374279022,
+          "raw_logit": 5.667080402374268
+        },
+        {
+          "rank": 2,
+          "index": 773,
+          "label": "saltshaker",
+          "probability": 0.02363497018814087,
+          "raw_logit": 3.6274073123931885
+        },
+        {
+          "rank": 3,
+          "index": 684,
+          "label": "ocarina",
+          "probability": 0.013968703337013721,
+          "raw_logit": 3.101499319076538
+        },
+        {
+          "rank": 4,
+          "index": 719,
+          "label": "piggy bank",
+          "probability": 0.011590712703764439,
+          "raw_logit": 2.914884090423584
+        },
+        {
+          "rank": 5,
+          "index": 902,
+          "label": "whistle",
+          "probability": 0.010223194025456905,
+          "raw_logit": 2.789339065551758
+        }
+      ]
+    },
+    {
+      "case_number": 12082,
+      "source_line": 12084,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 90381,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012082_seed-90381.png",
+      "image_sha256": "b6b6a70ace3ce2fe398033b361518cc071e68d2cb0067c1554c19254987cac9c",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.4741251468658447,
+      "class_probabilities": {
+        "ping-pong ball": 0.4741251468658447
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.4741251468658447,
+          "raw_logit": 7.117319583892822
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.03763214498758316,
+          "raw_logit": 4.583706855773926
+        },
+        {
+          "rank": 3,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.015310737304389477,
+          "raw_logit": 3.6844027042388916
+        },
+        {
+          "rank": 4,
+          "index": 659,
+          "label": "mixing bowl",
+          "probability": 0.012138540856540203,
+          "raw_logit": 3.4522337913513184
+        },
+        {
+          "rank": 5,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.009195879101753235,
+          "raw_logit": 3.1746037006378174
+        }
+      ]
+    },
+    {
+      "case_number": 12083,
+      "source_line": 12085,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 16508,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012083_seed-16508.png",
+      "image_sha256": "a20ff3e43337889e5afc0dfe6e3c8d7bb35a3bb61593c98427f38514fe7e44ee",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.2250431627035141,
+      "class_probabilities": {
+        "ping-pong ball": 0.2250431627035141
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.2250431627035141,
+          "raw_logit": 6.167085647583008
+        },
+        {
+          "rank": 2,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.1419595330953598,
+          "raw_logit": 5.706335544586182
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.021137313917279243,
+          "raw_logit": 3.801833391189575
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.011120895855128765,
+          "raw_logit": 3.1596193313598633
+        },
+        {
+          "rank": 5,
+          "index": 951,
+          "label": "lemon",
+          "probability": 0.010302131064236164,
+          "raw_logit": 3.083144187927246
+        }
+      ]
+    },
+    {
+      "case_number": 12084,
+      "source_line": 12086,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 65154,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012084_seed-65154.png",
+      "image_sha256": "e689b167a0da1a0c9c769958f4b12a7cf30c3c790f0d7f4e9b474b6485ea1a75",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.18532587587833405,
+      "class_probabilities": {
+        "ping-pong ball": 0.18532587587833405
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.18532587587833405,
+          "raw_logit": 5.633023738861084
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.05808937922120094,
+          "raw_logit": 4.472890853881836
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.051533956080675125,
+          "raw_logit": 4.353148937225342
+        },
+        {
+          "rank": 4,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.016727766022086143,
+          "raw_logit": 3.227977991104126
+        },
+        {
+          "rank": 5,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.004144076723605394,
+          "raw_logit": 1.8325879573822021
+        }
+      ]
+    },
+    {
+      "case_number": 12085,
+      "source_line": 12087,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 23543,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012085_seed-23543.png",
+      "image_sha256": "12e34f821f3fce5d4f15c01910efe1d9109490cc562089877a38b12b7d9037c0",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.26156625151634216,
+      "class_probabilities": {
+        "ping-pong ball": 0.26156625151634216
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.26156625151634216,
+          "raw_logit": 6.106563568115234
+        },
+        {
+          "rank": 2,
+          "index": 393,
+          "label": "anemone fish",
+          "probability": 0.07392143458127975,
+          "raw_logit": 4.842878818511963
+        },
+        {
+          "rank": 3,
+          "index": 108,
+          "label": "sea anemone",
+          "probability": 0.017105288803577423,
+          "raw_logit": 3.3792636394500732
+        },
+        {
+          "rank": 4,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.016165414825081825,
+          "raw_logit": 3.3227500915527344
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.008941568434238434,
+          "raw_logit": 2.7305870056152344
+        }
+      ]
+    },
+    {
+      "case_number": 12086,
+      "source_line": 12088,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 25394,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012086_seed-25394.png",
+      "image_sha256": "3b36e48dc48cc2933f3550f0209695172c35d15028886d32f2156d607fd5c000",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.158477321267128,
+      "class_probabilities": {
+        "ping-pong ball": 0.158477321267128
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.158477321267128,
+          "raw_logit": 5.493107795715332
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0643390417098999,
+          "raw_logit": 4.591662883758545
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.024249671027064323,
+          "raw_logit": 3.6158993244171143
+        },
+        {
+          "rank": 4,
+          "index": 613,
+          "label": "joystick",
+          "probability": 0.02109614945948124,
+          "raw_logit": 3.4765868186950684
+        },
+        {
+          "rank": 5,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.009924011304974556,
+          "raw_logit": 2.7224535942077637
+        }
+      ]
+    },
+    {
+      "case_number": 12087,
+      "source_line": 12089,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 56497,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012087_seed-56497.png",
+      "image_sha256": "78607a42bfafccd4f95b7225f12bde6c475e5a1430da549fdc56a48ae864407c",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 622,
+      "predicted_category": "lens cap",
+      "correct": false,
+      "expected_probability": 0.002534764353185892,
+      "class_probabilities": {
+        "ping-pong ball": 0.002534764353185892
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.3228400647640228,
+          "raw_logit": 6.608064651489258
+        },
+        {
+          "rank": 2,
+          "index": 746,
+          "label": "puck",
+          "probability": 0.029991455376148224,
+          "raw_logit": 4.231820106506348
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.023255689069628716,
+          "raw_logit": 3.977457284927368
+        },
+        {
+          "rank": 4,
+          "index": 402,
+          "label": "acoustic guitar",
+          "probability": 0.019526218995451927,
+          "raw_logit": 3.8026657104492188
+        },
+        {
+          "rank": 5,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.016025491058826447,
+          "raw_logit": 3.605088233947754
+        }
+      ]
+    },
+    {
+      "case_number": 12088,
+      "source_line": 12090,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 16737,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012088_seed-16737.png",
+      "image_sha256": "379bdd48111350f8fbbad8e9c79d6dbb09c38c423a40839361b8b1fd107d0d48",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 522,
+      "predicted_category": "croquet ball",
+      "correct": false,
+      "expected_probability": 0.34609267115592957,
+      "class_probabilities": {
+        "ping-pong ball": 0.34609267115592957
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.42682263255119324,
+          "raw_logit": 8.053324699401855
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.34609267115592957,
+          "raw_logit": 7.843662738800049
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.022473007440567017,
+          "raw_logit": 5.109271049499512
+        },
+        {
+          "rank": 4,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.017836090177297592,
+          "raw_logit": 4.878180027008057
+        },
+        {
+          "rank": 5,
+          "index": 892,
+          "label": "wall clock",
+          "probability": 0.013106557540595531,
+          "raw_logit": 4.570068836212158
+        }
+      ]
+    },
+    {
+      "case_number": 12089,
+      "source_line": 12091,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 10741,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012089_seed-10741.png",
+      "image_sha256": "2f1bc410e851889704490d1ef7206e165badc6c6f812b67f5ba413eb19f37493",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.3897276222705841,
+      "class_probabilities": {
+        "ping-pong ball": 0.3897276222705841
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.3897276222705841,
+          "raw_logit": 6.556455135345459
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.007696465589106083,
+          "raw_logit": 2.631768226623535
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.0058981929905712605,
+          "raw_logit": 2.3656530380249023
+        },
+        {
+          "rank": 4,
+          "index": 492,
+          "label": "chest",
+          "probability": 0.004051718395203352,
+          "raw_logit": 1.9901478290557861
+        },
+        {
+          "rank": 5,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.003991312347352505,
+          "raw_logit": 1.9751272201538086
+        }
+      ]
+    },
+    {
+      "case_number": 12090,
+      "source_line": 12092,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 96436,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012090_seed-96436.png",
+      "image_sha256": "8991544df4cfad6fae9ae84ca548a214b0ad690ec927793b3492f5a01d19bbf1",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5702874064445496,
+      "class_probabilities": {
+        "ping-pong ball": 0.5702874064445496
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5702874064445496,
+          "raw_logit": 7.519497394561768
+        },
+        {
+          "rank": 2,
+          "index": 542,
+          "label": "drumstick",
+          "probability": 0.024682139977812767,
+          "raw_logit": 4.37943696975708
+        },
+        {
+          "rank": 3,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.02347728982567787,
+          "raw_logit": 4.329390525817871
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.01956034079194069,
+          "raw_logit": 4.1468610763549805
+        },
+        {
+          "rank": 5,
+          "index": 478,
+          "label": "carton",
+          "probability": 0.004704173654317856,
+          "raw_logit": 2.7218070030212402
+        }
+      ]
+    },
+    {
+      "case_number": 12091,
+      "source_line": 12093,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 24317,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012091_seed-24317.png",
+      "image_sha256": "70d4a8ef60e4adf1d1e4a5bd24a5ca1820efb822c2a67d6a54654b13e32ff44e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5621908903121948,
+      "class_probabilities": {
+        "ping-pong ball": 0.5621908903121948
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5621908903121948,
+          "raw_logit": 7.267638206481934
+        },
+        {
+          "rank": 2,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.005041392985731363,
+          "raw_logit": 2.5534791946411133
+        },
+        {
+          "rank": 3,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.0036880490370094776,
+          "raw_logit": 2.240894079208374
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0034637555945664644,
+          "raw_logit": 2.178150177001953
+        },
+        {
+          "rank": 5,
+          "index": 644,
+          "label": "matchstick",
+          "probability": 0.003264327999204397,
+          "raw_logit": 2.1188509464263916
+        }
+      ]
+    },
+    {
+      "case_number": 12092,
+      "source_line": 12094,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 2610,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012092_seed-2610.png",
+      "image_sha256": "f7e3fa2d3fcbb62fd64a08bca8f9c17908dc790ccc4a983bdb8044b93d4b7429",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.25427430868148804,
+      "class_probabilities": {
+        "ping-pong ball": 0.25427430868148804
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.25427430868148804,
+          "raw_logit": 5.88332462310791
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.004390696994960308,
+          "raw_logit": 1.8243987560272217
+        },
+        {
+          "rank": 3,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.004336836282163858,
+          "raw_logit": 1.8120559453964233
+        },
+        {
+          "rank": 4,
+          "index": 773,
+          "label": "saltshaker",
+          "probability": 0.003989748191088438,
+          "raw_logit": 1.7286392450332642
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.002306767040863633,
+          "raw_logit": 1.1807578802108765
+        }
+      ]
+    },
+    {
+      "case_number": 12093,
+      "source_line": 12095,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 67720,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012093_seed-67720.png",
+      "image_sha256": "599bdd024479981083abcd83f9e77f23a3d9f8484c350380ad821e9af1f72286",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 714,
+      "predicted_category": "pick",
+      "correct": false,
+      "expected_probability": 0.003949217963963747,
+      "class_probabilities": {
+        "ping-pong ball": 0.003949217963963747
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.027612503618001938,
+          "raw_logit": 3.7155513763427734
+        },
+        {
+          "rank": 2,
+          "index": 701,
+          "label": "parachute",
+          "probability": 0.020960481837391853,
+          "raw_logit": 3.4399216175079346
+        },
+        {
+          "rank": 3,
+          "index": 405,
+          "label": "airship",
+          "probability": 0.018034523352980614,
+          "raw_logit": 3.2895705699920654
+        },
+        {
+          "rank": 4,
+          "index": 557,
+          "label": "flagpole",
+          "probability": 0.012782430276274681,
+          "raw_logit": 2.9453542232513428
+        },
+        {
+          "rank": 5,
+          "index": 93,
+          "label": "hornbill",
+          "probability": 0.011669599451124668,
+          "raw_logit": 2.8542697429656982
+        }
+      ]
+    },
+    {
+      "case_number": 12094,
+      "source_line": 12096,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 37215,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012094_seed-37215.png",
+      "image_sha256": "093323522bfeef4e042ae9a6b22c3edb6b6823d11312301fcf873078f28761a3",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.42929425835609436,
+      "class_probabilities": {
+        "ping-pong ball": 0.42929425835609436
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.42929425835609436,
+          "raw_logit": 6.967348575592041
+        },
+        {
+          "rank": 2,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.03414911404252052,
+          "raw_logit": 4.435942649841309
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.014079466462135315,
+          "raw_logit": 3.5499234199523926
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.008947353810071945,
+          "raw_logit": 3.0965638160705566
+        },
+        {
+          "rank": 5,
+          "index": 968,
+          "label": "cup",
+          "probability": 0.008294366300106049,
+          "raw_logit": 3.020782470703125
+        }
+      ]
+    },
+    {
+      "case_number": 12095,
+      "source_line": 12097,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 30368,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012095_seed-30368.png",
+      "image_sha256": "d074aa4b18f3480c0fffaffd062e6324c0fab3d6dbae978ba6991508086edbcf",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.5692194700241089,
+      "class_probabilities": {
+        "ping-pong ball": 0.5692194700241089
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.5692194700241089,
+          "raw_logit": 7.299293041229248
+        },
+        {
+          "rank": 2,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.0045633455738425255,
+          "raw_logit": 2.473083257675171
+        },
+        {
+          "rank": 3,
+          "index": 961,
+          "label": "dough",
+          "probability": 0.004110757261514664,
+          "raw_logit": 2.3686342239379883
+        },
+        {
+          "rank": 4,
+          "index": 714,
+          "label": "pick",
+          "probability": 0.0029534518253058195,
+          "raw_logit": 2.038001298904419
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0028314278461039066,
+          "raw_logit": 1.9958082437515259
+        }
+      ]
+    },
+    {
+      "case_number": 12096,
+      "source_line": 12098,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 27006,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012096_seed-27006.png",
+      "image_sha256": "bfbb8ed3fc2c9d3481498584cf2b092fca398feec359af1114ecfcb3cc4b16ea",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.274897962808609,
+      "class_probabilities": {
+        "ping-pong ball": 0.274897962808609
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.274897962808609,
+          "raw_logit": 6.084774494171143
+        },
+        {
+          "rank": 2,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.01464926078915596,
+          "raw_logit": 3.152764320373535
+        },
+        {
+          "rank": 3,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.010402609594166279,
+          "raw_logit": 2.8104312419891357
+        },
+        {
+          "rank": 4,
+          "index": 455,
+          "label": "bottlecap",
+          "probability": 0.006137765944004059,
+          "raw_logit": 2.2828352451324463
+        },
+        {
+          "rank": 5,
+          "index": 987,
+          "label": "corn",
+          "probability": 0.004738400690257549,
+          "raw_logit": 2.024073839187622
+        }
+      ]
+    },
+    {
+      "case_number": 12097,
+      "source_line": 12099,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 61715,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012097_seed-61715.png",
+      "image_sha256": "a34025ef8d3d83de546bfb453e36ae3e42a8363770792861c24bc438fc73145e",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.13221414387226105,
+      "class_probabilities": {
+        "ping-pong ball": 0.13221414387226105
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.13221414387226105,
+          "raw_logit": 5.424417018890381
+        },
+        {
+          "rank": 2,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.12570469081401825,
+          "raw_logit": 5.373929500579834
+        },
+        {
+          "rank": 3,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.07008560746908188,
+          "raw_logit": 4.7897114753723145
+        },
+        {
+          "rank": 4,
+          "index": 852,
+          "label": "tennis ball",
+          "probability": 0.022253025323152542,
+          "raw_logit": 3.6424720287323
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.018566882237792015,
+          "raw_logit": 3.4613735675811768
+        }
+      ]
+    },
+    {
+      "case_number": 12098,
+      "source_line": 12100,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 62699,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012098_seed-62699.png",
+      "image_sha256": "c4938b1af2570c100888248e05b57331980e3cb4faf4334ffaf7ef9d3fc9d0a2",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 722,
+      "predicted_category": "ping-pong ball",
+      "correct": true,
+      "expected_probability": 0.24794206023216248,
+      "class_probabilities": {
+        "ping-pong ball": 0.24794206023216248
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.24794206023216248,
+          "raw_logit": 5.8586225509643555
+        },
+        {
+          "rank": 2,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.004374459385871887,
+          "raw_logit": 1.8212103843688965
+        },
+        {
+          "rank": 3,
+          "index": 417,
+          "label": "balloon",
+          "probability": 0.004264309536665678,
+          "raw_logit": 1.7957074642181396
+        },
+        {
+          "rank": 4,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.004051373805850744,
+          "raw_logit": 1.7444833517074585
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.002490782178938389,
+          "raw_logit": 1.2580242156982422
+        }
+      ]
+    },
+    {
+      "case_number": 12099,
+      "source_line": 12101,
+      "prompt": "an image of a ping-pong ball",
+      "class": "ping-pong ball",
+      "evaluation_seed": 20343,
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/similar_non_target/ping-pong-ball/case-012099_seed-20343.png",
+      "image_sha256": "8077afe98bc9f32ce27d512a37eacea7b95e0735165507d9ec82bfd73267e084",
+      "expected_index": 722,
+      "expected_category": "ping-pong ball",
+      "predicted_index": 736,
+      "predicted_category": "pool table",
+      "correct": false,
+      "expected_probability": 0.12000522017478943,
+      "class_probabilities": {
+        "ping-pong ball": 0.12000522017478943
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.3063403367996216,
+          "raw_logit": 6.51267671585083
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.12000522017478943,
+          "raw_logit": 5.575515270233154
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.031929370015859604,
+          "raw_logit": 4.251506328582764
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.008418700657784939,
+          "raw_logit": 2.918435573577881
+        },
+        {
+          "rank": 5,
+          "index": 818,
+          "label": "spotlight",
+          "probability": 0.0064590019173920155,
+          "raw_logit": 2.6534547805786133
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-08-13T03:45:18.519617+00:00"
+}

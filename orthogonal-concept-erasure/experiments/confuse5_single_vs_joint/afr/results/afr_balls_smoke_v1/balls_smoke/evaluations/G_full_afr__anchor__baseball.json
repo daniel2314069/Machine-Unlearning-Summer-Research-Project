@@ -1,0 +1,2929 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "job_id": "G_full_afr__anchor__baseball",
+  "job_fingerprint": "cdfc97ce2ea46c7074c987e85ad97a8d666f6d209410a0d8edba957410a72958",
+  "variant": "G_full_afr",
+  "role": "anchor",
+  "concept": "baseball",
+  "checkpoint_sha256": "a848ff4d779bc89bae234e8432e6753d50e63cb1c7c045c1894f0a242db7fb3c",
+  "generation_runtime": {
+    "requested_base_model": "CompVis/stable-diffusion-v1-4",
+    "requested_dtype": "bfloat16",
+    "pipeline": {
+      "class": "diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline",
+      "name_or_path": "CompVis/stable-diffusion-v1-4",
+      "commit_hash": null
+    },
+    "unet": {
+      "class": "diffusers.models.unets.unet_2d_condition.UNet2DConditionModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/unet",
+      "commit_hash": null
+    },
+    "text_encoder": {
+      "class": "transformers.models.clip.modeling_clip.CLIPTextModel",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/text_encoder",
+      "commit_hash": "133a221b8aa7292a167afc5127cb63fb5005638b"
+    },
+    "tokenizer": {
+      "class": "transformers.models.clip.tokenization_clip.CLIPTokenizer",
+      "name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/tokenizer",
+      "commit_hash": null
+    },
+    "scheduler": {
+      "class": "diffusers.schedulers.scheduling_pndm.PNDMScheduler",
+      "name_or_path": null,
+      "commit_hash": null
+    },
+    "scheduler_config_sha256": "3cf318d6daa65d30ee297048c7d7e51400e6a2465d7d4ff142784b8ab1e4bf22",
+    "settings": {
+      "scheduler": "PNDMScheduler",
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "images_per_prompt": 1,
+      "generator_device": "cpu"
+    },
+    "runtime": {
+      "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+      "executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+      "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+      "packages": {
+        "torch": "2.6.0+cu118",
+        "torchvision": "0.21.0+cu118",
+        "diffusers": "0.33.1",
+        "transformers": "4.48.3",
+        "safetensors": "0.5.3",
+        "pandas": "2.2.3",
+        "Pillow": "11.2.1"
+      },
+      "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+      "git_dirty": true
+    }
+  },
+  "evaluator": {
+    "implementation": "torchvision_resnet50",
+    "weights_enum": "IMAGENET1K_V2",
+    "weight_filename": "resnet50-11ad3fa6.pth",
+    "weight_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "categories_sha256": "47eed8c870ca7ed0258cb04301612ed3bcb3eddf78ecd24f37eb58d799eddea7"
+  },
+  "correct": 46,
+  "total": 50,
+  "accuracy": 0.92,
+  "mean_expected_probability": 0.4694254177383846,
+  "items": [
+    {
+      "case_number": 6500,
+      "source_line": 6502,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 43455,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006500_seed-43455.png",
+      "image_sha256": "f19f0d70039878afa803042f6942454ff5d8c27df06ca3c4e224bdc374153b8f",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.39180710911750793,
+      "class_probabilities": {
+        "baseball": 0.39180710911750793
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.39180710911750793,
+          "raw_logit": 6.50518798828125
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0076913717202842236,
+          "raw_logit": 2.5745174884796143
+        },
+        {
+          "rank": 3,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.0040052589029073715,
+          "raw_logit": 1.9220266342163086
+        },
+        {
+          "rank": 4,
+          "index": 181,
+          "label": "Bedlington terrier",
+          "probability": 0.0023069654125720263,
+          "raw_logit": 1.3703514337539673
+        },
+        {
+          "rank": 5,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.0018874153029173613,
+          "raw_logit": 1.1696265935897827
+        }
+      ]
+    },
+    {
+      "case_number": 6501,
+      "source_line": 6503,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 5733,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006501_seed-5733.png",
+      "image_sha256": "d4cfaa0f4eb0b83fae33e4b754d2f9fe149339634e5f2f8d1b9697bbd4383fab",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.2007271945476532,
+      "class_probabilities": {
+        "baseball": 0.2007271945476532
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.2007271945476532,
+          "raw_logit": 5.624659061431885
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.013316599652171135,
+          "raw_logit": 2.9117236137390137
+        },
+        {
+          "rank": 3,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.006223958916962147,
+          "raw_logit": 2.151118516921997
+        },
+        {
+          "rank": 4,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.0052870879881083965,
+          "raw_logit": 1.987979769706726
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.003450404852628708,
+          "raw_logit": 1.5612038373947144
+        }
+      ]
+    },
+    {
+      "case_number": 6502,
+      "source_line": 6504,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 53389,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006502_seed-53389.png",
+      "image_sha256": "01e0a9eacda090faae1ba8c59fb58dfb54022ba7abff440366187b3c2f7aaad2",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.33786749839782715,
+      "class_probabilities": {
+        "baseball": 0.33786749839782715
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.33786749839782715,
+          "raw_logit": 6.2703447341918945
+        },
+        {
+          "rank": 2,
+          "index": 921,
+          "label": "book jacket",
+          "probability": 0.005431606899946928,
+          "raw_logit": 2.139925956726074
+        },
+        {
+          "rank": 3,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.003338711569085717,
+          "raw_logit": 1.653275966644287
+        },
+        {
+          "rank": 4,
+          "index": 122,
+          "label": "American lobster",
+          "probability": 0.0030193901620805264,
+          "raw_logit": 1.5527458190917969
+        },
+        {
+          "rank": 5,
+          "index": 549,
+          "label": "envelope",
+          "probability": 0.002732624299824238,
+          "raw_logit": 1.4529532194137573
+        }
+      ]
+    },
+    {
+      "case_number": 6503,
+      "source_line": 6505,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 55777,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006503_seed-55777.png",
+      "image_sha256": "73e8fe080e7a4ecefd33baa6845d65f976fe97febd84cfbc6f964ec2a61cdc17",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.45645731687545776,
+      "class_probabilities": {
+        "baseball": 0.45645731687545776
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.45645731687545776,
+          "raw_logit": 6.759954929351807
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.003813483053818345,
+          "raw_logit": 1.9750028848648071
+        },
+        {
+          "rank": 3,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.003435965161770582,
+          "raw_logit": 1.8707573413848877
+        },
+        {
+          "rank": 4,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.002913051052019,
+          "raw_logit": 1.7056608200073242
+        },
+        {
+          "rank": 5,
+          "index": 308,
+          "label": "fly",
+          "probability": 0.002307980554178357,
+          "raw_logit": 1.4728327989578247
+        }
+      ]
+    },
+    {
+      "case_number": 6504,
+      "source_line": 6506,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 81938,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006504_seed-81938.png",
+      "image_sha256": "6084e3c1403011a478b79f85c9adbae5c73ab03ef3c79fa16937faf7d89dccf2",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4634808301925659,
+      "class_probabilities": {
+        "baseball": 0.4634808301925659
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4634808301925659,
+          "raw_logit": 6.784201622009277
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0037622947711497545,
+          "raw_logit": 1.9704656600952148
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.002877843799069524,
+          "raw_logit": 1.7024779319763184
+        },
+        {
+          "rank": 4,
+          "index": 805,
+          "label": "soccer ball",
+          "probability": 0.002367195440456271,
+          "raw_logit": 1.5071426630020142
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0016367282951250672,
+          "raw_logit": 1.1381360292434692
+        }
+      ]
+    },
+    {
+      "case_number": 6505,
+      "source_line": 6507,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 19744,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006505_seed-19744.png",
+      "image_sha256": "2bae54e0114b3038bb31bfc9c527004b05441446217022c907b843825390e63e",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5039370656013489,
+      "class_probabilities": {
+        "baseball": 0.5039370656013489
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5039370656013489,
+          "raw_logit": 6.935728549957275
+        },
+        {
+          "rank": 2,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.001694991602562368,
+          "raw_logit": 1.240954875946045
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.001629283418878913,
+          "raw_logit": 1.201417326927185
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0013223576825112104,
+          "raw_logit": 0.9926935434341431
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0013219844549894333,
+          "raw_logit": 0.9924110770225525
+        }
+      ]
+    },
+    {
+      "case_number": 6506,
+      "source_line": 6508,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 8488,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006506_seed-8488.png",
+      "image_sha256": "6e99097a2f3555ee78ab3c3e91aaed382c62d605c9bd5f17f49c686156dd301f",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.47865140438079834,
+      "class_probabilities": {
+        "baseball": 0.47865140438079834
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.47865140438079834,
+          "raw_logit": 6.840178966522217
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.00233459216542542,
+          "raw_logit": 1.5170438289642334
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.002297844272106886,
+          "raw_logit": 1.5011776685714722
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0017948065651580691,
+          "raw_logit": 1.254103660583496
+        },
+        {
+          "rank": 5,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0013332451926544309,
+          "raw_logit": 0.9568223357200623
+        }
+      ]
+    },
+    {
+      "case_number": 6507,
+      "source_line": 6509,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 36128,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006507_seed-36128.png",
+      "image_sha256": "2a0d852f45295386e0cc3caa3d7c5c72482f3aaba3bfe45abcdf773d714266fb",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.7936556935310364,
+      "class_probabilities": {
+        "baseball": 0.7936556935310364
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.7936556935310364,
+          "raw_logit": 8.277602195739746
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0008944589062593877,
+          "raw_logit": 1.4894160032272339
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0008034713682718575,
+          "raw_logit": 1.3821386098861694
+        },
+        {
+          "rank": 4,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.000579690036829561,
+          "raw_logit": 1.0556906461715698
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.00044338867883197963,
+          "raw_logit": 0.7876438498497009
+        }
+      ]
+    },
+    {
+      "case_number": 6508,
+      "source_line": 6510,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 38704,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006508_seed-38704.png",
+      "image_sha256": "52aa850aba58c6651bc3d5b7544e4b6a92c8ad0da416bc94ef0e76990fb0f3f0",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.33891206979751587,
+      "class_probabilities": {
+        "baseball": 0.33891206979751587
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.33891206979751587,
+          "raw_logit": 6.317075729370117
+        },
+        {
+          "rank": 2,
+          "index": 910,
+          "label": "wooden spoon",
+          "probability": 0.009477943181991577,
+          "raw_logit": 2.740302324295044
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.004549895413219929,
+          "raw_logit": 2.006438970565796
+        },
+        {
+          "rank": 4,
+          "index": 883,
+          "label": "vase",
+          "probability": 0.0034855043049901724,
+          "raw_logit": 1.73994779586792
+        },
+        {
+          "rank": 5,
+          "index": 572,
+          "label": "goblet",
+          "probability": 0.003403172129765153,
+          "raw_logit": 1.7160428762435913
+        }
+      ]
+    },
+    {
+      "case_number": 6509,
+      "source_line": 6511,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 13339,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006509_seed-13339.png",
+      "image_sha256": "48d2565d9e974160f49ef62a7bdc5c07b6db4ebba31b62eaeb8b280412f01ec7",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.29257306456565857,
+      "class_probabilities": {
+        "baseball": 0.29257306456565857
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.29257306456565857,
+          "raw_logit": 6.080165386199951
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0096345329657197,
+          "raw_logit": 2.666804790496826
+        },
+        {
+          "rank": 3,
+          "index": 964,
+          "label": "potpie",
+          "probability": 0.0028527318499982357,
+          "raw_logit": 1.4497278928756714
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0027992387767881155,
+          "raw_logit": 1.4307986497879028
+        },
+        {
+          "rank": 5,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0026149305049329996,
+          "raw_logit": 1.3626883029937744
+        }
+      ]
+    },
+    {
+      "case_number": 6510,
+      "source_line": 6512,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 18915,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006510_seed-18915.png",
+      "image_sha256": "84925eb19c34f47476291c3551d154c384753b322a31a135c6877132550b1557",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.26983997225761414,
+      "class_probabilities": {
+        "baseball": 0.26983997225761414
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.26983997225761414,
+          "raw_logit": 5.970709800720215
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0065102470107376575,
+          "raw_logit": 2.246258020401001
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.005389598198235035,
+          "raw_logit": 2.057351589202881
+        },
+        {
+          "rank": 4,
+          "index": 305,
+          "label": "dung beetle",
+          "probability": 0.004372643772512674,
+          "raw_logit": 1.8482482433319092
+        },
+        {
+          "rank": 5,
+          "index": 34,
+          "label": "leatherback turtle",
+          "probability": 0.002634491538628936,
+          "raw_logit": 1.3415707349777222
+        }
+      ]
+    },
+    {
+      "case_number": 6511,
+      "source_line": 6513,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 67241,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006511_seed-67241.png",
+      "image_sha256": "e4ec131f3a86dfbe1be37944e9d6fcf357517256dec1663272b820493a5bb6ab",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.6762343645095825,
+      "class_probabilities": {
+        "baseball": 0.6762343645095825
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.6762343645095825,
+          "raw_logit": 7.700506687164307
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.005647956859320402,
+          "raw_logit": 2.9152607917785645
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0030958433635532856,
+          "raw_logit": 2.3140273094177246
+        },
+        {
+          "rank": 4,
+          "index": 551,
+          "label": "face powder",
+          "probability": 0.00165311258751899,
+          "raw_logit": 1.6866271495819092
+        },
+        {
+          "rank": 5,
+          "index": 343,
+          "label": "warthog",
+          "probability": 0.0012175276642665267,
+          "raw_logit": 1.380789041519165
+        }
+      ]
+    },
+    {
+      "case_number": 6512,
+      "source_line": 6514,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 62487,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006512_seed-62487.png",
+      "image_sha256": "dde1aa327a7ef5d8086b31427ac6efffa05ecbfb1b0947a382d9470aad2f7290",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.45307570695877075,
+      "class_probabilities": {
+        "baseball": 0.45307570695877075
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.45307570695877075,
+          "raw_logit": 6.735065937042236
+        },
+        {
+          "rank": 2,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.003416953142732382,
+          "raw_logit": 1.8477561473846436
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0025326868053525686,
+          "raw_logit": 1.548287272453308
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0015220994828268886,
+          "raw_logit": 1.0390971899032593
+        },
+        {
+          "rank": 5,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0015216603642329574,
+          "raw_logit": 1.0388089418411255
+        }
+      ]
+    },
+    {
+      "case_number": 6513,
+      "source_line": 6515,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 23446,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006513_seed-23446.png",
+      "image_sha256": "49e3d7d922a07370dba68fb4e5072fed9df7c0a7b1acd7f41dab2c9816aebf21",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5534844398498535,
+      "class_probabilities": {
+        "baseball": 0.5534844398498535
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5534844398498535,
+          "raw_logit": 7.138583660125732
+        },
+        {
+          "rank": 2,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0014413711614906788,
+          "raw_logit": 1.187945008277893
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0013022511266171932,
+          "raw_logit": 1.0864441394805908
+        },
+        {
+          "rank": 4,
+          "index": 181,
+          "label": "Bedlington terrier",
+          "probability": 0.0012295859633013606,
+          "raw_logit": 1.0290275812149048
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.001156932907178998,
+          "raw_logit": 0.9681225419044495
+        }
+      ]
+    },
+    {
+      "case_number": 6514,
+      "source_line": 6516,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 75058,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006514_seed-75058.png",
+      "image_sha256": "8768ebdb7960db7c536e89b00a1fa730eea9b7747d13b79dadd890132f65182a",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.713125467300415,
+      "class_probabilities": {
+        "baseball": 0.713125467300415
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.713125467300415,
+          "raw_logit": 7.888681888580322
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.004144489299505949,
+          "raw_logit": 2.740804433822632
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0015711674932390451,
+          "raw_logit": 1.7708433866500854
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0012413576478138566,
+          "raw_logit": 1.535230278968811
+        },
+        {
+          "rank": 5,
+          "index": 479,
+          "label": "car wheel",
+          "probability": 0.0011772237485274673,
+          "raw_logit": 1.4821834564208984
+        }
+      ]
+    },
+    {
+      "case_number": 6515,
+      "source_line": 6517,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 62538,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006515_seed-62538.png",
+      "image_sha256": "1fc85f084ebc8c02c75bbd514a657069c62e3909ed4535b46c8a6d4d0c20fc7b",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.38555625081062317,
+      "class_probabilities": {
+        "baseball": 0.38555625081062317
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.38555625081062317,
+          "raw_logit": 6.472671031951904
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.006047715898603201,
+          "raw_logit": 2.317664861679077
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.005206665024161339,
+          "raw_logit": 2.16792368888855
+        },
+        {
+          "rank": 4,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0030964715406298637,
+          "raw_logit": 1.6482471227645874
+        },
+        {
+          "rank": 5,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.0024472002405673265,
+          "raw_logit": 1.4129284620285034
+        }
+      ]
+    },
+    {
+      "case_number": 6516,
+      "source_line": 6518,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 71446,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006516_seed-71446.png",
+      "image_sha256": "a155bca3764c5fb17a661659db1dd1e4c01ea6655f3a3b2d81f38b5c62ffa217",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.6844502687454224,
+      "class_probabilities": {
+        "baseball": 0.6844502687454224
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.6844502687454224,
+          "raw_logit": 7.749279499053955
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.007136730942875147,
+          "raw_logit": 3.1859183311462402
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.00612399959936738,
+          "raw_logit": 3.032878875732422
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0009553604177199304,
+          "raw_logit": 1.1749967336654663
+        },
+        {
+          "rank": 5,
+          "index": 620,
+          "label": "laptop",
+          "probability": 0.0008754919399507344,
+          "raw_logit": 1.0876941680908203
+        }
+      ]
+    },
+    {
+      "case_number": 6517,
+      "source_line": 6519,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 69095,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006517_seed-69095.png",
+      "image_sha256": "4aa17231b8568b99afa4bab7d5657bc56b556d14e699afdf490fb1a1631ed320",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.6155554056167603,
+      "class_probabilities": {
+        "baseball": 0.6155554056167603
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.6155554056167603,
+          "raw_logit": 7.4873738288879395
+        },
+        {
+          "rank": 2,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.006819466594606638,
+          "raw_logit": 2.9846301078796387
+        },
+        {
+          "rank": 3,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.004827211145311594,
+          "raw_logit": 2.639117956161499
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0045767598785459995,
+          "raw_logit": 2.5858402252197266
+        },
+        {
+          "rank": 5,
+          "index": 641,
+          "label": "maraca",
+          "probability": 0.0028343305457383394,
+          "raw_logit": 2.106654644012451
+        }
+      ]
+    },
+    {
+      "case_number": 6518,
+      "source_line": 6520,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 47475,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006518_seed-47475.png",
+      "image_sha256": "79bcdb900424fc2a78890b7b40340f0328c1f5660f16227dcb92c387efbb1ea3",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.563336968421936,
+      "class_probabilities": {
+        "baseball": 0.563336968421936
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.563336968421936,
+          "raw_logit": 7.175939083099365
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0023967952001839876,
+          "raw_logit": 1.716193437576294
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0016673190984874964,
+          "raw_logit": 1.3532782793045044
+        },
+        {
+          "rank": 4,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0012582873459905386,
+          "raw_logit": 1.071812629699707
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0011267479276284575,
+          "raw_logit": 0.9613967537879944
+        }
+      ]
+    },
+    {
+      "case_number": 6519,
+      "source_line": 6521,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 26477,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006519_seed-26477.png",
+      "image_sha256": "7da0e224800da99b3a6bfb5045d267bd44bc7e3d762bd62a785d0fda9896abac",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 117,
+      "predicted_category": "chambered nautilus",
+      "correct": false,
+      "expected_probability": 0.04275667667388916,
+      "class_probabilities": {
+        "baseball": 0.04275667667388916
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 117,
+          "label": "chambered nautilus",
+          "probability": 0.06395013630390167,
+          "raw_logit": 4.762787342071533
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.04275667667388916,
+          "raw_logit": 4.360208988189697
+        },
+        {
+          "rank": 3,
+          "index": 719,
+          "label": "piggy bank",
+          "probability": 0.04064411669969559,
+          "raw_logit": 4.309537887573242
+        },
+        {
+          "rank": 4,
+          "index": 522,
+          "label": "croquet ball",
+          "probability": 0.029576042667031288,
+          "raw_logit": 3.9916484355926514
+        },
+        {
+          "rank": 5,
+          "index": 641,
+          "label": "maraca",
+          "probability": 0.024263650178909302,
+          "raw_logit": 3.7936630249023438
+        }
+      ]
+    },
+    {
+      "case_number": 6520,
+      "source_line": 6522,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 8275,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006520_seed-8275.png",
+      "image_sha256": "e8abe78e6a103540f98b87f4235a0da017087358acd01593b6df8e1a706c1898",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5391252636909485,
+      "class_probabilities": {
+        "baseball": 0.5391252636909485
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5391252636909485,
+          "raw_logit": 7.076539039611816
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.002009059302508831,
+          "raw_logit": 1.4842578172683716
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0015529346419498324,
+          "raw_logit": 1.226737380027771
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0013792256359010935,
+          "raw_logit": 1.1081130504608154
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.0010138599900528789,
+          "raw_logit": 0.8003561496734619
+        }
+      ]
+    },
+    {
+      "case_number": 6521,
+      "source_line": 6523,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 47149,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006521_seed-47149.png",
+      "image_sha256": "0944969431c436687f2a0b7517e363d2af4f6237c24867775854a0a7a874b4af",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.44207870960235596,
+      "class_probabilities": {
+        "baseball": 0.44207870960235596
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.44207870960235596,
+          "raw_logit": 6.689060211181641
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.00262057245709002,
+          "raw_logit": 1.5609651803970337
+        },
+        {
+          "rank": 3,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0019082915969192982,
+          "raw_logit": 1.2437806129455566
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.00179864966776222,
+          "raw_logit": 1.1846086978912354
+        },
+        {
+          "rank": 5,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.001728820032440126,
+          "raw_logit": 1.1450114250183105
+        }
+      ]
+    },
+    {
+      "case_number": 6522,
+      "source_line": 6524,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 19994,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006522_seed-19994.png",
+      "image_sha256": "1fc89d1a21a16fc98b90da49ee4bf0060d0b4015ae20f25f4558398cd4877b0e",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4740753471851349,
+      "class_probabilities": {
+        "baseball": 0.4740753471851349
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4740753471851349,
+          "raw_logit": 6.834167003631592
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0031634557526558638,
+          "raw_logit": 1.8244656324386597
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0025115548633038998,
+          "raw_logit": 1.5937025547027588
+        },
+        {
+          "rank": 4,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.0023738231975585222,
+          "raw_logit": 1.5373022556304932
+        },
+        {
+          "rank": 5,
+          "index": 781,
+          "label": "scoreboard",
+          "probability": 0.0016472932184115052,
+          "raw_logit": 1.1719341278076172
+        }
+      ]
+    },
+    {
+      "case_number": 6523,
+      "source_line": 6525,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 75761,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006523_seed-75761.png",
+      "image_sha256": "3e67413805b2a47b82eba6e8be88f495d1a26d0016f06f7767c3080c2a14e2bc",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4935520589351654,
+      "class_probabilities": {
+        "baseball": 0.4935520589351654
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4935520589351654,
+          "raw_logit": 6.9072489738464355
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0034205985721200705,
+          "raw_logit": 1.9354363679885864
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.00154814962297678,
+          "raw_logit": 1.1426810026168823
+        },
+        {
+          "rank": 4,
+          "index": 178,
+          "label": "Weimaraner",
+          "probability": 0.0014066800940781832,
+          "raw_logit": 1.0468531847000122
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0014036328066140413,
+          "raw_logit": 1.0446844100952148
+        }
+      ]
+    },
+    {
+      "case_number": 6524,
+      "source_line": 6526,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 60443,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006524_seed-60443.png",
+      "image_sha256": "8b66bf1a4b9384c5f4f666e07edb8af1b49bb32a4f1c9b18fa3121759661a3ba",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.3569924831390381,
+      "class_probabilities": {
+        "baseball": 0.3569924831390381
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.3569924831390381,
+          "raw_logit": 6.348389148712158
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0029026989359408617,
+          "raw_logit": 1.5363155603408813
+        },
+        {
+          "rank": 3,
+          "index": 622,
+          "label": "lens cap",
+          "probability": 0.002116123214364052,
+          "raw_logit": 1.2202603816986084
+        },
+        {
+          "rank": 4,
+          "index": 783,
+          "label": "screw",
+          "probability": 0.0018869373016059399,
+          "raw_logit": 1.1056292057037354
+        },
+        {
+          "rank": 5,
+          "index": 720,
+          "label": "pill bottle",
+          "probability": 0.0017491973703727126,
+          "raw_logit": 1.0298311710357666
+        }
+      ]
+    },
+    {
+      "case_number": 6525,
+      "source_line": 6527,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 46214,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006525_seed-46214.png",
+      "image_sha256": "691fec5ba9aa8d6b6836eb056863534b7fd6ab152b65928cfd5f5b5e91bf0dc2",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5680866837501526,
+      "class_probabilities": {
+        "baseball": 0.5680866837501526
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5680866837501526,
+          "raw_logit": 7.193514347076416
+        },
+        {
+          "rank": 2,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.0020715922582894564,
+          "raw_logit": 1.5795577764511108
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0016257618553936481,
+          "raw_logit": 1.3372169733047485
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0015697263879701495,
+          "raw_logit": 1.3021416664123535
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0011157399276271462,
+          "raw_logit": 0.9607582092285156
+        }
+      ]
+    },
+    {
+      "case_number": 6526,
+      "source_line": 6528,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 98326,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006526_seed-98326.png",
+      "image_sha256": "9aeee9ec06f464c5ffe3a63bdf1b0910135bf24b7c7053649ee2963a141166f5",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5377258658409119,
+      "class_probabilities": {
+        "baseball": 0.5377258658409119
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5377258658409119,
+          "raw_logit": 7.083915710449219
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.004354036413133144,
+          "raw_logit": 2.267670154571533
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0017941175028681755,
+          "raw_logit": 1.3810802698135376
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0014105289010331035,
+          "raw_logit": 1.1405315399169922
+        },
+        {
+          "rank": 5,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0012413992080837488,
+          "raw_logit": 1.0128059387207031
+        }
+      ]
+    },
+    {
+      "case_number": 6527,
+      "source_line": 6529,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 96519,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006527_seed-96519.png",
+      "image_sha256": "2898c2a65890b103bf2a44e27c8acec1471d4ff7b9793c3a7d41adc35ec9a460",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4135233759880066,
+      "class_probabilities": {
+        "baseball": 0.4135233759880066
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4135233759880066,
+          "raw_logit": 6.574994087219238
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0037495482247322798,
+          "raw_logit": 1.8719154596328735
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.002612415235489607,
+          "raw_logit": 1.510555386543274
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0020951309707015753,
+          "raw_logit": 1.289896011352539
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0016699951374903321,
+          "raw_logit": 1.063101053237915
+        }
+      ]
+    },
+    {
+      "case_number": 6528,
+      "source_line": 6530,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 9477,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006528_seed-9477.png",
+      "image_sha256": "59c888c60bd01062e33890c73d41cc8dc9701d1b1b1413121d1e419701b2a009",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.7708184719085693,
+      "class_probabilities": {
+        "baseball": 0.7708184719085693
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.7708184719085693,
+          "raw_logit": 8.137413024902344
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0009774878853932023,
+          "raw_logit": 1.4671908617019653
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0009564252104610205,
+          "raw_logit": 1.4454073905944824
+        },
+        {
+          "rank": 4,
+          "index": 554,
+          "label": "fireboat",
+          "probability": 0.0005443300469778478,
+          "raw_logit": 0.8817605376243591
+        },
+        {
+          "rank": 5,
+          "index": 630,
+          "label": "Loafer",
+          "probability": 0.0005159544525668025,
+          "raw_logit": 0.8282232880592346
+        }
+      ]
+    },
+    {
+      "case_number": 6529,
+      "source_line": 6531,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 9212,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006529_seed-9212.png",
+      "image_sha256": "96fac93e8475c9cbc6426060428c2fb270a175dc64ad1b49ee1f1e03f660218b",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.47814399003982544,
+      "class_probabilities": {
+        "baseball": 0.47814399003982544
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.47814399003982544,
+          "raw_logit": 6.837606906890869
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.002541144145652652,
+          "raw_logit": 1.6003093719482422
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0018982721958309412,
+          "raw_logit": 1.3086391687393188
+        },
+        {
+          "rank": 4,
+          "index": 343,
+          "label": "warthog",
+          "probability": 0.0018843774450942874,
+          "raw_logit": 1.3012923002243042
+        },
+        {
+          "rank": 5,
+          "index": 368,
+          "label": "gibbon",
+          "probability": 0.001470001065172255,
+          "raw_logit": 1.0529577732086182
+        }
+      ]
+    },
+    {
+      "case_number": 6530,
+      "source_line": 6532,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 4649,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006530_seed-4649.png",
+      "image_sha256": "20e748cd622ec8909a3394be9ff606f541b2e55a544ad1a5c01703cedc51cf0f",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5802302360534668,
+      "class_probabilities": {
+        "baseball": 0.5802302360534668
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5802302360534668,
+          "raw_logit": 7.25644063949585
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0028311514761298895,
+          "raw_logit": 1.9336992502212524
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0015198510373011231,
+          "raw_logit": 1.3116276264190674
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0014663893962278962,
+          "raw_logit": 1.275818943977356
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0013914001174271107,
+          "raw_logit": 1.2233259677886963
+        }
+      ]
+    },
+    {
+      "case_number": 6531,
+      "source_line": 6533,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 81489,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006531_seed-81489.png",
+      "image_sha256": "bf3136cb335f7073fefc4a216966762dc1679563240a42187eff23ccaba7a1e9",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5830010771751404,
+      "class_probabilities": {
+        "baseball": 0.5830010771751404
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5830010771751404,
+          "raw_logit": 7.254603385925293
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0018960949964821339,
+          "raw_logit": 1.5262105464935303
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0015094649279490113,
+          "raw_logit": 1.298169732093811
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0009111298713833094,
+          "raw_logit": 0.7933447360992432
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0008515051449649036,
+          "raw_logit": 0.7256644368171692
+        }
+      ]
+    },
+    {
+      "case_number": 6532,
+      "source_line": 6534,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 65734,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006532_seed-65734.png",
+      "image_sha256": "335b864627f9e1f82022234d4b994f0772ac7e2df575e800dbb54da6fbf0b8a4",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.44856584072113037,
+      "class_probabilities": {
+        "baseball": 0.44856584072113037
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.44856584072113037,
+          "raw_logit": 6.756073951721191
+        },
+        {
+          "rank": 2,
+          "index": 430,
+          "label": "basketball",
+          "probability": 0.00536360451951623,
+          "raw_logit": 2.3296546936035156
+        },
+        {
+          "rank": 3,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.004222645424306393,
+          "raw_logit": 2.090480327606201
+        },
+        {
+          "rank": 4,
+          "index": 816,
+          "label": "spindle",
+          "probability": 0.003470705123618245,
+          "raw_logit": 1.8943763971328735
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0029031727463006973,
+          "raw_logit": 1.7158228158950806
+        }
+      ]
+    },
+    {
+      "case_number": 6533,
+      "source_line": 6535,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 4238,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006533_seed-4238.png",
+      "image_sha256": "874da1adde887b61825af51d541a505371d7f068ff81b1efb67470a7b9c2752b",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.6229310631752014,
+      "class_probabilities": {
+        "baseball": 0.6229310631752014
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.6229310631752014,
+          "raw_logit": 7.432819843292236
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0014333698200061917,
+          "raw_logit": 1.3584121465682983
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0013304657768458128,
+          "raw_logit": 1.2839133739471436
+        },
+        {
+          "rank": 4,
+          "index": 260,
+          "label": "chow",
+          "probability": 0.0010771332308650017,
+          "raw_logit": 1.0726871490478516
+        },
+        {
+          "rank": 5,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.00104747642762959,
+          "raw_logit": 1.0447677373886108
+        }
+      ]
+    },
+    {
+      "case_number": 6534,
+      "source_line": 6536,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 1088,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006534_seed-1088.png",
+      "image_sha256": "785ea7fef42be477796c562420baf8ab74b8bd8f452873f2f135930095dd0bc1",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.7220202088356018,
+      "class_probabilities": {
+        "baseball": 0.7220202088356018
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.7220202088356018,
+          "raw_logit": 7.878060340881348
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0012205187231302261,
+          "raw_logit": 1.4952831268310547
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0011358954943716526,
+          "raw_logit": 1.4234284162521362
+        },
+        {
+          "rank": 4,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.001132133067585528,
+          "raw_logit": 1.4201107025146484
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0010677642421796918,
+          "raw_logit": 1.3615740537643433
+        }
+      ]
+    },
+    {
+      "case_number": 6535,
+      "source_line": 6537,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 31079,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006535_seed-31079.png",
+      "image_sha256": "220c11424835785733e73df642cd48fe04c4b8478135999d19dea4e87359de2d",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.44942617416381836,
+      "class_probabilities": {
+        "baseball": 0.44942617416381836
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.44942617416381836,
+          "raw_logit": 6.724795818328857
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0049972087144851685,
+          "raw_logit": 2.225703716278076
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0026371439453214407,
+          "raw_logit": 1.5865206718444824
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0016935288440436125,
+          "raw_logit": 1.1436386108398438
+        },
+        {
+          "rank": 5,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.00168312038294971,
+          "raw_logit": 1.1374735832214355
+        }
+      ]
+    },
+    {
+      "case_number": 6536,
+      "source_line": 6538,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 88751,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006536_seed-88751.png",
+      "image_sha256": "d168e7dec1c3cfb4fdee4dd90a2717536b28afda22214c9351e4a8d758064db0",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5836430788040161,
+      "class_probabilities": {
+        "baseball": 0.5836430788040161
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5836430788040161,
+          "raw_logit": 7.26112699508667
+        },
+        {
+          "rank": 2,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0014685096684843302,
+          "raw_logit": 1.276085615158081
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0014277766458690166,
+          "raw_logit": 1.2479557991027832
+        },
+        {
+          "rank": 4,
+          "index": 556,
+          "label": "fire screen",
+          "probability": 0.0013491128338500857,
+          "raw_logit": 1.1912848949432373
+        },
+        {
+          "rank": 5,
+          "index": 904,
+          "label": "window screen",
+          "probability": 0.0013467875542119145,
+          "raw_logit": 1.1895595788955688
+        }
+      ]
+    },
+    {
+      "case_number": 6537,
+      "source_line": 6539,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 66661,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006537_seed-66661.png",
+      "image_sha256": "e8618b18e388c583179d97e35c85c634212bceb67a29ab5a8a97bff183885c90",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.35203930735588074,
+      "class_probabilities": {
+        "baseball": 0.35203930735588074
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.35203930735588074,
+          "raw_logit": 6.326357841491699
+        },
+        {
+          "rank": 2,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.006189262494444847,
+          "raw_logit": 2.285430669784546
+        },
+        {
+          "rank": 3,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.0049596852622926235,
+          "raw_logit": 2.0639569759368896
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.00436735013499856,
+          "raw_logit": 1.9367711544036865
+        },
+        {
+          "rank": 5,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.00184524804353714,
+          "raw_logit": 1.0752288103103638
+        }
+      ]
+    },
+    {
+      "case_number": 6538,
+      "source_line": 6540,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 95452,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006538_seed-95452.png",
+      "image_sha256": "012cee6e55b8811494ddf0ab2be14c343edc2d31a8177f2a385a8454910af108",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.45274433493614197,
+      "class_probabilities": {
+        "baseball": 0.45274433493614197
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.45274433493614197,
+          "raw_logit": 6.734882354736328
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.002913953270763159,
+          "raw_logit": 1.6890655755996704
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0020208621863275766,
+          "raw_logit": 1.3230791091918945
+        },
+        {
+          "rank": 4,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0016306675970554352,
+          "raw_logit": 1.1085444688796997
+        },
+        {
+          "rank": 5,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0015613422729074955,
+          "raw_logit": 1.0651007890701294
+        }
+      ]
+    },
+    {
+      "case_number": 6539,
+      "source_line": 6541,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 462,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006539_seed-462.png",
+      "image_sha256": "3381351cc238289a4279d413286639bb41dd646ed8bb37f7cd5d3eedc3dda299",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.6986362934112549,
+      "class_probabilities": {
+        "baseball": 0.6986362934112549
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.6986362934112549,
+          "raw_logit": 7.793177604675293
+        },
+        {
+          "rank": 2,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.004276864696294069,
+          "raw_logit": 2.697267770767212
+        },
+        {
+          "rank": 3,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.0014229464577510953,
+          "raw_logit": 1.596777081489563
+        },
+        {
+          "rank": 4,
+          "index": 106,
+          "label": "wombat",
+          "probability": 0.0008423718390986323,
+          "raw_logit": 1.0725133419036865
+        },
+        {
+          "rank": 5,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0008363427477888763,
+          "raw_logit": 1.0653306245803833
+        }
+      ]
+    },
+    {
+      "case_number": 6540,
+      "source_line": 6542,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 49395,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006540_seed-49395.png",
+      "image_sha256": "58bcadbd802559bc4d7f8a502d5086c8330e5aedd05251b912b96e839b09c0eb",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 646,
+      "predicted_category": "maze",
+      "correct": false,
+      "expected_probability": 0.0002693168062251061,
+      "class_probabilities": {
+        "baseball": 0.0002693168062251061
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 646,
+          "label": "maze",
+          "probability": 0.1433861404657364,
+          "raw_logit": 5.829831600189209
+        },
+        {
+          "rank": 2,
+          "index": 736,
+          "label": "pool table",
+          "probability": 0.08425096422433853,
+          "raw_logit": 5.29809045791626
+        },
+        {
+          "rank": 3,
+          "index": 741,
+          "label": "prayer rug",
+          "probability": 0.034386806190013885,
+          "raw_logit": 4.401963233947754
+        },
+        {
+          "rank": 4,
+          "index": 884,
+          "label": "vault",
+          "probability": 0.021307991817593575,
+          "raw_logit": 3.923372507095337
+        },
+        {
+          "rank": 5,
+          "index": 868,
+          "label": "tray",
+          "probability": 0.019994014874100685,
+          "raw_logit": 3.8597233295440674
+        }
+      ]
+    },
+    {
+      "case_number": 6541,
+      "source_line": 6543,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 5982,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006541_seed-5982.png",
+      "image_sha256": "5ab1e9c949481cd7aee092a25260791b1c83b160e44bc63f5fef96ecb85500ce",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.481747567653656,
+      "class_probabilities": {
+        "baseball": 0.481747567653656
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.481747567653656,
+          "raw_logit": 6.8451972007751465
+        },
+        {
+          "rank": 2,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.001814860268495977,
+          "raw_logit": 1.263785481452942
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0016788659850135446,
+          "raw_logit": 1.1858956813812256
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0016627844888716936,
+          "raw_logit": 1.1762703657150269
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.0014762767823413014,
+          "raw_logit": 1.0572999715805054
+        }
+      ]
+    },
+    {
+      "case_number": 6542,
+      "source_line": 6544,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 89604,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006542_seed-89604.png",
+      "image_sha256": "a2f255cbf84aeb77bdf46701bef003d9c831107ee24f22f059267dc177f9a834",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4840604066848755,
+      "class_probabilities": {
+        "baseball": 0.4840604066848755
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4840604066848755,
+          "raw_logit": 6.857348918914795
+        },
+        {
+          "rank": 2,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0021777607034891844,
+          "raw_logit": 1.4534363746643066
+        },
+        {
+          "rank": 3,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0018753831973299384,
+          "raw_logit": 1.3039520978927612
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.001548162428662181,
+          "raw_logit": 1.1122081279754639
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.001324735814705491,
+          "raw_logit": 0.9563522934913635
+        }
+      ]
+    },
+    {
+      "case_number": 6543,
+      "source_line": 6545,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 21005,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006543_seed-21005.png",
+      "image_sha256": "660c00fd20821d6d354350cbf9744ebbcff714d6dcf34c1861660d629756bcdd",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5135754346847534,
+      "class_probabilities": {
+        "baseball": 0.5135754346847534
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5135754346847534,
+          "raw_logit": 6.976759433746338
+        },
+        {
+          "rank": 2,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.0030304472893476486,
+          "raw_logit": 1.8440728187561035
+        },
+        {
+          "rank": 3,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.0018901420990005136,
+          "raw_logit": 1.3720146417617798
+        },
+        {
+          "rank": 4,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0016426068032160401,
+          "raw_logit": 1.231647253036499
+        },
+        {
+          "rank": 5,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0016044005751609802,
+          "raw_logit": 1.2081125974655151
+        }
+      ]
+    },
+    {
+      "case_number": 6544,
+      "source_line": 6546,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 16552,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006544_seed-16552.png",
+      "image_sha256": "befd2a49bba4e9206c21c927d2e0e2f9e5369c9f18835a0186db8e16a33723b8",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5671464800834656,
+      "class_probabilities": {
+        "baseball": 0.5671464800834656
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5671464800834656,
+          "raw_logit": 7.241219520568848
+        },
+        {
+          "rank": 2,
+          "index": 722,
+          "label": "ping-pong ball",
+          "probability": 0.007180789485573769,
+          "raw_logit": 2.8720109462738037
+        },
+        {
+          "rank": 3,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.006334815640002489,
+          "raw_logit": 2.7466626167297363
+        },
+        {
+          "rank": 4,
+          "index": 305,
+          "label": "dung beetle",
+          "probability": 0.0017336905002593994,
+          "raw_logit": 1.4508545398712158
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0016410816460847855,
+          "raw_logit": 1.395957350730896
+        }
+      ]
+    },
+    {
+      "case_number": 6545,
+      "source_line": 6547,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 77387,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006545_seed-77387.png",
+      "image_sha256": "ba78a8d7ea994741952ee85867a3c27d975f9bc5d615b91d95a24603b84ae067",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 679,
+      "predicted_category": "necklace",
+      "correct": false,
+      "expected_probability": 0.1367562711238861,
+      "class_probabilities": {
+        "baseball": 0.1367562711238861
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 679,
+          "label": "necklace",
+          "probability": 0.1602410078048706,
+          "raw_logit": 5.9124274253845215
+        },
+        {
+          "rank": 2,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.1367562711238861,
+          "raw_logit": 5.75394868850708
+        },
+        {
+          "rank": 3,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.0812792107462883,
+          "raw_logit": 5.233638763427734
+        },
+        {
+          "rank": 4,
+          "index": 673,
+          "label": "mouse",
+          "probability": 0.050570011138916016,
+          "raw_logit": 4.7591071128845215
+        },
+        {
+          "rank": 5,
+          "index": 616,
+          "label": "knot",
+          "probability": 0.023795269429683685,
+          "raw_logit": 4.005235195159912
+        }
+      ]
+    },
+    {
+      "case_number": 6546,
+      "source_line": 6548,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 22473,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006546_seed-22473.png",
+      "image_sha256": "b0720af88db1acde2d5de060dd9dbe0ee3ec398bda9fa35ff74666b701a0306f",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.537822425365448,
+      "class_probabilities": {
+        "baseball": 0.537822425365448
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.537822425365448,
+          "raw_logit": 7.096168518066406
+        },
+        {
+          "rank": 2,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.005433044396340847,
+          "raw_logit": 2.5011396408081055
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0015230666613206267,
+          "raw_logit": 1.2293657064437866
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.001462025218643248,
+          "raw_logit": 1.1884626150131226
+        },
+        {
+          "rank": 5,
+          "index": 574,
+          "label": "golf ball",
+          "probability": 0.0013510077260434628,
+          "raw_logit": 1.1094907522201538
+        }
+      ]
+    },
+    {
+      "case_number": 6547,
+      "source_line": 6549,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 69609,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006547_seed-69609.png",
+      "image_sha256": "5ea3214b1a750471013ec73728fa31142d8b644e4e39f1078bea9fe8fd750631",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.5253238677978516,
+      "class_probabilities": {
+        "baseball": 0.5253238677978516
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.5253238677978516,
+          "raw_logit": 7.0235595703125
+        },
+        {
+          "rank": 2,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0017389185959473252,
+          "raw_logit": 1.3128079175949097
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.001624232972972095,
+          "raw_logit": 1.2445805072784424
+        },
+        {
+          "rank": 4,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.001472612377256155,
+          "raw_logit": 1.1465823650360107
+        },
+        {
+          "rank": 5,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.001347134355455637,
+          "raw_logit": 1.05752432346344
+        }
+      ]
+    },
+    {
+      "case_number": 6548,
+      "source_line": 6550,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 164,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006548_seed-164.png",
+      "image_sha256": "8b79ada8383562474d47e4b040758a9218be3f81ece869872df703cc0ade3779",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 981,
+      "predicted_category": "ballplayer",
+      "correct": false,
+      "expected_probability": 0.006889139302074909,
+      "class_probabilities": {
+        "baseball": 0.006889139302074909
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 981,
+          "label": "ballplayer",
+          "probability": 0.189828023314476,
+          "raw_logit": 5.870365142822266
+        },
+        {
+          "rank": 2,
+          "index": 781,
+          "label": "scoreboard",
+          "probability": 0.1355554759502411,
+          "raw_logit": 5.533627510070801
+        },
+        {
+          "rank": 3,
+          "index": 532,
+          "label": "dining table",
+          "probability": 0.010788197629153728,
+          "raw_logit": 3.002699375152588
+        },
+        {
+          "rank": 4,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.006889139302074909,
+          "raw_logit": 2.5541927814483643
+        },
+        {
+          "rank": 5,
+          "index": 621,
+          "label": "lawn mower",
+          "probability": 0.006251523736864328,
+          "raw_logit": 2.4570717811584473
+        }
+      ]
+    },
+    {
+      "case_number": 6549,
+      "source_line": 6551,
+      "prompt": "an image of a baseball",
+      "class": "volleyball",
+      "evaluation_seed": 58754,
+      "source_target": "volleyball",
+      "source_prompt": "an image of a volleyball",
+      "image_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/balls_smoke/images/G_full_afr/anchor/baseball/case-006549_seed-58754.png",
+      "image_sha256": "673bd68f464d3be943ec19f5144d1b5220257a6c9c49734bab9ed439ae71889b",
+      "expected_index": 429,
+      "expected_category": "baseball",
+      "predicted_index": 429,
+      "predicted_category": "baseball",
+      "correct": true,
+      "expected_probability": 0.4348353445529938,
+      "class_probabilities": {
+        "baseball": 0.4348353445529938
+      },
+      "top5": [
+        {
+          "rank": 1,
+          "index": 429,
+          "label": "baseball",
+          "probability": 0.4348353445529938,
+          "raw_logit": 6.657297611236572
+        },
+        {
+          "rank": 2,
+          "index": 506,
+          "label": "coil",
+          "probability": 0.002401208970695734,
+          "raw_logit": 1.458302617073059
+        },
+        {
+          "rank": 3,
+          "index": 86,
+          "label": "partridge",
+          "probability": 0.0022909906692802906,
+          "raw_logit": 1.4113144874572754
+        },
+        {
+          "rank": 4,
+          "index": 82,
+          "label": "ruffed grouse",
+          "probability": 0.0020982371643185616,
+          "raw_logit": 1.3234277963638306
+        },
+        {
+          "rank": 5,
+          "index": 768,
+          "label": "rugby ball",
+          "probability": 0.0014540011761710048,
+          "raw_logit": 0.9566493630409241
+        }
+      ]
+    }
+  ],
+  "completed_at": "2026-08-13T03:51:14.988993+00:00"
+}

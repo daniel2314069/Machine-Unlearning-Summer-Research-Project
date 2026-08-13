@@ -85,3 +85,10 @@ The anchor guarantee means exact preservation of the constrained anchor
 features at each edited layer. It does not claim that anchor-prompt image
 generation is invariant; that is why the conditional smoke evaluates anchor
 accuracy/probability and fixed-seed Original-vs-edited LPIPS.
+
+## Recorded result
+
+The completed compact GPU result is tracked under
+[`results/afr_balls_smoke_v1/`](results/afr_balls_smoke_v1/). Its matrix gate
+passed (`AFR-GO`), but the image smoke classified the editor as `AFR-I0` because
+F/G did not improve target erasure or matched-anchor semantic movement.

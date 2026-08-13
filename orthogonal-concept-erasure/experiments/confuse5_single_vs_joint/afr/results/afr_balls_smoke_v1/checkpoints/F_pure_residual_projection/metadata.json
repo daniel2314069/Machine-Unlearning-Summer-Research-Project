@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "checkpoint_fingerprint": "f3afe40840a03042411359bd6fbd9330d9d25ce24208fa35c6f0cf2991baa970",
+  "experiment": "afr_balls_smoke_v1",
+  "variant": "F_pure_residual_projection",
+  "alpha": 1.0,
+  "group_id": "balls",
+  "targets": [
+    "soccer ball",
+    "volleyball"
+  ],
+  "anchors": [
+    "basketball",
+    "baseball"
+  ],
+  "retain_concepts": [
+    "tennis ball",
+    "rugby ball",
+    "ping-pong ball"
+  ],
+  "config_sha256": "416ad7fd9e7666f8cd295ef6de4c6cf6af26d67502fd21d4027b6a81aa7e762b",
+  "anchors_sha256": "392802a728f5f726870718c2f9d0885ed57c8e16232899710f22690cee6c13b1",
+  "qualification_sha256": "b96514c7bd94e4d703079ddff238731c05ba76cde7fe6b0c2643d404bf7f043f",
+  "k0_sha256": "5d8ee50935eb3d22e1f9bc84947572afba386d05e063f70ea161c5cbf1e16235",
+  "matrix_gate_fingerprint": "12e6deb1e180c35bd22941f4155629d3d55040ea5dad56933b2bfa4aeaa5dbab",
+  "module_names": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "mid_block.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v.weight"
+  ],
+  "implementation_sha256": {
+    "runner": "015aad45f8c40b856d00fbdaa32b496af8fab0b66b9f081d67a4fe1dce0c97b3",
+    "core": "dc09a249e27578a89e16121693b94de3060c1bfe4e804ba17869392f170fa189"
+  },
+  "production_oce_modified": false,
+  "started_at": "2026-08-13T02:04:22.965771+00:00",
+  "runtime": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.33.1",
+      "transformers": "4.48.3",
+      "safetensors": "0.5.3",
+      "pandas": "2.2.3",
+      "Pillow": "11.2.1"
+    },
+    "git_hash": "51170e7082520324e9affe8bd944e7a05addc064",
+    "git_dirty": true
+  },
+  "source_hashes": {
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/config.json": "416ad7fd9e7666f8cd295ef6de4c6cf6af26d67502fd21d4027b6a81aa7e762b",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/anchors.json": "392802a728f5f726870718c2f9d0885ed57c8e16232899710f22690cee6c13b1",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/PROVENANCE.md": "a230b7e3bf9b4a4f7227eeafac169f6911d7c0e0aa3e7e9e386f9114acd3f8ef",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/protocol.py": "cac648aef57f061e764818c127a2a01e75733a2a227abbe669f244ff76ed143b",
+    "orthogonal-concept-erasure/oce.py": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+    "orthogonal-concept-erasure/trainscripts/object.sh": "0a890b779b864753fd512d7fa729880e45f84ee5803c4e09e481d0588dd0dd36",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/runner.py": "015aad45f8c40b856d00fbdaa32b496af8fab0b66b9f081d67a4fe1dce0c97b3",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/core.py": "dc09a249e27578a89e16121693b94de3060c1bfe4e804ba17869392f170fa189"
+  },
+  "matrix_gate_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/matrix/gate.json",
+  "matrix_gate_sha256": "c8c3d7af86f35be2c7f03a98adc2361225287674f3f0efed946c2504b08fe901",
+  "checkpoint_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/afr/outputs/afr_balls_smoke_v1/checkpoints/F_pure_residual_projection/weights.safetensors",
+  "checkpoint_sha256": "c060f2faaaf101e273ce72f8c2e7408fbe05ecfaae5f4acb234254c9438e4609",
+  "production_dtype": "torch.float32",
+  "finished_at": "2026-08-13T02:04:23.007023+00:00"
+}
