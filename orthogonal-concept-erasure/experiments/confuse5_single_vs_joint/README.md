@@ -152,3 +152,7 @@ float64 C/F/G matrix QA, mandatory pure residual-projection ablation, and the
 conditional 1,800-image balls-only smoke. The runner does not alter this
 official OCE pipeline and cannot enter image generation unless its matrix gate
 returns `AFR-GO`.
+
+The completed solver-audit-to-AFR branch, including its final negative
+`AFR-I0` decision and server archival instructions, has a single index at
+[`study_archive/`](study_archive/).
