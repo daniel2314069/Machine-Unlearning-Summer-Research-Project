@@ -1,0 +1,164 @@
+{"timestamp": "2026-08-13T11:07:39.591362+00:00", "phase": "preflight", "message": "validated protocol", "formal_cells": 141, "formal_images": 14100}
+{"timestamp": "2026-08-13T11:08:51.907514+00:00", "phase": "qualification", "message": "evaluated candidate", "candidate": "elephant", "accuracy": "1.0000", "accepted": true}
+{"timestamp": "2026-08-13T11:08:54.035353+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 1, "target": "airplane", "x_retained": true}
+{"timestamp": "2026-08-13T11:08:56.814478+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 2, "target": "automobile", "x_retained": false}
+{"timestamp": "2026-08-13T11:08:59.453872+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 3, "target": "bird", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:02.108416+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 4, "target": "cat", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:04.767061+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 5, "target": "deer", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:07.468918+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 6, "target": "dog", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:10.166969+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 7, "target": "frog", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:12.829522+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 8, "target": "horse", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:15.554303+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 9, "target": "ship", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:18.258064+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_once", "step": 10, "target": "truck", "x_retained": false}
+{"timestamp": "2026-08-13T11:09:21.048895+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 1, "target": "airplane", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:23.780291+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 2, "target": "automobile", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:26.455496+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 3, "target": "bird", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:29.209252+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 4, "target": "cat", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:31.830337+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 5, "target": "deer", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:34.525182+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 6, "target": "dog", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:37.204980+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 7, "target": "frog", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:39.959150+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 8, "target": "horse", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:42.762030+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 9, "target": "ship", "x_retained": true}
+{"timestamp": "2026-08-13T11:09:45.435767+00:00", "phase": "checkpoints", "message": "run single-concept edit", "condition": "retain_always", "step": 10, "target": "truck", "x_retained": true}
+{"timestamp": "2026-08-13T11:14:45.131936+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "airplane", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:19:36.909054+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "automobile", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:24:29.759898+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "bird", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:29:22.226725+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "cat", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:34:12.333559+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "deer", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:39:04.174433+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "dog", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:43:55.661352+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "frog", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:48:46.937354+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "horse", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:53:39.442600+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "ship", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T11:58:31.169264+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "truck", "accuracy": "0.9900"}
+{"timestamp": "2026-08-13T12:03:21.217153+00:00", "phase": "evaluation", "message": "completed cell", "condition": "original", "checkpoint": "W00", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T12:08:13.142994+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W01", "concept": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T12:13:03.026435+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W01", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T12:17:54.897968+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W02", "concept": "airplane", "accuracy": "0.1200"}
+{"timestamp": "2026-08-13T12:22:45.880911+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W02", "concept": "automobile", "accuracy": "0.7100"}
+{"timestamp": "2026-08-13T12:27:35.823738+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W02", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T12:32:27.670479+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W03", "concept": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T12:37:18.327244+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W03", "concept": "automobile", "accuracy": "0.7800"}
+{"timestamp": "2026-08-13T12:42:09.474880+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W03", "concept": "bird", "accuracy": "0.4700"}
+{"timestamp": "2026-08-13T12:46:59.209798+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W03", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T12:51:50.908249+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W04", "concept": "airplane", "accuracy": "0.0700"}
+{"timestamp": "2026-08-13T12:56:41.254392+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W04", "concept": "automobile", "accuracy": "0.7500"}
+{"timestamp": "2026-08-13T13:01:32.034941+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W04", "concept": "bird", "accuracy": "0.7200"}
+{"timestamp": "2026-08-13T13:06:23.704781+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W04", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T13:11:13.372430+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W04", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T13:16:04.941552+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "airplane", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T13:20:55.123108+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "automobile", "accuracy": "0.5900"}
+{"timestamp": "2026-08-13T13:25:46.004749+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "bird", "accuracy": "0.8000"}
+{"timestamp": "2026-08-13T13:30:37.719086+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T13:35:27.743631+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T13:40:17.343667+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W05", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T13:45:08.893299+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "airplane", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T13:49:59.458213+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "automobile", "accuracy": "0.7100"}
+{"timestamp": "2026-08-13T13:54:50.915740+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "bird", "accuracy": "0.8800"}
+{"timestamp": "2026-08-13T13:59:43.210254+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T14:04:33.933247+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T14:09:25.525777+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "dog", "accuracy": "0.1300"}
+{"timestamp": "2026-08-13T14:14:15.771601+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W06", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T14:19:08.340216+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "airplane", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T14:24:00.000319+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "automobile", "accuracy": "0.7700"}
+{"timestamp": "2026-08-13T14:28:52.003425+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "bird", "accuracy": "0.8600"}
+{"timestamp": "2026-08-13T14:33:44.733576+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T14:38:35.981950+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T14:43:27.951576+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "dog", "accuracy": "0.1400"}
+{"timestamp": "2026-08-13T14:48:19.392345+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "frog", "accuracy": "0.1000"}
+{"timestamp": "2026-08-13T14:53:09.801269+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W07", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T14:58:01.949922+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "airplane", "accuracy": "0.1100"}
+{"timestamp": "2026-08-13T15:02:53.551959+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "automobile", "accuracy": "0.7300"}
+{"timestamp": "2026-08-13T15:07:45.706601+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "bird", "accuracy": "0.9100"}
+{"timestamp": "2026-08-13T15:12:38.474351+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T15:17:29.930645+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T15:22:22.183117+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "dog", "accuracy": "0.8500"}
+{"timestamp": "2026-08-13T15:27:13.758810+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "frog", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T15:32:05.160763+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "horse", "accuracy": "0.1000"}
+{"timestamp": "2026-08-13T15:36:55.774704+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W08", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T15:41:48.530224+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "airplane", "accuracy": "0.1200"}
+{"timestamp": "2026-08-13T15:46:40.486730+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "automobile", "accuracy": "0.7500"}
+{"timestamp": "2026-08-13T15:51:32.728842+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "bird", "accuracy": "0.9000"}
+{"timestamp": "2026-08-13T15:56:25.205761+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T16:01:16.368596+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T16:06:08.633081+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "dog", "accuracy": "0.7900"}
+{"timestamp": "2026-08-13T16:11:00.468891+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "frog", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T16:15:51.315601+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "horse", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T16:20:43.186690+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "ship", "accuracy": "0.2000"}
+{"timestamp": "2026-08-13T16:25:33.665620+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W09", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T16:30:25.531944+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "airplane", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T16:35:16.965126+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "automobile", "accuracy": "0.8000"}
+{"timestamp": "2026-08-13T16:40:08.696115+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "bird", "accuracy": "0.9100"}
+{"timestamp": "2026-08-13T16:45:01.685067+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T16:49:53.271611+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T16:54:45.492993+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "dog", "accuracy": "0.7100"}
+{"timestamp": "2026-08-13T16:59:36.578518+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "frog", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T17:04:27.199222+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "horse", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T17:09:18.554260+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "ship", "accuracy": "0.1000"}
+{"timestamp": "2026-08-13T17:14:09.108891+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "truck", "accuracy": "0.4000"}
+{"timestamp": "2026-08-13T17:18:59.108122+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_once", "checkpoint": "W10", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T17:23:51.406021+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W01", "concept": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T17:28:41.811127+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W01", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T17:33:34.190112+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W02", "concept": "airplane", "accuracy": "0.0800"}
+{"timestamp": "2026-08-13T17:38:25.466385+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W02", "concept": "automobile", "accuracy": "0.6800"}
+{"timestamp": "2026-08-13T17:43:15.814818+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W02", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T17:48:07.854574+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W03", "concept": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-13T17:52:58.708522+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W03", "concept": "automobile", "accuracy": "0.7500"}
+{"timestamp": "2026-08-13T17:57:50.048814+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W03", "concept": "bird", "accuracy": "0.4100"}
+{"timestamp": "2026-08-13T18:02:40.045538+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W03", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T18:07:31.802476+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W04", "concept": "airplane", "accuracy": "0.0800"}
+{"timestamp": "2026-08-13T18:12:22.310031+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W04", "concept": "automobile", "accuracy": "0.7600"}
+{"timestamp": "2026-08-13T18:17:13.305000+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W04", "concept": "bird", "accuracy": "0.6700"}
+{"timestamp": "2026-08-13T18:22:05.222083+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W04", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T18:26:55.088872+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W04", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T18:31:46.755384+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "airplane", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T18:36:37.342960+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "automobile", "accuracy": "0.6500"}
+{"timestamp": "2026-08-13T18:41:28.222947+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "bird", "accuracy": "0.7600"}
+{"timestamp": "2026-08-13T18:46:19.875092+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T18:51:10.029623+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T18:55:59.652737+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W05", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T19:00:51.172307+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "airplane", "accuracy": "0.0800"}
+{"timestamp": "2026-08-13T19:05:41.446480+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "automobile", "accuracy": "0.7000"}
+{"timestamp": "2026-08-13T19:10:32.225854+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "bird", "accuracy": "0.8600"}
+{"timestamp": "2026-08-13T19:15:23.744138+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T19:20:13.560586+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T19:25:04.146590+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "dog", "accuracy": "0.1100"}
+{"timestamp": "2026-08-13T19:29:53.514889+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W06", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T19:34:44.759182+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "airplane", "accuracy": "0.0700"}
+{"timestamp": "2026-08-13T19:39:35.211953+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "automobile", "accuracy": "0.7300"}
+{"timestamp": "2026-08-13T19:44:26.038736+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "bird", "accuracy": "0.8400"}
+{"timestamp": "2026-08-13T19:49:17.464185+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T19:54:08.131714+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T19:58:59.620293+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "dog", "accuracy": "0.1700"}
+{"timestamp": "2026-08-13T20:03:50.571996+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "frog", "accuracy": "0.0700"}
+{"timestamp": "2026-08-13T20:08:40.928792+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W07", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T20:13:33.012951+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "airplane", "accuracy": "0.1000"}
+{"timestamp": "2026-08-13T20:18:24.487769+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "automobile", "accuracy": "0.7600"}
+{"timestamp": "2026-08-13T20:23:16.293272+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "bird", "accuracy": "0.8900"}
+{"timestamp": "2026-08-13T20:28:08.694050+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T20:32:59.812971+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T20:37:51.779181+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "dog", "accuracy": "0.7600"}
+{"timestamp": "2026-08-13T20:42:42.973848+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "frog", "accuracy": "0.0800"}
+{"timestamp": "2026-08-13T20:47:33.911152+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "horse", "accuracy": "0.3600"}
+{"timestamp": "2026-08-13T20:52:24.157960+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W08", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T20:57:16.400310+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "airplane", "accuracy": "0.0600"}
+{"timestamp": "2026-08-13T21:02:08.061631+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "automobile", "accuracy": "0.7900"}
+{"timestamp": "2026-08-13T21:07:00.266636+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "bird", "accuracy": "0.9100"}
+{"timestamp": "2026-08-13T21:11:53.152765+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T21:16:44.473624+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T21:21:36.836830+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "dog", "accuracy": "0.7900"}
+{"timestamp": "2026-08-13T21:26:28.622545+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "frog", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T21:31:19.305509+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "horse", "accuracy": "0.2400"}
+{"timestamp": "2026-08-13T21:36:11.188722+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "ship", "accuracy": "0.2000"}
+{"timestamp": "2026-08-13T21:41:01.935904+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W09", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T21:45:53.783575+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "airplane", "accuracy": "0.0200"}
+{"timestamp": "2026-08-13T21:50:45.243540+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "automobile", "accuracy": "0.7600"}
+{"timestamp": "2026-08-13T21:55:36.406469+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "bird", "accuracy": "0.9000"}
+{"timestamp": "2026-08-13T22:00:28.832934+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T22:05:19.986934+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-13T22:10:11.949373+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "dog", "accuracy": "0.7200"}
+{"timestamp": "2026-08-13T22:15:03.210793+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "frog", "accuracy": "0.0500"}
+{"timestamp": "2026-08-13T22:19:53.856352+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "horse", "accuracy": "0.4300"}
+{"timestamp": "2026-08-13T22:24:45.390408+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "ship", "accuracy": "0.1000"}
+{"timestamp": "2026-08-13T22:29:36.256406+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "truck", "accuracy": "0.4400"}
+{"timestamp": "2026-08-13T22:34:27.039870+00:00", "phase": "evaluation", "message": "completed cell", "condition": "retain_always", "checkpoint": "W10", "concept": "elephant", "accuracy": "1.0000"}
+{"timestamp": "2026-08-13T22:34:28.417596+00:00", "phase": "aggregation", "message": "wrote final summary", "selected_x": "elephant"}

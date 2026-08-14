@@ -1,0 +1,11 @@
+step,target,anchor
+1,airplane,sky
+2,automobile,truck
+3,bird,cat
+4,cat,dog
+5,deer,horse
+6,dog,cat
+7,frog,bird
+8,horse,deer
+9,ship,airplane
+10,truck,ship

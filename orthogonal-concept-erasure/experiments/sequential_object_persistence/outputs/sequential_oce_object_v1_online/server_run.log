@@ -1,0 +1,570 @@
+[preflight] validated protocol formal_cells=141 formal_images=14100
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  6.55it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  6.56it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 11.98it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+[qualification] evaluated candidate candidate=elephant accuracy=1.0000 accepted=True
+Loading pipeline components...:   0%|          | 0/5 [00:00<?, ?it/s]Loading pipeline components...:  40%|████      | 2/5 [00:00<00:00, 17.77it/s]Loading pipeline components...: 100%|██████████| 5/5 [00:00<00:00, 31.60it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+[checkpoints] run single-concept edit condition=retain_once step=1 target=airplane x_retained=True
+Editing with ['airplane', 'image of airplane', 'photo of airplane', 'portrait of airplane', 'picture of airplane', 'painting of airplane']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.73 seconds
+[checkpoints] run single-concept edit condition=retain_once step=2 target=automobile x_retained=False
+Editing with ['automobile', 'image of automobile', 'photo of automobile', 'portrait of automobile', 'picture of automobile', 'painting of automobile']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.59 seconds
+[checkpoints] run single-concept edit condition=retain_once step=3 target=bird x_retained=False
+Editing with ['bird', 'image of bird', 'photo of bird', 'portrait of bird', 'picture of bird', 'painting of bird']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.61 seconds
+[checkpoints] run single-concept edit condition=retain_once step=4 target=cat x_retained=False
+Editing with ['cat', 'image of cat', 'photo of cat', 'portrait of cat', 'picture of cat', 'painting of cat']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.61 seconds
+[checkpoints] run single-concept edit condition=retain_once step=5 target=deer x_retained=False
+Editing with ['deer', 'image of deer', 'photo of deer', 'portrait of deer', 'picture of deer', 'painting of deer']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.66 seconds
+[checkpoints] run single-concept edit condition=retain_once step=6 target=dog x_retained=False
+Editing with ['dog', 'image of dog', 'photo of dog', 'portrait of dog', 'picture of dog', 'painting of dog']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.65 seconds
+[checkpoints] run single-concept edit condition=retain_once step=7 target=frog x_retained=False
+Editing with ['frog', 'image of frog', 'photo of frog', 'portrait of frog', 'picture of frog', 'painting of frog']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.62 seconds
+[checkpoints] run single-concept edit condition=retain_once step=8 target=horse x_retained=False
+Editing with ['horse', 'image of horse', 'photo of horse', 'portrait of horse', 'picture of horse', 'painting of horse']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.68 seconds
+[checkpoints] run single-concept edit condition=retain_once step=9 target=ship x_retained=False
+Editing with ['ship', 'image of ship', 'photo of ship', 'portrait of ship', 'picture of ship', 'painting of ship']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.66 seconds
+[checkpoints] run single-concept edit condition=retain_once step=10 target=truck x_retained=False
+Editing with ['truck', 'image of truck', 'photo of truck', 'portrait of truck', 'picture of truck', 'painting of truck']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.74 seconds
+[checkpoints] run single-concept edit condition=retain_always step=1 target=airplane x_retained=True
+Editing with ['airplane', 'image of airplane', 'photo of airplane', 'portrait of airplane', 'picture of airplane', 'painting of airplane']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.69 seconds
+[checkpoints] run single-concept edit condition=retain_always step=2 target=automobile x_retained=True
+Editing with ['automobile', 'image of automobile', 'photo of automobile', 'portrait of automobile', 'picture of automobile', 'painting of automobile']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.63 seconds
+[checkpoints] run single-concept edit condition=retain_always step=3 target=bird x_retained=True
+Editing with ['bird', 'image of bird', 'photo of bird', 'portrait of bird', 'picture of bird', 'painting of bird']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.71 seconds
+[checkpoints] run single-concept edit condition=retain_always step=4 target=cat x_retained=True
+Editing with ['cat', 'image of cat', 'photo of cat', 'portrait of cat', 'picture of cat', 'painting of cat']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.58 seconds
+[checkpoints] run single-concept edit condition=retain_always step=5 target=deer x_retained=True
+Editing with ['deer', 'image of deer', 'photo of deer', 'portrait of deer', 'picture of deer', 'painting of deer']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.65 seconds
+[checkpoints] run single-concept edit condition=retain_always step=6 target=dog x_retained=True
+Editing with ['dog', 'image of dog', 'photo of dog', 'portrait of dog', 'picture of dog', 'painting of dog']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.63 seconds
+[checkpoints] run single-concept edit condition=retain_always step=7 target=frog x_retained=True
+Editing with ['frog', 'image of frog', 'photo of frog', 'portrait of frog', 'picture of frog', 'painting of frog']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.71 seconds
+[checkpoints] run single-concept edit condition=retain_always step=8 target=horse x_retained=True
+Editing with ['horse', 'image of horse', 'photo of horse', 'portrait of horse', 'picture of horse', 'painting of horse']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.76 seconds
+[checkpoints] run single-concept edit condition=retain_always step=9 target=ship x_retained=True
+Editing with ['ship', 'image of ship', 'photo of ship', 'portrait of ship', 'picture of ship', 'painting of ship']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.63 seconds
+[checkpoints] run single-concept edit condition=retain_always step=10 target=truck x_retained=True
+Editing with ['truck', 'image of truck', 'photo of truck', 'portrait of truck', 'picture of truck', 'painting of truck']
+Updated down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v
+Updated up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v
+Updated mid_block.attentions.0.transformer_blocks.0.attn2.to_v
+
+Erased concepts using Subspace Orthogonal Procrustes (RW)
+Model edited in 2.61 seconds
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  8.16it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  7.10it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:00<00:00, 13.12it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion.StableDiffusionPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+[evaluation] completed cell condition=original checkpoint=W00 concept=airplane accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=automobile accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=bird accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=cat accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=deer accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=dog accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=frog accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=horse accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=ship accuracy=1.0000
+[evaluation] completed cell condition=original checkpoint=W00 concept=truck accuracy=0.9900
+[evaluation] completed cell condition=original checkpoint=W00 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W01 concept=airplane accuracy=0.0400
+[evaluation] completed cell condition=retain_once checkpoint=W01 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W02 concept=airplane accuracy=0.1200
+[evaluation] completed cell condition=retain_once checkpoint=W02 concept=automobile accuracy=0.7100
+[evaluation] completed cell condition=retain_once checkpoint=W02 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W03 concept=airplane accuracy=0.0400
+[evaluation] completed cell condition=retain_once checkpoint=W03 concept=automobile accuracy=0.7800
+[evaluation] completed cell condition=retain_once checkpoint=W03 concept=bird accuracy=0.4700
+[evaluation] completed cell condition=retain_once checkpoint=W03 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W04 concept=airplane accuracy=0.0700
+[evaluation] completed cell condition=retain_once checkpoint=W04 concept=automobile accuracy=0.7500
+[evaluation] completed cell condition=retain_once checkpoint=W04 concept=bird accuracy=0.7200
+[evaluation] completed cell condition=retain_once checkpoint=W04 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W04 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=airplane accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=automobile accuracy=0.5900
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=bird accuracy=0.8000
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W05 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=airplane accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=automobile accuracy=0.7100
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=bird accuracy=0.8800
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=dog accuracy=0.1300
+[evaluation] completed cell condition=retain_once checkpoint=W06 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=airplane accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=automobile accuracy=0.7700
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=bird accuracy=0.8600
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=dog accuracy=0.1400
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=frog accuracy=0.1000
+[evaluation] completed cell condition=retain_once checkpoint=W07 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=airplane accuracy=0.1100
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=automobile accuracy=0.7300
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=bird accuracy=0.9100
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=dog accuracy=0.8500
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=frog accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=horse accuracy=0.1000
+[evaluation] completed cell condition=retain_once checkpoint=W08 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=airplane accuracy=0.1200
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=automobile accuracy=0.7500
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=bird accuracy=0.9000
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=dog accuracy=0.7900
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=frog accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=horse accuracy=0.0400
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=ship accuracy=0.2000
+[evaluation] completed cell condition=retain_once checkpoint=W09 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=airplane accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=automobile accuracy=0.8000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=bird accuracy=0.9100
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=dog accuracy=0.7100
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=frog accuracy=0.0400
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=horse accuracy=0.0500
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=ship accuracy=0.1000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=truck accuracy=0.4000
+[evaluation] completed cell condition=retain_once checkpoint=W10 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W01 concept=airplane accuracy=0.0400
+[evaluation] completed cell condition=retain_always checkpoint=W01 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W02 concept=airplane accuracy=0.0800
+[evaluation] completed cell condition=retain_always checkpoint=W02 concept=automobile accuracy=0.6800
+[evaluation] completed cell condition=retain_always checkpoint=W02 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W03 concept=airplane accuracy=0.0400
+[evaluation] completed cell condition=retain_always checkpoint=W03 concept=automobile accuracy=0.7500
+[evaluation] completed cell condition=retain_always checkpoint=W03 concept=bird accuracy=0.4100
+[evaluation] completed cell condition=retain_always checkpoint=W03 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W04 concept=airplane accuracy=0.0800
+[evaluation] completed cell condition=retain_always checkpoint=W04 concept=automobile accuracy=0.7600
+[evaluation] completed cell condition=retain_always checkpoint=W04 concept=bird accuracy=0.6700
+[evaluation] completed cell condition=retain_always checkpoint=W04 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W04 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=airplane accuracy=0.0500
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=automobile accuracy=0.6500
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=bird accuracy=0.7600
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W05 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=airplane accuracy=0.0800
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=automobile accuracy=0.7000
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=bird accuracy=0.8600
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=dog accuracy=0.1100
+[evaluation] completed cell condition=retain_always checkpoint=W06 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=airplane accuracy=0.0700
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=automobile accuracy=0.7300
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=bird accuracy=0.8400
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=dog accuracy=0.1700
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=frog accuracy=0.0700
+[evaluation] completed cell condition=retain_always checkpoint=W07 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=airplane accuracy=0.1000
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=automobile accuracy=0.7600
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=bird accuracy=0.8900
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=dog accuracy=0.7600
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=frog accuracy=0.0800
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=horse accuracy=0.3600
+[evaluation] completed cell condition=retain_always checkpoint=W08 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=airplane accuracy=0.0600
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=automobile accuracy=0.7900
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=bird accuracy=0.9100
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=dog accuracy=0.7900
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=frog accuracy=0.0500
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=horse accuracy=0.2400
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=ship accuracy=0.2000
+[evaluation] completed cell condition=retain_always checkpoint=W09 concept=elephant accuracy=1.0000
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=airplane accuracy=0.0200
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=automobile accuracy=0.7600
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=bird accuracy=0.9000
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=cat accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=deer accuracy=0.0000
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=dog accuracy=0.7200
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=frog accuracy=0.0500
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=horse accuracy=0.4300
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=ship accuracy=0.1000
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=truck accuracy=0.4400
+[evaluation] completed cell condition=retain_always checkpoint=W10 concept=elephant accuracy=1.0000
+[aggregation] wrote final summary selected_x=elephant

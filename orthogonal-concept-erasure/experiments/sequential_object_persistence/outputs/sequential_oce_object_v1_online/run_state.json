@@ -1,0 +1,28 @@
+{
+  "preflight": {
+    "status": "complete",
+    "updated_at": "2026-08-13T11:07:39.591414+00:00",
+    "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880"
+  },
+  "qualification": {
+    "status": "complete",
+    "updated_at": "2026-08-13T11:08:52.867603+00:00",
+    "selected_concept": "elephant"
+  },
+  "checkpoints": {
+    "status": "complete",
+    "updated_at": "2026-08-13T11:09:49.034681+00:00",
+    "checkpoint_count": 20
+  },
+  "evaluation": {
+    "status": "complete",
+    "updated_at": "2026-08-13T22:34:27.749205+00:00",
+    "formal_cells": 141,
+    "formal_images": 14100,
+    "image_retention": "delete-after-eval"
+  },
+  "aggregation": {
+    "status": "complete",
+    "updated_at": "2026-08-13T22:34:28.417479+00:00"
+  }
+}

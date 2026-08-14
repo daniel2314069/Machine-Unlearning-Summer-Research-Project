@@ -1,0 +1,42 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "group": "original",
+  "checkpoint": "W00",
+  "concept": "ship",
+  "prompt": "a photo of the ship",
+  "expected_label": "ship",
+  "class_labels": [
+    "airplane",
+    "automobile",
+    "bird",
+    "cat",
+    "deer",
+    "dog",
+    "frog",
+    "horse",
+    "ship",
+    "truck"
+  ],
+  "class_texts": [
+    "photo of a airplane",
+    "photo of a automobile",
+    "photo of a bird",
+    "photo of a cat",
+    "photo of a deer",
+    "photo of a dog",
+    "photo of a frog",
+    "photo of a horse",
+    "photo of a ship",
+    "photo of a truck"
+  ],
+  "evaluator": "openai/clip-vit-base-patch32",
+  "n_images": 100,
+  "correct": 100,
+  "accuracy": 1.0,
+  "mean_expected_probability": 0.9916940584778786,
+  "image_retention": "delete-after-eval",
+  "condition": "original",
+  "step": 0,
+  "role": "baseline"
+}

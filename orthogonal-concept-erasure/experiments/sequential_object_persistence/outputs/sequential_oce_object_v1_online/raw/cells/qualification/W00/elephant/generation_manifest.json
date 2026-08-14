@@ -1,0 +1,124 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "group": "qualification",
+  "checkpoint": "W00",
+  "concept": "elephant",
+  "prompt": "a photo of the elephant",
+  "generation": {
+    "images_per_concept": 100,
+    "seed_start": 42,
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "batch_size": 4,
+    "prompt_template": "a photo of the {concept}",
+    "scheduler": "PNDMScheduler"
+  },
+  "images": [
+    {
+      "sample_index": 0,
+      "seed": 42,
+      "image_path": "images/qualification/W00/elephant/index_000_seed_42.png"
+    },
+    {
+      "sample_index": 1,
+      "seed": 43,
+      "image_path": "images/qualification/W00/elephant/index_001_seed_43.png"
+    },
+    {
+      "sample_index": 2,
+      "seed": 44,
+      "image_path": "images/qualification/W00/elephant/index_002_seed_44.png"
+    },
+    {
+      "sample_index": 3,
+      "seed": 45,
+      "image_path": "images/qualification/W00/elephant/index_003_seed_45.png"
+    },
+    {
+      "sample_index": 4,
+      "seed": 46,
+      "image_path": "images/qualification/W00/elephant/index_004_seed_46.png"
+    },
+    {
+      "sample_index": 5,
+      "seed": 47,
+      "image_path": "images/qualification/W00/elephant/index_005_seed_47.png"
+    },
+    {
+      "sample_index": 6,
+      "seed": 48,
+      "image_path": "images/qualification/W00/elephant/index_006_seed_48.png"
+    },
+    {
+      "sample_index": 7,
+      "seed": 49,
+      "image_path": "images/qualification/W00/elephant/index_007_seed_49.png"
+    },
+    {
+      "sample_index": 8,
+      "seed": 50,
+      "image_path": "images/qualification/W00/elephant/index_008_seed_50.png"
+    },
+    {
+      "sample_index": 9,
+      "seed": 51,
+      "image_path": "images/qualification/W00/elephant/index_009_seed_51.png"
+    },
+    {
+      "sample_index": 10,
+      "seed": 52,
+      "image_path": "images/qualification/W00/elephant/index_010_seed_52.png"
+    },
+    {
+      "sample_index": 11,
+      "seed": 53,
+      "image_path": "images/qualification/W00/elephant/index_011_seed_53.png"
+    },
+    {
+      "sample_index": 12,
+      "seed": 54,
+      "image_path": "images/qualification/W00/elephant/index_012_seed_54.png"
+    },
+    {
+      "sample_index": 13,
+      "seed": 55,
+      "image_path": "images/qualification/W00/elephant/index_013_seed_55.png"
+    },
+    {
+      "sample_index": 14,
+      "seed": 56,
+      "image_path": "images/qualification/W00/elephant/index_014_seed_56.png"
+    },
+    {
+      "sample_index": 15,
+      "seed": 57,
+      "image_path": "images/qualification/W00/elephant/index_015_seed_57.png"
+    },
+    {
+      "sample_index": 16,
+      "seed": 58,
+      "image_path": "images/qualification/W00/elephant/index_016_seed_58.png"
+    },
+    {
+      "sample_index": 17,
+      "seed": 59,
+      "image_path": "images/qualification/W00/elephant/index_017_seed_59.png"
+    },
+    {
+      "sample_index": 18,
+      "seed": 60,
+      "image_path": "images/qualification/W00/elephant/index_018_seed_60.png"
+    },
+    {
+      "sample_index": 19,
+      "seed": 61,
+      "image_path": "images/qualification/W00/elephant/index_019_seed_61.png"
+    }
+  ],
+  "phase": "qualification",
+  "candidate": "elephant"
+}

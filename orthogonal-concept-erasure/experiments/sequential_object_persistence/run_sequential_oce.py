@@ -1126,7 +1126,7 @@ def make_plots(
     figure.savefig(plot_dir / "retain_persistence_curve.pdf")
     plt.close(figure)
 
-    figure, axes = plt.subplots(1, 2, figsize=(14.5, 5.2), sharey=True)
+    figure, axes = plt.subplots(1, 2, figsize=(16.0, 5.8), sharey=True)
     for axis, condition, title in zip(
         axes, CONDITIONS, ("Retain Once", "Retain Always")
     ):
@@ -1157,8 +1157,15 @@ def make_plots(
                     color=color,
                 )
     axes[0].set_ylabel("Checkpoint")
-    figure.colorbar(image, ax=axes.ravel().tolist(), label="10-class CLIP accuracy")
-    figure.subplots_adjust(left=0.08, right=0.92, bottom=0.24, wspace=0.08)
+    figure.subplots_adjust(
+        left=0.07, right=0.88, bottom=0.25, top=0.91, wspace=0.12
+    )
+    colorbar_axis = figure.add_axes([0.91, 0.25, 0.015, 0.66])
+    figure.colorbar(
+        image,
+        cax=colorbar_axis,
+        label="10-class CLIP accuracy",
+    )
     figure.savefig(plot_dir / "previous_erasure_persistence_heatmaps.png", dpi=180)
     figure.savefig(plot_dir / "previous_erasure_persistence_heatmaps.pdf")
     plt.close(figure)

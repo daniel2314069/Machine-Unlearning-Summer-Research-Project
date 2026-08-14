@@ -1,0 +1,2 @@
+candidate,n_images,top1_accuracy,mean_expected_probability,minimum_top1_accuracy,accepted
+elephant,20,1.0,0.9995731920003891,0.5,True

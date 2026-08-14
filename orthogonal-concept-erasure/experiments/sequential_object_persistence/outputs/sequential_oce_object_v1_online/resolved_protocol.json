@@ -1,0 +1,167 @@
+{
+  "status": "complete",
+  "experiment_name": "sequential_oce_object_persistence_v1",
+  "config_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/config.json",
+  "output_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online",
+  "base_model": "CompVis/stable-diffusion-v1-4",
+  "target_anchor_mapping": [
+    {
+      "target": "airplane",
+      "anchor": "sky"
+    },
+    {
+      "target": "automobile",
+      "anchor": "truck"
+    },
+    {
+      "target": "bird",
+      "anchor": "cat"
+    },
+    {
+      "target": "cat",
+      "anchor": "dog"
+    },
+    {
+      "target": "deer",
+      "anchor": "horse"
+    },
+    {
+      "target": "dog",
+      "anchor": "cat"
+    },
+    {
+      "target": "frog",
+      "anchor": "bird"
+    },
+    {
+      "target": "horse",
+      "anchor": "deer"
+    },
+    {
+      "target": "ship",
+      "anchor": "airplane"
+    },
+    {
+      "target": "truck",
+      "anchor": "ship"
+    }
+  ],
+  "conditions": [
+    "retain_once",
+    "retain_always"
+  ],
+  "planned_counts": {
+    "targets": 10,
+    "anchors": 9,
+    "candidates": 6,
+    "formal_cells": 141,
+    "formal_images": 14100,
+    "qualification_images_per_candidate": 20,
+    "sets_disjoint": true
+  },
+  "source_hashes": {
+    "config.json": "4c8c132b6ce33a6e876e59247bbc207852b66deb90c085d1a7347d5fddf8c8a5",
+    "oce.py": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+    "Cg.pt": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae",
+    "runner": "9574f7da9238686c1dc5f9620def2db20099da88f90229fb6bff8fe8ef7118e3"
+  },
+  "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "local_files_only": false,
+  "effective_image_retention": "delete-after-eval",
+  "resolved_at": "2026-08-13T11:07:39.590393+00:00",
+  "software": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35"
+  },
+  "config": {
+    "experiment_name": "sequential_oce_object_persistence_v1",
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "clip_model_id": "openai/clip-vit-base-patch32",
+    "device": "cuda:0",
+    "cg_path": "../../Cg.pt",
+    "targets": [
+      {
+        "target": "airplane",
+        "anchor": "sky"
+      },
+      {
+        "target": "automobile",
+        "anchor": "truck"
+      },
+      {
+        "target": "bird",
+        "anchor": "cat"
+      },
+      {
+        "target": "cat",
+        "anchor": "dog"
+      },
+      {
+        "target": "deer",
+        "anchor": "horse"
+      },
+      {
+        "target": "dog",
+        "anchor": "cat"
+      },
+      {
+        "target": "frog",
+        "anchor": "bird"
+      },
+      {
+        "target": "horse",
+        "anchor": "deer"
+      },
+      {
+        "target": "ship",
+        "anchor": "airplane"
+      },
+      {
+        "target": "truck",
+        "anchor": "ship"
+      }
+    ],
+    "qualification": {
+      "candidates": [
+        "elephant",
+        "bicycle",
+        "bus",
+        "lion",
+        "bear",
+        "qualification"
+      ],
+      "images_per_candidate": 20,
+      "minimum_top1_accuracy": 0.5
+    },
+    "oce": {
+      "erase_scale": 1000.0,
+      "preserve_global_scale": 50.0,
+      "preserve_concept_scale": 1.0,
+      "lamb": 10.0,
+      "expand_prompts": true,
+      "always_preserve_current_anchor": true,
+      "edit_dtype": "float32"
+    },
+    "generation": {
+      "images_per_concept": 100,
+      "seed_start": 42,
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "dtype": "bfloat16",
+      "batch_size": 4,
+      "prompt_template": "a photo of the {concept}",
+      "scheduler": "PNDMScheduler"
+    },
+    "evaluation": {
+      "cifar_class_text_template": "photo of a {concept}",
+      "retain_class_text_template": "photo of a {concept}",
+      "batch_size": 16,
+      "material_change_threshold": 0.1
+    },
+    "storage": {
+      "image_retention": "delete-after-eval"
+    }
+  }
+}

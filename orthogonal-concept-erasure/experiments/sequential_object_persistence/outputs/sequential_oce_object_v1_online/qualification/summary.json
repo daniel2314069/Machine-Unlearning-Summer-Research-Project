@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "rule": "first candidate with 11-class CLIP top-1 accuracy at or above threshold",
+  "class_context": "ten CIFAR-10 labels plus the candidate",
+  "selected_concept": "elephant",
+  "results": [
+    {
+      "candidate": "elephant",
+      "n_images": 20,
+      "top1_accuracy": 1.0,
+      "mean_expected_probability": 0.9995731920003891,
+      "minimum_top1_accuracy": 0.5,
+      "accepted": true
+    }
+  ],
+  "completed_at": "2026-08-13T11:08:51.907559+00:00"
+}

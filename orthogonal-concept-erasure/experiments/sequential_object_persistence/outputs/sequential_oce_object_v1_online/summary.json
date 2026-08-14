@@ -1,0 +1,110 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "selected_x": "elephant",
+  "qualification": {
+    "status": "complete",
+    "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+    "rule": "first candidate with 11-class CLIP top-1 accuracy at or above threshold",
+    "class_context": "ten CIFAR-10 labels plus the candidate",
+    "selected_concept": "elephant",
+    "results": [
+      {
+        "candidate": "elephant",
+        "n_images": 20,
+        "top1_accuracy": 1.0,
+        "mean_expected_probability": 0.9995731920003891,
+        "minimum_top1_accuracy": 0.5,
+        "accepted": true
+      }
+    ],
+    "completed_at": "2026-08-13T11:08:51.907559+00:00"
+  },
+  "formal_counts": {
+    "cells": 141,
+    "images": 14100
+  },
+  "qualification_images": 20,
+  "image_retention": "delete-after-eval",
+  "material_change_threshold": 0.1,
+  "retain_once": {
+    "W01_accuracy": 1.0,
+    "W10_accuracy": 1.0,
+    "W01_to_W10_drop": 0.0,
+    "negative_step_count": 0,
+    "material_degradation": false,
+    "gradual_degradation": false
+  },
+  "retain_always": {
+    "W01_accuracy": 1.0,
+    "W10_accuracy": 1.0,
+    "W01_to_W10_drop": 0.0
+  },
+  "retain_always_more_stable": false,
+  "previous_erasure_resurgence": {
+    "observed": true,
+    "significant_cases": [
+      {
+        "condition": "retain_once",
+        "target": "bird",
+        "erased_at_step": 3,
+        "accuracy_at_erasure": 0.47,
+        "maximum_later_accuracy": 0.91,
+        "maximum_at_checkpoint": "W08",
+        "maximum_increase": 0.44000000000000006,
+        "material_change_threshold": 0.1,
+        "significant_resurgence": true
+      },
+      {
+        "condition": "retain_once",
+        "target": "dog",
+        "erased_at_step": 6,
+        "accuracy_at_erasure": 0.13,
+        "maximum_later_accuracy": 0.85,
+        "maximum_at_checkpoint": "W08",
+        "maximum_increase": 0.72,
+        "material_change_threshold": 0.1,
+        "significant_resurgence": true
+      },
+      {
+        "condition": "retain_always",
+        "target": "automobile",
+        "erased_at_step": 2,
+        "accuracy_at_erasure": 0.68,
+        "maximum_later_accuracy": 0.79,
+        "maximum_at_checkpoint": "W09",
+        "maximum_increase": 0.10999999999999999,
+        "material_change_threshold": 0.1,
+        "significant_resurgence": true
+      },
+      {
+        "condition": "retain_always",
+        "target": "bird",
+        "erased_at_step": 3,
+        "accuracy_at_erasure": 0.41,
+        "maximum_later_accuracy": 0.91,
+        "maximum_at_checkpoint": "W09",
+        "maximum_increase": 0.5,
+        "material_change_threshold": 0.1,
+        "significant_resurgence": true
+      },
+      {
+        "condition": "retain_always",
+        "target": "dog",
+        "erased_at_step": 6,
+        "accuracy_at_erasure": 0.11,
+        "maximum_later_accuracy": 0.79,
+        "maximum_at_checkpoint": "W09",
+        "maximum_increase": 0.68,
+        "material_change_threshold": 0.1,
+        "significant_resurgence": true
+      }
+    ]
+  },
+  "reviewed_interpretation": {
+    "retain_persistence": "Elephant stayed at 1.0 accuracy at W00 and every W01-W10 checkpoint in both conditions; Retain Once did not degrade in this run.",
+    "retain_condition_comparison": "Retain Always showed no measured advantage over Retain Once. This is limited to elephant and a saturated 11-class CLIP assay.",
+    "previous_erasure_persistence": "Material resurgence was observed. Dog is the clearest case (0.13 to 0.85 in Retain Once; 0.11 to 0.79 in Retain Always), followed by bird (0.47 to 0.91; 0.41 to 0.91). Automobile in Retain Always crossed the 0.10 threshold but was already high at its erasure checkpoint (0.68 to 0.79), so it is not strong disappearance-then-reappearance evidence."
+  },
+  "completed_at": "2026-08-13T22:34:28.417213+00:00"
+}
