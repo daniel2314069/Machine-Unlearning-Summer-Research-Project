@@ -1,0 +1,58 @@
+{
+  "experiment_name": "sequential_oce_object_followup_v1",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "device": "cuda:0",
+  "cg_path": "../../Cg.pt",
+  "source_output_dir": "../sequential_object_persistence/outputs/sequential_oce_object_v1_online",
+  "targets": [
+    {"target": "airplane", "anchor": "sky"},
+    {"target": "automobile", "anchor": "truck"},
+    {"target": "bird", "anchor": "cat"},
+    {"target": "cat", "anchor": "dog"},
+    {"target": "deer", "anchor": "horse"},
+    {"target": "dog", "anchor": "cat"},
+    {"target": "frog", "anchor": "bird"},
+    {"target": "horse", "anchor": "deer"},
+    {"target": "ship", "anchor": "airplane"},
+    {"target": "truck", "anchor": "ship"}
+  ],
+  "clean_chain": [
+    {"target": "dog", "anchor": "cat"},
+    {"target": "bird", "anchor": "cat"},
+    {"target": "airplane", "anchor": "sky"},
+    {"target": "automobile", "anchor": "truck"},
+    {"target": "deer", "anchor": "horse"}
+  ],
+  "oce": {
+    "erase_scale": 1000.0,
+    "preserve_global_scale": 50.0,
+    "preserve_concept_scale": 1.0,
+    "lamb": 10.0,
+    "expand_prompts": true,
+    "always_preserve_current_anchor": true,
+    "edit_dtype": "float32"
+  },
+  "generation": {
+    "images_per_cell": 200,
+    "source_images_per_cell": 100,
+    "supplement_images_per_cell": 100,
+    "seed_start": 42,
+    "supplement_seed_start": 142,
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "batch_size": 4,
+    "prompt_template": "a photo of the {concept}",
+    "scheduler": "PNDMScheduler"
+  },
+  "evaluation": {
+    "cifar_class_text_template": "photo of a {concept}",
+    "batch_size": 16
+  },
+  "storage": {
+    "image_retention": "delete-after-eval"
+  }
+}
