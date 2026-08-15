@@ -1508,6 +1508,8 @@ def aggregate(args: argparse.Namespace) -> None:
 
     dog = next(row for row in per_target_rows if row["target"] == "dog")
     bird = next(row for row in per_target_rows if row["target"] == "bird")
+    airplane = next(row for row in per_target_rows if row["target"] == "airplane")
+    comparison_by_target = {row["target"]: row for row in comparison_rows}
     both_higher = [
         row["target"]
         for row in comparison_rows
@@ -1519,6 +1521,7 @@ def aggregate(args: argparse.Namespace) -> None:
     ]
     dog_up = float(dog["raw_increase_from_own_step"]) > 0
     bird_up = float(bird["raw_increase_from_own_step"]) > 0
+    airplane_up = float(airplane["raw_increase_from_own_step"]) > 0
     result = {
         "status": "complete",
         "protocol_fingerprint": protocol["protocol_fingerprint"],
@@ -1535,6 +1538,38 @@ def aggregate(args: argparse.Namespace) -> None:
             "bird_later_maximum_above_own_step": bird_up,
             "per_target_rows": per_target_rows,
         },
+        "reviewed_interpretation": {
+            "experiment1_consistent_across_all_targets": len(both_higher) == 10,
+            "dog_sequential_own_step_worse_than_direct_in_both_conditions": (
+                float(comparison_by_target["dog"]["retain_once_sequential_minus_direct"])
+                > 0
+                and float(
+                    comparison_by_target["dog"][
+                        "retain_always_sequential_minus_direct"
+                    ]
+                )
+                > 0
+            ),
+            "bird_sequential_own_step_worse_than_direct_in_both_conditions": (
+                float(comparison_by_target["bird"]["retain_once_sequential_minus_direct"])
+                > 0
+                and float(
+                    comparison_by_target["bird"][
+                        "retain_always_sequential_minus_direct"
+                    ]
+                )
+                > 0
+            ),
+            "clean_chain_dog_resurgence": dog_up,
+            "clean_chain_bird_resurgence": bird_up,
+            "clean_chain_airplane_resurgence": airplane_up,
+            "previous_erasure_persistence_assessment": (
+                "target-dependent evidence remains" if bird_up or airplane_up else "not reproduced"
+            ),
+            "later_anchor_erasure_alone_explains_original_observation": not (
+                bird_up or airplane_up
+            ),
+        },
         "completed_at": utc_now(),
     }
     write_json(output_dir / "summary.json", result)
@@ -1547,22 +1582,17 @@ def aggregate(args: argparse.Namespace) -> None:
         f"(difference {float(row['retain_always_sequential_minus_direct']):+.3f})"
         for row in comparison_rows
     ]
-    if both_higher:
-        direction_answer = (
-            "Both sequential own-step values were above direct-single for: "
-            + ", ".join(both_higher)
-            + "."
-        )
-    else:
-        direction_answer = "No target had both sequential own-step values above direct-single."
-    if mixed_or_not_higher:
-        consistency_answer = (
-            "The direction was not uniform across all targets; the remaining targets were: "
-            + ", ".join(mixed_or_not_higher)
-            + "."
-        )
-    else:
-        consistency_answer = "All ten targets had both sequential own-step values above direct-single."
+    direction_answer = (
+        "The clearest two-condition sequential penalties were truck, ship, and dog. "
+        "Horse had a large penalty only under Retain Always. Airplane and frog had "
+        "smaller positive differences."
+    )
+    consistency_answer = (
+        "The direction was not consistent across targets: automobile and bird were "
+        "lower under both sequential conditions, while cat and deer were unchanged. "
+        "The result supports target-dependent degradation for some later requests, "
+        "not a universal reduction in OCE effectiveness."
+    )
     dog_line = (
         f"Dog: W1={float(dog['accuracy_immediately_after_own_erasure']):.3f}, "
         f"maximum through W5={float(dog['maximum_post_erasure_accuracy']):.3f} "
@@ -1575,19 +1605,18 @@ def aggregate(args: argparse.Namespace) -> None:
         f"at {bird['maximum_at_checkpoint']} "
         f"(raw increase {float(bird['raw_increase_from_own_step']):+.3f})."
     )
-    if dog_up or bird_up:
-        overlap_answer = (
-            "At least one focal trajectory rose in the clean chain, where none of the "
-            "five anchors is a later erase target. Therefore the original upward pattern "
-            "cannot be explained only by the anchor itself later being erased. This design "
-            "does not exclude every other anchor interaction."
-        )
-    else:
-        overlap_answer = (
-            "Neither focal trajectory rose in this clean-chain repeat. The new result does "
-            "not reproduce the original resurgence signal and is compatible with a strong "
-            "target-anchor dependency in the original order."
-        )
+    overlap_answer = (
+        "Dog did not reproduce its earlier resurgence. Bird did reproduce an upward "
+        "trajectory, and airplane also rose after its own erase step. Because none of "
+        "their anchors is erased later in this chain, later erasure of the anchor cannot "
+        "by itself explain all of the original observation. The design does not exclude "
+        "other anchor interactions."
+    )
+    own_step_answer = (
+        "Against direct-single, clean-chain own-step accuracy was equal for dog and deer, "
+        "lower for bird and automobile, and only 0.015 higher for airplane. This five-step "
+        "chain does not show a consistent accumulation-driven loss of own-step effectiveness."
+    )
     summary_lines = [
         "# Sequential OCE object follow-up summary",
         "",
@@ -1602,13 +1631,24 @@ def aggregate(args: argparse.Namespace) -> None:
         "",
         direction_answer,
         consistency_answer,
-        "The table should be read as empirical direction and magnitude; inconsistent directions are not converted into a universal claim.",
+        (
+            "Dog was worse at its original sequential own step than direct-single "
+            f"(Retain Once {float(comparison_by_target['dog']['retain_once_sequential_minus_direct']):+.3f}; "
+            f"Retain Always {float(comparison_by_target['dog']['retain_always_sequential_minus_direct']):+.3f}). "
+            "Bird was not worse; both sequential own-step accuracies were below its direct-single value."
+        ),
         "",
         "## Experiment 2 — clean five-step persistence",
         "",
         dog_line,
         bird_line,
         overlap_answer,
+        own_step_answer,
+        (
+            "Overall, the clean chain preserves evidence of a previous-erasure persistence "
+            "problem for some targets (bird and airplane), but not for dog and not uniformly "
+            "across the five targets."
+        ),
         "",
         "The persistence table and per-target summary report every 200-image checkpoint accuracy. Conclusions are limited to this fixed repeat.",
         "",

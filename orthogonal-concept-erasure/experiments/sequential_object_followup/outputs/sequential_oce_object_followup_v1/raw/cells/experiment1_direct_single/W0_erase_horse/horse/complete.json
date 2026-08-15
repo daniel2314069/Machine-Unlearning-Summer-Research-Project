@@ -1,0 +1,7 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
+  "completed_at": "2026-08-14T13:14:20.605482+00:00",
+  "n_images": 200,
+  "image_status": "deleted-after-successful-evaluation"
+}

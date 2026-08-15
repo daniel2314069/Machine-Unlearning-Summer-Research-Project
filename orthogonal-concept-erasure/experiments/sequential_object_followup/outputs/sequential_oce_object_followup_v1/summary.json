@@ -1,0 +1,249 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
+  "formal_counts": {
+    "cells": 45,
+    "new_generation_images": 7000,
+    "final_prediction_rows": 9000,
+    "unique_seeds_per_final_cell": 200
+  },
+  "experiment1": {
+    "targets_with_both_sequential_own_step_accuracies_above_direct": [
+      "airplane",
+      "dog",
+      "frog",
+      "ship",
+      "truck"
+    ],
+    "other_targets": [
+      "automobile",
+      "bird",
+      "cat",
+      "deer",
+      "horse"
+    ],
+    "comparison_rows": [
+      {
+        "target": "airplane",
+        "anchor": "sky",
+        "sequential_own_step": "W01",
+        "direct_single_from_W0_accuracy_200": 0.015,
+        "sequential_retain_once_own_step_accuracy_200": 0.04,
+        "sequential_retain_always_own_step_accuracy_200": 0.04,
+        "retain_once_sequential_minus_direct": 0.025,
+        "retain_always_sequential_minus_direct": 0.025
+      },
+      {
+        "target": "automobile",
+        "anchor": "truck",
+        "sequential_own_step": "W02",
+        "direct_single_from_W0_accuracy_200": 0.9,
+        "sequential_retain_once_own_step_accuracy_200": 0.75,
+        "sequential_retain_always_own_step_accuracy_200": 0.695,
+        "retain_once_sequential_minus_direct": -0.15000000000000002,
+        "retain_always_sequential_minus_direct": -0.20500000000000007
+      },
+      {
+        "target": "bird",
+        "anchor": "cat",
+        "sequential_own_step": "W03",
+        "direct_single_from_W0_accuracy_200": 0.57,
+        "sequential_retain_once_own_step_accuracy_200": 0.465,
+        "sequential_retain_always_own_step_accuracy_200": 0.4,
+        "retain_once_sequential_minus_direct": -0.10499999999999993,
+        "retain_always_sequential_minus_direct": -0.16999999999999993
+      },
+      {
+        "target": "cat",
+        "anchor": "dog",
+        "sequential_own_step": "W04",
+        "direct_single_from_W0_accuracy_200": 0.0,
+        "sequential_retain_once_own_step_accuracy_200": 0.0,
+        "sequential_retain_always_own_step_accuracy_200": 0.0,
+        "retain_once_sequential_minus_direct": 0.0,
+        "retain_always_sequential_minus_direct": 0.0
+      },
+      {
+        "target": "deer",
+        "anchor": "horse",
+        "sequential_own_step": "W05",
+        "direct_single_from_W0_accuracy_200": 0.0,
+        "sequential_retain_once_own_step_accuracy_200": 0.0,
+        "sequential_retain_always_own_step_accuracy_200": 0.0,
+        "retain_once_sequential_minus_direct": 0.0,
+        "retain_always_sequential_minus_direct": 0.0
+      },
+      {
+        "target": "dog",
+        "anchor": "cat",
+        "sequential_own_step": "W06",
+        "direct_single_from_W0_accuracy_200": 0.005,
+        "sequential_retain_once_own_step_accuracy_200": 0.1,
+        "sequential_retain_always_own_step_accuracy_200": 0.08,
+        "retain_once_sequential_minus_direct": 0.095,
+        "retain_always_sequential_minus_direct": 0.075
+      },
+      {
+        "target": "frog",
+        "anchor": "bird",
+        "sequential_own_step": "W07",
+        "direct_single_from_W0_accuracy_200": 0.05,
+        "sequential_retain_once_own_step_accuracy_200": 0.08,
+        "sequential_retain_always_own_step_accuracy_200": 0.06,
+        "retain_once_sequential_minus_direct": 0.03,
+        "retain_always_sequential_minus_direct": 0.009999999999999995
+      },
+      {
+        "target": "horse",
+        "anchor": "deer",
+        "sequential_own_step": "W08",
+        "direct_single_from_W0_accuracy_200": 0.075,
+        "sequential_retain_once_own_step_accuracy_200": 0.075,
+        "sequential_retain_always_own_step_accuracy_200": 0.365,
+        "retain_once_sequential_minus_direct": 0.0,
+        "retain_always_sequential_minus_direct": 0.29
+      },
+      {
+        "target": "ship",
+        "anchor": "airplane",
+        "sequential_own_step": "W09",
+        "direct_single_from_W0_accuracy_200": 0.055,
+        "sequential_retain_once_own_step_accuracy_200": 0.185,
+        "sequential_retain_always_own_step_accuracy_200": 0.18,
+        "retain_once_sequential_minus_direct": 0.13,
+        "retain_always_sequential_minus_direct": 0.125
+      },
+      {
+        "target": "truck",
+        "anchor": "ship",
+        "sequential_own_step": "W10",
+        "direct_single_from_W0_accuracy_200": 0.075,
+        "sequential_retain_once_own_step_accuracy_200": 0.405,
+        "sequential_retain_always_own_step_accuracy_200": 0.43,
+        "retain_once_sequential_minus_direct": 0.33,
+        "retain_always_sequential_minus_direct": 0.355
+      }
+    ]
+  },
+  "experiment2": {
+    "dog": {
+      "target": "dog",
+      "anchor": "cat",
+      "erased_at_step": 1,
+      "accuracy_immediately_after_own_erasure": 0.005,
+      "accuracy_W1": 0.005,
+      "accuracy_W2": 0.0,
+      "accuracy_W3": 0.0,
+      "accuracy_W4": 0.005,
+      "accuracy_W5": 0.0,
+      "maximum_post_erasure_accuracy": 0.005,
+      "maximum_at_checkpoint": "W1",
+      "raw_increase_from_own_step": 0.0
+    },
+    "bird": {
+      "target": "bird",
+      "anchor": "cat",
+      "erased_at_step": 2,
+      "accuracy_immediately_after_own_erasure": 0.475,
+      "accuracy_W1": "",
+      "accuracy_W2": 0.475,
+      "accuracy_W3": 0.66,
+      "accuracy_W4": 0.69,
+      "accuracy_W5": 0.735,
+      "maximum_post_erasure_accuracy": 0.735,
+      "maximum_at_checkpoint": "W5",
+      "raw_increase_from_own_step": 0.26
+    },
+    "dog_later_maximum_above_own_step": false,
+    "bird_later_maximum_above_own_step": true,
+    "per_target_rows": [
+      {
+        "target": "dog",
+        "anchor": "cat",
+        "erased_at_step": 1,
+        "accuracy_immediately_after_own_erasure": 0.005,
+        "accuracy_W1": 0.005,
+        "accuracy_W2": 0.0,
+        "accuracy_W3": 0.0,
+        "accuracy_W4": 0.005,
+        "accuracy_W5": 0.0,
+        "maximum_post_erasure_accuracy": 0.005,
+        "maximum_at_checkpoint": "W1",
+        "raw_increase_from_own_step": 0.0
+      },
+      {
+        "target": "bird",
+        "anchor": "cat",
+        "erased_at_step": 2,
+        "accuracy_immediately_after_own_erasure": 0.475,
+        "accuracy_W1": "",
+        "accuracy_W2": 0.475,
+        "accuracy_W3": 0.66,
+        "accuracy_W4": 0.69,
+        "accuracy_W5": 0.735,
+        "maximum_post_erasure_accuracy": 0.735,
+        "maximum_at_checkpoint": "W5",
+        "raw_increase_from_own_step": 0.26
+      },
+      {
+        "target": "airplane",
+        "anchor": "sky",
+        "erased_at_step": 3,
+        "accuracy_immediately_after_own_erasure": 0.03,
+        "accuracy_W1": "",
+        "accuracy_W2": "",
+        "accuracy_W3": 0.03,
+        "accuracy_W4": 0.18,
+        "accuracy_W5": 0.145,
+        "maximum_post_erasure_accuracy": 0.18,
+        "maximum_at_checkpoint": "W4",
+        "raw_increase_from_own_step": 0.15
+      },
+      {
+        "target": "automobile",
+        "anchor": "truck",
+        "erased_at_step": 4,
+        "accuracy_immediately_after_own_erasure": 0.735,
+        "accuracy_W1": "",
+        "accuracy_W2": "",
+        "accuracy_W3": "",
+        "accuracy_W4": 0.735,
+        "accuracy_W5": 0.71,
+        "maximum_post_erasure_accuracy": 0.735,
+        "maximum_at_checkpoint": "W4",
+        "raw_increase_from_own_step": 0.0
+      },
+      {
+        "target": "deer",
+        "anchor": "horse",
+        "erased_at_step": 5,
+        "accuracy_immediately_after_own_erasure": 0.0,
+        "accuracy_W1": "",
+        "accuracy_W2": "",
+        "accuracy_W3": "",
+        "accuracy_W4": "",
+        "accuracy_W5": 0.0,
+        "maximum_post_erasure_accuracy": 0.0,
+        "maximum_at_checkpoint": "W5",
+        "raw_increase_from_own_step": 0.0
+      }
+    ]
+  },
+  "reviewed_interpretation": {
+    "experiment1_consistent_across_all_targets": false,
+    "dog_sequential_own_step_worse_than_direct_in_both_conditions": true,
+    "bird_sequential_own_step_worse_than_direct_in_both_conditions": false,
+    "clean_chain_dog_resurgence": false,
+    "clean_chain_bird_resurgence": true,
+    "clean_chain_airplane_resurgence": true,
+    "previous_erasure_persistence_assessment": "target-dependent evidence remains",
+    "later_anchor_erasure_alone_explains_original_observation": false,
+    "notes": [
+      "Dog did not exceed its W1 accuracy at any later clean-chain checkpoint.",
+      "Bird rose from 0.475 at W2 to 0.735 at W5.",
+      "Airplane rose from 0.030 at W3 to a maximum of 0.180 at W4.",
+      "Clean-chain own-step comparisons versus direct-single were mixed rather than consistently worse."
+    ]
+  },
+  "completed_at": "2026-08-14T17:37:04.168398+00:00"
+}

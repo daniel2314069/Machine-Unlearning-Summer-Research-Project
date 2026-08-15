@@ -1,0 +1,11 @@
+target,anchor,sequential_own_step,direct_single_from_W0_accuracy_200,sequential_retain_once_own_step_accuracy_200,sequential_retain_always_own_step_accuracy_200,retain_once_sequential_minus_direct,retain_always_sequential_minus_direct
+airplane,sky,W01,0.015,0.04,0.04,0.025,0.025
+automobile,truck,W02,0.9,0.75,0.695,-0.15000000000000002,-0.20500000000000007
+bird,cat,W03,0.57,0.465,0.4,-0.10499999999999993,-0.16999999999999993
+cat,dog,W04,0.0,0.0,0.0,0.0,0.0
+deer,horse,W05,0.0,0.0,0.0,0.0,0.0
+dog,cat,W06,0.005,0.1,0.08,0.095,0.075
+frog,bird,W07,0.05,0.08,0.06,0.03,0.009999999999999995
+horse,deer,W08,0.075,0.075,0.365,0.0,0.29
+ship,airplane,W09,0.055,0.185,0.18,0.13,0.125
+truck,ship,W10,0.075,0.405,0.43,0.33,0.355

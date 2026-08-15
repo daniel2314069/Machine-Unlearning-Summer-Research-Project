@@ -1,0 +1,63 @@
+{"timestamp": "2026-08-14T11:55:42.879097+00:00", "phase": "preflight", "message": "hard generation-count gate passed", "cells": 45, "new_images": 7000}
+{"timestamp": "2026-08-14T11:56:00.462097+00:00", "phase": "preflight", "message": "hard generation-count gate passed", "cells": 45, "new_images": 7000}
+{"timestamp": "2026-08-14T11:56:04.189468+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "airplane"}
+{"timestamp": "2026-08-14T11:56:07.314627+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "automobile"}
+{"timestamp": "2026-08-14T11:56:09.944784+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "bird"}
+{"timestamp": "2026-08-14T11:56:12.642114+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "cat"}
+{"timestamp": "2026-08-14T11:56:15.241847+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "deer"}
+{"timestamp": "2026-08-14T11:56:17.855304+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "dog"}
+{"timestamp": "2026-08-14T11:56:20.507238+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "frog"}
+{"timestamp": "2026-08-14T11:56:23.150068+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "horse"}
+{"timestamp": "2026-08-14T11:56:25.727606+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "ship"}
+{"timestamp": "2026-08-14T11:56:28.299347+00:00", "phase": "checkpoints", "message": "run direct single edit", "target": "truck"}
+{"timestamp": "2026-08-14T11:56:30.936468+00:00", "phase": "checkpoints", "message": "run clean-chain single edit", "step": 1, "target": "dog"}
+{"timestamp": "2026-08-14T11:56:33.596448+00:00", "phase": "checkpoints", "message": "run clean-chain single edit", "step": 2, "target": "bird"}
+{"timestamp": "2026-08-14T11:56:36.249592+00:00", "phase": "checkpoints", "message": "run clean-chain single edit", "step": 3, "target": "airplane"}
+{"timestamp": "2026-08-14T11:56:38.956135+00:00", "phase": "checkpoints", "message": "run clean-chain single edit", "step": 4, "target": "automobile"}
+{"timestamp": "2026-08-14T11:56:41.521389+00:00", "phase": "checkpoints", "message": "run clean-chain single edit", "step": 5, "target": "deer"}
+{"timestamp": "2026-08-14T12:06:27.325142+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "airplane", "n": 200, "accuracy": "0.0150"}
+{"timestamp": "2026-08-14T12:16:09.247407+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "automobile", "n": 200, "accuracy": "0.9000"}
+{"timestamp": "2026-08-14T12:25:51.857958+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "bird", "n": 200, "accuracy": "0.5700"}
+{"timestamp": "2026-08-14T12:35:36.305927+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "cat", "n": 200, "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T12:45:16.748279+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "deer", "n": 200, "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T12:54:58.663321+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "dog", "n": 200, "accuracy": "0.0050"}
+{"timestamp": "2026-08-14T13:04:39.470479+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "frog", "n": 200, "accuracy": "0.0500"}
+{"timestamp": "2026-08-14T13:14:20.605688+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "horse", "n": 200, "accuracy": "0.0750"}
+{"timestamp": "2026-08-14T13:24:03.332835+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "ship", "n": 200, "accuracy": "0.0550"}
+{"timestamp": "2026-08-14T13:33:45.267527+00:00", "phase": "evaluation", "message": "completed direct cell", "target": "truck", "n": 200, "accuracy": "0.0750"}
+{"timestamp": "2026-08-14T13:38:36.862943+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 1, "target": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-14T13:43:27.733725+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 2, "target": "automobile", "accuracy": "0.7500"}
+{"timestamp": "2026-08-14T13:48:18.968552+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 3, "target": "bird", "accuracy": "0.4650"}
+{"timestamp": "2026-08-14T13:53:11.546772+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 4, "target": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T13:58:02.594721+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 5, "target": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T14:02:54.751945+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 6, "target": "dog", "accuracy": "0.1000"}
+{"timestamp": "2026-08-14T14:07:46.580220+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 7, "target": "frog", "accuracy": "0.0800"}
+{"timestamp": "2026-08-14T14:12:37.754737+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 8, "target": "horse", "accuracy": "0.0750"}
+{"timestamp": "2026-08-14T14:17:29.807296+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 9, "target": "ship", "accuracy": "0.1850"}
+{"timestamp": "2026-08-14T14:22:20.898171+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_once", "step": 10, "target": "truck", "accuracy": "0.4050"}
+{"timestamp": "2026-08-14T14:27:13.590176+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 1, "target": "airplane", "accuracy": "0.0400"}
+{"timestamp": "2026-08-14T14:32:05.583384+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 2, "target": "automobile", "accuracy": "0.6950"}
+{"timestamp": "2026-08-14T14:36:58.074528+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 3, "target": "bird", "accuracy": "0.4000"}
+{"timestamp": "2026-08-14T14:41:51.141251+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 4, "target": "cat", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T14:46:42.493812+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 5, "target": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T14:51:34.850439+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 6, "target": "dog", "accuracy": "0.0800"}
+{"timestamp": "2026-08-14T14:56:26.374703+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 7, "target": "frog", "accuracy": "0.0600"}
+{"timestamp": "2026-08-14T15:01:17.452732+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 8, "target": "horse", "accuracy": "0.3650"}
+{"timestamp": "2026-08-14T15:06:09.496001+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 9, "target": "ship", "accuracy": "0.1800"}
+{"timestamp": "2026-08-14T15:11:00.697619+00:00", "phase": "evaluation", "message": "completed own-step 200 cell", "condition": "retain_always", "step": 10, "target": "truck", "accuracy": "0.4300"}
+{"timestamp": "2026-08-14T15:20:44.900170+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W1", "target": "dog", "accuracy": "0.0050"}
+{"timestamp": "2026-08-14T15:30:29.643807+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W2", "target": "dog", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T15:40:14.333907+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W2", "target": "bird", "accuracy": "0.4750"}
+{"timestamp": "2026-08-14T15:49:58.882020+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W3", "target": "dog", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T15:59:42.698397+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W3", "target": "bird", "accuracy": "0.6600"}
+{"timestamp": "2026-08-14T16:09:28.165769+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W3", "target": "airplane", "accuracy": "0.0300"}
+{"timestamp": "2026-08-14T16:19:12.708424+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W4", "target": "dog", "accuracy": "0.0050"}
+{"timestamp": "2026-08-14T16:28:56.794696+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W4", "target": "bird", "accuracy": "0.6900"}
+{"timestamp": "2026-08-14T16:38:42.078634+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W4", "target": "airplane", "accuracy": "0.1800"}
+{"timestamp": "2026-08-14T16:48:26.247557+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W4", "target": "automobile", "accuracy": "0.7350"}
+{"timestamp": "2026-08-14T16:58:10.606100+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W5", "target": "dog", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T17:07:54.290640+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W5", "target": "bird", "accuracy": "0.7350"}
+{"timestamp": "2026-08-14T17:17:38.257861+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W5", "target": "airplane", "accuracy": "0.1450"}
+{"timestamp": "2026-08-14T17:27:21.239947+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W5", "target": "automobile", "accuracy": "0.7100"}
+{"timestamp": "2026-08-14T17:37:02.382765+00:00", "phase": "evaluation", "message": "completed clean-chain cell", "checkpoint": "W5", "target": "deer", "accuracy": "0.0000"}
+{"timestamp": "2026-08-14T17:37:04.168830+00:00", "phase": "aggregation", "message": "wrote final follow-up results", "new_images": 7000}

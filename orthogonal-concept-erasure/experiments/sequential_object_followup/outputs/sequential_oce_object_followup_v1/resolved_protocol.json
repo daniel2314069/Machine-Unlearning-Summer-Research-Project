@@ -1,0 +1,215 @@
+{
+  "status": "complete",
+  "experiment_name": "sequential_oce_object_followup_v1",
+  "config_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/config.json",
+  "output_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1",
+  "base_model": "CompVis/stable-diffusion-v1-4",
+  "target_anchor_mapping": [
+    {
+      "target": "airplane",
+      "anchor": "sky"
+    },
+    {
+      "target": "automobile",
+      "anchor": "truck"
+    },
+    {
+      "target": "bird",
+      "anchor": "cat"
+    },
+    {
+      "target": "cat",
+      "anchor": "dog"
+    },
+    {
+      "target": "deer",
+      "anchor": "horse"
+    },
+    {
+      "target": "dog",
+      "anchor": "cat"
+    },
+    {
+      "target": "frog",
+      "anchor": "bird"
+    },
+    {
+      "target": "horse",
+      "anchor": "deer"
+    },
+    {
+      "target": "ship",
+      "anchor": "airplane"
+    },
+    {
+      "target": "truck",
+      "anchor": "ship"
+    }
+  ],
+  "clean_chain": [
+    {
+      "target": "dog",
+      "anchor": "cat"
+    },
+    {
+      "target": "bird",
+      "anchor": "cat"
+    },
+    {
+      "target": "airplane",
+      "anchor": "sky"
+    },
+    {
+      "target": "automobile",
+      "anchor": "truck"
+    },
+    {
+      "target": "deer",
+      "anchor": "horse"
+    }
+  ],
+  "planned_counts": {
+    "experiment1": {
+      "direct_single_cells": 10,
+      "direct_single_new_images": 2000,
+      "sequential_supplement_cells": 20,
+      "sequential_supplement_new_images": 2000,
+      "new_images": 4000
+    },
+    "experiment2": {
+      "cells": 15,
+      "new_images": 3000
+    },
+    "total": {
+      "new_formal_cells": 45,
+      "new_formal_images": 7000,
+      "final_prediction_rows_in_followup_cells": 9000
+    }
+  },
+  "source_audit": {
+    "source_output_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online",
+    "source_protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+    "source_protocol_sha256": "8e0872973709a01e36a5aa87354d7bd4f6205f5dfc3ccf36503248e81fd44fe3",
+    "source_summary_sha256": "29ea512a80c603a404b2501b73916ad0bc75e45eb16ad14b0c9de11e659e400a",
+    "audited_own_step_cells": 20,
+    "selected_x_in_source_only": "elephant"
+  },
+  "source_hashes": {
+    "config.json": "e5243f44aa25fd7c98199a3cf2e66fb3cf90def2add07efd75d6586af8c3e45f",
+    "followup_runner": "874d10b726a5cddc9fbde7747f1796b138b070c7681f80810147b1451ab36a63",
+    "source_runner": "d45a908ec6cf5f4bd3282daf25e31bed5b1dfac799c01c916db5552bfb5a6f77",
+    "oce.py": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+    "Cg.pt": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae"
+  },
+  "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
+  "local_files_only": true,
+  "effective_image_retention": "delete-after-eval",
+  "resolved_at": "2026-08-14T11:56:00.459622+00:00",
+  "software": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35"
+  },
+  "config": {
+    "experiment_name": "sequential_oce_object_followup_v1",
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "clip_model_id": "openai/clip-vit-base-patch32",
+    "device": "cuda:0",
+    "cg_path": "../../Cg.pt",
+    "source_output_dir": "../sequential_object_persistence/outputs/sequential_oce_object_v1_online",
+    "targets": [
+      {
+        "target": "airplane",
+        "anchor": "sky"
+      },
+      {
+        "target": "automobile",
+        "anchor": "truck"
+      },
+      {
+        "target": "bird",
+        "anchor": "cat"
+      },
+      {
+        "target": "cat",
+        "anchor": "dog"
+      },
+      {
+        "target": "deer",
+        "anchor": "horse"
+      },
+      {
+        "target": "dog",
+        "anchor": "cat"
+      },
+      {
+        "target": "frog",
+        "anchor": "bird"
+      },
+      {
+        "target": "horse",
+        "anchor": "deer"
+      },
+      {
+        "target": "ship",
+        "anchor": "airplane"
+      },
+      {
+        "target": "truck",
+        "anchor": "ship"
+      }
+    ],
+    "clean_chain": [
+      {
+        "target": "dog",
+        "anchor": "cat"
+      },
+      {
+        "target": "bird",
+        "anchor": "cat"
+      },
+      {
+        "target": "airplane",
+        "anchor": "sky"
+      },
+      {
+        "target": "automobile",
+        "anchor": "truck"
+      },
+      {
+        "target": "deer",
+        "anchor": "horse"
+      }
+    ],
+    "oce": {
+      "erase_scale": 1000.0,
+      "preserve_global_scale": 50.0,
+      "preserve_concept_scale": 1.0,
+      "lamb": 10.0,
+      "expand_prompts": true,
+      "always_preserve_current_anchor": true,
+      "edit_dtype": "float32"
+    },
+    "generation": {
+      "images_per_cell": 200,
+      "source_images_per_cell": 100,
+      "supplement_images_per_cell": 100,
+      "seed_start": 42,
+      "supplement_seed_start": 142,
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "dtype": "bfloat16",
+      "batch_size": 4,
+      "prompt_template": "a photo of the {concept}",
+      "scheduler": "PNDMScheduler"
+    },
+    "evaluation": {
+      "cifar_class_text_template": "photo of a {concept}",
+      "batch_size": 16
+    },
+    "storage": {
+      "image_retention": "delete-after-eval"
+    }
+  }
+}

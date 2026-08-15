@@ -113,6 +113,7 @@ outputs/sequential_oce_object_followup_v1/
 ├── figures/
 │   ├── experiment2_previous_erasure_heatmap.{png,pdf}
 │   └── experiment2_trajectories.{png,pdf}
+├── validation_report.md
 ├── summary.json
 └── summary.md
 ```

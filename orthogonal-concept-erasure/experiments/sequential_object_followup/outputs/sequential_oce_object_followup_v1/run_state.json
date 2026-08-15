@@ -1,0 +1,29 @@
+{
+  "preflight": {
+    "status": "complete",
+    "updated_at": "2026-08-14T11:56:00.462041+00:00",
+    "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
+    "planned_new_images": 7000
+  },
+  "checkpoints": {
+    "status": "complete",
+    "updated_at": "2026-08-14T11:56:45.347818+00:00",
+    "checkpoint_count": 15
+  },
+  "evaluation": {
+    "status": "complete",
+    "updated_at": "2026-08-14T17:37:03.212410+00:00",
+    "new_formal_images": 7000,
+    "final_predictions": 9000,
+    "cells": 45,
+    "image_retention": "delete-after-eval"
+  },
+  "aggregation": {
+    "status": "complete",
+    "updated_at": "2026-08-14T17:37:04.168717+00:00",
+    "cells": 45,
+    "new_generation_images": 7000,
+    "final_prediction_rows": 9000,
+    "unique_seeds_per_final_cell": 200
+  }
+}

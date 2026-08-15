@@ -1,0 +1,6 @@
+target,anchor,erased_at_step,accuracy_immediately_after_own_erasure,accuracy_W1,accuracy_W2,accuracy_W3,accuracy_W4,accuracy_W5,maximum_post_erasure_accuracy,maximum_at_checkpoint,raw_increase_from_own_step
+dog,cat,1,0.005,0.005,0.0,0.0,0.005,0.0,0.005,W1,0.0
+bird,cat,2,0.475,,0.475,0.66,0.69,0.735,0.735,W5,0.26
+airplane,sky,3,0.03,,,0.03,0.18,0.145,0.18,W4,0.15
+automobile,truck,4,0.735,,,,0.735,0.71,0.735,W4,0.0
+deer,horse,5,0.0,,,,,0.0,0.0,W5,0.0

@@ -1,0 +1,1415 @@
+{
+  "status": "complete",
+  "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
+  "source_protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
+  "condition": "retain_always",
+  "checkpoint": "W09",
+  "concept": "ship",
+  "prompt": "a photo of the ship",
+  "existing_prediction_count": 100,
+  "new_generation_count": 100,
+  "final_prediction_count": 200,
+  "source_predictions": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online/raw/cells/retain_always/W09/ship/predictions.csv",
+  "images": [
+    {
+      "sample_index": 0,
+      "seed": 42,
+      "image_path": "images/retain_always/W09/ship/index_000_seed_42.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 1,
+      "seed": 43,
+      "image_path": "images/retain_always/W09/ship/index_001_seed_43.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 2,
+      "seed": 44,
+      "image_path": "images/retain_always/W09/ship/index_002_seed_44.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 3,
+      "seed": 45,
+      "image_path": "images/retain_always/W09/ship/index_003_seed_45.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 4,
+      "seed": 46,
+      "image_path": "images/retain_always/W09/ship/index_004_seed_46.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 5,
+      "seed": 47,
+      "image_path": "images/retain_always/W09/ship/index_005_seed_47.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 6,
+      "seed": 48,
+      "image_path": "images/retain_always/W09/ship/index_006_seed_48.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 7,
+      "seed": 49,
+      "image_path": "images/retain_always/W09/ship/index_007_seed_49.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 8,
+      "seed": 50,
+      "image_path": "images/retain_always/W09/ship/index_008_seed_50.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 9,
+      "seed": 51,
+      "image_path": "images/retain_always/W09/ship/index_009_seed_51.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 10,
+      "seed": 52,
+      "image_path": "images/retain_always/W09/ship/index_010_seed_52.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 11,
+      "seed": 53,
+      "image_path": "images/retain_always/W09/ship/index_011_seed_53.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 12,
+      "seed": 54,
+      "image_path": "images/retain_always/W09/ship/index_012_seed_54.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 13,
+      "seed": 55,
+      "image_path": "images/retain_always/W09/ship/index_013_seed_55.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 14,
+      "seed": 56,
+      "image_path": "images/retain_always/W09/ship/index_014_seed_56.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 15,
+      "seed": 57,
+      "image_path": "images/retain_always/W09/ship/index_015_seed_57.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 16,
+      "seed": 58,
+      "image_path": "images/retain_always/W09/ship/index_016_seed_58.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 17,
+      "seed": 59,
+      "image_path": "images/retain_always/W09/ship/index_017_seed_59.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 18,
+      "seed": 60,
+      "image_path": "images/retain_always/W09/ship/index_018_seed_60.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 19,
+      "seed": 61,
+      "image_path": "images/retain_always/W09/ship/index_019_seed_61.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 20,
+      "seed": 62,
+      "image_path": "images/retain_always/W09/ship/index_020_seed_62.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 21,
+      "seed": 63,
+      "image_path": "images/retain_always/W09/ship/index_021_seed_63.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 22,
+      "seed": 64,
+      "image_path": "images/retain_always/W09/ship/index_022_seed_64.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 23,
+      "seed": 65,
+      "image_path": "images/retain_always/W09/ship/index_023_seed_65.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 24,
+      "seed": 66,
+      "image_path": "images/retain_always/W09/ship/index_024_seed_66.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 25,
+      "seed": 67,
+      "image_path": "images/retain_always/W09/ship/index_025_seed_67.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 26,
+      "seed": 68,
+      "image_path": "images/retain_always/W09/ship/index_026_seed_68.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 27,
+      "seed": 69,
+      "image_path": "images/retain_always/W09/ship/index_027_seed_69.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 28,
+      "seed": 70,
+      "image_path": "images/retain_always/W09/ship/index_028_seed_70.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 29,
+      "seed": 71,
+      "image_path": "images/retain_always/W09/ship/index_029_seed_71.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 30,
+      "seed": 72,
+      "image_path": "images/retain_always/W09/ship/index_030_seed_72.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 31,
+      "seed": 73,
+      "image_path": "images/retain_always/W09/ship/index_031_seed_73.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 32,
+      "seed": 74,
+      "image_path": "images/retain_always/W09/ship/index_032_seed_74.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 33,
+      "seed": 75,
+      "image_path": "images/retain_always/W09/ship/index_033_seed_75.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 34,
+      "seed": 76,
+      "image_path": "images/retain_always/W09/ship/index_034_seed_76.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 35,
+      "seed": 77,
+      "image_path": "images/retain_always/W09/ship/index_035_seed_77.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 36,
+      "seed": 78,
+      "image_path": "images/retain_always/W09/ship/index_036_seed_78.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 37,
+      "seed": 79,
+      "image_path": "images/retain_always/W09/ship/index_037_seed_79.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 38,
+      "seed": 80,
+      "image_path": "images/retain_always/W09/ship/index_038_seed_80.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 39,
+      "seed": 81,
+      "image_path": "images/retain_always/W09/ship/index_039_seed_81.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 40,
+      "seed": 82,
+      "image_path": "images/retain_always/W09/ship/index_040_seed_82.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 41,
+      "seed": 83,
+      "image_path": "images/retain_always/W09/ship/index_041_seed_83.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 42,
+      "seed": 84,
+      "image_path": "images/retain_always/W09/ship/index_042_seed_84.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 43,
+      "seed": 85,
+      "image_path": "images/retain_always/W09/ship/index_043_seed_85.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 44,
+      "seed": 86,
+      "image_path": "images/retain_always/W09/ship/index_044_seed_86.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 45,
+      "seed": 87,
+      "image_path": "images/retain_always/W09/ship/index_045_seed_87.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 46,
+      "seed": 88,
+      "image_path": "images/retain_always/W09/ship/index_046_seed_88.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 47,
+      "seed": 89,
+      "image_path": "images/retain_always/W09/ship/index_047_seed_89.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 48,
+      "seed": 90,
+      "image_path": "images/retain_always/W09/ship/index_048_seed_90.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 49,
+      "seed": 91,
+      "image_path": "images/retain_always/W09/ship/index_049_seed_91.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 50,
+      "seed": 92,
+      "image_path": "images/retain_always/W09/ship/index_050_seed_92.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 51,
+      "seed": 93,
+      "image_path": "images/retain_always/W09/ship/index_051_seed_93.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 52,
+      "seed": 94,
+      "image_path": "images/retain_always/W09/ship/index_052_seed_94.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 53,
+      "seed": 95,
+      "image_path": "images/retain_always/W09/ship/index_053_seed_95.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 54,
+      "seed": 96,
+      "image_path": "images/retain_always/W09/ship/index_054_seed_96.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 55,
+      "seed": 97,
+      "image_path": "images/retain_always/W09/ship/index_055_seed_97.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 56,
+      "seed": 98,
+      "image_path": "images/retain_always/W09/ship/index_056_seed_98.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 57,
+      "seed": 99,
+      "image_path": "images/retain_always/W09/ship/index_057_seed_99.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 58,
+      "seed": 100,
+      "image_path": "images/retain_always/W09/ship/index_058_seed_100.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 59,
+      "seed": 101,
+      "image_path": "images/retain_always/W09/ship/index_059_seed_101.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 60,
+      "seed": 102,
+      "image_path": "images/retain_always/W09/ship/index_060_seed_102.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 61,
+      "seed": 103,
+      "image_path": "images/retain_always/W09/ship/index_061_seed_103.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 62,
+      "seed": 104,
+      "image_path": "images/retain_always/W09/ship/index_062_seed_104.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 63,
+      "seed": 105,
+      "image_path": "images/retain_always/W09/ship/index_063_seed_105.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 64,
+      "seed": 106,
+      "image_path": "images/retain_always/W09/ship/index_064_seed_106.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 65,
+      "seed": 107,
+      "image_path": "images/retain_always/W09/ship/index_065_seed_107.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 66,
+      "seed": 108,
+      "image_path": "images/retain_always/W09/ship/index_066_seed_108.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 67,
+      "seed": 109,
+      "image_path": "images/retain_always/W09/ship/index_067_seed_109.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 68,
+      "seed": 110,
+      "image_path": "images/retain_always/W09/ship/index_068_seed_110.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 69,
+      "seed": 111,
+      "image_path": "images/retain_always/W09/ship/index_069_seed_111.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 70,
+      "seed": 112,
+      "image_path": "images/retain_always/W09/ship/index_070_seed_112.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 71,
+      "seed": 113,
+      "image_path": "images/retain_always/W09/ship/index_071_seed_113.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 72,
+      "seed": 114,
+      "image_path": "images/retain_always/W09/ship/index_072_seed_114.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 73,
+      "seed": 115,
+      "image_path": "images/retain_always/W09/ship/index_073_seed_115.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 74,
+      "seed": 116,
+      "image_path": "images/retain_always/W09/ship/index_074_seed_116.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 75,
+      "seed": 117,
+      "image_path": "images/retain_always/W09/ship/index_075_seed_117.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 76,
+      "seed": 118,
+      "image_path": "images/retain_always/W09/ship/index_076_seed_118.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 77,
+      "seed": 119,
+      "image_path": "images/retain_always/W09/ship/index_077_seed_119.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 78,
+      "seed": 120,
+      "image_path": "images/retain_always/W09/ship/index_078_seed_120.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 79,
+      "seed": 121,
+      "image_path": "images/retain_always/W09/ship/index_079_seed_121.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 80,
+      "seed": 122,
+      "image_path": "images/retain_always/W09/ship/index_080_seed_122.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 81,
+      "seed": 123,
+      "image_path": "images/retain_always/W09/ship/index_081_seed_123.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 82,
+      "seed": 124,
+      "image_path": "images/retain_always/W09/ship/index_082_seed_124.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 83,
+      "seed": 125,
+      "image_path": "images/retain_always/W09/ship/index_083_seed_125.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 84,
+      "seed": 126,
+      "image_path": "images/retain_always/W09/ship/index_084_seed_126.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 85,
+      "seed": 127,
+      "image_path": "images/retain_always/W09/ship/index_085_seed_127.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 86,
+      "seed": 128,
+      "image_path": "images/retain_always/W09/ship/index_086_seed_128.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 87,
+      "seed": 129,
+      "image_path": "images/retain_always/W09/ship/index_087_seed_129.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 88,
+      "seed": 130,
+      "image_path": "images/retain_always/W09/ship/index_088_seed_130.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 89,
+      "seed": 131,
+      "image_path": "images/retain_always/W09/ship/index_089_seed_131.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 90,
+      "seed": 132,
+      "image_path": "images/retain_always/W09/ship/index_090_seed_132.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 91,
+      "seed": 133,
+      "image_path": "images/retain_always/W09/ship/index_091_seed_133.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 92,
+      "seed": 134,
+      "image_path": "images/retain_always/W09/ship/index_092_seed_134.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 93,
+      "seed": 135,
+      "image_path": "images/retain_always/W09/ship/index_093_seed_135.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 94,
+      "seed": 136,
+      "image_path": "images/retain_always/W09/ship/index_094_seed_136.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 95,
+      "seed": 137,
+      "image_path": "images/retain_always/W09/ship/index_095_seed_137.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 96,
+      "seed": 138,
+      "image_path": "images/retain_always/W09/ship/index_096_seed_138.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 97,
+      "seed": 139,
+      "image_path": "images/retain_always/W09/ship/index_097_seed_139.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 98,
+      "seed": 140,
+      "image_path": "images/retain_always/W09/ship/index_098_seed_140.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 99,
+      "seed": 141,
+      "image_path": "images/retain_always/W09/ship/index_099_seed_141.png",
+      "sample_origin": "existing_v1_100",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_persistence/outputs/sequential_oce_object_v1_online"
+    },
+    {
+      "sample_index": 100,
+      "seed": 142,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_100_seed_142.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 101,
+      "seed": 143,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_101_seed_143.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 102,
+      "seed": 144,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_102_seed_144.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 103,
+      "seed": 145,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_103_seed_145.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 104,
+      "seed": 146,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_104_seed_146.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 105,
+      "seed": 147,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_105_seed_147.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 106,
+      "seed": 148,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_106_seed_148.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 107,
+      "seed": 149,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_107_seed_149.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 108,
+      "seed": 150,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_108_seed_150.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 109,
+      "seed": 151,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_109_seed_151.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 110,
+      "seed": 152,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_110_seed_152.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 111,
+      "seed": 153,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_111_seed_153.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 112,
+      "seed": 154,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_112_seed_154.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 113,
+      "seed": 155,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_113_seed_155.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 114,
+      "seed": 156,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_114_seed_156.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 115,
+      "seed": 157,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_115_seed_157.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 116,
+      "seed": 158,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_116_seed_158.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 117,
+      "seed": 159,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_117_seed_159.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 118,
+      "seed": 160,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_118_seed_160.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 119,
+      "seed": 161,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_119_seed_161.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 120,
+      "seed": 162,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_120_seed_162.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 121,
+      "seed": 163,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_121_seed_163.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 122,
+      "seed": 164,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_122_seed_164.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 123,
+      "seed": 165,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_123_seed_165.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 124,
+      "seed": 166,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_124_seed_166.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 125,
+      "seed": 167,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_125_seed_167.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 126,
+      "seed": 168,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_126_seed_168.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 127,
+      "seed": 169,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_127_seed_169.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 128,
+      "seed": 170,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_128_seed_170.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 129,
+      "seed": 171,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_129_seed_171.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 130,
+      "seed": 172,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_130_seed_172.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 131,
+      "seed": 173,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_131_seed_173.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 132,
+      "seed": 174,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_132_seed_174.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 133,
+      "seed": 175,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_133_seed_175.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 134,
+      "seed": 176,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_134_seed_176.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 135,
+      "seed": 177,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_135_seed_177.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 136,
+      "seed": 178,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_136_seed_178.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 137,
+      "seed": 179,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_137_seed_179.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 138,
+      "seed": 180,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_138_seed_180.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 139,
+      "seed": 181,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_139_seed_181.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 140,
+      "seed": 182,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_140_seed_182.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 141,
+      "seed": 183,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_141_seed_183.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 142,
+      "seed": 184,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_142_seed_184.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 143,
+      "seed": 185,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_143_seed_185.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 144,
+      "seed": 186,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_144_seed_186.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 145,
+      "seed": 187,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_145_seed_187.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 146,
+      "seed": 188,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_146_seed_188.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 147,
+      "seed": 189,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_147_seed_189.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 148,
+      "seed": 190,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_148_seed_190.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 149,
+      "seed": 191,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_149_seed_191.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 150,
+      "seed": 192,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_150_seed_192.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 151,
+      "seed": 193,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_151_seed_193.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 152,
+      "seed": 194,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_152_seed_194.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 153,
+      "seed": 195,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_153_seed_195.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 154,
+      "seed": 196,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_154_seed_196.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 155,
+      "seed": 197,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_155_seed_197.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 156,
+      "seed": 198,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_156_seed_198.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 157,
+      "seed": 199,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_157_seed_199.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 158,
+      "seed": 200,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_158_seed_200.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 159,
+      "seed": 201,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_159_seed_201.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 160,
+      "seed": 202,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_160_seed_202.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 161,
+      "seed": 203,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_161_seed_203.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 162,
+      "seed": 204,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_162_seed_204.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 163,
+      "seed": 205,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_163_seed_205.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 164,
+      "seed": 206,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_164_seed_206.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 165,
+      "seed": 207,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_165_seed_207.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 166,
+      "seed": 208,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_166_seed_208.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 167,
+      "seed": 209,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_167_seed_209.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 168,
+      "seed": 210,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_168_seed_210.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 169,
+      "seed": 211,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_169_seed_211.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 170,
+      "seed": 212,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_170_seed_212.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 171,
+      "seed": 213,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_171_seed_213.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 172,
+      "seed": 214,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_172_seed_214.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 173,
+      "seed": 215,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_173_seed_215.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 174,
+      "seed": 216,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_174_seed_216.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 175,
+      "seed": 217,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_175_seed_217.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 176,
+      "seed": 218,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_176_seed_218.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 177,
+      "seed": 219,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_177_seed_219.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 178,
+      "seed": 220,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_178_seed_220.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 179,
+      "seed": 221,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_179_seed_221.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 180,
+      "seed": 222,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_180_seed_222.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 181,
+      "seed": 223,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_181_seed_223.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 182,
+      "seed": 224,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_182_seed_224.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 183,
+      "seed": 225,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_183_seed_225.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 184,
+      "seed": 226,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_184_seed_226.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 185,
+      "seed": 227,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_185_seed_227.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 186,
+      "seed": 228,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_186_seed_228.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 187,
+      "seed": 229,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_187_seed_229.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 188,
+      "seed": 230,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_188_seed_230.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 189,
+      "seed": 231,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_189_seed_231.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 190,
+      "seed": 232,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_190_seed_232.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 191,
+      "seed": 233,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_191_seed_233.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 192,
+      "seed": 234,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_192_seed_234.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 193,
+      "seed": 235,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_193_seed_235.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 194,
+      "seed": 236,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_194_seed_236.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 195,
+      "seed": 237,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_195_seed_237.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 196,
+      "seed": 238,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_196_seed_238.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 197,
+      "seed": 239,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_197_seed_239.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 198,
+      "seed": 240,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_198_seed_240.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    },
+    {
+      "sample_index": 199,
+      "seed": 241,
+      "image_path": "images/experiment1_sequential_own_step/retain_always/W09/ship/index_199_seed_241.png",
+      "sample_origin": "new_followup_supplement",
+      "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_followup/outputs/sequential_oce_object_followup_v1"
+    }
+  ]
+}
