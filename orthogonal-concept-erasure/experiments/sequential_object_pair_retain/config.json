@@ -1,0 +1,65 @@
+{
+  "experiment_name": "sequential_oce_pair_retain_v1",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "clip_model_id": "openai/clip-vit-base-patch32",
+  "device": "cuda:0",
+  "cg_path": "../../Cg.pt",
+  "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/tmp/sequential_oce_pair_retain_v1",
+  "paper": {
+    "title": "Orthogonal Concept Erasure for Diffusion Models",
+    "arxiv_id": "2605.28902",
+    "version": "v1",
+    "pdf_sha256": "e6dcd3038412f93c65f18af19e3a5452f2016e3299ea2f74d116ecb2664f9453"
+  },
+  "target_anchor_mapping": {
+    "airplane": "sky",
+    "automobile": "truck",
+    "bird": "cat",
+    "cat": "dog",
+    "deer": "horse",
+    "dog": "cat",
+    "frog": "bird",
+    "horse": "deer",
+    "ship": "airplane",
+    "truck": "ship"
+  },
+  "unordered_pairs": [
+    ["airplane", "cat"],
+    ["automobile", "bird"],
+    ["deer", "dog"],
+    ["frog", "ship"],
+    ["horse", "truck"]
+  ],
+  "oce": {
+    "erase_scale": 1000.0,
+    "preserve_global_scale": 50.0,
+    "preserve_concept_scale": 1.0,
+    "lamb": 10.0,
+    "expand_prompts": true,
+    "always_preserve_current_anchor": true,
+    "edit_dtype": "float32"
+  },
+  "generation": {
+    "images_per_class": 200,
+    "seed_start": 42,
+    "seed_policy": "per-image integer seeds 42..241; paper does not specify seeds",
+    "qualitative_seeds": [42, 43],
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "batch_size": 4,
+    "prompt_template": "a photo of the {concept}",
+    "scheduler": "PNDMScheduler"
+  },
+  "evaluation": {
+    "class_text_template": "photo of a {concept}",
+    "batch_size": 16,
+    "classifier_rule": "argmax over the ten CIFAR-10 CLIP logits_per_image values"
+  },
+  "storage": {
+    "formal_image_retention": "delete-after-successful-evaluation",
+    "qualitative_tarball_name": "qualitative_samples.tar.gz"
+  }
+}
