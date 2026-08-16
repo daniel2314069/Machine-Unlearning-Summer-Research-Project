@@ -1,5 +1,7 @@
 {
   "status": "complete",
+  "research_status": "abandoned_not_for_claims",
+  "research_status_document": "../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md",
   "protocol_fingerprint": "23923f0755158ac4f7fc1f500c734d07b55ee0dedd1cbf0d519386bcbb6877bb",
   "formal_counts": {
     "cells": 45,
@@ -236,13 +238,14 @@
     "clean_chain_dog_resurgence": false,
     "clean_chain_bird_resurgence": true,
     "clean_chain_airplane_resurgence": true,
-    "previous_erasure_persistence_assessment": "target-dependent evidence remains",
-    "later_anchor_erasure_alone_explains_original_observation": false,
+    "previous_erasure_persistence_assessment": "sequence-specific descriptive increases; general causal claim not identified",
+    "later_anchor_erasure_assessment": "Later direct anchor erasure is not necessary for the bird/airplane increases in this sequence, but the clean chain is not a matched counterfactual and does not isolate the cause of the original trajectories.",
     "notes": [
       "Dog did not exceed its W1 accuracy at any later clean-chain checkpoint.",
       "Bird rose from 0.475 at W2 to 0.735 at W5.",
       "Airplane rose from 0.030 at W3 to a maximum of 0.180 at W4.",
-      "Clean-chain own-step comparisons versus direct-single were mixed rather than consistently worse."
+      "Experiment 1 direct-single and sequential own-step conditions are unmatched because their elephant retain requests differ.",
+      "Target identity, step, and prior-edit order are confounded in each fixed chain."
     ]
   },
   "completed_at": "2026-08-14T17:37:04.168398+00:00"

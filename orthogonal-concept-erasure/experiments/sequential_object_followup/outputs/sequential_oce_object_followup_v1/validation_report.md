@@ -1,6 +1,11 @@
 # Follow-up result validation
 
-Overall assessment: **Ready to share with the stated target-dependent caveat.**
+Overall assessment: **Needs revision / research use abandoned.**
+
+The execution artifacts and calculations are internally consistent, but the
+design does not identify the causal questions stated for the experiment. The
+results are not ready for paper claims. See
+[`../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md`](../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md).
 
 ## Scope and protocol checks
 
@@ -23,10 +28,29 @@ Overall assessment: **Ready to share with the stated target-dependent caveat.**
 
 ## Interpretation check
 
-- Experiment 1 is mixed: some later sequential requests are less effective, especially truck and ship, but automobile and bird improve and cat/deer are unchanged. A universal degradation claim is not supported.
+- Experiment 1 is not a matched prior-edit comparison. Direct-single omits the
+  elephant retain request used by the sequential chains. Airplane already
+  differs at W01, where no prior edits exist (0.040 sequential versus 0.015
+  direct), demonstrating that prior edit history is not the only changed factor.
+- Target identity, fixed order, and step number are confounded, so the observed
+  cross-target pattern cannot identify an accumulation effect.
 - Dog is worse in the original sequential own-step comparison, while bird is not.
 - In the clean chain, dog does not resurge; bird does, rising from 0.475 to 0.735. Airplane also rises from 0.030 to a maximum of 0.180.
-- The clean chain therefore retains target-dependent previous-erasure persistence evidence, but does not reproduce the earlier dog case.
-- Since bird and airplane rise even though their anchors are not later erase targets, later anchor erasure alone cannot explain all of the original observation. Other anchor interactions remain possible.
+- The clean chain excludes later direct erasure of an anchor, but it is not a
+  matched counterfactual to the original chain because order, step, retain
+  history, and later edits also change. It cannot isolate why the original dog
+  trajectory occurred.
+- Bird and airplane provide sequence-specific descriptive evidence that later
+  direct anchor erasure is not necessary for CIFAR-10 CLIP target accuracy to
+  rise. They do not establish a universal persistence failure.
+
+## Blocking disposition
+
+- Do not use Experiment 1 differences as causal effects of previous edits.
+- Do not use the elephant ceiling result to choose Retain Once over Retain
+  Always; the required Retain Never control is absent.
+- Do not generalize the fixed-chain trajectories beyond their tested orders.
+- Preserve the raw artifacts for audit, but treat this experiment family as
+  abandoned rather than adding more runs to it.
 
 No artificial significance threshold was used; statements above report raw accuracies and absolute differences.

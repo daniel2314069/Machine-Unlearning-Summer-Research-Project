@@ -1524,6 +1524,8 @@ def aggregate(args: argparse.Namespace) -> None:
     airplane_up = float(airplane["raw_increase_from_own_step"]) > 0
     result = {
         "status": "complete",
+        "research_status": "abandoned_not_for_claims",
+        "research_status_document": "../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md",
         "protocol_fingerprint": protocol["protocol_fingerprint"],
         "formal_counts": audit,
         "experiment1": {
@@ -1564,10 +1566,12 @@ def aggregate(args: argparse.Namespace) -> None:
             "clean_chain_bird_resurgence": bird_up,
             "clean_chain_airplane_resurgence": airplane_up,
             "previous_erasure_persistence_assessment": (
-                "target-dependent evidence remains" if bird_up or airplane_up else "not reproduced"
+                "sequence-specific descriptive increases; general causal claim not identified"
             ),
-            "later_anchor_erasure_alone_explains_original_observation": not (
-                bird_up or airplane_up
+            "later_anchor_erasure_assessment": (
+                "Later direct anchor erasure is not necessary for an increase in this "
+                "sequence when bird or airplane rises, but the clean chain is not a "
+                "matched counterfactual and does not isolate the original cause."
             ),
         },
         "completed_at": utc_now(),
@@ -1583,15 +1587,15 @@ def aggregate(args: argparse.Namespace) -> None:
         for row in comparison_rows
     ]
     direction_answer = (
-        "The clearest two-condition sequential penalties were truck, ship, and dog. "
-        "Horse had a large penalty only under Retain Always. Airplane and frog had "
-        "smaller positive differences."
+        "The largest positive raw differences were for truck, ship, and dog. Horse "
+        "had a large positive difference only under Retain Always. These are not "
+        "identified sequential penalties because the compared retain requests differ."
     )
     consistency_answer = (
         "The direction was not consistent across targets: automobile and bird were "
         "lower under both sequential conditions, while cat and deer were unchanged. "
-        "The result supports target-dependent degradation for some later requests, "
-        "not a universal reduction in OCE effectiveness."
+        "Direct-single and sequential own-step are unmatched because their elephant "
+        "retain requests differ, so previous edits cannot be isolated as the cause."
     )
     dog_line = (
         f"Dog: W1={float(dog['accuracy_immediately_after_own_erasure']):.3f}, "
@@ -1607,10 +1611,10 @@ def aggregate(args: argparse.Namespace) -> None:
     )
     overlap_answer = (
         "Dog did not reproduce its earlier resurgence. Bird did reproduce an upward "
-        "trajectory, and airplane also rose after its own erase step. Because none of "
-        "their anchors is erased later in this chain, later erasure of the anchor cannot "
-        "by itself explain all of the original observation. The design does not exclude "
-        "other anchor interactions."
+        "trajectory, and airplane also rose after its own erase step. Later direct "
+        "anchor erasure is therefore not necessary for an increase in this sequence. "
+        "The chain is not a matched counterfactual to the original run and does not "
+        "isolate the cause of the original trajectories."
     )
     own_step_answer = (
         "Against direct-single, clean-chain own-step accuracy was equal for dog and deer, "
@@ -1619,6 +1623,10 @@ def aggregate(args: argparse.Namespace) -> None:
     )
     summary_lines = [
         "# Sequential OCE object follow-up summary",
+        "",
+        "> **RESEARCH STATUS: ABANDONED / NOT FOR CLAIMS.** Execution may be "
+        "complete, but the comparisons do not identify the intended causal effects. "
+        "See `../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md`.",
         "",
         "- New formal generations: **7,000** exactly.",
         "- Every final formal cell: **200 unique predictions**.",
@@ -1645,9 +1653,9 @@ def aggregate(args: argparse.Namespace) -> None:
         overlap_answer,
         own_step_answer,
         (
-            "Overall, the clean chain preserves evidence of a previous-erasure persistence "
-            "problem for some targets (bird and airplane), but not for dog and not uniformly "
-            "across the five targets."
+            "Overall, the clean chain records target- and order-specific accuracy increases "
+            "for bird and airplane, but not dog. It does not establish a general "
+            "previous-erasure persistence problem."
         ),
         "",
         "The persistence table and per-target summary report every 200-image checkpoint accuracy. Conclusions are limited to this fixed repeat.",

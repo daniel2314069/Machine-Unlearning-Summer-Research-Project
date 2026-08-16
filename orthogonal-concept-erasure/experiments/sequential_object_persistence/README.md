@@ -1,5 +1,13 @@
 # Sequential OCE object-persistence experiment
 
+> **ABANDONED — NOT FOR PAPER CLAIMS.** The run completed, but the design does
+> not answer the intended retain-persistence or general sequential-effect
+> questions. Raw artifacts are retained only for audit and reproducibility. See
+> [`../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md`](../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md).
+
+Do not launch additional runs from this directory as a continuation of the
+study. A replacement requires a separately named, redesigned protocol.
+
 This directory implements two cumulative, ten-step single-concept OCE chains:
 
 - `retain_once`: X is in the explicit local retain set at W01 only.

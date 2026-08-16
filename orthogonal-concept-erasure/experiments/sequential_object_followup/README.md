@@ -1,5 +1,13 @@
 # Sequential OCE object follow-up experiments
 
+> **ABANDONED — NOT FOR PAPER CLAIMS.** The run completed, but the follow-up
+> comparisons do not isolate the intended causal effects. Raw artifacts are
+> retained only for audit and reproducibility. See
+> [`../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md`](../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md).
+
+Do not launch additional runs from this directory as a continuation of the
+study. A replacement requires a separately named, redesigned protocol.
+
 This directory runs the two fixed empirical follow-ups to the completed
 `sequential_object_persistence` experiment. It only orchestrates the repository's
 existing single-concept OCE implementation.

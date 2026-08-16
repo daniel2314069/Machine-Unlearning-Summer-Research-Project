@@ -1294,6 +1294,8 @@ def aggregate(args: argparse.Namespace) -> None:
     qualification = read_json(qualification_summary_path(output_dir))
     result_summary = {
         "status": "complete",
+        "research_status": "abandoned_not_for_claims",
+        "research_status_document": "../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md",
         "protocol_fingerprint": protocol["protocol_fingerprint"],
         "selected_x": selected_x,
         "qualification": qualification,
@@ -1318,6 +1320,21 @@ def aggregate(args: argparse.Namespace) -> None:
         "previous_erasure_resurgence": {
             "observed": bool(significant),
             "significant_cases": significant,
+        },
+        "reviewed_interpretation": {
+            "retain_persistence": (
+                "Unanswered: there is no Retain Never control and the selected-X "
+                "assay may be ceiling-limited."
+            ),
+            "retain_condition_comparison": (
+                "A measured difference or non-difference between the two tested "
+                "conditions does not identify the effect of retaining X without a "
+                "Retain Never control."
+            ),
+            "previous_erasure_persistence": (
+                "Later target-accuracy changes are descriptive for these fixed "
+                "sequences; target, order, step, and retain history are confounded."
+            ),
         },
         "completed_at": utc_now(),
     }
@@ -1367,6 +1384,10 @@ def aggregate(args: argparse.Namespace) -> None:
     summary_lines = [
         "# Sequential OCE object-persistence summary",
         "",
+        "> **RESEARCH STATUS: ABANDONED / NOT FOR CLAIMS.** Execution may be "
+        "complete, but the design does not identify the intended causal questions. "
+        "See `../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md`.",
+        "",
         f"- Selected X: **{selected_x}**",
         f"- Formal scope: **141 concept-checkpoint cells / 14,100 images**",
         f"- Qualification overhead: **{result_summary['qualification_images']} images**",
@@ -1383,9 +1404,13 @@ def aggregate(args: argparse.Namespace) -> None:
         "",
         "## Answers",
         "",
+        "- Retain persistence is not identified: the design has no Retain Never "
+        "control, so the two tested conditions cannot distinguish protection from "
+        "natural preservation.",
         f"- {retain_once_answer}",
         f"- {always_answer}",
-        f"- {resurgence_answer}",
+        f"- {resurgence_answer} This is a fixed-sequence descriptive result; target, "
+        "order, step, and retain history are confounded.",
         "",
         "## Artifacts",
         "",

@@ -1,5 +1,7 @@
 {
   "status": "complete",
+  "research_status": "abandoned_not_for_claims",
+  "research_status_document": "../../../ABANDONED_SEQUENTIAL_OBJECT_EXPERIMENTS.md",
   "protocol_fingerprint": "cef621e40ead1d4d53bd39354c163c9219655a818616118cc779106151dfd880",
   "selected_x": "elephant",
   "qualification": {
@@ -102,9 +104,9 @@
     ]
   },
   "reviewed_interpretation": {
-    "retain_persistence": "Elephant stayed at 1.0 accuracy at W00 and every W01-W10 checkpoint in both conditions; Retain Once did not degrade in this run.",
-    "retain_condition_comparison": "Retain Always showed no measured advantage over Retain Once. This is limited to elephant and a saturated 11-class CLIP assay.",
-    "previous_erasure_persistence": "Material resurgence was observed. Dog is the clearest case (0.13 to 0.85 in Retain Once; 0.11 to 0.79 in Retain Always), followed by bird (0.47 to 0.91; 0.41 to 0.91). Automobile in Retain Always crossed the 0.10 threshold but was already high at its erasure checkpoint (0.68 to 0.79), so it is not strong disappearance-then-reappearance evidence."
+    "retain_persistence": "Unanswered: there is no Retain Never control and the elephant assay is saturated at the ceiling.",
+    "retain_condition_comparison": "No measurable difference appeared, but the ceiling-limited assay does not establish equivalence or show that Retain Always is unnecessary.",
+    "previous_erasure_persistence": "Some target accuracies rose in these exact fixed sequences. Target identity, order, step, and retain history are confounded, so this is descriptive and does not establish a general causal effect."
   },
   "completed_at": "2026-08-13T22:34:28.417213+00:00"
 }
