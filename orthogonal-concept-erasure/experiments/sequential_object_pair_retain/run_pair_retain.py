@@ -383,6 +383,75 @@ def make_protocol(
     }
 
 
+def migrate_failed_template_key_run(
+    output_dir: Path,
+    existing: Mapping[str, Any],
+    protocol: dict[str, Any],
+) -> dict[str, Any] | None:
+    """Adopt this compatibility fix only for the initial pre-scoring failure."""
+    state_path = output_dir / "run_state.json"
+    if not state_path.is_file():
+        return None
+    state = read_json(state_path)
+    if "cifar_class_text_template" not in str(state.get("error", "")):
+        return None
+    if int(state.get("completed_evaluators", -1)) != 0 or completed_cell_markers(output_dir):
+        return None
+    forbidden_artifacts = [
+        *(output_dir / "checkpoints").glob("**/*.safetensors"),
+        *(output_dir / "raw" / "cells").glob("**/predictions.csv"),
+        *(output_dir / "raw" / "cells").glob("**/metrics.json"),
+        *(output_dir / "raw" / "cells").glob("**/complete.json"),
+    ]
+    if forbidden_artifacts:
+        return None
+    if existing.get("config") != protocol.get("config"):
+        return None
+    if existing.get("base_checkpoint") != protocol.get("base_checkpoint"):
+        return None
+    if existing.get("clip_evaluator_checkpoint") != protocol.get("clip_evaluator_checkpoint"):
+        return None
+    old_sources = dict(
+        existing.get("paper_repo_configuration_source", {}).get("repository_files", {})
+    )
+    new_sources = dict(
+        protocol.get("paper_repo_configuration_source", {}).get("repository_files", {})
+    )
+    changed_sources = sorted(
+        key for key in set(old_sources) | set(new_sources)
+        if old_sources.get(key) != new_sources.get(key)
+    )
+    if changed_sources != ["runner"]:
+        return None
+    old_fingerprint = str(existing["protocol_fingerprint"])
+    protocol["failed_run_migration"] = {
+        "reason": "runtime evaluator template-key compatibility fix",
+        "previous_protocol_fingerprint": old_fingerprint,
+        "completed_evaluators_before_migration": 0,
+        "reused_generated_images": len(list((output_dir / "images").glob("**/*.png"))),
+        "changed_sources": changed_sources,
+        "migrated_at": utc_now(),
+    }
+    write_json(output_dir / "run_manifest.json", protocol)
+    update_progress(
+        output_dir,
+        status="ready",
+        phase="preflight",
+        stage="resume_after_template_key_fix",
+        error=None,
+        config=protocol["config"],
+    )
+    event(
+        output_dir,
+        "preflight",
+        "migrated initial failed run after evaluator template-key fix",
+        old_fingerprint=old_fingerprint,
+        new_fingerprint=protocol["protocol_fingerprint"],
+        reused_images=protocol["failed_run_migration"]["reused_generated_images"],
+    )
+    return protocol
+
+
 def preflight(args: argparse.Namespace) -> dict[str, Any]:
     config_path = Path(args.config).resolve()
     output_dir = Path(args.output_dir).resolve()
@@ -391,6 +460,9 @@ def preflight(args: argparse.Namespace) -> dict[str, Any]:
     if existing_path.is_file():
         existing = read_json(existing_path)
         if existing.get("protocol_fingerprint") != protocol["protocol_fingerprint"]:
+            migrated = migrate_failed_template_key_run(output_dir, existing, protocol)
+            if migrated is not None:
+                return migrated
             raise RuntimeError(
                 "Output directory contains another protocol; refusing to overwrite it"
             )
@@ -423,20 +495,16 @@ def preflight(args: argparse.Namespace) -> dict[str, Any]:
 
 
 def require_protocol(args: argparse.Namespace) -> dict[str, Any]:
-    output_dir = Path(args.output_dir).resolve()
-    path = output_dir / "run_manifest.json"
-    if not path.is_file():
-        return preflight(args)
-    current = read_json(path)
-    expected = make_protocol(Path(args.config).resolve(), output_dir, args.allow_downloads)
-    if current.get("protocol_fingerprint") != expected.get("protocol_fingerprint"):
-        raise RuntimeError("Protocol/source fingerprint changed; choose a new output directory")
-    return current
+    return preflight(args)
 
 
 def runtime_protocol(protocol: Mapping[str, Any]) -> dict[str, Any]:
     value = json.loads(json.dumps(protocol))
     value["config"]["model_id"] = protocol["base_checkpoint"]["snapshot_path"]
+    evaluation = value["config"]["evaluation"]
+    class_template = evaluation["class_text_template"]
+    evaluation["cifar_class_text_template"] = class_template
+    evaluation["retain_class_text_template"] = class_template
     return value
 
 
