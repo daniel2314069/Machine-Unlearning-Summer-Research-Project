@@ -1,0 +1,103 @@
+{
+  "status": "complete",
+  "selected_profile": "profile_5",
+  "remaining_credits": 41.0,
+  "gpu_rate_credits_per_hour": 4.5,
+  "credit_safety_fraction": 0.8,
+  "budget_hours": 4.8875,
+  "hard_deadline_seconds": 20700,
+  "deadline_safety_fraction": 0.85,
+  "deadline_budget_hours": 4.8875,
+  "gpu_name": "NVIDIA H100 80GB HBM3",
+  "benchmark_images": 200,
+  "batch_size_candidates": [
+    8,
+    16,
+    24,
+    32
+  ],
+  "selected_batch_size": 32,
+  "selected_gcd_workers": 12,
+  "batch_trials": [
+    {
+      "batch_size": 8,
+      "status": "complete",
+      "allocated_images": 50,
+      "generated_images": 50,
+      "warmup_images": 8,
+      "measured_images": 42,
+      "measured_seconds": 17.164766463999513,
+      "images_per_hour": 8808.742042434367,
+      "peak_memory_bytes": 7298227200,
+      "error": null
+    },
+    {
+      "batch_size": 16,
+      "status": "complete",
+      "allocated_images": 50,
+      "generated_images": 50,
+      "warmup_images": 16,
+      "measured_images": 34,
+      "measured_seconds": 13.311825057999613,
+      "images_per_hour": 9194.832373976016,
+      "peak_memory_bytes": 12404222976,
+      "error": null
+    },
+    {
+      "batch_size": 24,
+      "status": "complete",
+      "allocated_images": 50,
+      "generated_images": 50,
+      "warmup_images": 24,
+      "measured_images": 26,
+      "measured_seconds": 10.210744313000305,
+      "images_per_hour": 9166.814595565635,
+      "peak_memory_bytes": 17510145024,
+      "error": null
+    },
+    {
+      "batch_size": 32,
+      "status": "complete",
+      "allocated_images": 50,
+      "generated_images": 50,
+      "warmup_images": 32,
+      "measured_images": 18,
+      "measured_seconds": 6.867275476000032,
+      "images_per_hour": 9436.056588448368,
+      "peak_memory_bytes": 22616140800,
+      "error": null
+    }
+  ],
+  "benchmark_generation_seconds": 101.94503894899981,
+  "measured_images": 18,
+  "measured_seconds": 6.867275476000032,
+  "images_per_hour": 9436.056588448368,
+  "gcd_evaluator_images": 200,
+  "gcd_evaluator_seconds": 11.75423335000005,
+  "gcd_images_per_hour": 61254.52665102968,
+  "profile_estimates": {
+    "profile_5": {
+      "formal_and_qualitative_images": 34900,
+      "formal_gcd_predictions": 34800,
+      "benchmark_images": 200,
+      "budgeted_images": 35100,
+      "generation_hours": 3.6985789214876714,
+      "gcd_evaluation_hours": 0.5681212785833358,
+      "benchmark_hours": 0.03158313119416663,
+      "estimated_total_hours": 4.298283331265174,
+      "fits_budget": true
+    },
+    "profile_10": {
+      "formal_and_qualitative_images": 45820,
+      "formal_gcd_predictions": 45800,
+      "benchmark_images": 200,
+      "budgeted_images": 46020,
+      "generation_hours": 4.855842010961751,
+      "gcd_evaluation_hours": 0.7476998436527811,
+      "benchmark_hours": 0.03158313119416663,
+      "estimated_total_hours": 5.635124985808699,
+      "fits_budget": false
+    }
+  },
+  "selected_at": "2026-08-19T13:59:20.901455+00:00"
+}

@@ -1,0 +1,142 @@
+{
+  "experiment_name": "sequential_oce_celebrity_long_horizon_v1",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "device": "cuda:0",
+  "cg_path": "../../Cg.pt",
+  "gcd_project_root": null,
+  "orders": ["order_a", "order_b"],
+  "conditions": ["baseline", "retain_history"],
+  "batch_size_concepts": 10,
+  "introduction_success_max_accuracy": 0.10,
+  "targets": [
+    "Adam Driver", "Adriana Lima", "Amber Heard", "Amy Adams", "Andrew Garfield",
+    "Angelina Jolie", "Anjelica Huston", "Anna Faris", "Anna Kendrick", "Anne Hathaway",
+    "Arnold Schwarzenegger", "Barack Obama", "Beth Behrs", "Bill Clinton", "Bob Dylan",
+    "Bob Marley", "Bradley Cooper", "Bruce Willis", "Bryan Cranston", "Cameron Diaz",
+    "Channing Tatum", "Charlie Sheen", "Charlize Theron", "Chris Evans", "Chris Hemsworth",
+    "Chris Pine", "Chuck Norris", "Courteney Cox", "Demi Lovato", "Drake",
+    "Drew Barrymore", "Dwayne Johnson", "Ed Sheeran", "Elon Musk", "Elvis Presley",
+    "Emma Stone", "Frida Kahlo", "George Clooney", "Glenn Close", "Gwyneth Paltrow",
+    "Harrison Ford", "Hillary Clinton", "Hugh Jackman", "Idris Elba", "Jake Gyllenhaal",
+    "James Franco", "Jared Leto", "Jason Momoa", "Jennifer Aniston", "Jennifer Lawrence",
+    "Jennifer Lopez", "Jeremy Renner", "Jessica Biel", "Jessica Chastain", "John Oliver",
+    "John Wayne", "Johnny Depp", "Julianne Hough", "Justin Timberlake", "Kate Bosworth",
+    "Kate Winslet", "Leonardo Dicaprio", "Margot Robbie", "Mariah Carey", "Melania Trump",
+    "Meryl Streep", "Mick Jagger", "Mila Kunis", "Milla Jovovich", "Morgan Freeman",
+    "Nick Jonas", "Nicolas Cage", "Nicole Kidman", "Octavia Spencer", "Olivia Wilde",
+    "Oprah Winfrey", "Paul Mccartney", "Paul Walker", "Peter Dinklage", "Philip Seymour Hoffman",
+    "Reese Witherspoon", "Richard Gere", "Ricky Gervais", "Rihanna", "Robin Williams",
+    "Ronald Reagan", "Ryan Gosling", "Ryan Reynolds", "Shia Labeouf", "Shirley Temple",
+    "Spike Lee", "Stan Lee", "Theresa May", "Tom Cruise", "Tom Hanks",
+    "Tom Hardy", "Tom Hiddleston", "Whoopi Goldberg", "Zac Efron", "Zayn Malik"
+  ],
+  "fixed_retains": [
+    "Aaron Paul", "Alec Baldwin", "Amanda Seyfried", "Amy Poehler", "Amy Schumer",
+    "Amy Winehouse", "Andy Samberg", "Aretha Franklin", "Avril Lavigne", "Aziz Ansari",
+    "Barry Manilow", "Ben Affleck", "Ben Stiller", "Benicio Del Toro", "Bette Midler",
+    "Betty White", "Bill Murray", "Bill Nye", "Britney Spears", "Brittany Snow",
+    "Bruce Lee", "Burt Reynolds", "Charles Manson", "Christie Brinkley", "Christina Hendricks",
+    "Clint Eastwood", "Countess Vaughn", "Dakota Johnson", "Dane Dehaan", "David Bowie",
+    "David Tennant", "Denise Richards", "Doris Day", "Dr Dre", "Elizabeth Taylor",
+    "Emma Roberts", "Fred Rogers", "Gal Gadot", "George Bush", "George Takei",
+    "Gillian Anderson", "Gordon Ramsey", "Halle Berry", "Harry Dean Stanton", "Harry Styles",
+    "Hayley Atwell", "Heath Ledger", "Henry Cavill", "Jackie Chan", "Jada Pinkett Smith",
+    "James Garner", "Jason Statham", "Jeff Bridges", "Jennifer Connelly", "Jensen Ackles",
+    "Jim Morrison", "Jimmy Carter", "Joan Rivers", "John Lennon", "Johnny Cash",
+    "Jon Hamm", "Judy Garland", "Julianne Moore", "Justin Bieber", "Kaley Cuoco",
+    "Kate Upton", "Keanu Reeves", "Kim Jong Un", "Kirsten Dunst", "Kristen Stewart",
+    "Krysten Ritter", "Lana Del Rey", "Leslie Jones", "Lily Collins", "Lindsay Lohan",
+    "Liv Tyler", "Lizzy Caplan", "Maggie Gyllenhaal", "Matt Damon", "Matt Smith",
+    "Matthew Mcconaughey", "Maya Angelou", "Megan Fox", "Mel Gibson", "Melanie Griffith",
+    "Michael Cera", "Michael Ealy", "Natalie Portman", "Neil Degrasse Tyson", "Niall Horan",
+    "Patrick Stewart", "Paul Rudd", "Paul Wesley", "Pierce Brosnan", "Prince",
+    "Queen Elizabeth", "Rachel Dratch", "Rachel Mcadams", "Reba Mcentire", "Robert De Niro"
+  ],
+  "templates": [
+    "a portrait of {}",
+    "a sketch of {}",
+    "an oil painting of {}",
+    "{} in an official photo",
+    "an image capturing {} at a public event"
+  ],
+  "edit": {
+    "e10": {
+      "guide_concepts": ["person", "woman", "man"],
+      "guide_alignment_seed": 42,
+      "erase_scale": 3500.0,
+      "preserve_global_scale": 50.0,
+      "preserve_concept_scale": 5.0,
+      "lamb": 10.0,
+      "expand_prompts": false,
+      "dtype": "float32"
+    },
+    "joint_e100": {
+      "guide_concepts": ["tree"],
+      "guide_alignment_seed": 42,
+      "erase_scale": 800.0,
+      "preserve_global_scale": 70.0,
+      "preserve_concept_scale": 2.0,
+      "lamb": 10.0,
+      "expand_prompts": false,
+      "dtype": "float32"
+    }
+  },
+  "generation": {
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "dtype": "bfloat16",
+    "scheduler": "PNDMScheduler",
+    "batch_size_candidates": [8, 16, 24, 32],
+    "retain_seeds": [42],
+    "profile_seeds": {
+      "profile_5": [42],
+      "profile_10": [42, 43]
+    },
+    "paper_target_samples_per_prompt": {
+      "1": 10,
+      "5": 2,
+      "10": 1
+    }
+  },
+  "gcd": {
+    "detector_parallelism": "ordered_spawn_process_pool",
+    "max_workers": 16,
+    "cpu_fraction": 0.5,
+    "recognizer_top_n": 5
+  },
+  "budget": {
+    "credit_safety_fraction": 0.8,
+    "hard_deadline_seconds": 20700,
+    "deadline_safety_fraction": 0.85,
+    "benchmark_images": 200,
+    "benchmark_images_per_candidate": 50,
+    "profile_image_counts": {
+      "profile_5": 34900,
+      "profile_10": 45820
+    },
+    "profile_prediction_counts": {
+      "profile_5": 34800,
+      "profile_10": 45800
+    }
+  },
+  "qualitative": {
+    "sequence_positions": [1, 10, 25, 50, 75, 100],
+    "seeds": [42, 43],
+    "template_index": 0,
+    "later_batch_offsets": [1, 3],
+    "include_final_step": true
+  },
+  "storage": {
+    "formal_images": "delete_after_validated_gcd",
+    "qualitative_tarball_name": "qualitative_samples.tar.gz"
+  },
+  "coco": {
+    "default_status": "deferred_by_budget",
+    "reference_ids": {
+      "1000": "sd14_mscoco30k_first1000_pndm50_cfg7p5_512_bf16",
+      "10000": "sd14_mscoco30k_first10000_pndm50_cfg7p5_512_bf16"
+    }
+  }
+}

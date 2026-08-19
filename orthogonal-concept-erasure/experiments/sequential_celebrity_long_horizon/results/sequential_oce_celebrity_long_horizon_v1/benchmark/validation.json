@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "image_count": 200,
+  "prediction_count": 200,
+  "prediction_sha256": "e8d4a9a11cec1e2fde46ad58247feddc0ad02af8dddfc8e632e8df740874b32f",
+  "non_scoring": true,
+  "validated_at": "2026-08-19T13:59:20.902696+00:00"
+}

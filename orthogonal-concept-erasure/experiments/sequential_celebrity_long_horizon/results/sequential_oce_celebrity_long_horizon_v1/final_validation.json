@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "validated_at": "2026-08-19T19:40:28.848791+00:00",
+  "active_protocol_fingerprint": "2015418650affb3774bd0425a1b9eb5f1907811e820af4481f30fa5c01705aab",
+  "completed_gcd_cells": 41,
+  "prediction_rows": 34800,
+  "checkpoint_count": 41,
+  "formal_image_cleanup": "complete",
+  "coco_status": "deferred_by_budget",
+  "qualitative_tarball": "/teamspace/studios/this_studio/artifacts/sequential_oce_celebrity_long_horizon_v1/qualitative_samples.tar.gz",
+  "qualitative_tarball_sha256": "1c95eca7a87ce306314919f992b3aed221ba6c8fa8ae793e76163fbbc5ecb776"
+}

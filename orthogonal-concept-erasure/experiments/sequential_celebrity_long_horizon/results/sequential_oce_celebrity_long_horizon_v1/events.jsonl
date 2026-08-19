@@ -1,0 +1,84 @@
+{"timestamp": "2026-08-19T13:49:24.315756+00:00", "phase": "preflight", "message": "validated fixed 10x10 protocol"}
+{"timestamp": "2026-08-19T13:59:20.918991+00:00", "phase": "benchmark", "message": "locked formal sample profile and batch size", "profile": "profile_5", "batch_size": 32}
+{"timestamp": "2026-08-19T13:59:59.915327+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 1}
+{"timestamp": "2026-08-19T14:08:36.986425+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 1, "images": 1000}
+{"timestamp": "2026-08-19T14:08:39.719568+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 2}
+{"timestamp": "2026-08-19T14:13:52.025781+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 2, "images": 600}
+{"timestamp": "2026-08-19T14:13:54.674702+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 3}
+{"timestamp": "2026-08-19T14:19:31.184931+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 3, "images": 650}
+{"timestamp": "2026-08-19T14:19:33.822611+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 4}
+{"timestamp": "2026-08-19T14:25:36.370284+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 4, "images": 700}
+{"timestamp": "2026-08-19T14:25:39.029578+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 5}
+{"timestamp": "2026-08-19T14:34:05.333709+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 5, "images": 1000}
+{"timestamp": "2026-08-19T14:34:07.926903+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 6}
+{"timestamp": "2026-08-19T14:40:59.177484+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 6, "images": 800}
+{"timestamp": "2026-08-19T14:41:01.774334+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 7}
+{"timestamp": "2026-08-19T14:48:14.734810+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 7, "images": 850}
+{"timestamp": "2026-08-19T14:48:17.348335+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 8}
+{"timestamp": "2026-08-19T14:55:57.471744+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 8, "images": 900}
+{"timestamp": "2026-08-19T14:56:00.181226+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 9}
+{"timestamp": "2026-08-19T15:04:04.566055+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 9, "images": 950}
+{"timestamp": "2026-08-19T15:04:07.189818+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "baseline", "step": 10}
+{"timestamp": "2026-08-19T15:12:46.242111+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "baseline", "step": 10, "images": 1000}
+{"timestamp": "2026-08-19T15:12:46.823062+00:00", "phase": "checkpoint_edit", "message": "reused protocol-identical baseline step 1 for retain-history", "order": "order_a"}
+{"timestamp": "2026-08-19T15:21:18.529073+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 1, "images": 1000}
+{"timestamp": "2026-08-19T15:21:21.216020+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 2}
+{"timestamp": "2026-08-19T15:26:34.869957+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 2, "images": 600}
+{"timestamp": "2026-08-19T15:26:37.622892+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 3}
+{"timestamp": "2026-08-19T15:32:13.553537+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 3, "images": 650}
+{"timestamp": "2026-08-19T15:32:16.341442+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 4}
+{"timestamp": "2026-08-19T15:38:19.293018+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 4, "images": 700}
+{"timestamp": "2026-08-19T15:38:22.158093+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 5}
+{"timestamp": "2026-08-19T15:46:47.833274+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 5, "images": 1000}
+{"timestamp": "2026-08-19T15:46:50.896470+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 6}
+{"timestamp": "2026-08-19T15:53:42.278607+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 6, "images": 800}
+{"timestamp": "2026-08-19T15:53:45.288633+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 7}
+{"timestamp": "2026-08-19T16:00:58.608422+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 7, "images": 850}
+{"timestamp": "2026-08-19T16:01:01.638816+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 8}
+{"timestamp": "2026-08-19T16:08:43.404720+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 8, "images": 900}
+{"timestamp": "2026-08-19T16:08:46.504222+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 9}
+{"timestamp": "2026-08-19T16:16:51.645808+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 9, "images": 950}
+{"timestamp": "2026-08-19T16:16:54.815481+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_a", "condition": "retain_history", "step": 10}
+{"timestamp": "2026-08-19T16:25:34.936573+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_a", "condition": "retain_history", "step": 10, "images": 1000}
+{"timestamp": "2026-08-19T16:25:37.562230+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 1}
+{"timestamp": "2026-08-19T16:34:09.689659+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 1, "images": 1000}
+{"timestamp": "2026-08-19T16:34:12.369316+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 2}
+{"timestamp": "2026-08-19T16:39:23.262071+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 2, "images": 600}
+{"timestamp": "2026-08-19T16:39:25.901029+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 3}
+{"timestamp": "2026-08-19T16:45:01.687373+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 3, "images": 650}
+{"timestamp": "2026-08-19T16:45:04.467682+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 4}
+{"timestamp": "2026-08-19T16:51:05.418277+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 4, "images": 700}
+{"timestamp": "2026-08-19T16:51:08.023657+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 5}
+{"timestamp": "2026-08-19T16:59:35.234207+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 5, "images": 1000}
+{"timestamp": "2026-08-19T16:59:37.852760+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 6}
+{"timestamp": "2026-08-19T17:06:34.117921+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 6, "images": 800}
+{"timestamp": "2026-08-19T17:06:36.910893+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 7}
+{"timestamp": "2026-08-19T17:13:57.397701+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 7, "images": 850}
+{"timestamp": "2026-08-19T17:14:00.235703+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 8}
+{"timestamp": "2026-08-19T17:21:48.903282+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 8, "images": 900}
+{"timestamp": "2026-08-19T17:21:51.666869+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 9}
+{"timestamp": "2026-08-19T17:30:01.011064+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 9, "images": 950}
+{"timestamp": "2026-08-19T17:30:03.678555+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "baseline", "step": 10}
+{"timestamp": "2026-08-19T17:38:48.552281+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "baseline", "step": 10, "images": 1000}
+{"timestamp": "2026-08-19T17:38:49.124793+00:00", "phase": "checkpoint_edit", "message": "reused protocol-identical baseline step 1 for retain-history", "order": "order_b"}
+{"timestamp": "2026-08-19T17:47:24.855342+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 1, "images": 1000}
+{"timestamp": "2026-08-19T17:47:27.608192+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 2}
+{"timestamp": "2026-08-19T17:52:39.515889+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 2, "images": 600}
+{"timestamp": "2026-08-19T17:52:42.267090+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 3}
+{"timestamp": "2026-08-19T17:58:18.080655+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 3, "images": 650}
+{"timestamp": "2026-08-19T17:58:20.888453+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 4}
+{"timestamp": "2026-08-19T18:04:24.519509+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 4, "images": 700}
+{"timestamp": "2026-08-19T18:04:27.362460+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 5}
+{"timestamp": "2026-08-19T18:12:54.234091+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 5, "images": 1000}
+{"timestamp": "2026-08-19T18:12:57.352512+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 6}
+{"timestamp": "2026-08-19T18:19:49.975519+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 6, "images": 800}
+{"timestamp": "2026-08-19T18:19:52.970775+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 7}
+{"timestamp": "2026-08-19T18:27:08.950731+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 7, "images": 850}
+{"timestamp": "2026-08-19T18:27:12.078216+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 8}
+{"timestamp": "2026-08-19T18:34:56.885215+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 8, "images": 900}
+{"timestamp": "2026-08-19T18:35:00.210945+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 9}
+{"timestamp": "2026-08-19T18:43:05.560337+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 9, "images": 950}
+{"timestamp": "2026-08-19T18:43:08.801718+00:00", "phase": "checkpoint_edit", "message": "saved sequential checkpoint", "order": "order_b", "condition": "retain_history", "step": 10}
+{"timestamp": "2026-08-19T18:51:54.170909+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "order_b", "condition": "retain_history", "step": 10, "images": 1000}
+{"timestamp": "2026-08-19T18:51:59.070088+00:00", "phase": "checkpoint_edit", "message": "saved joint-100 reference checkpoint"}
+{"timestamp": "2026-08-19T19:31:29.181920+00:00", "phase": "evaluation", "message": "completed and cleaned formal GCD cell", "order": "joint", "condition": "joint_100", "step": 10, "images": 1000}

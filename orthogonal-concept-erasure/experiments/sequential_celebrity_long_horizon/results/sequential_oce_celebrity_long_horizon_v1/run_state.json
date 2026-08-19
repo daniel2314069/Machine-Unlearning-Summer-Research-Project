@@ -1,0 +1,23 @@
+{
+  "started_at": "2026-08-19T13:49:24.315632+00:00",
+  "status": "complete",
+  "phase": "complete",
+  "order": "-",
+  "condition": "-",
+  "step": 10,
+  "current_target": "-",
+  "generation_completed": 0,
+  "evaluator_completed": 0,
+  "updated_at": "2026-08-19T19:40:29.315928+00:00",
+  "evaluator_cell_completed": 1000,
+  "evaluator_cell_total": 1000,
+  "budget_profile": "profile_5",
+  "planned_generated_images": 34900,
+  "planned_images_including_benchmark": 35100,
+  "generation_cell_completed": 0,
+  "generation_cell_total": 1000,
+  "error": "PicklingError(\"Can't pickle <function initialize_gcd_detector_worker at 0x7d3d99e5f6a0>: import of module 'frozen_long_horizon_runner' failed\")",
+  "resume_command": "rerun the same --start command",
+  "completed_checkpoints": 41,
+  "completed_evaluators": 41
+}
