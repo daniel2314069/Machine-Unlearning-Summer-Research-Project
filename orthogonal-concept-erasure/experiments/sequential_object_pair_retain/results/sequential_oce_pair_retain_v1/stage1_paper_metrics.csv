@@ -1,0 +1,11 @@
+pair,order,target,Acc_e,Acc_s,H_o
+airplane|cat,airplane->cat,airplane,0.015,1.0,0.9924433249370277
+airplane|cat,cat->airplane,cat,0.0,1.0,1.0
+automobile|bird,automobile->bird,automobile,0.9,1.0,0.1818181818181818
+automobile|bird,bird->automobile,bird,0.57,1.0,0.6013986013986015
+deer|dog,deer->dog,deer,0.0,0.9988888888888889,0.9994441356309061
+deer|dog,dog->deer,dog,0.005,1.0,0.9974937343358397
+frog|ship,frog->ship,frog,0.05,1.0,0.9743589743589745
+frog|ship,ship->frog,ship,0.055,0.9994444444444446,0.97146
+horse|truck,horse->truck,horse,0.075,1.0,0.9610389610389612
+horse|truck,truck->horse,truck,0.075,1.0,0.9610389610389612

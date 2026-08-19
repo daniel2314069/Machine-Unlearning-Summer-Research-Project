@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "source_experiment_status": "complete",
+  "source_completed_at": "2026-08-19T07:30:48.012777+00:00",
+  "protocol_fingerprint": "abc9e13f90ecfce9c03458882654e63b7c4d16b3a9400bf7f02bce6e7adbeae8",
+  "source_git_commit": "7da1789974f4076fef42467b77b7d8cdd9e57257",
+  "prediction_rows": 62000,
+  "evaluator_cells": 310,
+  "ordered_pairs": 10,
+  "per_class_rows": 310,
+  "duplicate_prediction_keys": 0,
+  "maximum_probability_sum_error": 2.3518805392086506e-07,
+  "per_class_recompute": "passed",
+  "summary_recompute": "passed",
+  "stage1_metrics_recompute": "passed",
+  "cell_file_hashes": "passed",
+  "stage2_shared_parent_check": "passed",
+  "formal_cleanup_markers": "passed",
+  "source_final_validation_status": "complete",
+  "all_predictions_sha256": "2ff3b2ed76b47ebbbada76cb2424cccdfa856f3e5fc131d95838193acb0970e5",
+  "aggregate_descriptives": {
+    "baseline_first_target_delta_from_stage1": {
+      "mean": 0.006000000000000007,
+      "median": 0.0,
+      "minimum": -0.020000000000000004,
+      "maximum": 0.08500000000000008,
+      "negative_orders": 3,
+      "zero_orders": 4,
+      "positive_orders": 3
+    },
+    "retain_first_target_delta_from_stage1": {
+      "mean": -0.004499999999999999,
+      "median": 0.0,
+      "minimum": -0.030000000000000002,
+      "maximum": 0.020000000000000004,
+      "negative_orders": 4,
+      "zero_orders": 3,
+      "positive_orders": 3
+    },
+    "retain_minus_baseline_first_target_final": {
+      "mean": -0.010500000000000006,
+      "median": -0.0049999999999999975,
+      "minimum": -0.08500000000000008,
+      "maximum": 0.015000000000000013,
+      "negative_orders": 5,
+      "zero_orders": 2,
+      "positive_orders": 3
+    },
+    "retain_minus_baseline_second_target_final": {
+      "mean": 0.0035000000000000005,
+      "median": 0.0025000000000000022,
+      "minimum": -0.020000000000000004,
+      "maximum": 0.015000000000000006,
+      "negative_orders": 1,
+      "zero_orders": 4,
+      "positive_orders": 5
+    },
+    "retain_minus_baseline_remaining_8": {
+      "mean": -0.000187499999999996,
+      "median": 0.0,
+      "minimum": -0.0012499999999999734,
+      "maximum": 0.0006249999999999867,
+      "negative_orders": 2,
+      "zero_orders": 7,
+      "positive_orders": 1
+    }
+  }
+}

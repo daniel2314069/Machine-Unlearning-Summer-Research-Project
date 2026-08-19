@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "validated_at": "2026-08-19T07:30:47.944802+00:00",
+  "classes": 10,
+  "unordered_pairs": 5,
+  "ordered_pairs": 10,
+  "evaluator_cells": 310,
+  "prediction_rows": 62000,
+  "generated_images": 62000,
+  "same_seed_list_all_conditions": true,
+  "stage2_shared_parent_check": "passed",
+  "saved_predictions_recompute_metrics": "passed",
+  "formal_image_cleanup": "complete",
+  "qualitative_raw_images": 140,
+  "qualitative_contact_sheets": 20,
+  "qualitative_tarball": "/home/tslin/Documents/jupyter_data/anLi/tmp/sequential_oce_pair_retain_v1/qualitative_samples.tar.gz",
+  "qualitative_tarball_sha256": "88675b8c97bacd9c110a12afbddb7ff0a00287536f88b52c7b4a7668e0e822e4"
+}

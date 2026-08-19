@@ -1,0 +1,218 @@
+{
+  "status": "complete",
+  "selection_timing": "fixed before generation",
+  "seeds": [
+    42,
+    43
+  ],
+  "raw_image_count": 140,
+  "contact_sheet_count": 20,
+  "conditions": [
+    "original",
+    "stage1",
+    "baseline_second",
+    "retain_previous_second"
+  ],
+  "sheets": [
+    {
+      "pair": "airplane|cat",
+      "order": "airplane->cat",
+      "concept": "airplane",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/airplane_then_cat/airplane.png"
+    },
+    {
+      "pair": "airplane|cat",
+      "order": "airplane->cat",
+      "concept": "cat",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/airplane_then_cat/cat.png"
+    },
+    {
+      "pair": "airplane|cat",
+      "order": "cat->airplane",
+      "concept": "cat",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/cat_then_airplane/cat.png"
+    },
+    {
+      "pair": "airplane|cat",
+      "order": "cat->airplane",
+      "concept": "airplane",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/cat_then_airplane/airplane.png"
+    },
+    {
+      "pair": "automobile|bird",
+      "order": "automobile->bird",
+      "concept": "automobile",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/automobile_then_bird/automobile.png"
+    },
+    {
+      "pair": "automobile|bird",
+      "order": "automobile->bird",
+      "concept": "bird",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/automobile_then_bird/bird.png"
+    },
+    {
+      "pair": "automobile|bird",
+      "order": "bird->automobile",
+      "concept": "bird",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/bird_then_automobile/bird.png"
+    },
+    {
+      "pair": "automobile|bird",
+      "order": "bird->automobile",
+      "concept": "automobile",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/bird_then_automobile/automobile.png"
+    },
+    {
+      "pair": "deer|dog",
+      "order": "deer->dog",
+      "concept": "deer",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/deer_then_dog/deer.png"
+    },
+    {
+      "pair": "deer|dog",
+      "order": "deer->dog",
+      "concept": "dog",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/deer_then_dog/dog.png"
+    },
+    {
+      "pair": "deer|dog",
+      "order": "dog->deer",
+      "concept": "dog",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/dog_then_deer/dog.png"
+    },
+    {
+      "pair": "deer|dog",
+      "order": "dog->deer",
+      "concept": "deer",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/dog_then_deer/deer.png"
+    },
+    {
+      "pair": "frog|ship",
+      "order": "frog->ship",
+      "concept": "frog",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/frog_then_ship/frog.png"
+    },
+    {
+      "pair": "frog|ship",
+      "order": "frog->ship",
+      "concept": "ship",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/frog_then_ship/ship.png"
+    },
+    {
+      "pair": "frog|ship",
+      "order": "ship->frog",
+      "concept": "ship",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/ship_then_frog/ship.png"
+    },
+    {
+      "pair": "frog|ship",
+      "order": "ship->frog",
+      "concept": "frog",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/ship_then_frog/frog.png"
+    },
+    {
+      "pair": "horse|truck",
+      "order": "horse->truck",
+      "concept": "horse",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/horse_then_truck/horse.png"
+    },
+    {
+      "pair": "horse|truck",
+      "order": "horse->truck",
+      "concept": "truck",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/horse_then_truck/truck.png"
+    },
+    {
+      "pair": "horse|truck",
+      "order": "truck->horse",
+      "concept": "truck",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/truck_then_horse/truck.png"
+    },
+    {
+      "pair": "horse|truck",
+      "order": "truck->horse",
+      "concept": "horse",
+      "seeds": [
+        42,
+        43
+      ],
+      "contact_sheet": "qualitative/contact_sheets/truck_then_horse/horse.png"
+    }
+  ]
+}

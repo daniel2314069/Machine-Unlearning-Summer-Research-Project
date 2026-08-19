@@ -1,0 +1,1794 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Sequential OCE Pair-Erasure: Previous-Target Retain Results",
+    "description": "Validated image-level results for ten ordered two-concept OCE erasure sequences and the previous-target retain modification.",
+    "generatedAt": "2026-08-19T07:30:48.012777+00:00",
+    "sources": [
+      {
+        "id": "summary-source",
+        "label": "Sequential OCE order summary",
+        "path": "summary.csv",
+        "query": {
+          "description": "Runner-produced per-order target and remaining-eight accuracies.",
+          "language": "csv",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "filters": [
+            "Five preregistered unordered pairs",
+            "Both orders",
+            "200 images per class",
+            "Seeds 42 through 241"
+          ],
+          "metric_definitions": [
+            "Target accuracy is CLIP ten-class classification accuracy; lower is better for an erased target.",
+            "Remaining-eight mean is the unweighted mean accuracy over the eight classes outside the ordered target pair.",
+            "Raw differences are direct percentage-point differences after multiplying stored fractional accuracies by 100."
+          ]
+        }
+      },
+      {
+        "id": "stage1-source",
+        "label": "Stage-1 paper metrics",
+        "path": "stage1_paper_metrics.csv",
+        "query": {
+          "description": "Runner-produced Acc_e, Acc_s, and H_o for every standard single-concept first edit.",
+          "language": "csv",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "filters": [
+            "200 images per CIFAR-10 class",
+            "Seeds 42 through 241"
+          ]
+        }
+      },
+      {
+        "id": "per-class-source",
+        "label": "All per-class evaluation results",
+        "path": "per_class_results.csv",
+        "query": {
+          "description": "Runner-produced raw accuracy for every class-level evaluator cell, including the Original baseline.",
+          "language": "csv",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "filters": [
+            "All ten CIFAR-10 classes",
+            "200 images per class",
+            "Seeds 42 through 241"
+          ]
+        }
+      },
+      {
+        "id": "order-effects-source",
+        "label": "Recomputed order comparisons",
+        "path": "order_effects.csv",
+        "query": {
+          "description": "Final accuracy for each concept when erased first versus second, recomputed from saved summary rows.",
+          "language": "ruby",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "metric_definitions": [
+            "First-minus-second is the direct final-accuracy difference in percentage points; no new score or significance test is applied."
+          ]
+        }
+      },
+      {
+        "id": "audit-source",
+        "label": "Independent raw-prediction audit",
+        "path": "independent_audit.json",
+        "query": {
+          "description": "Independent standard-library Ruby recomputation from all_predictions.csv and per-cell completion artifacts.",
+          "language": "ruby",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "filters": [
+            "All 62,000 saved prediction rows",
+            "All 310 evaluator cells"
+          ]
+        }
+      },
+      {
+        "id": "manifest-source",
+        "label": "Completed experiment manifest",
+        "path": "run_manifest.json",
+        "query": {
+          "description": "Protocol, environment, completion status, and artifact paths saved by the runner.",
+          "language": "json",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00"
+        }
+      },
+      {
+        "id": "qualitative-source",
+        "label": "Fixed qualitative sample manifest",
+        "path": "qualitative_manifest.json",
+        "query": {
+          "description": "Precommitted qualitative seeds and the inventory of 140 raw samples and 20 contact sheets.",
+          "language": "json",
+          "executed_at": "2026-08-19T07:30:48.012777+00:00",
+          "filters": [
+            "Seeds 42 and 43",
+            "All five pairs",
+            "Both orders",
+            "Both target concepts"
+          ]
+        }
+      }
+    ],
+    "charts": [
+      {
+        "id": "stage1-erasure-chart",
+        "title": "Stage-1 target accuracy by ordered sequence",
+        "subtitle": "200 images per class; lower Acc_e means stronger erasure",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "Did each ordered sequence begin with a successfully erased first target?",
+        "rationale": "A horizontal bar comparison exposes the two large Stage-1 failures without hiding the eight low-accuracy outcomes.",
+        "comparisonContext": {
+          "unit": "accuracy",
+          "grain": "ordered sequence",
+          "denominator": "200 generated images per target class"
+        },
+        "type": "horizontalBar",
+        "dataset": "stage1_results",
+        "sourceId": "stage1-source",
+        "encodings": {
+          "x": {
+            "field": "order",
+            "type": "nominal",
+            "label": "Order"
+          },
+          "y": {
+            "field": "acc_e",
+            "type": "quantitative",
+            "format": "percent",
+            "label": "Stage-1 target accuracy"
+          },
+          "tooltip": [
+            {
+              "field": "target",
+              "type": "text",
+              "label": "First target"
+            },
+            {
+              "field": "acc_s",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "Acc_s"
+            },
+            {
+              "field": "h_o",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "H_o"
+            },
+            {
+              "field": "samples_per_class",
+              "type": "quantitative",
+              "format": "number",
+              "label": "Images"
+            }
+          ]
+        },
+        "valueFormat": "percent",
+        "layout": "full",
+        "palette": {
+          "kind": "sequential",
+          "name": "blue"
+        },
+        "legend": {
+          "position": "bottom",
+          "interactive": false
+        },
+        "labels": {
+          "values": "auto"
+        }
+      },
+      {
+        "id": "first-target-delta-chart",
+        "title": "First-target accuracy change after the second edit",
+        "subtitle": "Final minus immediate Stage-1 accuracy, in percentage points; positive means erasure weakened",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "Does the second edit raise the first erased target, and does retaining it change that outcome?",
+        "rationale": "Grouped bars preserve every preregistered order and directly compare the two allowed Stage-2 conditions on the requested raw difference.",
+        "comparisonContext": {
+          "baseline": "accuracy immediately after Stage 1",
+          "unit": "percentage points",
+          "grain": "ordered sequence"
+        },
+        "type": "bar",
+        "dataset": "first_target_deltas",
+        "sourceId": "summary-source",
+        "encodings": {
+          "x": {
+            "field": "order",
+            "type": "nominal",
+            "label": "Order"
+          },
+          "y": {
+            "field": "delta_pp",
+            "type": "quantitative",
+            "format": "number",
+            "label": "Accuracy change"
+          },
+          "color": {
+            "field": "condition",
+            "type": "nominal",
+            "label": "Second edit"
+          },
+          "tooltip": [
+            {
+              "field": "first_target",
+              "type": "text",
+              "label": "First target"
+            },
+            {
+              "field": "stage1_accuracy",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "Stage-1 accuracy"
+            },
+            {
+              "field": "final_accuracy",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "Final accuracy"
+            },
+            {
+              "field": "samples_per_class",
+              "type": "quantitative",
+              "format": "number",
+              "label": "Images"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "unit": "pp",
+        "layout": "full",
+        "palette": {
+          "kind": "categorical",
+          "name": "blue-orange"
+        },
+        "legend": {
+          "position": "bottom",
+          "interactive": false,
+          "title": "Second edit"
+        },
+        "labels": {
+          "values": "auto"
+        },
+        "referenceLines": [
+          {
+            "axis": "y",
+            "value": 0,
+            "label": "No change",
+            "color": "neutral",
+            "lineStyle": "solid"
+          }
+        ]
+      },
+      {
+        "id": "order-difference-chart",
+        "title": "Final target accuracy when erased first versus second",
+        "subtitle": "First-position minus second-position accuracy, in percentage points; values are descriptive raw differences",
+        "showDescription": true,
+        "intent": "comparison",
+        "question": "How much does final image-level erasure differ between the two orders for each concept?",
+        "rationale": "A grouped signed bar makes the direction and magnitude of each concept's raw order difference visible for both Stage-2 variants.",
+        "comparisonContext": {
+          "baseline": "same concept erased in the opposite position",
+          "unit": "percentage points",
+          "grain": "concept and Stage-2 variant"
+        },
+        "type": "bar",
+        "dataset": "order_effects",
+        "sourceId": "order-effects-source",
+        "encodings": {
+          "x": {
+            "field": "concept",
+            "type": "nominal",
+            "label": "Concept"
+          },
+          "y": {
+            "field": "first_minus_second_pp",
+            "type": "quantitative",
+            "format": "number",
+            "label": "First minus second"
+          },
+          "color": {
+            "field": "variant",
+            "type": "nominal",
+            "label": "Stage-2 variant"
+          },
+          "tooltip": [
+            {
+              "field": "pair",
+              "type": "text",
+              "label": "Pair"
+            },
+            {
+              "field": "accuracy_when_erased_first",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "Erased first"
+            },
+            {
+              "field": "accuracy_when_erased_second",
+              "type": "quantitative",
+              "format": "percent",
+              "label": "Erased second"
+            },
+            {
+              "field": "samples_per_condition",
+              "type": "quantitative",
+              "format": "number",
+              "label": "Images per condition"
+            }
+          ]
+        },
+        "valueFormat": "number",
+        "unit": "pp",
+        "layout": "full",
+        "palette": {
+          "kind": "categorical",
+          "name": "blue-orange"
+        },
+        "legend": {
+          "position": "bottom",
+          "interactive": false,
+          "title": "Stage-2 variant"
+        },
+        "labels": {
+          "values": "auto"
+        },
+        "referenceLines": [
+          {
+            "axis": "y",
+            "value": 0,
+            "label": "No order difference",
+            "color": "neutral",
+            "lineStyle": "solid"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "id": "order-summary-table",
+        "title": "Per-order target and preservation results",
+        "subtitle": "All ten preregistered orders; accuracies use 200 images per class",
+        "showDescription": true,
+        "dataset": "order_results",
+        "defaultSort": {
+          "field": "schedule_index",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "schedule_index",
+            "label": "#",
+            "format": "number"
+          },
+          {
+            "field": "order",
+            "label": "Order",
+            "type": "text"
+          },
+          {
+            "field": "first_after_first",
+            "label": "First after Stage 1",
+            "format": "percent"
+          },
+          {
+            "field": "first_after_baseline",
+            "label": "First after normal Stage 2",
+            "format": "percent"
+          },
+          {
+            "field": "first_after_retain",
+            "label": "First after retain Stage 2",
+            "format": "percent"
+          },
+          {
+            "field": "second_baseline",
+            "label": "Second normal",
+            "format": "percent"
+          },
+          {
+            "field": "second_retain",
+            "label": "Second retain",
+            "format": "percent"
+          },
+          {
+            "field": "remaining_8_baseline",
+            "label": "Remaining 8 normal",
+            "format": "percent"
+          },
+          {
+            "field": "remaining_8_retain",
+            "label": "Remaining 8 retain",
+            "format": "percent"
+          }
+        ]
+      },
+      {
+        "id": "retain-tradeoff-table",
+        "title": "Effect of retain-previous relative to normal Stage 2",
+        "subtitle": "Retain-previous minus normal Stage-2 accuracy, in percentage points; lower target values are better",
+        "showDescription": true,
+        "dataset": "order_results",
+        "defaultSort": {
+          "field": "schedule_index",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "schedule_index",
+            "label": "#",
+            "format": "number"
+          },
+          {
+            "field": "order",
+            "label": "Order",
+            "type": "text"
+          },
+          {
+            "field": "retain_minus_baseline_first_pp",
+            "label": "First target",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "retain_minus_baseline_second_pp",
+            "label": "Second target",
+            "format": "number",
+            "movement": true
+          },
+          {
+            "field": "retain_minus_baseline_remaining_8_pp",
+            "label": "Remaining-eight mean",
+            "format": "number",
+            "movement": true
+          }
+        ]
+      },
+      {
+        "id": "order-effects-table",
+        "title": "Raw final-accuracy differences between erasure positions",
+        "subtitle": "Every concept under both Stage-2 variants; 200 images per displayed accuracy",
+        "showDescription": true,
+        "dataset": "order_effects",
+        "defaultSort": {
+          "field": "row_index",
+          "direction": "asc"
+        },
+        "density": "dense",
+        "sourceId": "order-effects-source",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "pair",
+            "label": "Pair",
+            "type": "text"
+          },
+          {
+            "field": "concept",
+            "label": "Concept",
+            "type": "text"
+          },
+          {
+            "field": "variant",
+            "label": "Variant",
+            "type": "text"
+          },
+          {
+            "field": "accuracy_when_erased_first",
+            "label": "Erased first",
+            "format": "percent"
+          },
+          {
+            "field": "accuracy_when_erased_second",
+            "label": "Erased second",
+            "format": "percent"
+          },
+          {
+            "field": "first_minus_second_pp",
+            "label": "First minus second (pp)",
+            "format": "number",
+            "movement": true
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Sequential OCE Pair-Erasure: Previous-Target Retain Results",
+        "layout": "full"
+      },
+      {
+        "id": "technical-summary",
+        "type": "markdown",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "body": "## Technical summary\n\n**The second OCE edit sometimes weakens the first erasure, but the effect is not universal.** Under normal sequential OCE, first-target accuracy increased in 3 of 10 orders, was unchanged in 4, and decreased in 3. The mean raw change was **+0.60 percentage points (pp)**, the median was **0 pp**, and the largest rebound was **+8.5 pp** for `bird→automobile`.\n\n**Order has a real descriptive image-level effect for some concepts, not all.** Under the normal sequential condition, the largest first-versus-second final-accuracy differences were **10.0 pp for bird** and **7.5 pp for automobile**. `deer↔dog` was effectively order-invariant, while `frog↔ship` showed 2.5 pp differences for both concepts.\n\n**Adding the previous target to the second edit's retain set helps selectively, not reliably.** Relative to normal Stage 2, first-target final accuracy was lower in 5 orders, tied in 2, and higher in 3. The mean change was **−1.05 pp** and the median was **−0.50 pp**, dominated by an **−8.5 pp** improvement for `bird→automobile`.\n\n**The modification has a small but non-zero second-target tradeoff and essentially no aggregate remaining-eight cost.** Second-target accuracy changed by **+0.35 pp on average** (higher is worse for erasure): 5 orders worsened, 4 tied, and 1 improved. Remaining-eight mean accuracy changed by **−0.019 pp on average**, with 7 exact ties and a range from −0.125 to +0.063 pp."
+      },
+      {
+        "id": "original-section",
+        "type": "markdown",
+        "sourceId": "per-class-source",
+        "layout": "full",
+        "body": "## Original baseline is effectively at the classifier ceiling\n\nOriginal SD v1.4 reached **100% accuracy on eight classes** and **99.5% on automobile and truck**, for a ten-class mean of **99.9%**. The low edited-target accuracies therefore do not come from a weak Original classifier baseline."
+      },
+      {
+        "id": "stage1-section",
+        "type": "markdown",
+        "sourceId": "stage1-source",
+        "layout": "full",
+        "body": "## Two Stage-1 failures limit the intended retention interpretation\n\nEight first edits reached target accuracy at or below 7.5%. The exceptions were **automobile at 90.0%** and **bird at 57.0%**. Therefore, the `automobile↔bird` sequences remain part of the fixed primary schedule, but they do not begin from a cleanly erased first target. The strongest apparent benefit of retain-previous occurs for `bird→automobile`, so it should not be treated as decisive evidence for preserving a successful first erasure."
+      },
+      {
+        "id": "stage1-chart-block",
+        "type": "chart",
+        "chartId": "stage1-erasure-chart",
+        "layout": "full"
+      },
+      {
+        "id": "sequential-section",
+        "type": "markdown",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "body": "## Normal Stage 2 causes pair- and order-specific first-target changes\n\nA positive bar means the first erased class became more classifiable after the second edit. The clearest rebound is `bird→automobile` (+8.5 pp), followed by `airplane→cat` (+3.0 pp) and `ship→frog` (+0.5 pp). Four orders are unchanged, while `frog→ship`, `horse→truck`, and `truck→horse` each improve by 2.0 pp. This supports a **sometimes**, not **generally**, answer to whether the second edit breaks the first."
+      },
+      {
+        "id": "first-delta-chart-block",
+        "type": "chart",
+        "chartId": "first-target-delta-chart",
+        "layout": "full"
+      },
+      {
+        "id": "retain-section",
+        "type": "markdown",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "body": "## Retain-previous improves five orders but is not a uniform safeguard\n\nCompared directly with normal Stage 2, retain-previous lowers first-target final accuracy in `airplane→cat` (−1.0 pp), `bird→automobile` (−8.5 pp), `frog→ship` (−1.0 pp), `ship→frog` (−1.5 pp), and `truck→horse` (−1.0 pp). It ties twice and worsens `automobile→bird` (+1.5 pp), `deer→dog` (+0.5 pp), and `horse→truck` (+0.5 pp).\n\nThe second target is not blocked wholesale, but the modification is not free: five orders increase second-target accuracy by 0.5–1.5 pp, four tie, and `frog→ship` improves by 2.0 pp. The remaining-eight means stay between 99.81% and 100% across both variants."
+      },
+      {
+        "id": "retain-table-block",
+        "type": "table",
+        "tableId": "retain-tradeoff-table",
+        "layout": "full"
+      },
+      {
+        "id": "order-section",
+        "type": "markdown",
+        "sourceId": "order-effects-source",
+        "layout": "full",
+        "body": "## Order differences concentrate in specific pairs\n\nThe chart compares each concept's final accuracy when erased first with its final accuracy when erased second. Normal sequential OCE differs by 10.0 pp for bird, 7.5 pp for automobile, 2.5 pp for airplane, frog, and ship, and at most 0.5 pp for the other five concepts. Retain-previous narrows the bird difference to 1.0 pp but leaves a 6.0 pp automobile difference and a 4.5 pp frog difference. These are descriptive raw differences, not a newly defined score or a statistical significance claim."
+      },
+      {
+        "id": "order-chart-block",
+        "type": "chart",
+        "chartId": "order-difference-chart",
+        "layout": "full"
+      },
+      {
+        "id": "order-table-block",
+        "type": "table",
+        "tableId": "order-effects-table",
+        "layout": "full"
+      },
+      {
+        "id": "exact-results-section",
+        "type": "markdown",
+        "sourceId": "summary-source",
+        "layout": "full",
+        "body": "## Exact per-order results preserve the requested raw metrics\n\nThe table reports the first target immediately after Stage 1, both final first-target accuracies, both final second-target accuracies, and both remaining-eight means. No multi-target harmonic score or additional geometry diagnostic is introduced."
+      },
+      {
+        "id": "summary-table-block",
+        "type": "table",
+        "tableId": "order-summary-table",
+        "layout": "full"
+      },
+      {
+        "id": "scope-section",
+        "type": "markdown",
+        "sourceId": "manifest-source",
+        "layout": "full",
+        "body": "## Scope, data, and metric definitions\n\nThe run used Stable Diffusion v1.4 and the repository's CIFAR-10 OCE object protocol: `a photo of the {class}`, 200 images per class, seeds 42–241 shared across all conditions, PNDM, 50 inference steps, CFG 7.5, 512×512 resolution, and `openai/clip-vit-base-patch32` ten-class argmax classification.\n\nTarget accuracy is lower-is-better. First-target change is final accuracy after Stage 2 minus accuracy immediately after Stage 1. Second-target comparison and remaining-eight comparison are retain-previous minus normal Stage 2. Every percentage-point statement is a direct subtraction of raw accuracies."
+      },
+      {
+        "id": "method-section",
+        "type": "markdown",
+        "sourceId": "audit-source",
+        "layout": "full",
+        "body": "## Independent validation reproduces every saved aggregate\n\nThe audit re-read all **62,000 prediction rows** without invoking a model. It found **310 complete 200-image cells**, no duplicate `(group, checkpoint, concept, sample_index, seed)` keys, exact seed coverage, matching prompts and labels, and maximum CLIP probability-sum error below `2.4×10⁻⁷`. It independently reproduced all 310 per-class rows, all 10 summary rows, all Stage-1 paper metrics, every per-cell prediction/metrics hash, and the shared Stage-1 parent recorded by both Stage-2 variants."
+      },
+      {
+        "id": "limitations-section",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Limitations and robustness boundaries\n\n- The evidence is descriptive for this fixed five-pair schedule; no inferential test or generalization beyond these concepts is claimed.\n- Accuracies move in 0.5 pp increments because each class has 200 images.\n- `automobile↔bird` is retained in the primary result as preregistered, but its Stage-1 failures weaken the causal interpretation of first-erasure retention.\n- Fixed qualitative seeds 42 and 43 cover every pair, order, and target without cherry-picking. They support visual inspection but do not replace the 200-image CLIP evaluator.\n- Formal images were deleted only after successful evaluation; raw predictions, manifests, hashes, and the separately packaged qualitative samples remain saved."
+      },
+      {
+        "id": "recommendation-section",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Recommended next step\n\nTreat retain-previous as an **optional, pair-dependent safeguard**, not a default improvement. For a follow-up confirmation, rerun the same fixed protocol with additional independently fixed seed sets or repetitions—without changing pairs or hyperparameters—and predeclare that the key check is whether the five observed first-target improvements recur without a larger second-target penalty."
+      },
+      {
+        "id": "questions-section",
+        "type": "markdown",
+        "layout": "full",
+        "body": "## Further questions\n\n- Does the `bird→automobile` retention improvement persist when the first bird erasure is itself successful?\n- Are the 0.5–1.5 pp second-target penalties stable across independent seed sets?\n- Which of the observed order differences replicate without modifying the fixed pair schedule?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-19T07:30:48.012777+00:00",
+    "status": "ready",
+    "datasets": {
+      "order_results": [
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "first_target": "airplane",
+          "second_target": "cat",
+          "first_after_first": 0.015,
+          "first_after_baseline": 0.045,
+          "first_after_retain": 0.035,
+          "baseline_delta_pp": 3.0,
+          "retain_delta_pp": 2.0000000000000004,
+          "retain_minus_baseline_first_pp": -0.9999999999999996,
+          "second_baseline": 0.0,
+          "second_retain": 0.0,
+          "retain_minus_baseline_second_pp": 0.0,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.015,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.9924433249370277
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "first_target": "cat",
+          "second_target": "airplane",
+          "first_after_first": 0.0,
+          "first_after_baseline": 0.0,
+          "first_after_retain": 0.0,
+          "baseline_delta_pp": 0.0,
+          "retain_delta_pp": 0.0,
+          "retain_minus_baseline_first_pp": 0.0,
+          "second_baseline": 0.02,
+          "second_retain": 0.02,
+          "retain_minus_baseline_second_pp": 0.0,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.0,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 1.0
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "first_target": "automobile",
+          "second_target": "bird",
+          "first_after_first": 0.9,
+          "first_after_baseline": 0.9,
+          "first_after_retain": 0.915,
+          "baseline_delta_pp": 0.0,
+          "retain_delta_pp": 1.5000000000000013,
+          "retain_minus_baseline_first_pp": 1.5000000000000013,
+          "second_baseline": 0.555,
+          "second_retain": 0.56,
+          "retain_minus_baseline_second_pp": 0.5000000000000004,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.9,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.1818181818181818
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "first_target": "bird",
+          "second_target": "automobile",
+          "first_after_first": 0.57,
+          "first_after_baseline": 0.655,
+          "first_after_retain": 0.57,
+          "baseline_delta_pp": 8.500000000000007,
+          "retain_delta_pp": 0.0,
+          "retain_minus_baseline_first_pp": -8.500000000000007,
+          "second_baseline": 0.975,
+          "second_retain": 0.975,
+          "retain_minus_baseline_second_pp": 0.0,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.57,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.6013986013986015
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "first_target": "deer",
+          "second_target": "dog",
+          "first_after_first": 0.0,
+          "first_after_baseline": 0.0,
+          "first_after_retain": 0.005,
+          "baseline_delta_pp": 0.0,
+          "retain_delta_pp": 0.5,
+          "retain_minus_baseline_first_pp": 0.5,
+          "second_baseline": 0.005,
+          "second_retain": 0.015,
+          "retain_minus_baseline_second_pp": 0.9999999999999999,
+          "remaining_8_baseline": 0.99875,
+          "remaining_8_retain": 0.99875,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.0,
+          "stage1_acc_s": 0.9988888888888889,
+          "stage1_h_o": 0.9994441356309061
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "first_target": "dog",
+          "second_target": "deer",
+          "first_after_first": 0.005,
+          "first_after_baseline": 0.005,
+          "first_after_retain": 0.005,
+          "baseline_delta_pp": 0.0,
+          "retain_delta_pp": 0.0,
+          "retain_minus_baseline_first_pp": 0.0,
+          "second_baseline": 0.0,
+          "second_retain": 0.0,
+          "retain_minus_baseline_second_pp": 0.0,
+          "remaining_8_baseline": 0.999375,
+          "remaining_8_retain": 0.998125,
+          "retain_minus_baseline_remaining_8_pp": -0.12499999999999734,
+          "stage1_acc_e": 0.005,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.9974937343358397
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "first_target": "frog",
+          "second_target": "ship",
+          "first_after_first": 0.05,
+          "first_after_baseline": 0.03,
+          "first_after_retain": 0.02,
+          "baseline_delta_pp": -2.0000000000000004,
+          "retain_delta_pp": -3.0000000000000004,
+          "retain_minus_baseline_first_pp": -0.9999999999999999,
+          "second_baseline": 0.085,
+          "second_retain": 0.065,
+          "retain_minus_baseline_second_pp": -2.0000000000000004,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 0.99875,
+          "retain_minus_baseline_remaining_8_pp": -0.12499999999999734,
+          "stage1_acc_e": 0.05,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.9743589743589745
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "first_target": "ship",
+          "second_target": "frog",
+          "first_after_first": 0.055,
+          "first_after_baseline": 0.06,
+          "first_after_retain": 0.045,
+          "baseline_delta_pp": 0.4999999999999998,
+          "retain_delta_pp": -1.0000000000000002,
+          "retain_minus_baseline_first_pp": -1.5,
+          "second_baseline": 0.055,
+          "second_retain": 0.065,
+          "retain_minus_baseline_second_pp": 1.0000000000000002,
+          "remaining_8_baseline": 0.99875,
+          "remaining_8_retain": 0.999375,
+          "retain_minus_baseline_remaining_8_pp": 0.06249999999999867,
+          "stage1_acc_e": 0.055,
+          "stage1_acc_s": 0.9994444444444446,
+          "stage1_h_o": 0.97146
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "first_target": "horse",
+          "second_target": "truck",
+          "first_after_first": 0.075,
+          "first_after_baseline": 0.055,
+          "first_after_retain": 0.06,
+          "baseline_delta_pp": -1.9999999999999998,
+          "retain_delta_pp": -1.5,
+          "retain_minus_baseline_first_pp": 0.4999999999999998,
+          "second_baseline": 0.05,
+          "second_retain": 0.065,
+          "retain_minus_baseline_second_pp": 1.5,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.075,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.9610389610389612
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "first_target": "truck",
+          "second_target": "horse",
+          "first_after_first": 0.075,
+          "first_after_baseline": 0.055,
+          "first_after_retain": 0.045,
+          "baseline_delta_pp": -1.9999999999999998,
+          "retain_delta_pp": -3.0,
+          "retain_minus_baseline_first_pp": -1.0000000000000002,
+          "second_baseline": 0.055,
+          "second_retain": 0.07,
+          "retain_minus_baseline_second_pp": 1.5000000000000007,
+          "remaining_8_baseline": 1.0,
+          "remaining_8_retain": 1.0,
+          "retain_minus_baseline_remaining_8_pp": 0.0,
+          "stage1_acc_e": 0.075,
+          "stage1_acc_s": 1.0,
+          "stage1_h_o": 0.9610389610389612
+        }
+      ],
+      "stage1_results": [
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "target": "airplane",
+          "acc_e": 0.015,
+          "acc_s": 1.0,
+          "h_o": 0.9924433249370277,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "target": "cat",
+          "acc_e": 0.0,
+          "acc_s": 1.0,
+          "h_o": 1.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "target": "automobile",
+          "acc_e": 0.9,
+          "acc_s": 1.0,
+          "h_o": 0.1818181818181818,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "target": "bird",
+          "acc_e": 0.57,
+          "acc_s": 1.0,
+          "h_o": 0.6013986013986015,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "target": "deer",
+          "acc_e": 0.0,
+          "acc_s": 0.9988888888888889,
+          "h_o": 0.9994441356309061,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "target": "dog",
+          "acc_e": 0.005,
+          "acc_s": 1.0,
+          "h_o": 0.9974937343358397,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "target": "frog",
+          "acc_e": 0.05,
+          "acc_s": 1.0,
+          "h_o": 0.9743589743589745,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "target": "ship",
+          "acc_e": 0.055,
+          "acc_s": 0.9994444444444446,
+          "h_o": 0.97146,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "target": "horse",
+          "acc_e": 0.075,
+          "acc_s": 1.0,
+          "h_o": 0.9610389610389612,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "target": "truck",
+          "acc_e": 0.075,
+          "acc_s": 1.0,
+          "h_o": 0.9610389610389612,
+          "samples_per_class": 200
+        }
+      ],
+      "first_target_deltas": [
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "first_target": "airplane",
+          "condition": "Normal second edit",
+          "delta_pp": 3.0,
+          "stage1_accuracy": 0.015,
+          "final_accuracy": 0.045,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "first_target": "airplane",
+          "condition": "Retain previous target",
+          "delta_pp": 2.0000000000000004,
+          "stage1_accuracy": 0.015,
+          "final_accuracy": 0.035,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "first_target": "cat",
+          "condition": "Normal second edit",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.0,
+          "final_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "first_target": "cat",
+          "condition": "Retain previous target",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.0,
+          "final_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "first_target": "automobile",
+          "condition": "Normal second edit",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.9,
+          "final_accuracy": 0.9,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "first_target": "automobile",
+          "condition": "Retain previous target",
+          "delta_pp": 1.5000000000000013,
+          "stage1_accuracy": 0.9,
+          "final_accuracy": 0.915,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "first_target": "bird",
+          "condition": "Normal second edit",
+          "delta_pp": 8.500000000000007,
+          "stage1_accuracy": 0.57,
+          "final_accuracy": 0.655,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "first_target": "bird",
+          "condition": "Retain previous target",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.57,
+          "final_accuracy": 0.57,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "first_target": "deer",
+          "condition": "Normal second edit",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.0,
+          "final_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "first_target": "deer",
+          "condition": "Retain previous target",
+          "delta_pp": 0.5,
+          "stage1_accuracy": 0.0,
+          "final_accuracy": 0.005,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "first_target": "dog",
+          "condition": "Normal second edit",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.005,
+          "final_accuracy": 0.005,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "first_target": "dog",
+          "condition": "Retain previous target",
+          "delta_pp": 0.0,
+          "stage1_accuracy": 0.005,
+          "final_accuracy": 0.005,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "first_target": "frog",
+          "condition": "Normal second edit",
+          "delta_pp": -2.0000000000000004,
+          "stage1_accuracy": 0.05,
+          "final_accuracy": 0.03,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "first_target": "frog",
+          "condition": "Retain previous target",
+          "delta_pp": -3.0000000000000004,
+          "stage1_accuracy": 0.05,
+          "final_accuracy": 0.02,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "first_target": "ship",
+          "condition": "Normal second edit",
+          "delta_pp": 0.4999999999999998,
+          "stage1_accuracy": 0.055,
+          "final_accuracy": 0.06,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "first_target": "ship",
+          "condition": "Retain previous target",
+          "delta_pp": -1.0000000000000002,
+          "stage1_accuracy": 0.055,
+          "final_accuracy": 0.045,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "first_target": "horse",
+          "condition": "Normal second edit",
+          "delta_pp": -1.9999999999999998,
+          "stage1_accuracy": 0.075,
+          "final_accuracy": 0.055,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "first_target": "horse",
+          "condition": "Retain previous target",
+          "delta_pp": -1.5,
+          "stage1_accuracy": 0.075,
+          "final_accuracy": 0.06,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "first_target": "truck",
+          "condition": "Normal second edit",
+          "delta_pp": -1.9999999999999998,
+          "stage1_accuracy": 0.075,
+          "final_accuracy": 0.055,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "first_target": "truck",
+          "condition": "Retain previous target",
+          "delta_pp": -3.0,
+          "stage1_accuracy": 0.075,
+          "final_accuracy": 0.045,
+          "samples_per_class": 200
+        }
+      ],
+      "retain_tradeoffs": [
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": -0.9999999999999996,
+          "baseline_accuracy": 0.045,
+          "retain_accuracy": 0.035,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.0,
+          "retain_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 1,
+          "pair": "airplane|cat",
+          "order": "airplane->cat",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.0,
+          "retain_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.02,
+          "retain_accuracy": 0.02,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 2,
+          "pair": "airplane|cat",
+          "order": "cat->airplane",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": 1.5000000000000013,
+          "baseline_accuracy": 0.9,
+          "retain_accuracy": 0.915,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.5000000000000004,
+          "baseline_accuracy": 0.555,
+          "retain_accuracy": 0.56,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 3,
+          "pair": "automobile|bird",
+          "order": "automobile->bird",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": -8.500000000000007,
+          "baseline_accuracy": 0.655,
+          "retain_accuracy": 0.57,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.975,
+          "retain_accuracy": 0.975,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 4,
+          "pair": "automobile|bird",
+          "order": "bird->automobile",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": 0.5,
+          "baseline_accuracy": 0.0,
+          "retain_accuracy": 0.005,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.9999999999999999,
+          "baseline_accuracy": 0.005,
+          "retain_accuracy": 0.015,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 5,
+          "pair": "deer|dog",
+          "order": "deer->dog",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.99875,
+          "retain_accuracy": 0.99875,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.005,
+          "retain_accuracy": 0.005,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 0.0,
+          "retain_accuracy": 0.0,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 6,
+          "pair": "deer|dog",
+          "order": "dog->deer",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": -0.12499999999999734,
+          "baseline_accuracy": 0.999375,
+          "retain_accuracy": 0.998125,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": -0.9999999999999999,
+          "baseline_accuracy": 0.03,
+          "retain_accuracy": 0.02,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": -2.0000000000000004,
+          "baseline_accuracy": 0.085,
+          "retain_accuracy": 0.065,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 7,
+          "pair": "frog|ship",
+          "order": "frog->ship",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": -0.12499999999999734,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 0.99875,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": -1.5,
+          "baseline_accuracy": 0.06,
+          "retain_accuracy": 0.045,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 1.0000000000000002,
+          "baseline_accuracy": 0.055,
+          "retain_accuracy": 0.065,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 8,
+          "pair": "frog|ship",
+          "order": "ship->frog",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.06249999999999867,
+          "baseline_accuracy": 0.99875,
+          "retain_accuracy": 0.999375,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": 0.4999999999999998,
+          "baseline_accuracy": 0.055,
+          "retain_accuracy": 0.06,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 1.5,
+          "baseline_accuracy": 0.05,
+          "retain_accuracy": 0.065,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 9,
+          "pair": "horse|truck",
+          "order": "horse->truck",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "outcome": "First target final accuracy",
+          "retain_minus_baseline_pp": -1.0000000000000002,
+          "baseline_accuracy": 0.055,
+          "retain_accuracy": 0.045,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "outcome": "Second target final accuracy",
+          "retain_minus_baseline_pp": 1.5000000000000007,
+          "baseline_accuracy": 0.055,
+          "retain_accuracy": 0.07,
+          "samples_per_class": 200
+        },
+        {
+          "schedule_index": 10,
+          "pair": "horse|truck",
+          "order": "truck->horse",
+          "outcome": "Remaining-eight mean accuracy",
+          "retain_minus_baseline_pp": 0.0,
+          "baseline_accuracy": 1.0,
+          "retain_accuracy": 1.0,
+          "samples_per_class": 1600
+        }
+      ],
+      "order_effects": [
+        {
+          "row_index": 1,
+          "pair": "airplane|cat",
+          "concept": "airplane",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.045,
+          "accuracy_when_erased_second": 0.02,
+          "first_minus_second_pp": 2.5,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 2,
+          "pair": "airplane|cat",
+          "concept": "airplane",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.035,
+          "accuracy_when_erased_second": 0.02,
+          "first_minus_second_pp": 1.5000000000000002,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 3,
+          "pair": "airplane|cat",
+          "concept": "cat",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.0,
+          "accuracy_when_erased_second": 0.0,
+          "first_minus_second_pp": 0.0,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 4,
+          "pair": "airplane|cat",
+          "concept": "cat",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.0,
+          "accuracy_when_erased_second": 0.0,
+          "first_minus_second_pp": 0.0,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 5,
+          "pair": "automobile|bird",
+          "concept": "automobile",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.9,
+          "accuracy_when_erased_second": 0.975,
+          "first_minus_second_pp": -7.499999999999996,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 6,
+          "pair": "automobile|bird",
+          "concept": "automobile",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.915,
+          "accuracy_when_erased_second": 0.975,
+          "first_minus_second_pp": -5.999999999999995,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 7,
+          "pair": "automobile|bird",
+          "concept": "bird",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.655,
+          "accuracy_when_erased_second": 0.555,
+          "first_minus_second_pp": 9.999999999999998,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 8,
+          "pair": "automobile|bird",
+          "concept": "bird",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.57,
+          "accuracy_when_erased_second": 0.56,
+          "first_minus_second_pp": 0.9999999999999898,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 9,
+          "pair": "deer|dog",
+          "concept": "deer",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.0,
+          "accuracy_when_erased_second": 0.0,
+          "first_minus_second_pp": 0.0,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 10,
+          "pair": "deer|dog",
+          "concept": "deer",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.005,
+          "accuracy_when_erased_second": 0.0,
+          "first_minus_second_pp": 0.5,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 11,
+          "pair": "deer|dog",
+          "concept": "dog",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.005,
+          "accuracy_when_erased_second": 0.005,
+          "first_minus_second_pp": 0.0,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 12,
+          "pair": "deer|dog",
+          "concept": "dog",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.005,
+          "accuracy_when_erased_second": 0.015,
+          "first_minus_second_pp": -0.9999999999999999,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 13,
+          "pair": "frog|ship",
+          "concept": "frog",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.03,
+          "accuracy_when_erased_second": 0.055,
+          "first_minus_second_pp": -2.5,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 14,
+          "pair": "frog|ship",
+          "concept": "frog",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.02,
+          "accuracy_when_erased_second": 0.065,
+          "first_minus_second_pp": -4.5,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 15,
+          "pair": "frog|ship",
+          "concept": "ship",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.06,
+          "accuracy_when_erased_second": 0.085,
+          "first_minus_second_pp": -2.500000000000001,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 16,
+          "pair": "frog|ship",
+          "concept": "ship",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.045,
+          "accuracy_when_erased_second": 0.065,
+          "first_minus_second_pp": -2.0000000000000004,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 17,
+          "pair": "horse|truck",
+          "concept": "horse",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.055,
+          "accuracy_when_erased_second": 0.055,
+          "first_minus_second_pp": 0.0,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 18,
+          "pair": "horse|truck",
+          "concept": "horse",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.06,
+          "accuracy_when_erased_second": 0.07,
+          "first_minus_second_pp": -1.0000000000000009,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 19,
+          "pair": "horse|truck",
+          "concept": "truck",
+          "variant": "Normal sequential",
+          "accuracy_when_erased_first": 0.055,
+          "accuracy_when_erased_second": 0.05,
+          "first_minus_second_pp": 0.4999999999999998,
+          "samples_per_condition": 200
+        },
+        {
+          "row_index": 20,
+          "pair": "horse|truck",
+          "concept": "truck",
+          "variant": "Retain previous target",
+          "accuracy_when_erased_first": 0.045,
+          "accuracy_when_erased_second": 0.065,
+          "first_minus_second_pp": -2.0000000000000004,
+          "samples_per_condition": 200
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "summary-source",
+      "label": "Sequential OCE order summary",
+      "path": "summary.csv",
+      "query": {
+        "description": "Runner-produced per-order target and remaining-eight accuracies.",
+        "language": "csv",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "filters": [
+          "Five preregistered unordered pairs",
+          "Both orders",
+          "200 images per class",
+          "Seeds 42 through 241"
+        ],
+        "metric_definitions": [
+          "Target accuracy is CLIP ten-class classification accuracy; lower is better for an erased target.",
+          "Remaining-eight mean is the unweighted mean accuracy over the eight classes outside the ordered target pair.",
+          "Raw differences are direct percentage-point differences after multiplying stored fractional accuracies by 100."
+        ]
+      }
+    },
+    {
+      "id": "stage1-source",
+      "label": "Stage-1 paper metrics",
+      "path": "stage1_paper_metrics.csv",
+      "query": {
+        "description": "Runner-produced Acc_e, Acc_s, and H_o for every standard single-concept first edit.",
+        "language": "csv",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "filters": [
+          "200 images per CIFAR-10 class",
+          "Seeds 42 through 241"
+        ]
+      }
+    },
+    {
+      "id": "per-class-source",
+      "label": "All per-class evaluation results",
+      "path": "per_class_results.csv",
+      "query": {
+        "description": "Runner-produced raw accuracy for every class-level evaluator cell, including the Original baseline.",
+        "language": "csv",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "filters": [
+          "All ten CIFAR-10 classes",
+          "200 images per class",
+          "Seeds 42 through 241"
+        ]
+      }
+    },
+    {
+      "id": "order-effects-source",
+      "label": "Recomputed order comparisons",
+      "path": "order_effects.csv",
+      "query": {
+        "description": "Final accuracy for each concept when erased first versus second, recomputed from saved summary rows.",
+        "language": "ruby",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "metric_definitions": [
+          "First-minus-second is the direct final-accuracy difference in percentage points; no new score or significance test is applied."
+        ]
+      }
+    },
+    {
+      "id": "audit-source",
+      "label": "Independent raw-prediction audit",
+      "path": "independent_audit.json",
+      "query": {
+        "description": "Independent standard-library Ruby recomputation from all_predictions.csv and per-cell completion artifacts.",
+        "language": "ruby",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "filters": [
+          "All 62,000 saved prediction rows",
+          "All 310 evaluator cells"
+        ]
+      }
+    },
+    {
+      "id": "manifest-source",
+      "label": "Completed experiment manifest",
+      "path": "run_manifest.json",
+      "query": {
+        "description": "Protocol, environment, completion status, and artifact paths saved by the runner.",
+        "language": "json",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00"
+      }
+    },
+    {
+      "id": "qualitative-source",
+      "label": "Fixed qualitative sample manifest",
+      "path": "qualitative_manifest.json",
+      "query": {
+        "description": "Precommitted qualitative seeds and the inventory of 140 raw samples and 20 contact sheets.",
+        "language": "json",
+        "executed_at": "2026-08-19T07:30:48.012777+00:00",
+        "filters": [
+          "Seeds 42 and 43",
+          "All five pairs",
+          "Both orders",
+          "Both target concepts"
+        ]
+      }
+    }
+  ]
+}

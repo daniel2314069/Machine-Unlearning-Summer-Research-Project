@@ -1,0 +1,479 @@
+{
+  "status": "complete",
+  "experiment_name": "sequential_oce_pair_retain_v1",
+  "protocol_fingerprint": "abc9e13f90ecfce9c03458882654e63b7c4d16b3a9400bf7f02bce6e7adbeae8",
+  "git_commit": "7da1789974f4076fef42467b77b7d8cdd9e57257",
+  "git_worktree_dirty": true,
+  "base_checkpoint": {
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b",
+    "revision": "133a221b8aa7292a167afc5127cb63fb5005638b"
+  },
+  "clip_evaluator_checkpoint": {
+    "model_id": "openai/clip-vit-base-patch32",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--openai--clip-vit-base-patch32/snapshots/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268",
+    "revision": "3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268"
+  },
+  "paper_repo_configuration_source": {
+    "paper": {
+      "title": "Orthogonal Concept Erasure for Diffusion Models",
+      "arxiv_id": "2605.28902",
+      "version": "v1",
+      "pdf_sha256": "e6dcd3038412f93c65f18af19e3a5452f2016e3299ea2f74d116ecb2664f9453"
+    },
+    "repository_commit": "7da1789974f4076fef42467b77b7d8cdd9e57257",
+    "repository_files": {
+      "config.json": "37a6595e7f3d9e35c3cd0cbdc60728140306d38a03d62e2e6bb49522b3d04812",
+      "oce.py": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+      "object_evaluator.py": "00988d87a99e9414dd8de664c8f3723b5798dd4a8e6a15a3c0a15cf79846f9f9",
+      "shared_generation_evaluator_runner.py": "3e0dd68cc5f534efdec46901448fc26e90db6b57fb69855b580f0009e3b73e92",
+      "runner": "1301456c48c579c8a730cf1aac0bd3ea7c02a77a89f8f89fe742cf0b6abb1eac",
+      "Cg.pt": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae"
+    },
+    "authority": "current repository implementation and object scripts"
+  },
+  "target_anchor_mapping": {
+    "airplane": "sky",
+    "automobile": "truck",
+    "bird": "cat",
+    "cat": "dog",
+    "deer": "horse",
+    "dog": "cat",
+    "frog": "bird",
+    "horse": "deer",
+    "ship": "airplane",
+    "truck": "ship"
+  },
+  "unordered_pairs": [
+    [
+      "airplane",
+      "cat"
+    ],
+    [
+      "automobile",
+      "bird"
+    ],
+    [
+      "deer",
+      "dog"
+    ],
+    [
+      "frog",
+      "ship"
+    ],
+    [
+      "horse",
+      "truck"
+    ]
+  ],
+  "ordered_pairs": [
+    [
+      "airplane",
+      "cat"
+    ],
+    [
+      "cat",
+      "airplane"
+    ],
+    [
+      "automobile",
+      "bird"
+    ],
+    [
+      "bird",
+      "automobile"
+    ],
+    [
+      "deer",
+      "dog"
+    ],
+    [
+      "dog",
+      "deer"
+    ],
+    [
+      "frog",
+      "ship"
+    ],
+    [
+      "ship",
+      "frog"
+    ],
+    [
+      "horse",
+      "truck"
+    ],
+    [
+      "truck",
+      "horse"
+    ]
+  ],
+  "planned_counts": {
+    "cifar_classes": 10,
+    "unordered_pairs": 5,
+    "ordered_pairs": 10,
+    "checkpoints": 30,
+    "formal_cells": 310,
+    "formal_images": 62000,
+    "qualitative_raw_images": 140,
+    "qualitative_contact_sheets": 20
+  },
+  "checkpoint_save_load": {
+    "format": "safetensors",
+    "selected_tensor_count": 16,
+    "stage2_parent_rule": "both variants load the identical Stage-1 checkpoint hash"
+  },
+  "edited_modules": [
+    "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "mid_block.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v.weight",
+    "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v.weight"
+  ],
+  "text_embedding_readout": "DiffusionPipeline.encode_prompt output at tokenizer attention_mask.sum()-2; the final content token immediately before EOS",
+  "K0": {
+    "repository_name": "Cg.pt",
+    "implementation": "compute_Cg.py second moment over non-padding COCO-30k token hidden states",
+    "sha256": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae"
+  },
+  "official_local_neighbor_retain": "the current target's official anchor only, matching trainscripts/object.sh; retain prompt expansion is not applied",
+  "previous_target_retain_semantics": "oce.Orthogonal_Erase forms each local retain target as W_current @ c; Stage-2 therefore preserves the post-first-edit representation",
+  "seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    215,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239,
+    240,
+    241
+  ],
+  "qualitative_seeds": [
+    42,
+    43
+  ],
+  "package_versions": {
+    "torch": "2.6.0+cu118",
+    "diffusers": "0.33.1",
+    "transformers": "4.48.3",
+    "safetensors": "0.5.3",
+    "Pillow": "11.2.1"
+  },
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+  "local_files_only": true,
+  "config_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/config.json",
+  "output_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1",
+  "log_file": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/.run/run.log",
+  "qualitative_tarball": "/home/tslin/Documents/jupyter_data/anLi/tmp/sequential_oce_pair_retain_v1/qualitative_samples.tar.gz",
+  "config": {
+    "experiment_name": "sequential_oce_pair_retain_v1",
+    "model_id": "CompVis/stable-diffusion-v1-4",
+    "clip_model_id": "openai/clip-vit-base-patch32",
+    "device": "cuda:0",
+    "cg_path": "../../Cg.pt",
+    "artifact_root": "/home/tslin/Documents/jupyter_data/anLi/tmp/sequential_oce_pair_retain_v1",
+    "paper": {
+      "title": "Orthogonal Concept Erasure for Diffusion Models",
+      "arxiv_id": "2605.28902",
+      "version": "v1",
+      "pdf_sha256": "e6dcd3038412f93c65f18af19e3a5452f2016e3299ea2f74d116ecb2664f9453"
+    },
+    "target_anchor_mapping": {
+      "airplane": "sky",
+      "automobile": "truck",
+      "bird": "cat",
+      "cat": "dog",
+      "deer": "horse",
+      "dog": "cat",
+      "frog": "bird",
+      "horse": "deer",
+      "ship": "airplane",
+      "truck": "ship"
+    },
+    "unordered_pairs": [
+      [
+        "airplane",
+        "cat"
+      ],
+      [
+        "automobile",
+        "bird"
+      ],
+      [
+        "deer",
+        "dog"
+      ],
+      [
+        "frog",
+        "ship"
+      ],
+      [
+        "horse",
+        "truck"
+      ]
+    ],
+    "oce": {
+      "erase_scale": 1000.0,
+      "preserve_global_scale": 50.0,
+      "preserve_concept_scale": 1.0,
+      "lamb": 10.0,
+      "expand_prompts": true,
+      "always_preserve_current_anchor": true,
+      "edit_dtype": "float32"
+    },
+    "generation": {
+      "images_per_class": 200,
+      "seed_start": 42,
+      "seed_policy": "per-image integer seeds 42..241; paper does not specify seeds",
+      "qualitative_seeds": [
+        42,
+        43
+      ],
+      "num_inference_steps": 50,
+      "guidance_scale": 7.5,
+      "height": 512,
+      "width": 512,
+      "dtype": "bfloat16",
+      "batch_size": 4,
+      "prompt_template": "a photo of the {concept}",
+      "scheduler": "PNDMScheduler"
+    },
+    "evaluation": {
+      "class_text_template": "photo of a {concept}",
+      "batch_size": 16,
+      "classifier_rule": "argmax over the ten CIFAR-10 CLIP logits_per_image values"
+    },
+    "storage": {
+      "formal_image_retention": "delete-after-successful-evaluation",
+      "qualitative_tarball_name": "qualitative_samples.tar.gz"
+    }
+  },
+  "resolved_at": "2026-08-17T05:27:19.637384+00:00",
+  "failed_run_migration": {
+    "reason": "runtime evaluator template-key compatibility fix",
+    "previous_protocol_fingerprint": "b15c76159ed1c143c1a1b860d8a00a8a61f29e368d0ff28d81af539a14c68688",
+    "completed_evaluators_before_migration": 0,
+    "reused_generated_images": 200,
+    "changed_sources": [
+      "runner"
+    ],
+    "migrated_at": "2026-08-17T05:27:19.638495+00:00"
+  },
+  "completed_at": "2026-08-19T07:30:48.012777+00:00",
+  "generated_image_counts": {
+    "formal": 62000,
+    "qualitative_extra": 0
+  },
+  "cleanup_status": "all formal PNGs deleted after validated evaluation",
+  "results": {
+    "per_class_results": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1/per_class_results.csv",
+    "summary": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1/summary.csv",
+    "stage1_paper_metrics": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1/stage1_paper_metrics.csv",
+    "predictions": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1/raw/all_predictions.csv",
+    "validation": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/experiments/sequential_object_pair_retain/outputs/sequential_oce_pair_retain_v1/final_validation.json"
+  }
+}

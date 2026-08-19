@@ -1,0 +1,11 @@
+pair_index,order_index_within_pair,pair,order,first_target,first_anchor,second_target,second_anchor
+1,1,airplane|cat,airplane->cat,airplane,sky,cat,dog
+1,2,airplane|cat,cat->airplane,cat,dog,airplane,sky
+2,1,automobile|bird,automobile->bird,automobile,truck,bird,cat
+2,2,automobile|bird,bird->automobile,bird,cat,automobile,truck
+3,1,deer|dog,deer->dog,deer,horse,dog,cat
+3,2,deer|dog,dog->deer,dog,cat,deer,horse
+4,1,frog|ship,frog->ship,frog,bird,ship,airplane
+4,2,frog|ship,ship->frog,ship,airplane,frog,bird
+5,1,horse|truck,horse->truck,horse,deer,truck,ship
+5,2,horse|truck,truck->horse,truck,ship,horse,deer
