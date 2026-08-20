@@ -1,0 +1,378 @@
+{
+  "audit_kind": "zero_generation_qualification",
+  "generation_calls": 0,
+  "official_oce_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/oce.py",
+  "official_oce_sha256": "fa18a0c0c2dcf0f69ace3d5fb74a6eea85ccb18d33ddbe855bfdce0d385bc240",
+  "official_object_script_path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/trainscripts/object.sh",
+  "official_object_script_sha256": "0a890b779b864753fd512d7fa729880e45f84ee5803c4e09e481d0588dd0dd36",
+  "verified_object_script_assignments": {
+    "MODEL_ID": "CompVis/stable-diffusion-v1-4",
+    "GUIDE_CONCEPTS": "sky",
+    "PRESERVE_CONCEPTS": "sky",
+    "CONCEPT_TYPE": "object",
+    "ERASE_SCALE": "2000",
+    "PRESERVE_GLOBAL_SCALE": "10",
+    "PRESERVE_CONCEPT_SCALE": "0",
+    "LAMB": "10"
+  },
+  "repository_git_revision": "40a21aba704aa8faeeca09293f24451adebd370a",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "local_files_only": true,
+  "targets": [
+    "airplane",
+    "bird",
+    "dog",
+    "truck"
+  ],
+  "object_protocol": {
+    "guide": "sky",
+    "preserve": "sky",
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0
+  },
+  "cg": {
+    "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/orthogonal-concept-erasure/Cg.pt",
+    "sha256": "e9ad216caa06097f1cb3d3edd02c56f98aabca1490b8d6e892a586f5d1b912ae",
+    "count": 403727,
+    "shape": [
+      768,
+      768
+    ]
+  },
+  "software": {
+    "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+    "platform": "Linux-5.15.0-25-generic-x86_64-with-glibc2.35",
+    "torch": "2.6.0+cu118",
+    "cuda": "11.8",
+    "diffusers": "0.33.1",
+    "transformers": "4.48.3",
+    "device": "cuda:0",
+    "gpu": "NVIDIA RTX A4000"
+  },
+  "unet_config": {
+    "sample_size": 64,
+    "in_channels": 4,
+    "out_channels": 4,
+    "center_input_sample": false,
+    "flip_sin_to_cos": true,
+    "freq_shift": 0,
+    "down_block_types": [
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "CrossAttnDownBlock2D",
+      "DownBlock2D"
+    ],
+    "mid_block_type": "UNetMidBlock2DCrossAttn",
+    "up_block_types": [
+      "UpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D",
+      "CrossAttnUpBlock2D"
+    ],
+    "only_cross_attention": false,
+    "block_out_channels": [
+      320,
+      640,
+      1280,
+      1280
+    ],
+    "layers_per_block": 2,
+    "downsample_padding": 1,
+    "mid_block_scale_factor": 1,
+    "dropout": 0.0,
+    "act_fn": "silu",
+    "norm_num_groups": 32,
+    "norm_eps": 1e-05,
+    "cross_attention_dim": 768,
+    "transformer_layers_per_block": 1,
+    "reverse_transformer_layers_per_block": null,
+    "encoder_hid_dim": null,
+    "encoder_hid_dim_type": null,
+    "attention_head_dim": 8,
+    "num_attention_heads": null,
+    "dual_cross_attention": false,
+    "use_linear_projection": false,
+    "class_embed_type": null,
+    "addition_embed_type": null,
+    "addition_time_embed_dim": null,
+    "num_class_embeds": null,
+    "upcast_attention": false,
+    "resnet_time_scale_shift": "default",
+    "resnet_skip_time_act": false,
+    "resnet_out_scale_factor": 1.0,
+    "time_embedding_type": "positional",
+    "time_embedding_dim": null,
+    "time_embedding_act_fn": null,
+    "timestep_post_act": null,
+    "time_cond_proj_dim": null,
+    "conv_in_kernel": 3,
+    "conv_out_kernel": 3,
+    "projection_class_embeddings_input_dim": null,
+    "attention_type": "default",
+    "class_embeddings_concat": false,
+    "mid_block_only_cross_attention": null,
+    "cross_attention_norm": null,
+    "addition_embed_type_num_heads": 64,
+    "_use_default_values": [
+      "time_cond_proj_dim",
+      "addition_embed_type",
+      "time_embedding_act_fn",
+      "class_embeddings_concat",
+      "addition_embed_type_num_heads",
+      "reverse_transformer_layers_per_block",
+      "conv_in_kernel",
+      "encoder_hid_dim_type",
+      "cross_attention_norm",
+      "dropout",
+      "class_embed_type",
+      "addition_time_embed_dim",
+      "attention_type",
+      "dual_cross_attention",
+      "use_linear_projection",
+      "time_embedding_type",
+      "timestep_post_act",
+      "resnet_out_scale_factor",
+      "mid_block_type",
+      "only_cross_attention",
+      "transformer_layers_per_block",
+      "upcast_attention",
+      "encoder_hid_dim",
+      "projection_class_embeddings_input_dim",
+      "num_attention_heads",
+      "time_embedding_dim",
+      "conv_out_kernel",
+      "mid_block_only_cross_attention",
+      "resnet_skip_time_act",
+      "resnet_time_scale_shift",
+      "num_class_embeds"
+    ],
+    "_class_name": "UNet2DConditionModel",
+    "_diffusers_version": "0.2.2",
+    "_name_or_path": "/home/tslin/.cache/huggingface/hub/models--CompVis--stable-diffusion-v1-4/snapshots/133a221b8aa7292a167afc5127cb63fb5005638b/unet"
+  },
+  "attention_implementation": [
+    {
+      "class": "diffusers.models.attention_processor.Attention",
+      "source_file": "/home/tslin/anaconda3/envs/MU/lib/python3.10/site-packages/diffusers/models/attention_processor.py",
+      "source_sha256": "f797bee574a5b6b964d8fd20a562cbb7117999e5d8f785a3a0552f77dbcce7f5"
+    },
+    {
+      "class": "diffusers.models.attention_processor.AttnProcessor2_0",
+      "source_file": "/home/tslin/anaconda3/envs/MU/lib/python3.10/site-packages/diffusers/models/attention_processor.py",
+      "source_sha256": "1ac94007dbf2d48117c169ebd0edb518f195cba6fc6f571781be2259f4656da6"
+    }
+  ],
+  "layers": [
+    {
+      "name": "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        320,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 40,
+      "runtime_attention_inner_dim": 320,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "down_blocks.0.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        320,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 40,
+      "runtime_attention_inner_dim": 320,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "down_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        640,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 80,
+      "runtime_attention_inner_dim": 640,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "down_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        640,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 80,
+      "runtime_attention_inner_dim": 640,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.1.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.1.attentions.2.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        640,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 80,
+      "runtime_attention_inner_dim": 640,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        640,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 80,
+      "runtime_attention_inner_dim": 640,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.2.attentions.2.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        640,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 80,
+      "runtime_attention_inner_dim": 640,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.3.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        320,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 40,
+      "runtime_attention_inner_dim": 320,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.3.attentions.1.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        320,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 40,
+      "runtime_attention_inner_dim": 320,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "up_blocks.3.attentions.2.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        320,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 40,
+      "runtime_attention_inner_dim": 320,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    },
+    {
+      "name": "mid_block.attentions.0.transformer_blocks.0.attn2.to_v",
+      "shape": [
+        1280,
+        768
+      ],
+      "head_count": 8,
+      "head_dim": 160,
+      "runtime_attention_inner_dim": 1280,
+      "runtime_attention_heads": 8,
+      "runtime_attention_class": "diffusers.models.attention_processor.Attention",
+      "runtime_processor_class": "diffusers.models.attention_processor.AttnProcessor2_0"
+    }
+  ]
+}
