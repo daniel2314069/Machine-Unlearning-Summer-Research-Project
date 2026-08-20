@@ -70,9 +70,12 @@ experiments/scapre_informax_specificity/setup_server.sh
 - verifies that `MU` is active and uses `command -v python`;
 - installs pinned CUDA PyTorch and the experiment's minimal dependencies;
 - verifies CUDA and package consistency;
-- resolves and downloads the Stable Diffusion v1.5 snapshot;
+- resolves the Stable Diffusion v1.5 revision and downloads only the
+  componentized Safetensors files used by the pipeline (about 5.5 GB; root
+  checkpoints and duplicate bin/fp16/non-EMA/ONNX/Flax artifacts are excluded);
 - downloads and hash-checks Torchvision's default ResNet-50 weights;
-- records resolved model/package provenance;
+- records resolved model/package provenance plus every downloaded model file
+  and its size, and rejects required assets above a 7 GiB safety limit;
 - validates construction of the full 25-class protocol.
 
 If Hugging Face requires authentication, export `HF_TOKEN` in the shell before

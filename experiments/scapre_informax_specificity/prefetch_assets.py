@@ -14,6 +14,43 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+# StableDiffusionPipeline.from_pretrained() reads the componentized Diffusers
+# snapshot below. Do not fetch root checkpoints, duplicate PyTorch .bin files,
+# fp16 variants, non-EMA variants, ONNX, or Flax artifacts.
+SD15_ALLOW_PATTERNS = (
+    "model_index.json",
+    "feature_extractor/preprocessor_config.json",
+    "scheduler/scheduler_config.json",
+    "tokenizer/*",
+    "text_encoder/config.json",
+    "text_encoder/model.safetensors",
+    "unet/config.json",
+    "unet/diffusion_pytorch_model.safetensors",
+    "vae/config.json",
+    "vae/diffusion_pytorch_model.safetensors",
+    "safety_checker/config.json",
+    "safety_checker/model.safetensors",
+)
+
+REQUIRED_MODEL_FILES = (
+    "model_index.json",
+    "feature_extractor/preprocessor_config.json",
+    "scheduler/scheduler_config.json",
+    "text_encoder/config.json",
+    "text_encoder/model.safetensors",
+    "unet/config.json",
+    "unet/diffusion_pytorch_model.safetensors",
+    "vae/config.json",
+    "vae/diffusion_pytorch_model.safetensors",
+    "safety_checker/config.json",
+    "safety_checker/model.safetensors",
+)
+
+# The required SD 1.5 component weights are about 5.5 GB. This guard catches
+# an accidental return to downloading duplicate full-repository artifacts.
+MAX_REQUIRED_MODEL_BYTES = 7 * 1024**3
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", type=Path, required=True)
@@ -33,7 +70,41 @@ def main() -> None:
     requested_revision = config.get("base_model_revision") or None
     info = HfApi().model_info(repo_id, revision=requested_revision)
     resolved_revision = info.sha
-    snapshot_path = Path(snapshot_download(repo_id, revision=resolved_revision))
+    snapshot_path = Path(snapshot_download(
+        repo_id,
+        revision=resolved_revision,
+        allow_patterns=list(SD15_ALLOW_PATTERNS),
+    ))
+
+    missing = [
+        relative for relative in REQUIRED_MODEL_FILES
+        if not (snapshot_path / relative).is_file()
+    ]
+    tokenizer_files = sorted(
+        path for path in (snapshot_path / "tokenizer").glob("*") if path.is_file()
+    )
+    if missing or not tokenizer_files:
+        raise RuntimeError(
+            f"filtered SD 1.5 snapshot is incomplete: missing={missing}, "
+            f"tokenizer_files={len(tokenizer_files)}"
+        )
+
+    recorded_paths = [snapshot_path / item for item in REQUIRED_MODEL_FILES]
+    recorded_paths.extend(tokenizer_files)
+    downloaded_files = []
+    total_model_bytes = 0
+    for path in sorted(set(recorded_paths)):
+        size = path.stat().st_size
+        total_model_bytes += size
+        downloaded_files.append({
+            "path": str(path.relative_to(snapshot_path)),
+            "size_bytes": size,
+        })
+    if total_model_bytes > MAX_REQUIRED_MODEL_BYTES:
+        raise RuntimeError(
+            "required SD 1.5 assets exceeded the 7 GiB safety limit: "
+            f"{total_model_bytes} bytes"
+        )
 
     weights = ResNet50_Weights.DEFAULT
     weights.get_state_dict(progress=True, check_hash=True)
@@ -53,6 +124,10 @@ def main() -> None:
         "requested_revision": requested_revision,
         "resolved_revision": resolved_revision,
         "snapshot_path": str(snapshot_path),
+        "snapshot_allow_patterns": list(SD15_ALLOW_PATTERNS),
+        "downloaded_files": downloaded_files,
+        "total_model_bytes": total_model_bytes,
+        "maximum_model_bytes": MAX_REQUIRED_MODEL_BYTES,
         "resnet_weights": str(weights),
         "resnet_url": weights.url,
         "packages": packages,
