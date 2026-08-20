@@ -1,0 +1,89 @@
+{
+  "experiment_id": "oce_failure_image_qualification_v1",
+  "model_id": "CompVis/stable-diffusion-v1-4",
+  "device": "cuda:0",
+  "official_object_protocol": {
+    "guide": "sky",
+    "preserve": "sky",
+    "expand_prompts": true,
+    "erase_scale": 2000.0,
+    "preserve_global_scale": 10.0,
+    "preserve_concept_scale": 0.0,
+    "lambda": 10.0
+  },
+  "generation": {
+    "dtype": "bfloat16",
+    "height": 512,
+    "width": 512,
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "seeds": [101, 202, 303, 404]
+  },
+  "direction1": {
+    "targets": ["airplane", "bird", "dog", "truck"],
+    "canonical_prompt_templates": [
+      "a photo of {article} {target}",
+      "a realistic image of {article} {target}",
+      "a close-up photo of {article} {target}",
+      "a clear photograph of {article} {target}"
+    ],
+    "two_object_prompts": [
+      {"id": "cat_bicycle", "prompt": "a photo of a cat and a bicycle", "objects": ["cat", "bicycle"]},
+      {"id": "car_horse", "prompt": "a photo of a car and a horse", "objects": ["car", "horse"]},
+      {"id": "elephant_bus", "prompt": "a photo of an elephant and a bus", "objects": ["elephant", "bus"]},
+      {"id": "bear_couch", "prompt": "a photo of a bear and a couch", "objects": ["bear", "couch"]},
+      {"id": "pizza_bottle", "prompt": "a photo of a pizza and a bottle", "objects": ["pizza", "bottle"]},
+      {"id": "sheep_motorcycle", "prompt": "a photo of a sheep and a motorcycle", "objects": ["sheep", "motorcycle"]}
+    ],
+    "detector": {
+      "implementation": "torchvision.models.detection.fasterrcnn_resnet50_fpn_v2",
+      "weights": "FasterRCNN_ResNet50_FPN_V2_Weights.DEFAULT",
+      "score_threshold": 0.5,
+      "batch_size": 4
+    },
+    "gate": {
+      "canonical_original_accuracy_floor": 0.5,
+      "canonical_min_detection_drop": 0.25,
+      "canonical_oce_accuracy_ceiling": 0.5,
+      "composition_original_accuracy_floor": 0.5,
+      "composition_min_accuracy_drop": 0.125,
+      "composition_min_degraded_prompt_families": 3,
+      "required_stably_degraded_targets": 3
+    }
+  },
+  "direction3": {
+    "targets": ["airplane", "bird", "truck"],
+    "pre_registered_cases": {
+      "airplane": "down_blocks.2.attentions.0.transformer_blocks.0.attn2.to_v",
+      "bird": "up_blocks.1.attentions.0.transformer_blocks.0.attn2.to_v",
+      "truck": "down_blocks.2.attentions.1.transformer_blocks.0.attn2.to_v"
+    },
+    "selection_policy": "first correction-triggered 1280-output layer in official module order, frozen from the zero-generation audit; never selected by effect magnitude",
+    "non_target_prompts": [
+      {"id": "cat", "prompt": "a photo of a cat", "expected": "cat"},
+      {"id": "bicycle", "prompt": "a photo of a bicycle", "expected": "bicycle"},
+      {"id": "horse", "prompt": "a photo of a horse", "expected": "horse"},
+      {"id": "bus", "prompt": "a photo of a bus", "expected": "bus"}
+    ],
+    "classifier": {
+      "model_id": "openai/clip-vit-base-patch32",
+      "labels": ["airplane", "bird", "dog", "truck", "cat", "bicycle", "horse", "bus"],
+      "templates": [
+        "a photo of the {}",
+        "a picture of the {}",
+        "an image of the {}",
+        "{}"
+      ],
+      "batch_size": 16
+    },
+    "lpips": {
+      "version": "0.1.4",
+      "network": "alex"
+    },
+    "gate": {
+      "meaningful_accuracy_delta": 0.125,
+      "minimum_mean_paired_lpips": 0.05,
+      "required_meaningful_cases": 2
+    }
+  }
+}
