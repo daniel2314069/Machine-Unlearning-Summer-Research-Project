@@ -1,0 +1,4 @@
+.server/
+runs/
+results/*
+!results/summary.md

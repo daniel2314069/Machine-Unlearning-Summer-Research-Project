@@ -13,6 +13,7 @@ import copy
 from functools import reduce
 import operator
 import ast
+from pathlib import Path
 
 eps = 1e-8
 
@@ -169,7 +170,8 @@ def _compute_mi_softmask_emptyneg(W_old: torch.Tensor,
                                   T: float         = 0.7,
                                   p: float         = 2.0,
                                   noise_sigma: float = 0.05,
-                                  eps: float       = 1e-8) -> torch.Tensor:
+                                  eps: float       = 1e-8,
+                                  return_details: bool = False):
     device = W_old.device
     out_dim, _ = W_old.shape
     pos = c_vec.repeat(num_pos,1) + noise_sigma * torch.randn(num_pos, c_vec.numel(), device=device)
@@ -197,7 +199,78 @@ def _compute_mi_softmask_emptyneg(W_old: torch.Tensor,
                 +p00*torch.log(p00/(p0_*p_0)))
     mi_std = (mi - mi.mean()) / (mi.std() + eps)
     m = torch.sigmoid(mi_std / T).pow(p)
-    return m.view(-1,1)
+    mask = m.view(-1,1)
+    if return_details:
+        return mask, {
+            "raw_mi": mi.detach().cpu(),
+            "alpha": m.detach().cpu(),
+            "threshold": tau.squeeze(1).detach().cpu(),
+            "negative_base_indices": torch.zeros(num_pos, dtype=torch.long),
+        }
+    return mask
+
+
+def _compute_mi_softmask_matchedneg(W_old: torch.Tensor,
+                                    c_vec: torch.Tensor,
+                                    negative_vecs: torch.Tensor,
+                                    num_pos: int = 5,
+                                    T: float = 0.7,
+                                    p: float = 2.0,
+                                    noise_sigma: float = 0.05,
+                                    eps: float = 1e-8,
+                                    return_details: bool = False):
+    """Repository Informax with only the negative base vectors replaced.
+
+    The number and shape of random draws, threshold, MI estimator, and soft
+    transformation match ``_compute_mi_softmask_emptyneg``. Negative bases are
+    assigned round-robin in the supplied order, so five samples over three
+    retain concepts have deterministic counts 2/2/1.
+    """
+    device = W_old.device
+    out_dim, _ = W_old.shape
+    if negative_vecs.ndim != 2 or negative_vecs.shape[1] != c_vec.numel():
+        raise ValueError("negative_vecs must have shape (n_retain, embedding_dim)")
+    if negative_vecs.shape[0] == 0:
+        raise ValueError("matched-retain mode requires at least one negative vector")
+
+    negative_vecs = negative_vecs.to(device=device, dtype=c_vec.dtype)
+    negative_base_indices = torch.arange(num_pos, device=device) % negative_vecs.shape[0]
+    pos = c_vec.repeat(num_pos,1) + noise_sigma * torch.randn(num_pos, c_vec.numel(), device=device)
+    neg = negative_vecs.index_select(0, negative_base_indices) \
+          + noise_sigma * torch.randn(num_pos, c_vec.numel(), device=device)
+    samples = torch.cat([pos, neg], dim=0)
+    labels = torch.cat([torch.ones(num_pos, device=device),
+                        torch.zeros(num_pos, device=device)])
+    acts = W_old @ samples.t()
+    tau = acts.median(dim=1, keepdim=True).values
+    Z = (acts > tau).long()
+    K = 2 * num_pos
+    mi = torch.zeros(out_dim, device=device)
+    for i in range(out_dim):
+        z = Z[i]
+        n11 = ((z==1)&(labels==1)).sum().float() + eps
+        n10 = ((z==1)&(labels==0)).sum().float() + eps
+        n01 = ((z==0)&(labels==1)).sum().float() + eps
+        n00 = ((z==0)&(labels==0)).sum().float() + eps
+        p11, p10 = n11/K, n10/K
+        p01, p00 = n01/K, n00/K
+        p1_, p0_ = p11+p10, p01+p00
+        p_1, p_0 = p11+p01, p10+p00
+        mi[i] = (p11*torch.log(p11/(p1_*p_1))
+                +p10*torch.log(p10/(p1_*p_0))
+                +p01*torch.log(p01/(p0_*p_1))
+                +p00*torch.log(p00/(p0_*p_0)))
+    mi_std = (mi - mi.mean()) / (mi.std() + eps)
+    m = torch.sigmoid(mi_std / T).pow(p)
+    mask = m.view(-1,1)
+    if return_details:
+        return mask, {
+            "raw_mi": mi.detach().cpu(),
+            "alpha": m.detach().cpu(),
+            "threshold": tau.squeeze(1).detach().cpu(),
+            "negative_base_indices": negative_base_indices.detach().cpu(),
+        }
+    return mask
 
 # ─────────────────────────────────────────────────────────────
 # ASED spectral regularizer
@@ -282,7 +355,10 @@ def edit_model(ldm_stable,
                enable_egbr=False,
                bures_mu_from_entropy=True,
                use_mi_softmask=True,
-               bures_iters=2):
+               bures_iters=2,
+               informax_negative_mode='official',
+               informax_matched_retain_map=None,
+               informax_diagnostics_path=None):
 
     # === 0. Collect cross-attention modules
     sub_nets   = ldm_stable.unet.named_children()
@@ -339,6 +415,84 @@ def edit_model(ldm_stable,
         blank_emb = enc(blank.input_ids.to(device))[0]
     empty_vec = blank_emb[0, 1, :].detach()
 
+    if informax_negative_mode not in {'official', 'matched-retain'}:
+        raise ValueError(f"unsupported Informax negative mode: {informax_negative_mode}")
+    matched_retain_names = []
+    matched_retain_vecs = []
+    if informax_negative_mode == 'matched-retain':
+        if not isinstance(informax_matched_retain_map, dict):
+            raise ValueError("matched-retain mode requires a target-to-retains mapping")
+        # Preserve RNG state around the one extra deterministic encoding step.
+        # Subsequent Informax noise therefore starts at the exact same state as
+        # the official branch even if a future encoder implementation samples.
+        cpu_rng_state = torch.random.get_rng_state()
+        cuda_rng_states = torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None
+        try:
+            for target in old_texts:
+                names = informax_matched_retain_map.get(target)
+                if not isinstance(names, list) or not names:
+                    raise ValueError(f"missing matched retain concepts for target: {target}")
+                if target in names:
+                    raise ValueError(f"target cannot be its own Informax negative: {target}")
+                retain_inp = tok(names, padding="max_length",
+                                  max_length=tok.model_max_length,
+                                  truncation=True, return_tensors="pt")
+                with torch.no_grad():
+                    retain_emb = enc(retain_inp.input_ids.to(device))[0]
+                vectors = torch.stack([
+                    emb[mask.sum()-2]
+                    for emb, mask in zip(retain_emb, retain_inp.attention_mask)
+                ])
+                matched_retain_names.append(list(names))
+                matched_retain_vecs.append(vectors.detach())
+        finally:
+            torch.random.set_rng_state(cpu_rng_state)
+            if cuda_rng_states is not None:
+                torch.cuda.set_rng_state_all(cuda_rng_states)
+
+    informax_records = []
+
+    def compute_informax(W_old, c_vec, target_index, projection, layer_num, stage):
+        collect = informax_diagnostics_path is not None
+        if informax_negative_mode == 'official':
+            result = _compute_mi_softmask_emptyneg(
+                W_old=W_old,
+                c_vec=c_vec,
+                empty_vec=empty_vec,
+                num_pos=5,
+                T=0.7,
+                p=p,
+                noise_sigma=noise_sigma,
+                return_details=collect,
+            )
+            negative_concepts = ['']
+        else:
+            result = _compute_mi_softmask_matchedneg(
+                W_old=W_old,
+                c_vec=c_vec,
+                negative_vecs=matched_retain_vecs[target_index],
+                num_pos=5,
+                T=0.7,
+                p=p,
+                noise_sigma=noise_sigma,
+                return_details=collect,
+            )
+            negative_concepts = matched_retain_names[target_index]
+
+        if not collect:
+            return result
+        mask, details = result
+        informax_records.append({
+            "projection": projection,
+            "layer_index": layer_num - 1,
+            "stage": stage,
+            "target_index": target_index,
+            "target_concept": old_texts[target_index],
+            "negative_concepts": negative_concepts,
+            **details,
+        })
+        return mask
+
     C_full = torch.stack(concept_vecs, 1)          # (d_in, m)
     CCt    = C_full @ C_full.t()                   # (d_in, d_in)
     # Concept subspace projection Pi_C
@@ -372,17 +526,21 @@ def edit_model(ldm_stable,
             # (d1) Aggregated MI row weights m_i for Pi_C (max over all concepts)
             if use_mi_softmask:
                 row_ws_all = []
-                for c_vec in concept_vecs:
-                    row_ws_all.append(_compute_mi_softmask_emptyneg(
-                        W_old     = W_old,
-                        c_vec     = c_vec,
-                        empty_vec = empty_vec,
-                        num_pos   = 5,
-                        T         = 0.7,
-                        p         = p,
-                        noise_sigma = noise_sigma
+                for target_index, c_vec in enumerate(concept_vecs):
+                    row_ws_all.append(compute_informax(
+                        W_old, c_vec, target_index, 'to_v', layer_num, 'aggregate'
                     ))
                 row_w_max = torch.max(torch.stack(row_ws_all, dim=-1), dim=-1).values   # (out_dim, 1)
+                if informax_diagnostics_path is not None:
+                    informax_records.append({
+                        "projection": "to_v",
+                        "layer_index": layer_num - 1,
+                        "stage": "aggregate-max",
+                        "target_index": None,
+                        "target_concept": None,
+                        "negative_concepts": None,
+                        "alpha": row_w_max.squeeze(1).detach().cpu(),
+                    })
             else:
                 row_w_max = torch.ones((out_dim,1), device=W_old.device)
 
@@ -421,14 +579,9 @@ def edit_model(ldm_stable,
                 for_mat2 = (ctx_v  @ ctx_vT).sum(0)     # (in_dim, in_dim)
 
                 if use_mi_softmask:
-                    row_w_c = _compute_mi_softmask_emptyneg(
-                        W_old     = W_old,
-                        c_vec     = c_vec,
-                        empty_vec = empty_vec,
-                        num_pos   = 5,
-                        T         = 0.7,
-                        p         = p,
-                        noise_sigma = noise_sigma
+                    row_w_c = compute_informax(
+                        W_old, c_vec, idx_concept - 1,
+                        'to_v', layer_num, 'accumulation'
                     )
                 else:
                     row_w_c = torch.ones((out_dim,1), device=W_old.device)
@@ -492,17 +645,21 @@ def edit_model(ldm_stable,
                 # (k1) Aggregated row weights for Pi_C (max over concepts)
                 if use_mi_softmask:
                     row_ws_all = []
-                    for c_vec in concept_vecs:
-                        row_ws_all.append(_compute_mi_softmask_emptyneg(
-                            W_old     = W_old,
-                            c_vec     = c_vec,
-                            empty_vec = empty_vec,
-                            num_pos   = 5,
-                            T         = 0.7,
-                            p         = p,
-                            noise_sigma = noise_sigma
+                    for target_index, c_vec in enumerate(concept_vecs):
+                        row_ws_all.append(compute_informax(
+                            W_old, c_vec, target_index, 'to_k', layer_num, 'aggregate'
                         ))
                     row_w_max = torch.max(torch.stack(row_ws_all, dim=-1), dim=-1).values
+                    if informax_diagnostics_path is not None:
+                        informax_records.append({
+                            "projection": "to_k",
+                            "layer_index": layer_num - 1,
+                            "stage": "aggregate-max",
+                            "target_index": None,
+                            "target_concept": None,
+                            "negative_concepts": None,
+                            "alpha": row_w_max.squeeze(1).detach().cpu(),
+                        })
                 else:
                     row_w_max = torch.ones((out_dim,1), device=W_old.device)
 
@@ -540,14 +697,9 @@ def edit_model(ldm_stable,
                     for_mat2 = (ctx_v  @ ctx_vT).sum(0)
 
                     if use_mi_softmask:
-                        row_w_c = _compute_mi_softmask_emptyneg(
-                            W_old     = W_old,
-                            c_vec     = c_vec,
-                            empty_vec = empty_vec,
-                            num_pos   = 5,
-                            T         = 0.7,
-                            p         = p,
-                            noise_sigma = noise_sigma
+                        row_w_c = compute_informax(
+                            W_old, c_vec, idx_concept - 1,
+                            'to_k', layer_num, 'accumulation'
                         )
                     else:
                         row_w_c = torch.ones((out_dim,1), device=W_old.device)
@@ -581,7 +733,27 @@ def edit_model(ldm_stable,
                     W_final = W_bures
                 ca.to_k.weight.data.copy_(W_final)
 
-    print(f'[edit_model] done | enable_ased={enable_ased} | enable_egbr={enable_egbr} | use_mi_softmask={use_mi_softmask} | bures_iters={bures_iters}')
+    if informax_diagnostics_path is not None:
+        diagnostics_path = Path(informax_diagnostics_path)
+        diagnostics_path.parent.mkdir(parents=True, exist_ok=True)
+        torch.save({
+            "format_version": 1,
+            "informax_negative_mode": informax_negative_mode,
+            "num_positive": 5,
+            "num_negative": 5,
+            "temperature": 0.7,
+            "power": p,
+            "noise_sigma": noise_sigma,
+            "targets": old_texts,
+            "records": informax_records,
+        }, diagnostics_path)
+        print(f"Saved Informax diagnostics to {diagnostics_path}")
+
+    if informax_negative_mode == 'official' and informax_diagnostics_path is None:
+        # Preserve the upstream default log output as well as its computation.
+        print(f'[edit_model] done | enable_ased={enable_ased} | enable_egbr={enable_egbr} | use_mi_softmask={use_mi_softmask} | bures_iters={bures_iters}')
+    else:
+        print(f'[edit_model] done | enable_ased={enable_ased} | enable_egbr={enable_egbr} | use_mi_softmask={use_mi_softmask} | bures_iters={bures_iters} | informax_negative_mode={informax_negative_mode}')
     return ldm_stable
 
 # ─────────────────────────────────────────────────────────────
@@ -597,6 +769,8 @@ if __name__ == '__main__':
     parser.add_argument('--technique', type=str, default='replace')
     parser.add_argument('--device', type=str, default='0')
     parser.add_argument('--base', type=str, default='1.4')
+    parser.add_argument('--model-id-or-path', type=str, default=None,
+                        help='optional resolved model snapshot; default keeps upstream base mapping')
     parser.add_argument('--preserve_scale', type=float, default=None)
     parser.add_argument('--preserve_number', type=int, default=None)
     parser.add_argument('--erase_scale', type=float, default=1)
@@ -624,6 +798,16 @@ if __name__ == '__main__':
     parser.add_argument('--bures_iters', type=int, default=2, help='Bures proximal iterations per row (2–3 is enough)')
     parser.add_argument('--output_model', type=str, default='models/your_saved_model.pt',
                         help='where to save the edited UNet state_dict')
+    parser.add_argument('--informax-negative-mode',
+                        choices=['official', 'matched-retain'],
+                        default='official',
+                        help='Informax negative source; default preserves upstream behavior')
+    parser.add_argument('--informax-matched-retain-config', type=str, default=None,
+                        help='JSON file containing matched_retain_by_target')
+    parser.add_argument('--informax-diagnostics-path', type=str, default=None,
+                        help='optional .pt output for raw MI and alpha diagnostics')
+    parser.add_argument('--edit-seed', type=int, default=None,
+                        help='optional seed reset immediately before editing')
 
     args = parser.parse_args()
     technique = args.technique
@@ -705,7 +889,8 @@ if __name__ == '__main__':
     sd14 = "CompVis/stable-diffusion-v1-4"
     sd15 = "runwayml/stable-diffusion-v1-5"
     sd21 = 'stabilityai/stable-diffusion-2-1-base'
-    if args.base == '1.4': model_version = sd14
+    if args.model_id_or_path is not None: model_version = args.model_id_or_path
+    elif args.base == '1.4': model_version = sd14
     elif args.base == '1.5': model_version = sd15
     elif args.base == '2.1': model_version = sd21
     else: model_version = sd14
@@ -717,6 +902,23 @@ if __name__ == '__main__':
     print_text += f"-method_{technique}"
     print(print_text)
     print("Starting model editing...")
+
+    matched_retain_map = None
+    if args.informax_negative_mode == 'matched-retain':
+        if args.informax_matched_retain_config is None:
+            parser.error('--informax-matched-retain-config is required for matched-retain mode')
+        with open(args.informax_matched_retain_config, 'r') as f:
+            matched_config = json.load(f)
+        matched_retain_map = matched_config.get('matched_retain_by_target')
+        if not isinstance(matched_retain_map, dict):
+            parser.error('matched retain config must contain an object named matched_retain_by_target')
+
+    if args.edit_seed is not None:
+        random.seed(args.edit_seed)
+        np.random.seed(args.edit_seed)
+        torch.manual_seed(args.edit_seed)
+        if torch.cuda.is_available():
+            torch.cuda.manual_seed_all(args.edit_seed)
 
     ldm_stable = edit_model(
         ldm_stable=ldm_stable, old_text_=old_texts, new_text_=new_texts,
@@ -734,7 +936,10 @@ if __name__ == '__main__':
         enable_egbr=args.enable_egbr,
         bures_mu_from_entropy=args.bures_mu_from_entropy,
         use_mi_softmask=args.use_mi_softmask,
-        bures_iters=args.bures_iters
+        bures_iters=args.bures_iters,
+        informax_negative_mode=args.informax_negative_mode,
+        informax_matched_retain_map=matched_retain_map,
+        informax_diagnostics_path=args.informax_diagnostics_path,
     )
 
     print("Model editing completed.")

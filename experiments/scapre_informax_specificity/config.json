@@ -1,0 +1,87 @@
+{
+  "experiment_name": "scapre_informax_specificity",
+  "protocol_label": "project-established Confuse5 reconstruction derived from public ScaPre assets",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "base_model_revision": null,
+  "edit_seed": 20260820,
+  "variants": [
+    "official",
+    "matched_retain"
+  ],
+  "edit": {
+    "base": "1.5",
+    "concept_type": "object",
+    "erase_scale": 2.0,
+    "p": 8.0,
+    "bures_iters": 1,
+    "enable_ased": true,
+    "entropy_samples": 30,
+    "entropy_bins": 20,
+    "noise_sigma": 0.01,
+    "T_sigma": 1.0,
+    "p_sigma": 1.0,
+    "lamb_effective": 0.5,
+    "target_replacement": "single-space prompt",
+    "num_positive": 5,
+    "num_negative": 5,
+    "matched_negative_assignment": "round-robin in listed retain order (2/2/1)"
+  },
+  "evaluation": {
+    "formal_images_per_concept": 120,
+    "smoke_images_per_concept": 2,
+    "protocol_dataset": "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv",
+    "protocol_dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "prompt_template": "an image of a {concept}",
+    "missing_seed_scheme": "reuse the ordered seeds of the same-group retain class present in public imagenet-15.csv",
+    "num_inference_steps": 50,
+    "guidance_scale": 7.5,
+    "height": 512,
+    "width": 512,
+    "sampler": "base-model scheduler config",
+    "dtype": "float16",
+    "classifier": "torchvision ResNet50_Weights.DEFAULT",
+    "classifier_decision": "top-1",
+    "label_match": "lowercase substring in either direction"
+  },
+  "decision_rule": {
+    "minimum_aggregate_preserve_gain_pp": 1.0,
+    "minimum_groups_with_positive_preserve_delta": 4,
+    "unlearn_noninferiority_margin_pp": 2.0,
+    "supported": "preserve gain reaches the minimum, at least four groups improve, and unlearn degradation is at most the margin",
+    "trade_off_only": "the preservation consistency criteria pass but unlearn degradation exceeds the margin",
+    "not_supported": "all other outcomes"
+  },
+  "groups": [
+    {
+      "id": "dogs",
+      "targets": ["golden retriever", "labrador retriever"],
+      "retains": ["german shepherd", "chesapeake bay retriever", "pug"]
+    },
+    {
+      "id": "cats",
+      "targets": ["tabby", "tiger cat"],
+      "retains": ["persian cat", "siamese cat", "egyptian cat"]
+    },
+    {
+      "id": "fruits",
+      "targets": ["orange", "lemon"],
+      "retains": ["pomegranate", "fig", "granny smith"]
+    },
+    {
+      "id": "boats",
+      "targets": ["yawl", "lifeboat"],
+      "retains": ["speedboat", "catamaran", "schooner"]
+    },
+    {
+      "id": "balls",
+      "targets": ["soccer ball", "volleyball"],
+      "retains": ["tennis ball", "rugby ball", "ping-pong ball"]
+    }
+  ],
+  "paper_display_names": {
+    "chesapeake bay retriever": "Chesapeake Bay retriever",
+    "siamese cat": "Siamese cat",
+    "egyptian cat": "Egyptian cat",
+    "granny smith": "Granny Smith"
+  }
+}
