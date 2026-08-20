@@ -31,3 +31,15 @@ The resumable project output is stored under
 After successful completion, only the report, manifests, diagnostics, and
 metric tables are packaged under
 `/home/tslin/Documents/jupyter_data/anLi/tmp/`. The final `scp` remains manual.
+
+To retain a small, fixed-rule visual sanity-check set without copying all 440
+generated images, package 50 review images and then remove only the project
+image directories:
+
+```bash
+bash experiments/oce_failure_image_qualification/package_review_images.sh
+bash experiments/oce_failure_image_qualification/cleanup_server_images.sh
+```
+
+The cleanup script refuses to run until the review-image archive exists. It
+preserves reports, metrics, manifests, and checkpoints.
