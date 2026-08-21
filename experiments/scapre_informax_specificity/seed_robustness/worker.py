@@ -301,6 +301,26 @@ def normalized_command(command: list[str]) -> list[str]:
     return normalized
 
 
+def rng_tensor_signature_counts(audit: dict) -> dict[str, int]:
+    """Drop only the expected implementation caller from an RNG shape key."""
+    normalized: dict[str, int] = {}
+    for key, count in audit["shape_counts"].items():
+        if ":" not in key:
+            raise RuntimeError(f"malformed Informax RNG shape key: {key}")
+        _, tensor_signature = key.split(":", 1)
+        normalized[tensor_signature] = normalized.get(tensor_signature, 0) + int(count)
+    return normalized
+
+
+def rng_callers(audit: dict) -> set[str]:
+    callers = set()
+    for key in audit["shape_counts"]:
+        if ":" not in key:
+            raise RuntimeError(f"malformed Informax RNG shape key: {key}")
+        callers.add(key.split(":", 1)[0])
+    return callers
+
+
 def run_edit(command: list[str], seed_dir: Path, variant: str) -> None:
     checkpoint = seed_dir / "checkpoints" / f"{variant}.pt"
     diagnostics = seed_dir / "diagnostics" / f"{variant}.pt"
@@ -435,15 +455,30 @@ def main() -> None:
             raise RuntimeError(f"seed {seed} variants differ outside the intended intervention")
         official_rng = json.loads((seed_dir / "stages" / "informax_rng_official.json").read_text())
         matched_rng = json.loads((seed_dir / "stages" / "informax_rng_matched_retain.json").read_text())
-        for key in ("informax_seed", "intercepted_randn_calls", "expected_randn_calls", "shape_counts", "global_rng_legacy_draws_consumed"):
+        for key in ("informax_seed", "intercepted_randn_calls", "expected_randn_calls", "global_rng_legacy_draws_consumed"):
             if official_rng[key] != matched_rng[key]:
                 raise RuntimeError(f"seed {seed} RNG audit differs between variants: {key}")
+        expected_callers = {
+            "official": {"_compute_mi_softmask_emptyneg"},
+            "matched_retain": {"_compute_mi_softmask_matchedneg"},
+        }
+        if rng_callers(official_rng) != expected_callers["official"]:
+            raise RuntimeError(f"seed {seed} official RNG audit has unexpected caller")
+        if rng_callers(matched_rng) != expected_callers["matched_retain"]:
+            raise RuntimeError(f"seed {seed} matched RNG audit has unexpected caller")
+        official_signatures = rng_tensor_signature_counts(official_rng)
+        matched_signatures = rng_tensor_signature_counts(matched_rng)
+        if official_signatures != matched_signatures:
+            raise RuntimeError(f"seed {seed} RNG tensor signatures differ between variants")
         (seed_dir / "controlled_ablation_check.json").write_text(json.dumps({
             "status": "passed",
             "seed": seed,
             "fixed_non_informax_seed": config["fixed_non_informax_seed"],
             "same_normalized_edit_command": True,
             "same_informax_noise_shape_stream": True,
+            "same_informax_noise_tensor_signature_counts": True,
+            "official_rng_callers": sorted(expected_callers["official"]),
+            "matched_rng_callers": sorted(expected_callers["matched_retain"]),
             "method_source_sha256": config["source_controls"]["scapre/edit/erase_scale.py"],
             "intended_differences": ["Informax negative/reference source", "variant-specific output paths"],
         }, indent=2) + "\n")
