@@ -29,6 +29,9 @@ for required_pattern in \
   '"expected_images_per_variant": 3000' \
   '"expected_target_rows": 1200' \
   '"expected_retain_rows": 1800' \
+  '"expected_edited_layers_per_projection": 16' \
+  '"expected_diagnostic_records_per_formal_seed": 320' \
+  '"expected_diagnostic_records_per_smoke_seed": 64' \
   '"minimum_positive_preserve_seeds": 4' \
   '"minimum_mean_preserve_delta_pp": 1.0' \
   '"maximum_mean_unlearn_delta_pp": 0.0' \
@@ -65,6 +68,17 @@ rg -q 'global_rng_legacy_draws_consumed' "$SCRIPT_DIR/informax_seed_runner.py"
 rg -q 'git pull --ff-only origin main' "$SCRIPT_DIR/run_server.sh"
 rg -q 'SCAPRE_INTERNAL_FINALIZE=1' "$SCRIPT_DIR/server_worker.sh"
 rg -q 'archive_manifest.json' "$SCRIPT_DIR/cleanup_images.sh"
+rg -q 'generation_keys_match_frozen_protocol' "$SCRIPT_DIR/worker.py"
+rg -q 'stable_prior_manifest' "$SCRIPT_DIR/worker.py"
+rg -q 'validate_diagnostic_rows' "$SCRIPT_DIR/aggregate_seed_results.py"
+rg -q 'diagnostic_layer_target_keys_identical' "$SCRIPT_DIR/aggregate_seed_results.py"
+rg -q '\^  \\"\$key' "$SCRIPT_DIR/status_server.sh"
+rg -q '\^  \\"\$key' "$SCRIPT_DIR/download_results.sh"
+rg -q 'formal_preflight.py' "$SCRIPT_DIR/run_server.sh"
+if rg -n 'import torch|diffusers|huggingface|pip install|apt[[:space:]]+install' "$SCRIPT_DIR/formal_preflight.py"; then
+  echo "ERROR: formal preflight must remain lightweight and dependency-free" >&2
+  exit 2
+fi
 if rg -n '\bjq\b' "$SCRIPT_DIR" --glob '*.sh' --glob '*.py' --glob '!validate_local.sh'; then
   echo "ERROR: jq must not be required by seed-robustness scripts" >&2
   exit 2
@@ -88,7 +102,8 @@ awk -F, '
 ' "$SCRIPT_DIR/../results/aggregate.csv"
 
 required=(
-  README.md AUDIT.md config.json json_stdlib.py informax_seed_runner.py worker.py
+  README.md AUDIT.md config.json json_stdlib.py informax_seed_runner.py
+  formal_preflight.py worker.py
   aggregate_seed_results.py resolve_prior_seed.sh run_server.sh server_worker.sh
   status_server.sh package_results.sh cleanup_images.sh download_results.sh
   results/summary.md reproducibility/README.md

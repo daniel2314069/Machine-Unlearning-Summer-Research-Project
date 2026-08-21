@@ -13,6 +13,9 @@
   "expected_groups": 5,
   "expected_informax_randn_calls_per_formal_edit": 1280,
   "expected_informax_randn_calls_per_smoke_edit": 256,
+  "expected_edited_layers_per_projection": 16,
+  "expected_diagnostic_records_per_formal_seed": 320,
+  "expected_diagnostic_records_per_smoke_seed": 64,
   "source_controls": {
     "scapre/edit/erase_scale.py": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
     "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",

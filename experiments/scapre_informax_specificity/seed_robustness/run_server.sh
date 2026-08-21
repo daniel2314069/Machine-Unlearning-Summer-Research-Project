@@ -67,12 +67,39 @@ if [[ ! -f "$PARENT_EXPERIMENT/.server/SETUP_COMPLETE" || ! -f "$ASSETS" ]]; the
 fi
 "$PYTHON_BIN" -c 'import torch; assert torch.cuda.is_available(), "CUDA is unavailable"'
 
+mkdir -p "$STATE_DIR" "$RUNS_DIR"
 PRIOR_RUN=""
 if [[ "$PROFILE" == "formal" ]]; then
+  SMOKE_RUN=""
+  if [[ -f "$STATE_DIR/latest_successful_smoke" ]]; then
+    SMOKE_RUN="$(tr -d '\r\n' < "$STATE_DIR/latest_successful_smoke")"
+  elif [[ -f "$STATE_DIR/latest_run" ]]; then
+    SMOKE_RUN="$(tr -d '\r\n' < "$STATE_DIR/latest_run")"
+  fi
+  if [[ -z "$SMOKE_RUN" || "$SMOKE_RUN" != "$RUNS_DIR"/smoke_* || \
+        ! -f "$SMOKE_RUN/COMPLETED" || ! -f "$SMOKE_RUN/exit_code" || \
+        ! -f "$SMOKE_RUN/cleanup_manifest.json" || \
+        ! -f "$SMOKE_RUN/reproducibility/integrity_report.json" || \
+        ! -f "$SMOKE_RUN/seeds/20260821/controlled_ablation_check.json" ]]; then
+    echo "ERROR: formal launch requires one completed, packaged, and cleaned smoke run" >&2
+    exit 2
+  fi
+  if [[ "$(tr -d '[:space:]' < "$SMOKE_RUN/exit_code")" != "0" || \
+        "$("$PYTHON_BIN" "$SCRIPT_DIR/json_stdlib.py" get "$SMOKE_RUN/cleanup_manifest.json" status)" != "passed" || \
+        "$("$PYTHON_BIN" "$SCRIPT_DIR/json_stdlib.py" get "$SMOKE_RUN/reproducibility/integrity_report.json" status)" != "passed" || \
+        "$("$PYTHON_BIN" "$SCRIPT_DIR/json_stdlib.py" get "$SMOKE_RUN/seeds/20260821/controlled_ablation_check.json" status)" != "passed" ]]; then
+    echo "ERROR: latest smoke run did not pass cleanup, integrity, and controlled-ablation checks" >&2
+    exit 2
+  fi
+  printf '%s\n' "$SMOKE_RUN" > "$STATE_DIR/latest_successful_smoke"
   PRIOR_RUN="$($SCRIPT_DIR/resolve_prior_seed.sh)"
+  "$PYTHON_BIN" "$SCRIPT_DIR/formal_preflight.py" \
+    --config "$SCRIPT_DIR/config.json" \
+    --assets "$ASSETS" \
+    --prior-run "$PRIOR_RUN" \
+    --output "$STATE_DIR/formal_preflight_latest.json"
 fi
 
-mkdir -p "$STATE_DIR" "$RUNS_DIR"
 if [[ -f "$STATE_DIR/active_run" ]]; then
   ACTIVE_DIR="$(tr -d '\r\n' < "$STATE_DIR/active_run")"
   if [[ ! -f "$ACTIVE_DIR/COMPLETED" && ! -f "$ACTIVE_DIR/FAILED" && -f "$ACTIVE_DIR/pid" ]]; then
@@ -124,6 +151,9 @@ printf '%s\n' "$PYTHON_BIN" > "$RUN_DIR/python_path"
 printf '%s\n' "$RUN_DIR" > "$RUN_DIR/output_path"
 printf '%s\n' "$LOG_PATH" > "$RUN_DIR/log_path"
 printf '%s\n' "$PRIOR_RUN" > "$RUN_DIR/prior_run_path"
+if [[ "$PROFILE" == "formal" ]]; then
+  cp "$STATE_DIR/formal_preflight_latest.json" "$RUN_DIR/formal_preflight.json"
+fi
 date -u +'%Y-%m-%dT%H:%M:%SZ' > "$RUN_DIR/started_at_utc"
 printf '%q ' "$SCRIPT_DIR/server_worker.sh" "$PROFILE" "$RUN_DIR" "$ASSETS" "$PRIOR_RUN" > "$RUN_DIR/command.txt"
 printf '\n' >> "$RUN_DIR/command.txt"

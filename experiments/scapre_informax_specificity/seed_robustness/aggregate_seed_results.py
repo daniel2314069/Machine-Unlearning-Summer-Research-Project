@@ -207,6 +207,40 @@ def summarize_diagnostics(seed: int, rows: list[dict[str, object]]) -> dict[str,
     }
 
 
+def validate_diagnostic_rows(
+    seed: int,
+    rows: list[dict[str, object]],
+    expected_keys: set[tuple[str, int, str]],
+) -> None:
+    keys = {
+        (str(row["projection"]), int(row["layer_index"]), str(row["target_concept"]))
+        for row in rows
+    }
+    if len(rows) != len(keys):
+        raise RuntimeError(f"seed {seed} contains duplicate diagnostic layer/target keys")
+    if keys != expected_keys:
+        missing = len(expected_keys - keys)
+        extra = len(keys - expected_keys)
+        raise RuntimeError(
+            f"seed {seed} diagnostic coverage changed: missing={missing}, extra={extra}"
+        )
+    numeric_fields = (
+        "spearman_alpha", "mean_raw_mi_official", "mean_raw_mi_matched",
+        "top_1_percent_overlap", "top_5_percent_overlap", "top_10_percent_overlap",
+    )
+    for row in rows:
+        if int(row["channels"]) <= 0:
+            raise RuntimeError(f"seed {seed} diagnostic has a non-positive channel count")
+        for field in numeric_fields:
+            if not math.isfinite(float(row[field])):
+                raise RuntimeError(f"seed {seed} diagnostic contains non-finite {field}")
+        if not -1.0 <= float(row["spearman_alpha"]) <= 1.0:
+            raise RuntimeError(f"seed {seed} diagnostic Spearman is outside [-1, 1]")
+        for field in ("top_1_percent_overlap", "top_5_percent_overlap", "top_10_percent_overlap"):
+            if not 0.0 <= float(row[field]) <= 1.0:
+                raise RuntimeError(f"seed {seed} diagnostic overlap is outside [0, 1]")
+
+
 def fmt(value: float) -> str:
     return f"{value:.2f}"
 
@@ -251,6 +285,31 @@ def main() -> None:
                 concept_order.append(concept)
                 concept_role[concept] = role
                 concept_group[concept] = group["id"]
+    target_concepts = [concept for concept in concept_order if concept_role[concept] == "target"]
+    layers_per_projection = int(robustness["expected_edited_layers_per_projection"])
+    expected_diagnostic_keys = {
+        (projection, layer_index, target)
+        for projection in ("to_k", "to_v")
+        for layer_index in range(layers_per_projection)
+        for target in target_concepts
+    }
+    expected_diagnostic_records = robustness[
+        "expected_diagnostic_records_per_formal_seed"
+        if args.profile == "formal"
+        else "expected_diagnostic_records_per_smoke_seed"
+    ]
+    if len(expected_diagnostic_keys) != expected_diagnostic_records:
+        raise RuntimeError("configured diagnostic record count disagrees with layer/target coverage")
+
+    prior_validation = None
+    if args.profile == "formal":
+        prior_validation = json.loads(
+            (run_dir / "reproducibility" / "prior_seed_validation.json").read_text()
+        )
+        if not prior_validation.get("generation_keys_match_frozen_protocol"):
+            raise RuntimeError("legacy seed generation keys were not validated")
+        if not prior_validation.get("model_classifier_asset_provenance_match"):
+            raise RuntimeError("legacy model/classifier assets were not validated")
 
     per_seed_rows: list[dict[str, object]] = []
     per_group_rows: list[dict[str, object]] = []
@@ -355,7 +414,21 @@ def main() -> None:
             [per_seed_row],
             list(per_seed_row.keys()),
         )
-        diagnostic_rows.append(summarize_diagnostics(seed, create_diagnostic_csv(seed_dir)))
+        seed_diagnostic_rows = create_diagnostic_csv(seed_dir)
+        validate_diagnostic_rows(seed, seed_diagnostic_rows, expected_diagnostic_keys)
+        diagnostic_rows.append(summarize_diagnostics(seed, seed_diagnostic_rows))
+
+    expected_seed_count = 5 if args.profile == "formal" else 1
+    expected_group_rows = expected_seed_count * len(group_order)
+    expected_concept_rows = expected_seed_count * len(concept_order)
+    if len(per_seed_rows) != expected_seed_count:
+        raise RuntimeError("per-seed result count changed")
+    if len(per_group_rows) != expected_group_rows:
+        raise RuntimeError("per-group-by-seed result count changed")
+    if len(per_concept_rows) != expected_concept_rows:
+        raise RuntimeError("per-concept-by-seed result count changed")
+    if len(diagnostic_rows) != expected_seed_count:
+        raise RuntimeError("Informax seed diagnostic summary count changed")
 
     per_seed_fields = list(per_seed_rows[0].keys())
     write_csv(results_dir / "per_seed.csv", per_seed_rows, per_seed_fields)
@@ -425,6 +498,9 @@ def main() -> None:
         row["improvement_seed_count"] = sum(value > 0 for value in deltas)
         row["total_seeds"] = len(deltas)
         retain_rows.append(row)
+    expected_retain_count = 15 if args.profile == "formal" else 3
+    if len(retain_rows) != expected_retain_count:
+        raise RuntimeError("retain-concept robustness row count changed")
     write_csv(
         results_dir / "per_retain_robustness.csv",
         retain_rows,
@@ -595,11 +671,28 @@ These quantities are explanatory only and do not determine the judgment.
         "cross_seed_generation_keys_identical": True,
         "duplicate_generation_keys": 0,
         "evaluator_fingerprint_identical": True,
+        "evaluator_fingerprint_sha256": hashlib.sha256(
+            json.dumps(reference_evaluator, sort_keys=True).encode("utf-8")
+        ).hexdigest(),
+        "evaluator_source_sha256": robustness["source_controls"][
+            "experiments/scapre_informax_specificity/evaluate_confuse5.py"
+        ],
+        "assets_manifest_sha256": run_manifest["assets_manifest_sha256"],
+        "model_classifier_asset_provenance_identical": (
+            args.profile != "formal"
+            or bool(prior_validation["model_classifier_asset_provenance_match"])
+        ),
         "new_seed_source_hashes_identical": True,
         "legacy_controlled_source_hashes_verified": args.profile != "formal" or (run_dir / "reproducibility" / "prior_seed_validation.json").is_file(),
         "score_sha256": score_hashes,
         "start_git_clean": run_manifest["git_status_start"] == [],
         "end_git_clean": run_manifest.get("git_status_end") == [],
+        "diagnostic_layer_target_keys_identical": True,
+        "diagnostic_records_per_seed": expected_diagnostic_records,
+        "per_seed_rows": len(per_seed_rows),
+        "per_group_seed_rows": len(per_group_rows),
+        "per_concept_seed_rows": len(per_concept_rows),
+        "retain_robustness_rows": len(retain_rows),
     }
     (run_dir / "reproducibility" / "integrity_report.json").parent.mkdir(parents=True, exist_ok=True)
     (run_dir / "reproducibility" / "integrity_report.json").write_text(json.dumps(integrity, indent=2) + "\n")

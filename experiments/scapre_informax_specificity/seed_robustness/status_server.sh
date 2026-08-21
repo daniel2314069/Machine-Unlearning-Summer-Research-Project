@@ -6,12 +6,12 @@ STATE_DIR="$SCRIPT_DIR/.server"
 json_string_field() {
   local key="$1"
   local file="$2"
-  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+  sed -n "s/^  \"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
 }
 json_number_field() {
   local key="$1"
   local file="$2"
-  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\([0-9][0-9]*\)[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+  sed -n "s/^  \"$key\"[[:space:]]*:[[:space:]]*\([0-9][0-9]*\)[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
 }
 RUN_DIR="${1:-}"
 if [[ -z "$RUN_DIR" ]]; then

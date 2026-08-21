@@ -76,7 +76,7 @@ FILES=(
   reproducibility/integrity_report.json
 )
 if [[ "$PROFILE" == "formal" ]]; then
-  FILES+=(reproducibility/prior_seed_validation.json)
+  FILES+=(formal_preflight.json reproducibility/prior_seed_validation.json)
 fi
 
 for seed in "${SEEDS[@]}"; do

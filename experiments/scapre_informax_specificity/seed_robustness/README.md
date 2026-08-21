@@ -91,6 +91,13 @@ experiments/scapre_informax_specificity/seed_robustness/run_server.sh formal
 experiments/scapre_informax_specificity/seed_robustness/status_server.sh
 ```
 
+Before detaching the formal worker, the launcher runs a lightweight synchronous
+formal preflight over the frozen protocol, all 6,000 legacy score rows, prior
+evaluator fingerprints, model/classifier asset provenance, and pinned source
+hashes. It uses only the active `MU` Python standard library, does not load a
+model, does not generate images, and does not download anything. A failed
+preflight prevents the expensive formal run from starting.
+
 To resume the same failed run after resolving an external problem:
 
 ```bash

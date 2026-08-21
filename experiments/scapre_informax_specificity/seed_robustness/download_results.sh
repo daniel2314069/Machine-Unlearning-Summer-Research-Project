@@ -33,7 +33,7 @@ TEMP_CLEANUP="$TEMP_ARCHIVE.cleanup.json"
 json_string_field() {
   local key="$1"
   local file="$2"
-  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+  sed -n "s/^  \"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
 }
 scp "$REMOTE:$SERVER_ARCHIVE" "$TEMP_ARCHIVE"
 scp "$REMOTE:$SERVER_ARCHIVE.cleanup.json" "$TEMP_CLEANUP"

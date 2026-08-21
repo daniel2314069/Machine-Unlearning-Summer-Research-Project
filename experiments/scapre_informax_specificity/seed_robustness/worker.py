@@ -11,6 +11,7 @@ import os
 import shutil
 import subprocess
 import sys
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -116,7 +117,35 @@ def matched_map(base_config: dict, profile: str) -> dict[str, list[str]]:
     }
 
 
-def validate_prior_seed(prior: Path, config: dict) -> dict[str, object]:
+def controlled_assets(assets: dict) -> dict:
+    keys = (
+        "base_model", "requested_revision", "resolved_revision", "snapshot_path",
+        "snapshot_allow_patterns", "downloaded_files", "total_model_bytes",
+        "maximum_model_bytes", "resnet_weights", "resnet_url", "packages",
+        "config_sha256",
+    )
+    return {key: assets.get(key) for key in keys}
+
+
+def controlled_evaluator(manifest: dict) -> dict:
+    return {
+        key: value
+        for key, value in manifest.items()
+        if key not in {"variant", "checkpoint_sha256"}
+    }
+
+
+def protocol_generation_keys(rows: list[dict[str, str]]) -> set[tuple[str, ...]]:
+    fields = ("group", "role", "concept", "sample_index", "prompt", "seed", "seed_source")
+    return {tuple(row[field] for field in fields) for row in rows}
+
+
+def validate_prior_seed(
+    prior: Path,
+    config: dict,
+    current_assets: dict,
+    expected_protocol: Path,
+) -> dict[str, object]:
     required = [
         "actual_config.json",
         "protocol.csv",
@@ -158,18 +187,35 @@ def validate_prior_seed(prior: Path, config: dict) -> dict[str, object]:
         "scapre/edit/erase_scale.py",
         "experiments/scapre_informax_specificity/config.json",
         "experiments/scapre_informax_specificity/evaluate_confuse5.py",
+        "experiments/scapre_informax_specificity/build_protocol.py",
+        "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv",
     ):
         if prior_manifest["source_sha256"].get(relative) != config["source_controls"][relative]:
             raise RuntimeError(f"prior source hash mismatch: {relative}")
+    if controlled_assets(prior_manifest["assets"]) != controlled_assets(current_assets):
+        raise RuntimeError("prior and current model/classifier asset provenance differ")
+
+    protocol_rows = read_csv(expected_protocol)
+    expected_keys = protocol_generation_keys(protocol_rows)
+    if len(protocol_rows) != 3000 or len(expected_keys) != 3000:
+        raise RuntimeError("frozen formal protocol must contain 3000 unique generation keys")
+    protocol_counts = Counter(row["concept"] for row in protocol_rows)
+    if len(protocol_counts) != 25 or set(protocol_counts.values()) != {120}:
+        raise RuntimeError("frozen formal protocol must contain 25 concepts x 120 rows")
 
     calculated: dict[str, float] = {}
     score_hashes: dict[str, str] = {}
     generation_keys: set[tuple[str, ...]] | None = None
+    evaluator_fingerprint: dict | None = None
     for variant in ("official", "matched_retain"):
         score_path = prior / "evaluation" / variant / "scores.csv"
         rows = read_csv(score_path)
         if len(rows) != 3000:
             raise RuntimeError(f"prior {variant} has {len(rows)} scores instead of 3000")
+        if any(row.get("variant") != variant for row in rows):
+            raise RuntimeError(f"prior {variant} score file has a variant-column mismatch")
+        if any(row.get("correct") not in {"0", "1"} for row in rows):
+            raise RuntimeError(f"prior {variant} score file has a non-binary classifier result")
         target_rows = [row for row in rows if row["role"] == "target"]
         retain_rows = [row for row in rows if row["role"] == "retain"]
         if (len(target_rows), len(retain_rows)) != (1200, 1800):
@@ -180,6 +226,8 @@ def validate_prior_seed(prior: Path, config: dict) -> dict[str, object]:
         }
         if len(keys) != 3000:
             raise RuntimeError(f"prior {variant} contains duplicate generation keys")
+        if keys != expected_keys:
+            raise RuntimeError(f"prior {variant} score keys differ from the frozen protocol")
         if generation_keys is None:
             generation_keys = keys
         elif generation_keys != keys:
@@ -191,6 +239,16 @@ def validate_prior_seed(prior: Path, config: dict) -> dict[str, object]:
         calculated[f"{metric_prefix}_preserve_acc"] = preserve
         calculated[f"{metric_prefix}_overall_acc"] = overall(unlearn, preserve)
         score_hashes[variant] = sha256(score_path)
+        evaluation_manifest = json.loads(
+            (prior / "evaluation" / variant / "evaluation_manifest.json").read_text()
+        )
+        fingerprint = controlled_evaluator(evaluation_manifest)
+        if fingerprint.get("protocol_sha256") != config["prior_seed"]["protocol_sha256"]:
+            raise RuntimeError(f"prior {variant} evaluator protocol fingerprint changed")
+        if evaluator_fingerprint is None:
+            evaluator_fingerprint = fingerprint
+        elif evaluator_fingerprint != fingerprint:
+            raise RuntimeError("prior variant evaluator/classifier fingerprints differ")
 
     for key, expected in config["prior_seed"]["expected_metrics"].items():
         if not math_isclose(calculated[key], expected):
@@ -200,6 +258,11 @@ def validate_prior_seed(prior: Path, config: dict) -> dict[str, object]:
         "validated_at_utc": datetime.now(timezone.utc).isoformat(),
         "protocol_sha256": protocol_manifest["sha256"],
         "score_sha256": score_hashes,
+        "generation_keys_match_frozen_protocol": True,
+        "model_classifier_asset_provenance_match": True,
+        "evaluator_fingerprint_sha256": hashlib.sha256(
+            json.dumps(evaluator_fingerprint, sort_keys=True).encode("utf-8")
+        ).hexdigest(),
         "metrics": calculated,
         "legacy_git_commit": prior_manifest["git_commit"],
         "legacy_git_dirty": prior_manifest["git_dirty"],
@@ -211,10 +274,18 @@ def math_isclose(left: float, right: float) -> bool:
     return abs(left - right) <= 1e-10
 
 
+def stable_prior_manifest(manifest: dict[str, object]) -> dict[str, object]:
+    return {
+        key: value
+        for key, value in manifest.items()
+        if key != "validated_at_utc"
+    }
+
+
 def import_prior(prior: Path, destination: Path, manifest: dict[str, object]) -> None:
     if destination.exists():
         existing = json.loads((destination / "seed_source_manifest.json").read_text())
-        if existing != manifest:
+        if stable_prior_manifest(existing) != stable_prior_manifest(manifest):
             raise RuntimeError("existing imported seed 20260820 has different provenance")
         return
     for variant in ("official", "matched_retain"):
@@ -365,10 +436,15 @@ def main() -> None:
     if args.profile == "formal" and args.prior_run is None:
         raise RuntimeError("formal robustness requires the validated seed-20260820 run")
 
-    source_files = sorted(
-        [EDITOR, BASE_CONFIG_PATH, EVALUATOR, PROTOCOL_BUILDER]
-        + [path for path in SEED_DIR.iterdir() if path.is_file() and path.suffix in {".py", ".sh", ".md", ".json", ".txt"}]
-    )
+    controlled_sources = [REPO_ROOT / relative for relative in config["source_controls"]]
+    source_files = sorted(set(
+        controlled_sources
+        + [
+            path
+            for path in SEED_DIR.iterdir()
+            if path.is_file() and path.suffix in {".py", ".sh", ".md", ".json", ".txt"}
+        ]
+    ))
     source_hashes = {str(path.relative_to(REPO_ROOT)): sha256(path) for path in source_files}
     manifest_path = args.run_dir / "run_manifest.json"
     new_manifest = {
@@ -380,11 +456,12 @@ def main() -> None:
         "git_status_start": start_status,
         "source_sha256": source_hashes,
         "assets": assets,
+        "assets_manifest_sha256": sha256(args.assets),
         "device": args.device,
     }
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text())
-        for key in ("profile", "git_commit", "source_sha256", "assets", "device"):
+        for key in ("profile", "git_commit", "source_sha256", "assets", "assets_manifest_sha256", "device"):
             if manifest.get(key) != new_manifest.get(key):
                 raise RuntimeError(f"refusing resume because run manifest changed: {key}")
     else:
@@ -419,9 +496,16 @@ def main() -> None:
 
     if args.profile == "formal":
         prior = args.prior_run.resolve()
-        prior_manifest = validate_prior_seed(prior, config)
+        newly_validated_prior = validate_prior_seed(prior, config, assets, protocol_path)
         (args.run_dir / "reproducibility").mkdir(exist_ok=True)
-        (args.run_dir / "reproducibility" / "prior_seed_validation.json").write_text(json.dumps(prior_manifest, indent=2) + "\n")
+        prior_validation_path = args.run_dir / "reproducibility" / "prior_seed_validation.json"
+        if prior_validation_path.exists():
+            prior_manifest = json.loads(prior_validation_path.read_text())
+            if stable_prior_manifest(prior_manifest) != stable_prior_manifest(newly_validated_prior):
+                raise RuntimeError("prior seed validation changed while resuming")
+        else:
+            prior_manifest = newly_validated_prior
+            prior_validation_path.write_text(json.dumps(prior_manifest, indent=2) + "\n")
         import_prior(prior, args.run_dir / "seeds" / "20260820", prior_manifest)
 
     expected_calls = config[
