@@ -6,7 +6,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 CONFIG="$SCRIPT_DIR/config.json"
 PARENT_CONFIG="$SCRIPT_DIR/../config.json"
 
-for command_name in jq rg awk sed; do
+for command_name in rg awk sed; do
   command -v "$command_name" >/dev/null || {
     echo "ERROR: required static-check command is unavailable: $command_name" >&2
     exit 2
@@ -21,27 +21,30 @@ hash_file() {
   fi
 }
 
-jq -e '
-  .edit_seeds == [20260820,20260821,20260822,20260823,20260824] and
-  .new_edit_seeds == [20260821,20260822,20260823,20260824] and
-  .fixed_non_informax_seed == 20260820 and
-  .variants == ["official","matched_retain"] and
-  .expected_images_per_variant == 3000 and
-  .expected_target_rows == 1200 and
-  .expected_retain_rows == 1800 and
-  .robustness_rule.minimum_positive_preserve_seeds == 4 and
-  .robustness_rule.minimum_mean_preserve_delta_pp == 1.0 and
-  .robustness_rule.maximum_mean_unlearn_delta_pp == 0.0 and
-  .robustness_rule.minimum_positive_overall_seeds == 4
-' "$CONFIG" >/dev/null
-jq -e '
-  .edit_seed == 20260820 and
-  .variants == ["official","matched_retain"] and
-  .edit.num_positive == 5 and
-  .edit.num_negative == 5 and
-  .edit.matched_negative_assignment == "round-robin in listed retain order (2/2/1)" and
-  .evaluation.formal_images_per_concept == 120
-' "$PARENT_CONFIG" >/dev/null
+for required_pattern in \
+  '"edit_seeds": \[20260820, 20260821, 20260822, 20260823, 20260824\]' \
+  '"new_edit_seeds": \[20260821, 20260822, 20260823, 20260824\]' \
+  '"fixed_non_informax_seed": 20260820' \
+  '"variants": \["official", "matched_retain"\]' \
+  '"expected_images_per_variant": 3000' \
+  '"expected_target_rows": 1200' \
+  '"expected_retain_rows": 1800' \
+  '"minimum_positive_preserve_seeds": 4' \
+  '"minimum_mean_preserve_delta_pp": 1.0' \
+  '"maximum_mean_unlearn_delta_pp": 0.0' \
+  '"minimum_positive_overall_seeds": 4'; do
+  rg -q "$required_pattern" "$CONFIG"
+done
+for required_pattern in \
+  '"edit_seed": 20260820' \
+  '"official"' \
+  '"matched_retain"' \
+  '"num_positive": 5' \
+  '"num_negative": 5' \
+  '"matched_negative_assignment": "round-robin in listed retain order \(2/2/1\)"' \
+  '"formal_images_per_concept": 120'; do
+  rg -q "$required_pattern" "$PARENT_CONFIG"
+done
 
 while IFS=$'\t' read -r relative expected; do
   actual="$(hash_file "$REPO_ROOT/$relative")"
@@ -51,7 +54,10 @@ while IFS=$'\t' read -r relative expected; do
     echo "actual:   $actual" >&2
     exit 2
   fi
-done < <(jq -r '.source_controls | to_entries[] | [.key,.value] | @tsv' "$CONFIG")
+done < <(
+  sed -n '/"source_controls"[[:space:]]*:/,/^[[:space:]]*},[[:space:]]*$/p' "$CONFIG" |
+    sed -n 's/^[[:space:]]*"\([^"]*\)"[[:space:]]*:[[:space:]]*"\([0-9a-f][0-9a-f]*\)"[,]*[[:space:]]*$/\1\	\2/p'
+)
 
 rg -q "choices=\['official', 'matched-retain'\]" "$REPO_ROOT/scapre/edit/erase_scale.py"
 rg -q 'num_pos=5' "$REPO_ROOT/scapre/edit/erase_scale.py"
@@ -59,6 +65,10 @@ rg -q 'global_rng_legacy_draws_consumed' "$SCRIPT_DIR/informax_seed_runner.py"
 rg -q 'git pull --ff-only origin main' "$SCRIPT_DIR/run_server.sh"
 rg -q 'SCAPRE_INTERNAL_FINALIZE=1' "$SCRIPT_DIR/server_worker.sh"
 rg -q 'archive_manifest.json' "$SCRIPT_DIR/cleanup_images.sh"
+if rg -n '\bjq\b' "$SCRIPT_DIR" --glob '*.sh' --glob '*.py' --glob '!validate_local.sh'; then
+  echo "ERROR: jq must not be required by seed-robustness scripts" >&2
+  exit 2
+fi
 
 for script in "$SCRIPT_DIR"/*.sh; do
   bash -n "$script"
@@ -78,7 +88,7 @@ awk -F, '
 ' "$SCRIPT_DIR/../results/aggregate.csv"
 
 required=(
-  README.md AUDIT.md config.json informax_seed_runner.py worker.py
+  README.md AUDIT.md config.json json_stdlib.py informax_seed_runner.py worker.py
   aggregate_seed_results.py resolve_prior_seed.sh run_server.sh server_worker.sh
   status_server.sh package_results.sh cleanup_images.sh download_results.sh
   results/summary.md reproducibility/README.md

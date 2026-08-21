@@ -30,6 +30,11 @@ TEMP_DIR="$(mktemp -d "${TMPDIR:-/tmp}/scapre-seed-download.XXXXXX")"
 trap 'rm -rf -- "$TEMP_DIR"' EXIT
 TEMP_ARCHIVE="$TEMP_DIR/$(basename "$SERVER_ARCHIVE")"
 TEMP_CLEANUP="$TEMP_ARCHIVE.cleanup.json"
+json_string_field() {
+  local key="$1"
+  local file="$2"
+  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+}
 scp "$REMOTE:$SERVER_ARCHIVE" "$TEMP_ARCHIVE"
 scp "$REMOTE:$SERVER_ARCHIVE.cleanup.json" "$TEMP_CLEANUP"
 if command -v shasum >/dev/null; then
@@ -43,8 +48,8 @@ if [[ "$ACTUAL_SHA_LOWER" != "$EXPECTED_SHA_LOWER" ]]; then
   echo "ERROR: downloaded archive checksum mismatch" >&2
   exit 1
 fi
-MANIFEST_SHA="$(jq -r '.archive_sha256' "$TEMP_CLEANUP" | tr '[:upper:]' '[:lower:]')"
-if [[ "$(jq -r '.status' "$TEMP_CLEANUP")" != "passed" || \
+MANIFEST_SHA="$(json_string_field archive_sha256 "$TEMP_CLEANUP" | tr '[:upper:]' '[:lower:]')"
+if [[ "$(json_string_field status "$TEMP_CLEANUP")" != "passed" || \
       "$MANIFEST_SHA" != "$EXPECTED_SHA_LOWER" ]]; then
   echo "ERROR: cleanup manifest does not confirm the verified archive" >&2
   exit 1

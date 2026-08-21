@@ -28,7 +28,7 @@ if [[ -z "$PYTHON_BIN" ]]; then
   echo "ERROR: python is unavailable in active Conda MU" >&2
   exit 2
 fi
-for command_name in git jq sha256sum tar nohup; do
+for command_name in git tar nohup; do
   command -v "$command_name" >/dev/null || {
     echo "ERROR: required command is unavailable: $command_name" >&2
     exit 2
@@ -54,7 +54,8 @@ if [[ -n "$(git status --porcelain --untracked-files=all)" ]]; then
   echo "ERROR: working tree is dirty after git pull" >&2
   exit 2
 fi
-REQUIRED_COMMIT="$(jq -r '.required_ancestor_commit' "$SCRIPT_DIR/config.json")"
+REQUIRED_COMMIT="$("$PYTHON_BIN" "$SCRIPT_DIR/json_stdlib.py" get \
+  "$SCRIPT_DIR/config.json" required_ancestor_commit)"
 git merge-base --is-ancestor "$REQUIRED_COMMIT" HEAD || {
   echo "ERROR: main does not contain required result commit $REQUIRED_COMMIT" >&2
   exit 2

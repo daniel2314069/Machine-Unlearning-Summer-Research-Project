@@ -3,6 +3,16 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STATE_DIR="$SCRIPT_DIR/.server"
+json_string_field() {
+  local key="$1"
+  local file="$2"
+  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\"[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+}
+json_number_field() {
+  local key="$1"
+  local file="$2"
+  sed -n "s/^[[:space:]]*\"$key\"[[:space:]]*:[[:space:]]*\([0-9][0-9]*\)[[:space:]]*,\{0,1\}[[:space:]]*$/\1/p" "$file" | head -n 1
+}
 RUN_DIR="${1:-}"
 if [[ -z "$RUN_DIR" ]]; then
   if [[ ! -f "$STATE_DIR/latest_run" ]]; then
@@ -62,16 +72,16 @@ echo "log: $RUN_DIR/server.log"
 echo "summary: $RUN_DIR/results/summary.md"
 echo "new_image_score_progress: $GENERATED/$EXPECTED"
 if [[ -f "$RUN_DIR/archive_manifest.json" ]]; then
-  echo "archive: $(jq -r '.archive' "$RUN_DIR/archive_manifest.json")"
-  echo "archive_sha256: $(jq -r '.sha256' "$RUN_DIR/archive_manifest.json")"
+  echo "archive: $(json_string_field archive "$RUN_DIR/archive_manifest.json")"
+  echo "archive_sha256: $(json_string_field sha256 "$RUN_DIR/archive_manifest.json")"
 else
   echo "archive: pending"
 fi
 if [[ -f "$RUN_DIR/cleanup_manifest.json" ]]; then
-  echo "image_cleanup: $(jq -r '.status' "$RUN_DIR/cleanup_manifest.json")"
-  echo "deleted_images: $(jq -r '.deleted_files' "$RUN_DIR/cleanup_manifest.json")"
+  echo "image_cleanup: $(json_string_field status "$RUN_DIR/cleanup_manifest.json")"
+  echo "deleted_images: $(json_number_field deleted_files "$RUN_DIR/cleanup_manifest.json")"
   if [[ -f "$RUN_DIR/archive_manifest.json" ]]; then
-    echo "cleanup_manifest_download: $(jq -r '.archive' "$RUN_DIR/archive_manifest.json").cleanup.json"
+    echo "cleanup_manifest_download: $(json_string_field archive "$RUN_DIR/archive_manifest.json").cleanup.json"
   fi
 else
   echo "image_cleanup: pending (runs only after archive verification)"

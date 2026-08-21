@@ -5,10 +5,16 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 EXPERIMENT_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 STATE_DIR="$SCRIPT_DIR/.server"
 CONFIG="$SCRIPT_DIR/config.json"
+PYTHON_BIN="$(command -v python || true)"
+if [[ -z "$PYTHON_BIN" ]]; then
+  echo "ERROR: python is unavailable in active Conda MU" >&2
+  exit 2
+fi
+JSON_HELPER="$SCRIPT_DIR/json_stdlib.py"
 ARCHIVE_DIR="/home/tslin/Documents/jupyter_data/anLi/tmp"
-RUN_ID="$(jq -r '.prior_seed.run_id' "$CONFIG")"
-ARCHIVE_BASENAME="$(jq -r '.prior_seed.archive_basename' "$CONFIG")"
-EXPECTED_SHA="$(jq -r '.prior_seed.archive_sha256' "$CONFIG")"
+RUN_ID="$("$PYTHON_BIN" "$JSON_HELPER" get "$CONFIG" prior_seed.run_id)"
+ARCHIVE_BASENAME="$("$PYTHON_BIN" "$JSON_HELPER" get "$CONFIG" prior_seed.archive_basename)"
+EXPECTED_SHA="$("$PYTHON_BIN" "$JSON_HELPER" get "$CONFIG" prior_seed.archive_sha256)"
 PRIOR_RUN="$EXPERIMENT_DIR/runs/$RUN_ID"
 
 required_prior_files() {
@@ -54,7 +60,7 @@ if [[ ! -f "$ARCHIVE" ]]; then
   echo "Expected archive: $ARCHIVE" >&2
   exit 2
 fi
-ACTUAL_SHA="$(sha256sum "$ARCHIVE" | awk '{print $1}')"
+ACTUAL_SHA="$("$PYTHON_BIN" "$JSON_HELPER" sha256 "$ARCHIVE")"
 if [[ "$ACTUAL_SHA" != "$EXPECTED_SHA" ]]; then
   echo "ERROR: prior archive checksum mismatch" >&2
   exit 2

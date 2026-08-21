@@ -16,6 +16,12 @@ if [[ -z "$RUNS_DIR" || -z "$RUN_DIR" || "$RUN_DIR" != "$RUNS_DIR"/* ]]; then
   echo "ERROR: cleanup target must be one explicit seed-robustness run" >&2
   exit 2
 fi
+PYTHON_BIN="$(tr -d '\r\n' < "$RUN_DIR/python_path" 2>/dev/null || true)"
+if [[ -z "$PYTHON_BIN" || ! -x "$PYTHON_BIN" ]]; then
+  echo "ERROR: recorded MU Python interpreter is unavailable" >&2
+  exit 2
+fi
+JSON_HELPER="$SCRIPT_DIR/json_stdlib.py"
 if [[ "$PROFILE" != "smoke" && "$PROFILE" != "formal" ]]; then
   echo "ERROR: cleanup profile must be smoke or formal" >&2
   exit 2
@@ -24,14 +30,14 @@ if [[ ! -f "$RUN_DIR/archive_manifest.json" ]]; then
   echo "ERROR: image cleanup requires a verified archive manifest" >&2
   exit 2
 fi
-ARCHIVE="$(jq -r '.archive' "$RUN_DIR/archive_manifest.json")"
-EXPECTED_SHA="$(jq -r '.sha256' "$RUN_DIR/archive_manifest.json")"
-if [[ ! -f "$ARCHIVE" || "$(sha256sum "$ARCHIVE" | awk '{print $1}')" != "$EXPECTED_SHA" ]]; then
+ARCHIVE="$("$PYTHON_BIN" "$JSON_HELPER" get "$RUN_DIR/archive_manifest.json" archive)"
+EXPECTED_SHA="$("$PYTHON_BIN" "$JSON_HELPER" get "$RUN_DIR/archive_manifest.json" sha256)"
+if [[ ! -f "$ARCHIVE" || "$("$PYTHON_BIN" "$JSON_HELPER" sha256 "$ARCHIVE")" != "$EXPECTED_SHA" ]]; then
   echo "ERROR: verified archive is missing or has changed; no images were deleted" >&2
   exit 2
 fi
 if [[ -f "$RUN_DIR/cleanup_manifest.json" ]]; then
-  if [[ "$(jq -r '.status' "$RUN_DIR/cleanup_manifest.json")" == "passed" ]]; then
+  if [[ "$("$PYTHON_BIN" "$JSON_HELPER" get "$RUN_DIR/cleanup_manifest.json" status)" == "passed" ]]; then
     echo "Image cleanup already completed: $RUN_DIR/cleanup_manifest.json"
     exit 0
   fi
@@ -39,14 +45,15 @@ if [[ -f "$RUN_DIR/cleanup_manifest.json" ]]; then
   exit 2
 fi
 
-RECORDS='[]'
+RECORDS_FILE="$(mktemp "$RUN_DIR/.cleanup_records.XXXXXX")"
+trap 'rm -f -- "$RECORDS_FILE"' EXIT
 TOTAL_FILES=0
 TOTAL_BYTES=0
 
 record_skip() {
   local path="$1"
   local reason="$2"
-  RECORDS="$(jq -c --arg path "$path" --arg reason "$reason" '. + [{path:$path,status:"skipped",reason:$reason,deleted_files:0,deleted_bytes:0}]' <<<"$RECORDS")"
+  printf 'skipped\t%s\t%s\t0\t0\n' "$path" "$reason" >> "$RECORDS_FILE"
 }
 
 delete_evaluation_images() {
@@ -80,11 +87,8 @@ delete_evaluation_images() {
   find "$images_dir" -depth -type d -empty -delete
   TOTAL_FILES=$((TOTAL_FILES + file_count))
   TOTAL_BYTES=$((TOTAL_BYTES + bytes))
-  RECORDS="$(jq -c \
-    --arg path "$images_dir" --arg context "$context" \
-    --argjson files "$file_count" --argjson bytes "$bytes" \
-    '. + [{path:$path,status:"deleted",context:$context,deleted_files:$files,deleted_bytes:$bytes}]' \
-    <<<"$RECORDS")"
+  printf 'deleted\t%s\t%s\t%s\t%s\n' \
+    "$images_dir" "$context" "$file_count" "$bytes" >> "$RECORDS_FILE"
 }
 
 if [[ "$PROFILE" == "formal" ]]; then
@@ -129,21 +133,16 @@ if [[ "$PROFILE" == "formal" ]]; then
         "$prior_lines" \
         "previous specificity run=$prior_id variant=$variant"
     done
-  done < <(jq -r '.cleanup.previous_specificity_run_ids[]' "$CONFIG")
+  done < <("$PYTHON_BIN" "$JSON_HELPER" lines "$CONFIG" cleanup.previous_specificity_run_ids)
 fi
 
-jq -n \
-  --arg status "passed" \
-  --arg profile "$PROFILE" \
-  --arg archive "$ARCHIVE" \
-  --arg archive_sha256 "$EXPECTED_SHA" \
-  --arg completed_at_utc "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-  --argjson deleted_files "$TOTAL_FILES" \
-  --argjson deleted_bytes "$TOTAL_BYTES" \
-  --argjson records "$RECORDS" \
-  '{status:$status,profile:$profile,archive:$archive,archive_sha256:$archive_sha256,completed_at_utc:$completed_at_utc,deleted_files:$deleted_files,deleted_bytes:$deleted_bytes,records:$records}' \
-  > "$RUN_DIR/cleanup_manifest.json"
+"$PYTHON_BIN" "$JSON_HELPER" cleanup-manifest \
+  "$RUN_DIR/cleanup_manifest.json" "$PROFILE" "$ARCHIVE" "$EXPECTED_SHA" \
+  "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" "$TOTAL_FILES" "$TOTAL_BYTES" \
+  "$RECORDS_FILE"
 cp "$RUN_DIR/cleanup_manifest.json" "$ARCHIVE.cleanup.json"
+rm -f -- "$RECORDS_FILE"
+trap - EXIT
 
 echo "Image cleanup completed."
 echo "Deleted PNG files: $TOTAL_FILES"

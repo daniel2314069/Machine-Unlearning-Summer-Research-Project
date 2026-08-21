@@ -14,6 +14,12 @@ if [[ -z "$RUNS_DIR" || -z "$RUN_DIR" || "$RUN_DIR" != "$RUNS_DIR"/* ]]; then
   echo "ERROR: run must be one explicit directory under $SCRIPT_DIR/runs" >&2
   exit 2
 fi
+PYTHON_BIN="$(tr -d '\r\n' < "$RUN_DIR/python_path" 2>/dev/null || true)"
+if [[ -z "$PYTHON_BIN" || ! -x "$PYTHON_BIN" ]]; then
+  echo "ERROR: recorded MU Python interpreter is unavailable" >&2
+  exit 2
+fi
+JSON_HELPER="$SCRIPT_DIR/json_stdlib.py"
 if [[ "${SCAPRE_INTERNAL_FINALIZE:-0}" == "1" ]]; then
   if [[ ! -f "$RUN_DIR/CALCULATION_COMPLETED" || "$(tr -d '[:space:]' < "$RUN_DIR/calculation_exit_code")" != "0" ]]; then
     echo "ERROR: internal packaging requires a successful calculation" >&2
@@ -27,13 +33,13 @@ else
 fi
 
 if [[ -f "$RUN_DIR/archive_manifest.json" ]]; then
-  EXISTING_ARCHIVE="$(jq -r '.archive' "$RUN_DIR/archive_manifest.json")"
-  EXPECTED_SHA="$(jq -r '.sha256' "$RUN_DIR/archive_manifest.json")"
+  EXISTING_ARCHIVE="$("$PYTHON_BIN" "$JSON_HELPER" get "$RUN_DIR/archive_manifest.json" archive)"
+  EXPECTED_SHA="$("$PYTHON_BIN" "$JSON_HELPER" get "$RUN_DIR/archive_manifest.json" sha256)"
   if [[ ! -f "$EXISTING_ARCHIVE" ]]; then
     echo "ERROR: archive manifest points to a missing archive: $EXISTING_ARCHIVE" >&2
     exit 2
   fi
-  ACTUAL_SHA="$(sha256sum "$EXISTING_ARCHIVE" | awk '{print $1}')"
+  ACTUAL_SHA="$("$PYTHON_BIN" "$JSON_HELPER" sha256 "$EXISTING_ARCHIVE")"
   if [[ "$ACTUAL_SHA" != "$EXPECTED_SHA" ]]; then
     echo "ERROR: existing archive checksum no longer matches" >&2
     exit 2
@@ -109,7 +115,7 @@ done
 
 while IFS= read -r source_path; do
   FILES+=("provenance/$source_path")
-done < <(jq -r '.source_sha256 | keys[]' "$RUN_DIR/run_manifest.json")
+done < <("$PYTHON_BIN" "$JSON_HELPER" keys "$RUN_DIR/run_manifest.json" source_sha256)
 
 for relative in "${FILES[@]}"; do
   if [[ ! -f "$RUN_DIR/$relative" ]]; then
@@ -130,18 +136,13 @@ if [[ -e "$ARCHIVE" ]]; then
 fi
 tar -C "$RUN_DIR" -czf "$ARCHIVE" "${FILES[@]}"
 tar -tzf "$ARCHIVE" >/dev/null
-CHECKSUM="$(sha256sum "$ARCHIVE" | awk '{print $1}')"
-SIZE_BYTES="$(stat -c '%s' "$ARCHIVE")"
+CHECKSUM="$("$PYTHON_BIN" "$JSON_HELPER" sha256 "$ARCHIVE")"
+SIZE_BYTES="$(wc -c < "$ARCHIVE" | tr -d ' ')"
 SIZE_HUMAN="$(du -h "$ARCHIVE" | awk '{print $1}')"
 printf '%s  %s\n' "$CHECKSUM" "$ARCHIVE" > "$ARCHIVE.sha256"
-jq -n \
-  --arg archive "$ARCHIVE" \
-  --arg sha256 "$CHECKSUM" \
-  --arg created_at_utc "$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
-  --argjson size_bytes "$SIZE_BYTES" \
-  --arg profile "$PROFILE" \
-  '{archive:$archive,sha256:$sha256,size_bytes:$size_bytes,profile:$profile,created_at_utc:$created_at_utc,verified:true}' \
-  > "$RUN_DIR/archive_manifest.json"
+"$PYTHON_BIN" "$JSON_HELPER" archive-manifest \
+  "$RUN_DIR/archive_manifest.json" "$ARCHIVE" "$CHECKSUM" "$SIZE_BYTES" \
+  "$PROFILE" "$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
 
 echo "Archive: $ARCHIVE"
 echo "Size: $SIZE_HUMAN"

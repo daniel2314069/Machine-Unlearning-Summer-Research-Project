@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -uo pipefail
+set -euo pipefail
 
 if [[ $# -ne 4 ]]; then
   echo "usage: $0 <smoke|formal> <run-dir> <assets-manifest> <prior-run-or-empty>" >&2
@@ -27,8 +27,11 @@ else
   if [[ -n "$PRIOR_RUN" ]]; then
     WORKER_ARGS+=(--prior-run "$PRIOR_RUN")
   fi
-  "$PYTHON_BIN" "$SCRIPT_DIR/worker.py" "${WORKER_ARGS[@]}"
-  CALCULATION_EXIT=$?
+  if "$PYTHON_BIN" "$SCRIPT_DIR/worker.py" "${WORKER_ARGS[@]}"; then
+    CALCULATION_EXIT=0
+  else
+    CALCULATION_EXIT=$?
+  fi
 fi
 
 printf '%s\n' "$CALCULATION_EXIT" > "$RUN_DIR/calculation_exit_code"

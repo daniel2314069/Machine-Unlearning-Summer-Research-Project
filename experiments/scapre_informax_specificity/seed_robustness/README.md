@@ -26,8 +26,15 @@ with an `n-1` denominator. The three-way judgment is frozen in `config.json`.
 
 ## Server prerequisites
 
-The parent setup remains authoritative. From a fresh clone or updated checkout
-on the GPU server:
+The seed-robustness lifecycle does not require `jq` or any newly installed
+system command. JSON parsing and server-side SHA-256 use only the standard
+library of the already active `MU` Python. Do not install `jq` for this
+experiment.
+
+Because the preceding formal run completed on the same server, its assets and
+runtime are already present; do not rerun setup merely for this follow-up.
+Activate the existing environment and launch the smoke test after pulling.
+Only a genuinely fresh server without the parent setup marker or assets needs:
 
 ```bash
 conda activate MU
