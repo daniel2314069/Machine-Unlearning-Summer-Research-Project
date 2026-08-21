@@ -30,6 +30,11 @@ indices, Informax diagnostic table, and lightweight reproducibility manifests.
 Raw per-image scores and raw MI/alpha tensors remain in the verified formal
 archive rather than Git.
 
+The fixed five-seed follow-up is implemented under
+[`seed_robustness/`](seed_robustness/README.md). It reuses the validated
+`20260820` scores and generates only seeds `20260821`–`20260824` while holding
+generation keys and all non-Informax randomness fixed.
+
 ## Protocol status
 
 The official public ScaPre repository does not contain the complete 25-class

@@ -1,0 +1,6 @@
+.server/
+runs/
+results/*
+!results/summary.md
+reproducibility/*
+!reproducibility/README.md

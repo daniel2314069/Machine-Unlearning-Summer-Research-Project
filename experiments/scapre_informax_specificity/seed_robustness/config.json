@@ -1,0 +1,54 @@
+{
+  "experiment_name": "scapre_informax_specificity_edit_seed_robustness",
+  "required_ancestor_commit": "e15714052f470a89acf2673c8477b5bbd990ca6a",
+  "edit_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "legacy_seed": 20260820,
+  "new_edit_seeds": [20260821, 20260822, 20260823, 20260824],
+  "fixed_non_informax_seed": 20260820,
+  "variants": ["official", "matched_retain"],
+  "expected_images_per_variant": 3000,
+  "expected_target_rows": 1200,
+  "expected_retain_rows": 1800,
+  "expected_concepts": 25,
+  "expected_groups": 5,
+  "expected_informax_randn_calls_per_formal_edit": 1280,
+  "expected_informax_randn_calls_per_smoke_edit": 256,
+  "source_controls": {
+    "scapre/edit/erase_scale.py": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "6e5063bc709e6ecbc543e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "experiments/scapre_informax_specificity/seed_robustness/informax_seed_runner.py": "aa7948d44141f918116b2512355c101f56d9271772a8a210b6237a05babbae03"
+  },
+  "prior_seed": {
+    "run_id": "formal_20260820T163033Z",
+    "archive_basename": "scapre_informax_specificity_formal_20260820T163033Z_20260821T055813Z.tar.gz",
+    "archive_sha256": "35fde6c41d150146ef3022e830a772a547afb3234d731fa4acf03f9c9d09e4d1",
+    "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "expected_judgment": "SUPPORTED",
+    "expected_metrics": {
+      "official_unlearn_acc": 19.75,
+      "matched_unlearn_acc": 17.416666666666668,
+      "official_preserve_acc": 40.611111111111114,
+      "matched_preserve_acc": 41.72222222222222,
+      "official_overall_acc": 53.930360836589294,
+      "matched_overall_acc": 55.436945996275604
+    }
+  },
+  "robustness_rule": {
+    "minimum_positive_preserve_seeds": 4,
+    "minimum_mean_preserve_delta_pp": 1.0,
+    "maximum_mean_unlearn_delta_pp": 0.0,
+    "minimum_positive_overall_seeds": 4,
+    "material_mean_unlearn_degradation_pp": 2.0,
+    "standard_deviation": "sample (n-1 denominator)"
+  },
+  "cleanup": {
+    "previous_specificity_run_ids": [
+      "smoke_20260820T162319Z",
+      "formal_20260820T163033Z"
+    ],
+    "delete_previous_images_only_after_formal_archive_verification": true
+  }
+}
