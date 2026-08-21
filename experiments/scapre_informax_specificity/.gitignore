@@ -2,3 +2,12 @@
 runs/
 results/*
 !results/summary.md
+!results/aggregate.csv
+!results/per_group.csv
+!results/per_concept.csv
+!results/informax_diagnostics.csv
+!results/top_channels.json
+!results/result_manifest.json
+!results/reproducibility/
+!results/reproducibility/*.json
+!results/reproducibility/*.sha256

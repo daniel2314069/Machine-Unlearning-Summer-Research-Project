@@ -15,6 +15,21 @@ spectral regularization, solver, and Bures geometry step.
 
 Read `AUDIT.md` before interpreting results.
 
+## Formal result
+
+The full five-group run completed successfully. Under the frozen decision rule,
+the result is **SUPPORTED**: matched-retain increased aggregate Preserve
+Accuracy by 1.11 percentage points, improved aggregate Unlearn Accuracy by 2.33
+points (lower is better), and increased Overall Accuracy by 1.51 points. Four
+groups improved preservation and the fifth tied.
+
+The complete audit, exact metrics, all 25 concept results, limitations, and
+mechanism diagnostics are in [`results/summary.md`](results/summary.md). The
+tracked `results/` directory also contains the aggregate tables, top-channel
+indices, Informax diagnostic table, and lightweight reproducibility manifests.
+Raw per-image scores and raw MI/alpha tensors remain in the verified formal
+archive rather than Git.
+
 ## Protocol status
 
 The official public ScaPre repository does not contain the complete 25-class

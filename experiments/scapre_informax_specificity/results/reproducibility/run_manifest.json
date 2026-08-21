@@ -1,0 +1,131 @@
+{
+  "started_at_utc": "2026-08-20T16:30:34.155365+00:00",
+  "profile": "formal",
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "git_commit": "d7a48beb7796c666dc949245ea10627d16086055",
+  "git_dirty": true,
+  "source_sha256": {
+    "scapre/edit/erase_scale.py": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "experiments/scapre_informax_specificity/AUDIT.md": "c7e425e7fa966126acc84a127d8f2613ace88726ceafc4e855b5793e049a24b5",
+    "experiments/scapre_informax_specificity/README.md": "d1354c7523a1b6496b9ab6d88fb0bf8db633e40a5f09924927e223fc494fd06d",
+    "experiments/scapre_informax_specificity/aggregate_results.py": "870238c86a81df771776bf0d76dd99c60ca7b7e8371a2898fab96a3edefba076",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/download_results.sh": "0a71fd6df0dca10d4d36f7f0da231ce046acb0d906501919f15b86bd4862b785",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "6e5063bc709e6ecbc543e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "experiments/scapre_informax_specificity/package_results.sh": "3b1c797ba6411136265f6f76ea95c1989159456b191541c617a70724761ab83f",
+    "experiments/scapre_informax_specificity/prefetch_assets.py": "1f0b33b9bcf2132cd15d9bccf81779a452707b3bd635de16f298c9d163d6e6de",
+    "experiments/scapre_informax_specificity/requirements_server.txt": "b3c0640dc70aabeeba5fd9b26e9a4cbb54d3cae554efcc786e7d5280be9367f8",
+    "experiments/scapre_informax_specificity/run_server.sh": "624e6ccf31037a146101793238009b8c6ee08897f8f344c88d0fd282e2ff63ab",
+    "experiments/scapre_informax_specificity/server_worker.sh": "da69dca743542f25dc72058ea9c5fce47b91d6c938e2e411e6999cb193229ad7",
+    "experiments/scapre_informax_specificity/setup_server.sh": "8023b417e1048584428c8912dd8eaa413eef6e06de5435703c1e1f817465a80d",
+    "experiments/scapre_informax_specificity/status_server.sh": "691bf0adadedcaccf0966e97043bddf542de74b0dda49587e0c0ad9494dde137",
+    "experiments/scapre_informax_specificity/validate_local.sh": "2573453305b94e437d21dbb2b649353203261f2c319752cb8f01b21470079f61",
+    "experiments/scapre_informax_specificity/worker.py": "e72101911c1fb37f435ce76d6563407cf3d9c247a6698e18d216071ecfc13e74"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "device": "cuda:0"
+}
