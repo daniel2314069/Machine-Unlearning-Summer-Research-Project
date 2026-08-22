@@ -232,3 +232,12 @@ The decision rule is frozen in `config.json` before results exist:
 
 A formal run emits exactly one of `SUPPORTED`, `NOT SUPPORTED`, or
 `TRADE-OFF ONLY`. The internal Informax diagnostics never determine success.
+
+## Final superclass-neutral ablation
+
+The final experiment in this research line is contained under
+`superclass_neutral/`. It reuses the completed five-seed official and
+matched-retain score rows, generates only the new superclass-neutral variant,
+and retains a small predeclared three-variant qualitative comparison set. Its
+server lifecycle, packaging, image-retention policy, and exact mapping are
+documented in `superclass_neutral/README.md` and `superclass_neutral/AUDIT.md`.

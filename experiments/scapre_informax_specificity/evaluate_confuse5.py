@@ -23,7 +23,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--assets", type=Path, required=True)
     parser.add_argument("--protocol", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path, required=True)
-    parser.add_argument("--variant", choices=["official", "matched_retain"], required=True)
+    parser.add_argument(
+        "--variant",
+        choices=["official", "matched_retain", "superclass_neutral"],
+        required=True,
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--device", default="cuda:0")
     return parser.parse_args()

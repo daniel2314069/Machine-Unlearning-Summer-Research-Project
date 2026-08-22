@@ -18,6 +18,8 @@ orthogonal-concept-erasure/e50_unique_anchor_stress/gcd_runtime/
 orthogonal-concept-erasure/e50_unique_anchor_stress/external/
 orthogonal-concept-erasure/e50_unique_anchor_stress/coco10k_metrics/generated_images/
 reports/scapre_ased_religious_buildings/kept_samples/
+experiments/scapre_informax_specificity/superclass_neutral/.server/
+experiments/scapre_informax_specificity/superclass_neutral/runs/
 
 # OCE weights and raw renderings stay local; compact metrics and curated grids
 # are committed instead.

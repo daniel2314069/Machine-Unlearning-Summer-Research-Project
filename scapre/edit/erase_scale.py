@@ -358,6 +358,7 @@ def edit_model(ldm_stable,
                bures_iters=2,
                informax_negative_mode='official',
                informax_matched_retain_map=None,
+               informax_superclass_map=None,
                informax_diagnostics_path=None):
 
     # === 0. Collect cross-attention modules
@@ -415,13 +416,20 @@ def edit_model(ldm_stable,
         blank_emb = enc(blank.input_ids.to(device))[0]
     empty_vec = blank_emb[0, 1, :].detach()
 
-    if informax_negative_mode not in {'official', 'matched-retain'}:
+    if informax_negative_mode not in {'official', 'matched-retain', 'superclass-neutral'}:
         raise ValueError(f"unsupported Informax negative mode: {informax_negative_mode}")
-    matched_retain_names = []
-    matched_retain_vecs = []
-    if informax_negative_mode == 'matched-retain':
-        if not isinstance(informax_matched_retain_map, dict):
-            raise ValueError("matched-retain mode requires a target-to-retains mapping")
+    reference_names = []
+    reference_vecs = []
+    if informax_negative_mode in {'matched-retain', 'superclass-neutral'}:
+        reference_map = (
+            informax_matched_retain_map
+            if informax_negative_mode == 'matched-retain'
+            else informax_superclass_map
+        )
+        if not isinstance(reference_map, dict):
+            raise ValueError(
+                f"{informax_negative_mode} mode requires a target-to-reference mapping"
+            )
         # Preserve RNG state around the one extra deterministic encoding step.
         # Subsequent Informax noise therefore starts at the exact same state as
         # the official branch even if a future encoder implementation samples.
@@ -429,9 +437,15 @@ def edit_model(ldm_stable,
         cuda_rng_states = torch.cuda.get_rng_state_all() if torch.cuda.is_available() else None
         try:
             for target in old_texts:
-                names = informax_matched_retain_map.get(target)
+                names = reference_map.get(target)
+                if informax_negative_mode == 'superclass-neutral' and isinstance(names, str):
+                    names = [names]
                 if not isinstance(names, list) or not names:
-                    raise ValueError(f"missing matched retain concepts for target: {target}")
+                    raise ValueError(f"missing Informax reference concepts for target: {target}")
+                if informax_negative_mode == 'superclass-neutral' and len(names) != 1:
+                    raise ValueError(
+                        f"superclass-neutral requires exactly one superclass for target: {target}"
+                    )
                 if target in names:
                     raise ValueError(f"target cannot be its own Informax negative: {target}")
                 retain_inp = tok(names, padding="max_length",
@@ -443,8 +457,8 @@ def edit_model(ldm_stable,
                     emb[mask.sum()-2]
                     for emb, mask in zip(retain_emb, retain_inp.attention_mask)
                 ])
-                matched_retain_names.append(list(names))
-                matched_retain_vecs.append(vectors.detach())
+                reference_names.append(list(names))
+                reference_vecs.append(vectors.detach())
         finally:
             torch.random.set_rng_state(cpu_rng_state)
             if cuda_rng_states is not None:
@@ -470,14 +484,14 @@ def edit_model(ldm_stable,
             result = _compute_mi_softmask_matchedneg(
                 W_old=W_old,
                 c_vec=c_vec,
-                negative_vecs=matched_retain_vecs[target_index],
+                negative_vecs=reference_vecs[target_index],
                 num_pos=5,
                 T=0.7,
                 p=p,
                 noise_sigma=noise_sigma,
                 return_details=collect,
             )
-            negative_concepts = matched_retain_names[target_index]
+            negative_concepts = reference_names[target_index]
 
         if not collect:
             return result
@@ -799,11 +813,13 @@ if __name__ == '__main__':
     parser.add_argument('--output_model', type=str, default='models/your_saved_model.pt',
                         help='where to save the edited UNet state_dict')
     parser.add_argument('--informax-negative-mode',
-                        choices=['official', 'matched-retain'],
+                        choices=['official', 'matched-retain', 'superclass-neutral'],
                         default='official',
                         help='Informax negative source; default preserves upstream behavior')
     parser.add_argument('--informax-matched-retain-config', type=str, default=None,
                         help='JSON file containing matched_retain_by_target')
+    parser.add_argument('--informax-superclass-config', type=str, default=None,
+                        help='JSON file containing superclass_by_target')
     parser.add_argument('--informax-diagnostics-path', type=str, default=None,
                         help='optional .pt output for raw MI and alpha diagnostics')
     parser.add_argument('--edit-seed', type=int, default=None,
@@ -913,6 +929,16 @@ if __name__ == '__main__':
         if not isinstance(matched_retain_map, dict):
             parser.error('matched retain config must contain an object named matched_retain_by_target')
 
+    superclass_map = None
+    if args.informax_negative_mode == 'superclass-neutral':
+        if args.informax_superclass_config is None:
+            parser.error('--informax-superclass-config is required for superclass-neutral mode')
+        with open(args.informax_superclass_config, 'r') as f:
+            superclass_config = json.load(f)
+        superclass_map = superclass_config.get('superclass_by_target')
+        if not isinstance(superclass_map, dict):
+            parser.error('superclass config must contain an object named superclass_by_target')
+
     if args.edit_seed is not None:
         random.seed(args.edit_seed)
         np.random.seed(args.edit_seed)
@@ -939,6 +965,7 @@ if __name__ == '__main__':
         bures_iters=args.bures_iters,
         informax_negative_mode=args.informax_negative_mode,
         informax_matched_retain_map=matched_retain_map,
+        informax_superclass_map=superclass_map,
         informax_diagnostics_path=args.informax_diagnostics_path,
     )
 
