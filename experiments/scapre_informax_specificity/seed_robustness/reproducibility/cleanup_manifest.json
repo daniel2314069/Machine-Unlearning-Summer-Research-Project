@@ -1,0 +1,95 @@
+{
+  "archive": "/home/tslin/Documents/jupyter_data/anLi/tmp/scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz",
+  "archive_sha256": "df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708",
+  "completed_at_utc": "2026-08-22T09:20:31Z",
+  "deleted_bytes": 14105710531,
+  "deleted_files": 30020,
+  "profile": "formal",
+  "records": [
+    {
+      "context": "seed robustness formal seed=20260821 variant=official",
+      "deleted_bytes": 1398051452,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260821/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260821 variant=matched_retain",
+      "deleted_bytes": 1415510222,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260821/evaluation/matched_retain/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260822 variant=official",
+      "deleted_bytes": 1393862893,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260822/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260822 variant=matched_retain",
+      "deleted_bytes": 1418088585,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260822/evaluation/matched_retain/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260823 variant=official",
+      "deleted_bytes": 1402523845,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260823/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260823 variant=matched_retain",
+      "deleted_bytes": 1419057271,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260823/evaluation/matched_retain/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260824 variant=official",
+      "deleted_bytes": 1410190334,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260824/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "seed robustness formal seed=20260824 variant=matched_retain",
+      "deleted_bytes": 1419691445,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z/seeds/20260824/evaluation/matched_retain/images",
+      "status": "deleted"
+    },
+    {
+      "context": "previous specificity run=smoke_20260820T162319Z variant=official",
+      "deleted_bytes": 4355388,
+      "deleted_files": 10,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/smoke_20260820T162319Z/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "previous specificity run=smoke_20260820T162319Z variant=matched_retain",
+      "deleted_bytes": 4396977,
+      "deleted_files": 10,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/smoke_20260820T162319Z/evaluation/matched_retain/images",
+      "status": "deleted"
+    },
+    {
+      "context": "previous specificity run=formal_20260820T163033Z variant=official",
+      "deleted_bytes": 1400248737,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z/evaluation/official/images",
+      "status": "deleted"
+    },
+    {
+      "context": "previous specificity run=formal_20260820T163033Z variant=matched_retain",
+      "deleted_bytes": 1419733382,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z/evaluation/matched_retain/images",
+      "status": "deleted"
+    }
+  ],
+  "status": "passed"
+}

@@ -111,7 +111,14 @@ required=(
   aggregate_seed_results.py resolve_prior_seed.sh run_server.sh server_worker.sh
   status_server.sh package_results.sh cleanup_images.sh download_results.sh
   finalize_server.sh posthoc_finalize_worker.sh
-  results/summary.md reproducibility/README.md
+  results/summary.md results/per_seed.csv results/per_group_seed.csv
+  results/per_concept_seed.csv results/aggregate_across_seeds.csv
+  results/per_group_robustness.csv results/per_retain_robustness.csv
+  results/informax_seed_diagnostics.csv reproducibility/README.md
+  reproducibility/run_manifest.json reproducibility/protocol_manifest.json
+  reproducibility/integrity_report.json reproducibility/prior_seed_validation.json
+  reproducibility/posthoc_finalization.json reproducibility/archive_sha256.txt
+  reproducibility/cleanup_manifest.json
 )
 for relative in "${required[@]}"; do
   [[ -f "$SCRIPT_DIR/$relative" ]] || {
@@ -119,5 +126,10 @@ for relative in "${required[@]}"; do
     exit 2
   }
 done
+
+rg -q '^\*\*ROBUSTLY SUPPORTED\*\*$' "$SCRIPT_DIR/results/summary.md"
+rg -q '"status": "passed"' "$SCRIPT_DIR/reproducibility/integrity_report.json"
+rg -q 'df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708' \
+  "$SCRIPT_DIR/reproducibility/archive_sha256.txt"
 
 echo "Static seed-robustness validation passed. No Python, model, or image code was executed."

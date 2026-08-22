@@ -1,0 +1,143 @@
+{
+  "started_at_utc": "2026-08-21T08:17:25.511893+00:00",
+  "profile": "formal",
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "git_commit": "9ca7b5e9c4ab626027fb8fe0bd32fca51e8faf89",
+  "git_status_start": [],
+  "source_sha256": {
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "6e5063bc709e6ecbc543e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "experiments/scapre_informax_specificity/seed_robustness/AUDIT.md": "b1f792a2ed52ed25fd72801fc1f452223f9c9fa2f4dc00a20c3eb2c0bf08138f",
+    "experiments/scapre_informax_specificity/seed_robustness/README.md": "afc3e7ff808e713075036a0afc3d6ae6bd61a2e5cfdd81c0b95e0328904e4170",
+    "experiments/scapre_informax_specificity/seed_robustness/aggregate_seed_results.py": "1e5423eb3c10cc0adbbc8fa54d581e547d7c480b4ca087ee6cae9ff961e3a081",
+    "experiments/scapre_informax_specificity/seed_robustness/cleanup_images.sh": "52d3c63c553486b35885b84b4587b498acd5a31fed195e965c0959cbe7cc5230",
+    "experiments/scapre_informax_specificity/seed_robustness/config.json": "e4cc4eb19e111bd515dc24fbace00b4af175f19a6d3b1b3691896c085df17746",
+    "experiments/scapre_informax_specificity/seed_robustness/download_results.sh": "81b88b9e609089a1a551e764f9bce525fe4156cc1db8e2927fd80f335b5536a0",
+    "experiments/scapre_informax_specificity/seed_robustness/formal_preflight.py": "f6f106fc12c630525ee6489d7e4fdd491ebb70b8d0d13912343cb10dc536fb8d",
+    "experiments/scapre_informax_specificity/seed_robustness/informax_seed_runner.py": "aa7948d44141f918116b2512355c101f56d9271772a8a210b6237a05babbae03",
+    "experiments/scapre_informax_specificity/seed_robustness/json_stdlib.py": "221a52d2d79b3590a989d38c097e6f4e3a58494e9f00db26baa4e24c1018326d",
+    "experiments/scapre_informax_specificity/seed_robustness/package_results.sh": "adcd823fdad305f23a396716ae26c6e1664a508753712717ba8a1649551820aa",
+    "experiments/scapre_informax_specificity/seed_robustness/resolve_prior_seed.sh": "b096f783aaf44975ce1c92f425dc5f95b9a1172ea8095f79faf7cd9fd923e5d9",
+    "experiments/scapre_informax_specificity/seed_robustness/run_server.sh": "7e0acdc5b6c28a51cb206742299839a9d5da891dfbc669dc5b0ed0e1690c412e",
+    "experiments/scapre_informax_specificity/seed_robustness/server_worker.sh": "4d494ec17b55011716c6ecce8d74af5dfa48d08775a5274f9182d072646961dd",
+    "experiments/scapre_informax_specificity/seed_robustness/status_server.sh": "a9327da2052f5c7b05c7438421e96b80b7beda6be16aafd6b82a344b27c28e12",
+    "experiments/scapre_informax_specificity/seed_robustness/validate_local.sh": "dcc03d49138ea5d9854479e983994c0c3eb03d7a62f49c101043059315aaf8aa",
+    "experiments/scapre_informax_specificity/seed_robustness/worker.py": "2f77f911d31c059fc8225af69f0d8b41c1080227503ab8f9e63cc128823784b2",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "scapre/edit/erase_scale.py": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "assets_manifest_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "device": "cuda:0",
+  "git_status_end": [],
+  "calculation_finished_at_utc": "2026-08-22T08:25:19.587165+00:00",
+  "posthoc_finalization": {
+    "status": "passed",
+    "finalizer_commit": "e6f5111fe291783f2c0f19340d0077029539bfcf",
+    "manifest": "reproducibility/posthoc_finalization.json"
+  },
+  "finished_at_utc": "2026-08-22T09:20:30.944784+00:00"
+}

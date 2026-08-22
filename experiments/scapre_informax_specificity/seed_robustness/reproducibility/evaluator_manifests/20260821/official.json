@@ -1,0 +1,35 @@
+{
+  "variant": "official",
+  "checkpoint_sha256": "6a520abad75511395aa45191fdffe0e7485b3e66a4a128d887b35bfc0846cf02",
+  "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "num_inference_steps": 50,
+  "guidance_scale": 7.5,
+  "height": 512,
+  "width": 512,
+  "classifier": "torchvision ResNet50_Weights.DEFAULT",
+  "torch": "2.6.0+cu118",
+  "torchvision": "0.21.0+cu118",
+  "diffusers": "0.35.0",
+  "scheduler_class": "PNDMScheduler",
+  "scheduler_config": {
+    "num_train_timesteps": 1000,
+    "beta_start": 0.00085,
+    "beta_end": 0.012,
+    "beta_schedule": "scaled_linear",
+    "trained_betas": null,
+    "skip_prk_steps": true,
+    "set_alpha_to_one": false,
+    "prediction_type": "epsilon",
+    "timestep_spacing": "leading",
+    "steps_offset": 1,
+    "_use_default_values": [
+      "prediction_type",
+      "timestep_spacing"
+    ],
+    "_class_name": "PNDMScheduler",
+    "_diffusers_version": "0.6.0",
+    "clip_sample": false
+  }
+}

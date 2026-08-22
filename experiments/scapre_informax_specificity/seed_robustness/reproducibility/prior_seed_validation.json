@@ -1,0 +1,23 @@
+{
+  "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z",
+  "validated_at_utc": "2026-08-21T08:17:25.588567+00:00",
+  "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+  "score_sha256": {
+    "official": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+    "matched_retain": "c3e6e34cfedea12560622aca05295c95ddc875a73d0bc515a3e70d0ebdb5da8f"
+  },
+  "generation_keys_match_frozen_protocol": true,
+  "model_classifier_asset_provenance_match": true,
+  "evaluator_fingerprint_sha256": "dd9324c174a0398cd968047be6d79f0fc1fcbe72bcd2ec478bbe45afb50b22b8",
+  "metrics": {
+    "official_unlearn_acc": 19.75,
+    "official_preserve_acc": 40.611111111111114,
+    "official_overall_acc": 53.930360836589294,
+    "matched_unlearn_acc": 17.416666666666668,
+    "matched_preserve_acc": 41.72222222222222,
+    "matched_overall_acc": 55.436945996275604
+  },
+  "legacy_git_commit": "d7a48beb7796c666dc949245ea10627d16086055",
+  "legacy_git_dirty": true,
+  "legacy_dirty_caveat": "accepted only because all controlled source and result hashes were independently verified"
+}

@@ -5,6 +5,11 @@ stable over the five fixed Informax seeds `20260820` through `20260824`.
 No method or evaluation setting is tuned. Seed `20260820` is imported from the
 verified previous formal run; only the other four seeds generate new images.
 
+The fixed five-seed formal run is complete. Mean preservation improves by
+`+1.02 pp` with a positive delta in `5/5` seeds; mean unlearn accuracy changes
+by `-2.12 pp` and mean Overall accuracy by `+1.38 pp`. The predefined judgment
+is **ROBUSTLY SUPPORTED**. See `results/summary.md` for the complete report.
+
 Read `AUDIT.md` before launching. In particular, changing the legacy
 `--edit-seed` directly would also change entropy sampling. The dedicated runner
 keeps all non-Informax randomness on the legacy `20260820` stream and changes

@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "reason": "original aggregation compared the ordering of Diffusers scheduler_config._use_default_values, which is semantically unordered",
+  "generation_commit": "9ca7b5e9c4ab626027fb8fe0bd32fca51e8faf89",
+  "finalizer_commit": "e6f5111fe291783f2c0f19340d0077029539bfcf",
+  "finalized_at_utc": "2026-08-22T09:20:30.944784+00:00",
+  "evaluator_comparison": {
+    "status": "passed",
+    "canonical_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+    "observations": 10,
+    "unique_raw_sha256_count": 2,
+    "raw_sha256": {
+      "seed=20260820,variant=official": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+      "seed=20260820,variant=matched_retain": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+      "seed=20260821,variant=official": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+      "seed=20260821,variant=matched_retain": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+      "seed=20260822,variant=official": "e76c4449efe558a084a1e3d9d798931a9cd59fe0e3cfeef6cb661dcded71ab88",
+      "seed=20260822,variant=matched_retain": "e76c4449efe558a084a1e3d9d798931a9cd59fe0e3cfeef6cb661dcded71ab88",
+      "seed=20260823,variant=official": "e76c4449efe558a084a1e3d9d798931a9cd59fe0e3cfeef6cb661dcded71ab88",
+      "seed=20260823,variant=matched_retain": "e76c4449efe558a084a1e3d9d798931a9cd59fe0e3cfeef6cb661dcded71ab88",
+      "seed=20260824,variant=official": "e76c4449efe558a084a1e3d9d798931a9cd59fe0e3cfeef6cb661dcded71ab88",
+      "seed=20260824,variant=matched_retain": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98"
+    },
+    "raw_variations": [
+      {
+        "observation": "seed=20260822,variant=official",
+        "paths": [
+          "scheduler_config._use_default_values"
+        ],
+        "baseline": "seed=20260820,variant=official"
+      },
+      {
+        "observation": "seed=20260822,variant=matched_retain",
+        "paths": [
+          "scheduler_config._use_default_values"
+        ],
+        "baseline": "seed=20260820,variant=official"
+      },
+      {
+        "observation": "seed=20260823,variant=official",
+        "paths": [
+          "scheduler_config._use_default_values"
+        ],
+        "baseline": "seed=20260820,variant=official"
+      },
+      {
+        "observation": "seed=20260823,variant=matched_retain",
+        "paths": [
+          "scheduler_config._use_default_values"
+        ],
+        "baseline": "seed=20260820,variant=official"
+      },
+      {
+        "observation": "seed=20260824,variant=official",
+        "paths": [
+          "scheduler_config._use_default_values"
+        ],
+        "baseline": "seed=20260820,variant=official"
+      }
+    ],
+    "allowlisted_unordered_paths": [
+      "scheduler_config._use_default_values"
+    ],
+    "substantive_fields_identical": true
+  },
+  "score_sha256": {
+    "20260820": {
+      "official": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "matched_retain": "c3e6e34cfedea12560622aca05295c95ddc875a73d0bc515a3e70d0ebdb5da8f"
+    },
+    "20260821": {
+      "official": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "matched_retain": "213d537643fbadbb7a75dfd0fa18c07a69f3fb58050a10360eae62a558eb107a"
+    },
+    "20260822": {
+      "official": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "matched_retain": "d619d12b59b0ccf4c6fd8076c82b53c74b2f33707eac0ca6317afaad4093c1fc"
+    },
+    "20260823": {
+      "official": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "matched_retain": "69bce3decf78ba2e637a4bad12ae69d750ab6a0d7b2839394037283c8feeb06e"
+    },
+    "20260824": {
+      "official": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724",
+      "matched_retain": "841ff78ee1d95a7f7e1c08f19af1bce8b20d0bf5572cd28bced85427dfbd7ea6"
+    }
+  },
+  "reused_existing_edits": true,
+  "reused_existing_24000_generated_images": true,
+  "reran_model_editing": false,
+  "regenerated_images": false,
+  "posthoc_source_sha256": {
+    "aggregate_seed_results.py": "ebb81ad6860e4ea41c457b4ad7d7ac9569984136d1f83682020065777876ad18",
+    "cleanup_images.sh": "52d3c63c553486b35885b84b4587b498acd5a31fed195e965c0959cbe7cc5230",
+    "evaluator_fingerprint.py": "2b1dd018729d7bd6cfb7c206679c09ad4701c71ac0e875b6a018424a9d285fc6",
+    "package_results.sh": "099ed3fcd9b76b2972d4d29dfa7a199f7e56afa8ac79c172b3715e7abe6de711",
+    "posthoc_finalize.py": "df77331ab21e064c47eb6c91e3a426f6ae0b8feaf7594319239e5431605ae619",
+    "finalize_server.sh": "9399a1e7eab27bb26d6b1647309fe63866bfa0c63c87377f8246ee3d647eb974",
+    "json_stdlib.py": "221a52d2d79b3590a989d38c097e6f4e3a58494e9f00db26baa4e24c1018326d",
+    "posthoc_finalize_worker.sh": "b7eddc59d4d41d80ef59fe6f659163613da7ca3e5d7ef8cad25c03bd3821e91e"
+  }
+}
