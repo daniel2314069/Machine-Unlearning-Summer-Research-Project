@@ -77,6 +77,25 @@ FILES=(
 )
 if [[ "$PROFILE" == "formal" ]]; then
   FILES+=(formal_preflight.json reproducibility/prior_seed_validation.json)
+  if [[ -f "$RUN_DIR/reproducibility/posthoc_finalization.json" ]]; then
+    FILES+=(
+      reproducibility/posthoc_finalization.json
+      reproducibility/original_failure/calculation_exit_code
+      reproducibility/original_failure/exit_code
+      reproducibility/original_failure/FAILED
+      reproducibility/original_failure/calculation_finished_at_utc
+      reproducibility/original_failure/finished_at_utc
+      posthoc_command.txt
+      posthoc_provenance/aggregate_seed_results.py
+      posthoc_provenance/cleanup_images.sh
+      posthoc_provenance/evaluator_fingerprint.py
+      posthoc_provenance/package_results.sh
+      posthoc_provenance/posthoc_finalize.py
+      posthoc_provenance/finalize_server.sh
+      posthoc_provenance/json_stdlib.py
+      posthoc_provenance/posthoc_finalize_worker.sh
+    )
+  fi
 fi
 
 for seed in "${SEEDS[@]}"; do

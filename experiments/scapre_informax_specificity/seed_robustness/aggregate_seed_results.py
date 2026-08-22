@@ -14,6 +14,11 @@ from pathlib import Path
 import torch
 from scipy.stats import spearmanr
 
+from evaluator_fingerprint import (
+    canonical_evaluator_fingerprint,
+    compare_evaluator_manifests,
+)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -118,11 +123,7 @@ def validate_rows(
 
 
 def evaluator_control(manifest: dict) -> dict:
-    return {
-        key: value
-        for key, value in manifest.items()
-        if key not in {"variant", "checkpoint_sha256"}
-    }
+    return canonical_evaluator_fingerprint(manifest)
 
 
 def load_diagnostic_records(path: Path) -> dict[tuple[str, int, str], dict[str, object]]:
@@ -318,6 +319,7 @@ def main() -> None:
     reference_keys: set[tuple[str, ...]] | None = None
     reference_evaluator: dict | None = None
     score_hashes: dict[str, dict[str, str]] = {}
+    evaluator_observations: list[tuple[str, dict]] = []
 
     import hashlib
 
@@ -352,6 +354,7 @@ def main() -> None:
             elif reference_keys != keys:
                 raise RuntimeError(f"seed {seed}: generation keys differ across edit seeds")
             manifest = json.loads(manifest_path.read_text())
+            evaluator_observations.append((f"seed={seed},variant={variant}", manifest))
             controlled_manifest = evaluator_control(manifest)
             if reference_evaluator is None:
                 reference_evaluator = controlled_manifest
@@ -419,6 +422,7 @@ def main() -> None:
         diagnostic_rows.append(summarize_diagnostics(seed, seed_diagnostic_rows))
 
     expected_seed_count = 5 if args.profile == "formal" else 1
+    evaluator_comparison = compare_evaluator_manifests(evaluator_observations)
     expected_group_rows = expected_seed_count * len(group_order)
     expected_concept_rows = expected_seed_count * len(concept_order)
     if len(per_seed_rows) != expected_seed_count:
@@ -671,9 +675,8 @@ These quantities are explanatory only and do not determine the judgment.
         "cross_seed_generation_keys_identical": True,
         "duplicate_generation_keys": 0,
         "evaluator_fingerprint_identical": True,
-        "evaluator_fingerprint_sha256": hashlib.sha256(
-            json.dumps(reference_evaluator, sort_keys=True).encode("utf-8")
-        ).hexdigest(),
+        "evaluator_fingerprint_sha256": evaluator_comparison["canonical_sha256"],
+        "evaluator_raw_fingerprint_variation": evaluator_comparison,
         "evaluator_source_sha256": robustness["source_controls"][
             "experiments/scapre_informax_specificity/evaluate_confuse5.py"
         ],

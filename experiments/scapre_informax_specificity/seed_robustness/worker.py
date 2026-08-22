@@ -15,6 +15,8 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+from evaluator_fingerprint import canonical_evaluator_fingerprint
+
 
 SEED_DIR = Path(__file__).resolve().parent
 EXPERIMENT_DIR = SEED_DIR.parent
@@ -128,11 +130,7 @@ def controlled_assets(assets: dict) -> dict:
 
 
 def controlled_evaluator(manifest: dict) -> dict:
-    return {
-        key: value
-        for key, value in manifest.items()
-        if key not in {"variant", "checkpoint_sha256"}
-    }
+    return canonical_evaluator_fingerprint(manifest)
 
 
 def protocol_generation_keys(rows: list[dict[str, str]]) -> set[tuple[str, ...]]:

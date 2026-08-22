@@ -72,6 +72,10 @@ rg -q 'generation_keys_match_frozen_protocol' "$SCRIPT_DIR/worker.py"
 rg -q 'stable_prior_manifest' "$SCRIPT_DIR/worker.py"
 rg -q 'validate_diagnostic_rows' "$SCRIPT_DIR/aggregate_seed_results.py"
 rg -q 'diagnostic_layer_target_keys_identical' "$SCRIPT_DIR/aggregate_seed_results.py"
+rg -q 'canonical_evaluator_fingerprint' "$SCRIPT_DIR/aggregate_seed_results.py"
+rg -q '_use_default_values' "$SCRIPT_DIR/evaluator_fingerprint.py"
+rg -q 'ELIGIBLE_GENERATION_COMMIT' "$SCRIPT_DIR/posthoc_finalize.py"
+rg -q 'No model editing or image generation will run' "$SCRIPT_DIR/finalize_server.sh"
 rg -q '\^  \\"\$key' "$SCRIPT_DIR/status_server.sh"
 rg -q '\^  \\"\$key' "$SCRIPT_DIR/download_results.sh"
 rg -q 'formal_preflight.py' "$SCRIPT_DIR/run_server.sh"
@@ -103,9 +107,10 @@ awk -F, '
 
 required=(
   README.md AUDIT.md config.json json_stdlib.py informax_seed_runner.py
-  formal_preflight.py worker.py
+  evaluator_fingerprint.py formal_preflight.py worker.py posthoc_finalize.py
   aggregate_seed_results.py resolve_prior_seed.sh run_server.sh server_worker.sh
   status_server.sh package_results.sh cleanup_images.sh download_results.sh
+  finalize_server.sh posthoc_finalize_worker.sh
   results/summary.md reproducibility/README.md
 )
 for relative in "${required[@]}"; do

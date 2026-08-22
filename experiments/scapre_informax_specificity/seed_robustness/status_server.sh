@@ -32,7 +32,9 @@ EXIT_CODE="pending"
 [[ -f "$RUN_DIR/exit_code" ]] && EXIT_CODE="$(tr -d '[:space:]' < "$RUN_DIR/exit_code")"
 CALCULATION_EXIT="pending"
 [[ -f "$RUN_DIR/calculation_exit_code" ]] && CALCULATION_EXIT="$(tr -d '[:space:]' < "$RUN_DIR/calculation_exit_code")"
-if [[ -f "$RUN_DIR/COMPLETED" && "$EXIT_CODE" == "0" ]]; then
+if [[ -f "$RUN_DIR/FINALIZING" && "$PID" =~ ^[0-9]+$ ]] && kill -0 "$PID" 2>/dev/null; then
+  STATUS="finalizing"
+elif [[ -f "$RUN_DIR/COMPLETED" && "$EXIT_CODE" == "0" ]]; then
   STATUS="completed"
 elif [[ -f "$RUN_DIR/FAILED" || "$EXIT_CODE" != "pending" ]]; then
   STATUS="failed"
@@ -85,6 +87,9 @@ if [[ -f "$RUN_DIR/cleanup_manifest.json" ]]; then
   fi
 else
   echo "image_cleanup: pending (runs only after archive verification)"
+fi
+if [[ -f "$RUN_DIR/posthoc_finalize_exit_code" ]]; then
+  echo "posthoc_finalize_exit_code: $(tr -d '[:space:]' < "$RUN_DIR/posthoc_finalize_exit_code")"
 fi
 for name in started_at_utc calculation_finished_at_utc finished_at_utc; do
   if [[ -f "$RUN_DIR/$name" ]]; then

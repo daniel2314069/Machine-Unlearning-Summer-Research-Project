@@ -108,6 +108,32 @@ experiments/scapre_informax_specificity/seed_robustness/run_server.sh \
 The formal run always completes all four new fixed seeds. It does not stop based
 on intermediate results.
 
+### Audited post-hoc finalization for the 20260821 run
+
+The run `formal_20260821T081723Z` completed all 24,000 new image records but its
+original aggregator rejected a process-dependent ordering of Diffusers
+`scheduler_config._use_default_values`. That metadata denotes an unordered set
+of defaulted keys; it does not change scheduler values or behavior. The repaired
+comparison sorts only that one list. Every other evaluator, classifier,
+protocol, package-version, and scheduler field must remain exactly equal.
+
+Do not resume model editing or generation. After pulling the repair, finalize
+the existing run with:
+
+```bash
+conda activate MU
+experiments/scapre_informax_specificity/seed_robustness/finalize_server.sh \
+  '/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z'
+```
+
+The detached finalizer validates all 30,000 scores, confirms that any raw
+fingerprint variation is confined to the allowlisted list ordering, reruns only
+aggregation, packages and verifies the results, and then performs the existing
+image cleanup. It never edits a model or regenerates an image. Original failure
+evidence and both generation/finalizer commits are retained in the archive. If
+packaging or cleanup is interrupted, the same command safely reuses the audited
+aggregation and verified archive and resumes only the unfinished finalization.
+
 ## Automatic packaging and image cleanup
 
 The detached worker automatically packages results after all calculations and
@@ -163,6 +189,7 @@ results/per_retain_robustness.csv
 results/informax_seed_diagnostics.csv
 reproducibility/integrity_report.json
 reproducibility/prior_seed_validation.json
+reproducibility/posthoc_finalization.json  # present only for audited repair
 ```
 
 It also includes all 30,000 raw score records, evaluator fingerprints,
