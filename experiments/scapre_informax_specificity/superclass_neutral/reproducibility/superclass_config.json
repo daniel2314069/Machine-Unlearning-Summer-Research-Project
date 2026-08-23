@@ -1,0 +1,14 @@
+{
+  "superclass_by_target": {
+    "golden retriever": "dog",
+    "labrador retriever": "dog",
+    "tabby": "cat",
+    "tiger cat": "cat",
+    "orange": "fruit",
+    "lemon": "fruit",
+    "yawl": "boat",
+    "lifeboat": "boat",
+    "soccer ball": "ball",
+    "volleyball": "ball"
+  }
+}

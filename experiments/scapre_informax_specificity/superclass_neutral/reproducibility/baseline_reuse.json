@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "source_run": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z",
+  "source_integrity_sha256": "c83c700515129486c709035b47b9f85b7eec0a925434f85a3ea307153e8fe262",
+  "seeds": [
+    20260820,
+    20260821,
+    20260822,
+    20260823,
+    20260824
+  ],
+  "variants": [
+    "official",
+    "matched_retain"
+  ],
+  "regenerated_baseline_scores": false,
+  "copied_score_files": 10
+}

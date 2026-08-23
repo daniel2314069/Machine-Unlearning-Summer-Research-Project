@@ -1,0 +1,100 @@
+{
+  "experiment_name": "scapre_informax_specificity_superclass_neutral",
+  "required_ancestor_commit": "62e5025df31eb981789e4a4a57dffccda9b6a3c0",
+  "edit_seeds": [
+    20260820,
+    20260821,
+    20260822,
+    20260823,
+    20260824
+  ],
+  "fixed_non_informax_seed": 20260820,
+  "variant": "superclass_neutral",
+  "expected_images_per_variant_seed": 3000,
+  "expected_target_rows": 1200,
+  "expected_retain_rows": 1800,
+  "expected_informax_randn_calls_per_formal_edit": 1280,
+  "expected_informax_randn_calls_per_smoke_edit": 256,
+  "expected_edited_layers_per_projection": 16,
+  "expected_diagnostic_records_per_formal_seed": 320,
+  "expected_diagnostic_records_per_smoke_seed": 64,
+  "superclass_by_target": {
+    "golden retriever": "dog",
+    "labrador retriever": "dog",
+    "tabby": "cat",
+    "tiger cat": "cat",
+    "orange": "fruit",
+    "lemon": "fruit",
+    "yawl": "boat",
+    "lifeboat": "boat",
+    "soccer ball": "ball",
+    "volleyball": "ball"
+  },
+  "prior_robustness": {
+    "run_id": "formal_20260821T081723Z",
+    "archive_basename": "scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz",
+    "archive_sha256": "df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708",
+    "expected_protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "expected_judgment": "ROBUSTLY SUPPORTED"
+  },
+  "decision_rule": {
+    "minimum_positive_preserve_seeds": 4,
+    "minimum_mean_preserve_delta_pp": 1.0,
+    "maximum_mean_unlearn_delta_pp": 0.0,
+    "minimum_positive_overall_seeds": 4,
+    "material_mean_unlearn_degradation_pp": 2.0,
+    "standard_deviation": "sample (n-1 denominator)",
+    "note": "Frozen before the superclass-neutral run; identical to the matched-retain robustness support rule."
+  },
+  "qualitative": {
+    "edit_seed": 20260820,
+    "sample_indices": [
+      0,
+      1
+    ],
+    "concepts_by_group": {
+      "dogs": [
+        "golden retriever",
+        "labrador retriever",
+        "german shepherd"
+      ],
+      "cats": [
+        "tabby",
+        "tiger cat",
+        "persian cat"
+      ],
+      "fruits": [
+        "orange",
+        "lemon",
+        "pomegranate"
+      ],
+      "boats": [
+        "yawl",
+        "lifeboat",
+        "speedboat"
+      ],
+      "balls": [
+        "soccer ball",
+        "volleyball",
+        "tennis ball"
+      ]
+    },
+    "variants": [
+      "official",
+      "matched_retain",
+      "superclass_neutral"
+    ],
+    "selection": "predeclared concepts and first two ordered protocol rows; never selected from predictions or outcomes",
+    "expected_images_per_variant": 30,
+    "expected_total_images": 90
+  },
+  "source_controls": [
+    "scapre/edit/erase_scale.py",
+    "experiments/scapre_informax_specificity/config.json",
+    "experiments/scapre_informax_specificity/build_protocol.py",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py",
+    "experiments/scapre_informax_specificity/seed_robustness/informax_seed_runner.py",
+    "experiments/scapre_informax_specificity/seed_robustness/evaluator_fingerprint.py",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv"
+  ]
+}

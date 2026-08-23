@@ -1,0 +1,139 @@
+{
+  "started_at_utc": "2026-08-22T17:51:18.637125+00:00",
+  "profile": "formal",
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "git_commit": "4f45257fba7160ea6b8ef3ba9bb4115409b35a8a",
+  "git_status_start": [],
+  "source_sha256": {
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "experiments/scapre_informax_specificity/seed_robustness/evaluator_fingerprint.py": "2b1dd018729d7bd6cfb7c206679c09ad4701c71ac0e875b6a018424a9d285fc6",
+    "experiments/scapre_informax_specificity/seed_robustness/informax_seed_runner.py": "aa7948d44141f918116b2512355c101f56d9271772a8a210b6237a05babbae03",
+    "experiments/scapre_informax_specificity/superclass_neutral/AUDIT.md": "aa20934570f5c9ea5155235f9b134abcc2edda7660aa03410ceb562ead107dee",
+    "experiments/scapre_informax_specificity/superclass_neutral/README.md": "bcc0a202234712350c87b81d77903658e082c3dbcb839d2724ebb65287f79c53",
+    "experiments/scapre_informax_specificity/superclass_neutral/aggregate_results.py": "641da26f7c3b8d7294e867a082bf37c74b9daa6af6c9833fe460ee0990db6f0e",
+    "experiments/scapre_informax_specificity/superclass_neutral/build_qualitative.py": "7bda1afc97bad683a938616305099eeb8db26b5d0f0a109dfe7de53fc516c69f",
+    "experiments/scapre_informax_specificity/superclass_neutral/cleanup_images.sh": "602db52bc6e9d1009b9f883b4342d75737f0e68f03a9058fd441adc617ad87db",
+    "experiments/scapre_informax_specificity/superclass_neutral/config.json": "14281822ad5abbae77c71df192dec08ee533bf268e935ac0cf93ebe908445600",
+    "experiments/scapre_informax_specificity/superclass_neutral/download_results.sh": "567ab4a890bc8fa3d647094b8f6135ed17ad2a7dea462ff65812b1fd4c6c2ec4",
+    "experiments/scapre_informax_specificity/superclass_neutral/formal_preflight.py": "d60483f13ae1dcc3425499c5d4dc3bd28fb425033b1ed2786cbaa94f90d2c37b",
+    "experiments/scapre_informax_specificity/superclass_neutral/package_results.sh": "8d2402d6b96e3f7a32791362c5f8a6b33a7a5d08b8bfb6408e223a0e980ffff0",
+    "experiments/scapre_informax_specificity/superclass_neutral/resolve_prior_robustness.sh": "801cbe4575a93b4c0d6393f841db544e8546b786298ab3f740a492fa21e5383f",
+    "experiments/scapre_informax_specificity/superclass_neutral/run_server.sh": "20bd6074bf558d10122a411943d0c35cad3e578c0f7792ea6122364fd633cd84",
+    "experiments/scapre_informax_specificity/superclass_neutral/server_worker.sh": "6682c5242416d9d0077e0e07c00ed559b1b74102aa90c3ebb261df57b1838499",
+    "experiments/scapre_informax_specificity/superclass_neutral/status_server.sh": "faaf03b5e12401446d866545ac270e2364054c6ab9bcf6492d0223fb91735c4a",
+    "experiments/scapre_informax_specificity/superclass_neutral/validate_local.sh": "b0c5eb1ca5728480a751ec26d7232d4b8e771440c99f909838505fbde1788292",
+    "experiments/scapre_informax_specificity/superclass_neutral/worker.py": "14893605c201779515e86ad06594da4992ba0218c21542c7643b290aca7793f2",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "assets_manifest_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "device": "cuda:0",
+  "git_status_end": [],
+  "calculation_finished_at_utc": "2026-08-23T09:00:19.822657+00:00",
+  "finished_at_utc": "2026-08-23T09:00:21.231629+00:00"
+}

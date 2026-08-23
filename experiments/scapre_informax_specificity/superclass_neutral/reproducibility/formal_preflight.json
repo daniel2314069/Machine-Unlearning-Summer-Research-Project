@@ -1,0 +1,90 @@
+{
+  "status": "passed",
+  "validated_at_utc": "2026-08-22T17:51:18.604145+00:00",
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "prior_run": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/seed_robustness/runs/formal_20260821T081723Z",
+  "prior_integrity_sha256": "c83c700515129486c709035b47b9f85b7eec0a925434f85a3ea307153e8fe262",
+  "observations": [
+    {
+      "seed": 20260820,
+      "variant": "official",
+      "scores_sha256": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "manifest_sha256": "2431b95b1649969f17c05b71f01d893118ab4f7cb16bdd8e87502a8c970aa60b"
+    },
+    {
+      "seed": 20260820,
+      "variant": "matched_retain",
+      "scores_sha256": "c3e6e34cfedea12560622aca05295c95ddc875a73d0bc515a3e70d0ebdb5da8f",
+      "manifest_sha256": "b8651cc0390b21a64e6b9a5c59322a2315c09e9f873f6ffce9cbc258a1908744"
+    },
+    {
+      "seed": 20260821,
+      "variant": "official",
+      "scores_sha256": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "manifest_sha256": "b4841f7ef4e932a118283512d6f73b300701ecd8283ca1f7ba4e78473a5ad2fe"
+    },
+    {
+      "seed": 20260821,
+      "variant": "matched_retain",
+      "scores_sha256": "213d537643fbadbb7a75dfd0fa18c07a69f3fb58050a10360eae62a558eb107a",
+      "manifest_sha256": "3753b875adcd49d1bd9f99e262ccc28be438d55be10b54edf8707a91f55c575b"
+    },
+    {
+      "seed": 20260822,
+      "variant": "official",
+      "scores_sha256": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "manifest_sha256": "482786cf0195dcdf792d20d2983255162881445ebaa6e6c84680a8e733be0fc6"
+    },
+    {
+      "seed": 20260822,
+      "variant": "matched_retain",
+      "scores_sha256": "d619d12b59b0ccf4c6fd8076c82b53c74b2f33707eac0ca6317afaad4093c1fc",
+      "manifest_sha256": "13c06641126981defd090f251b8619d228e692c2591b273074de157f75e628d7"
+    },
+    {
+      "seed": 20260823,
+      "variant": "official",
+      "scores_sha256": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "manifest_sha256": "d91e9a899686af869ab8df918da74544c85b0679c4a6e35846fdfe48fb738392"
+    },
+    {
+      "seed": 20260823,
+      "variant": "matched_retain",
+      "scores_sha256": "69bce3decf78ba2e637a4bad12ae69d750ab6a0d7b2839394037283c8feeb06e",
+      "manifest_sha256": "191d28475cb80c06619f932de30f08a8bcca9380a61aaf22ac13b012fb57298e"
+    },
+    {
+      "seed": 20260824,
+      "variant": "official",
+      "scores_sha256": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724",
+      "manifest_sha256": "bbebcd75015853725dcae0d95b809b016e9b19f1b9ec0eb86da784e8f674f0a4"
+    },
+    {
+      "seed": 20260824,
+      "variant": "matched_retain",
+      "scores_sha256": "841ff78ee1d95a7f7e1c08f19af1bce8b20d0bf5572cd28bced85427dfbd7ea6",
+      "manifest_sha256": "1aef9ca22eceaaa9347881e294a580896d691d8544dfc5f5d98606e7a23a728f"
+    }
+  ],
+  "protocol": {
+    "profile": "formal",
+    "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/.server/superclass_preflight_5sp72wdi/protocol.csv",
+    "sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "rows": 3000,
+    "concepts": 25,
+    "images_per_concept": 120,
+    "source_dataset": "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv",
+    "source_dataset_sha256": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "seed_sources": {
+      "public-repo:imagenet-15.csv": 1800,
+      "project-derived:same-group-retain-seed-reuse": 1200
+    }
+  },
+  "generation_keys_identical": true,
+  "baseline_score_evaluations_to_rerun": 0,
+  "new_superclass_image_records": 15000,
+  "qualitative_checkpoint_policy": "reuse existing seed-20260820 checkpoints; deterministically recreate only missing checkpoints",
+  "loaded_model": false,
+  "generated_images": false,
+  "downloaded_assets": false
+}

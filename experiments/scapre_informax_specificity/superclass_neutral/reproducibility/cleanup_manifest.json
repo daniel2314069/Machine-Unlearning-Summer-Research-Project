@@ -1,0 +1,53 @@
+{
+  "archive": "/home/tslin/Documents/jupyter_data/anLi/tmp/scapre_informax_superclass_neutral_formal_20260822T175116Z_20260823T090021Z.tar.gz",
+  "archive_sha256": "5377f92ec2d154d94127bbebcafe3f38f3a3cac6e0b6e91ea29e543555037e0f",
+  "completed_at_utc": "2026-08-23T09:00:23Z",
+  "deleted_bytes": 6995098727,
+  "deleted_files": 15000,
+  "profile": "formal",
+  "records": [
+    {
+      "context": "full superclass evaluation seed=20260820",
+      "deleted_bytes": 1395072157,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/seeds/20260820/evaluation/superclass_neutral/images",
+      "status": "deleted"
+    },
+    {
+      "context": "full superclass evaluation seed=20260821",
+      "deleted_bytes": 1399414962,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/seeds/20260821/evaluation/superclass_neutral/images",
+      "status": "deleted"
+    },
+    {
+      "context": "full superclass evaluation seed=20260822",
+      "deleted_bytes": 1400234235,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/seeds/20260822/evaluation/superclass_neutral/images",
+      "status": "deleted"
+    },
+    {
+      "context": "full superclass evaluation seed=20260823",
+      "deleted_bytes": 1398911980,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/seeds/20260823/evaluation/superclass_neutral/images",
+      "status": "deleted"
+    },
+    {
+      "context": "full superclass evaluation seed=20260824",
+      "deleted_bytes": 1401465393,
+      "deleted_files": 3000,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/seeds/20260824/evaluation/superclass_neutral/images",
+      "status": "deleted"
+    },
+    {
+      "context": "qualitative images and paired panels",
+      "deleted_bytes": 0,
+      "deleted_files": 0,
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/superclass_neutral/runs/formal_20260822T175116Z/qualitative",
+      "status": "preserved"
+    }
+  ],
+  "status": "passed"
+}

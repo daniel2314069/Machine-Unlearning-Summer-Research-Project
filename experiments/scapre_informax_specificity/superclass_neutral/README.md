@@ -4,6 +4,12 @@ Final controlled ablation in the existing ScaPre Informax specificity line.
 It compares the verified five-seed `official` baseline against a new
 `superclass_neutral` variant while changing only the Informax negative base.
 
+The completed five-seed result is **NOT SUPPORTED**: mean preservation changes
+by `+0.51` percentage points, mean residual target accuracy by `-0.03` points,
+and mean Overall by `+0.46` points. Preservation improves in 4/5 seeds, but the
+predeclared minimum mean gain was `+1.0` point. See `results/summary.md` for the
+complete, unselected result.
+
 The fixed mappings are in `config.json`; the implementation audit and exact
 scope are in `AUDIT.md`. Formal baseline score rows are reused, not regenerated.
 The formal run adds 15,000 superclass-neutral images and retains a predeclared
@@ -46,3 +52,8 @@ or extra evaluator is introduced. Existing parent experiment assets are reused.
 The final archive is written under
 `/home/tslin/Documents/jupyter_data/anLi/tmp` and includes the small qualitative
 set. `download_results.sh` prints the exact Mac-side `scp` and checksum commands.
+
+The formal result tables, reproducibility records, 90 selected images, and 30
+paired panels are now tracked in this directory. The archive additionally keeps
+all 45,000 raw score rows, commands, and the server log without duplicating
+those larger raw artifacts in Git.

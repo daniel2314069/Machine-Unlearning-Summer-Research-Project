@@ -1,0 +1,17 @@
+{
+  "profile": "formal",
+  "edit_seeds": [
+    20260820,
+    20260821,
+    20260822,
+    20260823,
+    20260824
+  ],
+  "new_image_records": 15000,
+  "judgment": "NOT SUPPORTED",
+  "mean_delta_unlearn": -0.03333333333333357,
+  "mean_delta_preserve": 0.51111111111111,
+  "mean_delta_overall": 0.45741680814972624,
+  "preserve_improving_seed_count": 4,
+  "overall_improving_seed_count": 4
+}
