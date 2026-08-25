@@ -2,13 +2,15 @@
 set -euo pipefail
 
 if [[ $# -ne 3 ]]; then
-  echo "usage: $0 <user@server-host> <absolute-server-archive.tar.gz> <sha256>" >&2
+  echo "usage: $0 <ssh-alias-or-user@host> <absolute-server-archive.tar.gz> <sha256>" >&2
   exit 2
 fi
 REMOTE="$1"
 SERVER_ARCHIVE="$2"
 EXPECTED_SHA="$(printf '%s' "$3" | tr '[:upper:]' '[:lower:]')"
-[[ "$REMOTE" =~ ^[^/@:]+@[^/:]+$ ]] || { echo "ERROR: remote must look like user@server-host" >&2; exit 2; }
+[[ "$REMOTE" =~ ^[A-Za-z0-9._-]+(@[A-Za-z0-9._-]+)?$ ]] || {
+  echo "ERROR: remote must be a simple SSH alias or user@host" >&2; exit 2;
+}
 [[ "$SERVER_ARCHIVE" == /home/tslin/Documents/jupyter_data/anLi/tmp/scapre_informax_mi_channel_weighting_*.tar.gz ]] || {
   echo "ERROR: archive path is outside the approved server package location" >&2; exit 2;
 }

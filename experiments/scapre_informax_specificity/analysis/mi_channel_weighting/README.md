@@ -37,4 +37,6 @@ experiments/scapre_informax_specificity/analysis/mi_channel_weighting/package_re
 If the prior artifact is not at the recorded default, pass its absolute path as
 the first argument to `run_server.sh`. The launcher checks Python syntax and
 imports from the already-active `MU` environment; it never installs or downloads
-packages. No local Mac Python execution is allowed.
+packages. No local Mac Python execution is allowed. After packaging, the local
+`download_results.sh` accepts either a configured SSH alias such as `tslin` or a
+literal `user@host` destination.
