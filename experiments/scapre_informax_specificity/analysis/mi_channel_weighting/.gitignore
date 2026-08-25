@@ -1,0 +1,4 @@
+runs/
+results/
+*.tar.gz
+*.sha256

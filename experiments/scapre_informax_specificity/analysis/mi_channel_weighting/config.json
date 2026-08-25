@@ -1,0 +1,55 @@
+{
+  "experiment_name": "scapre_informax_mi_channel_weighting",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "base_model_revision": null,
+  "device": "cuda:0",
+  "dtype": "float16",
+  "informax_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "sample_sizes": [5, 10, 20, 50],
+  "pool_size_per_class": 50,
+  "noise_sigma": 0.01,
+  "temperature": 0.7,
+  "power": 8.0,
+  "threshold": "torch lower median over 2n activations, independently per channel",
+  "binary_state": "activation > threshold",
+  "negative_mode": "official empty-string embedding at token index 1",
+  "analysis_stage": "aggregate",
+  "targets": [
+    "golden retriever", "labrador retriever", "tabby", "tiger cat",
+    "orange", "lemon", "yawl", "lifeboat", "soccer ball", "volleyball"
+  ],
+  "legacy_seed": 20260820,
+  "legacy_diagnostic_default": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z/diagnostics/official.pt",
+  "legacy_expected": {
+    "observations": 249600,
+    "mi_bin_centers": [0.0201, 0.0863, 0.1927, 0.6931],
+    "mi_bin_counts": [1601, 1, 2096, 245902],
+    "mi_bin_tolerance": 0.0006,
+    "alpha": {
+      "mean": 0.00743,
+      "median": 0.00748,
+      "p90": 0.00858,
+      "p95": 0.00870,
+      "p99": 0.00920,
+      "max": 0.01101,
+      "absolute_tolerance": 0.00006
+    }
+  },
+  "large_scale": {
+    "enabled": true,
+    "source": "scapre/script/erase.sh:14-49 (Imagenet-Diversi50-50 ordered ScaPre config)",
+    "concept_counts": [1, 5, 10, 20, 30, 40, 50],
+    "power": 5.0,
+    "targets": [
+      "tabby", "Labrador retriever", "tiger", "lion", "African elephant",
+      "sports car", "convertible", "school bus", "airliner", "mountain bike", "minivan", "pickup", "motor scooter",
+      "folding chair", "rocking chair", "desk", "dining table", "table lamp",
+      "acoustic guitar", "grand piano", "violin", "cornet", "sax",
+      "cellular telephone", "reflex camera", "laptop", "television", "computer keyboard",
+      "Granny Smith", "orange", "banana", "strawberry", "broccoli", "cauliflower",
+      "cowboy hat", "running shoe", "sweatshirt", "jean", "trench coat",
+      "pizza", "hotdog", "cheeseburger", "ice cream", "burrito", "mashed potato",
+      "traffic light", "backpack", "umbrella", "bookcase", "water bottle"
+    ]
+  }
+}

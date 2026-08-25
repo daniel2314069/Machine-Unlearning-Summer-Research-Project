@@ -1,5 +1,13 @@
 # ScaPre Informax Specificity Experiment
 
+## MI and channel-weighting follow-up
+
+The official-neutral, MI-only sample-size and max-over-concepts diagnostic is
+kept under [`analysis/mi_channel_weighting`](analysis/mi_channel_weighting/README.md).
+It is a gated analysis of the existing experiment, not a new top-level
+experiment or a ScaPre method change. It performs no model edit, diffusion image
+generation, or image evaluation.
+
 This directory implements a one-variable comparison of the public ScaPre
 Informax behavior against matched similar-retain negatives.
 
