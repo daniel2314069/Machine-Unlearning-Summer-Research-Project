@@ -2,6 +2,7 @@
   "experiment_name": "scapre_informax_mi_channel_weighting",
   "base_model": "runwayml/stable-diffusion-v1-5",
   "base_model_revision": null,
+  "base_model_resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
   "device": "cuda:0",
   "dtype": "float16",
   "informax_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],

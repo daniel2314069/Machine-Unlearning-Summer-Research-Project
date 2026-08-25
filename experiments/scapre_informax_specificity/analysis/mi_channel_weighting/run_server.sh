@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ $# -gt 1 ]]; then
-  echo "usage: $0 [absolute-legacy-diagnostic.pt]" >&2
+if [[ $# -gt 2 ]]; then
+  echo "usage: $0 [absolute-legacy-diagnostic.pt] [absolute-model-snapshot]" >&2
   exit 2
 fi
 if [[ "${CONDA_DEFAULT_ENV:-}" != "MU" ]]; then
@@ -22,6 +22,19 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
 "$PYTHON_BIN" -c 'import diffusers, matplotlib, numpy, torch, transformers'
 LEGACY_PATH="${1:-/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z/diagnostics/official.pt}"
 [[ "$LEGACY_PATH" = /* && -f "$LEGACY_PATH" ]] || { echo "ERROR: legacy diagnostic is missing: $LEGACY_PATH" >&2; exit 1; }
+MODEL_SNAPSHOT="${2:-$HOME/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14}"
+[[ "$MODEL_SNAPSHOT" = /* && -d "$MODEL_SNAPSHOT" ]] || { echo "ERROR: model snapshot is missing: $MODEL_SNAPSHOT" >&2; exit 1; }
+MODEL_FILES=(
+  tokenizer/merges.txt tokenizer/vocab.json tokenizer/tokenizer_config.json
+  text_encoder/config.json text_encoder/model.safetensors
+  unet/config.json unet/diffusion_pytorch_model.safetensors
+)
+for relative in "${MODEL_FILES[@]}"; do
+  [[ -s "$MODEL_SNAPSHOT/$relative" ]] || {
+    echo "ERROR: required cached model file is missing: $MODEL_SNAPSHOT/$relative" >&2
+    exit 1
+  }
+done
 
 RUNS_DIR="$SCRIPT_DIR/runs"
 mkdir -p "$RUNS_DIR"
@@ -53,11 +66,12 @@ printf '%s\n' "$RUN_ID" > "$RUN_DIR/run_id"
 printf '%s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > "$RUN_DIR/started_at_utc"
 printf '%s\n' "$PYTHON_BIN" > "$RUN_DIR/python_executable"
 printf '%s\n' "$LEGACY_PATH" > "$RUN_DIR/legacy_diagnostic"
+printf '%s\n' "$MODEL_SNAPSHOT" > "$RUN_DIR/model_snapshot"
 printf '%s\n' "$LOG_PATH" > "$RUN_DIR/log_path"
 printf '%s\n' "$RUN_DIR/output" > "$RUN_DIR/output_path"
 
 cd "$REPO_ROOT"
-nohup bash "$SCRIPT_DIR/server_worker.sh" "$RUN_DIR" "$PYTHON_BIN" "$LEGACY_PATH" \
+nohup bash "$SCRIPT_DIR/server_worker.sh" "$RUN_DIR" "$PYTHON_BIN" "$MODEL_SNAPSHOT" "$LEGACY_PATH" \
   > "$LOG_PATH" 2>&1 < /dev/null &
 PID=$!
 printf '%s\n' "$PID" > "$RUN_DIR/pid"

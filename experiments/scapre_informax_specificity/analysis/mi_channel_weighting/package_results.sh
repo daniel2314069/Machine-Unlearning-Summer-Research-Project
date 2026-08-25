@@ -37,7 +37,7 @@ printf '%s\n' \
   output/COMPLETED output/figures/sample_size_vs_max_mi_fraction.png output/figures/sample_size_raw_mi_distribution.png \
   output/figures/sample_size_repo_alpha_distribution.png output/figures/concept_count_paper_behavior.png \
   output/figures/concept_count_repo_behavior.png server.log exit_code run_id started_at_utc python_executable \
-  legacy_diagnostic log_path output_path provenance/config.json provenance/implementation_audit.md \
+  legacy_diagnostic model_snapshot log_path output_path provenance/config.json provenance/implementation_audit.md \
   provenance/run_diagnostics.py provenance/run_server.sh provenance/server_worker.sh provenance/status_server.sh \
   provenance/package_results.sh package_file_manifest.txt > "$FILE_LIST"
 tar -C "$RUN_DIR" -czf "$ARCHIVE" -T "$FILE_LIST"

@@ -35,7 +35,10 @@ experiments/scapre_informax_specificity/analysis/mi_channel_weighting/package_re
 ```
 
 If the prior artifact is not at the recorded default, pass its absolute path as
-the first argument to `run_server.sh`. The launcher checks Python syntax and
+the first argument to `run_server.sh`. The optional second argument is an
+absolute cached model snapshot; by default the launcher uses the exact resolved
+snapshot recorded by the prior formal run. It validates every required
+tokenizer, text-encoder, and UNet file before launch. The launcher checks Python syntax and
 imports from the already-active `MU` environment; it never installs or downloads
 packages. No local Mac Python execution is allowed. After packaging, the local
 `download_results.sh` accepts either a configured SSH alias such as `tslin` or a

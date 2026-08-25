@@ -29,6 +29,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", type=Path, default=HERE / "config.json")
     parser.add_argument("--legacy-diagnostic", type=Path)
+    parser.add_argument("--model-path", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -650,16 +651,18 @@ def main() -> None:
     from transformers import CLIPTextModel, CLIPTokenizer
     from types import SimpleNamespace
     dtype = torch.float16 if config["dtype"] == "float16" else torch.float32
-    model_kwargs = {
-        "revision": config["base_model_revision"],
-        "local_files_only": True,
-    }
-    tokenizer = CLIPTokenizer.from_pretrained(config["base_model"], subfolder="tokenizer", **model_kwargs)
+    model_source = args.model_path.resolve() if args.model_path else config["base_model"]
+    if isinstance(model_source, Path) and not model_source.is_dir():
+        raise RuntimeError(f"model snapshot directory is missing: {model_source}")
+    model_kwargs = {"local_files_only": True}
+    if not isinstance(model_source, Path) and config["base_model_revision"] is not None:
+        model_kwargs["revision"] = config["base_model_revision"]
+    tokenizer = CLIPTokenizer.from_pretrained(model_source, subfolder="tokenizer", **model_kwargs)
     text_encoder = CLIPTextModel.from_pretrained(
-        config["base_model"], subfolder="text_encoder", torch_dtype=dtype, **model_kwargs
+        model_source, subfolder="text_encoder", torch_dtype=dtype, **model_kwargs
     ).to(config["device"])
     unet = UNet2DConditionModel.from_pretrained(
-        config["base_model"], subfolder="unet", torch_dtype=dtype, **model_kwargs
+        model_source, subfolder="unet", torch_dtype=dtype, **model_kwargs
     ).to(config["device"])
     text_encoder.eval(); unet.eval()
     pipe = SimpleNamespace(tokenizer=tokenizer, text_encoder=text_encoder, unet=unet,
@@ -695,6 +698,8 @@ def main() -> None:
         "git_sha": git("rev-parse", "HEAD"), "git_branch": git("branch", "--show-current"),
         "git_status_at_completion": git("status", "--short"), "config": config,
         "config_sha256": sha256(args.config), "legacy_diagnostic_sha256": integrity["legacy_sha256"],
+        "model_source": str(model_source),
+        "base_model_resolved_revision": config["base_model_resolved_revision"],
         "seeds": config["informax_seeds"], "sample_sizes": config["sample_sizes"],
         "row_counts": row_counts, "important_file_sha256": hashes,
         "n5_reproduction_gate_passed": True, "production_source_sha256_before_after": production_before,
