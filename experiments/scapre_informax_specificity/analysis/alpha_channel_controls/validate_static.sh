@@ -25,6 +25,7 @@ rg -q 'official_reference_.*EXPECTED_SHA:0:16' "$SCRIPT_DIR/resolve_official_ref
 rg -q '\.archive_sha256' "$SCRIPT_DIR/resolve_official_reference.sh"
 rg -q 'reference_manifest_equals_committed' "$SCRIPT_DIR/diagnose_official_reference.sh"
 rg -q 'actual_compatibility_diff_sha256' "$SCRIPT_DIR/diagnose_official_reference.sh"
+rg -q 'worker.validate_official_reference' "$SCRIPT_DIR/diagnose_official_reference.sh"
 if rg -q 'RUN_DIR=.*/seed_robustness/runs|printf.*RUN_DIR' "$SCRIPT_DIR/resolve_official_reference.sh"; then
   echo "ERROR: official reference resolver must not prefer a mutable run directory" >&2
   exit 2

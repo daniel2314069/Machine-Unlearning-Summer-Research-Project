@@ -6,6 +6,9 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/../../../.." && pwd)"
 ARCHIVE="/home/tslin/Documents/jupyter_data/anLi/tmp/scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz"
 CONFIG="$SCRIPT_DIR/config.json"
 COMMITTED_MANIFEST="$REPO_ROOT/experiments/scapre_informax_specificity/seed_robustness/reproducibility/run_manifest.json"
+BASE_CONFIG="$REPO_ROOT/experiments/scapre_informax_specificity/config.json"
+PROTOCOL_BUILDER="$REPO_ROOT/experiments/scapre_informax_specificity/build_protocol.py"
+ASSETS="$REPO_ROOT/experiments/scapre_informax_specificity/.server/assets_manifest.json"
 EXPECTED_ARCHIVE_SHA="df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708"
 
 [[ "${CONDA_DEFAULT_ENV:-}" == "MU" ]] || {
@@ -18,7 +21,8 @@ for command_name in awk cmp git sha256sum tar; do
   command -v "$command_name" >/dev/null || { echo "ERROR: missing command: $command_name" >&2; exit 2; }
 done
 [[ -f "$ARCHIVE" ]] || { echo "ERROR: reference archive missing: $ARCHIVE" >&2; exit 2; }
-[[ -f "$CONFIG" && -f "$COMMITTED_MANIFEST" ]] || {
+[[ -f "$CONFIG" && -f "$COMMITTED_MANIFEST" && -f "$BASE_CONFIG" && \
+   -f "$PROTOCOL_BUILDER" && -f "$ASSETS" ]] || {
   echo "ERROR: repository diagnostic inputs are incomplete" >&2
   exit 2
 }
@@ -89,4 +93,33 @@ echo "historical_editor_source_sha256: $HISTORICAL_EDITOR_SHA"
 echo "current_evaluator_source_sha256: $CURRENT_EVALUATOR_SHA"
 echo "current_editor_source_sha256: $CURRENT_EDITOR_SHA"
 echo "actual_compatibility_diff_sha256: $COMPATIBILITY_DIFF_SHA"
+
+TEMP_DIR="$(mktemp -d)"
+trap 'rm -rf -- "$TEMP_DIR"' EXIT
+PROTOCOL="$TEMP_DIR/protocol.csv"
+"$PYTHON_BIN" "$PROTOCOL_BUILDER" \
+  --config "$BASE_CONFIG" --output "$PROTOCOL" --profile formal >/dev/null
+"$PYTHON_BIN" - "$SCRIPT_DIR/worker.py" "$CONFIG" "$ASSETS" "$PROTOCOL" "$REFERENCE" <<'PY'
+import importlib.util
+import json
+import sys
+from pathlib import Path
+
+worker_path, config_path, assets_path, protocol_path, reference_path = map(Path, sys.argv[1:])
+spec = importlib.util.spec_from_file_location("alpha_controls_worker_preflight", worker_path)
+worker = importlib.util.module_from_spec(spec)
+assert spec.loader is not None
+spec.loader.exec_module(worker)
+result = worker.validate_official_reference(
+    reference_path.resolve(),
+    json.loads(config_path.read_text()),
+    json.loads(assets_path.read_text()),
+    protocol_path,
+)
+print(f"exact_worker_reference_validation: {result['status']}")
+print(f"exact_worker_evaluator_fingerprint_sha256: {result['evaluator_fingerprint_sha256']}")
+print(f"exact_worker_validated_seeds: {','.join(result['seeds'])}")
+PY
+trap - EXIT
+rm -rf -- "$TEMP_DIR"
 echo "diagnosis_complete: true"
