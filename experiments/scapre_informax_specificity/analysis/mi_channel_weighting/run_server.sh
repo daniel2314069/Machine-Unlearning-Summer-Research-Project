@@ -63,7 +63,15 @@ PID=$!
 printf '%s\n' "$PID" > "$RUN_DIR/pid"
 sleep 3
 if ! kill -0 "$PID" 2>/dev/null; then
-  EXIT_CODE="$(<"$RUN_DIR/exit_code" 2>/dev/null || printf 'unknown')"
+  for _ in {1..20}; do
+    [[ -f "$RUN_DIR/exit_code" ]] && break
+    sleep 0.1
+  done
+  if [[ -f "$RUN_DIR/exit_code" ]]; then
+    EXIT_CODE="$(<"$RUN_DIR/exit_code")"
+  else
+    EXIT_CODE="unknown"
+  fi
   echo "ERROR: worker exited during health check (exit=$EXIT_CODE); log: $LOG_PATH" >&2
   tail -n 40 "$LOG_PATH" >&2 || true
   exit 1

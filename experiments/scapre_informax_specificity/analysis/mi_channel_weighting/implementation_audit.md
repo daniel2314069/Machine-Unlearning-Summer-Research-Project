@@ -100,6 +100,13 @@ the matched-negative experimental branch without changing the official MI
 arithmetic. The later superclass work likewise leaves the official branch
 unchanged.
 
+The formal artifact stores raw MI and alpha after CUDA execution. Reapplying
+the z-score to the stored raw MI on CPU is useful as a transparency diagnostic,
+but is not a bitwise identity test: mean/std reductions may differ by backend,
+and the subsequent eighth power can amplify small z-score differences. The
+integrity gate therefore controls on the registered raw-MI counts and saved
+alpha distribution, while recording the CPU recomputation difference.
+
 ## Audit decision
 
 No major error was found in the prior understanding, so the integrity gate may
