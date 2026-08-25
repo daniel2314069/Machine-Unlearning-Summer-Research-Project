@@ -20,5 +20,11 @@ rg -q 'caller.f_code.co_name == "edit_model"' "$SCRIPT_DIR/alpha_control_runner.
 rg -q 'input_tensor.ndim == 3' "$SCRIPT_DIR/alpha_control_runner.py"
 rg -q 'official_empty_string_neutral_only' "$SCRIPT_DIR/worker.py"
 rg -q 'generated_formal_variants.*constant_mean.*shuffled.*identity_B' "$SCRIPT_DIR/config.json"
+rg -q 'official_reference_.*EXPECTED_SHA:0:16' "$SCRIPT_DIR/resolve_official_reference.sh"
+rg -q '\.archive_sha256' "$SCRIPT_DIR/resolve_official_reference.sh"
+if rg -q 'RUN_DIR=.*/seed_robustness/runs|printf.*RUN_DIR' "$SCRIPT_DIR/resolve_official_reference.sh"; then
+  echo "ERROR: official reference resolver must not prefer a mutable run directory" >&2
+  exit 2
+fi
 git -C "$REPO_ROOT" diff --check
 echo "Static validation passed without invoking Python or model workloads."

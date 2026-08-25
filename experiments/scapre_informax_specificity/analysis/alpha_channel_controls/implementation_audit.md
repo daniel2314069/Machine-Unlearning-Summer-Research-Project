@@ -69,7 +69,9 @@ and all other random streams remain fixed.
 ## Official result reuse
 
 The official five-seed image scores can be reused byte-for-byte from the
-verified seed-robustness archive. Formal preflight requires:
+verified seed-robustness archive. The resolver never selects the mutable
+historical run directory: it verifies the pinned archive SHA-256 and uses only
+that archive or a SHA-bound extracted cache. Formal preflight then requires:
 
 - archive SHA-256 `df0874...3708`;
 - protocol SHA-256 `ab8ced...0f2e`;
