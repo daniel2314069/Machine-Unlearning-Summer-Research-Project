@@ -39,3 +39,11 @@ with per-checkpoint cleanup records. Generated images stay out of the result
 archive; their per-file SHA-256 manifest is archived, then the verified PNGs are
 removed according to the established project practice. Raw scores, manifests,
 diagnostics, logs, summaries, and cleanup evidence remain.
+
+## Completed smoke
+
+The verified seed-`20260820` smoke retrieval is summarized in
+`smoke_results/analysis_notes.md`. Lightweight evidence is retained under
+`smoke_results/`; the original `.pt` tensors and full server provenance remain
+under `.local_artifacts/scapre_informax/`. Files selected for external GPT web
+review are collected in `smoke_results/gpt_handoff/README.md`.

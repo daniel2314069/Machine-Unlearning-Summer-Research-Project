@@ -1,0 +1,31 @@
+edit_seed,variant,role,concept,accuracy,delta_vs_official
+20260820,official,target,golden retriever,0.0,
+20260820,official,target,labrador retriever,0.0,
+20260820,official,retain,german shepherd,100.0,
+20260820,official,retain,chesapeake bay retriever,0.0,
+20260820,official,retain,pug,50.0,
+20260820,constant_mean,target,golden retriever,0.0,0.0
+20260820,constant_mean,target,labrador retriever,0.0,0.0
+20260820,constant_mean,retain,german shepherd,100.0,0.0
+20260820,constant_mean,retain,chesapeake bay retriever,0.0,0.0
+20260820,constant_mean,retain,pug,50.0,0.0
+20260820,shuffled,target,golden retriever,0.0,0.0
+20260820,shuffled,target,labrador retriever,0.0,0.0
+20260820,shuffled,retain,german shepherd,100.0,0.0
+20260820,shuffled,retain,chesapeake bay retriever,0.0,0.0
+20260820,shuffled,retain,pug,50.0,0.0
+20260820,shuffled_alt1,target,golden retriever,0.0,0.0
+20260820,shuffled_alt1,target,labrador retriever,0.0,0.0
+20260820,shuffled_alt1,retain,german shepherd,100.0,0.0
+20260820,shuffled_alt1,retain,chesapeake bay retriever,0.0,0.0
+20260820,shuffled_alt1,retain,pug,50.0,0.0
+20260820,shuffled_alt2,target,golden retriever,0.0,0.0
+20260820,shuffled_alt2,target,labrador retriever,0.0,0.0
+20260820,shuffled_alt2,retain,german shepherd,100.0,0.0
+20260820,shuffled_alt2,retain,chesapeake bay retriever,0.0,0.0
+20260820,shuffled_alt2,retain,pug,50.0,0.0
+20260820,identity_B,target,golden retriever,0.0,0.0
+20260820,identity_B,target,labrador retriever,0.0,0.0
+20260820,identity_B,retain,german shepherd,100.0,0.0
+20260820,identity_B,retain,chesapeake bay retriever,0.0,0.0
+20260820,identity_B,retain,pug,50.0,0.0

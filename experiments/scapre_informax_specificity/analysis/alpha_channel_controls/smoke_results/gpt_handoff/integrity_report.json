@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "profile": "smoke",
+  "edit_seeds": [
+    20260820
+  ],
+  "variants": [
+    "official",
+    "constant_mean",
+    "shuffled",
+    "shuffled_alt1",
+    "shuffled_alt2",
+    "identity_B"
+  ],
+  "rows_per_variant_seed": 10,
+  "row_count": 60,
+  "generation_keys_identical": true,
+  "duplicate_generation_keys": 0,
+  "prompt_lists_and_generation_seeds_identical": true,
+  "evaluator_fingerprint_identical": true,
+  "evaluator_fingerprint_sha256": "98728703854dda94ab7f81fcb2ad7517f3ea8b9edaa80543a685204679849067",
+  "raw_mi_identical_across_variants": true,
+  "preaggregate_alpha_identical_across_variants": true,
+  "non_alpha_edit_inputs_identical": true,
+  "official_empty_string_neutral_only": true,
+  "constant_mean_gate_passed": true,
+  "shuffle_multiset_gate_passed": true,
+  "identity_all_ones_gate_passed": true,
+  "all_checkpoint_projection_weights_finite": true,
+  "official_reference_reused": false,
+  "new_generated_image_count": 60,
+  "generated_image_manifest_sha256": "893e7ed709c29fb9fdabf549bf982a0f7fc596e1cbc3adfdd86ae7c0ee366feb",
+  "official_reference_validation": null,
+  "score_sha256": {
+    "20260820": {
+      "official": "3c2fb34487581cedb336cfaa9fe607c6c6e36e48a7f6d7a27594c8fa2cfc2f5c",
+      "constant_mean": "8fa276e9677481033d9c96558e9ca81e256889c5fb1d74d85f8f13b0ec87973a",
+      "shuffled": "d0f3a25c8057cf2e74fd3cb28ad1be8dfce6691f9244f03e6e94cb2a77da9402",
+      "shuffled_alt1": "8d653ddf1142cfddd29f0ee193731d17dd816727a14723384a0741fb898c977b",
+      "shuffled_alt2": "82f60277f95751c4eb59e175d319d6ee4bb1e035d828c03c730f61049d678d23",
+      "identity_B": "cc98b91d1e9821d36e43990f2e6e09242866de2e2f72b7835e31e8f2bc4ec4a4"
+    }
+  },
+  "config_sha256": "3f2e3246a63e05aaba111c2d64bcf46c02a85fe8d96c7f9ea3d0c7be93e50716",
+  "base_config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+  "protocol_sha256": "b4950546bf17422060f2ab4063a24ac205fbd4fdcfc94f32b970f63bef8a3122",
+  "git_commit": "2f524dc8bc4527f2246be75a5f353b20fb2e0556",
+  "git_branch": "main",
+  "git_status_start_clean": true,
+  "git_status_before_aggregation_clean": true
+}

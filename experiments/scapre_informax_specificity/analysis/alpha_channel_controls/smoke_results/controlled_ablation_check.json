@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "same_normalized_edit_command": true,
+  "same_raw_mi": true,
+  "same_preaggregate_alpha": true,
+  "same_thresholds": true,
+  "same_negative_base_indices": true,
+  "same_informax_rng_tensor_signatures": true,
+  "established_legacy_vs_isolated_seed_semantics": true,
+  "official_empty_string_neutral_only": true,
+  "variants": [
+    "official",
+    "constant_mean",
+    "shuffled",
+    "shuffled_alt1",
+    "shuffled_alt2",
+    "identity_B"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "profile": "smoke",
+  "files_sha256_before_manifest": {
+    "alpha_matrix_summary.csv": "1798322398aa1a02853498a7e799748d831ba72945ad5bd990e7f42df2753d93",
+    "comparison_deltas.csv": "e64ae8074b012d3acf9f1680fc4f1d5ab87540ebbe7388a6d56fa33d1a909676",
+    "generated_image_manifest.csv": "893e7ed709c29fb9fdabf549bf982a0f7fc596e1cbc3adfdd86ae7c0ee366feb",
+    "integrity_report.json": "f455ee86b51ed801fff9d6981093765b76d115fc46f01edba02a307b95e4c460",
+    "per_seed_metrics.csv": "dae351084fc2de195735ce6abb85a6e2d6b694583190afff0d13466ba99a701e",
+    "per_target_metrics.csv": "7d4412f17460ccebe52365b42cb32021b8056d20cc27db2591deefaa4e743e53",
+    "summary.md": "bdaa2c6cd0c3c5df8ffbe42c213bf3dffdc17d46755848e293f50d83214a2631"
+  },
+  "required_files_present": true
+}
