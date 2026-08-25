@@ -110,9 +110,19 @@ spec = importlib.util.spec_from_file_location("alpha_controls_worker_preflight",
 worker = importlib.util.module_from_spec(spec)
 assert spec.loader is not None
 spec.loader.exec_module(worker)
+diagnostic_config = json.loads(config_path.read_text())
+diagnostic_manifest = json.loads((reference_path / "run_manifest.json").read_text())
+diagnostic_key = "experiments/scapre_informax_specificity/evaluate_confuse5.py"
+diagnostic_actual = diagnostic_manifest["source_sha256"].get(diagnostic_key)
+diagnostic_expected = diagnostic_config["official_reference"]["evaluator_source_sha256"]
+print(f"precall_evaluator_actual_repr: {diagnostic_actual!r}")
+print(f"precall_evaluator_expected_repr: {diagnostic_expected!r}")
+print(f"precall_evaluator_values_equal: {str(diagnostic_actual == diagnostic_expected).lower()}")
+print(f"precall_evaluator_actual_length: {len(diagnostic_actual)}")
+print(f"precall_evaluator_expected_length: {len(diagnostic_expected)}")
 result = worker.validate_official_reference(
     reference_path.resolve(),
-    json.loads(config_path.read_text()),
+    diagnostic_config,
     json.loads(assets_path.read_text()),
     protocol_path,
 )

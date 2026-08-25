@@ -111,10 +111,27 @@ def validate_official_reference(reference: Path, config: dict, assets: dict, pro
     if manifest.get("git_commit") != official_config["run_commit"]:
         raise RuntimeError("official reference run commit changed")
     historical_sources = manifest.get("source_sha256", {})
-    if historical_sources.get("scapre/edit/erase_scale.py") != official_config["editor_source_sha256"]:
-        raise RuntimeError("official reference editor source hash changed")
-    if historical_sources.get("experiments/scapre_informax_specificity/evaluate_confuse5.py") != official_config["evaluator_source_sha256"]:
-        raise RuntimeError("official reference evaluator source hash changed")
+    historical_editor = historical_sources.get("scapre/edit/erase_scale.py")
+    expected_editor = official_config["editor_source_sha256"]
+    if historical_editor != expected_editor:
+        raise RuntimeError(
+            "official reference editor source hash changed "
+            f"(actual={historical_editor!r}, expected={expected_editor!r}, "
+            f"manifest_sha256={sha256(reference / 'run_manifest.json')})"
+        )
+    evaluator_key = "experiments/scapre_informax_specificity/evaluate_confuse5.py"
+    historical_evaluator = historical_sources.get(evaluator_key)
+    expected_evaluator = official_config["evaluator_source_sha256"]
+    if historical_evaluator != expected_evaluator:
+        raise RuntimeError(
+            "official reference evaluator source hash changed "
+            f"(actual={historical_evaluator!r}, expected={expected_evaluator!r}, "
+            f"actual_type={type(historical_evaluator).__name__}, "
+            f"expected_type={type(expected_evaluator).__name__}, "
+            f"actual_length={len(historical_evaluator) if isinstance(historical_evaluator, str) else None}, "
+            f"expected_length={len(expected_evaluator) if isinstance(expected_evaluator, str) else None}, "
+            f"manifest_sha256={sha256(reference / 'run_manifest.json')})"
+        )
     compatibility_diff = subprocess.check_output([
         "git", "diff", f"{official_config['run_commit']}..HEAD", "--",
         "scapre/edit/erase_scale.py",
