@@ -31,7 +31,7 @@
   "official_reference": {
     "run_commit": "9ca7b5e9c4ab626027fb8fe0bd32fca51e8faf89",
     "editor_source_sha256": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
-    "evaluator_source_sha256": "6e5063bc709e6fc4b453e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "evaluator_source_sha256": "6e5063bc709e6ecbc543e86058f91686bbf517298cf3fc3191f566f333f69ed8",
     "compatibility_diff_sha256": "5a3d2b27bf0395dc0d1bd5dcbaeff2dc41302074a450479e29851a90cc4841e3",
     "run_id": "formal_20260821T081723Z",
     "archive_basename": "scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz",

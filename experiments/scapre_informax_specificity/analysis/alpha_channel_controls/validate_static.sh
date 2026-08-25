@@ -17,6 +17,19 @@ done
 EXPECTED_EDITOR="$(ruby -rjson -rdigest -e 'c=JSON.parse(File.read(ARGV[0])); puts c.fetch("source_controls").fetch("scapre/edit/erase_scale.py")' "$SCRIPT_DIR/config.json")"
 ACTUAL_EDITOR="$(shasum -a 256 "$REPO_ROOT/scapre/edit/erase_scale.py" | awk '{print $1}')"
 [[ "$EXPECTED_EDITOR" == "$ACTUAL_EDITOR" ]] || { echo "ERROR: production editor hash drift" >&2; exit 2; }
+RUN_COMMIT="$(ruby -rjson -e 'c=JSON.parse(File.read(ARGV[0])); puts c.fetch("official_reference").fetch("run_commit")' "$SCRIPT_DIR/config.json")"
+EXPECTED_HISTORICAL_EDITOR="$(ruby -rjson -e 'c=JSON.parse(File.read(ARGV[0])); puts c.fetch("official_reference").fetch("editor_source_sha256")' "$SCRIPT_DIR/config.json")"
+ACTUAL_HISTORICAL_EDITOR="$(git -C "$REPO_ROOT" show "$RUN_COMMIT:scapre/edit/erase_scale.py" | shasum -a 256 | awk '{print $1}')"
+[[ "$EXPECTED_HISTORICAL_EDITOR" == "$ACTUAL_HISTORICAL_EDITOR" ]] || {
+  echo "ERROR: pinned official editor source hash is not the run-commit blob hash" >&2
+  exit 2
+}
+EXPECTED_HISTORICAL_EVALUATOR="$(ruby -rjson -e 'c=JSON.parse(File.read(ARGV[0])); puts c.fetch("official_reference").fetch("evaluator_source_sha256")' "$SCRIPT_DIR/config.json")"
+ACTUAL_HISTORICAL_EVALUATOR="$(git -C "$REPO_ROOT" show "$RUN_COMMIT:experiments/scapre_informax_specificity/evaluate_confuse5.py" | shasum -a 256 | awk '{print $1}')"
+[[ "$EXPECTED_HISTORICAL_EVALUATOR" == "$ACTUAL_HISTORICAL_EVALUATOR" ]] || {
+  echo "ERROR: pinned official evaluator source hash is not the run-commit blob hash" >&2
+  exit 2
+}
 rg -q 'caller.f_code.co_name == "edit_model"' "$SCRIPT_DIR/alpha_control_runner.py"
 rg -q 'input_tensor.ndim == 3' "$SCRIPT_DIR/alpha_control_runner.py"
 rg -q 'official_empty_string_neutral_only' "$SCRIPT_DIR/worker.py"
