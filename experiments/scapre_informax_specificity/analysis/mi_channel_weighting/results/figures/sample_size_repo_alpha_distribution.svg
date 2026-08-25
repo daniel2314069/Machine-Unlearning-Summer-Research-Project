@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450" y="30" text-anchor="middle" font-family="sans-serif" font-size="21">Repository alpha distribution by nested sample size</text>
+<line x1="100.0" y1="470.0" x2="865.0" y2="470.0" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="475.0" text-anchor="end" font-family="sans-serif" font-size="14">0.0070</text>
+<line x1="100.0" y1="423.88888888888897" x2="865.0" y2="423.88888888888897" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="428.88888888888897" text-anchor="end" font-family="sans-serif" font-size="14">0.0075</text>
+<line x1="100.0" y1="377.77777777777777" x2="865.0" y2="377.77777777777777" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="382.77777777777777" text-anchor="end" font-family="sans-serif" font-size="14">0.0080</text>
+<line x1="100.0" y1="331.66666666666663" x2="865.0" y2="331.66666666666663" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="336.66666666666663" text-anchor="end" font-family="sans-serif" font-size="14">0.0085</text>
+<line x1="100.0" y1="285.55555555555543" x2="865.0" y2="285.55555555555543" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="290.55555555555543" text-anchor="end" font-family="sans-serif" font-size="14">0.0090</text>
+<line x1="100.0" y1="239.44444444444449" x2="865.0" y2="239.44444444444449" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="244.44444444444449" text-anchor="end" font-family="sans-serif" font-size="14">0.0095</text>
+<line x1="100.0" y1="193.33333333333331" x2="865.0" y2="193.33333333333331" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="198.33333333333331" text-anchor="end" font-family="sans-serif" font-size="14">0.0100</text>
+<line x1="100.0" y1="147.22222222222217" x2="865.0" y2="147.22222222222217" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="152.22222222222217" text-anchor="end" font-family="sans-serif" font-size="14">0.0105</text>
+<line x1="100.0" y1="101.11111111111116" x2="865.0" y2="101.11111111111116" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="106.11111111111116" text-anchor="end" font-family="sans-serif" font-size="14">0.0110</text>
+<line x1="100.0" y1="55.0" x2="865.0" y2="55.0" stroke="#dddddd" stroke-width="1"/>
+<text x="90.0" y="60.0" text-anchor="end" font-family="sans-serif" font-size="14">0.0115</text>
+<line x1="100.0" y1="55.0" x2="100.0" y2="470.0" stroke="#eeeeee" stroke-width="1"/>
+<text x="100.0" y="498.0" text-anchor="middle" font-family="sans-serif" font-size="16">5</text>
+<line x1="355.0" y1="55.0" x2="355.0" y2="470.0" stroke="#eeeeee" stroke-width="1"/>
+<text x="355.0" y="498.0" text-anchor="middle" font-family="sans-serif" font-size="16">10</text>
+<line x1="610.0" y1="55.0" x2="610.0" y2="470.0" stroke="#eeeeee" stroke-width="1"/>
+<text x="610.0" y="498.0" text-anchor="middle" font-family="sans-serif" font-size="16">20</text>
+<line x1="865.0" y1="55.0" x2="865.0" y2="470.0" stroke="#eeeeee" stroke-width="1"/>
+<text x="865.0" y="498.0" text-anchor="middle" font-family="sans-serif" font-size="16">50</text>
+<polyline points="100.0,429.95042656982577 355.0,379.2168161628448 610.0,349.9409638851625 865.0,330.87290195666895" fill="none" stroke="#1f77b4" stroke-width="3"/>
+<circle cx="100.0" cy="429.95042656982577" r="5" fill="#1f77b4"/>
+<circle cx="355.0" cy="379.2168161628448" r="5" fill="#1f77b4"/>
+<circle cx="610.0" cy="349.9409638851625" r="5" fill="#1f77b4"/>
+<circle cx="865.0" cy="330.87290195666895" r="5" fill="#1f77b4"/>
+<line x1="100.0" y1="530" x2="125.0" y2="530" stroke="#1f77b4" stroke-width="3"/>
+<text x="132.0" y="535" font-family="sans-serif" font-size="15">mean</text>
+<polyline points="100.0,416.69230400688116 355.0,361.930962751309 610.0,331.2756761660178 865.0,306.1879487252897" fill="none" stroke="#ff7f0e" stroke-width="3"/>
+<circle cx="100.0" cy="416.69230400688116" r="5" fill="#ff7f0e"/>
+<circle cx="355.0" cy="361.930962751309" r="5" fill="#ff7f0e"/>
+<circle cx="610.0" cy="331.2756761660178" r="5" fill="#ff7f0e"/>
+<circle cx="865.0" cy="306.1879487252897" r="5" fill="#ff7f0e"/>
+<line x1="235.0" y1="530" x2="260.0" y2="530" stroke="#ff7f0e" stroke-width="3"/>
+<text x="267.0" y="535" font-family="sans-serif" font-size="15">median</text>
+<polyline points="100.0,334.43180874817904 355.0,275.5058477073908 610.0,239.14901570313506 865.0,218.08281757765343" fill="none" stroke="#2ca02c" stroke-width="3"/>
+<circle cx="100.0" cy="334.43180874817904" r="5" fill="#2ca02c"/>
+<circle cx="355.0" cy="275.5058477073908" r="5" fill="#2ca02c"/>
+<circle cx="610.0" cy="239.14901570313506" r="5" fill="#2ca02c"/>
+<circle cx="865.0" cy="218.08281757765343" r="5" fill="#2ca02c"/>
+<line x1="370.0" y1="530" x2="395.0" y2="530" stroke="#2ca02c" stroke-width="3"/>
+<text x="402.0" y="535" font-family="sans-serif" font-size="15">p90</text>
+<polyline points="100.0,308.7207359323899 355.0,244.62742244203886 610.0,205.0978985263242 865.0,179.50282690425718" fill="none" stroke="#9467bd" stroke-width="3"/>
+<circle cx="100.0" cy="308.7207359323899" r="5" fill="#9467bd"/>
+<circle cx="355.0" cy="244.62742244203886" r="5" fill="#9467bd"/>
+<circle cx="610.0" cy="205.0978985263242" r="5" fill="#9467bd"/>
+<circle cx="865.0" cy="179.50282690425718" r="5" fill="#9467bd"/>
+<line x1="505.0" y1="530" x2="530.0" y2="530" stroke="#9467bd" stroke-width="3"/>
+<text x="537.0" y="535" font-family="sans-serif" font-size="15">p95</text>
+<polyline points="100.0,243.6348761700922 355.0,158.01819651491104 610.0,115.63469624353785 865.0,90.48071430789102" fill="none" stroke="#d62728" stroke-width="3"/>
+<circle cx="100.0" cy="243.6348761700922" r="5" fill="#d62728"/>
+<circle cx="355.0" cy="158.01819651491104" r="5" fill="#d62728"/>
+<circle cx="610.0" cy="115.63469624353785" r="5" fill="#d62728"/>
+<circle cx="865.0" cy="90.48071430789102" r="5" fill="#d62728"/>
+<line x1="640.0" y1="530" x2="665.0" y2="530" stroke="#d62728" stroke-width="3"/>
+<text x="672.0" y="535" font-family="sans-serif" font-size="15">p99</text>
+<line x1="100.0" y1="470.0" x2="865.0" y2="470.0" stroke="black" stroke-width="1.5"/>
+<line x1="100.0" y1="55.0" x2="100.0" y2="470.0" stroke="black" stroke-width="1.5"/>
+<text x="482.5" y="512" text-anchor="middle" font-family="sans-serif" font-size="17">Positive and neutral samples per class (n)</text>
+<text x="24" y="262.5" text-anchor="middle" font-family="sans-serif" font-size="17" transform="rotate(-90 24 262.5)">Repository alpha</text>
+</svg>

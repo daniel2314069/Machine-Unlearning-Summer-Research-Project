@@ -1,0 +1,64 @@
+{
+  "status": "complete",
+  "server_run_id": "formal_20260825T092351Z",
+  "server_execution_git_sha": "04181a15e1645c84941a2f6d44d02c731711ac02",
+  "server_branch": "main",
+  "server_git_status_at_completion": "",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "base_model_resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "config_path": "../config.json",
+  "config_sha256": "e30c2376adb7ac253fa71bd54bcdb933374d6980cbe00100ffadc583583d59a5",
+  "informax_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "sample_sizes_per_class": [5, 10, 20, 50],
+  "n5_reproduction_gate_passed": true,
+  "production_source_sha256_before_after": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "csv_data_row_counts": {
+    "sample_size_summary.csv": 24,
+    "sample_size_per_layer_concept.csv": 6400,
+    "max_mi_stability.csv": 4815,
+    "max_mi_activation_summary.csv.gz": 1229397,
+    "concept_count_paper_formula.csv": 5115,
+    "concept_count_repo_formula.csv.gz": 168795,
+    "concept_count_large_scale_paper_formula.csv": 35,
+    "concept_count_large_scale_repo_formula.csv": 35
+  },
+  "text_line_counts": {
+    "../summary.md": 190
+  },
+  "important_file_sha256": {
+    "../summary.md": "fd8ce8b7344d9a4ca22763aeff1d01c80af42db7dc7bc4647f76e56ad9ca63d3",
+    "sample_size_summary.csv": "450b8bbfac47d30305874db7f1acbf2628e439bdd588a16e66156add74178c88",
+    "sample_size_per_layer_concept.csv": "ba55622fdff4dbc19769dd26f2e439fa1c0dea0d1310f87bee7d17dccb252c40",
+    "max_mi_stability.csv": "9e129fb3068bd3be68204a6df642bdf76970edb4b51d40e8b351e0ba52d1453d",
+    "max_mi_activation_summary.csv.gz": "4054de9826db230e34c3f3997077215e405adac63c1d3e0ba8f2dadb5700783b",
+    "concept_count_paper_formula.csv": "09b7220677c2a881468493a08233d5bcbd2b9d6e71d88e40d5b437aa4b5ad4d7",
+    "concept_count_repo_formula.csv.gz": "f31c50696b5f1333a3ba1b28ab1dd4adcce9b8be543824f9e54ee1e156e34cbb",
+    "concept_count_large_scale_paper_formula.csv": "ff7d1af06dc95c1861444604dccce92eef3795e56667242dbf15780f4140675e",
+    "concept_count_large_scale_repo_formula.csv": "07cd68e1ecc3357060d23aedb9c2dd1f6281580a26bd02cd422af514df10e257",
+    "activation_distance_diagnostic.json": "411340dcb9a117617da330f8b72bea9f6957d7ded1eb86348a144fcc94b8109a",
+    "integrity_gate.json": "6222a953ad8c0d33b745a1f26bbd828e925d6c24e8ab5f3aee74d3aba3b98cd0",
+    "server_integrity_report.json": "b83d8e066872fcecd8d94f5d9c74a4ecbba4e6f00496d0600c21765051b16261"
+  },
+  "decompressed_sha256": {
+    "max_mi_activation_summary.csv": "e13a13d0b05f10f99c6e9d376fc7f9ac4936ea1c126e6bc5958366e93cda2312",
+    "concept_count_repo_formula.csv": "08fb51fa1c7283f6da2fcfde0555a7b42b998b144ecd2326e31c62db70e76bbf"
+  },
+  "source_archive": {
+    "local_path": "~/Downloads/scapre_informax_mi_channel_weighting_formal_20260825T092351Z_20260825T113157Z.tar.gz",
+    "locally_computed_sha256": "7af397d0a2616307009df4735e852117dafc661b9ea55a038ba05f88cfbff150",
+    "server_checksum_sidecar_available_locally": false
+  },
+  "post_retrieval_normalization": {
+    "script": "../finalize_retrieved_results.rb",
+    "mi_observations_changed": false,
+    "empirical_statistics_changed": false,
+    "changes": [
+      "Coalesced float32-symmetric no-tie enumeration support at 1e-7 for its count field",
+      "Replaced the unreadable 0-1 repo-alpha histogram with an observed-scale quantile SVG",
+      "Separated CSV data-row counts from Markdown text-line counts"
+    ]
+  },
+  "diffusion_images_generated": 0,
+  "image_evaluators_run": [],
+  "model_edit_performed": false
+}

@@ -43,3 +43,9 @@ imports from the already-active `MU` environment; it never installs or downloads
 packages. No local Mac Python execution is allowed. After packaging, the local
 `download_results.sh` accepts either a configured SSH alias such as `tslin` or a
 literal `user@host` destination.
+
+The completed formal analysis and interpretation are in [summary.md](summary.md).
+Checked-in result tables are under [results](results); the two largest CSVs are
+stored as lossless `.csv.gz` files to remain below GitHub's single-file limit.
+`finalize_retrieved_results.rb` performs only lightweight result-presentation
+normalization and does not invoke Python, load a model, or rerun Informax.

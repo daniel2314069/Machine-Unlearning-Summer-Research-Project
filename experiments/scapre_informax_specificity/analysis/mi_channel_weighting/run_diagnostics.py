@@ -114,7 +114,20 @@ def enumerate_no_tie_mi(n: int) -> np.ndarray:
             torch.tensor(positives_above), torch.tensor(n - positives_above),
             torch.tensor(n - positives_above), torch.tensor(positives_above), n
         ).item()))
-    return np.unique(np.asarray(values, dtype=np.float64))
+    # The count table is symmetric under swapping the two binary states, so
+    # a and n-a are mathematically identical.  Float32 evaluation can differ
+    # by a few final bits solely because the four terms are added in a
+    # different order.  Coalesce that backend arithmetic noise before counting
+    # the theoretical/enumerated support; genuine adjacent values are much
+    # farther apart for every requested n (<= 50).
+    return np.unique(np.round(np.asarray(values, dtype=np.float64), decimals=7))
+
+
+def canonical_repo_max_mi(n: int) -> float:
+    """Return the unrounded float32 MI for the canonical perfectly split table."""
+    return float(repo_mi_from_counts(
+        torch.tensor(n), torch.tensor(0), torch.tensor(0), torch.tensor(n), n
+    ).item())
 
 
 def integrity_gate(config: dict[str, Any], legacy_path: Path, output: Path) -> dict[str, Any]:
@@ -255,7 +268,10 @@ def sample_size_diagnostic(pipe: Any, layers: list[Any], config: dict[str, Any],
     hist_raw = {n: np.zeros(140, dtype=np.int64) for n in sample_sizes}
     hist_alpha = {n: np.zeros(140, dtype=np.int64) for n in sample_sizes}
     raw_edges = np.linspace(0, LN2 + 5e-4, 141)
-    alpha_edges = np.linspace(0, 1, 141)
+    # In this registered power=8 experiment repository alpha is approximately
+    # 0--0.012.  A 0--1 histogram collapses every observation into two bins and
+    # hides the sample-size comparison the figure is meant to show.
+    alpha_edges = np.linspace(0, 0.02, 141)
     global_stability: dict[tuple[int, int], list[int]] = defaultdict(lambda: [0, 0])
     activation_path = output / "max_mi_activation_summary.csv"
     activation_fields = [
@@ -307,7 +323,7 @@ def sample_size_diagnostic(pipe: Any, layers: list[Any], config: dict[str, Any],
                             "mi_unique_values": json.dumps(unique.tolist(), separators=(",", ":")),
                             "theoretical_no_tie_unique_count": int(math.floor(n / 2) + 1),
                             "enumerated_no_tie_unique_count": int(no_tie_values.size),
-                            "fraction_exact_repo_max": float(np.mean(mi_np == no_tie_values.max())),
+                            "fraction_exact_repo_max": float(np.mean(mi_np == canonical_repo_max_mi(n))),
                             "fraction_numerically_at_ln2": float(np.mean(np.isclose(mi_np, LN2, atol=MAX_ATOL, rtol=0))),
                             "channels_with_threshold_ties": int((result["ties"] > 1).sum().item()),
                             **{f"alpha_{k}": v for k, v in alpha_stats.items() if k != "count"},
@@ -362,7 +378,7 @@ def sample_size_diagnostic(pipe: Any, layers: list[Any], config: dict[str, Any],
                     "mi_unique_values": json.dumps(unique.tolist(), separators=(",", ":")),
                     "theoretical_no_tie_unique_count": int(math.floor(n / 2) + 1),
                     "enumerated_no_tie_unique_count": int(no_tie_values.size),
-                    "fraction_exact_repo_max": float(np.mean(raw == no_tie_values.max())),
+                    "fraction_exact_repo_max": float(np.mean(raw == canonical_repo_max_mi(n))),
                     "fraction_numerically_at_ln2": float(np.mean(np.isclose(raw, LN2, atol=MAX_ATOL, rtol=0))),
                     **{f"alpha_{k}": v for k, v in alpha_stats.items() if k != "count"},
                 })
@@ -685,14 +701,19 @@ def main() -> None:
         "concept_count_repo_formula.csv", "concept_count_large_scale_paper_formula.csv",
         "concept_count_large_scale_repo_formula.csv", "summary.md"
     ]
-    row_counts = {}
+    csv_row_counts = {}
+    text_line_counts = {}
     hashes = {}
     for name in required:
         path = output / name
         if not path.is_file() or path.stat().st_size == 0:
             raise RuntimeError(f"required output missing or empty: {path}")
         hashes[name] = sha256(path)
-        row_counts[name] = sum(1 for _ in path.open(encoding="utf-8")) - (1 if name.endswith(".csv") else 0)
+        line_count = sum(1 for _ in path.open(encoding="utf-8"))
+        if name.endswith(".csv"):
+            csv_row_counts[name] = line_count - 1
+        else:
+            text_line_counts[name] = line_count
     manifest = {
         "status": "complete", "completed_at_utc": datetime.now(timezone.utc).isoformat(),
         "git_sha": git("rev-parse", "HEAD"), "git_branch": git("branch", "--show-current"),
@@ -701,7 +722,8 @@ def main() -> None:
         "model_source": str(model_source),
         "base_model_resolved_revision": config["base_model_resolved_revision"],
         "seeds": config["informax_seeds"], "sample_sizes": config["sample_sizes"],
-        "row_counts": row_counts, "important_file_sha256": hashes,
+        "csv_data_row_counts": csv_row_counts, "text_line_counts": text_line_counts,
+        "important_file_sha256": hashes,
         "n5_reproduction_gate_passed": True, "production_source_sha256_before_after": production_before,
         "diffusion_images_generated": 0, "image_evaluators_run": [], "model_edit_performed": False,
     }

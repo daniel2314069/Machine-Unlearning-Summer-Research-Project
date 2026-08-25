@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "legacy_diagnostic": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/runs/formal_20260820T163033Z/diagnostics/official.pt",
+  "legacy_sha256": "b14b6f985341d36a431725b1d98b26d45a5c1a208cbd68fb20c9d1a6506dcf3e",
+  "aggregate_records": 320,
+  "observations": 249600,
+  "mi_bin_centers": [
+    0.0201,
+    0.0863,
+    0.1927,
+    0.6931
+  ],
+  "mi_bin_counts": [
+    1601,
+    1,
+    2096,
+    245902
+  ],
+  "unassigned_or_multiply_assigned": 0,
+  "fraction_numerically_at_ln2": 0.9851843118667603,
+  "alpha_stats": {
+    "count": 249600,
+    "mean": 0.007433607838953197,
+    "std": 0.001229009623816797,
+    "median": 0.007478511426597834,
+    "p90": 0.00857593398541212,
+    "p95": 0.008700148202478886,
+    "p99": 0.009199886582791805,
+    "min": 0.0,
+    "max": 0.011014259420335293
+  },
+  "alpha_cpu_recomputation_stats": {
+    "count": 249600,
+    "mean": 0.007431215004097259,
+    "std": 0.0012396167873111859,
+    "median": 0.007478511426597834,
+    "p90": 0.00857597216963768,
+    "p95": 0.008700148202478886,
+    "p99": 0.009199886582791805,
+    "min": 0.0,
+    "max": 0.011014258489012718
+  },
+  "alpha_cpu_recomputation_allclose": false,
+  "alpha_recomputation_max_abs_error": 0.003826191183179617,
+  "alpha_recomputation_interpretation": "diagnostic only: saved alpha was computed with CUDA reductions, while the loaded raw MI is recomputed on CPU; backend reduction order need not be bitwise identical",
+  "unusual_mi_candidates": [
+    {
+      "projection": "to_v",
+      "layer_index": 8,
+      "target_index": 0,
+      "target_concept": "golden retriever",
+      "channel": 1009,
+      "raw_mi": 0.08630458265542984,
+      "saved_alpha": 2.1875037612292107e-36,
+      "saved_threshold": -0.3510550856590271,
+      "activation_reconstruction": "unavailable: legacy artifact stores threshold but not activations or binary states",
+      "tie_and_precision_diagnosis": "not determinable from the saved artifact; no contingency table is asserted"
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 runs/
-results/
 *.tar.gz
 *.sha256
+results/max_mi_activation_summary.csv
+!results/figures/*.png
+!results/figures/*.svg
