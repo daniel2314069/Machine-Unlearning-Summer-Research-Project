@@ -27,6 +27,14 @@ experiments/scapre_informax_specificity/analysis/alpha_channel_controls/status_s
 experiments/scapre_informax_specificity/analysis/alpha_channel_controls/package_results.sh
 ```
 
+If formal reference validation aborts before launch, collect the archive,
+manifest, historical-source, and compatibility hashes with the read-only
+diagnostic:
+
+```bash
+experiments/scapre_informax_specificity/analysis/alpha_channel_controls/diagnose_official_reference.sh
+```
+
 The launcher is detached with `nohup`; closing SSH after its health check is
 safe. Formal reuses the already verified official five-seed scores and generates
 only the three controls (45,000 new images). The smoke stage additionally runs
