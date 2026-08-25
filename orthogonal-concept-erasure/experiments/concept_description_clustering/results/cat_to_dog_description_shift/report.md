@@ -43,23 +43,13 @@ The bare canonical cat vector moves with positive canonical delta_dog and negati
 
 The cat-only plot shows the mean and one-standard-deviation spread across 50 descriptions, plus the joint intended-direction fraction. It preserves the two requested deltas rather than replacing them with another shift score.
 
-![Cat-only layer shifts](plots/cat_layer_shift.png)
-
 ## 7. Non-Target Specificity
 
 The non-target controls are dog, fox, bear, wolf, rabbit, deer, and horse, each with 50 descriptions. The comparison plot contrasts the cat-description mean delta_dog with the equally weighted mean of the seven class-level non-target means. Detailed class-by-layer statistics remain in `class_layer_shift_summary.csv`.
 
-![Cat versus non-target dogward shift](plots/cat_vs_nontarget_dogward_shift.png)
-
 ## 8. Layer-Wise Results
 
 The heatmaps retain all eight classes and every analyzed layer. The first two show signed class means; the third shows the fraction satisfying both `delta_dog > 0` and `delta_cat < 0`.
-
-![Mean delta dog](plots/mean_delta_dog_heatmap.png)
-
-![Mean delta cat](plots/mean_delta_cat_heatmap.png)
-
-![Joint intended direction](plots/joint_intended_direction_heatmap.png)
 
 ## 9. Main Interpretation
 

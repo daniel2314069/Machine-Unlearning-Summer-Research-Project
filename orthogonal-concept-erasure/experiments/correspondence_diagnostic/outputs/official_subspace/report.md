@@ -113,10 +113,6 @@ Selection record and exact screening evidence:
 | cat → dog | 0.2067 | 0.2731 | 0.1759 | +0.0972 | +0.0928 | 100% | 100% |
 | guitar → piano | 0.2229 | 0.2351 | 0.2123 | +0.0228 | +0.0033 | 100% | 100% |
 
-![Joint subspace image similarity](heatmaps/joint_n2/image_similarity_joint_subspace_n2.png)
-
-![Joint subspace image confusion](heatmaps/joint_n2/image_confusion_joint_subspace_n2.png)
-
 ## 5. N = 2 joint vector-wise Eq. 6 ablation
 
 This is an ablation and is not described as the official OCE baseline.
@@ -125,10 +121,6 @@ This is an ablation and is not described as the official OCE baseline.
 |---|---:|---:|---:|---:|---:|---:|---:|
 | cat → dog | 0.2157 | 0.2750 | 0.1783 | +0.0966 | +0.0774 | 100% | 100% |
 | guitar → piano | 0.2386 | 0.3017 | 0.1949 | +0.1068 | +0.0642 | 100% | 100% |
-
-![Eq. 6 image similarity](heatmaps/joint_n2/image_similarity_joint_vector_eq6_n2.png)
-
-![Eq. 6 image confusion](heatmaps/joint_n2/image_confusion_joint_vector_eq6_n2.png)
 
 ### Feature-level correspondence
 
@@ -220,4 +212,3 @@ has not yet been run.
   raw similarities and margins are retained.
 - No Y→Y_tilde, new loss, clustering, sequential editing, or replacement
   mapping was introduced.
-

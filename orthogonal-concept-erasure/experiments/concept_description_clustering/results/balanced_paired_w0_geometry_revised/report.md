@@ -39,14 +39,6 @@ In method order spherical, raw Euclidean, and normalized Euclidean, the post-hoc
 
 The next four figures show all spaces and all three clustering methods. Their silhouettes use cosine only for spherical normalized and Euclidean distance for both ordinary k-means controls.
 
-![EOT ARI across methods](plots/clustering_ari_eot_all_methods.png)
-
-![Fixed-suffix ARI across methods](plots/clustering_ari_fixed_all_methods.png)
-
-![EOT matched accuracy across methods](plots/clustering_accuracy_eot_all_methods.png)
-
-![Fixed-suffix matched accuracy across methods](plots/clustering_accuracy_fixed_all_methods.png)
-
 ## 6. Per-Animal Name-to-Description Distances in Text Space
 
 All prototype values below use cosine distance after normalizing every description and prototype, averaging the 50 normalized descriptions for a concept, and normalizing that mean. Positive margin means the name is closer to its own centroid than to every other animal centroid.
@@ -96,18 +88,6 @@ The third table is intentionally cross-readout. Its absolute distances are not p
 
 Each heatmap retains all eight animals and Text plus every selected W0 layer. Margin heatmaps use a diverging scale centered at zero; rank heatmaps show the own-centroid position among eight centroids. In the full analysis, no single illustrative layer, including L8, replaces the all-layer results.
 
-![Matched EOT margins](plots/margin_heatmap_matched_eot.png)
-
-![Matched fixed-suffix margins](plots/margin_heatmap_matched_fixed.png)
-
-![OCE last-token to EOT margins](plots/margin_heatmap_oce_to_eot.png)
-
-![Matched EOT ranks](plots/rank_heatmap_matched_eot.png)
-
-![Matched fixed-suffix ranks](plots/rank_heatmap_matched_fixed.png)
-
-![OCE last-token to EOT ranks](plots/rank_heatmap_oce_to_eot.png)
-
 The compact all-space summary below gives `rank-1 count / 8; mean margin`. Mean margin is only a summary: a positive mean does not imply that every animal succeeded, so the individual rows in `prototype_distance_by_animal.csv` remain primary.
 
 | Space | Matched EOT | Matched fixed | OCE-last -> EOT |
@@ -130,13 +110,9 @@ The compact all-space summary below gives `rank-1 count / 8; mean margin`. Mean 
 | L14 | 1/8; -0.010 | 2/8; -0.007 | 2/8; -0.022 |
 | L15 | 7/8; +0.093 | 7/8; +0.015 | 7/8; +0.105 |
 
-![Prototype layer summary](plots/prototype_layer_summary.png)
-
 ## 8. Readout Comparison
 
 The difference heatmap subtracts matched-EOT margin from OCE-last-token-to-EOT margin for every animal and space. It isolates where changing the name readout changes own-versus-other separation while preserving the cross-readout label.
-
-![Readout margin difference](plots/readout_margin_difference.png)
 
 Text-space `c` and layer-wise `W0c` are both tested, but `c` is never directly compared with `W0c`: different W0 layers can have different output dimensions and coordinate systems.
 

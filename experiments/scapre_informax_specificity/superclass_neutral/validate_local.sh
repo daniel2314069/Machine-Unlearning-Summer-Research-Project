@@ -53,14 +53,16 @@ if [[ -d "$SCRIPT_DIR/results" || -d "$SCRIPT_DIR/qualitative" || -d "$SCRIPT_DI
     }
   done
   rg -q '^\*\*NOT SUPPORTED\*\*$' "$SCRIPT_DIR/results/summary.md"
-  [[ "$(find "$SCRIPT_DIR/qualitative/images" -type f -name '*.png' | wc -l | tr -d ' ')" == 90 ]] || {
-    echo "ERROR: expected 90 qualitative images" >&2
-    exit 1
-  }
-  [[ "$(find "$SCRIPT_DIR/qualitative/comparisons" -type f -name '*.png' | wc -l | tr -d ' ')" == 30 ]] || {
-    echo "ERROR: expected 30 qualitative comparison panels" >&2
-    exit 1
-  }
+  if [[ -d "$SCRIPT_DIR/qualitative/images" || -d "$SCRIPT_DIR/qualitative/comparisons" ]]; then
+    [[ "$(find "$SCRIPT_DIR/qualitative/images" -type f -name '*.png' 2>/dev/null | wc -l | tr -d ' ')" == 90 ]] || {
+      echo "ERROR: expected 90 local qualitative images" >&2
+      exit 1
+    }
+    [[ "$(find "$SCRIPT_DIR/qualitative/comparisons" -type f -name '*.png' 2>/dev/null | wc -l | tr -d ' ')" == 30 ]] || {
+      echo "ERROR: expected 30 local qualitative comparison panels" >&2
+      exit 1
+    }
+  fi
 fi
 if git -C "$REPO_ROOT" diff --check; then
   echo "Static superclass-neutral validation passed (no Python/model execution on this Mac)."

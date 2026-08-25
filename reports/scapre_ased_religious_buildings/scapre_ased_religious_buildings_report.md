@@ -25,8 +25,6 @@
 | scapre_no_R | 50 | 0.5000 | 0.2000 | 0.2557 | 0.2327 | 0.6194 |
 | scapre_with_R | 50 | 0.4600 | 0.1600 | 0.2575 | 0.2325 | 0.6196 |
 
-![target_religious_buildings](grids/target_religious_buildings.png)
-
 ### near_religious_people_objects
 
 | model | n | group top1 | concept top1 | prompt align | expected group score | drift clip |
@@ -34,8 +32,6 @@
 | original_sd15 | 50 | 0.8800 | 0.8800 | 0.2950 | 0.2437 | - |
 | scapre_no_R | 50 | 0.8000 | 0.6600 | 0.2655 | 0.2281 | 0.6766 |
 | scapre_with_R | 50 | 0.8200 | 0.6800 | 0.2661 | 0.2289 | 0.6773 |
-
-![near_religious_people_objects](grids/near_religious_people_objects.png)
 
 ### near_generic_buildings
 
@@ -45,8 +41,6 @@
 | scapre_no_R | 50 | 0.3800 | 0.8800 | 0.2803 | 0.2088 | 0.7520 |
 | scapre_with_R | 50 | 0.3800 | 0.7800 | 0.2796 | 0.2092 | 0.7511 |
 
-![near_generic_buildings](grids/near_generic_buildings.png)
-
 ### far_unrelated_objects
 
 | model | n | group top1 | concept top1 | prompt align | expected group score | drift clip |
@@ -54,8 +48,6 @@
 | original_sd15 | 50 | 0.7400 | 1.0000 | 0.2894 | 0.2259 | - |
 | scapre_no_R | 50 | 0.9000 | 0.9600 | 0.2931 | 0.2289 | 0.8250 |
 | scapre_with_R | 50 | 0.8600 | 0.9800 | 0.2942 | 0.2303 | 0.8186 |
-
-![far_unrelated_objects](grids/far_unrelated_objects.png)
 
 ## 本次結果觀察
 

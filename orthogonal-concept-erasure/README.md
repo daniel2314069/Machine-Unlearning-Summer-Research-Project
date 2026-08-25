@@ -6,7 +6,6 @@
 </p>
 
 Official implementation of [Orthogonal Concept Erasure for Diffusion Models](https://arxiv.org/abs/2605.28902).
-![OCE Framework](assets/teaser.png)
 
 ## News
 - `2026/06/10` **Update: FLUX support for OCE**🎉

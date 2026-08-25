@@ -23,8 +23,6 @@ Repository inspection found that `Orthogonal_Erase` edits only the 16 original `
 
 The best-layer choices are post-hoc maxima over all 16 layers. Relative to text space, the best EOT layer changes ARI by +0.0457; the best fixed-suffix layer changes ARI by +0.1351. All layers and both readouts are retained in `layer_clustering_metrics.csv`; clustering always used the original 400×layer-dimension vectors, never PCA.
 
-![Layer-wise ARI](plots/layer_ari.png)
-
 The plot compares every layer with its representation-specific text-space baseline. The companion accuracy plot is `plots/layer_accuracy.png`.
 
 ## 5. Matched Prototype-to-Cluster Results
@@ -39,15 +37,11 @@ At the post-hoc best EOT-ARI W0 layer L8:
 
 Positive margin means the name is closer to its own true-label description centroid than to every other centroid. The typicality percentiles and all name-to-centroid distances are retained in the detailed CSVs.
 
-![Matched EOT ranks](plots/rank_heatmap_matched_eot.png)
-
 The heatmap shows text space followed by every W0 layer, making stability across layers visible rather than reporting only the best layer.
 
 ## 6. OCE-Faithful Prototype-to-EOT Results
 
 The OCE-faithful condition maps the exact bare-name last-content-token vector through each unchanged `W0` and compares it with the corresponding EOT-description centroids. This is labeled `OCE-last-token -> EOT-description centroid` throughout the outputs and is kept separate from both matched conditions.
-
-![OCE-to-EOT margins](plots/margin_heatmap_oce_to_eot.png)
 
 Ranks, margins, nearest concepts, and within-class typicality percentiles for all names and layers are in `prototype_summary.csv`.
 

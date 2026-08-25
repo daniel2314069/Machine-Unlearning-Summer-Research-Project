@@ -45,7 +45,6 @@ or extra evaluator is introduced. Existing parent experiment assets are reused.
 - `results/per_target_robustness.csv`
 - `results/per_retain_robustness.csv`
 - `results/informax_seed_diagnostics.csv`
-- `qualitative/images/<variant>/<group>/<concept>/...png`
 - `qualitative/manifest.csv` and `qualitative/README.md`
 - reproducibility manifests, raw score rows, actual configs, commands, and log
 
@@ -53,7 +52,7 @@ The final archive is written under
 `/home/tslin/Documents/jupyter_data/anLi/tmp` and includes the small qualitative
 set. `download_results.sh` prints the exact Mac-side `scp` and checksum commands.
 
-The formal result tables, reproducibility records, 90 selected images, and 30
-paired panels are now tracked in this directory. The archive additionally keeps
-all 45,000 raw score rows, commands, and the server log without duplicating
-those larger raw artifacts in Git.
+The formal result tables and lightweight reproducibility records are tracked in
+this directory. Generated images are intentionally ignored by Git. The verified
+archive/local artifact store holds the 90 selected images, 30 paired panels,
+45,000 raw score rows, commands, and server log.

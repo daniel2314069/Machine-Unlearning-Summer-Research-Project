@@ -28,15 +28,11 @@ The fixed suffix is exactly ` This sentence describes the concept`. It is append
 
 Per-class recall: cat=0.960, dog=0.980, fox=0.280, bear=0.960.
 
-![Fixed-suffix confusion](confusion_fixed_suffix.png)
-
 ## 6. Unsuffixed EOT Results
 
 The original description is tokenized without any prefix or suffix. The readout index is `attention_mask.sum(dim=1) - 1`, selecting the actual EOT token from the final SD 1.4 CLIP hidden state. Each vector is row-L2-normalized; no global centering is applied.
 
 Per-class recall: cat=0.640, dog=0.960, fox=0.360, bear=0.980.
-
-![EOT confusion](confusion_eot.png)
 
 ## 7. Comparison
 

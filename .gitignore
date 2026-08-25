@@ -1,6 +1,20 @@
 __pycache__/
 *.pyc
 .DS_Store
+# Generated and documentation images are local/server artifacts, never Git data.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.tif
+*.tiff
+*.svg
+
+# Curated experiment archives may be extracted here for local retention only.
+.local_artifacts/
+
 # Local Codex/agent instructions; keep machine-specific safeguards off GitHub.
 AGENTS.md
 speed/logs/
