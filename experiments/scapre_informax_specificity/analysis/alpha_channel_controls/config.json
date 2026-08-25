@@ -1,0 +1,49 @@
+{
+  "experiment_name": "scapre_informax_alpha_channel_controls",
+  "required_ancestor_commit": "790ce34291c184abe5535f6ae89fe2e4e5432961",
+  "edit_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "legacy_informax_seed": 20260820,
+  "fixed_non_informax_seed": 20260820,
+  "formal_variants": ["official", "constant_mean", "shuffled", "identity_B"],
+  "generated_formal_variants": ["constant_mean", "shuffled", "identity_B"],
+  "smoke_variants": ["official", "constant_mean", "shuffled", "shuffled_alt1", "shuffled_alt2", "identity_B"],
+  "formal_shuffle_salt": "preregistered-formal-v1",
+  "alternate_shuffle_salts": {
+    "shuffled_alt1": "implementation-smoke-alt1",
+    "shuffled_alt2": "implementation-smoke-alt2"
+  },
+  "expected_layers_per_projection": 16,
+  "expected_alpha_intercepts_per_edit": 32,
+  "expected_informax_randn_calls_formal": 1280,
+  "expected_informax_randn_calls_smoke": 256,
+  "expected_images_per_variant_formal": 3000,
+  "expected_images_per_variant_smoke": 10,
+  "expected_target_rows_formal": 1200,
+  "expected_retain_rows_formal": 1800,
+  "numeric_tolerance": 1e-7,
+  "source_controls": {
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9"
+  },
+  "official_reference": {
+    "run_commit": "9ca7b5e9c4ab626027fb8fe0bd32fca51e8faf89",
+    "editor_source_sha256": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
+    "evaluator_source_sha256": "6e5063bc709e6fc4b453e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "compatibility_diff_sha256": "5a3d2b27bf0395dc0d1bd5dcbaeff2dc41302074a450479e29851a90cc4841e3",
+    "run_id": "formal_20260821T081723Z",
+    "archive_basename": "scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz",
+    "archive_sha256": "df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708",
+    "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+    "score_sha256": {
+      "20260820": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "20260821": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "20260822": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "20260823": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "20260824": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724"
+    }
+  }
+}
