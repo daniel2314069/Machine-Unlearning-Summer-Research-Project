@@ -27,6 +27,15 @@ experiments/scapre_informax_specificity/analysis/alpha_channel_controls/status_s
 experiments/scapre_informax_specificity/analysis/alpha_channel_controls/package_results.sh
 ```
 
+To inventory storage under the server project area before any manual cleanup,
+run the read-only audit. It records directory totals, files above 100 MiB, all
+`.pt` files, and a complete size-annotated tree in a timestamped text report
+under `/home/tslin/Documents/jupyter_data/anLi/tmp`:
+
+```bash
+experiments/scapre_informax_specificity/analysis/alpha_channel_controls/audit_server_storage.sh
+```
+
 If formal reference validation aborts before launch, collect the archive,
 manifest, historical-source, and compatibility hashes with the read-only
 diagnostic:
