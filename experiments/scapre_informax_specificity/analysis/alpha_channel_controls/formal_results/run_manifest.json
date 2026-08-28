@@ -1,0 +1,138 @@
+{
+  "started_at_utc": "2026-08-25T20:10:37.888162+00:00",
+  "profile": "formal",
+  "git_commit": "a393c649f54b532fdcd85fc3fe7ff3e30a1a5f0d",
+  "git_branch": "main",
+  "git_status_start": [],
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "source_sha256": {
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/README.md": "46de15d435f1422675f42993370e7ae29af9d00525ce074be950416de7dd039f",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/aggregate_results.py": "59364141ad91963a749f4c8ce6c79407b6303ca3b390c17f201a9cdbcc3273f6",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/alpha_control_runner.py": "95d2903f39855c02b935e1af9fb472dfd5a7a3e888008716dd07d7bf855e2499",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/cleanup_images.sh": "766a30bdd64cad9069874721c62a6e347890b7e6f904fd8a784391d996b8e769",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/config.json": "c55a50602c987514720a9cb3c6e59585233a4ac94805c6763ce3772f836f440f",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/diagnose_official_reference.sh": "cc2da7bf099b7c988a2445dba6640dd734215b39cd34109edc0597500225cc66",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/download_results.sh": "d33c3b1e7bb0ea57031668e588c5b8548dc5b47653b943fa92be7198f094d286",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/evaluate_control_runner.py": "526a8d7f760f3425a67a5e6e097df15f3e382ac12c248750b3bebc516cd3eb65",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/implementation_audit.md": "942b2d8959998ed7e077998068c2d385b746cc359d72f19b30678ba59d67cd48",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/package_results.sh": "80b1cf98a22c1de8d49a0b901ac4d9f7dae611943789c922e5fd845db66ea7a2",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/resolve_official_reference.sh": "29a098f6dd36105079c845a4c44fd3e35aa5ab7a4389f1be6c97bb025018b3f0",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/run_server.sh": "ce40c9637ca1ba7e6bd5e786e3778fe17c36202d7eff46af42fc151db22c55f7",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/server_worker.sh": "0031e6aa20bf674a6613d5a8064b08de8537f8c10989280824c3d3cf5fc00dc9",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/status_server.sh": "a23a1f9843258a2f0ad7c65afa44f972bbee68f47ef152cd045c2fba64a5c907",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/validate_static.sh": "820365b0438eac7f640d4458507c81706773e775e9714b30d508f3d9f9150a2e",
+    "experiments/scapre_informax_specificity/analysis/alpha_channel_controls/worker.py": "e3b1dfdf66ad62800bd1013917b14a50817e03ac0224afe49f418543928a8137",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "assets_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "git_status_before_aggregation": [],
+  "git_status_end": [],
+  "finished_at_utc": "2026-08-27T17:34:59.261238+00:00"
+}

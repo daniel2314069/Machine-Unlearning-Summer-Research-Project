@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "profile": "formal",
+  "edit_seeds": [
+    20260820,
+    20260821,
+    20260822,
+    20260823,
+    20260824
+  ],
+  "official_reference_reused": true,
+  "completed_at_utc": "2026-08-27T17:34:59.262287+00:00"
+}

@@ -1,0 +1,312 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "Final-alpha Channel Controls: Formal Result",
+    "description": "Technical report for the five-seed ScaPre Informax final-alpha control experiment.",
+    "generatedAt": "2026-08-28T07:57:06Z",
+    "charts": [
+      {
+        "id": "official_delta_chart",
+        "title": "Five-seed mean deltas versus official",
+        "subtitle": "Treatment minus official, percentage points; lower Unlearn and higher Preserve/Overall are favorable.",
+        "type": "bar",
+        "dataset": "official_deltas",
+        "sourceId": "comparison_deltas",
+        "valueFormat": "number",
+        "encodings": {
+          "x": {
+            "field": "control",
+            "type": "nominal",
+            "label": "Control"
+          },
+          "y": {
+            "field": "delta_pp",
+            "type": "quantitative",
+            "label": "Delta vs official (pp)"
+          },
+          "color": {
+            "field": "metric",
+            "type": "nominal",
+            "label": "Metric"
+          },
+          "tooltip": [
+            {
+              "field": "favorable_seeds",
+              "type": "quantitative",
+              "label": "Favorable seeds"
+            },
+            {
+              "field": "official_mean",
+              "type": "quantitative",
+              "label": "Official mean (%)"
+            },
+            {
+              "field": "control_mean",
+              "type": "quantitative",
+              "label": "Control mean (%)"
+            }
+          ]
+        }
+      }
+    ],
+    "tables": [
+      {
+        "id": "variant_means_table",
+        "title": "Variant metrics across five fixed edit seeds",
+        "subtitle": "Mean and sample standard deviation in percent; 3,000 evaluated images per variant and seed.",
+        "dataset": "variant_means",
+        "sourceId": "per_seed_metrics",
+        "defaultSort": {
+          "field": "mean_overall",
+          "direction": "desc"
+        },
+        "columns": [
+          {"field": "variant", "label": "Variant", "type": "text"},
+          {"field": "mean_unlearn", "label": "Mean Unlearn (%)", "format": "number"},
+          {"field": "sd_unlearn", "label": "SD Unlearn", "format": "number"},
+          {"field": "mean_preserve", "label": "Mean Preserve (%)", "format": "number"},
+          {"field": "sd_preserve", "label": "SD Preserve", "format": "number"},
+          {"field": "mean_overall", "label": "Mean Overall (%)", "format": "number"},
+          {"field": "sd_overall", "label": "SD Overall", "format": "number"}
+        ]
+      },
+      {
+        "id": "comparison_summary_table",
+        "title": "Required five-seed comparisons",
+        "subtitle": "Treatment minus baseline in percentage points; direction counts use the metric-specific favorable sign.",
+        "dataset": "comparison_summary",
+        "sourceId": "comparison_deltas",
+        "defaultSort": {
+          "field": "comparison",
+          "direction": "asc"
+        },
+        "columns": [
+          {"field": "comparison", "label": "Comparison", "type": "text"},
+          {"field": "delta_unlearn", "label": "Mean ΔU (pp)", "format": "number", "semantic": "movement"},
+          {"field": "delta_preserve", "label": "Mean ΔP (pp)", "format": "number", "semantic": "movement"},
+          {"field": "delta_overall", "label": "Mean ΔO (pp)", "format": "number", "semantic": "movement"},
+          {"field": "unlearn_favorable", "label": "U favorable seeds", "format": "number"},
+          {"field": "preserve_favorable", "label": "P favorable seeds", "format": "number"},
+          {"field": "overall_favorable", "label": "O favorable seeds", "format": "number"}
+        ]
+      },
+      {
+        "id": "family_patterns_table",
+        "title": "Accuracy deltas by registered Confuse5 family",
+        "subtitle": "Mean treatment-minus-official per-concept accuracy delta across five seeds; lower target and higher retain are favorable.",
+        "dataset": "family_patterns",
+        "sourceId": "per_target_metrics",
+        "defaultSort": {
+          "field": "target_delta_pp",
+          "direction": "asc"
+        },
+        "columns": [
+          {"field": "control", "label": "Control", "type": "text"},
+          {"field": "family", "label": "Family", "type": "text"},
+          {"field": "target_delta_pp", "label": "Target Δ accuracy (pp)", "format": "number", "semantic": "movement"},
+          {"field": "retain_delta_pp", "label": "Retain Δ accuracy (pp)", "format": "number", "semantic": "movement"}
+        ]
+      }
+    ],
+    "sources": [
+      {"id": "per_seed_metrics", "label": "Formal per-seed metrics", "path": "per_seed_metrics.csv"},
+      {"id": "comparison_deltas", "label": "Formal comparison deltas", "path": "comparison_deltas.csv"},
+      {"id": "per_target_metrics", "label": "Formal per-concept metrics", "path": "per_target_metrics.csv"},
+      {"id": "integrity_report", "label": "Formal integrity report", "path": "integrity_report.json"},
+      {"id": "matrix_summary", "label": "Formal alpha matrix summary", "path": "alpha_matrix_summary.csv"}
+    ],
+    "blocks": [
+      {
+        "id": "title",
+        "type": "markdown",
+        "body": "# Final-alpha Channel Controls: Formal Result"
+      },
+      {
+        "id": "technical_summary",
+        "type": "markdown",
+        "body": "## Technical summary\n\n**The exact repository channel-to-alpha correspondence is not supported as beneficial in this tested setting.** Removing channel differentiation with `constant_mean` or destroying identity with `shuffled` did not degrade the five-seed mean of any established metric; both controls instead moved mean Unlearn downward and Preserve/Overall upward by less than 0.4 percentage points.\n\n**Uniform `B = I` also remains plausible, but it is not the best-performing control.** `identity_B` narrowly Pareto-improved the three five-seed means versus official, yet it was less favorable than `constant_mean` on all three means and showed stronger concept-family trade-offs.\n\nThese are descriptive results over five fixed edit seeds, not an inferential population estimate. Lower Unlearn Accuracy is favorable; higher Preserve and Overall Accuracy are favorable."
+      },
+      {
+        "id": "channel_identity_finding",
+        "type": "markdown",
+        "sourceId": "comparison_deltas",
+        "body": "## Channel identity did not improve the established metrics\n\n`constant_mean` changed the five-seed means by **−0.083 pp Unlearn, +0.356 pp Preserve, and +0.334 pp Overall** relative to official. `shuffled`, which preserves the exact alpha multiset while destroying channel identity, changed them by **−0.133 pp, +0.211 pp, and +0.217 pp**. Both were favorable on Unlearn in 3/5 seeds and on Preserve/Overall in 4/5 seeds.\n\nThe chart shows the registered treatment-minus-official deltas. It must be read with opposite signs for Unlearn versus the other two metrics: negative Unlearn is favorable, while positive Preserve and Overall are favorable. The implication is narrow: within this official-empty-neutral configuration, the residual channel assignment is not the source of a visible aggregate advantage."
+      },
+      {"id": "official_delta_chart_block", "type": "chart", "chartId": "official_delta_chart"},
+      {
+        "id": "variant_level_evidence",
+        "type": "markdown",
+        "sourceId": "per_seed_metrics",
+        "body": "## Aggregate effects are small relative to seed-to-seed variation\n\nAll control-versus-official mean changes are below 0.4 percentage points. The across-seed sample standard deviations of the absolute metrics range from about 0.10 to 0.47 points, so the mean ordering should not be read as a large or universally repeated effect. `constant_mean` has the highest mean Preserve and Overall; `shuffled` has the lowest mean Unlearn; `identity_B` has the smallest across-seed Unlearn standard deviation.\n\nEach seed evaluates 1,200 target and 1,800 retain images. One target correctness change is 0.083 pp and one retain correctness change is 0.056 pp, making the observed aggregate shifts only a small number of net classifier outcomes per seed."
+      },
+      {"id": "variant_means_block", "type": "table", "tableId": "variant_means_table"},
+      {
+        "id": "required_comparisons",
+        "type": "markdown",
+        "sourceId": "comparison_deltas",
+        "body": "## `B = I` is viable but does not erase the trade-off\n\n`identity_B` improved the official five-seed means by **−0.033 pp Unlearn, +0.222 pp Preserve, and +0.205 pp Overall**, so the saturated paper-limit behavior is not harmful at the aggregate mean level. However, only 2/5 seeds favored it on Unlearn and 3/5 on Preserve/Overall. Against `constant_mean`, `identity_B` was worse on all three means: +0.050 pp Unlearn, −0.133 pp Preserve, and −0.129 pp Overall.\n\nThis separates viability from preference. Uniform all-one weighting remains plausible, but the current evidence gives no reason to replace the repository behavior with it, especially because its per-matrix scale is roughly 84–139 times the official mean alpha."
+      },
+      {"id": "comparison_summary_block", "type": "table", "tableId": "comparison_summary_table"},
+      {
+        "id": "family_heterogeneity",
+        "type": "markdown",
+        "sourceId": "per_target_metrics",
+        "body": "## Concept families move in different directions\n\nThe aggregate means hide structured heterogeneity. For `identity_B`, target accuracy improved most for fruits (−0.917 pp), balls (−0.583 pp), and boats (−0.500 pp), but worsened for dogs (+1.167 pp) and cats (+0.667 pp). Its retain accuracy improved for cats (+1.111 pp) and boats (+0.667 pp) but declined for dogs (−0.333 pp), fruits (−0.222 pp), and balls (−0.111 pp).\n\n`constant_mean` and `shuffled` are less polarized but still mixed. Both improve target accuracy for cats and fruits while slightly worsening dogs; most retain-family means improve. This pattern argues against a universal claim that all channel assignments are equivalent, even though the global metrics do not favor official."
+      },
+      {"id": "family_patterns_block", "type": "table", "tableId": "family_patterns_table"},
+      {
+        "id": "scope_definitions",
+        "type": "markdown",
+        "body": "## Scope and metric definitions\n\nThe formal run uses Stable Diffusion v1.5, the registered 10 target and 15 similar retain concepts, the official empty-string neutral, five fixed edit seeds (`20260820`–`20260824`), and 120 images per concept. Each variant/seed therefore has 3,000 classifier rows.\n\n**Unlearn Accuracy** is classifier accuracy over target images and is better when lower. **Preserve Accuracy** is classifier accuracy over retain images and is better when higher. **Overall Accuracy** is the harmonic mean of forgetting (`100 − Unlearn`) and Preserve, and is better when higher. No new evaluator, combined score, or arbitrary significance threshold is used."
+      },
+      {
+        "id": "experimental_design",
+        "type": "markdown",
+        "sourceId": "matrix_summary",
+        "body": "## The intervention isolates only final-alpha channel assignment\n\nThe experiment changes only the final concept-max alpha vector before the closed-form edit. `constant_mean` removes differentiation while preserving each matrix mean; `shuffled` preserves each exact multiset with a preregistered deterministic permutation; `identity_B` sets all entries to one. Raw MI, pre-aggregate alpha, thresholds, non-alpha edit inputs, prompts, image seeds, sampler, CFG, generation count, and evaluator remain fixed.\n\nAcross five seeds, four variants, two projections, and 16 layers, all 640 matrix records passed their registered gates. Official matrix means range from 0.00719 to 0.01187, whereas `identity_B` is exactly one, so its interpretation remains separate from the mean-matched and shuffled channel-identity controls."
+      },
+      {
+        "id": "validation",
+        "type": "markdown",
+        "sourceId": "integrity_report",
+        "body": "## Formal evidence is ready to share with one lifecycle caveat\n\nThe server integrity report passed all registered gates: 60,000 score rows, identical generation keys and evaluator fingerprints, exact constant/shuffle/identity checks, finite projection weights, and byte-verified reuse of the five official score files. Independent local QA re-read all raw score rows, reproduced every seed-level metric with zero numerical error, verified all packaged result hashes, and checked the 45,000-row generated-image manifest.\n\nThe downloaded archive matches its server checksum. The only incomplete handoff item is operational rather than analytical: the formal `.cleanup.json` sidecar was not downloaded, so deletion of the 45,000 regenerable server PNGs is not independently verified here."
+      },
+      {
+        "id": "limitations",
+        "type": "markdown",
+        "body": "## Limits and uncertainty keep the conclusion narrow\n\nThe five edit seeds are a deterministic robustness panel, not a random sample supporting population-level significance. The differences are small, the classifier is the established project evaluator rather than a semantic human judgment, and concept-family directions vary. `constant_mean` preserves the matrix mean but not every nonlinear notion of edit strength; `identity_B` changes scale substantially.\n\nAccordingly, the supported conclusion is that channel-specific final-alpha assignment does not explain an aggregate advantage under this exact configuration. The result does not show that Informax has no effect, that all channel assignments are equivalent for every concept, or that `B = I` is generally optimal."
+      },
+      {
+        "id": "next_steps",
+        "type": "markdown",
+        "body": "## Recommended next steps\n\n1. Treat the main channel-identity question as answered negatively for this configuration: do not spend GPU time on more shuffle permutations selected from observed image quality.\n2. If a follow-up is scientifically valuable, preregister a family-focused replication around the observed dog/cat versus fruit/boat/ball split, retaining the same evaluator and controls.\n3. Keep `identity_B` as a viable paper-limit reference, not as a replacement default; any replacement decision would need an independently motivated scale study rather than tuning this run.\n4. Retrieve the formal cleanup sidecar so the server lifecycle record is complete."
+      },
+      {
+        "id": "further_questions",
+        "type": "markdown",
+        "body": "## Further questions\n\n- Are the family-level reversals reproducible under a preregistered independent protocol, or are they seed/concept-specific noise?\n- Does the same absence of an official advantage hold outside the official empty-string neutral without changing the question into a matched-retain experiment?\n- Can the scale effect of `identity_B` be separated from uniform weighting with a prospectively specified scale series, without selecting values from this result?"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-08-28T07:57:06Z",
+    "status": "ready",
+    "datasets": {
+      "official_deltas": [
+        {"control": "constant_mean", "metric": "Unlearn", "delta_pp": -0.083333, "favorable_seeds": 3, "total_seeds": 5, "official_mean": 19.266667, "control_mean": 19.183333, "comparison": "official_vs_constant_mean"},
+        {"control": "constant_mean", "metric": "Preserve", "delta_pp": 0.355556, "favorable_seeds": 4, "total_seeds": 5, "official_mean": 40.455556, "control_mean": 40.811111, "comparison": "official_vs_constant_mean"},
+        {"control": "constant_mean", "metric": "Overall", "delta_pp": 0.333740, "favorable_seeds": 4, "total_seeds": 5, "official_mean": 53.900700, "control_mean": 54.234440, "comparison": "official_vs_constant_mean"},
+        {"control": "shuffled", "metric": "Unlearn", "delta_pp": -0.133333, "favorable_seeds": 3, "total_seeds": 5, "official_mean": 19.266667, "control_mean": 19.133333, "comparison": "official_vs_shuffled"},
+        {"control": "shuffled", "metric": "Preserve", "delta_pp": 0.211111, "favorable_seeds": 4, "total_seeds": 5, "official_mean": 40.455556, "control_mean": 40.666667, "comparison": "official_vs_shuffled"},
+        {"control": "shuffled", "metric": "Overall", "delta_pp": 0.217038, "favorable_seeds": 4, "total_seeds": 5, "official_mean": 53.900700, "control_mean": 54.117738, "comparison": "official_vs_shuffled"},
+        {"control": "identity_B", "metric": "Unlearn", "delta_pp": -0.033333, "favorable_seeds": 2, "total_seeds": 5, "official_mean": 19.266667, "control_mean": 19.233333, "comparison": "official_vs_identity_B"},
+        {"control": "identity_B", "metric": "Preserve", "delta_pp": 0.222222, "favorable_seeds": 3, "total_seeds": 5, "official_mean": 40.455556, "control_mean": 40.677778, "comparison": "official_vs_identity_B"},
+        {"control": "identity_B", "metric": "Overall", "delta_pp": 0.204512, "favorable_seeds": 3, "total_seeds": 5, "official_mean": 53.900700, "control_mean": 54.105212, "comparison": "official_vs_identity_B"}
+      ],
+      "variant_means": [
+        {"variant": "official", "mean_unlearn": 19.266667, "sd_unlearn": 0.446437, "mean_preserve": 40.455556, "sd_preserve": 0.243432, "mean_overall": 53.900700, "sd_overall": 0.260198},
+        {"variant": "constant_mean", "mean_unlearn": 19.183333, "sd_unlearn": 0.369872, "mean_preserve": 40.811111, "sd_preserve": 0.100922, "mean_overall": 54.234440, "sd_overall": 0.143895},
+        {"variant": "shuffled", "mean_unlearn": 19.133333, "sd_unlearn": 0.473609, "mean_preserve": 40.666667, "sd_preserve": 0.304290, "mean_overall": 54.117738, "sd_overall": 0.342064},
+        {"variant": "identity_B", "mean_unlearn": 19.233333, "sd_unlearn": 0.160295, "mean_preserve": 40.677778, "sd_preserve": 0.205631, "mean_overall": 54.105212, "sd_overall": 0.177563}
+      ],
+      "comparison_summary": [
+        {"comparison": "official vs constant_mean", "delta_unlearn": -0.083333, "delta_preserve": 0.355556, "delta_overall": 0.333740, "unlearn_favorable": 3, "preserve_favorable": 4, "overall_favorable": 4},
+        {"comparison": "official vs shuffled", "delta_unlearn": -0.133333, "delta_preserve": 0.211111, "delta_overall": 0.217038, "unlearn_favorable": 3, "preserve_favorable": 4, "overall_favorable": 4},
+        {"comparison": "official vs identity_B", "delta_unlearn": -0.033333, "delta_preserve": 0.222222, "delta_overall": 0.204512, "unlearn_favorable": 2, "preserve_favorable": 3, "overall_favorable": 3},
+        {"comparison": "constant_mean vs identity_B", "delta_unlearn": 0.050000, "delta_preserve": -0.133333, "delta_overall": -0.129229, "unlearn_favorable": 1, "preserve_favorable": 2, "overall_favorable": 2}
+      ],
+      "family_patterns": [
+        {"control": "constant_mean", "family": "dogs", "target_delta_pp": 0.417, "retain_delta_pp": 0.444},
+        {"control": "constant_mean", "family": "cats", "target_delta_pp": -0.333, "retain_delta_pp": 0.222},
+        {"control": "constant_mean", "family": "fruits", "target_delta_pp": -0.667, "retain_delta_pp": -0.056},
+        {"control": "constant_mean", "family": "boats", "target_delta_pp": 0.167, "retain_delta_pp": 0.500},
+        {"control": "constant_mean", "family": "balls", "target_delta_pp": 0.000, "retain_delta_pp": 0.667},
+        {"control": "shuffled", "family": "dogs", "target_delta_pp": 0.250, "retain_delta_pp": 0.556},
+        {"control": "shuffled", "family": "cats", "target_delta_pp": -0.333, "retain_delta_pp": -0.056},
+        {"control": "shuffled", "family": "fruits", "target_delta_pp": -0.667, "retain_delta_pp": 0.000},
+        {"control": "shuffled", "family": "boats", "target_delta_pp": 0.000, "retain_delta_pp": 0.389},
+        {"control": "shuffled", "family": "balls", "target_delta_pp": 0.083, "retain_delta_pp": 0.167},
+        {"control": "identity_B", "family": "dogs", "target_delta_pp": 1.167, "retain_delta_pp": -0.333},
+        {"control": "identity_B", "family": "cats", "target_delta_pp": 0.667, "retain_delta_pp": 1.111},
+        {"control": "identity_B", "family": "fruits", "target_delta_pp": -0.917, "retain_delta_pp": -0.222},
+        {"control": "identity_B", "family": "boats", "target_delta_pp": -0.500, "retain_delta_pp": 0.667},
+        {"control": "identity_B", "family": "balls", "target_delta_pp": -0.583, "retain_delta_pp": -0.111}
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "per_seed_metrics",
+      "label": "Formal per-seed metrics",
+      "path": "per_seed_metrics.csv",
+      "query": {
+        "language": "csv",
+        "description": "Server-generated established metrics for five edit seeds and four variants.",
+        "tables_used": ["per_seed_metrics.csv"],
+        "filters": ["edit seeds 20260820-20260824", "formal variants only"],
+        "metric_definitions": {
+          "Unlearn Accuracy": "100 times correct target rows divided by 1,200 target rows; lower is favorable.",
+          "Preserve Accuracy": "100 times correct retain rows divided by 1,800 retain rows; higher is favorable.",
+          "Overall Accuracy": "Harmonic mean of 100 minus Unlearn Accuracy and Preserve Accuracy; higher is favorable."
+        }
+      }
+    },
+    {
+      "id": "comparison_deltas",
+      "label": "Formal comparison deltas",
+      "path": "comparison_deltas.csv",
+      "query": {
+        "language": "csv",
+        "description": "Registered treatment-minus-baseline deltas by seed, metric, and target concept.",
+        "tables_used": ["comparison_deltas.csv"],
+        "filters": ["five-seed mean rows and registered comparisons"],
+        "metric_definitions": {
+          "Delta": "Treatment metric minus baseline metric in percentage points.",
+          "Favorable seeds": "Negative delta for Unlearn; positive delta for Preserve and Overall."
+        }
+      }
+    },
+    {
+      "id": "per_target_metrics",
+      "label": "Formal per-concept metrics",
+      "path": "per_target_metrics.csv",
+      "query": {
+        "language": "csv",
+        "description": "Per-concept accuracy for every edit seed and variant; family rows are unweighted means of registered concepts.",
+        "tables_used": ["per_target_metrics.csv", "base_config.json"],
+        "filters": ["25 registered Confuse5 concepts", "120 images per concept"],
+        "metric_definitions": {
+          "Family delta": "Unweighted mean treatment-minus-official accuracy delta across the concepts in one registered family and role."
+        }
+      }
+    },
+    {
+      "id": "integrity_report",
+      "label": "Formal integrity report",
+      "path": "integrity_report.json",
+      "query": {
+        "language": "json",
+        "description": "Server-generated protocol, row-count, source, evaluator, matrix, and checkpoint integrity gates.",
+        "tables_used": ["integrity_report.json", "official_reference_validation.json", "retrieval_validation.json"]
+      }
+    },
+    {
+      "id": "matrix_summary",
+      "label": "Formal alpha matrix summary",
+      "path": "alpha_matrix_summary.csv",
+      "query": {
+        "language": "csv",
+        "description": "Per-seed, per-variant, per-projection and per-layer alpha/B integrity diagnostics.",
+        "tables_used": ["alpha_matrix_summary.csv"],
+        "filters": ["five edit seeds", "32 matrices per seed and variant"],
+        "metric_definitions": {
+          "Official alpha mean": "Mean final concept-max alpha for one edited matrix.",
+          "Identity scale ratio": "One divided by the official per-matrix alpha mean; descriptive only."
+        }
+      }
+    }
+  ]
+}

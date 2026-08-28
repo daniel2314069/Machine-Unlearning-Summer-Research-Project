@@ -1,0 +1,273 @@
+comparison,scope,concept,edit_seed,delta_accuracy,delta_unlearn,delta_preserve,delta_overall,same_direction_count,total_seeds
+official_vs_constant_mean,aggregate,,20260820,,-0.41666666666666785,0.27777777777777146,0.33898712197255776,,
+official_vs_constant_mean,aggregate,,20260821,,0.08333333333333215,0.3333333333333357,0.277055005955674,,
+official_vs_constant_mean,aggregate,,20260822,,-0.8333333333333321,0.5,0.6294614669965668,,
+official_vs_constant_mean,aggregate,,20260823,,0.9166666666666679,-0.055555555555557135,-0.25543162058988145,,
+official_vs_constant_mean,aggregate,,20260824,,-0.16666666666666785,0.7222222222222214,0.6786289065942555,,
+official_vs_constant_mean,five_seed_mean_unlearn_accuracy,,mean,,-0.08333333333333356,,,3,5
+official_vs_constant_mean,five_seed_mean_preserve_accuracy,,mean,,,0.3555555555555543,,4,5
+official_vs_constant_mean,five_seed_mean_overall_accuracy,,mean,,,,0.3337401761858345,4,5
+official_vs_constant_mean,per_target,golden retriever,20260820,0.0,,,,,
+official_vs_constant_mean,per_target,golden retriever,20260821,2.5,,,,,
+official_vs_constant_mean,per_target,golden retriever,20260822,-0.8333333333333339,,,,,
+official_vs_constant_mean,per_target,golden retriever,20260823,0.0,,,,,
+official_vs_constant_mean,per_target,golden retriever,20260824,0.0,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,golden retriever,mean,0.3333333333333332,,,,1,5
+official_vs_constant_mean,per_target,labrador retriever,20260820,0.0,,,,,
+official_vs_constant_mean,per_target,labrador retriever,20260821,-1.6666666666666679,,,,,
+official_vs_constant_mean,per_target,labrador retriever,20260822,1.6666666666666643,,,,,
+official_vs_constant_mean,per_target,labrador retriever,20260823,0.0,,,,,
+official_vs_constant_mean,per_target,labrador retriever,20260824,2.5,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,labrador retriever,mean,0.4999999999999993,,,,1,5
+official_vs_constant_mean,per_target,tabby,20260820,-0.8333333333333339,,,,,
+official_vs_constant_mean,per_target,tabby,20260821,1.6666666666666679,,,,,
+official_vs_constant_mean,per_target,tabby,20260822,-0.8333333333333339,,,,,
+official_vs_constant_mean,per_target,tabby,20260823,1.666666666666666,,,,,
+official_vs_constant_mean,per_target,tabby,20260824,-1.666666666666666,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,tabby,mean,0.0,,,,3,5
+official_vs_constant_mean,per_target,tiger cat,20260820,0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,tiger cat,20260821,-0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,tiger cat,20260822,-0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,tiger cat,20260823,-0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,tiger cat,20260824,-1.6666666666666643,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,tiger cat,mean,-0.6666666666666672,,,,4,5
+official_vs_constant_mean,per_target,orange,20260820,-2.500000000000001,,,,,
+official_vs_constant_mean,per_target,orange,20260821,-1.666666666666667,,,,,
+official_vs_constant_mean,per_target,orange,20260822,-2.499999999999999,,,,,
+official_vs_constant_mean,per_target,orange,20260823,0.0,,,,,
+official_vs_constant_mean,per_target,orange,20260824,-1.666666666666667,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,orange,mean,-1.6666666666666667,,,,4,5
+official_vs_constant_mean,per_target,lemon,20260820,-1.666666666666666,,,,,
+official_vs_constant_mean,per_target,lemon,20260821,2.5,,,,,
+official_vs_constant_mean,per_target,lemon,20260822,-1.666666666666666,,,,,
+official_vs_constant_mean,per_target,lemon,20260823,1.666666666666666,,,,,
+official_vs_constant_mean,per_target,lemon,20260824,0.8333333333333339,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,lemon,mean,0.3333333333333336,,,,2,5
+official_vs_constant_mean,per_target,yawl,20260820,4.166666666666671,,,,,
+official_vs_constant_mean,per_target,yawl,20260821,1.6666666666666643,,,,,
+official_vs_constant_mean,per_target,yawl,20260822,-3.3333333333333286,,,,,
+official_vs_constant_mean,per_target,yawl,20260823,4.166666666666664,,,,,
+official_vs_constant_mean,per_target,yawl,20260824,-0.8333333333333286,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,yawl,mean,1.1666666666666685,,,,2,5
+official_vs_constant_mean,per_target,lifeboat,20260820,-0.833333333333333,,,,,
+official_vs_constant_mean,per_target,lifeboat,20260821,-2.4999999999999996,,,,,
+official_vs_constant_mean,per_target,lifeboat,20260822,-0.833333333333333,,,,,
+official_vs_constant_mean,per_target,lifeboat,20260823,1.6666666666666665,,,,,
+official_vs_constant_mean,per_target,lifeboat,20260824,-1.6666666666666665,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,lifeboat,mean,-0.8333333333333331,,,,4,5
+official_vs_constant_mean,per_target,soccer ball,20260820,-2.5,,,,,
+official_vs_constant_mean,per_target,soccer ball,20260821,0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,soccer ball,20260822,0.8333333333333357,,,,,
+official_vs_constant_mean,per_target,soccer ball,20260823,2.5,,,,,
+official_vs_constant_mean,per_target,soccer ball,20260824,0.8333333333333286,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,soccer ball,mean,0.5,,,,1,5
+official_vs_constant_mean,per_target,volleyball,20260820,-0.8333333333333339,,,,,
+official_vs_constant_mean,per_target,volleyball,20260821,-1.6666666666666679,,,,,
+official_vs_constant_mean,per_target,volleyball,20260822,0.0,,,,,
+official_vs_constant_mean,per_target,volleyball,20260823,-1.666666666666666,,,,,
+official_vs_constant_mean,per_target,volleyball,20260824,1.666666666666666,,,,,
+official_vs_constant_mean,per_target_five_seed_mean,volleyball,mean,-0.5000000000000003,,,,3,5
+official_vs_shuffled,aggregate,,20260820,,-0.08333333333333215,0.0,0.01880468170806182,,
+official_vs_shuffled,aggregate,,20260821,,0.41666666666666785,0.055555555555557135,-0.04350591167342088,,
+official_vs_shuffled,aggregate,,20260822,,-0.5833333333333321,0.055555555555557135,0.17894050834896547,,
+official_vs_shuffled,aggregate,,20260823,,-0.4166666666666643,0.1666666666666643,0.24084700928014513,,
+official_vs_shuffled,aggregate,,20260824,,0.0,0.7777777777777786,0.690102327538284,,
+official_vs_shuffled,five_seed_mean_unlearn_accuracy,,mean,,-0.13333333333333214,,,3,5
+official_vs_shuffled,five_seed_mean_preserve_accuracy,,mean,,,0.21111111111111142,,4,5
+official_vs_shuffled,five_seed_mean_overall_accuracy,,mean,,,,0.2170377230404071,4,5
+official_vs_shuffled,per_target,golden retriever,20260820,-0.8333333333333339,,,,,
+official_vs_shuffled,per_target,golden retriever,20260821,1.6666666666666679,,,,,
+official_vs_shuffled,per_target,golden retriever,20260822,0.0,,,,,
+official_vs_shuffled,per_target,golden retriever,20260823,0.0,,,,,
+official_vs_shuffled,per_target,golden retriever,20260824,0.0,,,,,
+official_vs_shuffled,per_target_five_seed_mean,golden retriever,mean,0.1666666666666668,,,,1,5
+official_vs_shuffled,per_target,labrador retriever,20260820,-0.8333333333333321,,,,,
+official_vs_shuffled,per_target,labrador retriever,20260821,1.6666666666666643,,,,,
+official_vs_shuffled,per_target,labrador retriever,20260822,0.8333333333333321,,,,,
+official_vs_shuffled,per_target,labrador retriever,20260823,-0.8333333333333357,,,,,
+official_vs_shuffled,per_target,labrador retriever,20260824,0.8333333333333357,,,,,
+official_vs_shuffled,per_target_five_seed_mean,labrador retriever,mean,0.33333333333333287,,,,2,5
+official_vs_shuffled,per_target,tabby,20260820,-0.8333333333333339,,,,,
+official_vs_shuffled,per_target,tabby,20260821,0.8333333333333339,,,,,
+official_vs_shuffled,per_target,tabby,20260822,-0.8333333333333339,,,,,
+official_vs_shuffled,per_target,tabby,20260823,0.8333333333333321,,,,,
+official_vs_shuffled,per_target,tabby,20260824,-1.666666666666666,,,,,
+official_vs_shuffled,per_target_five_seed_mean,tabby,mean,-0.3333333333333336,,,,3,5
+official_vs_shuffled,per_target,tiger cat,20260820,-0.8333333333333357,,,,,
+official_vs_shuffled,per_target,tiger cat,20260821,0.0,,,,,
+official_vs_shuffled,per_target,tiger cat,20260822,-0.8333333333333357,,,,,
+official_vs_shuffled,per_target,tiger cat,20260823,0.0,,,,,
+official_vs_shuffled,per_target,tiger cat,20260824,0.0,,,,,
+official_vs_shuffled,per_target_five_seed_mean,tiger cat,mean,-0.33333333333333426,,,,2,5
+official_vs_shuffled,per_target,orange,20260820,0.8333333333333321,,,,,
+official_vs_shuffled,per_target,orange,20260821,-1.666666666666667,,,,,
+official_vs_shuffled,per_target,orange,20260822,-1.666666666666666,,,,,
+official_vs_shuffled,per_target,orange,20260823,-0.8333333333333339,,,,,
+official_vs_shuffled,per_target,orange,20260824,0.0,,,,,
+official_vs_shuffled,per_target_five_seed_mean,orange,mean,-0.666666666666667,,,,3,5
+official_vs_shuffled,per_target,lemon,20260820,0.0,,,,,
+official_vs_shuffled,per_target,lemon,20260821,0.8333333333333321,,,,,
+official_vs_shuffled,per_target,lemon,20260822,-2.5,,,,,
+official_vs_shuffled,per_target,lemon,20260823,0.0,,,,,
+official_vs_shuffled,per_target,lemon,20260824,-1.666666666666666,,,,,
+official_vs_shuffled,per_target_five_seed_mean,lemon,mean,-0.6666666666666667,,,,2,5
+official_vs_shuffled,per_target,yawl,20260820,0.8333333333333357,,,,,
+official_vs_shuffled,per_target,yawl,20260821,0.8333333333333357,,,,,
+official_vs_shuffled,per_target,yawl,20260822,-1.6666666666666643,,,,,
+official_vs_shuffled,per_target,yawl,20260823,0.8333333333333357,,,,,
+official_vs_shuffled,per_target,yawl,20260824,-0.8333333333333286,,,,,
+official_vs_shuffled,per_target_five_seed_mean,yawl,mean,2.842170943040401e-15,,,,2,5
+official_vs_shuffled,per_target,lifeboat,20260820,0.833333333333333,,,,,
+official_vs_shuffled,per_target,lifeboat,20260821,-0.833333333333333,,,,,
+official_vs_shuffled,per_target,lifeboat,20260822,-0.833333333333333,,,,,
+official_vs_shuffled,per_target,lifeboat,20260823,0.8333333333333335,,,,,
+official_vs_shuffled,per_target,lifeboat,20260824,0.0,,,,,
+official_vs_shuffled,per_target_five_seed_mean,lifeboat,mean,8.881784197001253e-17,,,,2,5
+official_vs_shuffled,per_target,soccer ball,20260820,-1.6666666666666643,,,,,
+official_vs_shuffled,per_target,soccer ball,20260821,-0.8333333333333286,,,,,
+official_vs_shuffled,per_target,soccer ball,20260822,0.0,,,,,
+official_vs_shuffled,per_target,soccer ball,20260823,-3.333333333333332,,,,,
+official_vs_shuffled,per_target,soccer ball,20260824,2.5,,,,,
+official_vs_shuffled,per_target_five_seed_mean,soccer ball,mean,-0.666666666666665,,,,3,5
+official_vs_shuffled,per_target,volleyball,20260820,1.666666666666666,,,,,
+official_vs_shuffled,per_target,volleyball,20260821,1.666666666666666,,,,,
+official_vs_shuffled,per_target,volleyball,20260822,1.666666666666666,,,,,
+official_vs_shuffled,per_target,volleyball,20260823,-1.666666666666666,,,,,
+official_vs_shuffled,per_target,volleyball,20260824,0.8333333333333339,,,,,
+official_vs_shuffled,per_target_five_seed_mean,volleyball,mean,0.8333333333333333,,,,1,5
+official_vs_identity_B,aggregate,,20260820,,-0.41666666666666785,0.3333333333333286,0.38789711985961617,,
+official_vs_identity_B,aggregate,,20260821,,0.25,-0.055555555555557135,-0.10491709662267112,,
+official_vs_identity_B,aggregate,,20260822,,-0.5833333333333321,0.5555555555555571,0.6225733933745943,,
+official_vs_identity_B,aggregate,,20260823,,0.5833333333333357,-0.11111111111111427,-0.2291503912620385,,
+official_vs_identity_B,aggregate,,20260824,,0.0,0.38888888888889284,0.3461545708711924,,
+official_vs_identity_B,five_seed_mean_unlearn_accuracy,,mean,,-0.03333333333333286,,,2,5
+official_vs_identity_B,five_seed_mean_preserve_accuracy,,mean,,,0.22222222222222143,,3,5
+official_vs_identity_B,five_seed_mean_overall_accuracy,,mean,,,,0.20451151924413863,3,5
+official_vs_identity_B,per_target,golden retriever,20260820,2.5,,,,,
+official_vs_identity_B,per_target,golden retriever,20260821,3.333333333333334,,,,,
+official_vs_identity_B,per_target,golden retriever,20260822,1.666666666666666,,,,,
+official_vs_identity_B,per_target,golden retriever,20260823,0.8333333333333321,,,,,
+official_vs_identity_B,per_target,golden retriever,20260824,3.333333333333334,,,,,
+official_vs_identity_B,per_target_five_seed_mean,golden retriever,mean,2.333333333333333,,,,0,5
+official_vs_identity_B,per_target,labrador retriever,20260820,-0.8333333333333321,,,,,
+official_vs_identity_B,per_target,labrador retriever,20260821,0.0,,,,,
+official_vs_identity_B,per_target,labrador retriever,20260822,0.0,,,,,
+official_vs_identity_B,per_target,labrador retriever,20260823,0.0,,,,,
+official_vs_identity_B,per_target,labrador retriever,20260824,0.8333333333333357,,,,,
+official_vs_identity_B,per_target_five_seed_mean,labrador retriever,mean,7.105427357601002e-16,,,,1,5
+official_vs_identity_B,per_target,tabby,20260820,-2.5,,,,,
+official_vs_identity_B,per_target,tabby,20260821,2.5,,,,,
+official_vs_identity_B,per_target,tabby,20260822,0.8333333333333339,,,,,
+official_vs_identity_B,per_target,tabby,20260823,2.5,,,,,
+official_vs_identity_B,per_target,tabby,20260824,-0.8333333333333339,,,,,
+official_vs_identity_B,per_target_five_seed_mean,tabby,mean,0.5,,,,2,5
+official_vs_identity_B,per_target,tiger cat,20260820,1.6666666666666643,,,,,
+official_vs_identity_B,per_target,tiger cat,20260821,0.8333333333333286,,,,,
+official_vs_identity_B,per_target,tiger cat,20260822,1.6666666666666643,,,,,
+official_vs_identity_B,per_target,tiger cat,20260823,0.0,,,,,
+official_vs_identity_B,per_target,tiger cat,20260824,0.0,,,,,
+official_vs_identity_B,per_target_five_seed_mean,tiger cat,mean,0.8333333333333315,,,,0,5
+official_vs_identity_B,per_target,orange,20260820,-1.666666666666667,,,,,
+official_vs_identity_B,per_target,orange,20260821,-0.833333333333333,,,,,
+official_vs_identity_B,per_target,orange,20260822,-2.499999999999999,,,,,
+official_vs_identity_B,per_target,orange,20260823,0.833333333333333,,,,,
+official_vs_identity_B,per_target,orange,20260824,-0.833333333333333,,,,,
+official_vs_identity_B,per_target_five_seed_mean,orange,mean,-0.9999999999999998,,,,4,5
+official_vs_identity_B,per_target,lemon,20260820,-2.5,,,,,
+official_vs_identity_B,per_target,lemon,20260821,0.0,,,,,
+official_vs_identity_B,per_target,lemon,20260822,-0.8333333333333321,,,,,
+official_vs_identity_B,per_target,lemon,20260823,-0.8333333333333339,,,,,
+official_vs_identity_B,per_target,lemon,20260824,0.0,,,,,
+official_vs_identity_B,per_target_five_seed_mean,lemon,mean,-0.8333333333333333,,,,3,5
+official_vs_identity_B,per_target,yawl,20260820,2.5,,,,,
+official_vs_identity_B,per_target,yawl,20260821,0.0,,,,,
+official_vs_identity_B,per_target,yawl,20260822,-2.5,,,,,
+official_vs_identity_B,per_target,yawl,20260823,3.3333333333333357,,,,,
+official_vs_identity_B,per_target,yawl,20260824,-4.166666666666664,,,,,
+official_vs_identity_B,per_target_five_seed_mean,yawl,mean,-0.1666666666666657,,,,2,5
+official_vs_identity_B,per_target,lifeboat,20260820,-0.833333333333333,,,,,
+official_vs_identity_B,per_target,lifeboat,20260821,-0.833333333333333,,,,,
+official_vs_identity_B,per_target,lifeboat,20260822,-2.5,,,,,
+official_vs_identity_B,per_target,lifeboat,20260823,1.6666666666666665,,,,,
+official_vs_identity_B,per_target,lifeboat,20260824,-1.6666666666666665,,,,,
+official_vs_identity_B,per_target_five_seed_mean,lifeboat,mean,-0.8333333333333333,,,,4,5
+official_vs_identity_B,per_target,soccer ball,20260820,-3.3333333333333286,,,,,
+official_vs_identity_B,per_target,soccer ball,20260821,-3.3333333333333286,,,,,
+official_vs_identity_B,per_target,soccer ball,20260822,-2.4999999999999964,,,,,
+official_vs_identity_B,per_target,soccer ball,20260823,-1.6666666666666643,,,,,
+official_vs_identity_B,per_target,soccer ball,20260824,0.8333333333333286,,,,,
+official_vs_identity_B,per_target_five_seed_mean,soccer ball,mean,-1.9999999999999978,,,,4,5
+official_vs_identity_B,per_target,volleyball,20260820,0.8333333333333339,,,,,
+official_vs_identity_B,per_target,volleyball,20260821,0.8333333333333321,,,,,
+official_vs_identity_B,per_target,volleyball,20260822,0.8333333333333321,,,,,
+official_vs_identity_B,per_target,volleyball,20260823,-0.8333333333333321,,,,,
+official_vs_identity_B,per_target,volleyball,20260824,2.5,,,,,
+official_vs_identity_B,per_target_five_seed_mean,volleyball,mean,0.8333333333333333,,,,1,5
+constant_mean_vs_identity_B,aggregate,,20260820,,0.0,0.055555555555557135,0.04890999788705841,,
+constant_mean_vs_identity_B,aggregate,,20260821,,0.16666666666666785,-0.38888888888889284,-0.38197210257834513,,
+constant_mean_vs_identity_B,aggregate,,20260822,,0.25,0.055555555555557135,-0.006888073621972524,,
+constant_mean_vs_identity_B,aggregate,,20260823,,-0.33333333333333215,-0.055555555555557135,0.026281229327842937,,
+constant_mean_vs_identity_B,aggregate,,20260824,,0.16666666666666785,-0.3333333333333286,-0.33247433572306306,,
+constant_mean_vs_identity_B,five_seed_mean_unlearn_accuracy,,mean,,0.05000000000000071,,,1,5
+constant_mean_vs_identity_B,five_seed_mean_preserve_accuracy,,mean,,,-0.13333333333333286,,2,5
+constant_mean_vs_identity_B,five_seed_mean_overall_accuracy,,mean,,,,-0.12922865694169589,2,5
+constant_mean_vs_identity_B,per_target,golden retriever,20260820,2.5,,,,,
+constant_mean_vs_identity_B,per_target,golden retriever,20260821,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,golden retriever,20260822,2.5,,,,,
+constant_mean_vs_identity_B,per_target,golden retriever,20260823,0.8333333333333321,,,,,
+constant_mean_vs_identity_B,per_target,golden retriever,20260824,3.333333333333334,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,golden retriever,mean,2.0,,,,0,5
+constant_mean_vs_identity_B,per_target,labrador retriever,20260820,-0.8333333333333321,,,,,
+constant_mean_vs_identity_B,per_target,labrador retriever,20260821,1.6666666666666679,,,,,
+constant_mean_vs_identity_B,per_target,labrador retriever,20260822,-1.6666666666666643,,,,,
+constant_mean_vs_identity_B,per_target,labrador retriever,20260823,0.0,,,,,
+constant_mean_vs_identity_B,per_target,labrador retriever,20260824,-1.6666666666666643,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,labrador retriever,mean,-0.49999999999999856,,,,3,5
+constant_mean_vs_identity_B,per_target,tabby,20260820,-1.666666666666666,,,,,
+constant_mean_vs_identity_B,per_target,tabby,20260821,0.8333333333333321,,,,,
+constant_mean_vs_identity_B,per_target,tabby,20260822,1.6666666666666679,,,,,
+constant_mean_vs_identity_B,per_target,tabby,20260823,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,tabby,20260824,0.8333333333333321,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,tabby,mean,0.5,,,,1,5
+constant_mean_vs_identity_B,per_target,tiger cat,20260820,0.8333333333333286,,,,,
+constant_mean_vs_identity_B,per_target,tiger cat,20260821,1.6666666666666643,,,,,
+constant_mean_vs_identity_B,per_target,tiger cat,20260822,2.5,,,,,
+constant_mean_vs_identity_B,per_target,tiger cat,20260823,0.8333333333333357,,,,,
+constant_mean_vs_identity_B,per_target,tiger cat,20260824,1.6666666666666643,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,tiger cat,mean,1.4999999999999987,,,,0,5
+constant_mean_vs_identity_B,per_target,orange,20260820,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,orange,20260821,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,orange,20260822,0.0,,,,,
+constant_mean_vs_identity_B,per_target,orange,20260823,0.833333333333333,,,,,
+constant_mean_vs_identity_B,per_target,orange,20260824,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,orange,mean,0.666666666666667,,,,0,5
+constant_mean_vs_identity_B,per_target,lemon,20260820,-0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,lemon,20260821,-2.5,,,,,
+constant_mean_vs_identity_B,per_target,lemon,20260822,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,lemon,20260823,-2.5,,,,,
+constant_mean_vs_identity_B,per_target,lemon,20260824,-0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,lemon,mean,-1.1666666666666667,,,,4,5
+constant_mean_vs_identity_B,per_target,yawl,20260820,-1.6666666666666714,,,,,
+constant_mean_vs_identity_B,per_target,yawl,20260821,-1.6666666666666643,,,,,
+constant_mean_vs_identity_B,per_target,yawl,20260822,0.8333333333333286,,,,,
+constant_mean_vs_identity_B,per_target,yawl,20260823,-0.8333333333333286,,,,,
+constant_mean_vs_identity_B,per_target,yawl,20260824,-3.3333333333333357,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,yawl,mean,-1.3333333333333344,,,,4,5
+constant_mean_vs_identity_B,per_target,lifeboat,20260820,0.0,,,,,
+constant_mean_vs_identity_B,per_target,lifeboat,20260821,1.6666666666666665,,,,,
+constant_mean_vs_identity_B,per_target,lifeboat,20260822,-1.666666666666667,,,,,
+constant_mean_vs_identity_B,per_target,lifeboat,20260823,0.0,,,,,
+constant_mean_vs_identity_B,per_target,lifeboat,20260824,0.0,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,lifeboat,mean,-8.881784197001253e-17,,,,1,5
+constant_mean_vs_identity_B,per_target,soccer ball,20260820,-0.8333333333333286,,,,,
+constant_mean_vs_identity_B,per_target,soccer ball,20260821,-4.166666666666664,,,,,
+constant_mean_vs_identity_B,per_target,soccer ball,20260822,-3.333333333333332,,,,,
+constant_mean_vs_identity_B,per_target,soccer ball,20260823,-4.166666666666664,,,,,
+constant_mean_vs_identity_B,per_target,soccer ball,20260824,0.0,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,soccer ball,mean,-2.499999999999998,,,,4,5
+constant_mean_vs_identity_B,per_target,volleyball,20260820,1.6666666666666679,,,,,
+constant_mean_vs_identity_B,per_target,volleyball,20260821,2.5,,,,,
+constant_mean_vs_identity_B,per_target,volleyball,20260822,0.8333333333333321,,,,,
+constant_mean_vs_identity_B,per_target,volleyball,20260823,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target,volleyball,20260824,0.8333333333333339,,,,,
+constant_mean_vs_identity_B,per_target_five_seed_mean,volleyball,mean,1.3333333333333335,,,,0,5

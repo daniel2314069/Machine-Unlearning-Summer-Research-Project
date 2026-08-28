@@ -55,3 +55,10 @@ The verified seed-`20260820` smoke retrieval is summarized in
 `smoke_results/`; the original `.pt` tensors and full server provenance remain
 under `.local_artifacts/scapre_informax/`. Files selected for external GPT web
 review are collected in `smoke_results/gpt_handoff/README.md`.
+
+## Completed formal
+
+The verified five-seed formal result and portable technical report are under
+`formal_results/`. The full extracted archive, raw scores, image manifest,
+Torch diagnostics, and source snapshots remain under
+`.local_artifacts/scapre_informax/`.

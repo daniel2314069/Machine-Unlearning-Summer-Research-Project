@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/alpha_channel_controls/.server/official_reference_formal_20260821T081723Z_df0874fea7c0998b",
+  "seeds": {
+    "20260820": {
+      "score_sha256": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "rows": 3000
+    },
+    "20260821": {
+      "score_sha256": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "rows": 3000
+    },
+    "20260822": {
+      "score_sha256": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "rows": 3000
+    },
+    "20260823": {
+      "score_sha256": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "rows": 3000
+    },
+    "20260824": {
+      "score_sha256": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724",
+      "rows": 3000
+    }
+  },
+  "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+  "historical_source_hashes_verified": true,
+  "official_code_path_compatibility_diff_sha256": "5a3d2b27bf0395dc0d1bd5dcbaeff2dc41302074a450479e29851a90cc4841e3",
+  "compatibility_diff_is_additive_non_official_modes_only": true
+}

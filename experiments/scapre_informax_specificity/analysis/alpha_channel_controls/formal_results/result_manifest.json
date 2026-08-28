@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "profile": "formal",
+  "files_sha256_before_manifest": {
+    "alpha_matrix_summary.csv": "e2ce9d3cd810ca1a1ddac51f52babc4be8e0786ecbcb70a9bf18a4126cc8bfd5",
+    "comparison_deltas.csv": "d13e976acf513c3fdb647356316c310dcf9f3be410913c45330180876f32e373",
+    "generated_image_manifest.csv": "aaa93a8ce6f6dfa8ec709798ba6e28d13dae5dea9c804387462325eccbcb6846",
+    "integrity_report.json": "0c4078aaf1fb7e17ed68bbb7d591c89ae497c129d87b3250d3496c77b26846ff",
+    "per_seed_metrics.csv": "8fa105508ae0811299b06ca48c78bea266b6b6f380b246a330cc772a154c9203",
+    "per_target_metrics.csv": "3cd2bc06191c9bbbfb40440c3038270b513d371b94764e9eec40477cdb89cb08",
+    "summary.md": "589c896c5a74e3fb97d85192de4754d01a33aac97ea6181cf2cd514891423789"
+  },
+  "required_files_present": true
+}

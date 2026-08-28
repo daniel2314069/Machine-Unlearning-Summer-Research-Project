@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Final-alpha Channel Controls — Formal Result</title>
+  <style>
+    :root { color-scheme: light; --ink:#17212b; --muted:#5b6875; --line:#d9e0e6; --paper:#fff; --wash:#f5f7f9; --accent:#195f8c; --u:#a46728; --p:#24756d; --o:#76589b; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--wash); color:var(--ink); font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { width:min(1120px,calc(100% - 32px)); margin:32px auto; background:var(--paper); padding:clamp(24px,5vw,64px); box-shadow:0 10px 30px #1a273312; }
+    h1 { font-size:clamp(2rem,5vw,3.7rem); line-height:1.05; letter-spacing:-.045em; margin:0 0 12px; }
+    h2 { margin:46px 0 12px; font-size:1.55rem; letter-spacing:-.02em; }
+    h3 { margin:26px 0 8px; }
+    p { max-width:78ch; }
+    .eyebrow { color:var(--accent); text-transform:uppercase; letter-spacing:.13em; font-weight:700; font-size:.78rem; }
+    .dek { color:var(--muted); font-size:1.14rem; max-width:72ch; }
+    .verdict { margin:28px 0; padding:22px 24px; border-left:5px solid var(--accent); background:#eef5f8; font-size:1.08rem; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0; }
+    .card { padding:18px; background:var(--wash); border:1px solid var(--line); }
+    .card b { display:block; font-size:1.3rem; margin-top:4px; }
+    .small,.note,figcaption { color:var(--muted); font-size:.9rem; }
+    figure { margin:24px 0; padding:18px; border:1px solid var(--line); overflow-x:auto; }
+    svg { width:100%; min-width:700px; height:auto; display:block; }
+    table { width:100%; border-collapse:collapse; margin:18px 0 28px; font-variant-numeric:tabular-nums; }
+    th,td { padding:10px 9px; border-bottom:1px solid var(--line); text-align:right; vertical-align:top; }
+    th { color:#34414d; font-size:.83rem; background:var(--wash); }
+    th:first-child,td:first-child { text-align:left; }
+    .table-wrap { overflow-x:auto; }
+    .good { font-weight:700; color:#176b5a; }
+    .mixed { font-weight:700; color:#805518; }
+    code { background:#eef1f3; padding:.12em .3em; border-radius:3px; }
+    a { color:#125f92; }
+    ul,ol { max-width:78ch; }
+    footer { margin-top:52px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.88rem; }
+    @media (max-width:760px) { .grid { grid-template-columns:1fr; } main { width:100%; margin:0; box-shadow:none; } }
+    @media print { body { background:#fff; } main { width:100%; margin:0; padding:24px; box-shadow:none; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">ScaPre Informax · formal five-seed analysis</div>
+    <h1>Final-alpha channel controls</h1>
+    <p class="dek">Does the exact correspondence between channels and final alpha values improve concept erasure? Under the registered official-empty-neutral configuration, the aggregate evidence says no.</p>
+  </header>
+
+  <div class="verdict"><strong>Technical conclusion.</strong> Removing channel differentiation with <code>constant_mean</code>, or destroying channel identity while preserving the exact alpha multiset with <code>shuffled</code>, did not degrade any five-seed mean metric. Both controls instead produced small favorable movements—less than 0.4 percentage points. This is a narrow descriptive conclusion, not a claim that all assignments are universally equivalent.</div>
+
+  <div class="grid" aria-label="Key experiment facts">
+    <div class="card"><span class="small">Raw classifier rows verified</span><b>60,000</b><span class="small">zero metric recomputation error</span></div>
+    <div class="card"><span class="small">Fixed edit seeds</span><b>5</b><span class="small">four variants per seed</span></div>
+    <div class="card"><span class="small">Registered matrix gates</span><b>640 / 640</b><span class="small">all passed</span></div>
+  </div>
+
+  <h2>Channel identity did not improve the established metrics</h2>
+  <p><code>constant_mean</code> changed the five-seed means by <strong>−0.083 pp Unlearn, +0.356 pp Preserve, and +0.334 pp Overall</strong> relative to official. <code>shuffled</code> changed them by <strong>−0.133 pp, +0.211 pp, and +0.217 pp</strong>. Both were favorable on Unlearn in 3/5 seeds and on Preserve/Overall in 4/5 seeds.</p>
+
+  <figure>
+    <svg viewBox="0 0 900 420" role="img" aria-labelledby="chart-title chart-desc">
+      <title id="chart-title">Five-seed mean deltas versus official</title>
+      <desc id="chart-desc">Grouped bars for constant mean, shuffled, and identity B. Negative Unlearn and positive Preserve and Overall deltas are favorable.</desc>
+      <text x="72" y="24" font-size="17" font-weight="700" fill="#17212b">Treatment minus official (percentage points)</text>
+      <g stroke="#d9e0e6" stroke-width="1">
+        <line x1="72" y1="60" x2="870" y2="60"/><line x1="72" y1="120" x2="870" y2="120"/><line x1="72" y1="180" x2="870" y2="180"/><line x1="72" y1="240" x2="870" y2="240"/><line x1="72" y1="300" x2="870" y2="300"/>
+      </g>
+      <g fill="#5b6875" font-size="12" text-anchor="end">
+        <text x="62" y="64">+0.4</text><text x="62" y="124">+0.2</text><text x="62" y="184">0.0</text><text x="62" y="244">−0.2</text><text x="62" y="304">−0.4</text>
+      </g>
+      <line x1="72" y1="180" x2="870" y2="180" stroke="#66727e" stroke-width="2"/>
+      <!-- constant_mean -->
+      <rect x="150" y="180" width="42" height="25" fill="#a46728"><title>Unlearn −0.083 pp</title></rect>
+      <rect x="196" y="73" width="42" height="107" fill="#24756d"><title>Preserve +0.356 pp</title></rect>
+      <rect x="242" y="80" width="42" height="100" fill="#76589b"><title>Overall +0.334 pp</title></rect>
+      <!-- shuffled -->
+      <rect x="395" y="180" width="42" height="40" fill="#a46728"><title>Unlearn −0.133 pp</title></rect>
+      <rect x="441" y="117" width="42" height="63" fill="#24756d"><title>Preserve +0.211 pp</title></rect>
+      <rect x="487" y="115" width="42" height="65" fill="#76589b"><title>Overall +0.217 pp</title></rect>
+      <!-- identity B -->
+      <rect x="640" y="180" width="42" height="10" fill="#a46728"><title>Unlearn −0.033 pp</title></rect>
+      <rect x="686" y="113" width="42" height="67" fill="#24756d"><title>Preserve +0.222 pp</title></rect>
+      <rect x="732" y="119" width="42" height="61" fill="#76589b"><title>Overall +0.205 pp</title></rect>
+      <g fill="#17212b" font-size="13" text-anchor="middle">
+        <text x="217" y="332">constant_mean</text><text x="462" y="332">shuffled</text><text x="707" y="332">identity_B</text>
+      </g>
+      <g font-size="12">
+        <rect x="268" y="370" width="14" height="14" fill="#a46728"/><text x="288" y="382">Unlearn</text>
+        <rect x="399" y="370" width="14" height="14" fill="#24756d"/><text x="419" y="382">Preserve</text>
+        <rect x="538" y="370" width="14" height="14" fill="#76589b"/><text x="558" y="382">Overall</text>
+      </g>
+    </svg>
+    <figcaption>Direction is metric-specific: lower Unlearn is favorable; higher Preserve and Overall are favorable. Exact data: <a href="comparison_deltas.csv">comparison_deltas.csv</a>.</figcaption>
+  </figure>
+
+  <h2>Aggregate effects are small</h2>
+  <p>The control-versus-official changes are all below 0.4 percentage points. Across-seed sample standard deviations of the absolute metrics range from about 0.10 to 0.47 points. Each seed includes 1,200 target and 1,800 retain images: one changed target classification is 0.083 pp, and one changed retain classification is 0.056 pp.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Variant</th><th>Unlearn mean</th><th>SD</th><th>Preserve mean</th><th>SD</th><th>Overall mean</th><th>SD</th></tr></thead>
+    <tbody>
+      <tr><td>official</td><td>19.2667</td><td>0.4464</td><td>40.4556</td><td>0.2434</td><td>53.9007</td><td>0.2602</td></tr>
+      <tr><td>constant_mean</td><td>19.1833</td><td>0.3699</td><td class="good">40.8111</td><td>0.1009</td><td class="good">54.2344</td><td>0.1439</td></tr>
+      <tr><td>shuffled</td><td class="good">19.1333</td><td>0.4736</td><td>40.6667</td><td>0.3043</td><td>54.1177</td><td>0.3421</td></tr>
+      <tr><td>identity_B</td><td>19.2333</td><td>0.1603</td><td>40.6778</td><td>0.2056</td><td>54.1052</td><td>0.1776</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2><code>B = I</code> is viable, but not the best-performing control</h2>
+  <p><code>identity_B</code> narrowly improved all three official means: −0.033 pp Unlearn, +0.222 pp Preserve, and +0.205 pp Overall. But only 2/5 seeds favored it on Unlearn and 3/5 on Preserve/Overall. Against <code>constant_mean</code>, it was worse on all three means. Its per-matrix scale is also roughly 84–139 times the official mean alpha, so it should remain a paper-limit reference rather than replace repository behavior on this evidence.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Comparison</th><th>Mean ΔU</th><th>Mean ΔP</th><th>Mean ΔO</th><th>U favorable</th><th>P favorable</th><th>O favorable</th></tr></thead>
+    <tbody>
+      <tr><td>official → constant_mean</td><td class="good">−0.083</td><td class="good">+0.356</td><td class="good">+0.334</td><td>3/5</td><td>4/5</td><td>4/5</td></tr>
+      <tr><td>official → shuffled</td><td class="good">−0.133</td><td class="good">+0.211</td><td class="good">+0.217</td><td>3/5</td><td>4/5</td><td>4/5</td></tr>
+      <tr><td>official → identity_B</td><td class="good">−0.033</td><td class="good">+0.222</td><td class="good">+0.205</td><td>2/5</td><td>3/5</td><td>3/5</td></tr>
+      <tr><td>constant_mean → identity_B</td><td class="mixed">+0.050</td><td class="mixed">−0.133</td><td class="mixed">−0.129</td><td>1/5</td><td>2/5</td><td>2/5</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Concept families move in different directions</h2>
+  <p>The global means hide heterogeneity. For <code>identity_B</code>, target accuracy moved favorably for fruits, balls, and boats, but unfavorably for dogs and cats. Retain accuracy improved for cats and boats while declining for dogs, fruits, and balls. The mean result therefore does not justify a universal equivalence claim.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Control</th><th>Family</th><th>Target Δ accuracy</th><th>Retain Δ accuracy</th></tr></thead>
+    <tbody>
+      <tr><td>constant_mean</td><td>dogs</td><td>+0.417</td><td>+0.444</td></tr><tr><td>constant_mean</td><td>cats</td><td>−0.333</td><td>+0.222</td></tr><tr><td>constant_mean</td><td>fruits</td><td>−0.667</td><td>−0.056</td></tr><tr><td>constant_mean</td><td>boats</td><td>+0.167</td><td>+0.500</td></tr><tr><td>constant_mean</td><td>balls</td><td>0.000</td><td>+0.667</td></tr>
+      <tr><td>shuffled</td><td>dogs</td><td>+0.250</td><td>+0.556</td></tr><tr><td>shuffled</td><td>cats</td><td>−0.333</td><td>−0.056</td></tr><tr><td>shuffled</td><td>fruits</td><td>−0.667</td><td>0.000</td></tr><tr><td>shuffled</td><td>boats</td><td>0.000</td><td>+0.389</td></tr><tr><td>shuffled</td><td>balls</td><td>+0.083</td><td>+0.167</td></tr>
+      <tr><td>identity_B</td><td>dogs</td><td>+1.167</td><td>−0.333</td></tr><tr><td>identity_B</td><td>cats</td><td>+0.667</td><td>+1.111</td></tr><tr><td>identity_B</td><td>fruits</td><td>−0.917</td><td>−0.222</td></tr><tr><td>identity_B</td><td>boats</td><td>−0.500</td><td>+0.667</td></tr><tr><td>identity_B</td><td>balls</td><td>−0.583</td><td>−0.111</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>Scope, design, and definitions</h2>
+  <p>The formal run uses Stable Diffusion v1.5, the registered 10 target and 15 similar retain concepts, the official empty-string neutral, five fixed edit seeds (<code>20260820</code>–<code>20260824</code>), and 120 images per concept. Each variant/seed therefore has 3,000 classifier rows.</p>
+  <ul>
+    <li><strong>Unlearn Accuracy:</strong> classifier accuracy over target images; lower is favorable.</li>
+    <li><strong>Preserve Accuracy:</strong> classifier accuracy over retain images; higher is favorable.</li>
+    <li><strong>Overall Accuracy:</strong> harmonic mean of forgetting (<code>100 − Unlearn</code>) and Preserve; higher is favorable.</li>
+  </ul>
+  <p>The intervention changes only the final concept-max alpha vector before the closed-form edit. <code>constant_mean</code> preserves each matrix mean, <code>shuffled</code> preserves every exact multiset using a preregistered deterministic permutation, and <code>identity_B</code> sets all entries to one. The raw MI, pre-aggregate alpha, thresholds, non-alpha inputs, prompts, image seeds, sampler, CFG, generation count, and evaluator remain fixed.</p>
+
+  <h2>Validation assessment: share with caveats</h2>
+  <p>The server integrity report passed every registered gate. Independent local QA re-read all 60,000 raw score rows, reproduced all 20 seed-level metric rows with maximum absolute error 0.0, verified the packaged result hashes, and checked the 45,000-row generated-image manifest. The downloaded archive SHA-256 matches the server sidecar.</p>
+  <p><strong>Operational caveat:</strong> the downloaded files did not include the formal <code>.cleanup.json</code> sidecar. Calculation, aggregation, archive integrity, and all evidence used here are verified; only deletion of the 45,000 regenerable server PNGs remains unverified. See <a href="retrieval_validation.json">retrieval_validation.json</a> and <a href="integrity_report.json">integrity_report.json</a>.</p>
+
+  <h2>Limits and next steps</h2>
+  <p>The five fixed seeds are a deterministic robustness panel, not a random sample supporting population-level significance. Effects are small, classifier-based, and heterogeneous across families. The supported statement is only that channel-specific final-alpha assignment does not explain an aggregate advantage under this exact configuration.</p>
+  <ol>
+    <li>Treat the main channel-identity question as answered negatively for this configuration; do not spend GPU time on post hoc shuffle permutations.</li>
+    <li>If scientifically valuable, preregister a family-focused replication around the observed dog/cat versus fruit/boat/ball split.</li>
+    <li>Keep <code>identity_B</code> as a viable paper-limit reference, not a replacement default; a replacement would require an independently motivated scale study.</li>
+    <li>Retrieve the formal cleanup sidecar to complete the server lifecycle record.</li>
+  </ol>
+
+  <h2>Evidence files</h2>
+  <ul>
+    <li><a href="per_seed_metrics.csv">Per-seed established metrics</a></li>
+    <li><a href="per_target_metrics.csv">Per-concept metrics</a></li>
+    <li><a href="comparison_deltas.csv">Registered comparison deltas</a></li>
+    <li><a href="alpha_matrix_summary.csv">Alpha/B matrix gates</a></li>
+    <li><a href="server_summary.md">Server-generated summary</a></li>
+    <li><a href="run_manifest.json">Run manifest</a> and <a href="official_reference_validation.json">official-reference validation</a></li>
+  </ul>
+
+  <footer>Prepared 2026-08-28 from the completed formal run at commit <code>a393c649f54b532fdcd85fc3fe7ff3e30a1a5f0d</code>. The report is fully static and contains no external assets or scripts. Canonical report data: <a href="report_artifact.json">report_artifact.json</a>.</footer>
+</main>
+</body>
+</html>
