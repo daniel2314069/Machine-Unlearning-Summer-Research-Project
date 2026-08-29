@@ -16,8 +16,8 @@ RUN_DIR="$(cd "$RUN_DIR" 2>/dev/null && pwd || true)"
   echo "ERROR: package requires a completed successful run" >&2; exit 2;
 }
 [[ -f "$RUN_DIR/reproducibility/integrity_report.json" ]] || { echo "ERROR: integrity report missing" >&2; exit 2; }
-command -v jq >/dev/null || { echo "ERROR: packaging requires jq" >&2; exit 2; }
-jq -e '.status == "passed"' "$RUN_DIR/reproducibility/integrity_report.json" >/dev/null || {
+INTEGRITY_STATUS="$(sed -n 's/^  "status": "\([^"]*\)",\{0,1\}$/\1/p' "$RUN_DIR/reproducibility/integrity_report.json" | head -n 1)"
+[[ "$INTEGRITY_STATUS" == "passed" ]] || {
   echo "ERROR: integrity report did not pass" >&2; exit 2;
 }
 FILES=(

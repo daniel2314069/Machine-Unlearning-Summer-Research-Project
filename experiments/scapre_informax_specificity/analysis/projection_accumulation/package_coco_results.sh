@@ -17,8 +17,8 @@ RUN_DIR="$(cd "$RUN_DIR" 2>/dev/null && pwd || true)"
 }
 INTEGRITY="$RUN_DIR/results/integrity_report.json"
 [[ -f "$INTEGRITY" ]] || { echo "ERROR: COCO integrity report missing" >&2; exit 2; }
-command -v jq >/dev/null || { echo "ERROR: COCO packaging requires jq" >&2; exit 2; }
-jq -e '.status == "passed"' "$INTEGRITY" >/dev/null || { echo "ERROR: COCO integrity did not pass" >&2; exit 2; }
+INTEGRITY_STATUS="$(sed -n 's/^  "status": "\([^"]*\)",\{0,1\}$/\1/p' "$INTEGRITY" | head -n 1)"
+[[ "$INTEGRITY_STATUS" == "passed" ]] || { echo "ERROR: COCO integrity did not pass" >&2; exit 2; }
 
 FILES=(
   COMPLETED exit_code finished_at_utc started_at_utc python_path mode logs/server.log status.json
