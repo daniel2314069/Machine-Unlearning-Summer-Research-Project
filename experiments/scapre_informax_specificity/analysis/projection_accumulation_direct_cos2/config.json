@@ -1,7 +1,9 @@
 {
-  "experiment_name": "scapre_informax_projection_accumulation",
-  "protocol_label": "project-established Confuse5 reconstruction derived from public ScaPre assets",
-  "variant": "projection_accumulation",
+  "experiment_name": "scapre_informax_projection_accumulation_direct_cos2",
+  "protocol_label": "post-V1 exploratory direct-cos2 Confuse5 follow-up",
+  "confirmatory_status": "exploratory; proposed after observing projection_accumulation V1",
+  "variant": "projection_accumulation_direct_cos2",
+  "requires_v1_diagnostic_analysis": true,
   "edit_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
   "legacy_informax_seed": 20260820,
   "fixed_non_informax_seed": 20260820,
@@ -9,13 +11,13 @@
     "difference": "concept_vecs[k] - empty_vec",
     "score": "((W @ d)**2) / ((row_norm_sq + eps) * (d_norm_sq + eps))",
     "score_dtype": "float32",
-    "alpha_mode": "zscore_sigmoid_power",
-    "selected_alpha": "sigmoid(zscore(projection_score) / 0.7) ** 8",
-    "normalization": "per-concept per-matrix sample-standard-deviation z-score",
+    "alpha_mode": "direct_cos2",
+    "selected_alpha": "projection_score",
+    "normalization": "none",
     "temperature": 0.7,
     "power": 8.0,
+    "temperature_and_power_usage": "V1 descriptive diagnostic only; not applied to treatment alpha",
     "eps": 1e-8,
-    "std": "torch.std default sample-standard-deviation semantics",
     "sweep": false
   },
   "expected_layers_per_projection": 16,
@@ -58,24 +60,9 @@
     "minimum_favorable_overall_seeds": 4,
     "group_and_target_pattern": "manual review; no post-hoc numerical cutoff"
   },
-  "coco": {
-    "label": "project-defined secondary general-generation safeguard",
-    "edit_seed": 20260820,
-    "prompt_source": "orthogonal-concept-erasure/data/coco_30k.csv",
-    "prompt_source_sha256": "87a3f463164120ca2d1efdbc251f443c7b0043214f767cd1852419d295db9ab5",
-    "ordered_subsets": [1000, 10000],
-    "dtype": "float16",
-    "scheduler": "PNDMScheduler",
-    "num_inference_steps": 50,
-    "guidance_scale": 7.5,
-    "height": 512,
-    "width": 512,
-    "clip_model_id": "openai/clip-vit-base-patch32",
-    "clip_implementation": "transformers logits_per_image diagonal",
-    "fid_implementation": "torch_fidelity 0.3.0",
-    "fid_feature_extractor": "inception-v3-compat",
-    "fid_feature_layer": "2048",
-    "first_1k_fid_interpretation": "descriptive screening only",
-    "paper_reproduction": false
+  "post_confuse5_contract": {
+    "automatic_coco_launch": false,
+    "on_failure": "stop; do not tune or launch COCO",
+    "on_success": "stop for manual review; COCO is a separate safeguard and not independent Confuse5 confirmation"
   }
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the byte-unchanged Confuse5 evaluator with the projection label."""
+"""Run the byte-unchanged Confuse5 evaluator with a controlled treatment label."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ from pathlib import Path
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--script", type=Path, required=True)
+    parser.add_argument("--variant-label", required=True)
     args, remainder = parser.parse_known_args()
     if remainder and remainder[0] == "--":
         remainder = remainder[1:]
@@ -26,7 +27,7 @@ def main() -> None:
     def controlled_parse_args(parser_self, args_override=None, namespace=None):
         parsed = original_parse_args(parser_self, args_override, namespace)
         if getattr(parsed, "variant", None) == "official":
-            parsed.variant = "projection_accumulation"
+            parsed.variant = args.variant_label
         return parsed
 
     argparse.ArgumentParser.parse_args = controlled_parse_args

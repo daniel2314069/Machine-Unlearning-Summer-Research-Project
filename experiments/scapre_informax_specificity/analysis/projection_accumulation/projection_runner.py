@@ -23,12 +23,18 @@ import torch
 
 
 INFORMAX_CALLER = "_compute_mi_softmask_emptyneg"
-VARIANTS = {"official", "projection_accumulation"}
+VARIANTS = {
+    "official",
+    "projection_accumulation",
+    "projection_accumulation_direct_cos2",
+}
+ALPHA_MODES = {"zscore_sigmoid_power", "direct_cos2"}
 
 
 def parse_args() -> tuple[argparse.Namespace, list[str]]:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--variant", choices=sorted(VARIANTS), required=True)
+    parser.add_argument("--alpha-mode", choices=sorted(ALPHA_MODES), required=True)
     parser.add_argument("--informax-seed", type=int, required=True)
     parser.add_argument("--informax-rng-mode", choices=["legacy", "isolated"], required=True)
     parser.add_argument("--script", type=Path, required=True)
@@ -77,9 +83,22 @@ def tensor_stats(value: torch.Tensor) -> dict[str, Any]:
         "median": quantiles[1].item(),
         "mean": flat.mean().item(),
         "std": flat.std(unbiased=True).item() if flat.numel() > 1 else 0.0,
+        "frobenius": float(torch.linalg.vector_norm(flat).item()),
         "p95": quantiles[2].item(),
         "p99": quantiles[3].item(),
         "max": flat.max().item(),
+        "sha256": tensor_sha256(value),
+    }
+
+
+def contribution_stats(value: torch.Tensor) -> dict[str, Any]:
+    flat = value.detach().double().flatten().cpu()
+    return {
+        "count": flat.numel(),
+        "finite": bool(torch.isfinite(flat).all().item()),
+        "frobenius": float(torch.linalg.vector_norm(flat).item()),
+        "l1": float(flat.abs().sum().item()),
+        "max_abs": float(flat.abs().max().item()),
         "sha256": tensor_sha256(value),
     }
 
@@ -144,7 +163,7 @@ def main() -> None:
     if not script.is_file():
         raise RuntimeError(f"editor does not exist: {script}")
     if args.temperature != 0.7 or args.power != 8.0 or args.eps != 1e-8:
-        raise RuntimeError("projection formula is frozen at T=0.7, p=8, eps=1e-8")
+        raise RuntimeError("diagnostic V1 transform is frozen at T=0.7, p=8, eps=1e-8")
     if args.expected_accumulation_intercepts != (
         args.expected_matrix_records * args.targets_per_matrix
     ):
@@ -223,10 +242,19 @@ def main() -> None:
         z_score = (score - score.mean()) / (score.std() + args.eps)
         projection_alpha = torch.sigmoid(z_score / args.temperature).pow(args.power).view(-1, 1)
         projection_alpha = projection_alpha.to(device=row_w_c.device, dtype=row_w_c.dtype)
+        direct_alpha = score.view(-1, 1).to(device=row_w_c.device, dtype=row_w_c.dtype)
 
-        if not torch.isfinite(score).all().item() or not torch.isfinite(projection_alpha).all().item():
+        if (
+            not torch.isfinite(score).all().item()
+            or not torch.isfinite(projection_alpha).all().item()
+            or not torch.isfinite(direct_alpha).all().item()
+        ):
             raise RuntimeError("projection score or alpha contains NaN/Inf")
-        if score.max().item() == score.min().item() or projection_alpha.max().item() == projection_alpha.min().item():
+        if (
+            score.max().item() == score.min().item()
+            or projection_alpha.max().item() == projection_alpha.min().item()
+            or direct_alpha.max().item() == direct_alpha.min().item()
+        ):
             raise RuntimeError("projection score or alpha is constant")
 
         index = len(accumulation_records)
@@ -247,11 +275,22 @@ def main() -> None:
             "official_row_w_c": official_cpu,
             "projection_score": score_cpu,
             "projection_alpha": alpha_cpu,
+            "direct_cos2_alpha": direct_alpha.detach().cpu(),
             "official_stats": tensor_stats(official_cpu),
             "score_stats": tensor_stats(score_cpu),
             "projection_alpha_stats": tensor_stats(alpha_cpu),
+            "direct_cos2_alpha_stats": tensor_stats(direct_alpha),
+            "weighted_contribution_stats": {
+                "official": contribution_stats(for_mat1 * row_w_c),
+                "v1_projection": contribution_stats(for_mat1 * projection_alpha),
+                "direct_cos2": contribution_stats(for_mat1 * direct_alpha),
+            },
             "pearson": pearson(official_cpu, alpha_cpu),
             "spearman": pearson(average_ranks(official_cpu), average_ranks(alpha_cpu)),
+            "official_vs_direct_pearson": pearson(official_cpu, direct_alpha),
+            "official_vs_direct_spearman": pearson(
+                average_ranks(official_cpu), average_ranks(direct_alpha)
+            ),
             "W_old_sha256": tensor_sha256(W_old),
             "c_vec_sha256": tensor_sha256(c_vec),
             "empty_vec_sha256": tensor_sha256(empty_vec),
@@ -261,7 +300,12 @@ def main() -> None:
             "rng_state_after_official_accumulation_mi": rng_state_sha256(),
         }
         accumulation_records.append(record)
-        selected = row_w_c if args.variant == "official" else projection_alpha
+        treatment_alpha = (
+            projection_alpha
+            if args.alpha_mode == "zscore_sigmoid_power"
+            else direct_alpha
+        )
+        selected = row_w_c if args.variant == "official" else treatment_alpha
         return for_mat1 * selected
 
     def controlled_cholesky(input_tensor: torch.Tensor, *positional: object, **kwargs: object):
@@ -293,6 +337,8 @@ def main() -> None:
                 "tensor_sha256": hashes,
                 "row_w_max": frame.f_locals["row_w_max"].detach().cpu(),
                 "row_w_max_stats": tensor_stats(frame.f_locals["row_w_max"]),
+                "V_stats": tensor_stats(frame.f_locals["V"]),
+                "mat1_agg_stats": tensor_stats(frame.f_locals["mat1_agg"]),
                 "mu": float(frame.f_locals["mu"]),
                 "rng_state_before_solve": rng_state_sha256(),
             })
@@ -310,6 +356,11 @@ def main() -> None:
             "informax_seed": args.informax_seed,
             "informax_rng_mode": args.informax_rng_mode,
             "formula": "((W @ (c-empty))**2) / ((row_norm_sq+eps)*(d_norm_sq+eps))",
+            "alpha_mode": args.alpha_mode,
+            "selected_treatment_alpha": (
+                "projection_score" if args.alpha_mode == "direct_cos2"
+                else "sigmoid(zscore(projection_score)/0.7)**8"
+            ),
             "score_dtype": "float32",
             "temperature": args.temperature,
             "power": args.power,

@@ -13,7 +13,6 @@ from statistics import mean
 
 
 SEEDS = [20260820, 20260821, 20260822, 20260823, 20260824]
-VARIANTS = ["official", "projection_accumulation"]
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -64,15 +63,21 @@ def metric_triplet(rows: list[dict[str, str]]) -> dict[str, float]:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-dir", type=Path, required=True)
+    parser.add_argument("--treatment", required=True)
     args = parser.parse_args()
     run_dir = args.run_dir.resolve()
+    treatment = args.treatment
+    if treatment == "official":
+        raise RuntimeError("treatment label cannot be official")
+    variants = ["official", treatment]
+    treatment_accuracy_field = f"{treatment}_accuracy"
     results = run_dir / "results"
     results.mkdir(exist_ok=True)
 
     scores: dict[tuple[int, str], list[dict[str, str]]] = {}
     expected_keys: list[tuple[str, ...]] | None = None
     for seed in SEEDS:
-        for variant in VARIANTS:
+        for variant in variants:
             path = run_dir / "seeds" / str(seed) / "evaluation" / variant / "scores.csv"
             rows = read_csv(path)
             if len(rows) != 3000:
@@ -94,7 +99,7 @@ def main() -> None:
     metric_by_seed: dict[tuple[int, str], dict[str, float]] = {}
     deltas: list[dict[str, object]] = []
     for seed in SEEDS:
-        for variant in VARIANTS:
+        for variant in variants:
             metrics = metric_triplet(scores[(seed, variant)])
             metric_by_seed[(seed, variant)] = metrics
             per_seed.append({
@@ -105,19 +110,19 @@ def main() -> None:
                 "overall_accuracy": metrics["overall"],
             })
         official = metric_by_seed[(seed, "official")]
-        treatment = metric_by_seed[(seed, "projection_accumulation")]
+        treatment_metrics = metric_by_seed[(seed, treatment)]
         deltas.append({
             "scope": "seed",
             "identifier": seed,
-            "delta_unlearn": treatment["unlearn"] - official["unlearn"],
-            "delta_preserve": treatment["preserve"] - official["preserve"],
-            "delta_overall": treatment["overall"] - official["overall"],
+            "delta_unlearn": treatment_metrics["unlearn"] - official["unlearn"],
+            "delta_preserve": treatment_metrics["preserve"] - official["preserve"],
+            "delta_overall": treatment_metrics["overall"] - official["overall"],
         })
 
     per_target: list[dict[str, object]] = []
     concept_summary: list[dict[str, object]] = []
-    concepts = sorted({row["concept"] for row in scores[(SEEDS[0], VARIANTS[0])]}, key=lambda value: next(
-        index for index, row in enumerate(scores[(SEEDS[0], VARIANTS[0])]) if row["concept"] == value
+    concepts = sorted({row["concept"] for row in scores[(SEEDS[0], variants[0])]}, key=lambda value: next(
+        index for index, row in enumerate(scores[(SEEDS[0], variants[0])]) if row["concept"] == value
     ))
     for concept in concepts:
         seed_deltas: list[float] = []
@@ -125,7 +130,7 @@ def main() -> None:
         role = ""
         for seed in SEEDS:
             official_rows = [row for row in scores[(seed, "official")] if row["concept"] == concept]
-            treatment_rows = [row for row in scores[(seed, "projection_accumulation")] if row["concept"] == concept]
+            treatment_rows = [row for row in scores[(seed, treatment)] if row["concept"] == concept]
             if len(official_rows) != 120 or len(treatment_rows) != 120:
                 raise RuntimeError(f"{concept}/{seed} does not have 120 rows per variant")
             group, role = official_rows[0]["group"], official_rows[0]["role"]
@@ -139,7 +144,7 @@ def main() -> None:
                 "role": role,
                 "concept": concept,
                 "official_accuracy": official_accuracy,
-                "projection_accumulation_accuracy": treatment_accuracy,
+                treatment_accuracy_field: treatment_accuracy,
                 "delta_accuracy": delta,
                 "favorable": delta < 0 if role == "target" else delta > 0,
             })
@@ -151,8 +156,8 @@ def main() -> None:
             "official_accuracy": mean(
                 float(row["official_accuracy"]) for row in per_target if row["concept"] == concept
             ),
-            "projection_accumulation_accuracy": mean(
-                float(row["projection_accumulation_accuracy"]) for row in per_target if row["concept"] == concept
+            treatment_accuracy_field: mean(
+                float(row[treatment_accuracy_field]) for row in per_target if row["concept"] == concept
             ),
             "delta_accuracy": mean(seed_deltas),
             "favorable": sum(delta < 0 for delta in seed_deltas) if role == "target" else sum(delta > 0 for delta in seed_deltas),
@@ -160,26 +165,26 @@ def main() -> None:
     per_target.extend(concept_summary)
 
     group_rows: list[dict[str, object]] = []
-    groups = list(dict.fromkeys(row["group"] for row in scores[(SEEDS[0], VARIANTS[0])]))
+    groups = list(dict.fromkeys(row["group"] for row in scores[(SEEDS[0], variants[0])]))
     for group in groups:
         group_seed_deltas: list[dict[str, float]] = []
         for seed in SEEDS:
             variant_metrics: dict[str, dict[str, float]] = {}
-            for variant in VARIANTS:
+            for variant in variants:
                 selected = [row for row in scores[(seed, variant)] if row["group"] == group]
                 variant_metrics[variant] = metric_triplet(selected)
             row = {
                 "edit_seed": seed,
                 "group": group,
                 "official_unlearn": variant_metrics["official"]["unlearn"],
-                "projection_unlearn": variant_metrics["projection_accumulation"]["unlearn"],
-                "delta_unlearn": variant_metrics["projection_accumulation"]["unlearn"] - variant_metrics["official"]["unlearn"],
+                "projection_unlearn": variant_metrics[treatment]["unlearn"],
+                "delta_unlearn": variant_metrics[treatment]["unlearn"] - variant_metrics["official"]["unlearn"],
                 "official_preserve": variant_metrics["official"]["preserve"],
-                "projection_preserve": variant_metrics["projection_accumulation"]["preserve"],
-                "delta_preserve": variant_metrics["projection_accumulation"]["preserve"] - variant_metrics["official"]["preserve"],
+                "projection_preserve": variant_metrics[treatment]["preserve"],
+                "delta_preserve": variant_metrics[treatment]["preserve"] - variant_metrics["official"]["preserve"],
                 "official_overall": variant_metrics["official"]["overall"],
-                "projection_overall": variant_metrics["projection_accumulation"]["overall"],
-                "delta_overall": variant_metrics["projection_accumulation"]["overall"] - variant_metrics["official"]["overall"],
+                "projection_overall": variant_metrics[treatment]["overall"],
+                "delta_overall": variant_metrics[treatment]["overall"] - variant_metrics["official"]["overall"],
             }
             group_rows.append(row)
             group_seed_deltas.append(row)  # type: ignore[arg-type]
@@ -201,21 +206,21 @@ def main() -> None:
         for metric in ("unlearn", "preserve", "overall")
     }
     treatment_mean = {
-        metric: mean(metric_by_seed[(seed, "projection_accumulation")][metric] for seed in SEEDS)
+        metric: mean(metric_by_seed[(seed, treatment)][metric] for seed in SEEDS)
         for metric in ("unlearn", "preserve", "overall")
     }
     mean_delta = {metric: treatment_mean[metric] - official_mean[metric] for metric in official_mean}
     favorable = {
         "unlearn": sum(
-            metric_by_seed[(seed, "projection_accumulation")]["unlearn"]
+            metric_by_seed[(seed, treatment)]["unlearn"]
             < metric_by_seed[(seed, "official")]["unlearn"] for seed in SEEDS
         ),
         "preserve": sum(
-            metric_by_seed[(seed, "projection_accumulation")]["preserve"]
+            metric_by_seed[(seed, treatment)]["preserve"]
             > metric_by_seed[(seed, "official")]["preserve"] for seed in SEEDS
         ),
         "overall": sum(
-            metric_by_seed[(seed, "projection_accumulation")]["overall"]
+            metric_by_seed[(seed, treatment)]["overall"]
             > metric_by_seed[(seed, "official")]["overall"] for seed in SEEDS
         ),
     }
@@ -235,7 +240,7 @@ def main() -> None:
 
     deltas.append({
         "scope": "five_seed_mean",
-        "identifier": "projection_accumulation-minus-official",
+        "identifier": f"{treatment}-minus-official",
         "delta_unlearn": mean_delta["unlearn"],
         "delta_preserve": mean_delta["preserve"],
         "delta_overall": mean_delta["overall"],
@@ -243,7 +248,7 @@ def main() -> None:
     write_csv(results / "per_seed_metrics.csv", per_seed,
               ["edit_seed", "variant", "unlearn_accuracy", "preserve_accuracy", "overall_accuracy"])
     write_csv(results / "per_target_metrics.csv", per_target,
-              ["edit_seed", "group", "role", "concept", "official_accuracy", "projection_accumulation_accuracy", "delta_accuracy", "favorable"])
+              ["edit_seed", "group", "role", "concept", "official_accuracy", treatment_accuracy_field, "delta_accuracy", "favorable"])
     write_csv(results / "comparison_deltas.csv", deltas,
               ["scope", "identifier", "delta_unlearn", "delta_preserve", "delta_overall"])
     write_csv(results / "per_group_metrics.csv", group_rows,
@@ -253,7 +258,8 @@ def main() -> None:
 
     payload = {
         "official_five_seed_mean": official_mean,
-        "projection_accumulation_five_seed_mean": treatment_mean,
+        "treatment_variant": treatment,
+        f"{treatment}_five_seed_mean": treatment_mean,
         "treatment_minus_official": mean_delta,
         "favorable_seeds": favorable,
         "directional_conditions": directional,
@@ -261,10 +267,10 @@ def main() -> None:
     (results / "aggregate_metrics.json").write_text(json.dumps(payload, indent=2) + "\n")
     lines = [
         "# ScaPre projection accumulation — Confuse5", "",
-        "Delta is projection_accumulation minus official. Lower Unlearn and higher Preserve/Overall are favorable.", "",
+        f"Delta is {treatment} minus official. Lower Unlearn and higher Preserve/Overall are favorable.", "",
         "| Variant | Unlearn ↓ | Preserve ↑ | Overall ↑ |", "| --- | ---: | ---: | ---: |",
         f"| official five-seed mean | {official_mean['unlearn']:.4f} | {official_mean['preserve']:.4f} | {official_mean['overall']:.4f} |",
-        f"| projection_accumulation five-seed mean | {treatment_mean['unlearn']:.4f} | {treatment_mean['preserve']:.4f} | {treatment_mean['overall']:.4f} |",
+        f"| {treatment} five-seed mean | {treatment_mean['unlearn']:.4f} | {treatment_mean['preserve']:.4f} | {treatment_mean['overall']:.4f} |",
         f"| treatment - official | {mean_delta['unlearn']:+.4f} | {mean_delta['preserve']:+.4f} | {mean_delta['overall']:+.4f} |", "",
         f"Favorable seeds: Unlearn {favorable['unlearn']}/5; Preserve {favorable['preserve']}/5; Overall {favorable['overall']}/5.", "",
         "Automatic directional conditions: " + ("PASS" if directional["automatic_directional_conditions_passed"] else "FAIL"),
