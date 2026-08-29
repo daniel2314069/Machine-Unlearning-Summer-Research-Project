@@ -1,0 +1,86 @@
+{
+  "status": "passed",
+  "archive": {
+    "basename": "scapre_projection_accumulation_formal_20260828T170053Z_20260829T092755Z.tar.gz",
+    "size_bytes": 48688224,
+    "sha256": "0211f954b8e7501be2aef3619fb9b05dd23c4faa6ca45d87b72b413188b4af1f",
+    "safe_relative_paths_only": true,
+    "manifest_entries": 129,
+    "extracted_files": 130,
+    "unlisted_files": [
+      "package_file_manifest.txt"
+    ],
+    "missing_manifest_files": []
+  },
+  "completion": {
+    "completed_marker": "completed",
+    "exit_code": 0,
+    "worker_status": "passed",
+    "integrity_status": "passed",
+    "qualification_status": "passed",
+    "coco_started": false
+  },
+  "independent_validation": {
+    "implementation": "Ruby 2.6.10 standard-library CSV/JSON/Digest plus POSIX shell",
+    "python_used_locally": false,
+    "raw_score_rows_checked": 30000,
+    "score_files_checked": 10,
+    "rows_per_seed_variant": 3000,
+    "target_rows_per_seed_variant": 1200,
+    "retain_rows_per_seed_variant": 1800,
+    "duplicate_generation_keys": 0,
+    "ordered_generation_keys_identical": true,
+    "binary_correctness_values_only": true,
+    "evaluator_fingerprints_checked": 10,
+    "evaluator_fingerprints_identical": true,
+    "source_hashes_checked": 19,
+    "source_hashes_match": true,
+    "protocol_hash_match": true,
+    "per_seed_metrics_recomputed": true,
+    "per_group_metrics_recomputed": true,
+    "per_concept_metrics_recomputed": true,
+    "aggregate_metrics_recomputed": true,
+    "all_five_seed_rng_and_isolation_chains_checked": true,
+    "all_ten_checkpoint_hash_chains_checked": true,
+    "correlation_rows_checked": 320
+  },
+  "score_sha256": {
+    "official": {
+      "20260820": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "20260821": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "20260822": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "20260823": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "20260824": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724"
+    },
+    "projection_accumulation": {
+      "20260820": "8f745ea6a366b438dcc6ac1e152f100d9d5b3c834d4e9802b46848524e42c7a9",
+      "20260821": "11ca407a3098b3bac12df72ca131655d3e37ab38e7624cbab27c6351bde69d9c",
+      "20260822": "f36eb4fa4f1f51e5ad16028d731fb2fe2b4fa3b67400fe5671cfe6d03480014f",
+      "20260823": "2b9e098bbfe849b4441639e4a844b0c99222ca5462c40b7df680022c7926ca66",
+      "20260824": "d6bf24b241fdd3903597fe409ed1393de58948f59ffd27c2978859710de56af6"
+    }
+  },
+  "headline_recalculation": {
+    "official": {
+      "unlearn": 19.266666666666666,
+      "preserve": 40.455555555555556,
+      "overall": 53.90070023677721
+    },
+    "projection_accumulation": {
+      "unlearn": 19.766666666666666,
+      "preserve": 45.84444444444444,
+      "overall": 58.34867148827667
+    },
+    "treatment_minus_official": {
+      "unlearn": 0.5,
+      "preserve": 5.388888888888886,
+      "overall": 4.44797125149946
+    },
+    "favorable_seeds": {
+      "unlearn": 1,
+      "preserve": 5,
+      "overall": 5
+    }
+  }
+}
+

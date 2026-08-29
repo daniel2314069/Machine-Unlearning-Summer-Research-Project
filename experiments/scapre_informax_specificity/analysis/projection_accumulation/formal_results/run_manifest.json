@@ -1,0 +1,137 @@
+{
+  "started_at_utc": "2026-08-28T17:00:54.099796+00:00",
+  "git_commit": "3f2033168eed3d5bc08565135438d704b5e38d3a",
+  "git_branch": "main",
+  "git_status_start": [],
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "source_sha256": {
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/README.md": "e05c26e4b56f4d92033c0128fd8c1a5718db42065416818642d36cf3d07f7591",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/aggregate_results.py": "3f80537bb3a02261c8f9a4a9cb3b533da386de9e24bb319a699240e79700634b",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/coco_server_worker.sh": "66dc68de6f0bbc066a0de3b7053648965f6adc61b794686ac6ba75d4995cf909",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/coco_worker.py": "0c5be16f662dc4105f3ce069ccf566a485ff96b31ec96d4816666ea3d1061737",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/config.json": "5b69ead78de3ef5854dc74018a4ed504b2ed743c73d4bd218e770462d137d990",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/evaluate_projection_runner.py": "87d2fcb5d786e1018445ab6ad9c64b79d66db7200690fdee35f2162142e6ada8",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/package_coco_results.sh": "433c7637dec046f133fa24252b2f63ab9acf6c76797ddbdf261f1675ef2a5980",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/package_results.sh": "ed5d1a00f7c46275da9958602b7f7c363ba9fdc645d99c9c55582e81b47b603d",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/projection_runner.py": "c91363e6963fcafe55983146ca84bda6f326e8d1c7f59e4228075b57aff87da2",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/run_projection_coco.sh": "bfb8c767a299c42444ba52c8514a2e6d04fdc72ff75e30e014121e75e0cfdc2c",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/run_projection_confuse5.sh": "d606aef16a6d184b137743ff0c3225865657ed9a66c50cfe1b1c17f28c3953ee",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/server_worker.sh": "2fe00dae7dae89fb4976882e8307fd900cd6e34aa1c0424c8793e7e43bce87ec",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/validate_static.sh": "6044be94fd45bab557b07ce0969fa9f9234b05d382eb07454068e418516ec035",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/worker.py": "f221e49cc89cde6e70c6ecea7af17d36ddbc58a804a3ae4690f81f4e6888f4e4",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "assets_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "production_editor_sha256_start": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "production_editor_sha256_end": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "git_status_before_aggregation": [],
+  "git_status_end": [],
+  "finished_at_utc": "2026-08-29T08:16:22.277275+00:00"
+}

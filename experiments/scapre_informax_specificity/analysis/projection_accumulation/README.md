@@ -1,5 +1,18 @@
 # ScaPre projection accumulation
 
+## Formal Confuse5 outcome
+
+The five-seed formal run completed with all qualification, isolation, and
+evaluation-integrity checks passing. Projection accumulation improved mean
+preserve and overall accuracy, but mean unlearn accuracy increased by 0.5
+percentage points and the cats group showed a repeated regression. It therefore
+failed the preregistered directional requirements and is treated as a valid
+negative result. No COCO evaluation was launched, and this modification is not
+being tuned or continued.
+
+The curated formal artifacts and independent retrieval validation are in
+[`formal_results/`](formal_results/README.md).
+
 This experiment replaces only the earlier per-concept Informax accumulation
 mask with a deterministic squared-cosine projection mask. The production
 editor remains byte-unchanged. Official Informax still runs at every aggregate
