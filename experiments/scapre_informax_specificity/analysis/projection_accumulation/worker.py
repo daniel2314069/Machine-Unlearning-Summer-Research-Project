@@ -84,7 +84,9 @@ def validate_configuration(config: dict[str, Any], base: dict[str, Any]) -> None
     formula = config["formula"]
     if formula["eps"] != 1e-8:
         raise RuntimeError("projection formula parameters changed")
-    if formula.get("alpha_mode") not in {"zscore_sigmoid_power", "direct_cos2"}:
+    if formula.get("alpha_mode") not in {
+        "zscore_sigmoid_power", "direct_cos2", "budget_matched_cos2",
+    }:
         raise RuntimeError("projection alpha mode is invalid")
     if formula["temperature"] != 0.7 or formula["power"] != 8.0:
         raise RuntimeError("frozen V1 diagnostic transform changed")
@@ -93,6 +95,15 @@ def validate_configuration(config: dict[str, Any], base: dict[str, Any]) -> None
             raise RuntimeError("direct-cos2 must select the exact projection score")
         if formula.get("normalization") != "none" or formula.get("sweep") is not False:
             raise RuntimeError("direct-cos2 normalization/sweep contract changed")
+    if formula["alpha_mode"] == "budget_matched_cos2":
+        if formula.get("selected_alpha") != "lambda * projection_score":
+            raise RuntimeError("budget-matched cos2 must select lambda * projection score")
+        if formula.get("matching_scope") != "per-concept per-matrix contribution Frobenius norm":
+            raise RuntimeError("budget-matched cos2 scope changed")
+        if formula.get("lambda_clamp") is not False or formula.get("sweep") is not False:
+            raise RuntimeError("budget-matched cos2 clamp/sweep contract changed")
+        if formula.get("norm_match_rtol") != 1e-5 or formula.get("norm_match_atol") != 1e-7:
+            raise RuntimeError("budget-match integrity tolerance changed")
     edit = base["edit"]
     expected = {
         "base": "1.5", "concept_type": "object", "erase_scale": 2.0,
@@ -259,7 +270,10 @@ def edit_command(
         "--targets-per-matrix", str(config["targets_per_matrix"]),
         "--alpha-mode", str(formula["alpha_mode"]),
         "--temperature", str(formula["temperature"]), "--power", str(formula["power"]),
-        "--eps", str(formula["eps"]), "--", *editor_args,
+        "--eps", str(formula["eps"]),
+        "--norm-match-rtol", str(formula.get("norm_match_rtol", 1e-5)),
+        "--norm-match-atol", str(formula.get("norm_match_atol", 1e-7)),
+        "--", *editor_args,
     ]
 
 
@@ -364,6 +378,7 @@ def validate_edit_isolation(
     for key in (
         "informax_rng_mode", "informax_randn_calls", "expected_informax_randn_calls",
         "alpha_mode", "selected_treatment_alpha",
+        "norm_match_rtol", "norm_match_atol",
         "informax_randn_shape_counts", "informax_event_stream_sha256",
         "accumulation_intercepts", "matrix_records",
         "first_informax_pre_draw_global_rng_state", "final_global_rng_state",
@@ -384,7 +399,7 @@ def validate_edit_isolation(
     compare_fields = (
         "index", "projection", "layer_index", "target_index", "target_concept",
         "official_row_w_c", "projection_score", "projection_alpha", "direct_cos2_alpha",
-        "weighted_contribution_stats",
+        "budget_matched_cos2_alpha", "weighted_contribution_stats", "budget_match",
         "pearson", "spearman", "official_vs_direct_pearson", "official_vs_direct_spearman",
         "W_old_sha256", "c_vec_sha256", "empty_vec_sha256", "d_vec_sha256",
         "for_mat1_sha256", "for_mat2_sha256", "rng_state_after_official_accumulation_mi",
@@ -392,6 +407,14 @@ def validate_edit_isolation(
     for index, (left, right) in enumerate(zip(left_records, right_records)):
         for field in compare_fields:
             assert_equal(left[field], right[field], f"accumulation[{index}].{field}")
+    budget_norms_match = all(
+        row["budget_match"]["norm_matches"]
+        and row["budget_match"]["lambda"] > 0.0
+        and row["weighted_contribution_stats"]["budget_matched_cos2"]["finite"]
+        for row in right_records
+    )
+    if audits[treatment]["alpha_mode"] == "budget_matched_cos2" and not budget_norms_match:
+        raise RuntimeError("budget matching failed in an accumulation record")
 
     left_matrices = projection["official"]["matrix_records"]
     right_matrices = projection[treatment]["matrix_records"]
@@ -431,6 +454,8 @@ def validate_edit_isolation(
         "S_R_CCt_PiC_geometry_inputs_identical": True,
         "final_row_w_max_bitwise_identical": True,
         "official_empty_string_neutral_only": True,
+        "budget_matching_inputs_and_diagnostics_identical": True,
+        "all_budget_matched_contribution_norms_within_tolerance": budget_norms_match,
         "checkpoint_hashes_different": True,
         "checkpoint_sha256": {
             variant: completion[variant]["checkpoint_sha256"] for variant in variants
@@ -493,6 +518,9 @@ def qualification_report(
     scores = torch.cat([row["projection_score"].flatten() for row in records])
     v1_alpha = torch.cat([row["projection_alpha"].flatten() for row in records])
     direct_alpha = torch.cat([row["direct_cos2_alpha"].flatten() for row in records])
+    budget_alpha = torch.cat([
+        row["budget_matched_cos2_alpha"].flatten() for row in records
+    ])
     informax = torch.load(seed_dir / "diagnostics" / "informax_official.pt", map_location="cpu")
     stage_stats: dict[str, dict[str, Any]] = {}
     for stage in ("aggregate", "accumulation"):
@@ -566,6 +594,24 @@ def qualification_report(
                 ),
                 "direct_to_v1_contribution_ratio": direct_norm / v1_norm if v1_norm else None,
             })
+    budget_diagnostics = output / "per_layer_concept_budget_matching.csv"
+    budget_fields = [
+        "projection", "layer_index", "target_index", "target_concept",
+        "official_contribution_frobenius", "geo_contribution_frobenius",
+        "lambda", "new_contribution_frobenius", "new_to_official_ratio",
+        "norm_matches", "rtol", "atol",
+    ]
+    with budget_diagnostics.open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=budget_fields)
+        writer.writeheader()
+        for row in records:
+            writer.writerow({
+                "projection": row["projection"],
+                "layer_index": row["layer_index"],
+                "target_index": row["target_index"],
+                "target_concept": row["target_concept"],
+                **row["budget_match"],
+            })
     matrix_diagnostics = output / "per_matrix_edit_strength.csv"
     official_wrapper = torch.load(
         seed_dir / "diagnostics" / "projection_official.pt", map_location="cpu"
@@ -609,37 +655,96 @@ def qualification_report(
         )
         for row in records
     )
+    budget_lambdas = torch.tensor(
+        [row["budget_match"]["lambda"] for row in records], dtype=torch.double
+    )
+    budget_ratios = torch.tensor(
+        [row["budget_match"]["new_to_official_ratio"] for row in records],
+        dtype=torch.double,
+    )
+    budget_official_norms = torch.tensor(
+        [
+            row["budget_match"]["official_contribution_frobenius"]
+            for row in records
+        ],
+        dtype=torch.double,
+    )
+    budget_geo_norms = torch.tensor(
+        [row["budget_match"]["geo_contribution_frobenius"] for row in records],
+        dtype=torch.double,
+    )
+    budget_mode = alpha_mode == "budget_matched_cos2"
+    selection_criteria = {
+        "all_projection_scores_finite": bool(torch.isfinite(scores).all().item()),
+        "projection_score_non_constant": bool(scores.max().item() != scores.min().item()),
+        "all_direct_cos2_alpha_finite": bool(torch.isfinite(direct_alpha).all().item()),
+        "direct_cos2_alpha_non_constant": bool(
+            direct_alpha.max().item() != direct_alpha.min().item()
+        ),
+        "direct_cos2_equals_projection_score_after_dtype_cast": direct_matches_score,
+        "all_weighted_contributions_finite": contributions_finite,
+        "all_checkpoint_projection_weights_finite": True,
+        "production_editor_byte_unchanged": sha256(EDITOR) == production_hash_start,
+        "final_row_w_max_bitwise_identical": isolation["final_row_w_max_bitwise_identical"],
+        "all_non_treatment_inputs_identical": True,
+        "rng_audit_passed": True,
+        "checkpoint_hashes_different": isolation["checkpoint_hashes_different"],
+        "checkpoint_parameter_delta_nonzero": checkpoint_delta["nonzero"],
+    }
+    if budget_mode:
+        selection_criteria.update({
+            "all_budget_lambdas_finite": bool(torch.isfinite(budget_lambdas).all().item()),
+            "all_budget_lambdas_positive": bool((budget_lambdas > 0).all().item()),
+            "all_official_contribution_norms_above_eps": bool(
+                (budget_official_norms > 1e-8).all().item()
+            ),
+            "all_geo_contribution_norms_above_eps": bool(
+                (budget_geo_norms > 1e-8).all().item()
+            ),
+            "all_budget_matched_alphas_finite": bool(
+                torch.isfinite(budget_alpha).all().item()
+            ),
+            "all_budget_matched_contributions_finite": all(
+                row["weighted_contribution_stats"]["budget_matched_cos2"]["finite"]
+                for row in records
+            ),
+            "all_budget_norm_ratios_finite": bool(
+                torch.isfinite(budget_ratios).all().item()
+            ),
+            "all_budget_norms_match_official_within_tolerance": all(
+                row["budget_match"]["norm_matches"] for row in records
+            ),
+        })
+    normalization = {
+        "zscore_sigmoid_power": "V1 z-score transform",
+        "direct_cos2": "none",
+        "budget_matched_cos2": (
+            "per-concept per-matrix official contribution Frobenius norm match"
+        ),
+    }[alpha_mode]
     report = {
         "status": "passed",
         "edit_seed": 20260820,
         "treatment": treatment,
         "alpha_mode": alpha_mode,
         "selected_treatment_alpha": treatment_audit["selected_treatment_alpha"],
-        "normalization": "none" if alpha_mode == "direct_cos2" else "V1 z-score transform",
-        "selection_criteria": {
-            "all_projection_scores_finite": bool(torch.isfinite(scores).all().item()),
-            "projection_score_non_constant": bool(scores.max().item() != scores.min().item()),
-            "all_direct_cos2_alpha_finite": bool(torch.isfinite(direct_alpha).all().item()),
-            "direct_cos2_alpha_non_constant": bool(direct_alpha.max().item() != direct_alpha.min().item()),
-            "direct_cos2_equals_projection_score_after_dtype_cast": direct_matches_score,
-            "all_weighted_contributions_finite": contributions_finite,
-            "all_checkpoint_projection_weights_finite": True,
-            "production_editor_byte_unchanged": sha256(EDITOR) == production_hash_start,
-            "final_row_w_max_bitwise_identical": isolation["final_row_w_max_bitwise_identical"],
-            "all_non_treatment_inputs_identical": True,
-            "rng_audit_passed": True,
-            "checkpoint_hashes_different": isolation["checkpoint_hashes_different"],
-            "checkpoint_parameter_delta_nonzero": checkpoint_delta["nonzero"],
-        },
+        "normalization": normalization,
+        "selection_criteria": selection_criteria,
         "official_per_concept_informax": stage_stats,
         "official_accumulation_row_w_c_distribution": distribution(official_alpha),
         "projection_score_distribution": distribution(scores),
         "v1_projection_alpha_distribution_descriptive_only": distribution(v1_alpha),
         "direct_cos2_alpha_distribution": distribution(direct_alpha),
+        "budget_matched_cos2_alpha_distribution": distribution(budget_alpha),
+        "budget_lambda_distribution": distribution(budget_lambdas),
+        "budget_norm_ratio_distribution": distribution(budget_ratios),
+        "budget_match_rtol": 1e-5,
+        "budget_match_atol": 1e-7,
         "checkpoint_parameter_delta": checkpoint_delta,
         "correlations_are_descriptive_only": True,
         "correlations_csv": str(correlations),
         "weight_diagnostics_csv": str(weight_diagnostics),
+        "budget_matching_csv": str(budget_diagnostics),
         "matrix_edit_strength_csv": str(matrix_diagnostics),
         "production_editor_sha256": production_hash_start,
         "isolation": isolation,
@@ -650,6 +755,182 @@ def qualification_report(
         raise RuntimeError(f"qualification failed: {report['selection_criteria']}")
     write_json(output / "integrity_report.json", report)
     return report
+
+
+def validate_historical_comparisons(config: dict[str, Any]) -> dict[str, Any]:
+    specifications = config.get("historical_comparisons", {})
+    expected = {"projection_accumulation", "projection_accumulation_direct_cos2"}
+    if set(specifications) != expected:
+        raise RuntimeError("historical comparison set changed")
+    validated: dict[str, Any] = {}
+    for variant, specification in specifications.items():
+        path = (REPO_ROOT / specification["path"]).resolve()
+        try:
+            path.relative_to(REPO_ROOT)
+        except ValueError as error:
+            raise RuntimeError("historical comparison path escaped repository") from error
+        if not path.is_file() or sha256(path) != specification["sha256"]:
+            raise RuntimeError(f"historical comparison hash mismatch: {variant}")
+        payload = json.loads(path.read_text())
+        mean_key = specification["mean_key"]
+        if mean_key not in payload or "treatment_minus_official" not in payload:
+            raise RuntimeError(f"historical comparison payload incomplete: {variant}")
+        validated[variant] = {
+            "path": str(path),
+            "sha256": specification["sha256"],
+            "five_seed_mean": payload[mean_key],
+            "treatment_minus_official": payload["treatment_minus_official"],
+            "favorable_seeds": payload["favorable_seeds"],
+            "descriptive_only": True,
+        }
+    return validated
+
+
+def write_formal_reports(
+    results: Path,
+    aggregate: dict[str, Any],
+    treatment: str,
+    historical: dict[str, Any],
+) -> None:
+    official = aggregate["official_five_seed_mean"]
+    treatment_mean = aggregate[f"{treatment}_five_seed_mean"]
+    for variant, payload in historical.items():
+        historical_official = json.loads(Path(payload["path"]).read_text())[
+            "official_five_seed_mean"
+        ]
+        if historical_official != official:
+            raise RuntimeError(f"historical official mean differs: {variant}")
+
+    comparison_rows: list[dict[str, Any]] = [{
+        "variant": "official",
+        "comparison_role": "formal_baseline",
+        "unlearn": official["unlearn"],
+        "preserve": official["preserve"],
+        "overall": official["overall"],
+        "delta_unlearn": 0.0,
+        "delta_preserve": 0.0,
+        "delta_overall": 0.0,
+        "favorable_unlearn_seeds": "",
+        "favorable_preserve_seeds": "",
+        "favorable_overall_seeds": "",
+    }]
+    for variant in ("projection_accumulation", "projection_accumulation_direct_cos2"):
+        payload = historical[variant]
+        comparison_rows.append({
+            "variant": variant,
+            "comparison_role": "historical_descriptive_only",
+            "unlearn": payload["five_seed_mean"]["unlearn"],
+            "preserve": payload["five_seed_mean"]["preserve"],
+            "overall": payload["five_seed_mean"]["overall"],
+            "delta_unlearn": payload["treatment_minus_official"]["unlearn"],
+            "delta_preserve": payload["treatment_minus_official"]["preserve"],
+            "delta_overall": payload["treatment_minus_official"]["overall"],
+            "favorable_unlearn_seeds": payload["favorable_seeds"]["unlearn"],
+            "favorable_preserve_seeds": payload["favorable_seeds"]["preserve"],
+            "favorable_overall_seeds": payload["favorable_seeds"]["overall"],
+        })
+    comparison_rows.append({
+        "variant": treatment,
+        "comparison_role": "formal_treatment",
+        "unlearn": treatment_mean["unlearn"],
+        "preserve": treatment_mean["preserve"],
+        "overall": treatment_mean["overall"],
+        "delta_unlearn": aggregate["treatment_minus_official"]["unlearn"],
+        "delta_preserve": aggregate["treatment_minus_official"]["preserve"],
+        "delta_overall": aggregate["treatment_minus_official"]["overall"],
+        "favorable_unlearn_seeds": aggregate["favorable_seeds"]["unlearn"],
+        "favorable_preserve_seeds": aggregate["favorable_seeds"]["preserve"],
+        "favorable_overall_seeds": aggregate["favorable_seeds"]["overall"],
+    })
+    comparison_path = results / "historical_variant_comparison.csv"
+    with comparison_path.open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(comparison_rows[0]))
+        writer.writeheader()
+        writer.writerows(comparison_rows)
+
+    group_rows = [
+        row for row in read_csv(results / "per_group_metrics.csv")
+        if row["edit_seed"] == "mean"
+    ]
+    concept_rows = [
+        row for row in read_csv(results / "per_target_metrics.csv")
+        if row["edit_seed"] == "mean"
+    ]
+    directional = aggregate["directional_conditions"]
+    lines = [
+        "# Budget-matched direct-cos2 Confuse5 validation report", "",
+        "This server-generated report is fail-closed through formal aggregation. "
+        "The semantic-pattern condition remains for manual review; no numerical "
+        "threshold is introduced here.", "",
+        "## Formal official comparison", "",
+        "| Variant | Role | Unlearn | Preserve | Overall | Delta U | Delta P | Delta O | Favorable U/P/O |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for row in comparison_rows:
+        favorable_text = "-" if row["variant"] == "official" else (
+            f"{row['favorable_unlearn_seeds']}/5, "
+            f"{row['favorable_preserve_seeds']}/5, "
+            f"{row['favorable_overall_seeds']}/5"
+        )
+        lines.append(
+            f"| {row['variant']} | {row['comparison_role']} | "
+            f"{float(row['unlearn']):.4f} | {float(row['preserve']):.4f} | "
+            f"{float(row['overall']):.4f} | {float(row['delta_unlearn']):+.4f} | "
+            f"{float(row['delta_preserve']):+.4f} | {float(row['delta_overall']):+.4f} | "
+            f"{favorable_text} |"
+        )
+    lines.extend([
+        "", "Only official versus budget-matched cos2 is the formal comparison. "
+        "V1 and direct-cos2 are historical descriptive context.", "",
+        "## Automatic directional conditions", "",
+        "| Condition | Result |", "| --- | --- |",
+        f"| Mean Delta Unlearn < 0 | {directional['mean_delta_unlearn_negative']} |",
+        f"| Mean Delta Preserve > 0 | {directional['mean_delta_preserve_positive']} |",
+        f"| Mean Delta Overall > 0 | {directional['mean_delta_overall_positive']} |",
+        f"| Overall favorable >= 4/5 | {directional['overall_favorable_at_least_4_of_5']} |",
+        f"| Automatic conditions passed | {directional['automatic_directional_conditions_passed']} |",
+        "| Group/target semantic pattern | manual review required |", "",
+        "## Group mean deltas", "",
+        "| Group | Delta Unlearn | Delta Preserve | Delta Overall |",
+        "| --- | ---: | ---: | ---: |",
+    ])
+    for row in group_rows:
+        lines.append(
+            f"| {row['group']} | {float(row['delta_unlearn']):+.4f} | "
+            f"{float(row['delta_preserve']):+.4f} | {float(row['delta_overall']):+.4f} |"
+        )
+    lines.extend([
+        "", "## All concept mean deltas", "",
+        "| Group | Role | Concept | Mean delta accuracy | Favorable seeds |",
+        "| --- | --- | --- | ---: | ---: |",
+    ])
+    for row in concept_rows:
+        lines.append(
+            f"| {row['group']} | {row['role']} | {row['concept']} | "
+            f"{float(row['delta_accuracy']):+.4f} | {row['favorable']}/5 |"
+        )
+    lines.extend([
+        "", "## Decision contract", "",
+        "If any automatic directional condition fails, stop the geometric "
+        "modification branch and do not run COCO. If all automatic conditions "
+        "pass, stop for manual semantic-pattern review; COCO is never launched "
+        "automatically.", "",
+        "Retrieval validation is produced only after the archive is downloaded "
+        "and independently checked on the Mac.",
+    ])
+    (results / "validation_report.md").write_text("\n".join(lines) + "\n")
+
+    result_files = sorted(
+        path for path in results.iterdir()
+        if path.is_file() and path.name != "result_manifest.json"
+    )
+    write_json(results / "result_manifest.json", {
+        "status": "passed",
+        "algorithm": "sha256",
+        "scope": "server results directory before packaging",
+        "retrieval_validation_pending": True,
+        "files": {path.name: sha256(path) for path in result_files},
+    })
 
 
 def evaluate(
@@ -722,9 +1003,14 @@ def main() -> None:
     assets = json.loads(assets_path.read_text())
     validate_configuration(config, base)
     validate_sources(config)
+    historical_comparisons = (
+        validate_historical_comparisons(config)
+        if config.get("historical_comparisons") else {}
+    )
     treatment = config["variant"]
     if treatment == "official" or treatment not in {
         "projection_accumulation", "projection_accumulation_direct_cos2",
+        "projection_accumulation_budget_matched_cos2",
     }:
         raise RuntimeError(f"unsupported treatment variant: {treatment}")
     variants = ["official", treatment]
@@ -764,12 +1050,13 @@ def main() -> None:
         "source_sha256": source_hashes, "assets": assets, "assets_sha256": sha256(assets_path),
         "production_editor_sha256_start": production_hash_start,
         "v1_diagnostic_source": v1_provenance,
+        "historical_comparisons": historical_comparisons,
     }
     if manifest_path.exists():
         previous = json.loads(manifest_path.read_text())
         for key in (
             "git_commit", "git_branch", "source_sha256", "assets", "assets_sha256",
-            "v1_diagnostic_source",
+            "v1_diagnostic_source", "historical_comparisons",
         ):
             if previous.get(key) != manifest[key]:
                 raise RuntimeError(f"resume provenance changed: {key}")
@@ -858,6 +1145,10 @@ def main() -> None:
     if sha256(EDITOR) != production_hash_start:
         raise RuntimeError("production editor changed during experiment")
     aggregate = json.loads((run_dir / "results" / "aggregate_metrics.json").read_text())
+    if historical_comparisons:
+        write_formal_reports(
+            run_dir / "results", aggregate, treatment, historical_comparisons
+        )
     integrity = {
         "status": "passed", "edit_seeds": SEEDS, "treatment": treatment,
         "official_reference_reused": True, "new_generated_image_count": 15000,
@@ -875,6 +1166,13 @@ def main() -> None:
         "final_row_w_max_bitwise_identical_all_seeds": True,
         "informax_rng_and_entropy_positions_identical_all_seeds": True,
         "all_non_treatment_edit_inputs_identical_all_seeds": True,
+        "per_concept_per_matrix_contribution_norm_matched_all_seeds": all(
+            json.loads(
+                (run_dir / "seeds" / str(seed) / "reproducibility_isolation.json").read_text()
+            )["all_budget_matched_contribution_norms_within_tolerance"]
+            for seed in SEEDS
+        ),
+        "historical_variant_comparisons_descriptive_only": historical_comparisons,
         "all_checkpoints_finite_and_different_from_official": True,
         "protocol_sha256": protocol_manifest["sha256"],
         "official_reference_validation": official_validation,

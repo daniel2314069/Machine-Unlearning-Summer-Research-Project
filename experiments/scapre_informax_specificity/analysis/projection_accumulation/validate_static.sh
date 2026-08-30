@@ -44,7 +44,8 @@ rg -F 'd_vec = c_vec - empty_vec' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 rg -F 'score.std() + args.eps' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 rg -F 'if source.count(needle) != 2:' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 rg -F 'if args.alpha_mode == "zscore_sigmoid_power"' "$SCRIPT_DIR/projection_runner.py" >/dev/null
-rg -F 'selected = row_w_c if args.variant == "official" else treatment_alpha' "$SCRIPT_DIR/projection_runner.py" >/dev/null
+rg -F 'return official_contribution' "$SCRIPT_DIR/projection_runner.py" >/dev/null
+rg -F 'return for_mat1 * projection_alpha' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 rg -F 'in_memory_source_substitution_scope": "for_mat1 * row_w_c only"' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 rg -F 'aggregate_row_w_max_intercepted": False' "$SCRIPT_DIR/projection_runner.py" >/dev/null
 

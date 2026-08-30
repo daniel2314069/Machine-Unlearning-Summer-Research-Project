@@ -45,8 +45,8 @@ OBSERVED_EDITOR_SHA="$(shasum -a 256 "$EDITOR" | awk '{print $1}')"
 git -C "$REPO_ROOT" diff --exit-code -- scapre/edit/erase_scale.py >/dev/null
 
 rg -F 'd_vec = c_vec - empty_vec' "$SHARED_DIR/projection_runner.py" >/dev/null
-rg -F 'else direct_alpha' "$SHARED_DIR/projection_runner.py" >/dev/null
-rg -F '"projection_score" if args.alpha_mode == "direct_cos2"' "$SHARED_DIR/projection_runner.py" >/dev/null
+rg -F 'if args.alpha_mode == "direct_cos2":' "$SHARED_DIR/projection_runner.py" >/dev/null
+rg -F 'return geo_contribution' "$SHARED_DIR/projection_runner.py" >/dev/null
 rg -F 'aggregate_row_w_max_intercepted": False' "$SHARED_DIR/projection_runner.py" >/dev/null
 rg -F 'in_memory_source_substitution_scope": "for_mat1 * row_w_c only"' "$SHARED_DIR/projection_runner.py" >/dev/null
 rg -F '"weighted_contribution_stats"' "$SHARED_DIR/projection_runner.py" >/dev/null
@@ -63,4 +63,3 @@ git -C "$REPO_ROOT" diff --check
 echo "Static validation passed."
 echo "Production editor SHA-256: $OBSERVED_EDITOR_SHA"
 echo "No Python, model, generation, evaluation, or server job was run."
-

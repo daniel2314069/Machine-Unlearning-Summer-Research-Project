@@ -27,8 +27,9 @@ VARIANTS = {
     "official",
     "projection_accumulation",
     "projection_accumulation_direct_cos2",
+    "projection_accumulation_budget_matched_cos2",
 }
-ALPHA_MODES = {"zscore_sigmoid_power", "direct_cos2"}
+ALPHA_MODES = {"zscore_sigmoid_power", "direct_cos2", "budget_matched_cos2"}
 
 
 def parse_args() -> tuple[argparse.Namespace, list[str]]:
@@ -47,6 +48,8 @@ def parse_args() -> tuple[argparse.Namespace, list[str]]:
     parser.add_argument("--temperature", type=float, required=True)
     parser.add_argument("--power", type=float, required=True)
     parser.add_argument("--eps", type=float, required=True)
+    parser.add_argument("--norm-match-rtol", type=float, required=True)
+    parser.add_argument("--norm-match-atol", type=float, required=True)
     args, remainder = parser.parse_known_args()
     if remainder and remainder[0] == "--":
         remainder = remainder[1:]
@@ -164,6 +167,8 @@ def main() -> None:
         raise RuntimeError(f"editor does not exist: {script}")
     if args.temperature != 0.7 or args.power != 8.0 or args.eps != 1e-8:
         raise RuntimeError("diagnostic V1 transform is frozen at T=0.7, p=8, eps=1e-8")
+    if args.norm_match_rtol != 1e-5 or args.norm_match_atol != 1e-7:
+        raise RuntimeError("budget-match integrity tolerance is frozen at rtol=1e-5, atol=1e-7")
     if args.expected_accumulation_intercepts != (
         args.expected_matrix_records * args.targets_per_matrix
     ):
@@ -244,18 +249,51 @@ def main() -> None:
         projection_alpha = projection_alpha.to(device=row_w_c.device, dtype=row_w_c.dtype)
         direct_alpha = score.view(-1, 1).to(device=row_w_c.device, dtype=row_w_c.dtype)
 
+        official_contribution = for_mat1 * row_w_c
+        geo_contribution = for_mat1 * direct_alpha
+        official_contribution_norm = torch.linalg.vector_norm(official_contribution)
+        geo_contribution_norm = torch.linalg.vector_norm(geo_contribution)
+        if (
+            not torch.isfinite(official_contribution_norm).item()
+            or not torch.isfinite(geo_contribution_norm).item()
+            or official_contribution_norm.item() <= args.eps
+            or geo_contribution_norm.item() <= args.eps
+        ):
+            raise RuntimeError("official or geometric contribution norm is non-finite or too small")
+        budget_lambda = official_contribution_norm / (geo_contribution_norm + args.eps)
+        budget_matched_contribution = budget_lambda * geo_contribution
+        budget_matched_contribution_norm = torch.linalg.vector_norm(
+            budget_matched_contribution
+        )
+        budget_norm_ratio = budget_matched_contribution_norm / official_contribution_norm
+        budget_norm_matches = torch.isclose(
+            budget_matched_contribution_norm,
+            official_contribution_norm,
+            rtol=args.norm_match_rtol,
+            atol=args.norm_match_atol,
+        )
+        budget_alpha = budget_lambda * direct_alpha
+
         if (
             not torch.isfinite(score).all().item()
             or not torch.isfinite(projection_alpha).all().item()
             or not torch.isfinite(direct_alpha).all().item()
+            or not torch.isfinite(budget_lambda).item()
+            or not torch.isfinite(budget_alpha).all().item()
+            or not torch.isfinite(budget_matched_contribution).all().item()
+            or not torch.isfinite(budget_matched_contribution_norm).item()
+            or not torch.isfinite(budget_norm_ratio).item()
         ):
-            raise RuntimeError("projection score or alpha contains NaN/Inf")
+            raise RuntimeError("projection score, budget match, or contribution contains NaN/Inf")
         if (
             score.max().item() == score.min().item()
             or projection_alpha.max().item() == projection_alpha.min().item()
             or direct_alpha.max().item() == direct_alpha.min().item()
+            or budget_alpha.max().item() == budget_alpha.min().item()
         ):
             raise RuntimeError("projection score or alpha is constant")
+        if not budget_norm_matches.item():
+            raise RuntimeError("budget-matched contribution norm differs from official")
 
         index = len(accumulation_records)
         target_index = target_number - 1
@@ -276,14 +314,29 @@ def main() -> None:
             "projection_score": score_cpu,
             "projection_alpha": alpha_cpu,
             "direct_cos2_alpha": direct_alpha.detach().cpu(),
+            "budget_matched_cos2_alpha": budget_alpha.detach().cpu(),
             "official_stats": tensor_stats(official_cpu),
             "score_stats": tensor_stats(score_cpu),
             "projection_alpha_stats": tensor_stats(alpha_cpu),
             "direct_cos2_alpha_stats": tensor_stats(direct_alpha),
+            "budget_matched_cos2_alpha_stats": tensor_stats(budget_alpha),
             "weighted_contribution_stats": {
-                "official": contribution_stats(for_mat1 * row_w_c),
+                "official": contribution_stats(official_contribution),
                 "v1_projection": contribution_stats(for_mat1 * projection_alpha),
-                "direct_cos2": contribution_stats(for_mat1 * direct_alpha),
+                "direct_cos2": contribution_stats(geo_contribution),
+                "budget_matched_cos2": contribution_stats(budget_matched_contribution),
+            },
+            "budget_match": {
+                "official_contribution_frobenius": float(official_contribution_norm.item()),
+                "geo_contribution_frobenius": float(geo_contribution_norm.item()),
+                "lambda": float(budget_lambda.item()),
+                "new_contribution_frobenius": float(
+                    budget_matched_contribution_norm.item()
+                ),
+                "new_to_official_ratio": float(budget_norm_ratio.item()),
+                "norm_matches": bool(budget_norm_matches.item()),
+                "rtol": args.norm_match_rtol,
+                "atol": args.norm_match_atol,
             },
             "pearson": pearson(official_cpu, alpha_cpu),
             "spearman": pearson(average_ranks(official_cpu), average_ranks(alpha_cpu)),
@@ -300,13 +353,13 @@ def main() -> None:
             "rng_state_after_official_accumulation_mi": rng_state_sha256(),
         }
         accumulation_records.append(record)
-        treatment_alpha = (
-            projection_alpha
-            if args.alpha_mode == "zscore_sigmoid_power"
-            else direct_alpha
-        )
-        selected = row_w_c if args.variant == "official" else treatment_alpha
-        return for_mat1 * selected
+        if args.variant == "official":
+            return official_contribution
+        if args.alpha_mode == "zscore_sigmoid_power":
+            return for_mat1 * projection_alpha
+        if args.alpha_mode == "direct_cos2":
+            return geo_contribution
+        return budget_matched_contribution
 
     def controlled_cholesky(input_tensor: torch.Tensor, *positional: object, **kwargs: object):
         frame = sys._getframe(1)
@@ -358,13 +411,20 @@ def main() -> None:
             "formula": "((W @ (c-empty))**2) / ((row_norm_sq+eps)*(d_norm_sq+eps))",
             "alpha_mode": args.alpha_mode,
             "selected_treatment_alpha": (
-                "projection_score" if args.alpha_mode == "direct_cos2"
-                else "sigmoid(zscore(projection_score)/0.7)**8"
+                "sigmoid(zscore(projection_score)/0.7)**8"
+                if args.alpha_mode == "zscore_sigmoid_power"
+                else (
+                    "projection_score"
+                    if args.alpha_mode == "direct_cos2"
+                    else "lambda * projection_score"
+                )
             ),
             "score_dtype": "float32",
             "temperature": args.temperature,
             "power": args.power,
             "eps": args.eps,
+            "norm_match_rtol": args.norm_match_rtol,
+            "norm_match_atol": args.norm_match_atol,
             "torch_std_sample_semantics": True,
             "completed": completed,
             "informax_randn_calls": len(randn_events),
