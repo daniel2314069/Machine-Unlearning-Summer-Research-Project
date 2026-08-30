@@ -1,0 +1,55 @@
+{
+  "format_version": 1,
+  "variant": "official",
+  "informax_seed": 20260820,
+  "informax_rng_mode": "legacy",
+  "formula": "((W @ (c-empty))**2) / ((row_norm_sq+eps)*(d_norm_sq+eps))",
+  "alpha_mode": "direct_cos2",
+  "selected_treatment_alpha": "projection_score",
+  "score_dtype": "float32",
+  "temperature": 0.7,
+  "power": 8.0,
+  "eps": 1e-08,
+  "torch_std_sample_semantics": true,
+  "completed": true,
+  "informax_randn_calls": 1280,
+  "expected_informax_randn_calls": 1280,
+  "informax_randn_shape_counts": {
+    "(5, 768):cuda:0:torch.float32": 1280
+  },
+  "informax_event_stream_sha256": "78279fef7c88ca074386c5aa590635a12d55fcf33502a0dcea9fcf133d5889fe",
+  "accumulation_intercepts": 320,
+  "expected_accumulation_intercepts": 320,
+  "matrix_records": 32,
+  "expected_matrix_records": 32,
+  "process_startup_rng_state_descriptive_only": {
+    "cpu": "18258a89c47792ed1a19347dd61bc5958914e7718dc58eba9e97e86d0fe99ad5",
+    "cuda": [
+      "4a30c96763b683e0296fd2723dabcd3e5664fb10ec312cc185dc502d2a242522"
+    ]
+  },
+  "first_informax_pre_draw_global_rng_state": {
+    "cpu": "85eb448ca2f0c6c4efc156fffdfec450f83572cfc0836dec533f13f2a4b942c1",
+    "cuda": [
+      "4fe3bfa6d902e70d3f0a268fead0c5e2fa433b235c3fa0af4c725f6c14d37cb2"
+    ]
+  },
+  "final_global_rng_state": {
+    "cpu": "85eb448ca2f0c6c4efc156fffdfec450f83572cfc0836dec533f13f2a4b942c1",
+    "cuda": [
+      "7832a867c5f4e7235fb68d0b3e333650223e2959640841cee0185d054971d039"
+    ]
+  },
+  "checkpoint_finiteness": {
+    "checked_projection_weights": 64,
+    "invalid_projection_weights": [],
+    "all_projection_weights_finite": true
+  },
+  "production_source_modified": false,
+  "official_mi_executed_before_every_intercept": true,
+  "aggregate_row_w_max_intercepted": false,
+  "in_memory_source_substitution_count": 2,
+  "in_memory_source_substitution_scope": "for_mat1 * row_w_c only",
+  "production_source_sha256": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "executed_in_memory_source_sha256": "39d350e77bc3909af78f816f8173ed76ac450c119c26d874412c8d8963c9f658"
+}

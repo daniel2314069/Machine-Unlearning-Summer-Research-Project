@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "edit_seeds": [
+    20260820,
+    20260821,
+    20260822,
+    20260823,
+    20260824
+  ],
+  "treatment": "projection_accumulation_direct_cos2",
+  "official_reference_reused": true,
+  "new_generated_image_count": 15000,
+  "rows_per_variant_seed": 3000,
+  "target_rows_per_seed": 1200,
+  "retain_rows_per_seed": 1800,
+  "duplicate_generation_keys": 0,
+  "generation_keys_identical": true,
+  "evaluator_fingerprint_identical": true,
+  "official_empty_string_neutral_only": true,
+  "production_editor_byte_unchanged": true,
+  "production_editor_sha256": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "qualification_status": "passed",
+  "v1_descriptive_analysis_status": "passed",
+  "v1_diagnostic_source": {
+    "run_dir": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation/runs/confuse5/formal_20260828T170053Z",
+    "diagnostics_sha256": "97da384e64b408c1fa1c8bdcd5117c65d81fae229b99f2117848519976ce7e85",
+    "integrity_report_sha256": "8da6b258df8220d9fff50e90b19e8355e20abe5a6966862ec022989825bb7d12"
+  },
+  "final_row_w_max_bitwise_identical_all_seeds": true,
+  "informax_rng_and_entropy_positions_identical_all_seeds": true,
+  "all_non_treatment_edit_inputs_identical_all_seeds": true,
+  "all_checkpoints_finite_and_different_from_official": true,
+  "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+  "official_reference_validation": {
+    "status": "passed",
+    "reference": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/alpha_channel_controls/.server/official_reference_formal_20260821T081723Z_df0874fea7c0998b",
+    "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "score_sha256": {
+      "20260820": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "20260821": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "20260822": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "20260823": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "20260824": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724"
+    },
+    "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+    "historical_source_hashes_verified": true,
+    "compatibility_diff_verified": true
+  },
+  "directional_conditions": {
+    "mean_delta_unlearn_negative": true,
+    "mean_delta_preserve_positive": true,
+    "mean_delta_overall_positive": true,
+    "overall_favorable_at_least_4_of_5": false,
+    "group_target_pattern_requires_manual_review": true,
+    "automatic_directional_conditions_passed": false
+  },
+  "git_commit": "7f2d81e18cc207a718c452bd069a26dad579beec",
+  "git_status_start_clean": true,
+  "git_status_before_aggregation_clean": true,
+  "git_status_end_clean": true
+}

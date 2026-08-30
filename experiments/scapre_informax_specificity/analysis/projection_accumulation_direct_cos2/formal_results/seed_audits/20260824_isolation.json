@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "alpha_mode": "direct_cos2",
+  "selected_treatment_alpha": "projection_score",
+  "same_normalized_edit_command": true,
+  "in_memory_source_substitution_count": 2,
+  "in_memory_source_substitution_scope": "for_mat1 * row_w_c only",
+  "official_mi_executed_and_diagnostics_identical": true,
+  "informax_rng_call_signatures_order_and_tensors_identical": true,
+  "global_rng_states_identical": true,
+  "entropy_outputs_and_rng_positions_identical": true,
+  "target_and_empty_embeddings_identical": true,
+  "for_mat1_and_for_mat2_inputs_identical": true,
+  "S_R_CCt_PiC_geometry_inputs_identical": true,
+  "final_row_w_max_bitwise_identical": true,
+  "official_empty_string_neutral_only": true,
+  "checkpoint_hashes_different": true,
+  "checkpoint_sha256": {
+    "official": "a4696d844d520eb307d648371c6a34a287521ffce9872e53cbdcaf163fd0eb61",
+    "projection_accumulation_direct_cos2": "147d425b342ba5f3d76bdc9dd660731ef6ccfbe96bfafe1533d42e5b2777494e"
+  }
+}

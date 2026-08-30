@@ -1,0 +1,91 @@
+{
+  "status": "passed",
+  "archive": {
+    "basename": "scapre_projection_direct_cos2_formal_20260829T125828Z_20260830T064854Z.tar.gz",
+    "size_bytes": 50796315,
+    "sha256": "1a04b21fa3714c7a07634f529e05bdc9961395d97dec431f217acea3ced9c084",
+    "safe_relative_paths_only": true,
+    "manifest_entries": 132,
+    "extracted_files": 133,
+    "unlisted_files": [
+      "package_file_manifest.txt"
+    ],
+    "missing_manifest_files": []
+  },
+  "completion": {
+    "completed_marker": "completed",
+    "exit_code": 0,
+    "worker_status": "passed",
+    "integrity_status": "passed",
+    "qualification_status": "passed",
+    "coco_started": false,
+    "started_at_utc": "2026-08-29T12:58:28Z",
+    "finished_at_utc": "2026-08-30T04:12:52Z",
+    "duration_seconds": 54864
+  },
+  "independent_validation": {
+    "implementation": "Ruby standard-library CSV/JSON/Digest plus POSIX shell",
+    "python_used_locally": false,
+    "json_files_parsed": 68,
+    "raw_score_rows_checked": 30000,
+    "score_files_checked": 10,
+    "rows_per_seed_variant": 3000,
+    "target_rows_per_seed_variant": 1200,
+    "retain_rows_per_seed_variant": 1800,
+    "duplicate_generation_keys": 0,
+    "ordered_generation_keys_identical": true,
+    "binary_correctness_values_only": true,
+    "evaluator_fingerprints_checked": 10,
+    "evaluator_fingerprints_identical": true,
+    "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+    "source_hashes_checked": 16,
+    "archive_provenance_source_hashes_match": true,
+    "current_repository_source_hashes_match_executed_sources": true,
+    "protocol_hash_match": true,
+    "per_seed_metrics_recomputed": true,
+    "per_group_metrics_recomputed": true,
+    "per_concept_metrics_recomputed": true,
+    "aggregate_metrics_recomputed": true,
+    "all_five_seed_rng_and_isolation_chains_checked": true,
+    "all_ten_checkpoint_hash_chains_checked": true,
+    "qualification_selection_criteria_all_true": true,
+    "direct_alpha_equals_projection_score_after_dtype_cast": true,
+    "correlation_rows_checked": 320,
+    "weight_diagnostic_rows_checked": 320,
+    "matrix_edit_strength_rows_checked": 32,
+    "v1_per_layer_rows_checked": 320,
+    "v1_per_concept_rows_checked": 10,
+    "server_log_lines_checked": 16568,
+    "server_log_tracebacks": 0,
+    "server_log_runtime_errors": 0,
+    "server_log_failed_markers": 0
+  },
+  "headline_recalculation": {
+    "official": {
+      "unlearn": 19.266666666666666,
+      "preserve": 40.455555555555556,
+      "overall": 53.90070023677721
+    },
+    "projection_accumulation_direct_cos2": {
+      "unlearn": 19.1,
+      "preserve": 40.51111111111111,
+      "overall": 53.986365473066506
+    },
+    "treatment_minus_official": {
+      "unlearn": -0.1666666666666643,
+      "preserve": 0.055555555555557135,
+      "overall": 0.08566523628929446
+    },
+    "favorable_seeds": {
+      "unlearn": 3,
+      "preserve": 3,
+      "overall": 2
+    }
+  },
+  "decision": {
+    "all_three_five_seed_mean_directions_favorable": true,
+    "overall_favorable_at_least_4_of_5": false,
+    "automatic_directional_conditions_passed": false,
+    "coco_authorized": false
+  }
+}

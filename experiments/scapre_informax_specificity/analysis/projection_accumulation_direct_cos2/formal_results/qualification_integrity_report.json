@@ -1,0 +1,170 @@
+{
+  "status": "passed",
+  "edit_seed": 20260820,
+  "treatment": "projection_accumulation_direct_cos2",
+  "alpha_mode": "direct_cos2",
+  "selected_treatment_alpha": "projection_score",
+  "normalization": "none",
+  "selection_criteria": {
+    "all_projection_scores_finite": true,
+    "projection_score_non_constant": true,
+    "all_direct_cos2_alpha_finite": true,
+    "direct_cos2_alpha_non_constant": true,
+    "direct_cos2_equals_projection_score_after_dtype_cast": true,
+    "all_weighted_contributions_finite": true,
+    "all_checkpoint_projection_weights_finite": true,
+    "production_editor_byte_unchanged": true,
+    "final_row_w_max_bitwise_identical": true,
+    "all_non_treatment_inputs_identical": true,
+    "rng_audit_passed": true,
+    "checkpoint_hashes_different": true,
+    "checkpoint_parameter_delta_nonzero": true
+  },
+  "official_per_concept_informax": {
+    "aggregate": {
+      "records": 320,
+      "raw_binary_mi": {
+        "count": 249600,
+        "finite": true,
+        "non_constant": true,
+        "min": 0.020135551691055298,
+        "p01": 0.19274479150772095,
+        "median": 0.6931471228599548,
+        "mean": 0.684625751385913,
+        "std": 0.07026326033432317,
+        "p95": 0.6931471824645996,
+        "p99": 0.6931471824645996,
+        "max": 0.6931471824645996
+      },
+      "official_alpha": {
+        "count": 249600,
+        "finite": true,
+        "non_constant": true,
+        "min": 0.0,
+        "p01": 5.315633094082016e-35,
+        "median": 0.007478511426597834,
+        "mean": 0.007433607838953197,
+        "std": 0.001229009623816763,
+        "p95": 0.008700148202478886,
+        "p99": 0.009199886582791805,
+        "max": 0.011014259420335293
+      }
+    },
+    "accumulation": {
+      "records": 320,
+      "raw_binary_mi": {
+        "count": 249600,
+        "finite": true,
+        "non_constant": true,
+        "min": 0.020135551691055298,
+        "p01": 0.19274479150772095,
+        "median": 0.6931471228599548,
+        "mean": 0.6846135271961192,
+        "std": 0.07029683268092508,
+        "p95": 0.6931471824645996,
+        "p99": 0.6931471824645996,
+        "max": 0.6931471824645996
+      },
+      "official_alpha": {
+        "count": 249600,
+        "finite": true,
+        "non_constant": true,
+        "min": 0.0,
+        "p01": 3.712025732550802e-35,
+        "median": 0.007463308051228523,
+        "mean": 0.00743215551767148,
+        "std": 0.001266084763748187,
+        "p95": 0.008698888123035431,
+        "p99": 0.009633216075599194,
+        "max": 0.01102697104215622
+      }
+    }
+  },
+  "official_accumulation_row_w_c_distribution": {
+    "count": 249600,
+    "finite": true,
+    "non_constant": true,
+    "min": 0.0,
+    "p01": 3.712025732550802e-35,
+    "median": 0.007463308051228523,
+    "mean": 0.00743215551767148,
+    "std": 0.001266084763748187,
+    "p95": 0.008698888123035431,
+    "p99": 0.009633216075599194,
+    "max": 0.01102697104215622
+  },
+  "projection_score_distribution": {
+    "count": 249600,
+    "finite": true,
+    "non_constant": true,
+    "min": 6.102632251126687e-15,
+    "p01": 1.6912721292783317e-07,
+    "median": 0.0005100455018691719,
+    "mean": 0.001317632833238296,
+    "std": 0.002415604897283127,
+    "p95": 0.005126919620670378,
+    "p99": 0.011001596320420512,
+    "max": 0.05924053490161896
+  },
+  "v1_projection_alpha_distribution_descriptive_only": {
+    "count": 249600,
+    "finite": true,
+    "non_constant": true,
+    "min": 1.0898772416112479e-05,
+    "p01": 2.3312182602239773e-05,
+    "median": 0.00041136199433822185,
+    "mean": 0.06801576537555849,
+    "std": 0.1954938915903877,
+    "p95": 0.5669813215732572,
+    "p99": 0.9770934265851975,
+    "max": 1.0
+  },
+  "direct_cos2_alpha_distribution": {
+    "count": 249600,
+    "finite": true,
+    "non_constant": true,
+    "min": 6.102632251126687e-15,
+    "p01": 1.6912721292783317e-07,
+    "median": 0.0005100455018691719,
+    "mean": 0.001317632833238296,
+    "std": 0.002415604897283127,
+    "p95": 0.005126919620670378,
+    "p99": 0.011001596320420512,
+    "max": 0.05924053490161896
+  },
+  "checkpoint_parameter_delta": {
+    "checked_projection_weights": 64,
+    "changed_projection_weights": 32,
+    "delta_frobenius": 0.32244954107971907,
+    "official_frobenius": 313.9713910569677,
+    "relative_delta_frobenius": 0.0010270029380518083,
+    "nonzero": true
+  },
+  "correlations_are_descriptive_only": true,
+  "correlations_csv": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/runs/confuse5/formal_20260829T125828Z/qualification/per_layer_concept_correlations.csv",
+  "weight_diagnostics_csv": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/runs/confuse5/formal_20260829T125828Z/qualification/per_layer_concept_weight_diagnostics.csv",
+  "matrix_edit_strength_csv": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/runs/confuse5/formal_20260829T125828Z/qualification/per_matrix_edit_strength.csv",
+  "production_editor_sha256": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "isolation": {
+    "status": "passed",
+    "alpha_mode": "direct_cos2",
+    "selected_treatment_alpha": "projection_score",
+    "same_normalized_edit_command": true,
+    "in_memory_source_substitution_count": 2,
+    "in_memory_source_substitution_scope": "for_mat1 * row_w_c only",
+    "official_mi_executed_and_diagnostics_identical": true,
+    "informax_rng_call_signatures_order_and_tensors_identical": true,
+    "global_rng_states_identical": true,
+    "entropy_outputs_and_rng_positions_identical": true,
+    "target_and_empty_embeddings_identical": true,
+    "for_mat1_and_for_mat2_inputs_identical": true,
+    "S_R_CCt_PiC_geometry_inputs_identical": true,
+    "final_row_w_max_bitwise_identical": true,
+    "official_empty_string_neutral_only": true,
+    "checkpoint_hashes_different": true,
+    "checkpoint_sha256": {
+      "official": "e1c696ab3d12436d4c9af54576fb1e0971878a2285106848ca3a894fbd98e164",
+      "projection_accumulation_direct_cos2": "50a423606bc386736c181d93a24f074b9fc45d016385d5d0430bc391b76c9cc2"
+    }
+  }
+}

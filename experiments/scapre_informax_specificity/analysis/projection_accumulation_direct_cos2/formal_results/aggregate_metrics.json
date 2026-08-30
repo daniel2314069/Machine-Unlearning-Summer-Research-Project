@@ -1,0 +1,31 @@
+{
+  "official_five_seed_mean": {
+    "unlearn": 19.266666666666666,
+    "preserve": 40.455555555555556,
+    "overall": 53.90070023677721
+  },
+  "treatment_variant": "projection_accumulation_direct_cos2",
+  "projection_accumulation_direct_cos2_five_seed_mean": {
+    "unlearn": 19.1,
+    "preserve": 40.51111111111111,
+    "overall": 53.986365473066506
+  },
+  "treatment_minus_official": {
+    "unlearn": -0.1666666666666643,
+    "preserve": 0.055555555555557135,
+    "overall": 0.08566523628929446
+  },
+  "favorable_seeds": {
+    "unlearn": 3,
+    "preserve": 3,
+    "overall": 2
+  },
+  "directional_conditions": {
+    "mean_delta_unlearn_negative": true,
+    "mean_delta_preserve_positive": true,
+    "mean_delta_overall_positive": true,
+    "overall_favorable_at_least_4_of_5": false,
+    "group_target_pattern_requires_manual_review": true,
+    "automatic_directional_conditions_passed": false
+  }
+}

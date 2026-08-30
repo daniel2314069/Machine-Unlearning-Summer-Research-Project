@@ -1,5 +1,17 @@
 # ScaPre direct-cos2 accumulation
 
+## Formal Confuse5 outcome
+
+The completed five-seed formal run is integrity-valid, but the preregistered
+continuation decision is **stop**. Direct cos2 moved all three means in the
+favorable direction (`Delta Unlearn -0.1667`, `Delta Preserve +0.0556`,
+`Delta Overall +0.0857`), but Overall was favorable in only `2/5` seeds rather
+than the required `4/5`. The effects are small and heterogeneous, with the cat
+group repeatedly worse in Preserve and Overall. No COCO generation was run.
+
+The curated results and independent retrieval validation are in
+[`formal_results/`](formal_results/README.md).
+
 This is a post-V1 exploratory follow-up. It is not part of the original
 projection-accumulation preregistration and must not be described as a
 confirmatory continuation of that failed formal experiment.
