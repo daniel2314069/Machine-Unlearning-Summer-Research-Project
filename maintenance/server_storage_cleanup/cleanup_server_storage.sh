@@ -258,7 +258,7 @@ assert_manifest_has_no_tracked_files() {
     local overlap="$RUN_DIR/${label}_tracked_overlap.txt"
     cut -f 1 "$manifest" | LC_ALL=C sort -u > "$candidates"
     git -C "$REPO_ROOT" ls-files | LC_ALL=C sort -u > "$tracked"
-    comm -12 "$candidates" "$tracked" > "$overlap"
+    LC_ALL=C comm -12 "$candidates" "$tracked" > "$overlap"
     if [[ -s "$overlap" ]]; then
         echo "Tracked overlap:" >&2
         sed -n '1,40p' "$overlap" >&2
