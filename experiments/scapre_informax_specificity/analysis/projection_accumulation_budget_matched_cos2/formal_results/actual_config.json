@@ -1,0 +1,91 @@
+{
+  "experiment_name": "scapre_informax_projection_accumulation_budget_matched_cos2",
+  "protocol_label": "final exploratory budget-matched direct-cos2 Confuse5 follow-up",
+  "confirmatory_status": "exploratory; proposed after observing V1 and direct-cos2 Confuse5 results",
+  "variant": "projection_accumulation_budget_matched_cos2",
+  "edit_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "legacy_informax_seed": 20260820,
+  "fixed_non_informax_seed": 20260820,
+  "formula": {
+    "difference": "concept_vecs[k] - empty_vec",
+    "score": "((W @ d)**2) / ((row_norm_sq + eps) * (d_norm_sq + eps))",
+    "score_dtype": "float32",
+    "alpha_mode": "budget_matched_cos2",
+    "selected_alpha": "lambda * projection_score",
+    "official_contribution": "for_mat1 * row_w_c_official",
+    "geo_contribution": "for_mat1 * projection_score.view(-1, 1)",
+    "lambda": "frobenius(C_official) / (frobenius(C_geo) + eps)",
+    "treatment_contribution": "lambda * C_geo",
+    "matching_scope": "per-concept per-matrix contribution Frobenius norm",
+    "normalization": "official contribution Frobenius budget only; no score normalization",
+    "lambda_clamp": false,
+    "temperature": 0.7,
+    "power": 8.0,
+    "temperature_and_power_usage": "V1 descriptive diagnostic only; not applied to treatment alpha",
+    "eps": 1e-8,
+    "norm_match_rtol": 1e-5,
+    "norm_match_atol": 1e-7,
+    "sweep": false
+  },
+  "expected_layers_per_projection": 16,
+  "expected_matrix_records_per_edit": 32,
+  "targets_per_matrix": 10,
+  "expected_accumulation_intercepts_per_edit": 320,
+  "expected_informax_randn_calls_per_edit": 1280,
+  "expected_images_per_seed": 3000,
+  "expected_target_rows_per_seed": 1200,
+  "expected_retain_rows_per_seed": 1800,
+  "qualification_seed": 20260820,
+  "source_controls": {
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/formal_results/aggregate_metrics.json": "316a4e45f6dfbe0139d1ff061571b085ce3d31b767fb11e152236bd2b05ef400",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/formal_results/aggregate_metrics.json": "94aca39b95cef4e22a01d3d5a35dd73e4e3f8de4cbc4627464416ac8fa5e5277"
+  },
+  "historical_comparisons": {
+    "projection_accumulation": {
+      "path": "experiments/scapre_informax_specificity/analysis/projection_accumulation/formal_results/aggregate_metrics.json",
+      "sha256": "316a4e45f6dfbe0139d1ff061571b085ce3d31b767fb11e152236bd2b05ef400",
+      "mean_key": "projection_accumulation_five_seed_mean",
+      "role": "historical descriptive only"
+    },
+    "projection_accumulation_direct_cos2": {
+      "path": "experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/formal_results/aggregate_metrics.json",
+      "sha256": "94aca39b95cef4e22a01d3d5a35dd73e4e3f8de4cbc4627464416ac8fa5e5277",
+      "mean_key": "projection_accumulation_direct_cos2_five_seed_mean",
+      "role": "historical descriptive only"
+    }
+  },
+  "official_reference": {
+    "run_commit": "9ca7b5e9c4ab626027fb8fe0bd32fca51e8faf89",
+    "editor_source_sha256": "537fce48480ca8fa2233e28a3526c81ab6f9d848a055b317dea1eebb89724d33",
+    "evaluator_source_sha256": "6e5063bc709e6ecbc543e86058f91686bbf517298cf3fc3191f566f333f69ed8",
+    "compatibility_diff_sha256": "5a3d2b27bf0395dc0d1bd5dcbaeff2dc41302074a450479e29851a90cc4841e3",
+    "archive_basename": "scapre_informax_seed_robustness_formal_20260821T081723Z_20260822T092030Z.tar.gz",
+    "archive_sha256": "df0874fea7c0998bbaf52782c763025c4ce7968134e8334e0688adec95453708",
+    "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+    "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+    "score_sha256": {
+      "20260820": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "20260821": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "20260822": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "20260823": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "20260824": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724"
+    }
+  },
+  "directional_requirements": {
+    "mean_delta_unlearn": "< 0",
+    "mean_delta_preserve": "> 0",
+    "mean_delta_overall": "> 0",
+    "minimum_favorable_overall_seeds": 4,
+    "group_and_target_pattern": "manual review; no post-hoc numerical cutoff"
+  },
+  "post_confuse5_contract": {
+    "automatic_coco_launch": false,
+    "on_failure": "stop geometric modification branch; no fourth cos2 variant and no COCO",
+    "on_success": "stop for manual review; existing COCO safeguard requires separate authorization"
+  }
+}

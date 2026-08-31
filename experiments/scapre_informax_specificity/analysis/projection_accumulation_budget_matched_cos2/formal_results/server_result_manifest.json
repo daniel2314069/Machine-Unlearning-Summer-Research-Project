@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "algorithm": "sha256",
+  "scope": "server results directory before packaging",
+  "retrieval_validation_pending": true,
+  "files": {
+    "aggregate_metrics.json": "a69470ad71f6f01f7fe36a4e47a619064c9090a0cccf45cb4d559c3a3a8bb144",
+    "comparison_deltas.csv": "cd42492d5d5138797be6c0a2fa8a021482c90eaeb1bcf1fce6a0726517c96bc7",
+    "historical_variant_comparison.csv": "0550a27b35052dc8070f0816dd61702ffa77cc4a97a4ca7cc9ede2a37b7909ac",
+    "per_group_metrics.csv": "c871f14be2d531db55bcc0587f39fe2a92594b2853014f57592764c34268f776",
+    "per_seed_metrics.csv": "570ffd1cc3f6e8f74058b9d24787cac07c2792804a3318388bd12b8603046d40",
+    "per_target_metrics.csv": "3fc7d691a3b2d4686e7fc9104b2acc069c0366ccf0f5edca9e64e9298903d055",
+    "summary.md": "0a9374a4de28cff61b5770cac0f4fec21c18e41376b13a3c60548031f66aedd3",
+    "validation_report.md": "b2a3c3038e04bb63fa31c7b644d72e6728a7705da749021c82802fb07afa8d65"
+  }
+}

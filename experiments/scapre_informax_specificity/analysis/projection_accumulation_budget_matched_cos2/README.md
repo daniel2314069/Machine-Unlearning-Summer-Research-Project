@@ -1,5 +1,18 @@
 # ScaPre budget-matched direct-cos2 accumulation
 
+## Formal Confuse5 outcome
+
+The completed five-seed formal run is integrity-valid, but the preregistered
+continuation decision is **stop**. Budget-matched direct cos2 produced
+`Delta Unlearn +0.1000`, `Delta Preserve +0.2667`, and
+`Delta Overall +0.2139`; mean forgetting therefore worsened, and Overall was
+favorable in only `3/5` seeds rather than the required `4/5`. No COCO
+generation ran. Per the frozen contract, this ends the geometric modification
+branch without a fourth cos2 variant.
+
+The curated results and independent retrieval validation are in
+[`formal_results/`](formal_results/README.md).
+
 This is the final exploratory geometric accumulation modification. It removes
 the strength confound observed in direct cos2 and tests only row-wise
 allocation.

@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "validation_method": "Ruby standard-library CSV/JSON/Digest plus POSIX shell; no project Python or model execution",
+  "archive": {
+    "basename": "scapre_projection_budget_matched_cos2_formal_20260830T083918Z_20260831T081936Z.tar.gz",
+    "size_bytes": 60926524,
+    "sha256": "0999f4bf7af0fbc8d6350fc6411b41ade382aa7d2e218f3ed8ecb0ca5fba8890",
+    "gzip_integrity": "passed",
+    "safe_relative_tar_paths_only": true,
+    "tar_entries": 151,
+    "extracted_files": 136,
+    "package_manifest_entries": 135,
+    "package_manifest_missing_files": [],
+    "package_manifest_unlisted_files": [
+      "package_file_manifest.txt"
+    ],
+    "server_checksum_sidecar_available_after_download": false,
+    "transport_checksum_cross_check": "unavailable; local checksum recorded and internal manifests/hash chains passed"
+  },
+  "completion": {
+    "completed_marker": "completed",
+    "exit_code": 0,
+    "worker_status": "passed",
+    "integrity_status": "passed",
+    "qualification_status": "passed",
+    "coco_started": false,
+    "started_at_utc": "2026-08-30T08:39:18Z",
+    "finished_at_utc": "2026-08-30T23:54:25Z",
+    "duration_seconds": 54907,
+    "executed_git_commit": "3859fc58a5581182f6fc02b303bb870bc0543f44"
+  },
+  "independent_validation": {
+    "checks_passed": 1757,
+    "checks_failed": 0,
+    "json_files_parsed": 70,
+    "source_hashes_checked": 19,
+    "current_repository_source_hashes_match_executed_sources": true,
+    "production_editor_byte_unchanged": true,
+    "protocol_hash_match": true,
+    "raw_score_rows_checked": 30000,
+    "score_files_checked": 10,
+    "rows_per_seed_variant": 3000,
+    "target_rows_per_seed_variant": 1200,
+    "retain_rows_per_seed_variant": 1800,
+    "duplicate_generation_keys": 0,
+    "ordered_generation_keys_identical": true,
+    "binary_correctness_values_only": true,
+    "official_score_hashes_match_historical_reference": true,
+    "evaluator_manifests_identical_modulo_variant_and_checkpoint": true,
+    "per_seed_metrics_recomputed": true,
+    "per_group_metrics_recomputed": true,
+    "per_concept_metrics_recomputed": true,
+    "aggregate_metrics_recomputed": true,
+    "favorable_seed_counts_recomputed": true,
+    "all_five_seed_rng_and_isolation_chains_checked": true,
+    "all_ten_checkpoint_hash_chains_checked": true,
+    "all_ten_diagnostic_and_audit_hash_chains_checked": true,
+    "server_result_manifest_hashes_verified": true,
+    "server_log_lines_checked": 16564,
+    "server_log_runtime_error_markers": 0
+  },
+  "qualification": {
+    "budget_records_checked": 320,
+    "all_values_finite": true,
+    "all_official_and_geo_norms_above_eps": true,
+    "all_lambdas_finite_and_positive": true,
+    "all_lambda_formulas_recomputed": true,
+    "all_norm_ratios_recomputed": true,
+    "all_norms_match_at_rtol_1e_5_atol_1e_7": true,
+    "norm_ratio_min": 0.9999998807907104,
+    "norm_ratio_max": 1.0000001192092896,
+    "lambda_distribution": {
+      "count": 320,
+      "min": 0.18149502575397491,
+      "p01": 0.220270234644413,
+      "median": 1.6600292921066284,
+      "mean": 2.9012423435691743,
+      "p95": 10.719630241394047,
+      "p99": 19.24411861419678,
+      "max": 36.41914367675781
+    }
+  },
+  "headline_recalculation": {
+    "official": {
+      "unlearn": 19.266666666666666,
+      "preserve": 40.455555555555556,
+      "overall": 53.90070023677721
+    },
+    "projection_accumulation_budget_matched_cos2": {
+      "unlearn": 19.366666666666667,
+      "preserve": 40.72222222222222,
+      "overall": 54.11455596241028
+    },
+    "treatment_minus_official": {
+      "unlearn": 0.10000000000000142,
+      "preserve": 0.2666666666666657,
+      "overall": 0.2138557256330671
+    },
+    "favorable_seeds": {
+      "unlearn": 1,
+      "preserve": 3,
+      "overall": 3
+    }
+  },
+  "score_sha256": {
+    "20260820:official": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+    "20260820:projection_accumulation_budget_matched_cos2": "fdc3626ed7ea07847044cdb0290d9cf632a62ef36b2e01b478cc634c0d152f51",
+    "20260821:official": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+    "20260821:projection_accumulation_budget_matched_cos2": "7e77222e15ed8081d1c45113f168f07c81882a700e4e30e3c43323b31bc9efc5",
+    "20260822:official": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+    "20260822:projection_accumulation_budget_matched_cos2": "45c562b61173cec4b9667abb5cc611e8a6d4ec211e59f15ca8b52f33cdf89f98",
+    "20260823:official": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+    "20260823:projection_accumulation_budget_matched_cos2": "e984f13dda3b77eb11f5e556c783355a4cda8349c78baad4ba7593e41a55e185",
+    "20260824:official": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724",
+    "20260824:projection_accumulation_budget_matched_cos2": "e51218b679eae9251d98308b9ba3c87e6fed48d0615b45b5f315bc87a9909787"
+  },
+  "decision": {
+    "mean_delta_unlearn_negative": false,
+    "mean_delta_preserve_positive": true,
+    "mean_delta_overall_positive": true,
+    "overall_favorable_at_least_4_of_5": false,
+    "automatic_directional_conditions_passed": false,
+    "coco_authorized": false,
+    "fourth_cos2_variant_authorized": false
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "started_at_utc": "2026-08-30T08:39:18.770633+00:00",
+  "git_commit": "3859fc58a5581182f6fc02b303bb870bc0543f44",
+  "git_branch": "main",
+  "git_status_start": [],
+  "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+  "conda_default_env": "MU",
+  "source_sha256": {
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/aggregate_results.py": "254bcc515a51b07becf61bf3cb56459a65ac4a7136d01b9cb9c7d16afd23cc09",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/evaluate_projection_runner.py": "f642f2463dc93f1c8511e735c1e16b3a113f103038096b2063b1c862ce26aacb",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/formal_results/aggregate_metrics.json": "316a4e45f6dfbe0139d1ff061571b085ce3d31b767fb11e152236bd2b05ef400",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/projection_runner.py": "4ea3218fffc8f77cfa1449b8b719b00cca51b74e9213b2c2d3863e0490a51149",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation/worker.py": "88683bc108d692b448eeec90b3b7cec774a66f071cea7a9ead43da31158eca7c",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/IMPLEMENTATION_AUDIT.md": "c4a87f2b75a3c76142bffab74cf3eb3a3c4b552a54f82144f7e5af0221fcab85",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/README.md": "6b0af2026db3fb9dce83151ab620260ecacc6c664b537e7f35d168189c574231",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/config.json": "c822c114738f33ee6e1cffafd14ac9f2ecca614ac379a436f4f360251aa2189d",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/package_results.sh": "63249c8aaba658c5fb025515903e4ea0feebd464faa4a479e457e3c045e8cdb4",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/preflight_selftest.py": "223288d01107d05a803f785de461db68a4971b0d6ce8ccfe6472edfa0643acf0",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/run_budget_matched_cos2_confuse5.sh": "70df60a1f4e8ad9435c389f758f60294807d1ea980a2bb81d8c0023c6d514737",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/server_worker.sh": "6e8bdea75af20647b87e5b850157b60ce6f1aa0bceab14029672dccabda14003",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_budget_matched_cos2/validate_static.sh": "c24d713658b56fd01928592b42e5f2a96d739d1ac241bf28284221fae97c3774",
+    "experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/formal_results/aggregate_metrics.json": "94aca39b95cef4e22a01d3d5a35dd73e4e3f8de4cbc4627464416ac8fa5e5277",
+    "experiments/scapre_informax_specificity/build_protocol.py": "539a0636c6e9185173aac509930710c7b7bebd0f24fa69a32fa11346df96aac6",
+    "experiments/scapre_informax_specificity/config.json": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc",
+    "experiments/scapre_informax_specificity/evaluate_confuse5.py": "f9fda71554bec20fa2597f0676c243679624826914caeee7255b05891a544c8d",
+    "orthogonal-concept-erasure/experiments/confuse5_single_vs_joint/datasets/imagenet-confuse5-derived-25.csv": "f473503dd5a008f989a107e5adfe0749e9e2e77d8f613f2b7a4aae8bd87301d9",
+    "scapre/edit/erase_scale.py": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20"
+  },
+  "assets": {
+    "created_at_utc": "2026-08-20T16:22:42.551880+00:00",
+    "python_executable": "/home/tslin/anaconda3/envs/MU/bin/python",
+    "python_version": "3.10.20",
+    "conda_default_env": "MU",
+    "base_model": "runwayml/stable-diffusion-v1-5",
+    "requested_revision": null,
+    "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_path": "/home/tslin/.cache/huggingface/hub/models--runwayml--stable-diffusion-v1-5/snapshots/451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+    "snapshot_allow_patterns": [
+      "model_index.json",
+      "feature_extractor/preprocessor_config.json",
+      "scheduler/scheduler_config.json",
+      "tokenizer/*",
+      "text_encoder/config.json",
+      "text_encoder/model.safetensors",
+      "unet/config.json",
+      "unet/diffusion_pytorch_model.safetensors",
+      "vae/config.json",
+      "vae/diffusion_pytorch_model.safetensors",
+      "safety_checker/config.json",
+      "safety_checker/model.safetensors"
+    ],
+    "downloaded_files": [
+      {
+        "path": "feature_extractor/preprocessor_config.json",
+        "size_bytes": 342
+      },
+      {
+        "path": "model_index.json",
+        "size_bytes": 541
+      },
+      {
+        "path": "safety_checker/config.json",
+        "size_bytes": 4723
+      },
+      {
+        "path": "safety_checker/model.safetensors",
+        "size_bytes": 1215981830
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "size_bytes": 308
+      },
+      {
+        "path": "text_encoder/config.json",
+        "size_bytes": 617
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "size_bytes": 492265874
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "size_bytes": 524619
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "size_bytes": 472
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "size_bytes": 806
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "size_bytes": 1059962
+      },
+      {
+        "path": "unet/config.json",
+        "size_bytes": 743
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.safetensors",
+        "size_bytes": 3438167540
+      },
+      {
+        "path": "vae/config.json",
+        "size_bytes": 547
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "size_bytes": 334643276
+      }
+    ],
+    "total_model_bytes": 5482652200,
+    "maximum_model_bytes": 7516192768,
+    "resnet_weights": "ResNet50_Weights.IMAGENET1K_V2",
+    "resnet_url": "https://download.pytorch.org/models/resnet50-11ad3fa6.pth",
+    "packages": {
+      "torch": "2.6.0+cu118",
+      "torchvision": "0.21.0+cu118",
+      "diffusers": "0.35.0",
+      "transformers": "4.49.0",
+      "accelerate": "1.5.2",
+      "huggingface-hub": "0.34.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.15.2"
+    },
+    "config_sha256": "3ce815fe4bdaca02370e77e7d7d27b8db226e99638824a10ede3b7528341cddc"
+  },
+  "assets_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "production_editor_sha256_start": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "v1_diagnostic_source": null,
+  "historical_comparisons": {
+    "projection_accumulation": {
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation/formal_results/aggregate_metrics.json",
+      "sha256": "316a4e45f6dfbe0139d1ff061571b085ce3d31b767fb11e152236bd2b05ef400",
+      "five_seed_mean": {
+        "unlearn": 19.766666666666666,
+        "preserve": 45.84444444444444,
+        "overall": 58.34867148827667
+      },
+      "treatment_minus_official": {
+        "unlearn": 0.5,
+        "preserve": 5.388888888888886,
+        "overall": 4.44797125149946
+      },
+      "favorable_seeds": {
+        "unlearn": 1,
+        "preserve": 5,
+        "overall": 5
+      },
+      "descriptive_only": true
+    },
+    "projection_accumulation_direct_cos2": {
+      "path": "/home/tslin/Documents/jupyter_data/anLi/machine_unlearning/experiments/scapre_informax_specificity/analysis/projection_accumulation_direct_cos2/formal_results/aggregate_metrics.json",
+      "sha256": "94aca39b95cef4e22a01d3d5a35dd73e4e3f8de4cbc4627464416ac8fa5e5277",
+      "five_seed_mean": {
+        "unlearn": 19.1,
+        "preserve": 40.51111111111111,
+        "overall": 53.986365473066506
+      },
+      "treatment_minus_official": {
+        "unlearn": -0.1666666666666643,
+        "preserve": 0.055555555555557135,
+        "overall": 0.08566523628929446
+      },
+      "favorable_seeds": {
+        "unlearn": 3,
+        "preserve": 3,
+        "overall": 2
+      },
+      "descriptive_only": true
+    }
+  },
+  "production_editor_sha256_end": "cc454407a70de5b403344f8e3d0372044fed156cf78a74fa04121473674ada20",
+  "git_status_before_aggregation": [],
+  "git_status_end": [],
+  "finished_at_utc": "2026-08-30T23:54:25.757689+00:00"
+}
