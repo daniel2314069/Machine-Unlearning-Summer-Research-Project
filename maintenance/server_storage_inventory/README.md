@@ -37,7 +37,9 @@ maintenance/server_storage_inventory/audit_server_storage.sh
 ```
 
 The scan is detached; the terminal, SSH connection, and local computer may be
-closed after launch succeeds.
+closed after launch succeeds. Before launch, the runner uses the active `MU`
+Python for a lightweight syntax/parser preflight; its bytecode cache is written
+under `anLi/tmp`, outside the repository being scanned.
 
 Status:
 

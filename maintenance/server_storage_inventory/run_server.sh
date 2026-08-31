@@ -33,6 +33,13 @@ for REQUIRED in "$WORKER" "$ENTRYPOINT"; do
 done
 
 mkdir -p "$RUNS_ROOT" "$STATE_ROOT"
+PYCACHE_ROOT="$STATE_ROOT/pycache"
+mkdir -p "$PYCACHE_ROOT"
+PYTHONPYCACHEPREFIX="$PYCACHE_ROOT" "$PYTHON_BIN" -m py_compile \
+    "$WORKER" \
+    "$SCRIPT_DIR/verify_results.py"
+"$PYTHON_BIN" "$WORKER" --help >/dev/null
+
 LATEST_FILE="$STATE_ROOT/latest_run"
 if [[ -s "$LATEST_FILE" ]]; then
     PREVIOUS_RUN="$(tr -d '\n' < "$LATEST_FILE")"
