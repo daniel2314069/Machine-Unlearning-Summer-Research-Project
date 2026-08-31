@@ -5,9 +5,9 @@
 這次 inventory 涵蓋的 repository root 目前占用 **104.76 GiB**。專案收尾時，建議分兩層清理：
 
 1. **先刪 ScaPre 的 8 個 generated `runs/` 根目錄：91.013 GiB。** 這些路徑內沒有任何 Git-tracked file；正式 metrics、integrity reports、manifests、diagnostics 與三個 projection variant 的已下載 archive 都已有獨立保存。
-2. **確定不再續跑 OCE 後，再刪 OCE 的未追蹤 generated images 與 model/checkpoint files：12.486 GiB。** 不要刪整個 `outputs/`，因為其中仍混有應保留的 results、reports、manifests 與少量未追蹤輕量產物。
+2. **確定不再續跑 OCE 後，再刪 OCE 的未追蹤 raw generated images 與 binary model/checkpoint files：11.787 GiB。** 自動 cleanup 只接受位於 `images/` 或 `generated_images/` path component 下的圖片；contact/review sheets、plots、grids 與獨立 qualitative figures 保守保留。不要刪整個 `outputs/`，因為其中仍混有應保留的 results、reports、JSON manifests 與少量未追蹤輕量產物。
 
-兩層合計可回收 **103.499 GiB**，repository root 預估剩下 **1.258 GiB**。這個估計使用 inventory 的 charged allocated bytes，且兩層候選互不重疊。
+兩層合計可回收 **102.800 GiB**，repository root 預估剩下 **1.957 GiB**。這個估計使用 inventory 的 charged allocated bytes，且兩層候選互不重疊。
 
 本報告只做 read-only 判讀；尚未刪除任何 server 或 Mac 檔案。
 
@@ -50,29 +50,28 @@
 
 ## 第二層：OCE generated images 與 weights
 
-OCE 的 source、tracked result tables 與 reports 要保留；只考慮未追蹤的 binary artifacts。下表合計 **13,406,621,696 allocated bytes（12.485889 GiB）**、14,746 files。
+OCE 的 source、tracked result tables 與 reports 要保留；只考慮未追蹤的 raw generated images 與真正的 binary weights。下表合計 **12,655,955,968 allocated bytes（11.786777 GiB）**、13,879 files。Inventory 原始 category 另含 87 個 checkpoint-directory JSON manifests；它們不是 binary weights，因此已從刪除候選排除。另有 780 張約 0.698 GiB 的 contact/review sheets、plots、grids 與獨立 qualitative figures，不納入自動刪除。
 
 | Experiment | Artifact | Files | Allocated GiB |
 | --- | --- | ---: | ---: |
-| `concept_description_clustering` | images | 12,915 | 6.411274 |
-| `confuse5_single_vs_joint` | checkpoints / weights | 55 | 1.181404 |
-| `sequential_object_pair_retain` | checkpoints / weights | 60 | 1.071465 |
+| `concept_description_clustering` | raw images | 12,407 | 6.013901 |
+| `confuse5_single_vs_joint` | binary weights | 34 | 1.180614 |
+| `sequential_object_pair_retain` | binary weights | 30 | 1.071350 |
 | `correspondence_diagnostic` | checkpoints / weights | 26 | 1.012062 |
-| `sequential_object_persistence` | checkpoints / weights | 40 | 0.714264 |
-| `sequential_object_followup` | checkpoints / weights | 30 | 0.535698 |
-| `oce_failure_image_qualification` | checkpoints / weights | 11 | 0.357098 |
+| `sequential_object_persistence` | binary weights | 20 | 0.714188 |
+| `sequential_object_followup` | binary weights | 15 | 0.535641 |
+| `oce_failure_image_qualification` | binary weights | 10 | 0.357094 |
 | `overlap_cycle_images` | checkpoints / weights | 9 | 0.321384 |
-| `correspondence_diagnostic` | images | 556 | 0.304642 |
-| `overlap_cycle_images` | images | 452 | 0.264267 |
-| `confuse5_single_vs_joint` | images | 432 | 0.181442 |
-| `sequential_object_pair_retain` | images | 160 | 0.130890 |
+| `correspondence_diagnostic` | raw images | 530 | 0.231373 |
+| `overlap_cycle_images` | raw images | 430 | 0.194431 |
+| `confuse5_single_vs_joint` | raw images | 368 | 0.154739 |
 
 其中：
 
-- 未追蹤 images 共 **7.292515 GiB**、14,515 files。
-- 未追蹤 checkpoints/model weights 共 **5.193375 GiB**、231 files。
+- 自動刪除的未追蹤 raw images 共 **6.594444 GiB**、13,735 files。
+- 未追蹤 binary weights 共 **5.192333 GiB**、144 files；副檔名只限 `.safetensors/.pt/.pth/.ckpt`。
 - 這些 artifacts 不在 Git；刪除不會弄髒 working tree，但會失去免重跑的圖片與 edited weights。
-- `concept_description_clustering` 的分析資料、embeddings、metrics 與 reports 已 tracked；其 6.41 GiB generated images 是最優先的 OCE 圖片候選。
+- `concept_description_clustering` 的分析資料、embeddings、metrics 與 reports 已 tracked；其約 6.014 GiB raw `generated_images/` 是最優先的 OCE 圖片候選，review/plot 類圖片則保留。
 - `oce_failure_image_qualification` 已有 project-provided `package_review_images.sh` 與 fail-closed `cleanup_server_images.sh`。若尚未保存其固定規則 review set，應先使用既有 packaging workflow，再刪 images。
 
 不要以 `rm -rf orthogonal-concept-erasure/experiments/*/outputs` 之類的廣泛命令清理。OCE outputs 內同時混有正式資料，必須由 cleanup script 依 Git tracking、category 與 allowlist 精確選取。
@@ -107,7 +106,7 @@ OCE 的 source、tracked result tables 與 reports 要保留；只考慮未追�
 4. 若確認 OCE 不再續跑，先保存任何仍想人工 review 的小型 image selection，再由第二個 allowlist stage 只刪未追蹤 images 與 weights。
 5. 再次跑 inventory，驗證 shared references、tracked results 與 manifests 仍存在，並保存 cleanup manifest。
 
-清理前預估 104.76 GiB；只清 ScaPre 後預估 **13.744 GiB**；兩層都清理後預估 **1.258 GiB**。實際 filesystem 回收量可能因 directory blocks 與清理後 metadata 略有差異，因此正式 cleanup 必須以前後 inventory 為準。
+清理前預估 104.76 GiB；只清 ScaPre 後預估 **13.744 GiB**；兩層都清理後預估 **1.957 GiB**。實際 filesystem 回收量可能因 directory blocks 與清理後 metadata 略有差異，因此正式 cleanup 必須以前後 inventory 為準。
 
 ## 範圍限制
 
