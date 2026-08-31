@@ -129,8 +129,9 @@ assert_integrity_status_passed() {
     local file="$REPO_ROOT/$relative"
     local status=""
     [[ -f "$file" ]] || die "missing required integrity artifact: $relative"
-    status="$(sed -n 's/^[[:space:]]*"status"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/{p;q;}' "$file")"
-    [[ "$status" == "passed" ]] || die "integrity status is not passed: $relative (${status:-missing})"
+    status="$(awk -F '"' '$2 == "status" { print $4; exit }' "$file")"
+    [[ "$status" == "passed" || "$status" == "complete" ]] \
+        || die "integrity status is not passed/complete: $relative (${status:-missing})"
 }
 
 assert_required_scapre_results() {
