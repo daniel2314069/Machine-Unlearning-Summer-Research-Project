@@ -171,6 +171,7 @@ def _compute_mi_softmask_emptyneg(W_old: torch.Tensor,
                                   p: float         = 2.0,
                                   noise_sigma: float = 0.05,
                                   eps: float       = 1e-8,
+                                  raw_output: bool = False,
                                   return_details: bool = False):
     device = W_old.device
     out_dim, _ = W_old.shape
@@ -197,6 +198,16 @@ def _compute_mi_softmask_emptyneg(W_old: torch.Tensor,
                 +p10*torch.log(p10/(p1_*p_0))
                 +p01*torch.log(p01/(p0_*p_1))
                 +p00*torch.log(p00/(p0_*p_0)))
+    if raw_output:
+        raw = mi.view(-1, 1)
+        if return_details:
+            return raw, {
+                "raw_mi": mi.detach().cpu(),
+                "alpha": None,
+                "threshold": tau.squeeze(1).detach().cpu(),
+                "negative_base_indices": torch.zeros(num_pos, dtype=torch.long),
+            }
+        return raw
     mi_std = (mi - mi.mean()) / (mi.std() + eps)
     m = torch.sigmoid(mi_std / T).pow(p)
     mask = m.view(-1,1)
@@ -218,6 +229,7 @@ def _compute_mi_softmask_matchedneg(W_old: torch.Tensor,
                                     p: float = 2.0,
                                     noise_sigma: float = 0.05,
                                     eps: float = 1e-8,
+                                    raw_output: bool = False,
                                     return_details: bool = False):
     """Repository Informax with only the negative base vectors replaced.
 
@@ -260,6 +272,16 @@ def _compute_mi_softmask_matchedneg(W_old: torch.Tensor,
                 +p10*torch.log(p10/(p1_*p_0))
                 +p01*torch.log(p01/(p0_*p_1))
                 +p00*torch.log(p00/(p0_*p_0)))
+    if raw_output:
+        raw = mi.view(-1, 1)
+        if return_details:
+            return raw, {
+                "raw_mi": mi.detach().cpu(),
+                "alpha": None,
+                "threshold": tau.squeeze(1).detach().cpu(),
+                "negative_base_indices": negative_base_indices.detach().cpu(),
+            }
+        return raw
     mi_std = (mi - mi.mean()) / (mi.std() + eps)
     m = torch.sigmoid(mi_std / T).pow(p)
     mask = m.view(-1,1)
@@ -271,6 +293,19 @@ def _compute_mi_softmask_matchedneg(W_old: torch.Tensor,
             "negative_base_indices": negative_base_indices.detach().cpu(),
         }
     return mask
+
+
+def _consume_removed_accumulation_informax_rng(c_vec: torch.Tensor,
+                                                num_pos: int = 5) -> None:
+    """Advance the two Informax noise streams removed by paper weighting.
+
+    These tensors never enter an equation.  Keeping the original draw shapes
+    preserves both the legacy global RNG position and the experiment's
+    isolated Informax stream, so later aggregate pseudo-samples and entropy
+    samples stay paired exactly with the repository baseline.
+    """
+    torch.randn(num_pos, c_vec.numel(), device=c_vec.device)
+    torch.randn(num_pos, c_vec.numel(), device=c_vec.device)
 
 # ─────────────────────────────────────────────────────────────
 # ASED spectral regularizer
@@ -359,7 +394,8 @@ def edit_model(ldm_stable,
                informax_negative_mode='official',
                informax_matched_retain_map=None,
                informax_superclass_map=None,
-               informax_diagnostics_path=None):
+               informax_diagnostics_path=None,
+               informax_weighting_mode='repository'):
 
     # === 0. Collect cross-attention modules
     sub_nets   = ldm_stable.unet.named_children()
@@ -418,6 +454,8 @@ def edit_model(ldm_stable,
 
     if informax_negative_mode not in {'official', 'matched-retain', 'superclass-neutral'}:
         raise ValueError(f"unsupported Informax negative mode: {informax_negative_mode}")
+    if informax_weighting_mode not in {'repository', 'paper'}:
+        raise ValueError(f"unsupported Informax weighting mode: {informax_weighting_mode}")
     reference_names = []
     reference_vecs = []
     if informax_negative_mode in {'matched-retain', 'superclass-neutral'}:
@@ -467,7 +505,9 @@ def edit_model(ldm_stable,
     informax_records = []
 
     def compute_informax(W_old, c_vec, target_index, projection, layer_num, stage):
-        collect = informax_diagnostics_path is not None
+        # Paper weighting needs raw MI even when diagnostics are disabled.  The
+        # repository path keeps returning the original soft mask unchanged.
+        collect = informax_diagnostics_path is not None or informax_weighting_mode == 'paper'
         if informax_negative_mode == 'official':
             result = _compute_mi_softmask_emptyneg(
                 W_old=W_old,
@@ -477,6 +517,7 @@ def edit_model(ldm_stable,
                 T=0.7,
                 p=p,
                 noise_sigma=noise_sigma,
+                raw_output=informax_weighting_mode == 'paper',
                 return_details=collect,
             )
             negative_concepts = ['']
@@ -489,6 +530,7 @@ def edit_model(ldm_stable,
                 T=0.7,
                 p=p,
                 noise_sigma=noise_sigma,
+                raw_output=informax_weighting_mode == 'paper',
                 return_details=collect,
             )
             negative_concepts = reference_names[target_index]
@@ -496,16 +538,54 @@ def edit_model(ldm_stable,
         if not collect:
             return result
         mask, details = result
-        informax_records.append({
-            "projection": projection,
-            "layer_index": layer_num - 1,
-            "stage": stage,
-            "target_index": target_index,
-            "target_concept": old_texts[target_index],
-            "negative_concepts": negative_concepts,
-            **details,
-        })
-        return mask
+        returned_weight = mask
+        if informax_diagnostics_path is not None:
+            informax_records.append({
+                "projection": projection,
+                "layer_index": layer_num - 1,
+                "stage": stage,
+                "target_index": target_index,
+                "target_concept": old_texts[target_index],
+                "negative_concepts": negative_concepts,
+                "returned_weight": returned_weight.detach().cpu().squeeze(1),
+                **details,
+            })
+        return returned_weight
+
+    def aggregate_informax(row_weights, projection, layer_num):
+        concept_max = torch.max(torch.stack(row_weights, dim=-1), dim=-1).values
+        channel_max = None
+        if informax_weighting_mode == 'paper':
+            # Paper definition: raw MI -> max over concepts -> normalize by the
+            # maximum channel.  The resulting vector is diag(B); materializing
+            # the dense diagonal matrix would be wasteful in the row-wise solve.
+            channel_max = concept_max.max()
+            if not torch.isfinite(channel_max) or channel_max.item() <= 0.0:
+                raise RuntimeError(
+                    f"paper Informax normalization has non-positive/invalid maximum "
+                    f"at {projection} layer {layer_num - 1}"
+                )
+            alpha = concept_max / channel_max
+        else:
+            alpha = concept_max
+        if informax_diagnostics_path is not None:
+            informax_records.append({
+                "projection": projection,
+                "layer_index": layer_num - 1,
+                "stage": "aggregate-max",
+                "target_index": None,
+                "target_concept": None,
+                "negative_concepts": None,
+                "concept_max_raw_mi": (
+                    concept_max.squeeze(1).detach().cpu()
+                    if informax_weighting_mode == 'paper' else None
+                ),
+                "channel_max_raw_mi": (
+                    channel_max.detach().cpu() if channel_max is not None else None
+                ),
+                "alpha": alpha.squeeze(1).detach().cpu(),
+            })
+        return alpha
 
     C_full = torch.stack(concept_vecs, 1)          # (d_in, m)
     CCt    = C_full @ C_full.t()                   # (d_in, d_in)
@@ -544,17 +624,7 @@ def edit_model(ldm_stable,
                     row_ws_all.append(compute_informax(
                         W_old, c_vec, target_index, 'to_v', layer_num, 'aggregate'
                     ))
-                row_w_max = torch.max(torch.stack(row_ws_all, dim=-1), dim=-1).values   # (out_dim, 1)
-                if informax_diagnostics_path is not None:
-                    informax_records.append({
-                        "projection": "to_v",
-                        "layer_index": layer_num - 1,
-                        "stage": "aggregate-max",
-                        "target_index": None,
-                        "target_concept": None,
-                        "negative_concepts": None,
-                        "alpha": row_w_max.squeeze(1).detach().cpu(),
-                    })
+                row_w_max = aggregate_informax(row_ws_all, 'to_v', layer_num)
             else:
                 row_w_max = torch.ones((out_dim,1), device=W_old.device)
 
@@ -592,12 +662,14 @@ def edit_model(ldm_stable,
                 for_mat1 = (val_v @ ctx_vT).sum(0)      # (in_dim, in_dim)
                 for_mat2 = (ctx_v  @ ctx_vT).sum(0)     # (in_dim, in_dim)
 
-                if use_mi_softmask:
+                if use_mi_softmask and informax_weighting_mode == 'repository':
                     row_w_c = compute_informax(
                         W_old, c_vec, idx_concept - 1,
                         'to_v', layer_num, 'accumulation'
                     )
                 else:
+                    if use_mi_softmask and informax_weighting_mode == 'paper':
+                        _consume_removed_accumulation_informax_rng(c_vec)
                     row_w_c = torch.ones((out_dim,1), device=W_old.device)
 
                 # Note: accumulation method consistent with fx3
@@ -663,17 +735,7 @@ def edit_model(ldm_stable,
                         row_ws_all.append(compute_informax(
                             W_old, c_vec, target_index, 'to_k', layer_num, 'aggregate'
                         ))
-                    row_w_max = torch.max(torch.stack(row_ws_all, dim=-1), dim=-1).values
-                    if informax_diagnostics_path is not None:
-                        informax_records.append({
-                            "projection": "to_k",
-                            "layer_index": layer_num - 1,
-                            "stage": "aggregate-max",
-                            "target_index": None,
-                            "target_concept": None,
-                            "negative_concepts": None,
-                            "alpha": row_w_max.squeeze(1).detach().cpu(),
-                        })
+                    row_w_max = aggregate_informax(row_ws_all, 'to_k', layer_num)
                 else:
                     row_w_max = torch.ones((out_dim,1), device=W_old.device)
 
@@ -710,12 +772,14 @@ def edit_model(ldm_stable,
                     for_mat1 = (val_v @ ctx_vT).sum(0)
                     for_mat2 = (ctx_v  @ ctx_vT).sum(0)
 
-                    if use_mi_softmask:
+                    if use_mi_softmask and informax_weighting_mode == 'repository':
                         row_w_c = compute_informax(
                             W_old, c_vec, idx_concept - 1,
                             'to_k', layer_num, 'accumulation'
                         )
                     else:
+                        if use_mi_softmask and informax_weighting_mode == 'paper':
+                            _consume_removed_accumulation_informax_rng(c_vec)
                         row_w_c = torch.ones((out_dim,1), device=W_old.device)
 
                     mat1_agg += erase_scale * (for_mat1 * row_w_c)
@@ -753,6 +817,7 @@ def edit_model(ldm_stable,
         torch.save({
             "format_version": 1,
             "informax_negative_mode": informax_negative_mode,
+            "informax_weighting_mode": informax_weighting_mode,
             "num_positive": 5,
             "num_negative": 5,
             "temperature": 0.7,
@@ -822,6 +887,9 @@ if __name__ == '__main__':
                         help='JSON file containing superclass_by_target')
     parser.add_argument('--informax-diagnostics-path', type=str, default=None,
                         help='optional .pt output for raw MI and alpha diagnostics')
+    parser.add_argument('--informax-weighting-mode',
+                        choices=['repository', 'paper'], default='repository',
+                        help='repository softmask/accumulation weighting or paper raw-MI B-only weighting')
     parser.add_argument('--edit-seed', type=int, default=None,
                         help='optional seed reset immediately before editing')
 
@@ -967,6 +1035,7 @@ if __name__ == '__main__':
         informax_matched_retain_map=matched_retain_map,
         informax_superclass_map=superclass_map,
         informax_diagnostics_path=args.informax_diagnostics_path,
+        informax_weighting_mode=args.informax_weighting_mode,
     )
 
     print("Model editing completed.")
