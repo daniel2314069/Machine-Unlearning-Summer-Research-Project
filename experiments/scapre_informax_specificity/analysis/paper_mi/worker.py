@@ -362,11 +362,22 @@ def main() -> None:
         raise RuntimeError("paper comparison must retain the official empty-string neutral")
     if config["paper_formula"].get("parameter_search") is not False:
         raise RuntimeError("parameter search is forbidden for this fixed comparison")
-    expected_calls = (
-        4 * config["expected_layers_per_projection"] * config["targets_formal"]
+    # 2 projections x (aggregate + accumulation/discard) x 2 noise draws.
+    calls_per_target_layer = 8
+    expected_formal_calls = (
+        calls_per_target_layer
+        * config["expected_layers_per_projection"]
+        * config["targets_formal"]
     )
-    if config["expected_informax_randn_calls_formal"] != expected_calls:
+    expected_smoke_calls = (
+        calls_per_target_layer
+        * config["expected_layers_per_projection"]
+        * config["targets_smoke"]
+    )
+    if config["expected_informax_randn_calls_formal"] != expected_formal_calls:
         raise RuntimeError("formal Informax RNG call expectation is inconsistent")
+    if config["expected_informax_randn_calls_smoke"] != expected_smoke_calls:
+        raise RuntimeError("smoke Informax RNG call expectation is inconsistent")
     if base["edit_seed"] != config["fixed_non_informax_seed"]:
         raise RuntimeError("fixed non-Informax seed changed")
     if base["edit"]["num_positive"] != 5 or base["edit"]["num_negative"] != 5:
