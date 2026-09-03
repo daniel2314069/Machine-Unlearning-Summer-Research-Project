@@ -31,6 +31,13 @@ The experiment uses the project-established 25-class Confuse5 reconstruction.
 It is suitable for the paired implementation comparison but is not an exact
 reproduction of an author-released paper seed asset.
 
+## Formal result
+
+The completed fixed comparison and local validation are recorded in
+[`formal_results/`](formal_results/README.md). Paper MI produced stronger
+forgetting but substantially worse preservation and overall accuracy; its
+max-normalized raw-MI alpha also saturated to an almost uniform vector.
+
 ## GPU server workflow
 
 Run the end-to-end smoke check first:

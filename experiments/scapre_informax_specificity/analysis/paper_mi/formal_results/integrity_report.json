@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "profile": "formal",
+  "variants": ["official", "paper_mi"],
+  "edit_seeds": [20260820, 20260821, 20260822, 20260823, 20260824],
+  "rows_per_variant_seed": 3000,
+  "role_counts": {"target": 1200, "retain": 1800},
+  "prompt_lists_and_generation_seeds_identical": true,
+  "evaluator_fingerprint_identical": true,
+  "official_empty_string_neutral": true,
+  "paper_formula_checks_passed": true,
+  "repository_reference_reused": true,
+  "repository_baseline_generated_in_run": false,
+  "parameter_search": false,
+  "generated_image_count": 15000,
+  "generated_image_manifest_sha256": "9e9fdb9948fa2fa5f7ed2e0a7589c8604fe237016303149124edf6789cd27ac6",
+  "score_sha256": {
+    "20260820": {
+      "official": "65e0781d8ca278c381e65a3ccef449ac100218b2f93171e13a5720eae8ef3e37",
+      "paper_mi": "2b9aa2edf6bf31e203ca117ae3e2449042bd3b420e60aad153ae8fccdfb8025d"
+    },
+    "20260821": {
+      "official": "6cdea9cbad1dec790c59dd3db3d2616fd2ef0150e86e98b6671b38fdd453ffdc",
+      "paper_mi": "c6054e9e31e77d4865c2904a40dc88bc39cb9f05af4b9e1ca9dc859258609a85"
+    },
+    "20260822": {
+      "official": "f2678c677929faeb02c92f084254434b715700889bc6d575af434f103d84ec0a",
+      "paper_mi": "9469c1a770273180b59cd6fe87175791fe74f52065e8ca2352759abcccdd169b"
+    },
+    "20260823": {
+      "official": "40906d651f1d2784a352b8e63a8c33ba03096ae5c65256e7c5b60a90ccf65caa",
+      "paper_mi": "ad99fdb018540f3d17bb3dd790a072c93fae733e66a07bb449c1fa89eb873d7e"
+    },
+    "20260824": {
+      "official": "7a355a040f549ed59c0ea0f4762d671997e76cf9843a58259a9498f776e21724",
+      "paper_mi": "eb7ee049fc72139056624242d7891ef934ad6b54b4c8824c4c4db3afc8ea8d88"
+    }
+  },
+  "protocol_sha256": "ab8ced3be82b1d8c6896eb24d32419bb12e8cf3e22d8ed0c46f92f4a5e8f0f2e",
+  "evaluator_fingerprint_sha256": "d149cde61e6fc4b4539158681fe334a43a00e859f491f16ac2b8ae24eb32cf98",
+  "git_commit": "6f5e047179244b860f73623f88137ada24aff11a",
+  "git_status_start_clean": true,
+  "git_status_before_aggregation_clean": true
+}

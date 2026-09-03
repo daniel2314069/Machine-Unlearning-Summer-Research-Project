@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "archive_paths_safe": true,
+  "archive_entry_count": 102,
+  "package_manifest_entry_count": 101,
+  "packaged_files_missing": 0,
+  "score_rows_checked": 30000,
+  "paired_generation_keys_identical": true,
+  "score_hashes_reproduced": true,
+  "metrics_and_deltas_reproduced": true,
+  "five_seed_means_reproduced": true,
+  "sample_standard_deviations_reproduced": true,
+  "evaluator_fingerprints_identical": true,
+  "protocol_hash_reproduced": true,
+  "source_hashes_reproduced": true,
+  "paper_formula_checks_passed": true,
+  "paper_diagnostic_record_counts_passed": true,
+  "paper_rng_audits_passed": true,
+  "paper_checkpoints_reported_finite": true,
+  "archive_server_checksum_independently_retrieved": false,
+  "archive_server_checksum_note": "SSH authentication was rejected in this validation session; download_results.sh verifies the server manifest checksum when used"
+}

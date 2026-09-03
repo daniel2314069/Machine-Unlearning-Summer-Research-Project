@@ -1,0 +1,12 @@
+{
+  "summary_rows": 160,
+  "edit_seeds": 5,
+  "projections_per_seed": 2,
+  "layers_per_projection": 16,
+  "global_alpha_min": 0.9999999403953552,
+  "per_matrix_alpha_mean_min": 0.9999999891966581,
+  "per_matrix_alpha_mean_max": 0.9999999977648258,
+  "global_max_over_concept_raw_mi_min": 0.6931471228599548,
+  "global_max_over_concept_raw_mi_max": 0.6931471824645996,
+  "interpretation": "max-over-concept raw MI saturated near ln(2), so B=diag(alpha) was numerically almost the identity"
+}

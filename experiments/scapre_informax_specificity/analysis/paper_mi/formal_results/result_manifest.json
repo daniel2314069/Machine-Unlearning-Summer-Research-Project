@@ -1,0 +1,19 @@
+{
+  "status": "completed_fixed_comparison",
+  "mean_delta_paper_minus_repository": {
+    "delta_unlearn": -13.55,
+    "delta_preserve": -20.044444444444444,
+    "delta_overall": -20.344207206138705
+  },
+  "sample_std_delta": {
+    "delta_unlearn": 0.5089477161534148,
+    "delta_preserve": 0.2761060808842047,
+    "delta_overall": 0.37094469302351873
+  },
+  "favorable_seed_counts": {
+    "unlearn_lower": 5,
+    "preserve_higher": 0,
+    "overall_higher": 0
+  },
+  "parameter_search": false
+}

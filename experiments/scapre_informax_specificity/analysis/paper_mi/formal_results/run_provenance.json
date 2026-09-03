@@ -1,0 +1,16 @@
+{
+  "run_id": "formal_20260902T151717Z",
+  "profile": "formal",
+  "started_at_utc": "2026-09-02T15:17:20.113417+00:00",
+  "finished_at_utc": "2026-09-03T06:18:52Z",
+  "exit_code": 0,
+  "git_commit": "6f5e047179244b860f73623f88137ada24aff11a",
+  "git_status_clean": true,
+  "asset_provisioning": "reused_validated_cache",
+  "assets_sha256": "f299834be2891a7bf0b96bc3f02c67cfe1c8b9b4c95202697b963dc895d6e64f",
+  "base_model": "runwayml/stable-diffusion-v1-5",
+  "resolved_revision": "451f4fe16113bff5a5d2269ed5ad43b0592e9a14",
+  "repository_reference_reused": true,
+  "downloaded_archive": "scapre_paper_mi_formal_20260902T151717Z_20260903T061852Z.tar.gz",
+  "downloaded_archive_local_sha256": "f2d45cc264896dd03435fa9fa7704c01f922b32e31020f7e92b480b8b695f99a"
+}
