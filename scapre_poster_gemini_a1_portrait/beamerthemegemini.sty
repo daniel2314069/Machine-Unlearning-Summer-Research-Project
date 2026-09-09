@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamerthemegemini}[2026/09/01 Two-column A1 research poster theme]
+\mode<presentation>
+
+\definecolor{GeminiBlue}{HTML}{123F92}
+\definecolor{GeminiLight}{HTML}{EEF3FA}
+\definecolor{GeminiText}{HTML}{202733}
+\definecolor{GeminiGray}{HTML}{5B6574}
+
+\setbeamercolor{normal text}{fg=GeminiText,bg=white}
+\setbeamercolor{structure}{fg=GeminiBlue}
+\setbeamercolor{headline}{fg=white,bg=GeminiBlue}
+\setbeamercolor{block title}{fg=GeminiBlue,bg=GeminiLight}
+\setbeamercolor{block body}{fg=GeminiText,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=GeminiBlue}
+\setbeamercolor{block alerted body}{fg=GeminiText,bg=GeminiLight}
+
+\setbeamerfont{normal text}{size*={24}{29}}
+\setbeamerfont{block title}{series=\bfseries,size*={34}{40}}
+\setbeamerfont{block body}{size*={24}{29}}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{itemize item}{\raise0.13em\hbox{\fontsize{13}{13}\selectfont$\blacksquare$}}
+\setbeamertemplate{itemize subitem}{\raise0.13em\hbox{\fontsize{11}{11}\selectfont$\blacktriangleright$}}
+
+\setbeamertemplate{block begin}{%
+  \vskip0.32cm
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.28cm,leftskip=0.28cm,rightskip=0.28cm]{block title}
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.30cm,leftskip=0.20cm,rightskip=0.20cm]{block body}
+    \usebeamerfont{block body}
+    \hyphenpenalty=10000
+    \exhyphenpenalty=10000
+    \emergencystretch=1em
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0.34em}
+}
+\setbeamertemplate{block end}{\end{beamercolorbox}\vskip0.08cm}
+
+\setbeamertemplate{block alerted begin}{%
+  \vskip0.32cm
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.28cm,leftskip=0.28cm,rightskip=0.28cm]{block alerted title}
+    \usebeamerfont*{block title}\insertblocktitle
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[wd=\linewidth,sep=0.32cm,leftskip=0.28cm,rightskip=0.28cm]{block alerted body}
+    \usebeamerfont{block body}
+    \hyphenpenalty=10000
+    \exhyphenpenalty=10000
+    \emergencystretch=1em
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{0.34em}
+}
+\setbeamertemplate{block alerted end}{\end{beamercolorbox}\vskip0.08cm}
+
+\mode<all>
