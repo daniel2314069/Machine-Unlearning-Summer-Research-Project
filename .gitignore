@@ -10,7 +10,7 @@ __pycache__/
 *.snm
 *.toc
 *.xdv
-# Generated and documentation images are local/server artifacts, never Git data.
+# Generated images stay local; selected documentation previews are versioned.
 *.png
 *.jpg
 *.jpeg
@@ -20,6 +20,7 @@ __pycache__/
 *.tif
 *.tiff
 *.svg
+!scapre_poster_gemini_a1_portrait/preview.png
 
 # Curated experiment archives may be extracted here for local retention only.
 .local_artifacts/
